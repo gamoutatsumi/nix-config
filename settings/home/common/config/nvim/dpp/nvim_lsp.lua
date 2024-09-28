@@ -140,9 +140,6 @@ for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
         }
       }
     }
-  elseif server == "tailwindcss" then
-    opts.root_dir = util.root_pattern("tailwind.config.cjs", "tailwind.config.js", "tailwind.config.ts")
-    opts.autostart = true
   elseif server == "jsonls" then
     opts.filetypes = { "json", "jsonc" }
     opts.settings = {
@@ -164,42 +161,6 @@ for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
         },
       },
     }
-  elseif server == "lua_ls" then
-    opts.on_attach = function(client, bufnr)
-      client.server_capabilities.document_formatting = false
-      on_attach(client, bufnr)
-    end
-    opts.init_options = {
-      provideFormatter = false,
-    }
-    opts.settings = {
-      Lua = {
-        runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
-        diagnostics = {
-          enable = true,
-          globals = { "vim" },
-        },
-        completion = {
-          callSnippet = "Replace",
-        },
-        hint = {
-          enable = true
-        },
-        workspace = {
-          library = vim.api.nvim_list_runtime_paths()
-        },
-      },
-    }
-  elseif server == "yamlls" then
-    opts.settings = {
-      yaml = {
-        schemas = {
-          ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
-          ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.24.3-standalone-strict/all.json"] =
-          "/*.k8s.yaml",
-        },
-      },
-    }
   elseif server == "efm" then
     opts.autostart = true
     opts.cmd = { "efm-langserver", "-q" }
@@ -211,20 +172,52 @@ for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
       documentSymbol = true,
       codeAction = true,
     }
-  elseif server == "pyright" then
-    opts.settings = {
-      python = {
-        venvPath = ".",
-        pythonPath = ".venv/bin/python",
-        analysis = {
-          extraPaths = { "." }
-        }
-      }
-    }
   end
   lspconfig[server].setup(opts)
   ::continue::
 end
+
+lspconfig.yamlls.setup {
+  autostart = true,
+  settings = {
+    yaml = {
+      schemas = {
+        ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+        ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.24.3-standalone-strict/all.json"] =
+        "/*.k8s.yaml",
+      },
+    },
+  },
+  on_attach = on_attach
+}
+
+lspconfig.lua_ls.setup {
+  on_attach = function(client, bufnr)
+    client.server_capabilities.document_formatting = false
+    on_attach(client, bufnr)
+  end,
+  init_options = {
+    provideFormatter = false,
+  },
+  settings = {
+    Lua = {
+      runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
+      diagnostics = {
+        enable = true,
+        globals = { "vim" },
+      },
+      completion = {
+        callSnippet = "Replace",
+      },
+      hint = {
+        enable = true
+      },
+      workspace = {
+        library = vim.api.nvim_list_runtime_paths()
+      },
+    },
+  }
+}
 
 if vim.fn.executable("deno") then
   lspconfig.denols.setup({
@@ -294,9 +287,9 @@ if vim.fn.executable("nixd") then
     autostart = true,
     on_init = function(client, _)
       client.server_capabilities.semanticTokensProvider = nil
-      end,
+    end,
   })
-  end
+end
 
 if vim.fn.executable("typescript-language-server") > 0 then
   require("typescript").setup({
