@@ -1,0 +1,95 @@
+# `sheldon` configuration file
+# ----------------------------
+#
+# You can modify this file directly or you can use one of the following
+# `sheldon` commands which are provided to assist in editing the config file:
+#
+# - `sheldon add` to add a new plugin to the config file
+# - `sheldon edit` to open up the config file in the default editor
+# - `sheldon remove` to remove a plugin from the config file
+#
+# See the documentation for more https://github.com/rossmacarthur/sheldon#readme
+
+shell = "zsh"
+
+[plugins]
+
+[plugins.zsh-defer]
+github = "romkatv/zsh-defer"
+
+[templates]
+defer = '''
+{% for file in files %}
+#ensure_zcompiled "{{ file }}"
+zsh-defer source "{{ file }}"
+{% endfor %}
+'''
+
+[plugins.bashcompinit]
+inline = 'autoload bashcompinit && zsh-defer bashcompinit'
+
+[plugins.compinit]
+inline = "autoload -Uz compinit && zsh-defer compinit"
+
+[plugins.ni]
+github = "azu/ni.zsh"
+apply = ['defer']
+
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+apply = ['defer']
+
+[plugins.powerlevel10k]
+github = "gamoutatsumi/powerlevel10k"
+branch = "cachedir"
+
+[plugins.zsh-256color]
+github = "chrissicool/zsh-256color"
+
+[plugins.tmk]
+github = "yuki-yano/tmk"
+apply = ['defer']
+
+[plugins.tms]
+github = "yuki-yano/tms"
+apply = ['defer']
+
+[plugins.fast-syntax-highlighting]
+github = "zdharma-continuum/fast-syntax-highlighting"
+
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+
+[plugins.docker-compose-completion]
+remote = "https://raw.githubusercontent.com/docker/compose/1.29.2/contrib/completion/zsh/_docker-compose"
+apply = ["fpath"]
+
+[plugins.zig-completion]
+remote = "https://raw.githubusercontent.com/ziglang/shell-completions/master/_zig"
+apply = ["fpath"]
+
+# [plugins.bash-completions-fallback]
+# github = "3v1n0/zsh-bash-completions-fallback"
+# apply = ['defer']
+
+# [plugins.local]
+# local = '~/.config/zsh/modules'
+# use = ['*.zsh']
+#
+# [plugins.local-defer]
+# local = '~/.config/zsh/defer'
+# use = ['*.zsh']
+# apply = ['defer']
+#
+# [plugins.completions]
+# local = '~/.config/zsh/completions'
+# apply = ['fpath']
+
+[plugins.zeno]
+github = "yuki-yano/zeno.zsh"
+apply = ['defer']
+
+# For example:
+#
+# [plugins.base16]
+# github = "chriskempson/base16-shell"

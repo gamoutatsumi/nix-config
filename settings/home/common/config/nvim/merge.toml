@@ -1,0 +1,117 @@
+[[plugins]]
+repo = 'bluz71/vim-nightfly-colors'
+hook_add = '''
+  if !exists('g:nvui')
+    let g:nightflyTransparent = 1
+  endif
+  colorscheme nightfly
+'''
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+hook_add = '''
+  let g:WebDevIconsNerdTreeBeforeGlyphPadding=''
+  let g:WebDevIconsUnicodeDecorateFolderNodes=v:true
+  if exists('g:loaded_webdevicons')
+    webdevicons#refresh()
+  endif
+'''
+
+[[plugins]]
+repo = 'itchyny/vim-parenmatch'
+
+#[[plugins]]
+#repo = 'edkolev/tmuxline.vim'
+#hook_add = '''
+#let g:tmuxline_preset = {
+  #\ 'a': '[#S:#I:#P]',
+  #\ 'win': ['#I', '#{?#{m:ssh,#W},#{ssh-host},#W} #F'],
+  #\ 'cwin': ['#I','#{?#{m:ssh,#W},#{ssh-host},#W} #F'],
+  #\ 'y': ['%Y-%m-%d', '%H:%M'],
+  #\ 'options': {
+    #\ 'status': 'on',
+    #\ 'status-left-style': 'none',
+    #\ 'status-right-style': 'none',
+    #\ 'status-right-length': '100',
+    #\ 'status-left-length': '100',
+  #\   }
+  #\ }
+#let g:tmuxline_status_justify = 'left'
+#'''
+
+[[plugins]]
+repo = 'lambdalisue/vim-nerdfont'
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+hook_add = '''
+  set helplang=ja,en
+'''
+
+[[plugins]]
+repo = 'kana/vim-textobj-user'
+
+[[plugins]]
+repo = 'lambdalisue/vim-fern'
+hooks_file = '$BASE_DIR/dpp/fern.vim'
+
+[[plugins]]
+repo = 'lambdalisue/vim-fern-renderer-nerdfont'
+
+[[plugins]]
+repo = 'lambdalisue/vim-fern-git-status'
+
+[[plugins]]
+repo = 'lambdalisue/vim-mr'
+
+[[plugins]]
+repo = 'vimpostor/vim-tpipeline'
+hook_add = '''
+  let g:tpipeline_autoembed = 0
+  au FocusGained * ++once call tpipeline#initialize()
+'''
+
+[[plugins]]
+repo = 'embear/vim-localvimrc'
+hook_add = '''
+  let g:localvimrc_persistent = 1
+'''
+
+[[plugins]]
+repo = 'aklt/plantuml-syntax'
+
+[[plugins]]
+repo = 'rhysd/committia.vim'
+
+[[plugins]]
+repo = 'tpope/vim-dadbod'
+
+[[plugins]]
+repo = 'skk-dev/dict'
+if = false
+build = '''
+if [[ "$(uname)" == "Darwin" ]]; then
+  cp SKK-JISYO.* $HOME/Library/Containers/net.mtgto.inputmethod.macSKK/Data/Documents/Dictionaries/
+fi
+'''
+
+[[plugins]]
+repo = 'tani/vim-artemis'
+if = false
+
+[[plugins]]
+repo = 'github/copilot.vim'
+hooks_file = '$BASE_DIR/dpp/copilot.vim'
+
+[[plugins]]
+repo = 'chrisbra/csv.vim'
+
+[[plugins]]
+repo = 'Shougo/cmdline.vim'
+
+[[plugins]]
+repo = 'hrsh7th/vim-searchx'
+hooks_file = '$BASE_DIR/dpp/searchx.vim'
+
+[[plugins]]
+repo = 'lambdalisue/vim-manpager'

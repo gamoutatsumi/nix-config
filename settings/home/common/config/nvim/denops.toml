@@ -1,0 +1,88 @@
+[[plugins]]
+repo = 'vim-denops/denops.vim'
+lazy = 0
+hook_add = '''
+let g:denops#server#deno_args = ['-q', '--no-lock', '--unstable-kv', '--unstable-ffi', '-A']
+'''
+
+[[plugins]]
+repo = 'vim-denops/denops-shared-server.vim'
+
+[[plugins]]
+repo = 'gamoutatsumi/dps-ghosttext.vim'
+depends = 'denops.vim'
+on_cmd = 'GhostStart'
+
+[[plugins]]
+repo = 'vim-skk/skkeleton'
+hooks_file = '$BASE_DIR/dpp/skkeleton.vim'
+on_map = { ict = '<Plug>(skkeleton-toggle)' }
+on_event = 'CursorHold'
+
+[[plugins]]
+repo = 'gamoutatsumi/gyazoupload.vim'
+depends = 'denops.vim'
+on_cmd = 'GyazoUpload'
+hook_add = '''
+  let g:gyazo#token=$GYAZO_TOKEN
+'''
+
+[[plugins]]
+repo = 'kat0h/bufpreview.vim'
+build = 'deno task prepare'
+depends = 'denops.vim'
+
+[[plugins]]
+repo = 'yuki-yano/fuzzy-motion.vim'
+depends = 'denops.vim'
+hook_add = '''
+  nnoremap gfs <Cmd>FuzzyMotion<CR>
+'''
+
+[[plugins]]
+repo = 'lambdalisue/vim-gin'
+depends = 'denops.vim'
+
+[[plugins]]
+repo = 'skanehira/k8s.vim'
+depends = 'denops.vim'
+hook_add = '''
+  function! s:k8s_nodes_keymap() abort
+    nmap <buffer> <CR> <Plug>(k8s:nodes:pods)
+    nmap <buffer> gd <Plug>(k8s:nodes:describe)
+    nmap <buffer> gy <Plug>(k8s:nodes:yaml)
+  endfunction
+
+  function! s:k8s_pods_keymap() abort
+    nmap <buffer> <CR> <Plug>(k8s:pods:containers)
+    nmap <buffer> gl <Plug>(k8s:pods:logs)
+    nmap <buffer> gd <Plug>(k8s:pods:describe)
+    nmap <buffer> gy <Plug>(k8s:pods:yaml)
+    nmap <buffer> ge <Plug>(k8s:pods:edit)
+  endfunction
+
+  augroup k8s-keymap
+    au!
+    au FileType k8s-pods call s:k8s_pods_keymap()
+    au FileType k8s-nodes call s:k8s_nodes_keymap()
+  augroup END
+'''
+
+[[plugins]]
+repo = 'lambdalisue/vim-kensaku'
+depends = 'denops.vim'
+denops_wait = false
+hook_add = '''
+let g:kensaku_disable_v3_migration_warning = 1
+'''
+
+[[plugins]]
+repo = 'tani/vim-glance'
+depends = 'denops.vim'
+hook_add = '''
+let g:glance#config = expand('$BASE_DIR/glance/init.ts')
+'''
+
+[[plugins]]
+repo = 'lambdalisue/vim-guise'
+lazy = 0

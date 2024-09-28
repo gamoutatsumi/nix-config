@@ -1,0 +1,32 @@
+{
+  "import": {
+    "prefix": [
+      "import"
+    ],
+    "body": "import ${2:module} from \"$1\";"
+  },
+  "denops": {
+    "prefix": [
+      "denops"
+    ],
+    "body": [
+      "export function main(denops: Denops): Promise<void> {",
+      "  denops.dispatcher = {",
+      "    ${1:func}(${2:params}): Promise<void> {",
+      "      $3",
+      "    }",
+      "  }",
+      "};"
+    ]
+  },
+  "arrow function": {
+    "prefix": [
+      "constfn"
+    ],
+    "body": [
+      "const $1 = ($2) => {",
+      "  $3",
+      "}"
+    ]
+  }
+}

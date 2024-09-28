@@ -1,0 +1,25 @@
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+hooks_file = '$BASE_DIR/dpp/treesitter.lua'
+
+[[plugins]]
+repo = 'windwp/nvim-ts-autotag'
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter-refactor'
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter-textobjects'
+
+[[plugins]]
+repo = 'https://gitlab.com/HiPhish/rainbow-delimiters.nvim'
+hooks_file = '$BASE_DIR/dpp/rainbow.lua'
+build = 'git update-index --skip-worktree test && /bin/rm -rf test'
+
+[[plugins]]
+repo = 'JoosepAlviste/nvim-ts-context-commentstring'
+on_ft = ['typescript','javascript','javascriptreact','typescriptreact']
+
+[[plugins]]
+repo = "nvim-treesitter/nvim-treesitter-context"
+hooks_file = '$BASE_DIR/dpp/context.lua'

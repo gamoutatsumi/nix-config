@@ -1,0 +1,39 @@
+[[plugins]]
+repo = 'neovim/nvim-lspconfig'
+
+[[plugins]]
+repo = 'williamboman/mason.nvim'
+
+[[plugins]]
+repo = 'williamboman/mason-lspconfig.nvim'
+hooks_file = ['$BASE_DIR/dpp/nvim_lsp.lua']
+
+[[plugins]]
+repo='ray-x/go.nvim'
+
+[[plugins]]
+repo = 'yioneko/nvim-vtsls'
+
+[[plugins]]
+repo = 'jay-babu/mason-null-ls.nvim'
+
+[[plugins]]
+repo = 'jose-elias-alvarez/typescript.nvim'
+
+[[plugins]]
+repo = 'hrsh7th/nvim-gtd'
+lua_add = '''
+require('gtd').setup({})
+'''
+
+[[plugins]]
+repo = 'b0o/schemastore.nvim'
+
+[[plugins]]
+repo = 'VidocqH/lsp-lens.nvim'
+lua_add = '''
+require('lsp-lens').setup()
+'''
+
+[[plugins]]
+repo = 'ray-x/lsp_signature.nvim'
