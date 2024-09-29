@@ -23,13 +23,6 @@
     curl
     sbctl
     efitools
-    lightdm
-    acsccid
-    pcsclite
-    opensc
-    pcsc-tools
-    nssTools
-    cudaPackages.cudatoolkit
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -111,17 +104,17 @@
   # services.libinput.enable = true;
 
   users = {
-    # mutableUsers = false;
+    mutableUsers = false;
     users.${username} = {
       isNormalUser = true;
       extraGroups = [
+        "users"
         "wheel"
         "video"
         "audio"
-        # "autologin"
       ];
       shell = pkgs.zsh;
-      hashedPasswordFile = config.age.secrets.password.path;
+      hashedPasswordFile = config.age.secrets.${username}.path;
     };
   };
 
@@ -193,6 +186,12 @@
       package = upkgs.ollama;
       enable = true;
       acceleration = "cuda";
+    };
+    openssh = {
+      settings = {
+        PasswordAuthentication = false;
+        PermitRootLogin = "no";
+      };
     };
   };
   nixpkgs.config.cudaSupport = true;

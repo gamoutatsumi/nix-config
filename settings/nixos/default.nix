@@ -1,52 +1,55 @@
 { pkgs, ... }:
 {
-  programs.zsh.enable = true;
+  programs = {
+    zsh = {
+      enable = true;
+    };
+    dconf = {
+      enable = true;
+    };
+  };
   nixpkgs.config.allowUnfree = true;
-  i18n.defaultLocale = "ja_JP.UTF-8";
-  time.timeZone = "Asia/Tokyo";
-  time.hardwareClockInLocalTime = true;
+  time = {
+    timeZone = "Asia/Tokyo";
+    hardwareClockInLocalTime = true;
+  };
   security.rtkit.enable = true;
+
+  i18n.defaultLocale = "ja_JP.UTF-8";
 
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
 
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    wireplumber = {
-      extraConfig = {
-        bluetoothEnhancements = {
-          "monitor.bluez.properties" = {
-            "bluez5.enable-sbc-xq" = true;
-            "bluez5.enable-msbc" = true;
-            "bluez5.enable-hw-volume" = true;
-            "bluez5.roles" = [
-              "hsp_hs"
-              "hsp_ag"
-              "hfp_hf"
-              "hfp_ag"
-            ];
+  # Enable the X11 windowing system.
+  services = {
+    pipewire = {
+      enable = true;
+      pulse.enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      wireplumber = {
+        extraConfig = {
+          bluetoothEnhancements = {
+            "monitor.bluez.properties" = {
+              "bluez5.enable-sbc-xq" = true;
+              "bluez5.enable-msbc" = true;
+              "bluez5.enable-hw-volume" = true;
+              "bluez5.roles" = [
+                "hsp_hs"
+                "hsp_ag"
+                "hfp_hf"
+                "hfp_ag"
+              ];
+            };
           };
         };
       };
     };
-  };
-
-  services.openssh = {
-    enable = true;
-    settings = {
-      PasswordAuthentication = false;
-      PermitRootLogin = "no";
+    openssh = {
+      enable = true;
     };
-  };
-  programs.dconf.enable = true;
-
-  # Enable the X11 windowing system.
-  services = {
     pcscd = {
       enable = true;
     };
@@ -60,7 +63,9 @@
         }
       ];
     };
-    libinput.enable = true;
+    libinput = {
+      enable = true;
+    };
     xserver = {
       enable = true;
       displayManager = {
@@ -82,5 +87,4 @@
       };
     };
   };
-
 }
