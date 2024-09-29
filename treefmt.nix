@@ -7,5 +7,8 @@
     keep-sorted = {
       enable = true;
     };
+    stylua = {
+      enable = true;
+    };
   };
 }
