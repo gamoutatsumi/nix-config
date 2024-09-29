@@ -24,18 +24,18 @@ repo = 'itchyny/vim-parenmatch'
 #repo = 'edkolev/tmuxline.vim'
 #hook_add = '''
 #let g:tmuxline_preset = {
-  #\ 'a': '[#S:#I:#P]',
-  #\ 'win': ['#I', '#{?#{m:ssh,#W},#{ssh-host},#W} #F'],
-  #\ 'cwin': ['#I','#{?#{m:ssh,#W},#{ssh-host},#W} #F'],
-  #\ 'y': ['%Y-%m-%d', '%H:%M'],
-  #\ 'options': {
-    #\ 'status': 'on',
-    #\ 'status-left-style': 'none',
-    #\ 'status-right-style': 'none',
-    #\ 'status-right-length': '100',
-    #\ 'status-left-length': '100',
-  #\   }
-  #\ }
+#\ 'a': '[#S:#I:#P]',
+#\ 'win': ['#I', '#{?#{m:ssh,#W},#{ssh-host},#W} #F'],
+#\ 'cwin': ['#I','#{?#{m:ssh,#W},#{ssh-host},#W} #F'],
+#\ 'y': ['%Y-%m-%d', '%H:%M'],
+#\ 'options': {
+#\ 'status': 'on',
+#\ 'status-left-style': 'none',
+#\ 'status-right-style': 'none',
+#\ 'status-right-length': '100',
+#\ 'status-left-length': '100',
+#\   }
+#\ }
 #let g:tmuxline_status_justify = 'left'
 #'''
 

@@ -14,4 +14,3 @@ lua << EOF
   vim.keymap.set("n", ";b", builtin.buffers, opts)
 EOF
 '''
-
