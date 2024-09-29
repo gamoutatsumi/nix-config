@@ -9,7 +9,6 @@ contexts:
     lbuffer: 'git\scheckout\s+'
   workflow: &workflow
     lbuffer: 'gh\sworkflow\s.*'
-
 snippets:
   - name: kubectl
     keyword: kc
@@ -54,7 +53,7 @@ snippets:
   - name: git commit amend
     keyword: a
     snippet: --amend
-    context: 
+    context:
       lbuffer: 'git\scommit\s'
   - name: git commit amend noedit
     keyword: an
@@ -181,10 +180,9 @@ snippets:
   - name: git switch create
     keyword: gswc
     snippet: git switch -c {{branch}}
-
 completions:
   - name: kill
-    patterns: 
+    patterns:
       - "^kill( -9)? $"
     sourceCommand: "ps -ef | sed 1d"
     options:
@@ -203,7 +201,7 @@ completions:
       - "^cd $"
     sourceCommand: "fd --type=d"
     options:
-      --prompt: "'To> '" 
+      --prompt: "'To> '"
       --preview-window: "right:50%"
       --preview: "lsd -l"
     callback: "awk '{print $1}'"

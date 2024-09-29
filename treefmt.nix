@@ -17,6 +17,9 @@
     taplo = {
       enable = true;
     };
+    yamlfmt = {
+      enable = true;
+    };
     # keep-sorted end
   };
 }
