@@ -266,13 +266,4 @@ in
       age-plugin-yubikey
     ])
     ++ (with upkgs; [ deno ]);
-
-  # Let Home Manager install and manage itself.
-  services.gpg-agent = {
-    enable = true;
-    enableScDaemon = true;
-    enableSshSupport = true;
-    enableZshIntegration = true;
-    pinentryPackage = pkgs.pinentry-gtk2;
-  };
 }

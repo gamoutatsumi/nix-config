@@ -57,12 +57,8 @@
         hooks = pre-commit-hooks.lib.${system};
         treefmtEval = (treefmt-nix.lib.evalModule pkgs ./treefmt.nix);
       in
-      rec {
+      {
         formatter = (treefmtEval.config.build.wrapper);
-        agenix-rekey = agenix-rekey.configure {
-          userFlake = self;
-          nodes = self.nixosConfigurations;
-        };
         checks = {
           pre-commit-check = hooks.run {
             src = ./.;
@@ -139,5 +135,11 @@
           ];
         };
       }
-    );
+    )
+    // {
+      agenix-rekey = agenix-rekey.configure {
+        userFlake = self;
+        nodes = self.nixosConfigurations;
+      };
+    };
 }

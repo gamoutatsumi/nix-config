@@ -3,7 +3,10 @@ let
   toINI = lib.generators.toINIWithGlobalSection { listsAsDuplicateKeys = true; };
 in
 {
-  imports = [ ./programs.nix ];
+  imports = [
+    ./programs.nix
+    ./services.nix
+  ];
   home.file = {
     ".p10k.zsh".source = ./config/p10k.zsh;
     ".aicommit2".text = toINI {
