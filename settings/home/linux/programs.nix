@@ -14,7 +14,7 @@
     vimix-cursor-theme
     vivaldi
     vivaldi-ffmpeg-codecs
-    xclip
+    xsel
     # keep-sorted end
 
     # keep-sorted start
