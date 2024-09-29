@@ -3,23 +3,23 @@
 
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    # keep-sorted start block=yes
+    agenix-rekey = {
+      url = "github:oddlama/agenix-rekey";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    agenix.url = "github:yaxitech/ragenix";
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.4.1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    flake-utils.url = "github:numtide/flake-utils";
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    agenix.url = "github:yaxitech/ragenix";
-    agenix-rekey = {
-      url = "github:oddlama/agenix-rekey";
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     neovim-nightly-overlay = {
@@ -29,12 +29,14 @@
         flake = false;
       };
     };
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     pre-commit-hooks.url = "github:cachix/git-hooks.nix";
     scripts = {
       url = "path:./scripts";
     };
     treefmt-nix.url = "github:numtide/treefmt-nix";
-    flake-utils.url = "github:numtide/flake-utils";
+    # keep-sorted end
   };
 
   outputs =
