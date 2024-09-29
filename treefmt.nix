@@ -1,14 +1,19 @@
 {
   projectRootFile = "flake.nix";
   programs = {
-    nixfmt = {
+    # keep-sorted start block=yes
+    deno = {
       enable = true;
     };
     keep-sorted = {
       enable = true;
     };
+    nixfmt = {
+      enable = true;
+    };
     stylua = {
       enable = true;
     };
+    # keep-sorted end
   };
 }
