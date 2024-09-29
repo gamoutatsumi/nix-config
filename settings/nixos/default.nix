@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   # keep-sorted start block=yes
-
   i18n.defaultLocale = "ja_JP.UTF-8";
   nix.settings.experimental-features = [
     "nix-command"
