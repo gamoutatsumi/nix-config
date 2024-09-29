@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     # keep-sorted start
     alacritty
+    discord
     firefox
     flat-remix-icon-theme
     materia-theme

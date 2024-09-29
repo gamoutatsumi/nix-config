@@ -1,17 +1,6 @@
 { pkgs, config, ... }:
 {
   # keep-sorted start block=yes
-  fonts = {
-    fontconfig = {
-      enable = true;
-      defaultFonts = {
-        emoji = [ "Noto Color Emoji" ];
-        monospace = [ "PlemolJP Console" ];
-        sansSerif = [ "IBM Plex Sans" ];
-        serif = [ "IBM Plex Serif" ];
-      };
-    };
-  };
   gtk = {
     gtk3 = {
       extraConfig = {

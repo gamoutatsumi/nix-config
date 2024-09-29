@@ -1,6 +1,17 @@
 { pkgs, ... }:
 {
   # keep-sorted start block=yes
+  fonts = {
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        emoji = [ "Noto Color Emoji" ];
+        monospace = [ "PlemolJP Console" ];
+        sansSerif = [ "IBM Plex Sans JP" ];
+        serif = [ "IBM Plex Serif JP" ];
+      };
+    };
+  };
   i18n.defaultLocale = "ja_JP.UTF-8";
   nix.settings.experimental-features = [
     "nix-command"
