@@ -973,7 +973,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-dmB3sg5ugfRMhCXrMYGyiVNbeVKnUlxjIoQ4MctuKD4=",
+        "narHash": "sha256-S/ALBmslBAS1bHNAS3x44xnjV//2ocmvH4Ukhfa5wyU=",
         "path": "./scripts",
         "type": "path"
       },
