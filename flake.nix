@@ -42,18 +42,20 @@
   outputs =
     {
       self,
-      nixpkgs,
-      nixpkgs-unstable,
-      home-manager,
-      neovim-nightly-overlay,
-      scripts,
-      lanzaboote,
-      disko,
+      # keep-sorted start
       agenix,
       agenix-rekey,
-      treefmt-nix,
+      disko,
       flake-utils,
+      home-manager,
+      lanzaboote,
+      neovim-nightly-overlay,
+      nixpkgs,
+      nixpkgs-unstable,
       pre-commit-hooks,
+      scripts,
+      treefmt-nix,
+      # keep-sorted end
       ...
     }@inputs:
     (flake-utils.lib.eachDefaultSystem (

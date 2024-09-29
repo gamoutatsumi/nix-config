@@ -1,28 +1,37 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    # keep-sorted start
     alacritty
     firefox
-    vivaldi
-    vivaldi-ffmpeg-codecs
-    materia-theme
-    vimix-cursor-theme
     flat-remix-icon-theme
-    xclip
-    slack
-    rofi
+    materia-theme
     mpd
     pinentry-gtk2
+    rofi
+    slack
+    vimix-cursor-theme
+    vivaldi
+    vivaldi-ffmpeg-codecs
+    xclip
+    # keep-sorted end
 
+    # keep-sorted start
     changeBrightness
     changeVolume
     getPulseVolume
+    launchPolybar
     maimFull
     maimSelect
     playerctlStatus
-    toggleMicMute
-    launchPolybar
     rofiSystem
+    toggleMicMute
     xmonadpropread
+    # keep-sorted end
   ];
+  programs = {
+    rofi = {
+      enable = true;
+    };
+  };
 }

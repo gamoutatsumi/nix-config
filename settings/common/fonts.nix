@@ -5,12 +5,14 @@
       enable = true;
     };
     packages = with pkgs; [
-      noto-fonts-cjk
-      noto-fonts-emoji
-      plemoljp-nf
-      plemoljp
+      # keep-sorted start
       hackgen-nf-font
       ibm-plex
+      noto-fonts-cjk
+      noto-fonts-emoji
+      plemoljp
+      plemoljp-nf
+      # keep-sorted end
     ];
   };
 }
