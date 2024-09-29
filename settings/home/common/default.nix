@@ -1,9 +1,25 @@
+{ lib, ... }:
+let
+  toINI = lib.generators.toINIWithGlobalSection { listsAsDuplicateKeys = true; };
+in
 {
-  imports = [
-    ./programs.nix
-  ];
+  imports = [ ./programs.nix ];
   home.file = {
     ".p10k.zsh".source = ./config/p10k.zsh;
+    ".aicommit2".text = toINI {
+      globalSection = {
+        logging = false;
+        generate = "2";
+        temperature = "1.0";
+      };
+      sections = {
+        OLLAMA = {
+          temperature = "0.7";
+          "model[]" = [ "codestral:22b" ];
+          host = "http://127.0.0.1:11434";
+        };
+      };
+    };
   };
   xdg = {
     configFile = {

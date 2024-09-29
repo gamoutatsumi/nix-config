@@ -7,6 +7,7 @@
   lib,
   pkgs,
   username,
+  upkgs,
   ...
 }:
 
@@ -28,6 +29,7 @@
     opensc
     pcsc-tools
     nssTools
+    cudaPackages.cudatoolkit
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -186,4 +188,12 @@
   networking.interfaces."vlan0@enp7s0".mtu = 9500;
   boot.kernel.sysctl."net.ipv6.conf.enp0s20f0u8u4.disable_ipv6" = true;
   boot.kernel.sysctl."net.ipv6.conf.enp5s0.disable_ipv6" = true;
+  services = {
+    ollama = {
+      package = upkgs.ollama;
+      enable = true;
+      acceleration = "cuda";
+    };
+  };
+  nixpkgs.config.cudaSupport = true;
 }

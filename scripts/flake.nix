@@ -16,7 +16,7 @@
   outputs =
     inputs:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } (
-      { config, ... }:
+      { ... }:
       {
         systems = [
           "x86_64-linux"

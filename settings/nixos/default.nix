@@ -1,4 +1,5 @@
-{pkgs,...}:{
+{ pkgs, ... }:
+{
   programs.zsh.enable = true;
   nixpkgs.config.allowUnfree = true;
   i18n.defaultLocale = "ja_JP.UTF-8";
@@ -36,11 +37,11 @@
   };
 
   services.openssh = {
-  enable = true;
+    enable = true;
     settings = {
       PasswordAuthentication = false;
       PermitRootLogin = "no";
-      };
+    };
   };
   programs.dconf.enable = true;
 

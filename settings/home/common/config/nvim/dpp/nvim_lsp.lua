@@ -288,6 +288,13 @@ if vim.fn.executable("nixd") then
     on_init = function(client, _)
       client.server_capabilities.semanticTokensProvider = nil
     end,
+    settings = {
+      nixd = {
+        formatting = {
+          command = { "nixfmt" }
+        }
+      }
+    }
   })
 end
 
