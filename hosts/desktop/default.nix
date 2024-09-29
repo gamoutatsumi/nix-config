@@ -67,7 +67,7 @@
   services = {
     displayManager = {
       autoLogin = {
-        enable = false;
+        enable = true;
         user = username;
       };
       defaultSession = "xsession";
