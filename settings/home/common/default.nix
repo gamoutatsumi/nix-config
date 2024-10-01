@@ -33,10 +33,10 @@ in
       "nvim".source = ./config/nvim;
       "alacritty/nightfly.toml".source = builtins.fetchurl {
         url = "https://raw.githubusercontent.com/bluz71/vim-nightfly-colors/master/extras/nightfly-alacritty.toml";
-        sha256 = "03wks6pa3smsc9zgf5nlyyi9wxa9f5zjl1x57gsmcw4gdyxj6szv";
+        sha256 = "0ssgf9i5nrc2m57zvgfzlgfvyhcrwd73pkiny266ba201niv6qi1";
       };
       "bat/themes/fly16.tmTheme".source = builtins.fetchurl {
-        url = "https://raw.githubuser.content.com/bluz71/fly16-bat/master/fly16.tmTheme";
+        url = "https://raw.githubusercontent.com/bluz71/fly16-bat/master/fly16.tmTheme";
         sha256 = "0xp10xdcsnfpwzhwpjj4jsgwjkzpaln2d2gc9iznfzkq95a9njs8";
       };
       "git/tempalte/hooks/pre-push".source = builtins.fetchurl {

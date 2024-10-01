@@ -31,10 +31,10 @@
     };
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
-    pre-commit-hooks.url = "github:cachix/git-hooks.nix";
     oreore = {
       url = "github:gamoutatsumi/oreore-flake";
     };
+    pre-commit-hooks.url = "github:cachix/git-hooks.nix";
     treefmt-nix.url = "github:numtide/treefmt-nix";
     # keep-sorted end
   };
@@ -52,8 +52,8 @@
       neovim-nightly-overlay,
       nixpkgs,
       nixpkgs-unstable,
-      pre-commit-hooks,
       oreore,
+      pre-commit-hooks,
       treefmt-nix,
       # keep-sorted end
       ...
@@ -132,7 +132,9 @@
                 useGlobalPkgs = true;
                 useUserPackages = false;
                 users = {
-                  "${username}" = ./settings/home/linux.nix;
+                  "${username}" = {
+                    imports = [ ./settings/home/linux.nix ];
+                  };
                 };
                 extraSpecialArgs = {
                   username = username;
