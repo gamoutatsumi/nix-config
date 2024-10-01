@@ -8,7 +8,6 @@
     flat-remix-icon-theme
     materia-theme
     mpd
-    pinentry-gtk2
     rofi
     slack
     vimix-cursor-theme

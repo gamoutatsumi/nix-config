@@ -56,6 +56,9 @@ in
         };
       };
     };
+    awscli = {
+      enable = true;
+    };
     direnv = {
       enable = true;
       enableZshIntegration = true;
@@ -107,6 +110,13 @@ in
       vimAlias = false;
       viAlias = false;
       withNodeJs = true;
+    };
+    rbw = {
+      enable = true;
+      settings = {
+        email = "wryuto@gmail.com";
+        pinentry = pkgs.pinentry-gtk2;
+      };
     };
     wezterm = {
       enable = true;
