@@ -22,6 +22,7 @@
     "uas"
     "sd_mod"
     "sr_mod"
+    "nvidia-uvm"
   ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
