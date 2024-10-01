@@ -32,8 +32,8 @@
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     pre-commit-hooks.url = "github:cachix/git-hooks.nix";
-    scripts = {
-      url = "path:./scripts";
+    oreore = {
+      url = "github:gamoutatsumi/oreore-flake";
     };
     treefmt-nix.url = "github:numtide/treefmt-nix";
     # keep-sorted end
@@ -53,7 +53,7 @@
       nixpkgs,
       nixpkgs-unstable,
       pre-commit-hooks,
-      scripts,
+      oreore,
       treefmt-nix,
       # keep-sorted end
       ...
@@ -98,7 +98,7 @@
         username = "gamoutatsumi";
         system = "x86_64-linux";
         overlays = [
-          scripts.overlays.default
+          oreore.overlays.default
           agenix.overlays.default
           agenix-rekey.overlays.default
         ];
