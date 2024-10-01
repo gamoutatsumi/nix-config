@@ -52,7 +52,6 @@ polybarColor fore_color back_color =
 
 -- StartupHook setting
 myStartupHook = do
-  spawn "$HOME/.config/polybar/launch.sh"
   spawnOnce "nm-applet"
   spawnOnce "blueman-applet"
   spawnOnce "fcitx5"
