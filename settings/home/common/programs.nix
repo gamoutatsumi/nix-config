@@ -63,6 +63,18 @@ in
         enable = true;
       };
     };
+    gh = {
+      enable = true;
+      settings = {
+        git_protocol = "https";
+        editor = "nvim";
+        prompt = "enabled";
+        pager = "ov";
+        aliases = {
+          co = "pr checkout";
+        };
+      };
+    };
     git = {
       enable = true;
       iniContent = {
@@ -249,7 +261,6 @@ in
       file
       findutils
       fzf
-      gh
       ghq
       git-lfs
       gnumake
