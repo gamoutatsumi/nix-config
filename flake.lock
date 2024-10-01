@@ -105,6 +105,26 @@
         "type": "github"
       }
     },
+    "dagger": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1726867173,
+        "narHash": "sha256-jPKALMGCCwuCRWWTygVePJZb4VB4XV/aAtZRwPYzehw=",
+        "owner": "dagger",
+        "repo": "nix",
+        "rev": "a46ddf2e3f69a62f49cea83e8f7a66979197eff4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "dagger",
+        "repo": "nix",
+        "type": "github"
+      }
+    },
     "darwin": {
       "inputs": {
         "nixpkgs": [
@@ -692,11 +712,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1727735250,
-        "narHash": "sha256-4gi0G11602gWlrJ2VtWGX+XePouWqT9+jTqyy6Wjoh8=",
+        "lastModified": 1727776327,
+        "narHash": "sha256-FzNhNXeR4tm5K6ewIqAleYEE8xXHhgFMYVl/7mKcPmk=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "e0efbc6e03f1d64e49805bb9be7d41ff9a27569f",
+        "rev": "a0c64fe816f82010dea43d8bbe25475fbabfb562",
         "type": "github"
       },
       "original": {
@@ -819,11 +839,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1727540905,
-        "narHash": "sha256-40J9tW7Y794J7Uw4GwcAKlMxlX2xISBl6IBigo83ih8=",
+        "lastModified": 1727672256,
+        "narHash": "sha256-9/79hjQc9+xyH+QxeMcRsA6hDyw6Z9Eo1/oxjvwirLk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "fbca5e745367ae7632731639de5c21f29c8744ed",
+        "rev": "1719f27dd95fd4206afb9cec9f415b539978827e",
         "type": "github"
       },
       "original": {
@@ -922,11 +942,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1727776024,
-        "narHash": "sha256-R3xK4YNaQm2nTnIZxQJGHjk3IouSmWWK3y4/eIgARaA=",
+        "lastModified": 1727779765,
+        "narHash": "sha256-vWtvLQkxuJ0xd/czDU6KJXr+AlNv8bl9LA5TJoLuWp8=",
         "owner": "gamoutatsumi",
         "repo": "oreore-flake",
-        "rev": "45ac1748ff73d5fe34321ed9bd6af39b973f61a7",
+        "rev": "8946307dd73a526723e7da8e41272285b26dfc87",
         "type": "github"
       },
       "original": {
@@ -1036,6 +1056,7 @@
       "inputs": {
         "agenix": "agenix",
         "agenix-rekey": "agenix-rekey",
+        "dagger": "dagger",
         "disko": "disko",
         "flake-utils": "flake-utils_3",
         "home-manager": "home-manager_2",

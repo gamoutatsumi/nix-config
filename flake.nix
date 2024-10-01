@@ -9,6 +9,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     agenix.url = "github:yaxitech/ragenix";
+    dagger = {
+      url = "github:dagger/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -45,6 +49,7 @@
       # keep-sorted start
       agenix,
       agenix-rekey,
+      dagger,
       disko,
       flake-utils,
       home-manager,
@@ -80,13 +85,15 @@
         };
         devShells = {
           default = pkgs.mkShell {
-            packages = with pkgs; [
-              nixd
-              nixfmt-rfc-style
-              lua-language-server
-              efm-langserver
-              stylua
-            ];
+            packages =
+              (with pkgs; [
+                nixd
+                nixfmt-rfc-style
+                lua-language-server
+                efm-langserver
+                stylua
+              ])
+              ++ [ dagger.packages.${system}.dagger ];
             inherit (self.checks.${system}.pre-commit-check) shellHook;
             buildInputs = self.checks.${system}.pre-commit-check.enabledPackages;
           };

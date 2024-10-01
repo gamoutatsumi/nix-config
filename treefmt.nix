@@ -2,6 +2,9 @@
   projectRootFile = "flake.nix";
   programs = {
     # keep-sorted start block=yes
+    cue = {
+      enable = true;
+    };
     deno = {
       enable = true;
     };
