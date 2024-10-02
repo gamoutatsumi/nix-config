@@ -1,9 +1,6 @@
 { pkgs, ... }:
 {
   fonts = {
-    fontDir = {
-      enable = true;
-    };
     packages = with pkgs; [
       # keep-sorted start
       hackgen-nf-font

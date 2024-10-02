@@ -1,1 +1,7 @@
-{ imports = [ ./fonts.nix ]; }
+{
+  imports = [
+    ./common.nix
+    ./fonts.nix
+    ./programs.nix
+  ];
+}

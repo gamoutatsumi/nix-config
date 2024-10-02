@@ -1,6 +1,6 @@
 {
   imports = [
-    ./darwin
+    ./programs.nix
     ./common.nix
   ];
 }

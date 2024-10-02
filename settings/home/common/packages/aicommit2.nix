@@ -21,7 +21,7 @@ in
       ];
       pnpmDeps = pnpm.fetchDeps {
         inherit pname version src;
-        hash = "sha256-NQQmk3ZYpHUCgqc89BmBEJKbh/c/Lvv+yz+Gqa+in30=";
+        hash = "sha256-DiEmhDXdjDHTkOq5iISQLEYohFcAmJ7hXGDO+cY4PhI=";
       };
       buildPhase = ''
         runHook preBuild

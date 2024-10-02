@@ -26,7 +26,6 @@ in
           USE_TMUX = "true";
         };
         font = {
-          size = 12;
           normal = {
             family = "PlemolJP Console NF";
           };
@@ -75,6 +74,12 @@ in
         pager = "ov";
         aliases = {
           co = "pr checkout";
+          is = ''!gh issue list -s all | fzf-tmux --prompt "issue preview>" --preview "echo {} | cut -f1 | xargs gh issue view " | cut -f1 | xargs --no-run-if-empty gh issue ''${@:-view -w}'';
+          myissue = ''!gh issue list -s all -A gamoutatsumi | fzf-tmux --prompt "issue preview>" --preview "echo {} | cut -f1 | xargs gh issue view " | cut -f1 | xargs --no-run-if-empty gh issue ''${@:-view -w}'';
+          assigned = ''!gh issue list -s all -a gamoutatsumi | fzf-tmux --prompt "issue preview>" --preview "echo {} | cut -f1 | xargs gh issue view " | cut -f1 | xargs --no-run-if-empty gh issue ''${@:-view -w}'';
+          prs = ''!gh pr list -s all | fzf-tmux --prompt "PR preview>" --preview "echo {} | cut -f1 | xargs gh pr view " | cut -f1 | xargs --no-run-if-empty gh pr ''${@:-view -w}'';
+          prv = ''pr view -w'';
+          iv = ''issue view -w'';
         };
       };
     };
@@ -115,7 +120,6 @@ in
       enable = true;
       settings = {
         email = "wryuto@gmail.com";
-        pinentry = pkgs.pinentry-gtk2;
       };
     };
     wezterm = {
@@ -257,7 +261,6 @@ in
     (with pkgs; [
       # keep-sorted start
       age-plugin-yubikey
-      agenix-rekey
       bat
       bc
       binutils
@@ -287,13 +290,15 @@ in
       ov
       q-text-as-data
       ripgrep
-      sheldon
       tenv
       tmux
       unar
       unzip
       # keep-sorted end
     ])
-    ++ (with upkgs; [ deno ]);
+    ++ (with upkgs; [
+      deno
+      sheldon
+    ]);
   # keep-sorted end
 }

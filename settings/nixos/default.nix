@@ -2,6 +2,9 @@
 {
   # keep-sorted start block=yes
   fonts = {
+    fontDir = {
+      enable = true;
+    };
     fontconfig = {
       enable = true;
       defaultFonts = {
@@ -13,17 +16,9 @@
     };
   };
   i18n.defaultLocale = "ja_JP.UTF-8";
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-  nixpkgs.config.allowUnfree = true;
   programs = {
     # keep-sorted start block=yes
     dconf = {
-      enable = true;
-    };
-    zsh = {
       enable = true;
     };
     # keep-sorted end

@@ -277,12 +277,12 @@ if vim.fn.executable("haskell-language-server-wrapper") then
 	})
 end
 
-if vim.fn.executable("satysfi-language-server") then
-	lspconfig["satysfi-ls"].setup({
-		on_attach = on_attach,
-		autostart = true,
-	})
-end
+-- if vim.fn.executable("satysfi-language-server") then
+-- 	lspconfig["satysfi-ls"].setup({
+-- 		on_attach = on_attach,
+-- 		autostart = true,
+-- 	})
+-- end
 
 if vim.fn.executable("nixd") then
 	lspconfig["nixd"].setup({

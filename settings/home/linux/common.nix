@@ -1,4 +1,9 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  config,
+  username,
+  ...
+}:
 {
   # keep-sorted start block=yes
   gtk = {
@@ -39,6 +44,7 @@ NSS=Flags=internal,critical trustOrder=75 cipherOrder=100 slotParams=(1={slotFla
 library=${pkgs.opensc}/lib/opensc-pkcs11.so
 name=CAC Module\n";
   };
+  home.homeDirectory = "/home/${username}";
   i18n.inputMethod = {
     enabled = "fcitx5";
     fcitx5.addons = with pkgs; [

@@ -33,6 +33,10 @@
         flake = false;
       };
     };
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     oreore = {
@@ -55,6 +59,7 @@
       home-manager,
       lanzaboote,
       neovim-nightly-overlay,
+      nix-darwin,
       nixpkgs,
       nixpkgs-unstable,
       oreore,
@@ -158,5 +163,50 @@
         userFlake = self;
         nodes = self.nixosConfigurations;
       };
-    };
+    }
+    // (
+      let
+        system = "aarch64-darwin";
+        darwinUser = builtins.getEnv "DARWIN_USER";
+        darwinHost = builtins.getEnv "DARWIN_HOST";
+        upkgs = import nixpkgs-unstable {
+          inherit system;
+          config.allowUnfree = true;
+          overlays = [ neovim-nightly-overlay.overlays.default ];
+        };
+      in
+      {
+        darwinConfigurations.work = nix-darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
+          specialArgs = {
+            inherit inputs;
+            username = darwinUser;
+            upkgs = upkgs;
+            hostname = darwinHost;
+          };
+          modules = [
+            ./hosts/work_darwin
+            ./settings/darwin.nix
+            home-manager.darwinModules.home-manager
+            {
+              home-manager = {
+                backupFileExtension = "backup";
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users = {
+                  "${darwinUser}" = {
+                    imports = [ ./settings/home/darwin.nix ];
+                  };
+                };
+                extraSpecialArgs = {
+                  username = darwinUser;
+                  upkgs = upkgs;
+                };
+              };
+            }
+          ];
+        };
+
+      }
+    );
 }
