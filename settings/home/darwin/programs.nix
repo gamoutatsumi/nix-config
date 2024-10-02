@@ -14,6 +14,11 @@
         pinentry = pkgs.pinentry_mac;
       };
     };
+    zsh = {
+      initExtraFirst = ''
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+      '';
+    };
     # keep-sorted end
   };
 }

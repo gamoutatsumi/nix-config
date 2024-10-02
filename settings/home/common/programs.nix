@@ -269,6 +269,8 @@ in
       cmake
       coreutils-full
       delta
+      docker-client
+      docker-compose
       docker-slim
       dogdns
       dust
@@ -276,9 +278,12 @@ in
       file
       findutils
       fzf
+      gawk
       ghq
       git-lfs
+      gnugrep
       gnumake
+      gnused
       gojq
       gomi
       jq
