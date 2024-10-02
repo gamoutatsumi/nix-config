@@ -178,7 +178,7 @@ in
         LUAROCKS_HOME = "${config.xdg.dataHome}/luarocks";
         MAKEFLAGS = "-j";
         MANPAGER = "nvim -c ASMANPAGER -";
-        MYCLI_HISTFILE = "''${config.xdg.dataHome}/mycli/history";
+        MYCLI_HISTFILE = "${config.xdg.dataHome}/mycli/history";
         PAGER = "ov";
         PURE_GIT_PULL = 0;
         SAVEHIST = 100000;

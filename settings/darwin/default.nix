@@ -34,5 +34,6 @@
       "wezterm"
       # keep-sorted end
     ];
+    brews = [ "mas" ];
   };
 }
