@@ -28,9 +28,14 @@
     };
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
-      inputs.neovim-src = {
-        url = "github:neovim/neovim";
-        flake = false;
+      inputs = {
+        neovim-src = {
+          url = "github:neovim/neovim/3d1e6c56f08f420c0d91ffbee888c05b20806a5e";
+          flake = false;
+        };
+        nixpkgs = {
+          follows = "nixpkgs-unstable";
+        };
       };
     };
     nix-darwin = {
@@ -206,7 +211,6 @@
             }
           ];
         };
-
       }
     );
 }

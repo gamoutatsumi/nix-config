@@ -79,108 +79,6 @@ end
 mason.setup()
 mason_lspconfig.setup({})
 
-for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
-	local opts = {}
-	opts.on_attach = on_attach
-	opts.autostart = true
-	if server == "tsserver" then
-		goto continue
-	elseif server == "vtsls" then
-		opts.autostart = is_node_repo
-		opts.on_attach = function(client, bufnr)
-			on_attach(client, bufnr)
-			client.server_capabilities.document_formatting = false
-		end
-		opts.settings = {
-			javascript = {
-				preferGoToSourceDefinition = true,
-				suggest = {
-					autoImports = false,
-				},
-			},
-			typescript = {
-				preferGoToSourceDefinition = true,
-				suggest = {
-					completeFunctionCalls = true,
-					autoImports = false,
-				},
-				inlayHints = {
-					parameterNames = {
-						enabled = "all",
-					},
-					variableTypes = {
-						enabled = true,
-					},
-					propertyDeclarationTypes = {
-						enabled = true,
-					},
-					functionLikeReturnTypes = {
-						enabled = true,
-					},
-					enumMemberValues = {
-						enabled = true,
-					},
-					parameterTypes = {
-						enabled = true,
-					},
-				},
-			},
-		}
-	elseif server == "gopls" then
-		opts.on_attach = function(client, bufnr)
-			on_attach(client, bufnr)
-			client.server_capabilities.document_formatting = false
-		end
-		opts.settings = {
-			gopls = {
-				hints = {
-					assignVariableTypes = true,
-					compositeLiteralFields = true,
-					compositeLiteralTypes = true,
-					constantValues = true,
-					functionTypeParameters = true,
-					parameterNames = true,
-					rangeVariableypes = true,
-				},
-			},
-		}
-	elseif server == "jsonls" then
-		opts.filetypes = { "json", "jsonc" }
-		opts.settings = {
-			json = {
-				schemas = schemas.json.schemas(),
-			},
-		}
-		opts.init_options = {
-			provideFormatter = true,
-		}
-	elseif server == "fennel_language_server" then
-		opts.settings = {
-			fennel = {
-				diagnostics = {
-					globals = { "vim" },
-				},
-				workspace = {
-					library = vim.api.nvim_list_runtime_paths(),
-				},
-			},
-		}
-	elseif server == "efm" then
-		opts.autostart = true
-		opts.cmd = { "efm-langserver", "-q" }
-		opts.init_options = {
-			documentFormatting = true,
-			completion = false,
-			rangeFormatting = true,
-			hover = false,
-			documentSymbol = true,
-			codeAction = true,
-		}
-	end
-	lspconfig[server].setup(opts)
-	::continue::
-end
-
 lspconfig.yamlls.setup({
 	autostart = true,
 	settings = {
@@ -222,147 +120,231 @@ lspconfig.lua_ls.setup({
 	},
 })
 
-if vim.fn.executable("deno") then
-	lspconfig.denols.setup({
-		on_attach = on_attach,
-		autostart = not is_node_repo,
-		settings = {
-			typescript = {
-				suggest = {
-					completeFunctionCalls = true,
-					autoImports = false,
-					imports = {
-						hosts = {
-							["https://deno.land"] = true,
-							["https://x.nest.land"] = false,
-						},
+lspconfig.denols.setup({
+	on_attach = on_attach,
+	autostart = not is_node_repo,
+	settings = {
+		typescript = {
+			suggest = {
+				completeFunctionCalls = true,
+				autoImports = false,
+				imports = {
+					hosts = {
+						["https://deno.land"] = true,
+						["https://x.nest.land"] = false,
 					},
 				},
-				lint = true,
-				unstable = true,
-				editor = {
-					inlayHints = {
-						enabled = true,
-					},
-				},
+			},
+			lint = true,
+			unstable = true,
+			editor = {
 				inlayHints = {
-					parameterNames = {
-						enabled = "all",
-					},
-					variableTypes = {
-						enabled = true,
-					},
-					propertyDeclarationTypes = {
-						enabled = true,
-					},
-					functionLikeReturnTypes = {
-						enabled = true,
-					},
-					enumMemberValues = {
-						enabled = true,
-					},
-					parameterTypes = {
-						enabled = true,
-					},
+					enabled = true,
+				},
+			},
+			inlayHints = {
+				parameterNames = {
+					enabled = "all",
+				},
+				variableTypes = {
+					enabled = true,
+				},
+				propertyDeclarationTypes = {
+					enabled = true,
+				},
+				functionLikeReturnTypes = {
+					enabled = true,
+				},
+				enumMemberValues = {
+					enabled = true,
+				},
+				parameterTypes = {
+					enabled = true,
 				},
 			},
 		},
-	})
-end
+	},
+})
 
-if vim.fn.executable("haskell-language-server-wrapper") then
-	lspconfig.hls.setup({
-		on_attach = on_attach,
-		autostart = true,
-	})
-end
+lspconfig.hls.setup({
+	on_attach = on_attach,
+	autostart = true,
+})
 
--- if vim.fn.executable("satysfi-language-server") then
--- 	lspconfig["satysfi-ls"].setup({
--- 		on_attach = on_attach,
--- 		autostart = true,
--- 	})
--- end
-
-if vim.fn.executable("nixd") then
-	lspconfig["nixd"].setup({
-		on_attach = on_attach,
-		autostart = true,
-		on_init = function(client, _)
-			client.server_capabilities.semanticTokensProvider = nil
-		end,
-		settings = {
-			nixd = {
-				formatting = {
-					command = { "nixfmt" },
-				},
+lspconfig["nixd"].setup({
+	on_attach = on_attach,
+	autostart = true,
+	on_init = function(client, _)
+		client.server_capabilities.semanticTokensProvider = nil
+	end,
+	settings = {
+		nixd = {
+			formatting = {
+				command = { "nixfmt" },
 			},
 		},
-	})
-end
+	},
+})
 
-if vim.fn.executable("typescript-language-server") > 0 then
-	require("typescript").setup({
-		disable_commands = false,
-		debug = false,
-		go_to_source_definition = {
-			fallback = true,
-		},
-		server = {
-			autostart = is_node_repo,
-			on_attach = function(client, bufnr)
-				on_attach(client, bufnr)
-				client.server_capabilities.document_formatting = false
-			end,
-			settings = {
-				javascript = {
-					format = {
-						enable = false,
-					},
-				},
-				typescript = {
-					format = {
-						enable = false,
-					},
-					tsserver = {
-						useSyntaxServer = false,
-					},
-				},
+-- require("typescript").setup({
+--   disable_commands = false,
+--   debug = false,
+--   go_to_source_definition = {
+--     fallback = true,
+--   },
+--   server = {
+--     autostart = is_node_repo,
+--     on_attach = function(client, bufnr)
+--       on_attach(client, bufnr)
+--       client.server_capabilities.document_formatting = false
+--     end,
+--     settings = {
+--       javascript = {
+--         format = {
+--           enable = false,
+--         },
+--       },
+--       typescript = {
+--         format = {
+--           enable = false,
+--         },
+--         tsserver = {
+--           useSyntaxServer = false,
+--         },
+--       },
+--     },
+--   },
+-- })
+
+lspconfig.sourcekit.setup({
+	on_attach = on_attach,
+	autostart = true,
+	capabilities = {
+		workspace = {
+			didChangeWatchedFiles = {
+				dynamicRegistration = true,
 			},
 		},
-	})
-end
-
-if vim.fn.executable("sourcekit-lsp") > 0 then
-	lspconfig.sourcekit.setup({
-		on_attach = on_attach,
-		autostart = true,
-		capabilities = {
-			workspace = {
-				didChangeWatchedFiles = {
-					dynamicRegistration = true,
-				},
-			},
-		},
-		cmd = {
-			"xcrun",
-			"sourcekit-lsp",
-			"-Xswiftc",
-			"-sdk",
-			"-Xswiftc",
-			vim.fn.trim(vim.fn.system("xcrun --show-sdk-path --sdk iphonesimulator")),
-			"-Xswiftc",
-			"-target",
-			"-Xswiftc",
-			"arm64-apple-ios17.5-simulator",
-		},
-	})
-end
+	},
+	cmd = {
+		"xcrun",
+		"sourcekit-lsp",
+		"-Xswiftc",
+		"-sdk",
+		"-Xswiftc",
+		vim.fn.trim(vim.fn.system("xcrun --show-sdk-path --sdk iphonesimulator")),
+		"-Xswiftc",
+		"-target",
+		"-Xswiftc",
+		"arm64-apple-ios17.5-simulator",
+	},
+})
 
 require("go").setup({
 	filstruct = "gopls",
 	dap_debug = true,
 	dap_debug_gui = true,
 	lsp_inlay_hints = { enable = false },
+})
+
+lspconfig.vtsls.setup({
+	autostart = is_node_repo,
+	on_attach = function(client, bufnr)
+		on_attach(client, bufnr)
+		client.server_capabilities.document_formatting = false
+	end,
+	settings = {
+		javascript = {
+			preferGoToSourceDefinition = true,
+			suggest = {
+				autoImports = false,
+			},
+		},
+		typescript = {
+			preferGoToSourceDefinition = true,
+			suggest = {
+				completeFunctionCalls = true,
+				autoImports = false,
+			},
+			inlayHints = {
+				parameterNames = {
+					enabled = "all",
+				},
+				variableTypes = {
+					enabled = true,
+				},
+				propertyDeclarationTypes = {
+					enabled = true,
+				},
+				functionLikeReturnTypes = {
+					enabled = true,
+				},
+				enumMemberValues = {
+					enabled = true,
+				},
+				parameterTypes = {
+					enabled = true,
+				},
+			},
+		},
+	},
+})
+
+lspconfig.gopls.setup({
+	on_attach = function(client, bufnr)
+		on_attach(client, bufnr)
+		client.server_capabilities.document_formatting = false
+	end,
+	settings = {
+		gopls = {
+			hints = {
+				assignVariableTypes = true,
+				compositeLiteralFields = true,
+				compositeLiteralTypes = true,
+				constantValues = true,
+				functionTypeParameters = true,
+				parameterNames = true,
+				rangeVariableypes = true,
+			},
+		},
+	},
+})
+
+lspconfig.jsonls.setup({
+	filetypes = { "json", "jsonc" },
+	settings = {
+		json = {
+			schemas = schemas.json.schemas(),
+		},
+	},
+	init_options = {
+		provideFormatter = true,
+	},
+})
+
+lspconfig.efm.setup({
+	autostart = true,
+	cmd = { "efm-langserver", "-q" },
+	init_options = {
+		documentFormatting = true,
+		completion = false,
+		rangeFormatting = true,
+		hover = false,
+		documentSymbol = true,
+		codeAction = true,
+	},
+})
+
+lspconfig.fennel_language_server.setup({
+	settings = {
+		fennel = {
+			diagnostics = {
+				globals = { "vim" },
+			},
+			workspace = {
+				library = vim.api.nvim_list_runtime_paths(),
+			},
+		},
+	},
 })
 -- }}}

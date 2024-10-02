@@ -115,6 +115,8 @@ in
       vimAlias = false;
       viAlias = false;
       withNodeJs = true;
+      withRuby = false;
+      withPython3 = false;
     };
     rbw = {
       enable = true;
