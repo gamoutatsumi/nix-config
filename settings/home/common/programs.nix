@@ -284,8 +284,10 @@ in
       jq
       killall
       kubectl
+      kubie
       lsd
       moreutils
+      mycli
       neofetch
       nix-diff
       nix-index
