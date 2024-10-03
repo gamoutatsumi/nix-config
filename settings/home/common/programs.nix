@@ -13,7 +13,6 @@ let
   };
 in
 {
-  imports = [ ./packages/aicommit2.nix ];
   # keep-sorted start block=yes
   programs = {
     # keep-sorted start block=yes
@@ -263,6 +262,7 @@ in
     (with pkgs; [
       # keep-sorted start
       age-plugin-yubikey
+      aicommit2
       bat
       bc
       binutils

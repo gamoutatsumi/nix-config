@@ -174,6 +174,7 @@
         system = "aarch64-darwin";
         darwinUser = builtins.getEnv "DARWIN_USER";
         darwinHost = builtins.getEnv "DARWIN_HOST";
+        overlays = [ oreore.overlays.default ];
         pkgs = import nixpkgs { inherit system; };
         upkgs = import nixpkgs-unstable {
           inherit system;
@@ -204,6 +205,7 @@
             hostname = darwinHost;
           };
           modules = [
+            { nixpkgs.overlays = overlays; }
             ./hosts/work_darwin
             ./settings/darwin.nix
             home-manager.darwinModules.home-manager
