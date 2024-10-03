@@ -18,6 +18,9 @@
         nixpkgs = {
           follows = "nixpkgs";
         };
+        flake-utils = {
+          follows = "flake-utils";
+        };
       };
     };
     dagger = {
@@ -36,13 +39,16 @@
         };
       };
     };
-    flake-utils = {
-      url = "github:numtide/flake-utils";
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
       inputs = {
-        nixpkgs = {
+        nixpkgs-lib = {
           follows = "nixpkgs";
         };
       };
+    };
+    flake-utils = {
+      url = "github:numtide/flake-utils";
     };
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
@@ -55,6 +61,9 @@
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.1";
       inputs = {
+        flake-parts = {
+          follows = "flake-parts";
+        };
         nixpkgs = {
           follows = "nixpkgs";
         };
@@ -63,6 +72,9 @@
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
       inputs = {
+        flake-parts = {
+          follows = "flake-parts";
+        };
         neovim-src = {
           url = "github:neovim/neovim/3d1e6c56f08f420c0d91ffbee888c05b20806a5e";
           flake = false;
@@ -97,6 +109,9 @@
     pre-commit-hooks = {
       url = "github:cachix/git-hooks.nix";
       inputs = {
+        nixpkgs-stable = {
+          follows = "nixpkgs";
+        };
         nixpkgs = {
           follows = "nixpkgs";
         };
