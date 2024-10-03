@@ -16,4 +16,5 @@
     };
     # keep-sorted end
   };
+  home.packages = with pkgs; [ pinentry_mac ];
 }
