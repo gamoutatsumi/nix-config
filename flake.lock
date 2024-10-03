@@ -726,7 +726,6 @@
       "original": {
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "3d1e6c56f08f420c0d91ffbee888c05b20806a5e",
         "type": "github"
       }
     },
@@ -846,38 +845,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1719082008,
-        "narHash": "sha256-jHJSUH619zBQ6WdC21fFAlDxHErKVDJ5fpN0Hgx4sjs=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "9693852a2070b398ee123a329e68f0dab5526681",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_3": {
-      "locked": {
-        "lastModified": 1726871744,
-        "narHash": "sha256-V5LpfdHyQkUF7RfOaDPrZDP+oqz88lTJrMT1+stXNwo=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "a1d92660c6b3b7c26fb883500a80ea9d33321be2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "oreore": {
       "inputs": {
         "flake-compat": "flake-compat_5",
@@ -889,11 +856,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1727920239,
-        "narHash": "sha256-TajVdqUD8vrkYsy1eJH78dK0kGRFy1fj3ry0fiq+PFs=",
+        "lastModified": 1727937394,
+        "narHash": "sha256-CIjkc3wB1nFbcrsoBPZrUBCgVMVtsJeoe7+eBe0aBD0=",
         "owner": "gamoutatsumi",
         "repo": "oreore-flake",
-        "rev": "d140c6622887e2dd37825a0ea9e84f1522514151",
+        "rev": "fd2456a7442628c9e19e94802990e7480e80857c",
         "type": "github"
       },
       "original": {
@@ -961,7 +928,10 @@
       "inputs": {
         "flake-compat": "flake-compat_6",
         "gitignore": "gitignore_4",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": [
+          "oreore",
+          "nixpkgs"
+        ],
         "nixpkgs-stable": "nixpkgs-stable_3"
       },
       "locked": {
@@ -1157,7 +1127,10 @@
     },
     "treefmt-nix": {
       "inputs": {
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": [
+          "oreore",
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1727431250,
