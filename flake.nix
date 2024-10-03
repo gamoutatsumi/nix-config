@@ -174,6 +174,7 @@
         system = "aarch64-darwin";
         darwinUser = builtins.getEnv "DARWIN_USER";
         darwinHost = builtins.getEnv "DARWIN_HOST";
+        pkgs = import nixpkgs { inherit system; };
         upkgs = import nixpkgs-unstable {
           inherit system;
           config.allowUnfree = true;
@@ -181,6 +182,19 @@
         };
       in
       {
+        apps.${system}.update = {
+          program = toString (
+            pkgs.writeShellScript "update" ''
+              set -e
+              echo "Updating ${system}..."
+              nix-channel --update
+              nix flake update
+              nix run nix-darwin -- switch --flake .#$1 --impure
+              echo "Updated ${system}"
+            ''
+          );
+          type = "app";
+        };
         darwinConfigurations.work = nix-darwin.lib.darwinSystem {
           system = "aarch64-darwin";
           specialArgs = {
