@@ -338,6 +338,11 @@ lspconfig.efm.setup({
     },
 })
 
+lspconfig.terraformls.setup({
+    autostart = true,
+    on_attach = on_attach,
+})
+
 lspconfig.fennel_language_server.setup({
     settings = {
         fennel = {

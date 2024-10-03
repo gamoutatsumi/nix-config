@@ -764,22 +764,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-stable_3": {
-      "locked": {
-        "lastModified": 1720386169,
-        "narHash": "sha256-NGKVY4PjzwAa4upkGtAMz1npHGoRzWotlSnVlqI40mo=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "194846768975b7ad2c4988bdb82572c00222c0d7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-24.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-unstable": {
       "locked": {
         "lastModified": 1727802920,
@@ -807,11 +791,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1727937394,
-        "narHash": "sha256-CIjkc3wB1nFbcrsoBPZrUBCgVMVtsJeoe7+eBe0aBD0=",
+        "lastModified": 1727938921,
+        "narHash": "sha256-ugLBLRQ5WympCWvj8nRj26Awm+IRmbSF2MOon2KLf5E=",
         "owner": "gamoutatsumi",
         "repo": "oreore-flake",
-        "rev": "fd2456a7442628c9e19e94802990e7480e80857c",
+        "rev": "1ebffbb8922ba9c123f983fa56a3c83d38fdf386",
         "type": "github"
       },
       "original": {
@@ -883,7 +867,10 @@
           "oreore",
           "nixpkgs"
         ],
-        "nixpkgs-stable": "nixpkgs-stable_3"
+        "nixpkgs-stable": [
+          "oreore",
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1727854478,
@@ -1092,11 +1079,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1727431250,
-        "narHash": "sha256-uGRlRT47ecicF9iLD1G3g43jn2e+b5KaMptb59LHnvM=",
+        "lastModified": 1727941393,
+        "narHash": "sha256-GFOQZDSvF0l6Jp8DdCW8qW8oR5hR0XjdvHFkmSan1Vo=",
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "rev": "879b29ae9a0378904fbbefe0dadaed43c8905754",
+        "rev": "a10a0cbe2196120aa90e4f86d459376e1d108d58",
         "type": "github"
       },
       "original": {
