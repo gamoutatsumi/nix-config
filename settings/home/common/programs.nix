@@ -299,6 +299,7 @@ in
       ov
       q-text-as-data
       ripgrep
+      stern
       tenv
       tmux
       unar
