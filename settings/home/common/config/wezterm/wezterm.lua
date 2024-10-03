@@ -1,17 +1,17 @@
 local config = {}
 if wezterm.config_builder then
-	config = wezterm.config_builder()
+    config = wezterm.config_builder()
 end
 config.font = wezterm.font_with_fallback({
-	{ family = "PlemolJP Console NF" },
-	{ family = "HackGen Console NF" },
+    { family = "PlemolJP Console NF" },
+    { family = "HackGen Console NF" },
 })
 config.font_size = 15.5
 config.enable_tab_bar = true
 config.unix_domains = {
-	{
-		name = "unix",
-	},
+    {
+        name = "unix",
+    },
 }
 config.default_gui_startup_args = { "connect", "unix" }
 --config.default_prog = { "zsh", "--login" }
