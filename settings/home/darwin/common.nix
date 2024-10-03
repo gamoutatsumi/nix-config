@@ -6,9 +6,6 @@
     HOMEBREW_CELLAR = "/opt/homebrew/Cellar";
     HOMEBREW_REPOSITORY = "/opt/homebrew";
     INFOPATH = "/opt/homebrew/share/info:\${INFOPATH:-}";
+    PATH = "/opt/homebrew/bin:/opt/homebrew/sbin:\${PATH}";
   };
-  home.sessionPath = [
-    "/opt/homebrew/bin"
-    "/opt/homebrew/sbin"
-  ];
 }
