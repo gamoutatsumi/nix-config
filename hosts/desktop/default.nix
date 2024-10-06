@@ -40,6 +40,18 @@
     sbctl
     efitools
   ];
+  hardware = {
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+      settings = {
+        General = {
+          Experimental = true;
+          KernelExperimental = true;
+        };
+      };
+    };
+  };
   networking = {
     hostName = "tat-nixos-desktop";
     networkmanager.enable = false;
@@ -55,13 +67,13 @@
       "enp5s0" = {
         useDHCP = false;
       };
-      "vlan0@enp7s0" = {
+      "vlan10" = {
         useDHCP = true;
         mtu = 9500;
       };
     };
     vlans = {
-      vlan0 = {
+      vlan10 = {
         id = 10;
         interface = "enp7s0";
       };
@@ -69,6 +81,9 @@
   };
   nixpkgs.config.cudaSupport = true;
   services = {
+    blueman = {
+      enable = true;
+    };
     printing = {
       enable = true;
     };
@@ -123,9 +138,16 @@
         "wheel"
         "video"
         "audio"
+        "docker"
       ];
       shell = pkgs.zsh;
       hashedPasswordFile = config.age.secrets.${username}.path;
+    };
+  };
+  virtualisation = {
+    docker = {
+      enable = true;
+      storageDriver = "btrfs";
     };
   };
   # keep-sorted end

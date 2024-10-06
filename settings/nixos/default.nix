@@ -1,6 +1,11 @@
 { pkgs, ... }:
 {
   # keep-sorted start block=yes
+  boot = {
+    tmp = {
+      useTmpfs = true;
+    };
+  };
   fonts = {
     fontDir = {
       enable = true;

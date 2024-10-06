@@ -101,6 +101,12 @@
     oreore = {
       url = "github:gamoutatsumi/oreore-flake";
       inputs = {
+        treefmt-nix = {
+          follows = "treefmt-nix";
+        };
+        dagger = {
+          follows = "dagger";
+        };
         nixpkgs = {
           follows = "nixpkgs";
         };

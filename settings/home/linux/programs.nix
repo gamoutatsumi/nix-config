@@ -9,6 +9,7 @@
     flat-remix-icon-theme
     materia-theme
     mpd
+    pavucontrol
     rofi
     slack
     vimix-cursor-theme
