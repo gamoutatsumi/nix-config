@@ -260,6 +260,13 @@ in
   # environment.
   home.packages =
     (with pkgs; [
+      (wrapHelm kubernetes-helm {
+        plugins = with kubernetes-helmPlugins; [
+          helm-diff
+          helm-secrets
+          helm-git
+        ];
+      })
       # keep-sorted start
       age-plugin-yubikey
       aicommit2
@@ -269,8 +276,6 @@ in
       cmake
       coreutils-full
       delta
-      docker-client
-      docker-compose
       docker-slim
       dogdns
       dust

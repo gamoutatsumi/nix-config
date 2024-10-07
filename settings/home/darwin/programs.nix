@@ -16,5 +16,8 @@
     };
     # keep-sorted end
   };
-  home.packages = with pkgs; [ pinentry_mac ];
+  home.packages = with pkgs; [
+    docker
+    pinentry_mac
+  ];
 }
