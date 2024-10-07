@@ -7,14 +7,15 @@
     agenix = {
       url = "github:yaxitech/ragenix";
       inputs = {
-        nixpkgs = {
-          follows = "nixpkgs";
+        agenix = {
+          follows = "agenix_orig";
         };
-      };
-    };
-    agenix-rekey = {
-      url = "github:oddlama/agenix-rekey";
-      inputs = {
+        crane = {
+          follows = "crane";
+        };
+        rust-overlay = {
+          follows = "rust-overlay";
+        };
         nixpkgs = {
           follows = "nixpkgs";
         };
@@ -23,8 +24,53 @@
         };
       };
     };
+    agenix-rekey = {
+      url = "github:oddlama/agenix-rekey";
+      inputs = {
+        devshell = {
+          follows = "devshell";
+        };
+        pre-commit-hooks = {
+          follows = "pre-commit-hooks";
+        };
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+        flake-utils = {
+          follows = "flake-utils";
+        };
+      };
+    };
+    agenix_orig = {
+      url = "github:ryantm/agenix";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+        systems = {
+          follows = "systems";
+        };
+        home-manager = {
+          follows = "home-manager";
+        };
+        darwin = {
+          follows = "nix-darwin";
+        };
+      };
+    };
+    crane = {
+      url = "github:ipetkov/crane";
+    };
     dagger = {
       url = "github:dagger/nix";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+      };
+    };
+    devshell = {
+      url = "github:numtide/devshell";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs";
@@ -39,6 +85,9 @@
         };
       };
     };
+    flake-compat = {
+      url = "github:edolstra/flake-compat";
+    };
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs = {
@@ -49,6 +98,30 @@
     };
     flake-utils = {
       url = "github:numtide/flake-utils";
+      inputs = {
+        systems = {
+          follows = "systems";
+        };
+      };
+    };
+    gitignore = {
+      url = "github:hercules-ci/gitignore.nix";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+      };
+    };
+    hercules-ci-effects = {
+      url = "github:hercules-ci/hercules-ci-effects";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+        flake-parts = {
+          follows = "flake-parts";
+        };
+      };
     };
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
@@ -61,6 +134,21 @@
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.1";
       inputs = {
+        crane = {
+          follows = "crane";
+        };
+        rust-overlay = {
+          follows = "rust-overlay";
+        };
+        flake-utils = {
+          follows = "flake-utils";
+        };
+        pre-commit-hooks-nix = {
+          follows = "pre-commit-hooks";
+        };
+        flake-compat = {
+          follows = "flake-compat";
+        };
         flake-parts = {
           follows = "flake-parts";
         };
@@ -72,6 +160,15 @@
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
       inputs = {
+        hercules-ci-effects = {
+          follows = "hercules-ci-effects";
+        };
+        git-hooks = {
+          follows = "pre-commit-hooks";
+        };
+        flake-compat = {
+          follows = "flake-compat";
+        };
         flake-parts = {
           follows = "flake-parts";
         };
@@ -101,6 +198,15 @@
     oreore = {
       url = "github:gamoutatsumi/oreore-flake";
       inputs = {
+        flake-parts = {
+          follows = "flake-parts";
+        };
+        pre-commit-hooks = {
+          follows = "pre-commit-hooks";
+        };
+        flake-compat = {
+          follows = "flake-compat";
+        };
         treefmt-nix = {
           follows = "treefmt-nix";
         };
@@ -115,6 +221,12 @@
     pre-commit-hooks = {
       url = "github:cachix/git-hooks.nix";
       inputs = {
+        flake-compat = {
+          follows = "flake-compat";
+        };
+        gitignore = {
+          follows = "gitignore";
+        };
         nixpkgs-stable = {
           follows = "nixpkgs";
         };
@@ -122,6 +234,17 @@
           follows = "nixpkgs";
         };
       };
+    };
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+      };
+    };
+    systems = {
+      url = "github:nix-systems/default";
     };
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";

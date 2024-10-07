@@ -8,5 +8,8 @@
       enableZshIntegration = true;
       pinentryPackage = pkgs.pinentry-gtk2;
     };
+    blueman-applet = {
+      enable = true;
+    };
   };
 }
