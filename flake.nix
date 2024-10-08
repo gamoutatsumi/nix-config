@@ -173,7 +173,7 @@
           follows = "flake-parts";
         };
         neovim-src = {
-          url = "github:neovim/neovim/3d1e6c56f08f420c0d91ffbee888c05b20806a5e";
+          url = "github:neovim/neovim";
           flake = false;
         };
         nixpkgs = {
