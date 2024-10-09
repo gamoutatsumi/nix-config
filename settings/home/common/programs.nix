@@ -275,6 +275,7 @@ in
       binutils
       cmake
       coreutils-full
+      curlFull
       delta
       docker-slim
       dogdns
@@ -301,11 +302,11 @@ in
       neofetch
       nix-diff
       nix-index
+      nix-tree
       ov
       q-text-as-data
       ripgrep
       stern
-      tenv
       tmux
       unar
       unzip
