@@ -1,11 +1,5 @@
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
-
-[[plugins]]
-repo = 'williamboman/mason.nvim'
-
-[[plugins]]
-repo = 'williamboman/mason-lspconfig.nvim'
 hooks_file = ['$BASE_DIR/dpp/nvim_lsp.lua']
 
 [[plugins]]
@@ -13,9 +7,6 @@ repo = 'ray-x/go.nvim'
 
 [[plugins]]
 repo = 'yioneko/nvim-vtsls'
-
-[[plugins]]
-repo = 'jay-babu/mason-null-ls.nvim'
 
 [[plugins]]
 repo = 'jose-elias-alvarez/typescript.nvim'

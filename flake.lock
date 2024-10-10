@@ -446,11 +446,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1728188555,
-        "narHash": "sha256-TP1oeoynCBYLlFe2m2uZQzA5N6JZbT4WFd8urZlyfhE=",
+        "lastModified": 1728523323,
+        "narHash": "sha256-CXV5ge/haTeTFl07e4vAXXPDoSTiGO8kRlhICbjB3mc=",
         "owner": "gamoutatsumi",
         "repo": "oreore-flake",
-        "rev": "966567f29ba749adea067fd4786db38f036c8d8b",
+        "rev": "3e37c0ece57bc934c15f977335f80b5a9f151f44",
         "type": "github"
       },
       "original": {

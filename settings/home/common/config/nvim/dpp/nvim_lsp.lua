@@ -1,7 +1,5 @@
 -- lua_add {{{
 local lspconfig = require("lspconfig")
-local mason = require("mason")
-local mason_lspconfig = require("mason-lspconfig")
 local schemas = require("schemastore")
 local util = require("lspconfig/util")
 
@@ -75,9 +73,6 @@ local on_attach = function(client, bufnr)
         )
     end
 end
-
-mason.setup()
-mason_lspconfig.setup({})
 
 lspconfig.yamlls.setup({
     autostart = true,
