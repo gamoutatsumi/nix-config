@@ -105,7 +105,7 @@ lspconfig.lua_ls.setup({
     },
     settings = {
         Lua = {
-            runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
+            runtime = { version = "LuaJIT" },
             diagnostics = {
                 enable = true,
                 globals = { "vim" },
@@ -117,7 +117,10 @@ lspconfig.lua_ls.setup({
                 enable = true,
             },
             workspace = {
-                library = vim.api.nvim_list_runtime_paths(),
+                library = vim.api.nvim_get_runtime_file("", true),
+            },
+            telemetry = {
+                enable = false,
             },
         },
     },
@@ -174,14 +177,14 @@ lspconfig.hls.setup({
     autostart = true,
 })
 
-lspconfig["nixd"].setup({
+lspconfig["nil_ls"].setup({
     on_attach = on_attach,
     autostart = true,
     on_init = function(client, _)
         client.server_capabilities.semanticTokensProvider = nil
     end,
     settings = {
-        nixd = {
+        ["nil"] = {
             formatting = {
                 command = { "nixfmt" },
             },
