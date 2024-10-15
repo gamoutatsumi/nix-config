@@ -286,6 +286,7 @@ in
       fzf
       gawk
       ghq
+      git-crypt
       git-lfs
       gnugrep
       gnumake
