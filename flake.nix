@@ -394,7 +394,7 @@
               set -e
               echo "Updating ${system}..."
               nix-channel --update
-              nix flake update
+              nix flake update --commit-lock-file
               nix run nix-darwin -- switch --flake .#$1 --impure
               echo "Updated ${system}"
             ''
