@@ -20,6 +20,7 @@
   ];
   # keep-sorted start block=yes
   boot = {
+    supportedFilesystems = [ "ntfs" ];
     loader.systemd-boot.enable = lib.mkForce false;
     lanzaboote = {
       enable = true;

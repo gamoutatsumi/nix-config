@@ -6,6 +6,12 @@
       useTmpfs = true;
     };
   };
+  environment = {
+    systemPackages = with pkgs; [
+      gparted
+      gptfdisk
+    ];
+  };
   fonts = {
     fontDir = {
       enable = true;
