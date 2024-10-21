@@ -299,13 +299,10 @@
           };
         };
         devShells = {
-          default = pkgs.mkShell {
+          default = pkgs.mkShellNoCC {
             packages =
               (with pkgs; [
-                nil
                 nixfmt-rfc-style
-                lua-language-server
-                efm-langserver
                 stylua
               ])
               ++ [ dagger.packages.${system}.dagger ];

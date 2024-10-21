@@ -109,6 +109,11 @@ in
     };
     neovim = {
       enable = true;
+      extraPackages = with upkgs; [
+        nil
+        efm-langserver
+        lua-language-server
+      ];
       package = upkgs.neovim;
       defaultEditor = true;
       vimAlias = false;
