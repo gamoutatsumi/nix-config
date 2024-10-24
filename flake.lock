@@ -43,9 +43,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "pre-commit-hooks": [
-          "pre-commit-hooks"
-        ]
+        "pre-commit-hooks": []
       },
       "locked": {
         "lastModified": 1729172588,
@@ -289,9 +287,7 @@
         "crane": [
           "crane"
         ],
-        "flake-compat": [
-          "flake-compat"
-        ],
+        "flake-compat": [],
         "flake-parts": [
           "flake-parts"
         ],
@@ -301,9 +297,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "pre-commit-hooks-nix": [
-          "pre-commit-hooks"
-        ],
+        "pre-commit-hooks-nix": [],
         "rust-overlay": [
           "rust-overlay"
         ]
@@ -325,18 +319,12 @@
     },
     "neovim-nightly-overlay": {
       "inputs": {
-        "flake-compat": [
-          "flake-compat"
-        ],
+        "flake-compat": [],
         "flake-parts": [
           "flake-parts"
         ],
-        "git-hooks": [
-          "pre-commit-hooks"
-        ],
-        "hercules-ci-effects": [
-          "hercules-ci-effects"
-        ],
+        "git-hooks": [],
+        "hercules-ci-effects": [],
         "neovim-src": "neovim-src",
         "nixpkgs": [
           "nixpkgs-unstable"
@@ -359,11 +347,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1729725724,
-        "narHash": "sha256-k/eXVviJo3OnshP/KkAfeorZ2+9CJN0diGTfF9Vn94Q=",
+        "lastModified": 1729735418,
+        "narHash": "sha256-/+587dsgYy6AsKjtFmBNdUhtDO5af74Pu4VQu6PBTeQ=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "611c416359e2beb90d4ca73c86bcaa43cb17892c",
+        "rev": "50e63c8171d47157cfad5c1b8f1958a4a7e9d9c7",
         "type": "github"
       },
       "original": {
@@ -429,28 +417,23 @@
         "dagger": [
           "dagger"
         ],
-        "flake-compat": [
-          "flake-compat"
-        ],
         "flake-parts": [
           "flake-parts"
         ],
         "nixpkgs": [
           "nixpkgs"
         ],
-        "pre-commit-hooks": [
-          "pre-commit-hooks"
-        ],
+        "pre-commit-hooks": [],
         "treefmt-nix": [
           "treefmt-nix"
         ]
       },
       "locked": {
-        "lastModified": 1729494448,
-        "narHash": "sha256-U9/tu81Y247bQPFqZ9Vle3KTeQtU/lG9BxevoQnR0+g=",
+        "lastModified": 1729735716,
+        "narHash": "sha256-Pjgkv65PaJTdxp+PT+Onrwdvo1uc5NWgDp4x1xErC+c=",
         "owner": "gamoutatsumi",
         "repo": "oreore-flake",
-        "rev": "9b5439c9d9bf0cfba09896edc200d0b9d595e2ef",
+        "rev": "3142907df5efe94d5b0969fe6792adf4bc5378ec",
         "type": "github"
       },
       "original": {
