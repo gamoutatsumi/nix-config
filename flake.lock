@@ -424,16 +424,14 @@
           "nixpkgs"
         ],
         "pre-commit-hooks": [],
-        "treefmt-nix": [
-          "treefmt-nix"
-        ]
+        "treefmt-nix": []
       },
       "locked": {
-        "lastModified": 1729735716,
-        "narHash": "sha256-Pjgkv65PaJTdxp+PT+Onrwdvo1uc5NWgDp4x1xErC+c=",
+        "lastModified": 1729735816,
+        "narHash": "sha256-9FdMa7qFxiPIhq1hlMf550s9xq8eGsccbOsx/GCRBwQ=",
         "owner": "gamoutatsumi",
         "repo": "oreore-flake",
-        "rev": "3142907df5efe94d5b0969fe6792adf4bc5378ec",
+        "rev": "0cb873afbbee9e073f9723d14a0b40560c813bbb",
         "type": "github"
       },
       "original": {
