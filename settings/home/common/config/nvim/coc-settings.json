@@ -5,7 +5,9 @@
   "languageserver": {
     "terraform": {
       "command": "terraform-ls",
-      "args": ["serve"],
+      "args": [
+        "serve"
+      ],
       "filetypes": [
         "terraform",
         "tf"
@@ -16,11 +18,18 @@
     "efm": {
       "command": "efm-langserver",
       "args": [],
-      "filetypes": ["go", "markdown", "sh", "dockerfile"]
+      "filetypes": [
+        "go",
+        "markdown",
+        "sh",
+        "dockerfile"
+      ]
     },
     "haskell": {
       "command": "haskell-language-server-wrapper",
-      "args": ["--lsp"],
+      "args": [
+        "--lsp"
+      ],
       "rootPatterns": [
         "*.cabal",
         "stack.yaml",
@@ -28,12 +37,19 @@
         "package.yanl",
         "hie.yanl"
       ],
-      "filetypes": ["haskell", "lhaskell"]
+      "filetypes": [
+        "haskell",
+        "lhaskell"
+      ]
     },
     "satysfi-ls": {
       "command": "satysfi-language-server",
-      "args": ["-w"],
-      "filetypes": ["satysfi"],
+      "args": [
+        "-w"
+      ],
+      "filetypes": [
+        "satysfi"
+      ],
       "trace.server": "verbose"
     }
   },

@@ -472,6 +472,16 @@
                     enable = true;
                     packageOverrides.treefmt = config.treefmt.build.wrapper;
                   };
+                  denolint = {
+                    enable = true;
+                    package = upkgs.deno;
+                  };
+                  check-toml = {
+                    enable = true;
+                  };
+                  check-json = {
+                    enable = true;
+                  };
                 };
               };
             };
@@ -489,6 +499,9 @@
                 deno = {
                   enable = true;
                   package = upkgs.deno;
+                };
+                jsonfmt = {
+                  enable = true;
                 };
                 keep-sorted = {
                   enable = true;
