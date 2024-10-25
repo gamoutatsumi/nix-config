@@ -1,3 +1,4 @@
+---
 # This is a file with less key bindings set.
 # Copy it to `$XDG_CONFIG_HOME/ov/config.yaml` or start it with `ov --config ov.yaml`.
 # Thanks to hupfdule (Marco Herrn) for the less keybinding information.
@@ -6,7 +7,6 @@
 # RegexpSearch: false
 # Incsearch: true
 # MemoryLimit: 10000
-
 General:
   TabWidth: 4
   Header: 0

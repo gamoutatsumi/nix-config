@@ -484,6 +484,9 @@
                   check-json = {
                     enable = true;
                   };
+                  yamllint = {
+                    enable = true;
+                  };
                 };
               };
             };

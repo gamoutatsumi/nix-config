@@ -1,3 +1,4 @@
+---
 contexts:
   commit: &commit
     lbuffer: 'git\scommit\s+'

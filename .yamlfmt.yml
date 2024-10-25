@@ -1,0 +1,5 @@
+---
+formatter:
+  max_line_length: 160
+  trim_trailing_whitespace: true
+  include_document_start: true
