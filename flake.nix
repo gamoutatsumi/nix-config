@@ -331,21 +331,25 @@
                 ./hosts/laptop
                 ./settings/nixos.nix
                 home-manager.nixosModules.home-manager
-                {
-                  home-manager = {
-                    useGlobalPkgs = true;
-                    useUserPackages = false;
-                    users = {
-                      "${username}" = {
-                        imports = [ ./settings/home/linux.nix ];
+                (
+                  { config, ... }:
+                  {
+                    home-manager = {
+                      useGlobalPkgs = true;
+                      useUserPackages = false;
+                      users = {
+                        "${username}" = {
+                          imports = [ ./settings/home/linux.nix ];
+                        };
+                      };
+                      extraSpecialArgs = {
+                        username = username;
+                        upkgs = upkgs;
+                        networkManager = true;
                       };
                     };
-                    extraSpecialArgs = {
-                      username = username;
-                      upkgs = upkgs;
-                    };
-                  };
-                }
+                  }
+                )
               ];
             }
           );
@@ -397,6 +401,7 @@
                     extraSpecialArgs = {
                       username = username;
                       upkgs = upkgs;
+                      networkManager = true;
                     };
                   };
                 }
