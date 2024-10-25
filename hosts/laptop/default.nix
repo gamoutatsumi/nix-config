@@ -16,32 +16,26 @@
 {
   imports = [
     # Include the results of the hardware scan.
-    ./secrets.nix
     ./hardware-configuration.nix
+    ./secrets.nix
   ];
-  # keep-sorted start block=yes
-  boot = {
-    supportedFilesystems = [ "ntfs" ];
-    loader.systemd-boot.enable = lib.mkForce false;
-    lanzaboote = {
-      enable = true;
-      pkiBundle = "/etc/secureboot";
-    };
-    kernel = {
-      sysctl = {
-        "net.ipv6.conf.enp0s20f0u8u4.disable_ipv6" = true;
-        "net.ipv6.conf.enp5s0.disable_ipv6" = true;
-      };
-    };
-  };
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  networking.hostName = "tat-nixos-laptop";
+  networking.networkmanager.enable = true;
+
   environment.systemPackages = with pkgs; [
-    git
     vim
     wget
+    git
     curl
+    autorandr
+    gcc
     sbctl
     efitools
   ];
+
   hardware = {
     bluetooth = {
       enable = true;
@@ -54,34 +48,7 @@
       };
     };
   };
-  networking = {
-    hostName = "tat-nixos-desktop";
-    networkmanager.enable = false;
-    wireless.enable = false;
-    interfaces = {
-      "enp7s0" = {
-        useDHCP = true;
-        mtu = 9500;
-      };
-      "enp0s20f0u8u4" = {
-        useDHCP = false;
-      };
-      "enp5s0" = {
-        useDHCP = false;
-      };
-      "vlan10" = {
-        useDHCP = true;
-        mtu = 9500;
-      };
-    };
-    vlans = {
-      vlan10 = {
-        id = 10;
-        interface = "enp7s0";
-      };
-    };
-  };
-  nixpkgs.config.cudaSupport = true;
+
   services = {
     blueman = {
       enable = true;
@@ -115,13 +82,8 @@
     };
     xserver = {
       displayManager = {
-        setupCommands = "${pkgs.xorg.xrandr}/bin/xrandr --output DP-0 --auto --primary --output HDMI-0 --auto --left-of DP-0";
+        setupCommands = "${pkgs.autorandr}/bin/autorandr -c";
       };
-    };
-    ollama = {
-      package = upkgs.ollama;
-      enable = true;
-      acceleration = "cuda";
     };
     openssh = {
       settings = {
@@ -130,7 +92,6 @@
       };
     };
   };
-  system.stateVersion = "24.05";
   users = {
     mutableUsers = false;
     users.${username} = {
@@ -152,5 +113,5 @@
       storageDriver = "btrfs";
     };
   };
-  # keep-sorted end
+  system.stateVersion = "24.05"; # Did you read the comment?
 }

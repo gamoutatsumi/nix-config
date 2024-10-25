@@ -19,9 +19,7 @@ in
     alacritty = {
       enable = true;
       settings = {
-        general = {
-          import = [ "~/.config/alacritty/nightfly.toml" ];
-        };
+        import = [ "~/.config/alacritty/nightfly.toml" ];
         env = {
           TERM = "alacritty";
           USE_TMUX = "true";
@@ -106,12 +104,14 @@ in
       ];
     };
     home-manager = {
-
       enable = false;
     };
     neovim = {
       enable = true;
-      extraPackages = with upkgs; [ nil ];
+      extraPackages = with upkgs; [
+        nil
+        tree-sitter
+      ];
       package = upkgs.neovim;
       defaultEditor = true;
       vimAlias = false;
@@ -272,7 +272,7 @@ in
       })
       # keep-sorted start
       age-plugin-yubikey
-      aicommit2
+      #aicommit2
       bat
       bc
       binutils

@@ -297,6 +297,58 @@
           ++ lib.optionals (inputs.treefmt-nix ? flakeModule) [ inputs.treefmt-nix.flakeModule ]
           ++ lib.optionals (inputs.agenix-rekey ? flakeModule) [ inputs.agenix-rekey.flakeModule ];
         flake = {
+          nixosConfigurations."tat-nixos-laptop" = withSystem "x86_64-linux" (
+            {
+              config,
+              inputs',
+              system,
+              ...
+            }:
+            let
+              username = "gamoutatsumi";
+              overlays = [
+                agenix.overlays.default
+                inputs.agenix-rekey.overlays.default
+                oreore.overlays.default
+              ];
+              upkgs = import nixpkgs-unstable {
+                inherit system;
+                config.allowUnfree = true;
+                overlays = [ neovim-nightly-overlay.overlays.default ];
+              };
+            in
+            nixpkgs.lib.nixosSystem {
+              specialArgs = {
+                inherit inputs inputs';
+                username = username;
+                upkgs = upkgs;
+              };
+              modules = [
+                { nixpkgs.overlays = overlays; }
+                lanzaboote.nixosModules.lanzaboote
+                agenix.nixosModules.default
+                inputs.agenix-rekey.nixosModules.default
+                ./hosts/laptop
+                ./settings/nixos.nix
+                home-manager.nixosModules.home-manager
+                {
+                  home-manager = {
+                    useGlobalPkgs = true;
+                    useUserPackages = false;
+                    users = {
+                      "${username}" = {
+                        imports = [ ./settings/home/linux.nix ];
+                      };
+                    };
+                    extraSpecialArgs = {
+                      username = username;
+                      upkgs = upkgs;
+                    };
+                  };
+                }
+              ];
+            }
+          );
           nixosConfigurations."tat-nixos-desktop" = withSystem "x86_64-linux" (
             {
               config,
@@ -329,7 +381,6 @@
                 disko.nixosModules.disko
                 agenix.nixosModules.default
                 inputs.agenix-rekey.nixosModules.default
-                ./secrets.nix
                 (import ./disko-config.nix { device = "/dev/disk/by-id/nvme-WD_BLACK_SN770_1TB_24116U400484"; })
                 ./hosts/desktop
                 ./settings/nixos.nix
