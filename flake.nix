@@ -2,7 +2,6 @@
   description = "Nix(OS) Configurations";
 
   inputs = {
-    # Specify the source of Home Manager and Nixpkgs.
     # keep-sorted start block=yes
     agenix = {
       url = "github:yaxitech/ragenix";
@@ -31,7 +30,7 @@
           follows = "devshell";
         };
         pre-commit-hooks = {
-          follows = "pre-commit-hooks";
+          follows = "";
         };
         nixpkgs = {
           follows = "nixpkgs";
@@ -144,10 +143,10 @@
           follows = "flake-utils";
         };
         pre-commit-hooks-nix = {
-          follows = "pre-commit-hooks";
+          follows = "";
         };
         flake-compat = {
-          follows = "flake-compat";
+          follows = "";
         };
         flake-parts = {
           follows = "flake-parts";
@@ -161,13 +160,13 @@
       url = "github:nix-community/neovim-nightly-overlay";
       inputs = {
         hercules-ci-effects = {
-          follows = "hercules-ci-effects";
+          follows = "";
         };
         git-hooks = {
-          follows = "pre-commit-hooks";
+          follows = "";
         };
         flake-compat = {
-          follows = "flake-compat";
+          follows = "";
         };
         flake-parts = {
           follows = "flake-parts";
@@ -198,20 +197,26 @@
     oreore = {
       url = "github:gamoutatsumi/oreore-flake";
       inputs = {
-        flake-parts = {
-          follows = "flake-parts";
-        };
-        pre-commit-hooks = {
-          follows = "pre-commit-hooks";
+        systems = {
+          follows = "systems";
         };
         flake-compat = {
           follows = "flake-compat";
         };
-        treefmt-nix = {
-          follows = "treefmt-nix";
+        devenv = {
+          follows = "";
         };
-        dagger = {
-          follows = "dagger";
+        nix = {
+          follows = "";
+        };
+        flake-parts = {
+          follows = "flake-parts";
+        };
+        pre-commit-hooks = {
+          follows = "";
+        };
+        treefmt-nix = {
+          follows = "";
         };
         nixpkgs = {
           follows = "nixpkgs";

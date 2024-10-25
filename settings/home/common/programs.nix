@@ -19,7 +19,9 @@ in
     alacritty = {
       enable = true;
       settings = {
-        import = [ "~/.config/alacritty/nightfly.toml" ];
+        general = {
+          import = [ "~/.config/alacritty/nightfly.toml" ];
+        };
         env = {
           TERM = "alacritty";
           USE_TMUX = "true";
