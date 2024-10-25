@@ -452,6 +452,8 @@
                   (with pkgs; [
                     nixfmt-rfc-style
                     stylua
+                    efm-langserver
+                    lua-language-server
                   ])
                   ++ [ dagger.packages.${system}.dagger ];
                 inputsFrom =
