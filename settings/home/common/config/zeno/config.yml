@@ -73,15 +73,15 @@ snippets:
     context: *diff
   - name: git diff branch file
     keyword: bf
-    snippet: '{{branch}} -- {{file}}'
+    snippet: "{{branch}} -- {{file}}"
     context: *diff
   - name: git diff 2 branch
     keyword: bb
-    snippet: '{{branch1}} {{brahcn2}}'
+    snippet: "{{branch1}} {{brahcn2}}"
     context: *diff
   - name: git diff 2 branch file
     keyword: bbf
-    snippet: '{{branch1}} {{brahcn2}} -- {{file}}'
+    snippet: "{{branch1}} {{brahcn2}} -- {{file}}"
     context: *diff
   - name: git diff cached
     keyword: c
@@ -100,7 +100,7 @@ snippets:
     context: *checkout
   - name: git checkout branch file
     keyword: bf
-    snippet: '{{branch}} -- {{file}}'
+    snippet: "{{branch}} -- {{file}}"
     context: *checkout
   - name: git checkout track
     keyword: t
@@ -249,7 +249,7 @@ completions:
       --preview: "docker image inspect {1}"
       --multi: true
     callback: awk '{print $3}'
-    sourceCommand: 'docker images | sed 1d'
+    sourceCommand: "docker images | sed 1d"
   - name: docker containers (all)
     patterns:
       - "^docker rm $"
@@ -259,7 +259,7 @@ completions:
       --preview: "docker container inspect {1}"
       --multi: true
     callback: awk '{print $1}'
-    sourceCommand: 'docker ps --filter status=exited | sed 1d'
+    sourceCommand: "docker ps --filter status=exited | sed 1d"
   - name: docker containers (running)
     patterns:
       - "^docker stop $"
@@ -269,4 +269,4 @@ completions:
       --preview: "docker container inspect {1}"
       --multi: true
     callback: awk '{print $1}'
-    sourceCommand: 'docker ps | sed 1d'
+    sourceCommand: "docker ps | sed 1d"

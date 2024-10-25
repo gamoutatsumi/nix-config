@@ -435,6 +435,13 @@
             config,
             ...
           }:
+          let
+            upkgs = import nixpkgs-unstable {
+              inherit system;
+              config.allowUnfree = true;
+              overlays = [ neovim-nightly-overlay.overlays.default ];
+            };
+          in
           {
             agenix-rekey = {
               nodes = self.nixosConfigurations;
@@ -453,7 +460,7 @@
               };
             };
           }
-          // lib.optionalAttrs (inputs.pre-commit-hooks ? perSystem) {
+          // lib.optionalAttrs (inputs.pre-commit-hooks ? flakeModule) {
             pre-commit = {
               check = {
                 enable = true;
@@ -473,6 +480,7 @@
             formatter = config.treefmt.build.wrapper;
             treefmt = {
               projectRootFile = "flake.nix";
+              flakeCheck = false;
               programs = {
                 # keep-sorted start block=yes
                 cue = {
@@ -480,6 +488,7 @@
                 };
                 deno = {
                   enable = true;
+                  package = upkgs.deno;
                 };
                 keep-sorted = {
                   enable = true;
