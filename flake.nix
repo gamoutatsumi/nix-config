@@ -261,16 +261,14 @@
     };
     # keep-sorted end
   };
-
   outputs =
     {
       self,
       # keep-sorted start
       agenix,
-      agenix-rekey,
       dagger,
       disko,
-      flake-utils,
+      flake-parts,
       home-manager,
       lanzaboote,
       neovim-nightly-overlay,
@@ -279,161 +277,230 @@
       nixpkgs-unstable,
       oreore,
       pre-commit-hooks,
+      systems,
       treefmt-nix,
       # keep-sorted end
       ...
     }@inputs:
-    (flake-utils.lib.eachDefaultSystem (
-      system:
-      let
-        pkgs = nixpkgs.legacyPackages.${system};
-        hooks = pre-commit-hooks.lib.${system};
-        treefmtEval = (treefmt-nix.lib.evalModule pkgs ./treefmt.nix);
-      in
+    (flake-parts.lib.mkFlake { inherit inputs; } (
       {
-        formatter = (treefmtEval.config.build.wrapper);
-        checks = {
-          pre-commit-check = hooks.run {
-            src = ./.;
-            hooks = {
-              treefmt = {
-                packageOverrides.treefmt = (treefmtEval.config.build.wrapper);
-                enable = true;
+        inputs,
+        lib,
+        withSystem,
+        ...
+      }:
+      {
+        systems = import systems;
+        imports =
+          [ ]
+          ++ lib.optionals (inputs.pre-commit-hooks ? flakeModule) [ inputs.pre-commit-hooks.flakeModule ]
+          ++ lib.optionals (inputs.treefmt-nix ? flakeModule) [ inputs.treefmt-nix.flakeModule ]
+          ++ lib.optionals (inputs.agenix-rekey ? flakeModule) [ inputs.agenix-rekey.flakeModule ];
+        flake = {
+          nixosConfigurations."tat-nixos-desktop" = withSystem "x86_64-linux" (
+            {
+              config,
+              inputs',
+              system,
+              ...
+            }:
+            let
+              username = "gamoutatsumi";
+              overlays = [
+                agenix.overlays.default
+                inputs.agenix-rekey.overlays.default
+                oreore.overlays.default
+              ];
+              upkgs = import nixpkgs-unstable {
+                inherit system;
+                config.allowUnfree = true;
+                overlays = [ neovim-nightly-overlay.overlays.default ];
+              };
+            in
+            nixpkgs.lib.nixosSystem {
+              specialArgs = {
+                inherit inputs inputs';
+                username = username;
+                upkgs = upkgs;
+              };
+              modules = [
+                { nixpkgs.overlays = overlays; }
+                lanzaboote.nixosModules.lanzaboote
+                disko.nixosModules.disko
+                agenix.nixosModules.default
+                inputs.agenix-rekey.nixosModules.default
+                ./secrets.nix
+                (import ./disko-config.nix { device = "/dev/disk/by-id/nvme-WD_BLACK_SN770_1TB_24116U400484"; })
+                ./hosts/desktop
+                ./settings/nixos.nix
+                home-manager.nixosModules.home-manager
+                {
+                  home-manager = {
+                    useGlobalPkgs = true;
+                    useUserPackages = false;
+                    users = {
+                      "${username}" = {
+                        imports = [ ./settings/home/linux.nix ];
+                      };
+                    };
+                    extraSpecialArgs = {
+                      username = username;
+                      upkgs = upkgs;
+                    };
+                  };
+                }
+              ];
+            }
+          );
+          apps = withSystem "aarch64-darwin" (
+            {
+              config,
+              inputs',
+              system,
+              pkgs,
+              ...
+            }:
+            {
+              ${system} = {
+                update = {
+                  program = toString (
+                    pkgs.writeShellScript "update" ''
+                      set -e
+                      echo "Updating ${system}..."
+                      nix-channel --update
+                      nix flake update --commit-lock-file
+                      nix run nix-darwin -- switch --flake .#$1 --impure
+                      echo "Updated ${system}"
+                    ''
+                  );
+                  type = "app";
+                };
+              };
+            }
+          );
+          darwinConfigurations.work = withSystem "aarch64-darwin" (
+            {
+              config,
+              inputs',
+              system,
+              ...
+            }:
+            let
+              darwinUser = builtins.getEnv "DARWIN_USER";
+              darwinHost = builtins.getEnv "DARWIN_HOST";
+              overlays = [ oreore.overlays.default ];
+              upkgs = import nixpkgs-unstable {
+                inherit system;
+                config.allowUnfree = true;
+                overlays = [ neovim-nightly-overlay.overlays.default ];
+              };
+            in
+            nix-darwin.lib.darwinSystem {
+              inherit system;
+              specialArgs = {
+                inherit inputs;
+                username = darwinUser;
+                upkgs = upkgs;
+                hostname = darwinHost;
+              };
+              modules = [
+                { nixpkgs.overlays = overlays; }
+                ./hosts/work_darwin
+                ./settings/darwin.nix
+                home-manager.darwinModules.home-manager
+                {
+                  home-manager = {
+                    backupFileExtension = "backup";
+                    useGlobalPkgs = true;
+                    useUserPackages = true;
+                    users = {
+                      "${darwinUser}" = {
+                        imports = [ ./settings/home/darwin.nix ];
+                      };
+                    };
+                    extraSpecialArgs = {
+                      username = darwinUser;
+                      upkgs = upkgs;
+                    };
+                  };
+                }
+              ];
+            }
+          );
+        };
+        perSystem = (
+          {
+            system,
+            pkgs,
+            config,
+            ...
+          }:
+          {
+            agenix-rekey = {
+              nodes = self.nixosConfigurations;
+            };
+            devShells = {
+              default = pkgs.mkShellNoCC {
+                packages =
+                  (with pkgs; [
+                    nixfmt-rfc-style
+                    stylua
+                  ])
+                  ++ [ dagger.packages.${system}.dagger ];
+                inputsFrom =
+                  [ ]
+                  ++ lib.optionals (inputs.pre-commit-hooks ? flakeModule) [ config.pre-commit.devShell ];
               };
             };
-          };
-        };
-        devShells = {
-          default = pkgs.mkShellNoCC {
-            packages =
-              (with pkgs; [
-                nixfmt-rfc-style
-                stylua
-              ])
-              ++ [ dagger.packages.${system}.dagger ];
-            inherit (self.checks.${system}.pre-commit-check) shellHook;
-            buildInputs = self.checks.${system}.pre-commit-check.enabledPackages;
-          };
-        };
-      }
-    ))
-    // (
-      let
-        username = "gamoutatsumi";
-        system = "x86_64-linux";
-        overlays = [
-          oreore.overlays.default
-          agenix.overlays.default
-          agenix-rekey.overlays.default
-        ];
-        upkgs = import nixpkgs-unstable {
-          inherit system;
-          config.allowUnfree = true;
-          overlays = [ neovim-nightly-overlay.overlays.default ];
-        };
-      in
-      {
-        nixosConfigurations."tat-nixos-desktop" = nixpkgs.lib.nixosSystem {
-          system = system;
-          specialArgs = {
-            inherit inputs;
-            username = username;
-            upkgs = upkgs;
-          };
-          modules = [
-            { nixpkgs.overlays = overlays; }
-            lanzaboote.nixosModules.lanzaboote
-            disko.nixosModules.disko
-            agenix.nixosModules.default
-            agenix-rekey.nixosModules.default
-            ./secrets.nix
-            (import ./disko-config.nix { device = "/dev/disk/by-id/nvme-WD_BLACK_SN770_1TB_24116U400484"; })
-            ./hosts/desktop
-            ./settings/nixos.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = false;
-                users = {
-                  "${username}" = {
-                    imports = [ ./settings/home/linux.nix ];
+          }
+          // lib.optionalAttrs (inputs.pre-commit-hooks ? perSystem) {
+            pre-commit = {
+              check = {
+                enable = true;
+              };
+              settings = {
+                src = ./.;
+                hooks = {
+                  treefmt = {
+                    enable = true;
+                    packageOverrides.treefmt = config.treefmt.build.wrapper;
                   };
                 };
-                extraSpecialArgs = {
-                  username = username;
-                  upkgs = upkgs;
-                };
               };
-            }
-          ];
-        };
-      }
-    )
-    // {
-      agenix-rekey = agenix-rekey.configure {
-        userFlake = self;
-        nodes = self.nixosConfigurations;
-      };
-    }
-    // (
-      let
-        system = "aarch64-darwin";
-        darwinUser = builtins.getEnv "DARWIN_USER";
-        darwinHost = builtins.getEnv "DARWIN_HOST";
-        overlays = [ oreore.overlays.default ];
-        pkgs = import nixpkgs { inherit system; };
-        upkgs = import nixpkgs-unstable {
-          inherit system;
-          config.allowUnfree = true;
-          overlays = [ neovim-nightly-overlay.overlays.default ];
-        };
-      in
-      {
-        apps.${system}.update = {
-          program = toString (
-            pkgs.writeShellScript "update" ''
-              set -e
-              echo "Updating ${system}..."
-              nix-channel --update
-              nix flake update --commit-lock-file
-              nix run nix-darwin -- switch --flake .#$1 --impure
-              echo "Updated ${system}"
-            ''
-          );
-          type = "app";
-        };
-        darwinConfigurations.work = nix-darwin.lib.darwinSystem {
-          system = "aarch64-darwin";
-          specialArgs = {
-            inherit inputs;
-            username = darwinUser;
-            upkgs = upkgs;
-            hostname = darwinHost;
-          };
-          modules = [
-            { nixpkgs.overlays = overlays; }
-            ./hosts/work_darwin
-            ./settings/darwin.nix
-            home-manager.darwinModules.home-manager
-            {
-              home-manager = {
-                backupFileExtension = "backup";
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users = {
-                  "${darwinUser}" = {
-                    imports = [ ./settings/home/darwin.nix ];
-                  };
+            };
+          }
+          // lib.optionalAttrs (inputs.treefmt-nix ? flakeModule) {
+            formatter = config.treefmt.build.wrapper;
+            treefmt = {
+              projectRootFile = "flake.nix";
+              programs = {
+                # keep-sorted start block=yes
+                cue = {
+                  enable = true;
                 };
-                extraSpecialArgs = {
-                  username = darwinUser;
-                  upkgs = upkgs;
+                deno = {
+                  enable = true;
                 };
+                keep-sorted = {
+                  enable = true;
+                };
+                nixfmt = {
+                  enable = true;
+                };
+                stylua = {
+                  enable = true;
+                };
+                taplo = {
+                  enable = true;
+                };
+                yamlfmt = {
+                  enable = true;
+                };
+                # keep-sorted end
               };
-            }
-          ];
-        };
+            };
+          }
+        );
       }
-    );
+    ));
 }
