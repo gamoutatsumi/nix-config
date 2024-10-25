@@ -55,7 +55,6 @@ myStartupHook = do
   spawnOnce "nm-applet"
   spawnOnce "blueman-applet"
   spawnOnce "fcitx5"
-  spawn "$HOME/.fehbg"
   spawnOnce "picom"
   spawnOnce "light-locker --no-late-locking --lock-on-suspend"
   spawnOnce "kdeconnect-indicator"

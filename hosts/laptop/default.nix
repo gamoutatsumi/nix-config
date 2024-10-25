@@ -75,7 +75,7 @@
     };
     displayManager = {
       autoLogin = {
-        enable = true;
+        enable = false;
         user = username;
       };
       defaultSession = "xsession";
