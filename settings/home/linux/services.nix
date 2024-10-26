@@ -17,6 +17,9 @@
     emacs = {
       enable = true;
       package = upkgs.emacs-unstable;
+      client = {
+        enable = true;
+      };
     };
     network-manager-applet = {
       enable = networkManager;
