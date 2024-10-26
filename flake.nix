@@ -259,6 +259,9 @@
         };
       };
     };
+    xremap = {
+      url = "github:xremap/nix-flake";
+    };
     # keep-sorted end
   };
   outputs =
@@ -279,6 +282,7 @@
       pre-commit-hooks,
       systems,
       treefmt-nix,
+      xremap,
       # keep-sorted end
       ...
     }@inputs:
@@ -327,6 +331,7 @@
                 { nixpkgs.overlays = overlays; }
                 lanzaboote.nixosModules.lanzaboote
                 agenix.nixosModules.default
+                xremap.nixosModules.default
                 inputs.agenix-rekey.nixosModules.default
                 ./hosts/laptop
                 ./settings/nixos.nix

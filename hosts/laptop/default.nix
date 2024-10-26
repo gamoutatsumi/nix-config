@@ -50,6 +50,41 @@
   };
 
   services = {
+    xremap = {
+      withX11 = true;
+      config = {
+        modmap = [
+          {
+            name = "Global";
+            remap = {
+              "CapsLock" = "Ctrl_L";
+            };
+          }
+          {
+            name = "SandS";
+            remap = {
+              "Space" = {
+                alone = "Space";
+                held = "Shift_L";
+              };
+            };
+          }
+          {
+            name = "IME";
+            remap = {
+              "Alt_L" = {
+                alone = "Muhenkan";
+                held = "Alt_L";
+              };
+              "Alt_R" = {
+                alone = "Henkan";
+                held = "Alt_R";
+              };
+            };
+          }
+        ];
+      };
+    };
     blueman = {
       enable = true;
     };
