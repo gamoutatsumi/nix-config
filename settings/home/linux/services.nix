@@ -6,6 +6,14 @@
 }:
 {
   services = {
+    screen-locker = {
+      enable = true;
+      lockCmd = "${pkgs.lightlocker}/bin/light-locker-command -l";
+      xautolock = {
+        enable = true;
+        detectSleep = true;
+      };
+    };
     emacs = {
       enable = true;
       package = upkgs.emacs-unstable;
