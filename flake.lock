@@ -225,6 +225,32 @@
         "type": "github"
       }
     },
+    "emacs-overlay": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ],
+        "nixpkgs-stable": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1729908225,
+        "narHash": "sha256-e2rUOJXPgeYxtuAwfzeqvYirQp8rbLNRfL/D+Hr2cO0=",
+        "owner": "nix-community",
+        "repo": "emacs-overlay",
+        "rev": "825505b43c276d6efd41c69f9dd5ca3dfc522284",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "emacs-overlay",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "locked": {
         "lastModified": 1696426674,
@@ -495,11 +521,11 @@
         "treefmt-nix": []
       },
       "locked": {
-        "lastModified": 1729910477,
-        "narHash": "sha256-O6tezR0FAHSwSpNh1+TiVkCBlQCK02ENS+tlt6YLfmQ=",
+        "lastModified": 1729921296,
+        "narHash": "sha256-4QWNsOgmyDcBlpsUsFA+cUXtd+4vY56phlxmzwKEC7I=",
         "owner": "gamoutatsumi",
         "repo": "oreore-flake",
-        "rev": "e5448fd068e4f1257cad9faac29a5bb1f7c09681",
+        "rev": "4a619661cfe188767b7378bbe8e8227cff20c8fb",
         "type": "github"
       },
       "original": {
@@ -547,6 +573,7 @@
         "deno": "deno",
         "devshell": "devshell",
         "disko": "disko",
+        "emacs-overlay": "emacs-overlay",
         "flake-compat": "flake-compat",
         "flake-parts": "flake-parts",
         "flake-utils": "flake-utils",

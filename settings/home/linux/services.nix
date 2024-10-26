@@ -1,6 +1,15 @@
-{ pkgs, networkManager, ... }:
+{
+  pkgs,
+  upkgs,
+  networkManager,
+  ...
+}:
 {
   services = {
+    emacs = {
+      enable = true;
+      package = upkgs.emacs-unstable;
+    };
     network-manager-applet = {
       enable = networkManager;
     };

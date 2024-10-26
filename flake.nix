@@ -101,6 +101,20 @@
         };
       };
     };
+    emacs-overlay = {
+      url = "github:nix-community/emacs-overlay";
+      inputs = {
+        flake-utils = {
+          follows = "flake-utils";
+        };
+        nixpkgs = {
+          follows = "nixpkgs-unstable";
+        };
+        nixpkgs-stable = {
+          follows = "nixpkgs";
+        };
+      };
+    };
     flake-compat = {
       url = "github:edolstra/flake-compat";
     };
@@ -337,6 +351,7 @@
       dagger,
       deno,
       disko,
+      emacs-overlay,
       flake-parts,
       home-manager,
       lanzaboote,
@@ -389,6 +404,7 @@
                 overlays = [
                   neovim-nightly-overlay.overlays.default
                   vim-overlay.overlays.default
+                  emacs-overlay.overlays.default
                 ];
               };
             in
