@@ -281,7 +281,7 @@ in
       coreutils-full
       curlFull
       delta
-      deno."2.0.2"
+      deno."2.0.3"
       docker-slim
       dogdns
       dust
