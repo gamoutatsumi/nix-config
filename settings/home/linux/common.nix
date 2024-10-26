@@ -71,6 +71,9 @@ name=CAC Module\n";
     };
   };
   xdg = {
+    userDirs = {
+      enable = true;
+    };
     portal = {
       enable = true;
       extraPortals = [ pkgs.xdg-desktop-portal-gtk ];

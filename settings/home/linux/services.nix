@@ -6,6 +6,9 @@
 }:
 {
   services = {
+    mpd = {
+      enable = true;
+    };
     mpris-proxy = {
       enable = true;
     };

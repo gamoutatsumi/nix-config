@@ -49,6 +49,12 @@
     };
     libinput = {
       enable = true;
+      mouse = {
+        accelProfile = "flat";
+      };
+      touchpad = {
+        accelProfile = "flat";
+      };
     };
     openssh = {
       enable = true;
@@ -84,6 +90,7 @@
     };
     xserver = {
       enable = true;
+      excludePackages = with pkgs; [ xterm ];
       displayManager = {
         session = [
           {

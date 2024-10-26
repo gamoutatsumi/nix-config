@@ -439,6 +439,7 @@
                         upkgs = upkgs;
                         networkManager = true;
                       };
+                      backupFileExtension = "bak";
                     };
                   }
                 )
