@@ -80,7 +80,7 @@ myAdditionalKeysP =
     -- Launch terminal with a float window
     ("M-<Esc>", namedScratchpadAction myScratchpads "alacritty"),
     -- Launch terminal
-    ("M-<Return>", spawn "alacritty"),
+    ("M-<Return>", spawn "XMODIFIERS= alacritty"),
     -- Launch file manager
     ("M-e", spawn "thunar"),
     -- Launch web browser
