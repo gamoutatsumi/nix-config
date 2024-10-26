@@ -41,6 +41,7 @@
     curl
     sbctl
     efitools
+    aicommit2
   ];
   hardware = {
     bluetooth = {

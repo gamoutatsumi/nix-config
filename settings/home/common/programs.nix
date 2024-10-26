@@ -273,7 +273,6 @@ in
       })
       # keep-sorted start
       age-plugin-yubikey
-      #aicommit2
       bat
       bc
       binutils
