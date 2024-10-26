@@ -79,6 +79,9 @@
         };
       };
     };
+    tailscale = {
+      enable = true;
+    };
     xserver = {
       enable = true;
       displayManager = {
