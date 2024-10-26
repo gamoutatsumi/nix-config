@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   nix = {
-    package = pkgs.nix;
+    package = pkgs.nixVersions.latest;
     optimise = {
       automatic = true;
     };
