@@ -137,6 +137,7 @@
         "video"
         "audio"
         "docker"
+        "network"
       ];
       shell = pkgs.zsh;
       hashedPasswordFile = config.age.secrets.${username}.path;
