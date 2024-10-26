@@ -3,7 +3,6 @@
   home.packages = with pkgs; [
     # keep-sorted start
     agenix-rekey
-    alacritty
     discord
     firefox
     flat-remix-icon-theme
