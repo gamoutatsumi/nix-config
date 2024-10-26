@@ -25,16 +25,17 @@
   networking.hostName = "tat-nixos-laptop";
   networking.networkmanager.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    vim
-    wget
-    git
-    curl
-    autorandr
-    gcc
-    sbctl
-    efitools
-  ];
+  environment.systemPackages =
+    (with pkgs; [
+      wget
+      git
+      curl
+      autorandr
+      gcc
+      sbctl
+      efitools
+    ])
+    ++ (with upkgs; [ vim ]);
 
   hardware = {
     bluetooth = {

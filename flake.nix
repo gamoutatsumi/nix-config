@@ -68,6 +68,23 @@
         };
       };
     };
+    deno = {
+      url = "github:haruki7049/deno-overlay";
+      inputs = {
+        flake-parts = {
+          follows = "flake-parts";
+        };
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+        treefmt-nix = {
+          follows = "treefmt-nix";
+        };
+        flake-compat = {
+          follows = "flake-compat";
+        };
+      };
+    };
     devshell = {
       url = "github:numtide/devshell";
       inputs = {
@@ -259,8 +276,56 @@
         };
       };
     };
+    vim-overlay = {
+      url = "github:kawarimidoll/vim-overlay";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs-unstable";
+        };
+        pre-commit-hooks = {
+          follows = "pre-commit-hooks";
+        };
+        vim-src = {
+          follows = "vim-src";
+        };
+      };
+    };
+    vim-src = {
+      url = "github:vim/vim";
+      flake = false;
+    };
     xremap = {
+      url = "github:xremap/xremap?ref=v0.10.2";
+      flake = false;
+    };
+    xremap-nix = {
       url = "github:xremap/nix-flake";
+      inputs = {
+        crane = {
+          follows = "crane";
+        };
+        devshell = {
+          follows = "devshell";
+        };
+        hyprland = {
+          follows = "";
+        };
+        flake-parts = {
+          follows = "flake-parts";
+        };
+        home-manager = {
+          follows = "home-manager";
+        };
+        treefmt-nix = {
+          follows = "treefmt-nix";
+        };
+        xremap = {
+          follows = "xremap";
+        };
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+      };
     };
     # keep-sorted end
   };
@@ -270,6 +335,7 @@
       # keep-sorted start
       agenix,
       dagger,
+      deno,
       disko,
       flake-parts,
       home-manager,
@@ -282,7 +348,8 @@
       pre-commit-hooks,
       systems,
       treefmt-nix,
-      xremap,
+      vim-overlay,
+      xremap-nix,
       # keep-sorted end
       ...
     }@inputs:
@@ -314,11 +381,15 @@
                 agenix.overlays.default
                 inputs.agenix-rekey.overlays.default
                 oreore.overlays.default
+                deno.overlays.deno-overlay
               ];
               upkgs = import nixpkgs-unstable {
                 inherit system;
                 config.allowUnfree = true;
-                overlays = [ neovim-nightly-overlay.overlays.default ];
+                overlays = [
+                  neovim-nightly-overlay.overlays.default
+                  vim-overlay.overlays.default
+                ];
               };
             in
             nixpkgs.lib.nixosSystem {
@@ -331,7 +402,7 @@
                 { nixpkgs.overlays = overlays; }
                 lanzaboote.nixosModules.lanzaboote
                 agenix.nixosModules.default
-                xremap.nixosModules.default
+                xremap-nix.nixosModules.default
                 inputs.agenix-rekey.nixosModules.default
                 ./hosts/laptop
                 ./settings/nixos.nix
