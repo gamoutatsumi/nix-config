@@ -162,12 +162,6 @@ require('oil').setup()
 '''
 
 [[plugins]]
-repo = 'tani/dmacro.nvim'
-hook_add = '''
-noremap <C-y> <Plug>(dmacro-play-macro)
-'''
-
-[[plugins]]
 repo = 'stevearc/overseer.nvim'
 lua_add = '''
 require('overseer').setup()

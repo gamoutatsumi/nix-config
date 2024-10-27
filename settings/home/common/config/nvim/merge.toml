@@ -106,3 +106,10 @@ hooks_file = '$BASE_DIR/dpp/searchx.vim'
 
 [[plugins]]
 repo = 'lambdalisue/vim-manpager'
+
+[[plugins]]
+repo = 'tani/dmacro.vim'
+hook_add = '''
+nnoremap <C-y> <Plug>(dmacro-play-macro)
+inoremap <C-y> <Plug>(dmacro-play-macro)
+'''

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 {
   # keep-sorted start block=yes
   boot = {
@@ -34,7 +34,24 @@
     };
     # keep-sorted end
   };
-  security.rtkit.enable = true;
+  security = {
+    pam = {
+      u2f = {
+        cue = true;
+      };
+      services = {
+        login = {
+          u2fAuth = true;
+        };
+        sudo = {
+          u2fAuth = true;
+        };
+      };
+    };
+    rtkit = {
+      enable = true;
+    };
+  };
   services = {
     # keep-sorted start block=yes
     kmscon = {
@@ -88,6 +105,17 @@
     tailscale = {
       enable = true;
     };
+    udev = {
+      packages = with pkgs; [ yubikey-personalization ];
+      extraRules = ''
+        ACTION=="remove",\
+         ENV{ID_BUS}=="usb",\
+         ENV{ID_MODEL_ID}=="0407",\
+         ENV{ID_VENDOR_ID}=="1050",\
+         ENV{ID_VENDOR}=="Yubico",\
+         RUN+="${pkgs.systemd}/bin/loginctl lock-sessions"
+      '';
+    };
     xserver = {
       enable = true;
       excludePackages = with pkgs; [ xterm ];
@@ -102,8 +130,12 @@
         lightdm = {
           enable = true;
           greeters = {
-            gtk = {
+            mini = {
               enable = true;
+              user = username;
+            };
+            gtk = {
+              enable = false;
             };
           };
         };
