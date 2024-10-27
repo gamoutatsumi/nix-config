@@ -19,6 +19,7 @@ import XMonad.Layout.ToggleLayouts
 import XMonad.StackSet qualified as W
 import XMonad.Util.EZConfig
 import XMonad.Util.NamedScratchpad
+
 import Layouts
 import Workspace
 

@@ -1,23 +1,24 @@
+import Keys
+import Layouts
+import Workspace
 import XMonad
 import XMonad.Config.Desktop
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.Rescreen
 import XMonad.Hooks.StatusBar
 import XMonad.Hooks.StatusBar.PP
 import XMonad.Util.EZConfig
 import XMonad.Util.NamedScratchpad
 import XMonad.Util.SpawnOnce
 
-import Keys
-import Layouts
-import Workspace
-
 main =
   xmonad $
-    ewmhFullscreen . ewmh $
-      withSB (myPolybarConf "$HOME/.config/polybar/launch.sh") $
-        docks
-          myConfig
+    addRandrChangeHook myRandrChangeHook $
+      ewmhFullscreen . ewmh $
+        withSB myPolybarConf $
+          docks
+            myConfig
 
 mydefLogPP =
   def {ppHiddenNoWindows = stickmyfavorit}
@@ -25,13 +26,11 @@ mydefLogPP =
 stickmyfavorit "home" = "home"
 stickmyfavorit _ = ""
 
-myPolybarConf cmd =
+myPolybarConf =
   def
     { sbLogHook =
         xmonadPropLog
-          =<< dynamicLogString polybarPPdef,
-      sbStartupHook = spawn cmd,
-      sbCleanupHook = spawn "killall polybar"
+          =<< dynamicLogString polybarPPdef
     }
 
 polybarPPdef =

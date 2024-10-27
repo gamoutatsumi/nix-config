@@ -13,11 +13,12 @@
         config = ./config/xmonad/xmonad.hs;
         enableContribAndExtras = true;
         haskellPackages = pkgs.haskell.packages.ghc98;
-        extraPackages = haskellPackages: [
-          haskellPackages.containers
-          haskellPackages.unix
-          haskellPackages.directory
-        ];
+        extraPackages =
+          haskellPackages: with haskellPackages; [
+            containers
+            unix
+            directory
+          ];
         libFiles = {
           "Keys.hs" = ./config/xmonad/lib/Keys.hs;
           "Layouts.hs" = ./config/xmonad/lib/Layouts.hs;

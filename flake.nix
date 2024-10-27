@@ -609,7 +609,16 @@
                     stylua
                     efm-langserver
                     lua-language-server
-                    haskell-language-server
+                    (pkgs.haskell.packages.ghc98.ghcWithPackages (
+                      haskellPackages: with haskellPackages; [
+                        xmonad
+                        xmonad-extras
+                        containers
+                        unix
+                        directory
+                        haskell-language-server
+                      ]
+                    ))
                   ])
                   ++ [ dagger.packages.${system}.dagger ];
                 inputsFrom =

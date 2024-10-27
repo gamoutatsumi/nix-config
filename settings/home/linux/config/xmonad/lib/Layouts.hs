@@ -14,6 +14,7 @@ module Layouts
     myScratchpads,
     myLayoutHook,
     myManageHook,
+    myRandrChangeHook,
   )
 where
 
@@ -102,7 +103,7 @@ myScratchpads =
       myFullFloating,
     NS
       "vivaldi"
-      "vivaldi" 
+      "vivaldi"
       (className =? "Vivaldi-stable")
       myFullFloating,
     NS
@@ -196,3 +197,6 @@ myManageHook =
     <+> myManageHookShift
     <+> myManageHookFloat
     <+> namedScratchpadManageHook myScratchpads
+
+myRandrChangeHook :: X ()
+myRandrChangeHook = spawn "autorandr --change"
