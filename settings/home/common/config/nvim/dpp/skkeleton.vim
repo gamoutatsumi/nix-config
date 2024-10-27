@@ -17,13 +17,12 @@ function s:skkeleton_init_kanatable() abort
         \ })
 endfunction
 function s:skkeleton_init() abort
-  let s:dictPath = dpp#get('dict').rtp
   call skkeleton#config(#{
         \   eggLikeNewline: v:true, 
         \   keepState: v:true,
         \   databasePath: stdpath("cache") .. "/skkeleton.db",
         \   globalDictionaries: [
-        \     s:dictPath .. "/SKK-JISYO.L"
+        \    "@skk_dict@/share/SKK-JISYO.L"
         \   ],
         \   sources: ["deno_kv"]
         \ })

@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 let
   toINI = lib.generators.toINIWithGlobalSection { listsAsDuplicateKeys = true; };
 in
@@ -31,7 +31,18 @@ in
       "ov/config.yaml".source = ./config/ov/config.yaml;
       "tmux".source = ./config/tmux;
       "sheldon".source = ./config/sheldon;
-      "nvim".source = ./config/nvim;
+      "nvim".source = pkgs.symlinkJoin {
+        name = "nvim";
+        paths = [
+          (pkgs.substituteAllFiles {
+            src = ./config/nvim;
+            files = [ "dpp/skkeleton.vim" ];
+            skk_dict = "${pkgs.skk-dicts}";
+          })
+          ./config/nvim
+        ];
+      };
+      # "nvim".source = ./config/nvim;
       "alacritty/nightfly.toml".source = builtins.fetchurl {
         url = "https://raw.githubusercontent.com/bluz71/vim-nightfly-colors/master/extras/nightfly-alacritty.toml";
         sha256 = "0ssgf9i5nrc2m57zvgfzlgfvyhcrwd73pkiny266ba201niv6qi1";

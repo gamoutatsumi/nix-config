@@ -65,6 +65,28 @@ in
         enable = true;
       };
     };
+    emacs = {
+      enable = true;
+      package = upkgs.emacs-unstable;
+      extraPackages =
+        epkgs: with epkgs; [
+          ddskk
+          # mermaid-mode
+          # lsp-mode
+          # hydra
+          # leaf
+          # leaf-keywords
+          # leaf-tree
+          # leaf-convert
+          # org
+          # tree-sitter
+          # modus-themes
+          # ein
+          # go-mode
+          # bind-key
+          # htmlize
+        ];
+    };
     gh = {
       enable = true;
       settings = {

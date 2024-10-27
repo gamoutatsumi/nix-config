@@ -87,15 +87,6 @@ repo = 'rhysd/committia.vim'
 repo = 'tpope/vim-dadbod'
 
 [[plugins]]
-repo = 'skk-dev/dict'
-if = false
-build = '''
-if [[ "$(uname)" == "Darwin" ]]; then
-  cp SKK-JISYO.* $HOME/Library/Containers/net.mtgto.inputmethod.macSKK/Data/Documents/Dictionaries/
-fi
-'''
-
-[[plugins]]
 repo = 'tani/vim-artemis'
 if = false
 

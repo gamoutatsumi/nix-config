@@ -22,28 +22,6 @@
     };
     emacs = {
       enable = true;
-      package = upkgs.emacsWithPackagesFromUsePackage {
-        config = builtins.toFile "empty.el" "";
-        package = upkgs.emacs-unstable;
-        extraEmacsPackages =
-          epkgs: with epkgs; [
-            ddskk
-            mermaid-mode
-            lsp-mode
-            hydra
-            leaf
-            leaf-keywords
-            leaf-tree
-            leaf-convert
-            org
-            tree-sitter
-            modus-themes
-            ein
-            go-mode
-            bind-key
-            htmlize
-          ];
-      };
       client = {
         enable = true;
       };
