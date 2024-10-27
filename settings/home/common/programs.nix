@@ -14,6 +14,67 @@ let
 in
 {
   # keep-sorted start block=yes
+
+  # The home.packages option allows you to install Nix packages into your
+  # environment.
+  home.packages = (
+    with pkgs;
+    [
+      (wrapHelm kubernetes-helm {
+        plugins = with kubernetes-helmPlugins; [
+          helm-diff
+          helm-secrets
+          helm-git
+        ];
+      })
+      # keep-sorted start
+      age-plugin-yubikey
+      bat
+      bc
+      binutils
+      cmake
+      coreutils-full
+      curlFull
+      delta
+      deno."2.0.3"
+      docker-slim
+      dogdns
+      dust
+      fd
+      file
+      findutils
+      fzf
+      gawk
+      ghq
+      git-crypt
+      git-lfs
+      gnugrep
+      gnumake
+      gnused
+      gojq
+      gomi
+      jq
+      killall
+      kubectl
+      kubie
+      lsd
+      moreutils
+      mycli
+      neofetch
+      nix-diff
+      nix-index
+      nix-tree
+      ov
+      q-text-as-data
+      ripgrep
+      sheldon
+      stern
+      tmux
+      unar
+      unzip
+      # keep-sorted end
+    ]
+  );
   programs = {
     # keep-sorted start block=yes
     alacritty = {
@@ -67,25 +128,29 @@ in
     };
     emacs = {
       enable = true;
-      package = upkgs.emacs-unstable;
-      extraPackages =
-        epkgs: with epkgs; [
-          ddskk
-          # mermaid-mode
-          # lsp-mode
-          # hydra
-          # leaf
-          # leaf-keywords
-          # leaf-tree
-          # leaf-convert
-          # org
-          # tree-sitter
-          # modus-themes
-          # ein
-          # go-mode
-          # bind-key
-          # htmlize
-        ];
+      package = upkgs.emacsWithPackagesFromUsePackage {
+        package = upkgs.emacs-git;
+        config = ./config/emacs/init.el;
+        extraEmacsPackages =
+          epkgs: with epkgs; [
+            leaf
+            ddskk
+            # mermaid-mode
+            # lsp-mode
+            # hydra
+            # leaf
+            # leaf-keywords
+            # leaf-tree
+            # leaf-convert
+            # org
+            # tree-sitter
+            # modus-themes
+            # ein
+            # go-mode
+            # bind-key
+            # htmlize
+          ];
+      };
     };
     gh = {
       enable = true;
@@ -221,126 +286,10 @@ in
       };
       defaultKeymap = "emacs";
       dotDir = ".config/zsh";
-      initExtra = builtins.readFile ./config/zshrc;
-      envExtra = ''
-        unsetopt global_rcs
-        export ARCH=$(uname -m)
-
-        # ostype returns the lowercase OS name
-        ostype() {
-          uname | tr "[:upper:]" "[:lower:]"
-        }
-
-        # os_detect export the SHELL_ENVIRONMENT variable as you see fit
-        case "$(ostype)" in
-          *'linux'*)  
-            if grep -iq 'microsoft' "/proc/sys/kernel/osrelease"; then
-              SHELL_ENVIRONMENT='wsl'
-            else
-              SHELL_ENVIRONMENT='linux'
-              fi                         ;;
-            *'darwin'*) SHELL_ENVIRONMENT='osx'     ;;
-            *'bsd'*)    SHELL_ENVIRONMENT='bsd'     ;;
-            *)          SHELL_ENVIRONMENT='unknown' ;;
-          esac
-          export SHELL_ENVIRONMENT
-
-        # is_osx returns true if running OS is Macintosh
-        is_osx() {
-          if [[ "$SHELL_ENVIRONMENT" = "osx" ]]; then
-            return 0
-          else
-            return 1
-          fi
-        }
-
-        is_wsl() {
-          if [[ "$SHELL_ENVIRONMENT" = "wsl" ]]; then
-            return 0
-          else
-            return 1
-          fi
-        }
-
-        is_ssh() {
-          if [[ -n "$SSH_CONNECTION" ]]; then
-            return 0
-          else
-            return 1
-          fi
-        }
-
-        exists() {
-          if (( $+commands[$@] )); then
-            return 0
-          else
-            return 1
-          fi
-        }
-      '';
+      initExtra = builtins.readFile ./config/.zshrc;
+      envExtra = builtins.readFile ./config/.zshenv;
     };
     # keep-sorted end
   };
-
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
-  home.packages = (
-    with pkgs;
-    [
-      (wrapHelm kubernetes-helm {
-        plugins = with kubernetes-helmPlugins; [
-          helm-diff
-          helm-secrets
-          helm-git
-        ];
-      })
-      # keep-sorted start
-      age-plugin-yubikey
-      bat
-      bc
-      binutils
-      cmake
-      coreutils-full
-      curlFull
-      delta
-      deno."2.0.3"
-      docker-slim
-      dogdns
-      dust
-      fd
-      file
-      findutils
-      fzf
-      gawk
-      ghq
-      git-crypt
-      git-lfs
-      gnugrep
-      gnumake
-      gnused
-      gojq
-      gomi
-      jq
-      killall
-      kubectl
-      kubie
-      lsd
-      moreutils
-      mycli
-      neofetch
-      nix-diff
-      nix-index
-      nix-tree
-      ov
-      q-text-as-data
-      ripgrep
-      sheldon
-      stern
-      tmux
-      unar
-      unzip
-      # keep-sorted end
-    ]
-  );
   # keep-sorted end
 }

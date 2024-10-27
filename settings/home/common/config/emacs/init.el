@@ -1,16 +1,13 @@
-(defmacro when-darwin (&rest body)
-  (when (string= system-type "darwin")
-    `(progn ,@body)))
-(defmacro when-darwin-not-window-system (&rest body)
-  (when (and (string= system-type "darwin")
-             window-system)
-    `(progn ,@body)))
-(with-eval-after-load 'comp-run
-  ;; config
-  (setopt native-comp-async-jobs-number 8)
-  (setopt native-comp-speed 3)
-  (setopt native-comp-always-compile t))
+; ----
+; language
+; ----
+;; set language as Japanese
+(set-language-environment 'Japanese)
+;; coding UTF8
+(set-language-environment  'utf-8)
+(prefer-coding-system 'utf-8)
 
-(with-eval-after-load 'warnings
-  ;; config
-  (setopt warning-suppress-types '((comp))))
+(require 'skk-autoloads)
+(global-set-key "\C-x\C-j" 'skk-mode)
+(global-set-key "\C-xj" 'skk-auto-fill-mode)
+(global-set-key "\C-xt" 'skk-tutorial)
