@@ -1,5 +1,11 @@
 {
   description = "Nix(OS) Configurations";
+  nixConfig = {
+    extra-substituters = [ "https://nix-community.cachix.org" ];
+    extra-trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
+  };
 
   inputs = {
     # keep-sorted start block=yes
@@ -188,7 +194,7 @@
       };
     };
     neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
+      url = "github:nix-community/neovim-nightly-overlay?ref=pull/683/head";
       inputs = {
         hercules-ci-effects = {
           follows = "";
