@@ -609,6 +609,7 @@
                     stylua
                     efm-langserver
                     lua-language-server
+                    haskell-language-server
                   ])
                   ++ [ dagger.packages.${system}.dagger ];
                 inputsFrom =
