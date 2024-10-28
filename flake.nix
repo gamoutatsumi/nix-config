@@ -209,13 +209,16 @@
           follows = "flake-parts";
         };
         neovim-src = {
-          url = "github:neovim/neovim";
-          flake = false;
+          follows = "neovim-src";
         };
         nixpkgs = {
           follows = "nixpkgs-unstable";
         };
       };
+    };
+    neovim-src = {
+      url = "github:neovim/neovim";
+      flake = false;
     };
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
@@ -504,7 +507,7 @@
                     extraSpecialArgs = {
                       username = username;
                       upkgs = upkgs;
-                      networkManager = true;
+                      networkManager = false;
                     };
                     backupFileExtension = "bak";
                   };
