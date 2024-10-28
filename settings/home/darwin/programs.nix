@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, upkgs, ... }:
 {
   programs = {
     # keep-sorted start block=yes
@@ -16,8 +16,12 @@
     };
     # keep-sorted end
   };
-  home.packages = with pkgs; [
-    docker
-    pinentry_mac
-  ];
+  home = {
+    packages =
+      (with pkgs; [
+        docker
+        pinentry_mac
+      ])
+      ++ (with upkgs; [ deno ]);
+  };
 }

@@ -377,6 +377,47 @@
       # keep-sorted end
       ...
     }@inputs:
+    let
+      upkgsConf =
+        system:
+        (import nixpkgs-unstable {
+          inherit system;
+          config.allowUnfree = true;
+          overlays = [
+            neovim-nightly-overlay.overlays.default
+            emacs-overlay.overlays.default
+          ];
+        });
+      denoVersion = "2.0.3";
+      homeManagerConf =
+        {
+          imports,
+          username,
+          upkgs,
+        }:
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = false;
+            users = {
+              "${username}" = {
+                imports = imports;
+              };
+            };
+            backupFileExtension = "bak";
+            extraSpecialArgs = {
+              inherit username upkgs denoVersion;
+              networkManager = false;
+            };
+          };
+        };
+      overlays = [
+        agenix.overlays.default
+        inputs.agenix-rekey.overlays.default
+        oreore.overlays.default
+        deno.overlays.deno-overlay
+      ];
+    in
     (flake-parts.lib.mkFlake { inherit inputs; } (
       {
         inputs,
@@ -401,21 +442,7 @@
             }:
             let
               username = "gamoutatsumi";
-              overlays = [
-                agenix.overlays.default
-                inputs.agenix-rekey.overlays.default
-                oreore.overlays.default
-                deno.overlays.deno-overlay
-              ];
-              upkgs = import nixpkgs-unstable {
-                inherit system;
-                config.allowUnfree = true;
-                overlays = [
-                  neovim-nightly-overlay.overlays.default
-                  vim-overlay.overlays.default
-                  emacs-overlay.overlays.default
-                ];
-              };
+              upkgs = upkgsConf system;
             in
             nixpkgs.lib.nixosSystem {
               specialArgs = {
@@ -432,26 +459,10 @@
                 ./hosts/laptop
                 ./settings/nixos.nix
                 home-manager.nixosModules.home-manager
-                (
-                  { config, ... }:
-                  {
-                    home-manager = {
-                      useGlobalPkgs = true;
-                      useUserPackages = false;
-                      users = {
-                        "${username}" = {
-                          imports = [ ./settings/home/linux.nix ];
-                        };
-                      };
-                      extraSpecialArgs = {
-                        username = username;
-                        upkgs = upkgs;
-                        networkManager = true;
-                      };
-                      backupFileExtension = "bak";
-                    };
-                  }
-                )
+                (homeManagerConf {
+                  inherit username upkgs;
+                  imports = [ ./settings/home/linux.nix ];
+                })
               ];
             }
           );
@@ -464,20 +475,7 @@
             }:
             let
               username = "gamoutatsumi";
-              overlays = [
-                agenix.overlays.default
-                inputs.agenix-rekey.overlays.default
-                oreore.overlays.default
-                deno.overlays.deno-overlay
-              ];
-              upkgs = import nixpkgs-unstable {
-                inherit system;
-                config.allowUnfree = true;
-                overlays = [
-                  neovim-nightly-overlay.overlays.default
-                  emacs-overlay.overlays.default
-                ];
-              };
+              upkgs = upkgsConf system;
             in
             nixpkgs.lib.nixosSystem {
               specialArgs = {
@@ -495,23 +493,10 @@
                 ./hosts/desktop
                 ./settings/nixos.nix
                 home-manager.nixosModules.home-manager
-                {
-                  home-manager = {
-                    useGlobalPkgs = true;
-                    useUserPackages = false;
-                    users = {
-                      "${username}" = {
-                        imports = [ ./settings/home/linux.nix ];
-                      };
-                    };
-                    extraSpecialArgs = {
-                      username = username;
-                      upkgs = upkgs;
-                      networkManager = false;
-                    };
-                    backupFileExtension = "bak";
-                  };
-                }
+                (homeManagerConf {
+                  inherit username upkgs;
+                  imports = [ ./settings/home/linux.nix ];
+                })
               ];
             }
           );
@@ -551,12 +536,7 @@
             let
               darwinUser = builtins.getEnv "DARWIN_USER";
               darwinHost = builtins.getEnv "DARWIN_HOST";
-              overlays = [ oreore.overlays.default ];
-              upkgs = import nixpkgs-unstable {
-                inherit system;
-                config.allowUnfree = true;
-                overlays = [ neovim-nightly-overlay.overlays.default ];
-              };
+              upkgs = upkgsConf system;
             in
             nix-darwin.lib.darwinSystem {
               inherit system;
@@ -571,22 +551,11 @@
                 ./hosts/work_darwin
                 ./settings/darwin.nix
                 home-manager.darwinModules.home-manager
-                {
-                  home-manager = {
-                    backupFileExtension = "backup";
-                    useGlobalPkgs = true;
-                    useUserPackages = true;
-                    users = {
-                      "${darwinUser}" = {
-                        imports = [ ./settings/home/darwin.nix ];
-                      };
-                    };
-                    extraSpecialArgs = {
-                      username = darwinUser;
-                      upkgs = upkgs;
-                    };
-                  };
-                }
+                (homeManagerConf {
+                  inherit upkgs;
+                  imports = [ ./settings/home/darwin.nix ];
+                  username = darwinUser;
+                })
               ];
             }
           );
@@ -599,18 +568,20 @@
             ...
           }:
           let
-            upkgs = import nixpkgs-unstable {
-              inherit system;
-              config.allowUnfree = true;
-              overlays = [ neovim-nightly-overlay.overlays.default ];
-            };
+            upkgs = upkgsConf system;
           in
           {
+            _module.args.pkgs = import inputs.nixpkgs {
+              inherit system;
+              overlays = overlays;
+              config = { };
+            };
             agenix-rekey = {
               nodes = self.nixosConfigurations;
             };
             devShells = {
               default = pkgs.mkShellNoCC {
+
                 packages =
                   (with pkgs; [
                     nixfmt-rfc-style
@@ -619,8 +590,8 @@
                     lua-language-server
                     (pkgs.haskell.packages.ghc98.ghcWithPackages (
                       haskellPackages: with haskellPackages; [
-                        xmonad
-                        xmonad-extras
+                        # xmonad
+                        # xmonad-extras
                         containers
                         unix
                         directory

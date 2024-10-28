@@ -17,9 +17,8 @@ in
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = (
-    with pkgs;
-    [
+  home.packages =
+    (with pkgs; [
       (wrapHelm kubernetes-helm {
         plugins = with kubernetes-helmPlugins; [
           helm-diff
@@ -36,7 +35,6 @@ in
       coreutils-full
       curlFull
       delta
-      deno."2.0.3"
       docker-slim
       dogdns
       dust
@@ -67,14 +65,13 @@ in
       ov
       q-text-as-data
       ripgrep
-      sheldon
       stern
       tmux
       unar
       unzip
       # keep-sorted end
-    ]
-  );
+    ])
+    ++ (with upkgs; [ sheldon ]);
   programs = {
     # keep-sorted start block=yes
     alacritty = {

@@ -1,9 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, denoVersion, ... }:
 {
   home.packages = with pkgs; [
     # keep-sorted start
     agenix-rekey
     chntpw
+    deno.${denoVersion}
     discord
     firefox
     flat-remix-icon-theme
