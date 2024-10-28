@@ -465,11 +465,15 @@
                 agenix.overlays.default
                 inputs.agenix-rekey.overlays.default
                 oreore.overlays.default
+                deno.overlays.deno-overlay
               ];
               upkgs = import nixpkgs-unstable {
                 inherit system;
                 config.allowUnfree = true;
-                overlays = [ neovim-nightly-overlay.overlays.default ];
+                overlays = [
+                  neovim-nightly-overlay.overlays.default
+                  emacs-overlay.overlays.default
+                ];
               };
             in
             nixpkgs.lib.nixosSystem {
@@ -502,6 +506,7 @@
                       upkgs = upkgs;
                       networkManager = true;
                     };
+                    backupFileExtension = "bak";
                   };
                 }
               ];

@@ -35,6 +35,7 @@
     };
   };
   environment.systemPackages = with pkgs; [
+    gcc
     git
     vim
     wget
