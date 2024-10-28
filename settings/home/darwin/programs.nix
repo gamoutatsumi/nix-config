@@ -30,6 +30,7 @@
       (with pkgs; [
         docker
         pinentry_mac
+        aicommit2
       ])
       ++ (with upkgs; [ deno ]);
   };
