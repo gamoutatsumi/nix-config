@@ -4,6 +4,15 @@
     # keep-sorted start block=yes
     alacritty = {
       settings = {
+        general = {
+          import = [ "~/.config/alacritty/nightfly.toml" ];
+        };
+        terminal = {
+          shell = {
+            args = [ "--login" ];
+            program = "zsh";
+          };
+        };
         font = {
           size = 15;
         };

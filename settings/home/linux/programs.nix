@@ -36,6 +36,11 @@
     # keep-sorted start block=yes
     alacritty = {
       settings = {
+        import = [ "~/.config/alacritty/nightfly.toml" ];
+        shell = {
+          args = [ "--login" ];
+          program = "zsh";
+        };
         font = {
           size = 11.5;
         };

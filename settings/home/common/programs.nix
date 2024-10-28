@@ -77,7 +77,6 @@ in
     alacritty = {
       enable = true;
       settings = {
-        import = [ "~/.config/alacritty/nightfly.toml" ];
         env = {
           TERM = "alacritty";
           USE_TMUX = "true";
@@ -103,10 +102,6 @@ in
               mouse = "Middle";
             }
           ];
-        };
-        shell = {
-          args = [ "--login" ];
-          program = "zsh";
         };
         window = {
           option_as_alt = "Both";
