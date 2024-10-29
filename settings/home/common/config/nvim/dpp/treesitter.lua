@@ -17,6 +17,7 @@ require("nvim-treesitter.configs").setup({
         "json",
         "lua",
         "markdown_inline",
+        "mermaid",
         "nix",
         "org",
         "proto",
