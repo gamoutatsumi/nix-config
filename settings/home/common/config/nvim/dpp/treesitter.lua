@@ -10,8 +10,12 @@ require("nvim-treesitter.configs").setup({
     ensure_installed = {
         -- keep-sorted start
         "bash",
+        "comment",
         "go",
         "gomod",
+        "gosum",
+        "gotmpl",
+        "gowork",
         "haskell",
         "javascript",
         "json",
