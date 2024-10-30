@@ -105,8 +105,8 @@ myAdditionalKeysP =
     ("<XF86AudioNext>", spawn "playerctl next"),
     ("<XF86AudioPrev>", spawn "playerctl previous"),
     -- Brightness Keys
-    ("<XF86MonBrightnessUp>", spawn "changeBrightness -inc 2.5"),
-    ("<XF86MonBrightnessDown>", spawn "changeBrightness -dec 2.5"),
+    ("<XF86MonBrightnessUp>", spawn "changeBrightness 2.5%+"),
+    ("<XF86MonBrightnessDown>", spawn "changeBrightness 2.5%-"),
     -- Take a screenshot (selected area)
     ("M-<Print>", spawn "maimFull"),
     ("C-<Print>", spawn "maimSelect"),
