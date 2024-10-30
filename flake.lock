@@ -438,15 +438,16 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1730250311,
-        "narHash": "sha256-DiwGQ0S0p9zl4sl6rv3KRYMm+tHtpS5k+srGaP3ouNM=",
+        "lastModified": 1730164085,
+        "narHash": "sha256-gsq+vAw5B+p7kCU9K0Iw8q/pG4f7lreZXG3yV68CIdo=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "05d9e6a9e850ee797a4a018e72156dd62831a4b6",
+        "rev": "4a4b52dca493342c83a4b21bb10e184325b5af94",
         "type": "github"
       },
       "original": {
         "owner": "neovim",
+        "ref": "4a4b52dca493342c83a4b21bb10e184325b5af94",
         "repo": "neovim",
         "type": "github"
       }
@@ -668,11 +669,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1730172105,
-        "narHash": "sha256-GTy3MCM6kbqRq7/oriE0aVp/H8F6BlC+A8GD21CbJl4=",
+        "lastModified": 1730265546,
+        "narHash": "sha256-sXPKvbaugRw37NYiKK4U7OV1CX4tHkHmkQa1U8gcbpo=",
         "owner": "kawarimidoll",
         "repo": "vim-overlay",
-        "rev": "0f6dabadf6fab5f7e5e75bfa8c9617b5a5c8f5d2",
+        "rev": "ca0b0570975a216fd81a4f24b2c35a611ea1ccca",
         "type": "github"
       },
       "original": {
