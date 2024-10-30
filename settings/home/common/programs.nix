@@ -123,6 +123,7 @@ in
       package = upkgs.emacsWithPackagesFromUsePackage {
         package = upkgs.emacs-git;
         config = ./config/emacs/init.el;
+        defaultInitFile = true;
         alwaysTangle = true;
       };
     };
