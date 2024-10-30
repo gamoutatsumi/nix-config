@@ -124,7 +124,6 @@ in
         package = upkgs.emacs-git;
         config = ./config/emacs/init.el;
         defaultInitFile = true;
-        alwaysTangle = true;
         extraEmacsPackages =
           epkgs: with epkgs; [
             (treesit-grammars.with-grammars (
