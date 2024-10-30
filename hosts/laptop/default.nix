@@ -5,7 +5,6 @@
 {
   # keep-sorted start
   config,
-  lib,
   pkgs,
   upkgs,
   username,
