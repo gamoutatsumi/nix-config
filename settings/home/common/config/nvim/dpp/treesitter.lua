@@ -28,7 +28,6 @@ require("nvim-treesitter.configs").setup({
         "toml",
         "tsx",
         "typescript",
-        "vim",
         "vimdoc",
         "yaml",
         -- keep-sorted end
