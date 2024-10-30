@@ -14,3 +14,7 @@
       (defvar dired-bind-jump nil)
       :custom
       (skk-egg-like-newline . t))
+(leaf treesit
+  :config
+  (setopt treesit-font-lock-level 4)
+)
