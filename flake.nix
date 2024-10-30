@@ -482,6 +482,7 @@
                 inherit inputs inputs';
                 username = username;
                 upkgs = upkgs;
+                device = "/dev/disk/by-id/nvme-WD_BLACK_SN770_1TB_24116U400484";
               };
               modules = [
                 { nixpkgs.overlays = overlays; }
@@ -489,7 +490,6 @@
                 disko.nixosModules.disko
                 agenix.nixosModules.default
                 inputs.agenix-rekey.nixosModules.default
-                (import ./disko-config.nix { device = "/dev/disk/by-id/nvme-WD_BLACK_SN770_1TB_24116U400484"; })
                 ./hosts/desktop
                 ./settings/nixos.nix
                 home-manager.nixosModules.home-manager

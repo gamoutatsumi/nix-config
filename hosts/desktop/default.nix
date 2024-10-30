@@ -16,6 +16,7 @@
 {
   imports = [
     # Include the results of the hardware scan.
+    ./disko-config.nix
     ./secrets.nix
     ./hardware-configuration.nix
   ];
