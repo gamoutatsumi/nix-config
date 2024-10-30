@@ -123,25 +123,7 @@ in
       package = upkgs.emacsWithPackagesFromUsePackage {
         package = upkgs.emacs-git;
         config = ./config/emacs/init.el;
-        extraEmacsPackages =
-          epkgs: with epkgs; [
-            leaf
-            ddskk
-            # mermaid-mode
-            # lsp-mode
-            # hydra
-            # leaf
-            # leaf-keywords
-            # leaf-tree
-            # leaf-convert
-            # org
-            # tree-sitter
-            # modus-themes
-            # ein
-            # go-mode
-            # bind-key
-            # htmlize
-          ];
+        alwaysTangle = true;
       };
     };
     gh = {

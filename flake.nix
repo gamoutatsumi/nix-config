@@ -217,7 +217,7 @@
       };
     };
     neovim-src = {
-      url = "github:neovim/neovim";
+      url = "github:neovim/neovim?ref=4a4b52dca493342c83a4b21bb10e184325b5af94";
       flake = false;
     };
     nix-darwin = {

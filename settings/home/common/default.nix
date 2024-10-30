@@ -26,6 +26,7 @@ in
   };
   xdg = {
     configFile = {
+      "emacs/init.el".source = ./config/emacs/init.el;
       "zeno".source = ./config/zeno;
       "ov/config.yaml".source = ./config/ov/config.yaml;
       "tmux".source = ./config/tmux;
