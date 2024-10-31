@@ -28,7 +28,7 @@
   home = {
     packages =
       (with pkgs; [
-        docker
+        docker-client
         pinentry_mac
         aicommit2
       ])
