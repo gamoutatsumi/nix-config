@@ -1,15 +1,13 @@
-{
-  pkgs,
-  upkgs,
-  networkManager,
-  ...
-}:
+{ pkgs, networkManager, ... }:
 {
   services = {
     mpd = {
       enable = true;
     };
     mpris-proxy = {
+      enable = true;
+    };
+    mpdris2 = {
       enable = true;
     };
     screen-locker = {

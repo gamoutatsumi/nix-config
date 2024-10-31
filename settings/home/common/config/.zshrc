@@ -246,7 +246,7 @@ alias vimdiff='nvim -d'
 alias vimmerge='nvim -c vnew -c "windo diffthis" -c "setl scrollbind" -c "windo setl buftype=nofile"'
 
 # dotfiles
-alias dot='cd ~/.local/share/chezmoi'
+alias dot='cd ~/.config/home-manager'
 alias zshconfig='chezmoi edit ~/.zshrc'
 alias cedit='chezmoi edit'
 alias vimconfig='chezmoi edit ~/.config/nvim/init/core/init.vim'
