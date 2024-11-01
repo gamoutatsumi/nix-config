@@ -24,25 +24,15 @@
 (leaf leaf-convert :ensure t)
 (leaf modus-themes
       :ensure t
-      :preface
-      :advice
-      ((:after modus-themes-load-operandi
-               (lambda ()
-                 (set-face-background 'default "#FFFFFF"))))
       :custom
       `(
         (modus-themes-bold-constructs . nil)
         (modus-themes-italic-constructs . t)
-        (modus-themes-region . '(bg-only no-extend))
         )
       :init
-      `(
        (modus-themes-load-themes)
-       (modus-themes-load-operandi)
-       )
       :config
-      (eval-when-compile
-        (require 'modus-themes)))
+       (modus-themes-load-vivendi))
 
 (leaf lsp-mode
       :ensure t

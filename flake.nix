@@ -516,7 +516,7 @@
                       set -e
                       echo "Updating ${system}..."
                       nix-channel --update
-                      nix flake update --commit-lock-file
+                      nix flake update --commit-lock-file nixpkgs neovim-nightly-overlay neovim-src nixpkgs-unstable
                       nix run nix-darwin -- switch --flake .#$1 --impure
                       echo "Updated ${system}"
                     ''

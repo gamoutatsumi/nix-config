@@ -121,7 +121,7 @@ in
     emacs = {
       enable = true;
       package = upkgs.emacsWithPackagesFromUsePackage {
-        package = upkgs.emacs-git;
+        package = upkgs.emacs-unstable;
         config = ./config/emacs/init.el;
         defaultInitFile = true;
         extraEmacsPackages =
