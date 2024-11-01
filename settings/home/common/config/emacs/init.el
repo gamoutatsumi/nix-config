@@ -24,15 +24,12 @@
 (leaf leaf-convert :ensure t)
 (leaf modus-themes
       :ensure t
-      :init
-       (modus-themes-load-themes)
+      :require t
       :config
-       (modus-themes-load-vivendi)
+       (modus-themes-load-theme 'modus-vivendi)
       :custom
-      `(
-        (modus-themes-bold-constructs . nil)
-        (modus-themes-italic-constructs . t)
-        )
+      `((modus-themes-bold-constructs . nil)
+        (modus-themes-italic-constructs . t)))
 
 (leaf lsp-mode
       :ensure t
