@@ -101,8 +101,6 @@ name=CAC Module\n";
     configFile = {
       "rofi".source = ./config/rofi;
       "easyeffects/output/Happy_your_Life_+_Downmix_to_mono.json".source = ./config/easyeffects/Happy_your_Life_+_Downmix_to_mono.json;
-      "vivaldi.conf".text = "--force-dark-mode";
-      "vivaldi-stable.conf".text = "--force-dark-mode";
       "libskk".source = ./config/libskk;
     };
   };

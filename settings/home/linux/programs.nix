@@ -14,12 +14,15 @@
       pavucontrol
       rofi
       slack
-      vivaldi
       vivaldi-ffmpeg-codecs
       xsel
       zoom-us
       # keep-sorted end
-
+      (vivaldi.override {
+        enableWidevine = true;
+        proprietaryCodecs = true;
+        commandLineArgs = "--force-dark-mode";
+      })
       # keep-sorted start
       changeBrightness
       changeVolume
