@@ -24,12 +24,12 @@
       };
     };
     iconTheme = {
-      package = pkgs.flat-remix-icon-theme;
-      name = "Flat-Remix-Cyan-Dark";
+      package = pkgs.vimix-icon-theme;
+      name = "Vimix-Doder-dark";
     };
     theme = {
-      package = pkgs.flat-remix-gtk;
-      name = "Flat-Remix-GTK-Cyan-Dark";
+      package = pkgs.vimix-gtk-themes;
+      name = "vimix-dark-doder";
     };
     # keep-sorted end
   };
@@ -49,7 +49,7 @@ library=${pkgs.opensc}/lib/opensc-pkcs11.so
 name=CAC Module\n";
     };
     pointerCursor = {
-      name = "Vimix-Cursors";
+      name = "Vimix-cursors";
       gtk = {
         enable = true;
       };
@@ -57,7 +57,7 @@ name=CAC Module\n";
         enable = true;
         defaultCursor = "left_ptr";
       };
-      package = pkgs.vimix-cursor-theme;
+      package = pkgs.vimix-cursors;
     };
   };
   i18n.inputMethod = {
