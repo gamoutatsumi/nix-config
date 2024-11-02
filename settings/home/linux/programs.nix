@@ -14,7 +14,6 @@
       pavucontrol
       rofi
       slack
-      vivaldi-ffmpeg-codecs
       xsel
       zoom-us
       # keep-sorted end
