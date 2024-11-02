@@ -17,7 +17,7 @@
       enable = true;
     };
     screen-locker = {
-      enable = true;
+      enable = false;
       lockCmd = "${pkgs.systemd}/bin/loginctl lock-sessions";
       xautolock = {
         enable = false;
