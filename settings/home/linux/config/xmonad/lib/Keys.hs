@@ -8,6 +8,8 @@ module Keys
 where
 
 import Data.Map qualified as M
+import Layouts
+import Workspace
 import XMonad
 import XMonad.Actions.CopyWindow
 import XMonad.Actions.CycleWS
@@ -19,9 +21,6 @@ import XMonad.Layout.ToggleLayouts
 import XMonad.StackSet qualified as W
 import XMonad.Util.EZConfig
 import XMonad.Util.NamedScratchpad
-
-import Layouts
-import Workspace
 
 myRemoveKeysP =
   [ "M-S-p",
@@ -76,8 +75,8 @@ myAdditionalKeysP =
     -- Move the focus to next screen (multi screen)
     ("M-<Tab>", nextScreen),
     -- Lock screen
-    ("M1-C-l", spawn "light-locker-command -l"),
-    ("<XF86ScreenSaver>", spawn "light-locker-command -l"),
+    ("M1-C-l", spawn "loginctl lock-sessions"),
+    ("<XF86ScreenSaver>", spawn "loginctl lock-sessions"),
     -- Launch terminal with a float window
     ("M-<Esc>", namedScratchpadAction myScratchpads "alacritty"),
     -- Launch terminal

@@ -12,7 +12,7 @@
     };
     screen-locker = {
       enable = true;
-      lockCmd = "${pkgs.lightlocker}/bin/light-locker-command -l";
+      lockCmd = "${pkgs.systemd}/bin/loginctl lock-sessions";
       xautolock = {
         enable = true;
         detectSleep = true;
