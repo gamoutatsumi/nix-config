@@ -11,6 +11,7 @@ import XMonad.Hooks.StatusBar.PP
 import XMonad.Util.EZConfig
 import XMonad.Util.NamedScratchpad
 import XMonad.Util.SpawnOnce
+import XMonad.Util.Cursor
 
 main =
   xmonad $

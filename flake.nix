@@ -581,7 +581,6 @@
             };
             devShells = {
               default = pkgs.mkShellNoCC {
-
                 packages =
                   (with pkgs; [
                     nixfmt-rfc-style
@@ -589,13 +588,18 @@
                     efm-langserver
                     lua-language-server
                     (pkgs.haskell.packages.ghc98.ghcWithPackages (
-                      haskellPackages: with haskellPackages; [
-                        # xmonad
-                        # xmonad-extras
+                      haskellPackages:
+                      with haskellPackages;
+                      [
                         containers
                         unix
                         directory
                         haskell-language-server
+                      ]
+                      ++ lib.optionals (pkgs.stdenv.isLinux) [
+                        xmonad
+                        xmonad-extras
+                        xmonad-contrib
                       ]
                     ))
                   ])

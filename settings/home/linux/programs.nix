@@ -13,10 +13,10 @@
     pavucontrol
     rofi
     slack
-    vimix-cursor-theme
     vivaldi
     vivaldi-ffmpeg-codecs
     xsel
+    zoom-us
     # keep-sorted end
 
     # keep-sorted start

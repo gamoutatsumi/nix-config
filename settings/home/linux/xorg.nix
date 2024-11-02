@@ -3,7 +3,6 @@
   xsession = {
     enable = true;
     initExtra = ''
-      ${pkgs.xorg.xsetroot}/bin/xsetroot -cursor_name left_ptr
       ${pkgs.xorg.xinput}/bin/xinput disable 'SynPS/2 Synaptics TouchPad'
       ${pkgs.lightlocker}/bin/light-locker &
     '';
