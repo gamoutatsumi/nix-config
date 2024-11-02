@@ -20,8 +20,7 @@
       enable = true;
       lockCmd = "${pkgs.systemd}/bin/loginctl lock-sessions";
       xautolock = {
-        enable = true;
-        detectSleep = true;
+        enable = false;
       };
     };
     emacs = {
