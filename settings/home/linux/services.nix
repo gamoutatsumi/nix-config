@@ -3,6 +3,12 @@
   services = {
     mpd = {
       enable = true;
+      extraConfig = ''
+        audio_output {
+        type "pipewire"
+        name "PipeWire Sound Server"
+        }
+      '';
     };
     mpris-proxy = {
       enable = true;

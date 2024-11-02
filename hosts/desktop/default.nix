@@ -6,6 +6,7 @@
   # keep-sorted start
   config,
   lib,
+  modulesPath,
   pkgs,
   upkgs,
   username,
@@ -15,15 +16,33 @@
 
 {
   imports = [
-    # Include the results of the hardware scan.
     ./disko-config.nix
     ./secrets.nix
-    ./hardware-configuration.nix
+    (modulesPath + "/installer/scan/not-detected.nix")
   ];
   # keep-sorted start block=yes
   boot = {
+    initrd = {
+      availableKernelModules = [
+        "vmd"
+        "xhci_pci"
+        "ahci"
+        "nvme"
+        "usbhid"
+        "uas"
+        "sd_mod"
+        "sr_mod"
+      ];
+      kernelModules = [ "nvidia-uvm" ];
+    };
+    kernelModules = [ "kvm-intel" ];
+    extraModulePackages = [ ];
     supportedFilesystems = [ "ntfs" ];
-    loader.systemd-boot.enable = lib.mkForce false;
+    loader = {
+      systemd-boot = {
+        enable = lib.mkForce false;
+      };
+    };
     lanzaboote = {
       enable = true;
       pkiBundle = "/etc/secureboot";
@@ -35,17 +54,37 @@
       };
     };
   };
-  environment.systemPackages = with pkgs; [
-    gcc
-    git
-    vim
-    wget
-    curl
-    sbctl
-    efitools
-    aicommit2
-  ];
+  environment = {
+    systemPackages = with pkgs; [
+      gcc
+      git
+      vim
+      wget
+      curl
+      sbctl
+      efitools
+      aicommit2
+      cifs-utils
+    ];
+  };
   hardware = {
+    nvidia = {
+      modesetting = {
+        enable = true;
+      };
+      powerManagement = {
+        enable = false;
+        finegrained = false;
+      };
+      open = true;
+      nvidiaSettings = true;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+    };
+    cpu = {
+      intel = {
+        updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+      };
+    };
     bluetooth = {
       enable = true;
       powerOnBoot = true;
@@ -59,8 +98,13 @@
   };
   networking = {
     hostName = "tat-nixos-desktop";
-    networkmanager.enable = false;
-    wireless.enable = false;
+    networkmanager = {
+      enable = false;
+    };
+    wireless = {
+      enable = false;
+    };
+    useDHCP = lib.mkDefault true;
     interfaces = {
       "enp7s0" = {
         useDHCP = true;
@@ -84,7 +128,12 @@
       };
     };
   };
-  nixpkgs.config.cudaSupport = true;
+  nixpkgs = {
+    hostPlatform = lib.mkDefault "x86_64-linux";
+    config = {
+      cudaSupport = true;
+    };
+  };
   services = {
     blueman = {
       enable = true;
@@ -96,15 +145,19 @@
       extraConfig = {
         pipewire = {
           "11-clock-rate" = {
-            default.clock.allowed-rates = [
-              192000
-              176400
-              96000
-              88200
-              48000
-              44100
-            ];
-            default.clock.quantum = 4096;
+            default = {
+              clock = {
+                allowed-rates = [
+                  192000
+                  176400
+                  96000
+                  88200
+                  48000
+                  44100
+                ];
+                quantum = 4096;
+              };
+            };
           };
         };
       };
@@ -117,6 +170,7 @@
       defaultSession = "xsession";
     };
     xserver = {
+      videoDrivers = [ "nvidia" ];
       displayManager = {
         setupCommands = "${pkgs.xorg.xrandr}/bin/xrandr --output DP-0 --auto --primary --output HDMI-0 --auto --left-of DP-0";
       };
@@ -133,20 +187,24 @@
       };
     };
   };
-  system.stateVersion = "24.05";
+  system = {
+    stateVersion = "24.05";
+  };
   users = {
     mutableUsers = false;
-    users.${username} = {
-      isNormalUser = true;
-      extraGroups = [
-        "users"
-        "wheel"
-        "video"
-        "audio"
-        "docker"
-      ];
-      shell = pkgs.zsh;
-      hashedPasswordFile = config.age.secrets.${username}.path;
+    users = {
+      ${username} = {
+        isNormalUser = true;
+        extraGroups = [
+          "users"
+          "wheel"
+          "video"
+          "audio"
+          "docker"
+        ];
+        shell = pkgs.zsh;
+        hashedPasswordFile = config.age.secrets.${username}.path;
+      };
     };
   };
   virtualisation = {
