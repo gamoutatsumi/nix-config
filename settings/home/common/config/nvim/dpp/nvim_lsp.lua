@@ -345,6 +345,11 @@ lspconfig.terraformls.setup({
     on_attach = on_attach,
 })
 
+lspconfig.pylsp.setup({
+    autostart = true,
+    on_attach = on_attach,
+})
+
 lspconfig.fennel_language_server.setup({
     settings = {
         fennel = {
