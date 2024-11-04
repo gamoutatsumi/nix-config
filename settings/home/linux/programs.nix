@@ -9,6 +9,7 @@
       discord
       firefox
       flat-remix-icon-theme
+      kcachegrind
       materia-theme
       mpd
       pavucontrol

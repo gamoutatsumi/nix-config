@@ -140,7 +140,7 @@ build = 'make LUA="nvim -ll" fennel.lua && mv fennel.lua nvim/lua/fennel.lua'
 
 [[plugins]]
 repo = 'j-hui/fidget.nvim'
-rev = 'v1.3.0'
+rev = 'v1.4.5'
 hooks_file = ['$BASE_DIR/dpp/fidget.lua']
 
 [[plugins]]
