@@ -418,16 +418,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1730299501,
-        "narHash": "sha256-OvFjqA6MKRweRQDgg4HB6aruSIOppGfLYg6TwRX+uaQ=",
+        "lastModified": 1730591137,
+        "narHash": "sha256-sihd/fnxy6s4GQeJrTnMboWbUBypJIq4Hl4ulQ4jpdA=",
         "owner": "nix-community",
         "repo": "neovim-nightly-overlay",
-        "rev": "c508e8f7b5a9132f6f8952d3f8bab52a19217cf8",
+        "rev": "461579c85416bc1885411d56324aac669e704d34",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
-        "ref": "pull/683/head",
+        "ref": "pull/682/head",
         "repo": "neovim-nightly-overlay",
         "type": "github"
       }

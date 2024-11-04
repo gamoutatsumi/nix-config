@@ -110,9 +110,6 @@
     emacs-overlay = {
       url = "github:nix-community/emacs-overlay";
       inputs = {
-        flake-utils = {
-          follows = "flake-utils";
-        };
         nixpkgs = {
           follows = "nixpkgs-unstable";
         };
@@ -194,7 +191,7 @@
       };
     };
     neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay?ref=pull/683/head";
+      url = "github:nix-community/neovim-nightly-overlay?ref=pull/682/head";
       inputs = {
         hercules-ci-effects = {
           follows = "";
