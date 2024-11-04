@@ -67,6 +67,12 @@ name=CAC Module\n";
       fcitx5-skk
     ];
   };
+  qt = {
+    enable = true;
+    platformTheme = {
+      name = "gtk3";
+    };
+  };
   services = {
     gnome-keyring.enable = true;
     picom = {
