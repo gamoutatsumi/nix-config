@@ -25,6 +25,7 @@ require("nvim-treesitter.configs").setup({
         "nix",
         "org",
         "proto",
+        "python",
         "regex",
         "rust",
         "sql",
