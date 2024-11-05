@@ -125,51 +125,58 @@ lspconfig.lua_ls.setup({
     },
 })
 
-lspconfig.denols.setup({
+lspconfig.ts_ls.setup({
     on_attach = on_attach,
-    autostart = not is_node_repo,
-    settings = {
-        typescript = {
-            suggest = {
-                completeFunctionCalls = true,
-                autoImports = false,
-                imports = {
-                    hosts = {
-                        ["https://deno.land"] = true,
-                        ["https://x.nest.land"] = false,
+    autostart = true,
+})
+
+if vim.fn.executable("typescript-language-server") == 1 then
+    lspconfig.denols.setup({
+        on_attach = on_attach,
+        autostart = true,
+        settings = {
+            typescript = {
+                suggest = {
+                    completeFunctionCalls = true,
+                    autoImports = false,
+                    imports = {
+                        hosts = {
+                            ["https://deno.land"] = true,
+                            ["https://x.nest.land"] = false,
+                        },
+                    },
+                },
+                lint = true,
+                unstable = true,
+                editor = {
+                    inlayHints = {
+                        enabled = true,
+                    },
+                },
+                inlayHints = {
+                    parameterNames = {
+                        enabled = "all",
+                    },
+                    variableTypes = {
+                        enabled = true,
+                    },
+                    propertyDeclarationTypes = {
+                        enabled = true,
+                    },
+                    functionLikeReturnTypes = {
+                        enabled = true,
+                    },
+                    enumMemberValues = {
+                        enabled = true,
+                    },
+                    parameterTypes = {
+                        enabled = true,
                     },
                 },
             },
-            lint = true,
-            unstable = true,
-            editor = {
-                inlayHints = {
-                    enabled = true,
-                },
-            },
-            inlayHints = {
-                parameterNames = {
-                    enabled = "all",
-                },
-                variableTypes = {
-                    enabled = true,
-                },
-                propertyDeclarationTypes = {
-                    enabled = true,
-                },
-                functionLikeReturnTypes = {
-                    enabled = true,
-                },
-                enumMemberValues = {
-                    enabled = true,
-                },
-                parameterTypes = {
-                    enabled = true,
-                },
-            },
         },
-    },
-})
+    })
+end
 
 lspconfig.hls.setup({
     on_attach = on_attach,
