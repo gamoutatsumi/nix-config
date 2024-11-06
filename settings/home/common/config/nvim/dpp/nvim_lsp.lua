@@ -4,7 +4,6 @@ local schemas = require("schemastore")
 local util = require("lspconfig/util")
 
 local buf_name = vim.api.nvim_buf_get_name(0) == "" and vim.fn.getcwd() or vim.api.nvim_buf_get_name(0)
-local is_node_repo = util.find_node_modules_ancestor(buf_name) ~= nil
 
 local function setInlayHintHL()
     local has_hl, hl = pcall(vim.api.nvim_get_hl, 0, { name = "LspInlayHint" })
@@ -123,6 +122,11 @@ lspconfig.lua_ls.setup({
             },
         },
     },
+})
+
+lspconfig.astro.setup({
+    on_on_attach = on_attach,
+    autostart = true,
 })
 
 lspconfig.ts_ls.setup({
@@ -260,7 +264,7 @@ require("go").setup({
 })
 
 lspconfig.vtsls.setup({
-    autostart = is_node_repo,
+    autostart = true,
     on_attach = function(client, bufnr)
         on_attach(client, bufnr)
         client.server_capabilities.document_formatting = false
