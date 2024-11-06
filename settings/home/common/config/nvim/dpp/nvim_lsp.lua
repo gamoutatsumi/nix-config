@@ -134,7 +134,7 @@ lspconfig.ts_ls.setup({
     autostart = true,
 })
 
-if vim.fn.executable("typescript-language-server") == 1 then
+if vim.fn.executable("typescript-language-server") == 0 then
     lspconfig.denols.setup({
         on_attach = on_attach,
         autostart = true,
