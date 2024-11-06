@@ -9,6 +9,7 @@ require("nvim-treesitter.configs").setup({
     -- Modules and its options go here
     ensure_installed = {
         -- keep-sorted start
+        "astro",
         "bash",
         "comment",
         "go",
