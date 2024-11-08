@@ -54,6 +54,9 @@
   };
   services = {
     # keep-sorted start block=yes
+    avahi = {
+      enable = true;
+    };
     kmscon = {
       enable = true;
       hwRender = true;
