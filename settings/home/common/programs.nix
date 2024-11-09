@@ -17,61 +17,63 @@ in
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages =
-    (with pkgs; [
-      (wrapHelm kubernetes-helm {
-        plugins = with kubernetes-helmPlugins; [
-          helm-diff
-          helm-secrets
-          helm-git
-        ];
-      })
-      # keep-sorted start
-      age-plugin-yubikey
-      bat
-      bc
-      binutils
-      cmake
-      coreutils-full
-      curlFull
-      delta
-      docker-slim
-      dogdns
-      dust
-      fd
-      file
-      findutils
-      fzf
-      gawk
-      ghq
-      git-crypt
-      git-lfs
-      gnugrep
-      gnumake
-      gnused
-      gojq
-      gomi
-      jq
-      killall
-      kubectl
-      kubie
-      lsd
-      moreutils
-      mycli
-      neofetch
-      nix-diff
-      nix-index
-      nix-tree
-      ov
-      q-text-as-data
-      ripgrep
-      stern
-      tmux
-      unar
-      unzip
-      # keep-sorted end
-    ])
-    ++ (with upkgs; [ sheldon ]);
+  home = {
+    packages =
+      (with pkgs; [
+        (wrapHelm kubernetes-helm {
+          plugins = with kubernetes-helmPlugins; [
+            helm-diff
+            helm-secrets
+            helm-git
+          ];
+        })
+        # keep-sorted start
+        age-plugin-yubikey
+        bat
+        bc
+        binutils
+        cmake
+        coreutils-full
+        curlFull
+        delta
+        docker-slim
+        dogdns
+        dust
+        fd
+        file
+        findutils
+        fzf
+        gawk
+        ghq
+        git-crypt
+        git-lfs
+        gnugrep
+        gnumake
+        gnused
+        gojq
+        gomi
+        jq
+        killall
+        kubectl
+        kubie
+        lsd
+        moreutils
+        mycli
+        neofetch
+        nix-diff
+        nix-index
+        nix-tree
+        ov
+        q-text-as-data
+        ripgrep
+        stern
+        tmux
+        unar
+        unzip
+        # keep-sorted end
+      ])
+      ++ (with upkgs; [ sheldon ]);
+  };
   programs = {
     # keep-sorted start block=yes
     alacritty = {

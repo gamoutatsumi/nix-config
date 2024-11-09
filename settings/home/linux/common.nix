@@ -60,12 +60,14 @@ name=CAC Module\n";
       package = pkgs.vimix-cursors;
     };
   };
-  i18n.inputMethod = {
-    enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [
-      fcitx5-gtk
-      fcitx5-skk
-    ];
+  i18n = {
+    inputMethod = {
+      enabled = "fcitx5";
+      fcitx5.addons = with pkgs; [
+        fcitx5-gtk
+        fcitx5-skk
+      ];
+    };
   };
   qt = {
     enable = true;
@@ -74,7 +76,9 @@ name=CAC Module\n";
     };
   };
   services = {
-    gnome-keyring.enable = true;
+    gnome-keyring = {
+      enable = true;
+    };
     picom = {
       enable = true;
       backend = "glx";

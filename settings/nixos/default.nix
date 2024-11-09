@@ -26,7 +26,9 @@
       };
     };
   };
-  i18n.defaultLocale = "ja_JP.UTF-8";
+  i18n = {
+    defaultLocale = "ja_JP.UTF-8";
+  };
   programs = {
     # keep-sorted start block=yes
     dconf = {

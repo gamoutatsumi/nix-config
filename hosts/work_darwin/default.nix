@@ -10,25 +10,16 @@
     defaults = {
       finder = {
         AppleShowAllExtensions = true;
-
         AppleShowAllFiles = true;
-
         CreateDesktop = true;
-
         FXEnableExtensionChangeWarning = false;
-
         ShowPathbar = true;
-
         ShowStatusBar = true;
-
       };
       dock = {
         autohide = true;
-
         show-recents = true;
-
         magnification = false;
-
         orientation = "bottom";
       };
     };

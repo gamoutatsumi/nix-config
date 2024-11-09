@@ -430,73 +430,75 @@
           ++ lib.optionals (inputs.treefmt-nix ? flakeModule) [ inputs.treefmt-nix.flakeModule ]
           ++ lib.optionals (inputs.agenix-rekey ? flakeModule) [ inputs.agenix-rekey.flakeModule ];
         flake = {
-          nixosConfigurations."tat-nixos-laptop" = withSystem "x86_64-linux" (
-            {
-              config,
-              inputs',
-              system,
-              ...
-            }:
-            let
-              username = "gamoutatsumi";
-              upkgs = upkgsConf system;
-            in
-            nixpkgs.lib.nixosSystem {
-              specialArgs = {
-                inherit inputs inputs';
-                username = username;
-                upkgs = upkgs;
-              };
-              modules = [
-                { nixpkgs.overlays = overlays; }
-                lanzaboote.nixosModules.lanzaboote
-                agenix.nixosModules.default
-                xremap-nix.nixosModules.default
-                inputs.agenix-rekey.nixosModules.default
-                ./hosts/laptop
-                ./settings/nixos.nix
-                home-manager.nixosModules.home-manager
-                (homeManagerConf {
-                  inherit username upkgs;
-                  imports = [ ./settings/home/linux.nix ];
-                })
-              ];
-            }
-          );
-          nixosConfigurations."tat-nixos-desktop" = withSystem "x86_64-linux" (
-            {
-              config,
-              inputs',
-              system,
-              ...
-            }:
-            let
-              username = "gamoutatsumi";
-              upkgs = upkgsConf system;
-            in
-            nixpkgs.lib.nixosSystem {
-              specialArgs = {
-                inherit inputs inputs';
-                username = username;
-                upkgs = upkgs;
-                device = "/dev/disk/by-id/nvme-WD_BLACK_SN770_1TB_24116U400484";
-              };
-              modules = [
-                { nixpkgs.overlays = overlays; }
-                lanzaboote.nixosModules.lanzaboote
-                disko.nixosModules.disko
-                agenix.nixosModules.default
-                inputs.agenix-rekey.nixosModules.default
-                ./hosts/desktop
-                ./settings/nixos.nix
-                home-manager.nixosModules.home-manager
-                (homeManagerConf {
-                  inherit username upkgs;
-                  imports = [ ./settings/home/linux.nix ];
-                })
-              ];
-            }
-          );
+          nixosConfigurations = {
+            "tat-nixos-laptop" = withSystem "x86_64-linux" (
+              {
+                config,
+                inputs',
+                system,
+                ...
+              }:
+              let
+                username = "gamoutatsumi";
+                upkgs = upkgsConf system;
+              in
+              nixpkgs.lib.nixosSystem {
+                specialArgs = {
+                  inherit inputs inputs';
+                  username = username;
+                  upkgs = upkgs;
+                };
+                modules = [
+                  { nixpkgs.overlays = overlays; }
+                  lanzaboote.nixosModules.lanzaboote
+                  agenix.nixosModules.default
+                  xremap-nix.nixosModules.default
+                  inputs.agenix-rekey.nixosModules.default
+                  ./hosts/laptop
+                  ./settings/nixos.nix
+                  home-manager.nixosModules.home-manager
+                  (homeManagerConf {
+                    inherit username upkgs;
+                    imports = [ ./settings/home/linux.nix ];
+                  })
+                ];
+              }
+            );
+            "tat-nixos-desktop" = withSystem "x86_64-linux" (
+              {
+                config,
+                inputs',
+                system,
+                ...
+              }:
+              let
+                username = "gamoutatsumi";
+                upkgs = upkgsConf system;
+              in
+              nixpkgs.lib.nixosSystem {
+                specialArgs = {
+                  inherit inputs inputs';
+                  username = username;
+                  upkgs = upkgs;
+                  device = "/dev/disk/by-id/nvme-WD_BLACK_SN770_1TB_24116U400484";
+                };
+                modules = [
+                  { nixpkgs.overlays = overlays; }
+                  lanzaboote.nixosModules.lanzaboote
+                  disko.nixosModules.disko
+                  agenix.nixosModules.default
+                  inputs.agenix-rekey.nixosModules.default
+                  ./hosts/desktop
+                  ./settings/nixos.nix
+                  home-manager.nixosModules.home-manager
+                  (homeManagerConf {
+                    inherit username upkgs;
+                    imports = [ ./settings/home/linux.nix ];
+                  })
+                ];
+              }
+            );
+          };
           apps = withSystem "aarch64-darwin" (
             {
               config,
@@ -523,39 +525,41 @@
               };
             }
           );
-          darwinConfigurations.work = withSystem "aarch64-darwin" (
-            {
-              config,
-              inputs',
-              system,
-              ...
-            }:
-            let
-              darwinUser = builtins.getEnv "DARWIN_USER";
-              darwinHost = builtins.getEnv "DARWIN_HOST";
-              upkgs = upkgsConf system;
-            in
-            nix-darwin.lib.darwinSystem {
-              inherit system;
-              specialArgs = {
-                inherit inputs;
-                username = darwinUser;
-                upkgs = upkgs;
-                hostname = darwinHost;
-              };
-              modules = [
-                { nixpkgs.overlays = overlays; }
-                ./hosts/work_darwin
-                ./settings/darwin.nix
-                home-manager.darwinModules.home-manager
-                (homeManagerConf {
-                  inherit upkgs;
-                  imports = [ ./settings/home/darwin.nix ];
+          darwinConfigurations = {
+            work = withSystem "aarch64-darwin" (
+              {
+                config,
+                inputs',
+                system,
+                ...
+              }:
+              let
+                darwinUser = builtins.getEnv "DARWIN_USER";
+                darwinHost = builtins.getEnv "DARWIN_HOST";
+                upkgs = upkgsConf system;
+              in
+              nix-darwin.lib.darwinSystem {
+                inherit system;
+                specialArgs = {
+                  inherit inputs;
                   username = darwinUser;
-                })
-              ];
-            }
-          );
+                  upkgs = upkgs;
+                  hostname = darwinHost;
+                };
+                modules = [
+                  { nixpkgs.overlays = overlays; }
+                  ./hosts/work_darwin
+                  ./settings/darwin.nix
+                  home-manager.darwinModules.home-manager
+                  (homeManagerConf {
+                    inherit upkgs;
+                    imports = [ ./settings/home/darwin.nix ];
+                    username = darwinUser;
+                  })
+                ];
+              }
+            );
+          };
         };
         perSystem = (
           {
@@ -568,10 +572,14 @@
             upkgs = upkgsConf system;
           in
           {
-            _module.args.pkgs = import inputs.nixpkgs {
-              inherit system;
-              overlays = overlays;
-              config = { };
+            _module = {
+              args = {
+                pkgs = import inputs.nixpkgs {
+                  inherit system;
+                  overlays = overlays;
+                  config = { };
+                };
+              };
             };
             agenix-rekey = {
               nodes = self.nixosConfigurations;
