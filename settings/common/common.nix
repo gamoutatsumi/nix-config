@@ -15,6 +15,7 @@
         "nixbld"
         username
       ];
+      download-buffer-size = 128 * 1024 * 1024;
     };
   };
   nixpkgs = {

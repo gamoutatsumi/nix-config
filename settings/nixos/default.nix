@@ -1,4 +1,9 @@
-{ pkgs, username, ... }:
+{
+  pkgs,
+  username,
+  config,
+  ...
+}:
 {
   # keep-sorted start block=yes
   boot = {
@@ -121,7 +126,7 @@
           {
             manage = "desktop";
             name = "xsession";
-            start = ''exec $HOME/.xsession'';
+            start = ''exec ${config.users.users.${username}.home}/.xsession'';
           }
         ];
         lightdm = {

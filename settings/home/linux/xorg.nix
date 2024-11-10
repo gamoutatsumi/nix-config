@@ -4,6 +4,7 @@
     enable = true;
     initExtra = ''
       ${pkgs.xorg.xinput}/bin/xinput disable 'SynPS/2 Synaptics TouchPad'
+      ${pkgs.xorg.xset}/bin/xset s off
       ${pkgs.lightlocker}/bin/light-locker &
     '';
     windowManager = {
@@ -41,7 +42,6 @@
           keybindings =
             let
               modifier = "Mod4";
-              terminal = "alacritty";
               menu = ''"rofi -show"'';
             in
             lib.mkDefault {
