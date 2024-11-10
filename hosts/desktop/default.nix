@@ -182,6 +182,13 @@
       displayManager = {
         setupCommands = "${pkgs.xorg.xrandr}/bin/xrandr --output DP-0 --auto --primary --output HDMI-0 --auto --left-of DP-0";
       };
+      serverLayoutSection = ''
+        Option "StandbyTime" "0"
+        Option "SuspendTime" "0"
+        Option "OffTime" "0"
+        Option "BlankTime" "0"
+        Option "OffTime" "0"
+      '';
     };
     ollama = {
       package = upkgs.ollama;

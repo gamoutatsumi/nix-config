@@ -1,6 +1,9 @@
 { pkgs, networkManager, ... }:
 {
   services = {
+    mpd-discord-rpc = {
+      enable = true;
+    };
     mpd = {
       enable = true;
       extraConfig = ''

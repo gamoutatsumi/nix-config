@@ -121,6 +121,7 @@
     xserver = {
       enable = true;
       excludePackages = with pkgs; [ xterm ];
+      exportConfiguration = true;
       displayManager = {
         session = [
           {
