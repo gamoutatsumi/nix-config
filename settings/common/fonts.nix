@@ -1,12 +1,13 @@
-{ pkgs, ... }:
+{ upkgs, ... }:
 {
   fonts = {
-    packages = with pkgs; [
+    packages = with upkgs; [
       # keep-sorted start
       hackgen-font
       hackgen-nf-font
       ibm-plex
-      noto-fonts-cjk
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
       noto-fonts-emoji
       plemoljp
       plemoljp-nf

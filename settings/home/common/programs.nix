@@ -59,7 +59,6 @@ in
         kubie
         lsd
         moreutils
-        mycli
         neofetch
         nix-diff
         nix-index
@@ -75,7 +74,10 @@ in
         yubikey-manager
         # keep-sorted end
       ])
-      ++ (with upkgs; [ sheldon ]);
+      ++ (with upkgs; [
+        sheldon
+        mycli
+      ]);
   };
   programs = {
     # keep-sorted start block=yes
@@ -224,6 +226,7 @@ in
     };
     ssh = {
       enable = true;
+      includes = [ "${config.home.homeDirectory}/.ssh/config_work" ];
     };
     wezterm = {
       enable = true;
