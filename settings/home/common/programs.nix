@@ -77,6 +77,7 @@ in
       ++ (with upkgs; [
         sheldon
         mycli
+        vim
       ]);
   };
   programs = {

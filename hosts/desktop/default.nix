@@ -55,17 +55,19 @@
     };
   };
   environment = {
-    systemPackages = with pkgs; [
-      gcc
-      git
-      vim
-      wget
-      curl
-      sbctl
-      efitools
-      aicommit2
-      cifs-utils
-    ];
+    systemPackages =
+      (with pkgs; [
+        gcc
+        git
+        vim
+        wget
+        curl
+        sbctl
+        efitools
+        aicommit2
+        cifs-utils
+      ])
+      ++ (with upkgs; [ vim ]);
   };
   hardware = {
     opengl = {
