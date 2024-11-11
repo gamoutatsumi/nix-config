@@ -71,8 +71,8 @@ in
         tmux
         unar
         unzip
-        ykman
         yubico-piv-tool
+        yubikey-manager
         # keep-sorted end
       ])
       ++ (with upkgs; [ sheldon ]);
