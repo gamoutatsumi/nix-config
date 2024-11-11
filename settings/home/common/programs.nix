@@ -36,6 +36,7 @@ in
         coreutils-full
         curlFull
         delta
+        docker-credential-helpers
         docker-slim
         dogdns
         dust
@@ -70,6 +71,8 @@ in
         tmux
         unar
         unzip
+        ykman
+        yubico-piv-tool
         # keep-sorted end
       ])
       ++ (with upkgs; [ sheldon ]);
