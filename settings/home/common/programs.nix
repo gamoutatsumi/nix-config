@@ -204,10 +204,7 @@ in
     };
     neovim = {
       enable = true;
-      extraPackages = with upkgs; [
-        nil
-        tree-sitter
-      ];
+      extraPackages = with upkgs; [ nil ];
       package = upkgs.neovim;
       defaultEditor = true;
       vimAlias = false;

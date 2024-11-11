@@ -191,7 +191,7 @@
       };
     };
     neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay?ref=pull/682/head";
+      url = "github:nix-community/neovim-nightly-overlay";
       inputs = {
         hercules-ci-effects = {
           follows = "";
