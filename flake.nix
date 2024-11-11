@@ -392,6 +392,7 @@
           imports,
           username,
           upkgs,
+          networkManager ? false,
         }:
         {
           home-manager = {
@@ -404,8 +405,12 @@
             };
             backupFileExtension = "bak";
             extraSpecialArgs = {
-              inherit username upkgs denoVersion;
-              networkManager = false;
+              inherit
+                username
+                upkgs
+                denoVersion
+                networkManager
+                ;
             };
           };
         };
@@ -461,6 +466,7 @@
                   (homeManagerConf {
                     inherit username upkgs;
                     imports = [ ./settings/home/linux.nix ];
+                    networkManager = true;
                   })
                 ];
               }
