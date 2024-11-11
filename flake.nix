@@ -383,9 +383,10 @@
           overlays = [
             neovim-nightly-overlay.overlays.default
             emacs-overlay.overlays.default
+            vim-overlay.overlays.default
           ];
         });
-      denoVersion = "2.0.3";
+      denoVersion = "2.0.5";
       homeManagerConf =
         {
           imports,
