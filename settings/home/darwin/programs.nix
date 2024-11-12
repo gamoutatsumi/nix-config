@@ -29,7 +29,6 @@
     packages =
       (with pkgs; [
         docker-client
-        pinentry_mac
         aicommit2
       ])
       ++ (with upkgs; [ deno ]);
