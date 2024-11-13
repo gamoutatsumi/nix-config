@@ -43,7 +43,6 @@ in
         fd
         file
         findutils
-        fzf
         gawk
         ghq
         git-crypt
@@ -67,7 +66,6 @@ in
         q-text-as-data
         ripgrep
         stern
-        tmux
         unar
         unzip
         yubico-piv-tool
@@ -166,6 +164,13 @@ in
           ];
       };
     };
+    fzf = {
+      enable = true;
+      tmux = {
+        enableShellIntegration = false;
+      };
+      enableZshIntegration = true;
+    };
     gh = {
       enable = true;
       settings = {
@@ -228,6 +233,25 @@ in
     ssh = {
       enable = true;
       includes = [ "${config.home.homeDirectory}/.ssh/config_work" ];
+    };
+    tmux = {
+      enable = true;
+      sensibleOnTop = false;
+      prefix = "C-s";
+      shell = "${pkgs.zsh}/bin/zsh";
+      terminal = "tmux-256color";
+      extraConfig = builtins.readFile "${pkgs.concatTextFile {
+        name = "tmux.conf";
+        files = [
+          ./config/tmux/tmux.conf
+          ./config/tmux/tmuxline-nightfly.conf
+        ];
+      }}";
+      mouse = true;
+      baseIndex = 1;
+      newSession = true;
+      escapeTime = 10;
+      historyLimit = 4096;
     };
     wezterm = {
       enable = true;

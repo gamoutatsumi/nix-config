@@ -37,9 +37,9 @@ in
       "ov/config.yaml" = {
         source = ./config/ov/config.yaml;
       };
-      "tmux" = {
-        source = ./config/tmux;
-      };
+      # "tmux" = {
+      #   source = ./config/tmux;
+      # };
       "sheldon" = {
         source = ./config/sheldon;
       };
