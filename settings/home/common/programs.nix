@@ -29,7 +29,6 @@ in
         })
         # keep-sorted start
         age-plugin-yubikey
-        bat
         bc
         binutils
         cmake
@@ -64,7 +63,6 @@ in
         nix-tree
         ov
         q-text-as-data
-        ripgrep
         stern
         unar
         unzip
@@ -116,6 +114,23 @@ in
     };
     awscli = {
       enable = true;
+    };
+    bat = {
+      enable = true;
+      config = {
+        theme = "fly16";
+      };
+      themes = {
+        fly16 = {
+          src = pkgs.fetchFromGitHub {
+            owner = "bluz71";
+            repo = "fly16-bat";
+            rev = "d13c2c2a03e84819b2df2c50bc824b74604b9844";
+            hash = "sha256-QtZurXK6wNnyWiiQWfyAMFsV5ZWyi84jJNkTgZYoMCE=";
+          };
+          file = "fly16.tmTheme";
+        };
+      };
     };
     direnv = {
       enable = true;
@@ -229,6 +244,9 @@ in
       settings = {
         email = "wryuto@gmail.com";
       };
+    };
+    ripgrep = {
+      enable = true;
     };
     ssh = {
       enable = true;
