@@ -49,17 +49,14 @@ in
         gnused
         gojq
         gomi
-        jq
         killall
         kubectl
         kubie
-        lsd
         moreutils
         neofetch
         nix-diff
         nix-index
         nix-tree
-        ov
         q-text-as-data
         stern
         unar
@@ -296,6 +293,12 @@ in
     };
     home-manager = {
       enable = false;
+    };
+    jq = {
+      enable = true;
+    };
+    lsd = {
+      enable = true;
     };
     neovim = {
       enable = true;
