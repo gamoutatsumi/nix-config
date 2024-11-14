@@ -53,12 +53,6 @@ in
         };
       };
       # "nvim".source = ./config/nvim;
-      "alacritty/nightfly.toml" = {
-        source = builtins.fetchurl {
-          url = "https://raw.githubusercontent.com/bluz71/vim-nightfly-colors/master/extras/nightfly-alacritty.toml";
-          sha256 = "0ssgf9i5nrc2m57zvgfzlgfvyhcrwd73pkiny266ba201niv6qi1";
-        };
-      };
       "git/template/hooks/pre-push" = {
         source = builtins.fetchurl {
           url = "https://gist.githubusercontent.com/quintok/815396509ff79d886656b2855e1a8a46/raw/e6770add98e7db57177c16d33be31bfdf2c23042/pre-push";
@@ -67,14 +61,6 @@ in
       };
       "git/ignore" = {
         source = ./config/git/ignore;
-      };
-    };
-    dataFile = {
-      "tmux/plugins/tpm" = {
-        source = builtins.fetchTarball {
-          url = "https://github.com/tmux-plugins/tpm/archive/refs/heads/master.zip";
-          sha256 = "01ribl326n6n0qcq68a8pllbrz6mgw55kxhf9mjdc5vw01zjcvw5";
-        };
       };
     };
     enable = true;

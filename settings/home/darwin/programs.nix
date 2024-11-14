@@ -5,7 +5,12 @@
     alacritty = {
       settings = {
         general = {
-          import = [ "~/.config/alacritty/nightfly.toml" ];
+          import = [
+            "${builtins.fetchurl {
+              url = "https://raw.githubusercontent.com/bluz71/vim-nightfly-colors/master/extras/nightfly-alacritty.toml";
+              sha256 = "0ssgf9i5nrc2m57zvgfzlgfvyhcrwd73pkiny266ba201niv6qi1";
+            }}"
+          ];
         };
         terminal = {
           shell = {

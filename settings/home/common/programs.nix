@@ -34,7 +34,6 @@ in
         cmake
         coreutils-full
         curlFull
-        delta
         docker-credential-helpers
         docker-slim
         dogdns
