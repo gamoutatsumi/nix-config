@@ -211,7 +211,6 @@ in
       };
       signing = {
         key = "8BABD254FC4AB38A";
-        signByDefault = true;
       };
       delta = {
         enable = true;
@@ -229,25 +228,10 @@ in
         };
       };
       extraConfig = {
-        init = {
-          defaultBranch = "main";
-        };
-        pull = {
-          rebase = false;
-        };
+        # keep-sorted start block=yes
         alias = {
           graph = ''log --graph --date-order -C -M --pretty=format:"<%h> %ad [%an] %Cgreen%d%Creset %s" --all --date=short'';
           pushf = "push --force-with-lease --force-if-includes";
-        };
-        ghq = {
-          user = "gamoutatsumi";
-          root = "~/Repositories";
-        };
-        rerere = {
-          enabled = true;
-        };
-        fetch = {
-          prune = true;
         };
         color = {
           status = {
@@ -257,12 +241,14 @@ in
             unmerged = "magenta";
           };
         };
-        status = {
-          showUntrackedFiles = "all";
+        commit = {
+          gpgSign = true;
         };
-        push = {
-          default = "current";
-          useForceWithLease = true;
+        core = {
+          untrackedCache = true;
+          fsmonitor = true;
+          autocrlf = false;
+          quotepath = false;
         };
         diff = {
           tool = "${config.programs.neovim.package}/bin/nvim -d";
@@ -271,12 +257,30 @@ in
         difftool = {
           prompt = false;
         };
-        core = {
-          untrackedCache = true;
-          fsmonitor = true;
-          autocrlf = false;
-          quotepath = false;
+        fetch = {
+          prune = true;
         };
+        ghq = {
+          user = "gamoutatsumi";
+          root = "~/Repositories";
+        };
+        init = {
+          defaultBranch = "main";
+        };
+        pull = {
+          rebase = false;
+        };
+        push = {
+          default = "current";
+          useForceWithLease = true;
+        };
+        rerere = {
+          enabled = true;
+        };
+        status = {
+          showUntrackedFiles = "all";
+        };
+        # keep-sorted end
       };
     };
     gpg = {
