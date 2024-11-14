@@ -21,4 +21,13 @@
       '';
     };
   };
+  targets = {
+    darwin = {
+      defaults = {
+        NSGlobalDomain = {
+          AppleLocale = "ja_JP";
+        };
+      };
+    };
+  };
 }
