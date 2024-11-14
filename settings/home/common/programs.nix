@@ -45,7 +45,6 @@ in
         gawk
         ghq
         git-crypt
-        git-lfs
         gnugrep
         gnumake
         gnused
@@ -188,11 +187,14 @@ in
     };
     gh = {
       enable = true;
+      gitCredentialHelper = {
+        enable = true;
+      };
       settings = {
         git_protocol = "https";
-        editor = "nvim";
+        editor = "${config.programs.neovim.package}/bin/nvim";
         prompt = "enabled";
-        pager = "ov";
+        pager = "${pkgs.ov}/bin/ov";
         aliases = {
           co = "pr checkout";
           is = ''!gh issue list -s all | fzf-tmux --prompt "issue preview>" --preview "echo {} | cut -f1 | xargs gh issue view " | cut -f1 | xargs --no-run-if-empty gh issue ''${@:-view -w}'';
@@ -206,10 +208,78 @@ in
     };
     git = {
       enable = true;
-      iniContent = {
+      userEmail = "tatsumi@gamou.dev";
+      userName = "gamoutatsumi";
+      lfs = {
+        enable = true;
+      };
+      signing = {
+        key = "8BABD254FC4AB38A";
+        signByDefault = true;
+      };
+      delta = {
+        enable = true;
+        options = {
+          features = "line-numbers decorations";
+          syntax-theme = "fly16";
+          plus-style = ''syntax "#012800"'';
+          minus-style = ''syntax "#340001"'';
+          hunk-header-style = "file line-number";
+          side-by-side = true;
+          tabs = 0;
+          interactive = {
+            keep-plus-minus-markers = false;
+          };
+        };
+      };
+      extraConfig = {
+        init = {
+          defaultBranch = "main";
+        };
+        pull = {
+          rebase = false;
+        };
+        alias = {
+          graph = ''log --graph --date-order -C -M --pretty=format:"<%h> %ad [%an] %Cgreen%d%Creset %s" --all --date=short'';
+          pushf = "push --force-with-lease --force-if-includes";
+        };
         ghq = {
           user = "gamoutatsumi";
           root = "~/Repositories";
+        };
+        rerere = {
+          enabled = true;
+        };
+        fetch = {
+          prune = true;
+        };
+        color = {
+          status = {
+            added = "green";
+            changed = "red";
+            untracked = "yellow";
+            unmerged = "magenta";
+          };
+        };
+        status = {
+          showUntrackedFiles = "all";
+        };
+        push = {
+          default = "current";
+          useForceWithLease = true;
+        };
+        diff = {
+          tool = "${config.programs.neovim.package}/bin/nvim -d";
+          algorithm = "histogram";
+        };
+        difftool = {
+          prompt = false;
+        };
+        core = {
+          untrackedCache = true;
+          fsmonitor = true;
+          autocrlf = false;
+          quotepath = false;
         };
       };
     };
@@ -314,7 +384,6 @@ in
         ANSIBLE_HOME = "${config.xdg.dataHome}/ansible";
         DIRENV_LOG_FORMAT = "";
         DOCKER_BUILDKIT = 1;
-        EDITOR = "nvim";
         ESLINT_D_LOCAL_ESLINT_ONLY = 1;
         FZF_PREVIEW_DEFAULT_BIND = "ctrl-d:preview-page-down,ctrl-u:preview-page-up,?:toggle-preview";
         FZF_PREVIEW_DEFAULT_SETTING = "--sync --height='80%' --preview-window='right:50%' --expect='ctrl-space' --header='C-Space: continue fzf completion'";
@@ -325,12 +394,12 @@ in
         LC_ALL = "ja_JP.UTF-8";
         LUAROCKS_HOME = "${config.xdg.dataHome}/luarocks";
         MAKEFLAGS = "-j";
-        MANPAGER = "nvim -c ASMANPAGER -";
+        MANPAGER = "${config.programs.neovim.package}/bin/nvim -c ASMANPAGER -";
         MYCLI_HISTFILE = "${config.xdg.dataHome}/mycli/history";
-        PAGER = "ov";
+        PAGER = "${pkgs.ov}/bin/ov";
         PURE_GIT_PULL = 0;
         SAVEHIST = 100000;
-        TERM = "wezterm";
+        TERM = "alacritty";
         WORDCHARS = "*?_.[]~-=&;!#$%^(){}<>";
         ZENO_ENABLE_FZF_TMUX = 1;
         ZENO_ENABLE_SOCK = 1;
