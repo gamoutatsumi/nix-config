@@ -348,7 +348,7 @@ in
       historyLimit = 4096;
     };
     wezterm = {
-      enable = true;
+      enable = false;
       extraConfig = builtins.readFile ./config/wezterm/wezterm.lua;
       colorSchemes = {
         nightfly = {
@@ -419,7 +419,10 @@ in
       };
       defaultKeymap = "emacs";
       dotDir = ".config/zsh";
-      initExtra = builtins.readFile ./config/.zshrc;
+      initExtra = ''
+        ${builtins.readFile ./config/.zshrc}
+        ${pkgs.any-nix-shell}/bin/any-nix-shell zsh --info-right | source /dev/stdin
+      '';
       envExtra = builtins.readFile ./config/.zshenv;
     };
     # keep-sorted end
