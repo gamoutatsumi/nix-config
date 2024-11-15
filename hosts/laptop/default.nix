@@ -20,7 +20,6 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
   # keep-sorted start block=yes
-
   boot = {
     loader = {
       systemd-boot = {
@@ -126,6 +125,12 @@
     hostPlatform = lib.mkDefault "x86_64-linux";
   };
   services = {
+    tlp = {
+      enable = true;
+      settings = {
+        USB_AUTOSUSPEND = 0;
+      };
+    };
     udev = {
       extraRules = ''
         ACTION=="remove",\
