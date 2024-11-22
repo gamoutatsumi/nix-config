@@ -21,9 +21,7 @@ function s:skkeleton_init() abort
         \   eggLikeNewline: v:true, 
         \   keepState: v:true,
         \   databasePath: stdpath("cache") .. "/skkeleton.db",
-        \   globalDictionaries: [
-        \    "@skk_dict@/share/SKK-JISYO.L"
-        \   ],
+        \   globalDictionaries: ["@skk_dict@/share/SKK-JISYO.L"],
         \   sources: ["deno_kv"]
         \ })
 endfunction
