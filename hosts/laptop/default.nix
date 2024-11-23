@@ -43,6 +43,7 @@
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
     kernelParams = [ "video.use_native_backlight=1" ];
+    kernelPackages = pkgs.linuxPackages_latest;
   };
   environment = {
     systemPackages =
