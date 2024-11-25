@@ -1,4 +1,9 @@
-{ username, hostname, ... }:
+{
+  username,
+  hostname,
+  pkgs,
+  ...
+}:
 {
   # environment.systemPackages = with pkgs; [
   #   vim
@@ -40,9 +45,14 @@
       };
     };
   };
-  security = {
-    pam = {
-      enableSudoTouchIdAuth = true;
+  environment = {
+    etc = {
+      "pam.d/sudo_local" = {
+        text = ''
+          auth       optional       ${pkgs.pam-reattach}/lib/pam/pam_reattach.so
+          auth       sufficient     pam_tid.so
+        '';
+      };
     };
   };
 }
