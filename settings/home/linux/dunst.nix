@@ -86,8 +86,8 @@
         };
       };
       iconTheme = {
-        package = pkgs.flat-remix-icon-theme;
-        name = "flat-remix";
+        package = pkgs.vimix-icon-theme;
+        name = "Vimix-Doder-dark";
       };
     };
   };

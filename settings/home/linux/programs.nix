@@ -8,12 +8,9 @@
       deno.${denoVersion}
       discord
       firefox
-      flat-remix-icon-theme
       kcachegrind
-      materia-theme
       mpd
       pavucontrol
-      rofi
       slack
       xsel
       zoom-us
@@ -27,11 +24,9 @@
       changeBrightness
       changeVolume
       getPulseVolume
-      launchPolybar
       maimFull
       maimSelect
       playerctlStatus
-      rofiSystem
       toggleMicMute
       xmonadpropread
       # keep-sorted end
@@ -76,6 +71,23 @@
     };
     rofi = {
       enable = true;
+      plugins = with pkgs; [
+        # keep-sorted start
+        rofi-power-menu
+        # keep-sorted end
+      ];
+      font = "IBM Plex Sans JP 14";
+      location = "center";
+      theme = "Arc-Dark";
+      extraConfig = {
+        modi = "drun,power-menu:rofi-power-menu";
+        kb-cancel = "Escape";
+        kb-mode-previous = "Shift+Tab";
+        kb-mode-next = "Tab";
+        show-icons = true;
+        sidebar-mode = true;
+        icon-theme = "Vimix-Doder-dark";
+      };
     };
     # keep-sorted end
   };
