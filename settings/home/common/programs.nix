@@ -56,6 +56,7 @@ in
         neofetch
         nix-diff
         nix-index
+        nix-output-monitor
         nix-tree
         q-text-as-data
         stern

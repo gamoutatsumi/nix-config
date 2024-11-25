@@ -4,6 +4,7 @@
     packages = with pkgs; [
       # keep-sorted start
       agenix-rekey
+      bitwarden-desktop
       chntpw
       deno.${denoVersion}
       discord
