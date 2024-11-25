@@ -40,4 +40,9 @@
       };
     };
   };
+  security = {
+    pam = {
+      enableSudoTouchIdAuth = true;
+    };
+  };
 }
