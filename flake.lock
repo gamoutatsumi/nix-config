@@ -172,11 +172,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1732498930,
-        "narHash": "sha256-74ehCKfdxK/CUDJ+Acvv+6R/a/PIm7Pl6vx9ukaNnyo=",
+        "lastModified": 1732585499,
+        "narHash": "sha256-S0W61z/w9fjzd/4VBnmcbrw8Vsm3xckpuqn+5f/jjQA=",
         "owner": "haruki7049",
         "repo": "deno-overlay",
-        "rev": "e075b56886f49265ee0719b5deec3f3e0c5a65b1",
+        "rev": "defa2fc3eaec24b759a71ae9b4d102459e087ae1",
         "type": "github"
       },
       "original": {
@@ -212,11 +212,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1732482708,
-        "narHash": "sha256-B1MQLiWi4bbeNiRXKxEkpztnKyWae4x0LyK32v3DjLk=",
+        "lastModified": 1732540163,
+        "narHash": "sha256-5EYzmoTpem2IB9JWzd41sL98pz3lyyCSTiCjv08i4Uk=",
         "owner": "nix-community",
         "repo": "disko",
-        "rev": "47bc8dfb6f48d5f66a3cb3a4cece83d8ace1f61a",
+        "rev": "2ed5e30fc7e34adf455db8b02b9151d3922a54ea",
         "type": "github"
       },
       "original": {
