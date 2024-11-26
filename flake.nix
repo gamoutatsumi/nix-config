@@ -376,6 +376,7 @@
       nixpkgs-unstable,
       oreore,
       pre-commit-hooks,
+      rust-overlay,
       systems,
       treefmt-nix,
       vim-overlay,
@@ -396,6 +397,7 @@
             oreore.overlays.default
             agenix.overlays.default
             inputs.agenix-rekey.overlays.default
+            rust-overlay.overlays.default
           ];
         });
       denoVersion = "2.0.5";
