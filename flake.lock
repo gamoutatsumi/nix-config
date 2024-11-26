@@ -513,18 +513,24 @@
         "nixpkgs": [
           "nixpkgs"
         ],
+        "nixpkgs-unstable": [
+          "nixpkgs-unstable"
+        ],
         "pre-commit-hooks": [],
+        "rust-overlay": [
+          "rust-overlay"
+        ],
         "systems": [
           "systems"
         ],
         "treefmt-nix": []
       },
       "locked": {
-        "lastModified": 1730520481,
-        "narHash": "sha256-EAh0GFzxWR2dWVrLYA7PS65yMIl2jbCW94XdJ+mwP3s=",
+        "lastModified": 1732528878,
+        "narHash": "sha256-w3KleXhT4/BfHCrsxi+YNTFAM/X8uVEPBTeJ082isaw=",
         "owner": "gamoutatsumi",
         "repo": "oreore-flake",
-        "rev": "583bf9d4bdd47d0a0a4f9f42d5258b4671c4437b",
+        "rev": "f95d0bbf7f7ceb4621d90f67e603bfec3fd3bf46",
         "type": "github"
       },
       "original": {
@@ -599,7 +605,7 @@
     "rust-overlay": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-unstable"
         ]
       },
       "locked": {

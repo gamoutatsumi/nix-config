@@ -234,6 +234,12 @@
     oreore = {
       url = "github:gamoutatsumi/oreore-flake";
       inputs = {
+        nixpkgs-unstable = {
+          follows = "nixpkgs-unstable";
+        };
+        rust-overlay = {
+          follows = "rust-overlay";
+        };
         systems = {
           follows = "systems";
         };
@@ -281,7 +287,7 @@
       url = "github:oxalica/rust-overlay";
       inputs = {
         nixpkgs = {
-          follows = "nixpkgs";
+          follows = "nixpkgs-unstable";
         };
       };
     };
