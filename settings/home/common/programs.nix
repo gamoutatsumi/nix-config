@@ -337,13 +337,10 @@ in
       prefix = "C-s";
       shell = "${pkgs.zsh}/bin/zsh";
       terminal = "tmux-256color";
-      extraConfig = builtins.readFile "${pkgs.concatTextFile {
-        name = "tmux.conf";
-        files = [
-          ./config/tmux/tmux.conf
-          ./config/tmux/tmuxline-nightfly.conf
-        ];
-      }}";
+      extraConfig = builtins.readFile "${pkgs.concatText "tmux.conf" [
+        ./config/tmux/tmux.conf
+        ./config/tmux/tmuxline-nightfly.conf
+      ]}";
       mouse = true;
       baseIndex = 1;
       newSession = true;

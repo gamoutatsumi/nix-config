@@ -1,10 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, upkgs, ... }:
 {
   services = {
     polybar = {
       enable = true;
-      package = pkgs.polybarFull;
-      script = "${pkgs.launchPolybar}/bin/launchPolybar";
+      package = upkgs.polybarFull;
+      script = "${upkgs.launchPolybar}/bin/launchPolybar";
       config = {
         colors = {
           bg = "#222D32";
@@ -70,7 +70,7 @@
 
         "module/xmonad" = {
           type = "custom/script";
-          exec = "${pkgs.xmonadpropread}/bin/xmonadpropread";
+          exec = "${upkgs.xmonadpropread}/bin/xmonadpropread";
           tail = true;
           format-padding = 1;
         };
@@ -148,10 +148,10 @@
           label-padding = 2;
           label-foreground = ''''${colors.fg}'';
           exec = ''LC_ALL=C pulseaudio-control --icons-volume " , " --icon-muted " " --sink-nicknames-from "device.description" listen'';
-          click-right = ''${pkgs.pavucontrol}/bin/pavucontrol'';
-          click-left = ''${pkgs.changeVolume}/bin/changeVolume mute'';
-          scroll-up = ''${pkgs.changeVolume}/bin/changeVolume +1%'';
-          scroll-down = ''${pkgs.changeVolume}/bin/changeVolume -1%'';
+          click-right = ''${upkgs.pavucontrol}/bin/pavucontrol'';
+          click-left = ''${upkgs.changeVolume}/bin/changeVolume mute'';
+          scroll-up = ''${upkgs.changeVolume}/bin/changeVolume +1%'';
+          scroll-down = ''${upkgs.changeVolume}/bin/changeVolume -1%'';
         };
 
         "module/cpu" = {

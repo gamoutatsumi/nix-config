@@ -421,7 +421,7 @@
             useUserPackages = false;
             users = {
               "${username}" = {
-                inherit imports;
+                imports = [ oreore.homeManagerModules.base16 ] ++ imports;
               };
             };
             backupFileExtension = "bak";
@@ -547,7 +547,7 @@
                     pkgs.writeShellScript "update" ''
                       set -e
                       echo "Updating ${system}..."
-                      nix flake update --commit-lock-file nixpkgs neovim-nightly-overlay neovim-src nixpkgs-unstable
+                      nix flake update --commit-lock-file nixpkgs neovim-nightly-overlay neovim-src nixpkgs-unstable oreore
                       nix run nix-darwin -- switch --flake .#$1 --impure --show-trace |& ${pkgs.nix-output-monitor}/bin/nom
                       echo "Updated ${system}"
                     ''
