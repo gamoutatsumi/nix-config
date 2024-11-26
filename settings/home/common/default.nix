@@ -1,4 +1,10 @@
-{ lib, pkgs, ... }:
+{
+  lib,
+  pkgs,
+  upkgs,
+  denoVersion,
+  ...
+}:
 let
   toINI = lib.generators.toINIWithGlobalSection { listsAsDuplicateKeys = true; };
 in
@@ -47,8 +53,13 @@ in
           paths = [
             (pkgs.substituteAllFiles {
               src = ./config/nvim;
-              files = [ "dpp/skkeleton.vim" ];
+              files = [
+                "dpp/skkeleton.vim"
+                "denops.toml"
+              ];
               skk_dict = "${pkgs.skk-dicts}";
+              deno =
+                if pkgs.stdenv.isLinux then "${upkgs.deno."${denoVersion}"}/bin/deno" else "${upkgs.deno}/bin/deno";
             })
             ./config/nvim
           ];

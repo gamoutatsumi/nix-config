@@ -10,10 +10,8 @@
       with pkgs;
       [
         # keep-sorted start
-        agenix-rekey
         bitwarden-desktop
         chntpw
-        deno.${denoVersion}
         discord
         firefox
         kcachegrind
@@ -30,6 +28,9 @@
         })
       ]
       ++ (with upkgs; [
+        agenix-rekey
+        deno.${denoVersion}
+
         # keep-sorted start
         changeBrightness
         changeVolume

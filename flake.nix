@@ -53,7 +53,7 @@
       url = "github:ryantm/agenix";
       inputs = {
         nixpkgs = {
-          follows = "nixpkgs";
+          follows = "nixpkgs-unstable";
         };
         systems = {
           follows = "systems";
@@ -73,7 +73,7 @@
       url = "github:dagger/nix";
       inputs = {
         nixpkgs = {
-          follows = "nixpkgs";
+          follows = "nixpkgs-unstable";
         };
       };
     };
@@ -106,7 +106,7 @@
       url = "github:nix-community/disko";
       inputs = {
         nixpkgs = {
-          follows = "nixpkgs";
+          follows = "nixpkgs-unstable";
         };
       };
     };
@@ -128,7 +128,7 @@
       url = "github:hercules-ci/flake-parts";
       inputs = {
         nixpkgs-lib = {
-          follows = "nixpkgs";
+          follows = "nixpkgs-unstable";
         };
       };
     };
@@ -282,7 +282,7 @@
           follows = "nixpkgs";
         };
         nixpkgs = {
-          follows = "nixpkgs";
+          follows = "nixpkgs-unstable";
         };
       };
     };
@@ -301,7 +301,7 @@
       url = "github:numtide/treefmt-nix";
       inputs = {
         nixpkgs = {
-          follows = "nixpkgs";
+          follows = "nixpkgs-unstable";
         };
       };
     };
@@ -386,19 +386,25 @@
     }@inputs:
     let
       upkgsConf =
-        system:
+        {
+          system,
+          stdenv,
+          lib,
+        }:
         (import nixpkgs-unstable {
           inherit system;
           config.allowUnfree = true;
           overlays = [
-            neovim-nightly-overlay.overlays.default
-            emacs-overlay.overlays.default
-            vim-overlay.overlays.default
-            oreore.overlays.default
+            # keep-sorted start
             agenix.overlays.default
+            emacs-overlay.overlays.default
             inputs.agenix-rekey.overlays.default
+            neovim-nightly-overlay.overlays.default
+            oreore.overlays.default
             rust-overlay.overlays.default
-          ];
+            vim-overlay.overlays.default
+            # keep-sorted end
+          ] ++ lib.optionals (stdenv.isLinux) [ deno.overlays.deno-overlay ];
         });
       denoVersion = "2.0.5";
       homeManagerConf =
@@ -429,7 +435,6 @@
             };
           };
         };
-      overlays = [ deno.overlays.deno-overlay ];
     in
     (flake-parts.lib.mkFlake { inherit inputs; } (
       {
@@ -452,20 +457,22 @@
                 config,
                 inputs',
                 system,
+                pkgs,
                 ...
               }:
               let
                 username = "gamoutatsumi";
-                upkgs = upkgsConf system;
+                upkgs = upkgsConf {
+                  inherit system;
+                  inherit (pkgs) stdenv lib;
+                };
               in
               nixpkgs.lib.nixosSystem {
                 specialArgs = {
-                  inherit inputs inputs';
+                  inherit inputs inputs' upkgs;
                   username = username;
-                  upkgs = upkgs;
                 };
                 modules = [
-                  { nixpkgs.overlays = overlays; }
                   lanzaboote.nixosModules.lanzaboote
                   xremap-nix.nixosModules.default
                   agenix.nixosModules.default
@@ -474,7 +481,7 @@
                   ./settings/nixos.nix
                   home-manager.nixosModules.home-manager
                   (
-                    { lib }:
+                    { lib, ... }:
                     homeManagerConf {
                       inherit username upkgs lib;
                       imports = [ ./settings/home/linux.nix ];
@@ -489,11 +496,15 @@
                 config,
                 inputs',
                 system,
+                pkgs,
                 ...
               }:
               let
                 username = "gamoutatsumi";
-                upkgs = upkgsConf system;
+                upkgs = upkgsConf {
+                  inherit system;
+                  inherit (pkgs) stdenv lib;
+                };
               in
               nixpkgs.lib.nixosSystem {
                 specialArgs = {
@@ -503,7 +514,6 @@
                   device = "/dev/disk/by-id/nvme-WD_BLACK_SN770_1TB_24116U400484";
                 };
                 modules = [
-                  { nixpkgs.overlays = overlays; }
                   lanzaboote.nixosModules.lanzaboote
                   disko.nixosModules.disko
                   agenix.nixosModules.default
@@ -511,10 +521,13 @@
                   ./hosts/desktop
                   ./settings/nixos.nix
                   home-manager.nixosModules.home-manager
-                  (homeManagerConf {
-                    inherit username upkgs;
-                    imports = [ ./settings/home/linux.nix ];
-                  })
+                  (
+                    { lib, ... }:
+                    homeManagerConf {
+                      inherit username upkgs lib;
+                      imports = [ ./settings/home/linux.nix ];
+                    }
+                  )
                 ];
               }
             );
@@ -550,12 +563,16 @@
                 config,
                 inputs',
                 system,
+                pkgs,
                 ...
               }:
               let
                 darwinUser = builtins.getEnv "DARWIN_USER";
                 darwinHost = builtins.getEnv "DARWIN_HOST";
-                upkgs = upkgsConf system;
+                upkgs = upkgsConf {
+                  inherit system;
+                  inherit (pkgs) stdenv lib;
+                };
               in
               nix-darwin.lib.darwinSystem {
                 inherit system;
@@ -566,7 +583,6 @@
                   hostname = darwinHost;
                 };
                 modules = [
-                  { nixpkgs.overlays = overlays; }
                   ./hosts/work_darwin
                   ./settings/darwin.nix
                   home-manager.darwinModules.home-manager
@@ -591,18 +607,12 @@
             ...
           }:
           let
-            upkgs = upkgsConf system;
+            upkgs = upkgsConf {
+              inherit system;
+              inherit (pkgs) stdenv lib;
+            };
           in
           {
-            _module = {
-              args = {
-                pkgs = import inputs.nixpkgs {
-                  inherit system;
-                  overlays = overlays;
-                  config = { };
-                };
-              };
-            };
             agenix-rekey = {
               nixosConfigurations = self.nixosConfigurations;
               pkgs = upkgs;
@@ -652,7 +662,7 @@
                   };
                   denolint = {
                     enable = true;
-                    package = upkgs.deno;
+                    package = if (pkgs.stdenv.isLinux) then upkgs.deno."${denoVersion}" else upkgs.deno;
                   };
                   check-toml = {
                     enable = true;
@@ -679,7 +689,7 @@
                 };
                 deno = {
                   enable = true;
-                  package = upkgs.deno;
+                  package = if (pkgs.stdenv.isLinux) then upkgs.deno."${denoVersion}" else upkgs.deno;
                 };
                 jsonfmt = {
                   enable = true;
