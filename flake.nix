@@ -84,7 +84,7 @@
           follows = "flake-parts";
         };
         nixpkgs = {
-          follows = "nixpkgs";
+          follows = "nixpkgs-unstable";
         };
         treefmt-nix = {
           follows = "treefmt-nix";

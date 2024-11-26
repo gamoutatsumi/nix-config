@@ -170,7 +170,7 @@
           "flake-parts"
         ],
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-unstable"
         ],
         "treefmt-nix": [
           "treefmt-nix"
