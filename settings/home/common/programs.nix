@@ -31,7 +31,6 @@ in
         age-plugin-yubikey
         bc
         binutils
-        cmake
         coreutils-full
         curlFull
         docker-credential-helpers
@@ -53,7 +52,6 @@ in
         kubectl
         kubie
         moreutils
-        neofetch
         nix-diff
         nix-index
         nix-output-monitor
@@ -70,6 +68,7 @@ in
         sheldon
         mycli
         vim
+        tinty
       ]);
   };
   programs = {
