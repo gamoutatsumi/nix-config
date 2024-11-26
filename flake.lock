@@ -531,11 +531,11 @@
         "treefmt-nix": []
       },
       "locked": {
-        "lastModified": 1732586714,
-        "narHash": "sha256-8BVqpD3z1akBAOeFKERer+RXUZkpj/vE0jnL3gfsH6Q=",
+        "lastModified": 1732592855,
+        "narHash": "sha256-Jjyx9UmlWZ1MP9rsCADExoymuA/3B4E4Dan9nwlAFMQ=",
         "owner": "gamoutatsumi",
         "repo": "oreore-flake",
-        "rev": "d1f26008a5b68190ff6d1fc129f69535c99f7dd2",
+        "rev": "fe1b649117c0614eeb45d667aa0873d45d64a223",
         "type": "github"
       },
       "original": {
@@ -614,11 +614,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1732328983,
-        "narHash": "sha256-RHt12f/slrzDpSL7SSkydh8wUE4Nr4r23HlpWywed9E=",
+        "lastModified": 1732588352,
+        "narHash": "sha256-J2/hxOO1VtBA/u+a+9E+3iJpWT3xsBdghgYAVfoGCJo=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "ed8aa5b64f7d36d9338eb1d0a3bb60cf52069a72",
+        "rev": "414e748aae5c9e6ca63c5aafffda03e5dad57ceb",
         "type": "github"
       },
       "original": {
