@@ -531,11 +531,11 @@
         "treefmt-nix": []
       },
       "locked": {
-        "lastModified": 1732593430,
-        "narHash": "sha256-6RFatX8ODA1KaYGd+mctVegNvWwYltLlOkxEym8kOcE=",
+        "lastModified": 1732594551,
+        "narHash": "sha256-F/7FK2RzkH7sz7OVUZtnz0b8EP5/XMtDb31jbhFe00o=",
         "owner": "gamoutatsumi",
         "repo": "oreore-flake",
-        "rev": "2c983e77ed8e4da3b76aa0628f034e504257ff01",
+        "rev": "52d346a666f1acc2e06883b9ae0363e4e7fa156e",
         "type": "github"
       },
       "original": {
@@ -675,11 +675,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1732511642,
-        "narHash": "sha256-w+mqaMt6BcXZLShblEvWIxExiXUA01CyoouY3cOAQO4=",
+        "lastModified": 1732594179,
+        "narHash": "sha256-uZAUnVb3nLsA9aN88ATFdm4jZpEpWlU8tMJZcB2/O+s=",
         "owner": "kawarimidoll",
         "repo": "vim-overlay",
-        "rev": "8fce5db35cf0c44998ddf922bec106591918c17c",
+        "rev": "261c5a39bd2c7ee762d6ac5b86bb5a8420b4ae86",
         "type": "github"
       },
       "original": {
