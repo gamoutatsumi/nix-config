@@ -12,7 +12,7 @@
           "flake-utils"
         ],
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-unstable"
         ],
         "rust-overlay": [
           "rust-overlay"
@@ -37,20 +37,25 @@
         "devshell": [
           "devshell"
         ],
-        "flake-utils": [
-          "flake-utils"
+        "flake-parts": [
+          "flake-parts"
         ],
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-unstable"
         ],
-        "pre-commit-hooks": []
+        "pre-commit-hooks": [
+          "pre-commit-hooks"
+        ],
+        "treefmt-nix": [
+          "treefmt-nix"
+        ]
       },
       "locked": {
-        "lastModified": 1732464467,
-        "narHash": "sha256-6Cqtig/EXJaRXgl+iRb1wEAwhckjczfx5XbTNuSdnfs=",
+        "lastModified": 1732584275,
+        "narHash": "sha256-XXQjHvV8lLIkZ4PLIAs6z6lAhGRU7AfVQrp1KDHyKnM=",
         "owner": "oddlama",
         "repo": "agenix-rekey",
-        "rev": "20787af2247a936afe7067b82ae8a503652994d9",
+        "rev": "77426dfe2a97d8b1da86614cf3a21bd1c96c153c",
         "type": "github"
       },
       "original": {

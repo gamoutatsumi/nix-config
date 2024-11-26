@@ -57,17 +57,14 @@
   environment = {
     systemPackages =
       (with pkgs; [
-        gcc
-        git
-        vim
-        wget
-        curl
         sbctl
         efitools
-        aicommit2
         cifs-utils
       ])
-      ++ (with upkgs; [ vim ]);
+      ++ (with upkgs; [
+        aicommit2
+        vim
+      ]);
   };
   hardware = {
     opengl = {

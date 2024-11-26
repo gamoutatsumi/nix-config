@@ -32,10 +32,10 @@
   };
   home = {
     packages =
-      (with pkgs; [
-        docker-client
+      (with pkgs; [ docker-client ])
+      ++ (with upkgs; [
         aicommit2
-      ])
-      ++ (with upkgs; [ deno ]);
+        deno
+      ]);
   };
 }

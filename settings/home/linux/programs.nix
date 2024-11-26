@@ -1,37 +1,46 @@
-{ pkgs, denoVersion, ... }:
+{
+  upkgs,
+  pkgs,
+  denoVersion,
+  ...
+}:
 {
   home = {
-    packages = with pkgs; [
-      # keep-sorted start
-      agenix-rekey
-      bitwarden-desktop
-      chntpw
-      deno.${denoVersion}
-      discord
-      firefox
-      kcachegrind
-      mpd
-      pavucontrol
-      slack
-      xsel
-      zoom-us
-      # keep-sorted end
-      (vivaldi.override {
-        enableWidevine = true;
-        proprietaryCodecs = true;
-        commandLineArgs = "--force-dark-mode";
-      })
-      # keep-sorted start
-      changeBrightness
-      changeVolume
-      getPulseVolume
-      maimFull
-      maimSelect
-      playerctlStatus
-      toggleMicMute
-      xmonadpropread
-      # keep-sorted end
-    ];
+    packages =
+      with pkgs;
+      [
+        # keep-sorted start
+        agenix-rekey
+        bitwarden-desktop
+        chntpw
+        deno.${denoVersion}
+        discord
+        firefox
+        kcachegrind
+        mpd
+        pavucontrol
+        slack
+        xsel
+        zoom-us
+        # keep-sorted end
+        (vivaldi.override {
+          enableWidevine = true;
+          proprietaryCodecs = true;
+          commandLineArgs = "--force-dark-mode";
+        })
+      ]
+      ++ (with upkgs; [
+        # keep-sorted start
+        changeBrightness
+        changeVolume
+        getPulseVolume
+        maimFull
+        maimSelect
+        playerctlStatus
+        toggleMicMute
+        xmonadpropread
+        # keep-sorted end
+      ]);
   };
   programs = {
     # keep-sorted start block=yes

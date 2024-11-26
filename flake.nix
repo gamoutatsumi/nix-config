@@ -22,7 +22,7 @@
           follows = "rust-overlay";
         };
         nixpkgs = {
-          follows = "nixpkgs";
+          follows = "nixpkgs-unstable";
         };
         flake-utils = {
           follows = "flake-utils";
@@ -36,13 +36,16 @@
           follows = "devshell";
         };
         pre-commit-hooks = {
-          follows = "";
+          follows = "pre-commit-hooks";
         };
         nixpkgs = {
-          follows = "nixpkgs";
+          follows = "nixpkgs-unstable";
         };
-        flake-utils = {
-          follows = "flake-utils";
+        flake-parts = {
+          follows = "flake-parts";
+        };
+        treefmt-nix = {
+          follows = "treefmt-nix";
         };
       };
     };
@@ -390,6 +393,9 @@
             neovim-nightly-overlay.overlays.default
             emacs-overlay.overlays.default
             vim-overlay.overlays.default
+            oreore.overlays.default
+            agenix.overlays.default
+            inputs.agenix-rekey.overlays.default
           ];
         });
       denoVersion = "2.0.5";
@@ -399,6 +405,7 @@
           username,
           upkgs,
           networkManager ? false,
+          lib,
         }:
         {
           home-manager = {
@@ -406,7 +413,7 @@
             useUserPackages = false;
             users = {
               "${username}" = {
-                imports = imports;
+                inherit imports;
               };
             };
             backupFileExtension = "bak";
@@ -420,12 +427,7 @@
             };
           };
         };
-      overlays = [
-        agenix.overlays.default
-        inputs.agenix-rekey.overlays.default
-        oreore.overlays.default
-        deno.overlays.deno-overlay
-      ];
+      overlays = [ deno.overlays.deno-overlay ];
     in
     (flake-parts.lib.mkFlake { inherit inputs; } (
       {
@@ -463,17 +465,20 @@
                 modules = [
                   { nixpkgs.overlays = overlays; }
                   lanzaboote.nixosModules.lanzaboote
-                  agenix.nixosModules.default
                   xremap-nix.nixosModules.default
+                  agenix.nixosModules.default
                   inputs.agenix-rekey.nixosModules.default
                   ./hosts/laptop
                   ./settings/nixos.nix
                   home-manager.nixosModules.home-manager
-                  (homeManagerConf {
-                    inherit username upkgs;
-                    imports = [ ./settings/home/linux.nix ];
-                    networkManager = true;
-                  })
+                  (
+                    { lib }:
+                    homeManagerConf {
+                      inherit username upkgs lib;
+                      imports = [ ./settings/home/linux.nix ];
+                      networkManager = true;
+                    }
+                  )
                 ];
               }
             );
@@ -563,11 +568,14 @@
                   ./hosts/work_darwin
                   ./settings/darwin.nix
                   home-manager.darwinModules.home-manager
-                  (homeManagerConf {
-                    inherit upkgs;
-                    imports = [ ./settings/home/darwin.nix ];
-                    username = darwinUser;
-                  })
+                  (
+                    { lib, ... }:
+                    homeManagerConf {
+                      inherit upkgs lib;
+                      imports = [ ./settings/home/darwin.nix ];
+                      username = darwinUser;
+                    }
+                  )
                 ];
               }
             );
@@ -594,7 +602,8 @@
               };
             };
             agenix-rekey = {
-              nodes = self.nixosConfigurations;
+              nixosConfigurations = self.nixosConfigurations;
+              pkgs = upkgs;
             };
             devShells = {
               default = pkgs.mkShellNoCC {
