@@ -528,15 +528,17 @@
         "systems": [
           "systems"
         ],
-        "tinty-schemes": "tinty-schemes",
+        "tinty-schemes": [
+          "tinty-schemes"
+        ],
         "treefmt-nix": []
       },
       "locked": {
-        "lastModified": 1732695190,
-        "narHash": "sha256-VzRGl1N6IPGY020BbGDB/Srfk+ae7LFBkGbQf2oA880=",
+        "lastModified": 1732695261,
+        "narHash": "sha256-LbxmSEAn+RKxAYqN7XLcRzoO5NFhW8Ibhwv04q0s9S4=",
         "owner": "gamoutatsumi",
         "repo": "oreore-flake",
-        "rev": "010d927bff3c011309e5a3e8254bc52411bb9cbf",
+        "rev": "198d11e69642d346eb7cac92228361e09ba4aab4",
         "type": "github"
       },
       "original": {
@@ -601,6 +603,7 @@
         "pre-commit-hooks": "pre-commit-hooks",
         "rust-overlay": "rust-overlay",
         "systems": "systems",
+        "tinty-schemes": "tinty-schemes",
         "treefmt-nix": "treefmt-nix",
         "vim-overlay": "vim-overlay",
         "vim-src": "vim-src",
