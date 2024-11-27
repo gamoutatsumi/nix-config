@@ -528,14 +528,15 @@
         "systems": [
           "systems"
         ],
+        "tinty-schemes": "tinty-schemes",
         "treefmt-nix": []
       },
       "locked": {
-        "lastModified": 1732694591,
-        "narHash": "sha256-XsOWfEyW1FVLhFhXIcSiIkMAoSWNInbBEsWiF71zDh0=",
+        "lastModified": 1732694971,
+        "narHash": "sha256-HQUX8liE0k71Eb6++pBfWOeCu6Cmwwoh+G/zi5BMNag=",
         "owner": "gamoutatsumi",
         "repo": "oreore-flake",
-        "rev": "a663fd7f6238d67c9a2a3086e154393f26e7d2b3",
+        "rev": "1ca352bcb0d8093d10e63eeed82ab818cd29c08d",
         "type": "github"
       },
       "original": {
@@ -639,6 +640,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "tinty-schemes": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1731411556,
+        "narHash": "sha256-Tp1BpaF5qRav7O2TsSGjCfgRzhiasu4IuwROR66gz1o=",
+        "owner": "tinted-theming",
+        "repo": "schemes",
+        "rev": "61058a8d2e2bd4482b53d57a68feb56cdb991f0b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tinted-theming",
+        "repo": "schemes",
         "type": "github"
       }
     },
