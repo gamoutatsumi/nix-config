@@ -531,11 +531,11 @@
         "treefmt-nix": []
       },
       "locked": {
-        "lastModified": 1732676155,
-        "narHash": "sha256-nZI0bN8SCx7DBcDAdy9PLWIjwxlN7pbRrrmxZ/CZmFs=",
+        "lastModified": 1732676198,
+        "narHash": "sha256-FrG4P2WuGwVsjMXYva8EaZi6MpU9dN3FokrWeDyO/Ag=",
         "owner": "gamoutatsumi",
         "repo": "oreore-flake",
-        "rev": "185f917a779ca1b13e5395c39002dbe2b814567d",
+        "rev": "9a3dd9ce6d63a93bd0bc1bd397641d0e29a2d948",
         "type": "github"
       },
       "original": {
