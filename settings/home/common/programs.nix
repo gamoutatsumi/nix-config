@@ -68,7 +68,6 @@ in
         sheldon
         mycli
         vim
-        tinty
       ]);
   };
   programs = {

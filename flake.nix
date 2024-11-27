@@ -237,6 +237,9 @@
     oreore = {
       url = "github:gamoutatsumi/oreore-flake";
       inputs = {
+        tinty-schemes = {
+          follows = "tinty-schemes";
+        };
         nixpkgs-unstable = {
           follows = "nixpkgs-unstable";
         };
@@ -296,6 +299,10 @@
     };
     systems = {
       url = "github:nix-systems/default";
+    };
+    tinty-schemes = {
+      url = "github:tinted-theming/schemes";
+      flake = false;
     };
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
@@ -376,7 +383,6 @@
       nixpkgs-unstable,
       oreore,
       pre-commit-hooks,
-      rust-overlay,
       systems,
       treefmt-nix,
       vim-overlay,
@@ -401,7 +407,6 @@
             inputs.agenix-rekey.overlays.default
             neovim-nightly-overlay.overlays.default
             oreore.overlays.default
-            rust-overlay.overlays.default
             vim-overlay.overlays.default
             # keep-sorted end
           ] ++ lib.optionals (stdenv.isLinux) [ deno.overlays.deno-overlay ];
