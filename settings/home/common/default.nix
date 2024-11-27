@@ -85,5 +85,10 @@ in
         sha256 = "069z1m3664xaciw9hhpqzsa5x5k802fpk9wxbkjxz4chmjnazzfj";
       };
     };
+    tinty = {
+      enable = true;
+      package = upkgs.tinty;
+      variant = "dark";
+    };
   };
 }
