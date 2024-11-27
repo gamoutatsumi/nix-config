@@ -78,4 +78,12 @@ in
     };
     enable = true;
   };
+  theme = {
+    wallpaper = {
+      file = builtins.fetchurl {
+        url = "https://atri-mdm.com/assets/img/special/present/wp_ATRI.jpg";
+        sha256 = "069z1m3664xaciw9hhpqzsa5x5k802fpk9wxbkjxz4chmjnazzfj";
+      };
+    };
+  };
 }

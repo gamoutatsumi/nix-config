@@ -421,7 +421,7 @@
             useUserPackages = false;
             users = {
               "${username}" = {
-                imports = [ oreore.homeManagerModules.base16 ] ++ imports;
+                imports = [ oreore.homeManagerModules.theme ] ++ imports;
               };
             };
             backupFileExtension = "bak";

@@ -36,10 +36,6 @@
   home = {
     homeDirectory = "/home/${username}";
     file = {
-      "backgrounds/atri.jpg".source = builtins.fetchurl {
-        url = "https://atri-mdm.com/assets/img/special/present/wp_ATRI.jpg";
-        sha256 = "069z1m3664xaciw9hhpqzsa5x5k802fpk9wxbkjxz4chmjnazzfj";
-      };
       ".pki/nssdb/pkcs11.txt".text = "library=
 name=NSS Internal PKCS #11 Module
 parameters=configdir='sql:${config.home.homeDirectory}/.pki/nssdb' certPrefix='' keyPrefix='' secmod='secmod.db' flags=optimizeSpace updatedir='' updateCertPrefix='' updateKeyPrefix='' updateid='' updateTokenDescription=''
