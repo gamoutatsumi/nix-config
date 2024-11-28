@@ -86,7 +86,7 @@ in
       };
     };
     tinty = {
-      enable = true;
+      enable = false;
       generate = {
         variant = "dark";
       };

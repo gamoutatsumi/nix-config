@@ -405,6 +405,7 @@ in
         PURE_GIT_PULL = 0;
         SAVEHIST = 100000;
         TERM = "alacritty";
+        TINTED_SHELL_ENABLE_BASE24_VARS = 1;
         WORDCHARS = "*?_.[]~-=&;!#$%^(){}<>";
         ZENO_ENABLE_FZF_TMUX = 1;
         ZENO_ENABLE_SOCK = 1;
