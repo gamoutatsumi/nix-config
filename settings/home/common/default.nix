@@ -91,20 +91,11 @@ in
         variant = "dark";
       };
       shell = "zsh";
-      items = [
-        {
-          name = "tinted-shell";
-          path = pkgs.fetchFromGitHub {
-            owner = "tinted-theming";
-            repo = "tinted-shell";
-            rev = "60c80f53cd3d97c25eb0580e40f0b9de84dac55f";
-            hash = "sha256-eyZKShUpeIAoxhVsHAm2eqYvMp5e15NtbVrjMWFqtF8=";
-          };
-          url = "https://github.com/tinted-theming/tinted-shell";
-          themes-dir = "scripts";
-          supported-systems = [ "base16" ];
-        }
-      ];
+      themes = {
+        alacritty = {
+          enable = true;
+        };
+      };
     };
   };
 }

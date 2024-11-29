@@ -75,6 +75,16 @@ in
     alacritty = {
       enable = true;
       settings = {
+        import = [
+          "${builtins.fetchurl {
+            url = "https://raw.githubusercontent.com/bluz71/vim-nightfly-colors/master/extras/nightfly-alacritty.toml";
+            sha256 = "0ssgf9i5nrc2m57zvgfzlgfvyhcrwd73pkiny266ba201niv6qi1";
+          }}"
+        ];
+        shell = {
+          args = [ "--login" ];
+          program = "zsh";
+        };
         env = {
           TERM = "alacritty";
           USE_TMUX = "true";
@@ -405,7 +415,6 @@ in
         PURE_GIT_PULL = 0;
         SAVEHIST = 100000;
         TERM = "alacritty";
-        TINTED_SHELL_ENABLE_BASE24_VARS = 1;
         WORDCHARS = "*?_.[]~-=&;!#$%^(){}<>";
         ZENO_ENABLE_FZF_TMUX = 1;
         ZENO_ENABLE_SOCK = 1;

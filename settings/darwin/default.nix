@@ -22,7 +22,6 @@
     };
     casks = [
       # keep-sorted start
-      "alacritty"
       "chatgpt"
       "karabiner-elements"
       "notion"
