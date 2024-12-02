@@ -75,15 +75,11 @@ in
     alacritty = {
       enable = true;
       settings = {
-        # import = [
-        #   "${builtins.fetchurl {
-        #     url = "https://raw.githubusercontent.com/bluz71/vim-nightfly-colors/master/extras/nightfly-alacritty.toml";
-        #     sha256 = "0ssgf9i5nrc2m57zvgfzlgfvyhcrwd73pkiny266ba201niv6qi1";
-        #   }}"
-        # ];
-        shell = {
-          args = [ "--login" ];
-          program = "zsh";
+        terminal = {
+          shell = {
+            args = [ "--login" ];
+            program = "zsh";
+          };
         };
         env = {
           TERM = "alacritty";
@@ -225,7 +221,6 @@ in
         enable = true;
         options = {
           features = "line-numbers decorations";
-          syntax-theme = "fly16";
           plus-style = ''syntax "#012800"'';
           minus-style = ''syntax "#340001"'';
           hunk-header-style = "file line-number";
