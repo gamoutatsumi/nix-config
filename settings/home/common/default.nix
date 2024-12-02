@@ -57,7 +57,7 @@ in
                 "dpp/skkeleton.vim"
                 "denops.toml"
               ];
-              skk_dict = "${pkgs.skk-dicts}";
+              skk_dict = "${pkgs.skkDictionaries.l}/share/skk/SKK-JISYO.L";
               deno =
                 if pkgs.stdenv.isLinux then "${upkgs.deno."${denoVersion}"}/bin/deno" else "${upkgs.deno}/bin/deno";
             })
