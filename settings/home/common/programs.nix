@@ -57,6 +57,7 @@ in
         nix-output-monitor
         nix-tree
         q-text-as-data
+        sheldon
         stern
         unar
         unzip
@@ -65,7 +66,6 @@ in
         # keep-sorted end
       ])
       ++ (with upkgs; [
-        sheldon
         mycli
         vim
       ]);
@@ -75,12 +75,12 @@ in
     alacritty = {
       enable = true;
       settings = {
-        import = [
-          "${builtins.fetchurl {
-            url = "https://raw.githubusercontent.com/bluz71/vim-nightfly-colors/master/extras/nightfly-alacritty.toml";
-            sha256 = "0ssgf9i5nrc2m57zvgfzlgfvyhcrwd73pkiny266ba201niv6qi1";
-          }}"
-        ];
+        # import = [
+        #   "${builtins.fetchurl {
+        #     url = "https://raw.githubusercontent.com/bluz71/vim-nightfly-colors/master/extras/nightfly-alacritty.toml";
+        #     sha256 = "0ssgf9i5nrc2m57zvgfzlgfvyhcrwd73pkiny266ba201niv6qi1";
+        #   }}"
+        # ];
         shell = {
           args = [ "--login" ];
           program = "zsh";

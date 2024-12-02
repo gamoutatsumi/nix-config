@@ -86,13 +86,16 @@ in
       };
     };
     tinty = {
-      enable = false;
+      enable = true;
       generate = {
         variant = "dark";
       };
       shell = "zsh";
       themes = {
         alacritty = {
+          enable = true;
+        };
+        shell = {
           enable = true;
         };
       };

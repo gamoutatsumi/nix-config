@@ -59,19 +59,14 @@ ZSH_AUTOSUGGEST_CLEAR_WIDGETS+="zeno-auto-snippet-and-accept-line-fallback"
 
 setopt nonomatch
       function set_fast_theme() {
-        FAST_HIGHLIGHT_STYLES[path]='fg=cyan,underline'
-        FAST_HIGHLIGHT_STYLES[path-to-dir]='fg=cyan,underline' 
-        FAST_HIGHLIGHT_STYLES[suffix-alias]='fg=blue'
-        FAST_HIGHLIGHT_STYLES[alias]='fg=blue'
-        FAST_HIGHLIGHT_STYLES[precommand]='fg=blue'
-        FAST_HIGHLIGHT_STYLES[command]='fg=blue'
+        FAST_HIGHLIGHT_STYLES[path]='fg=009,underline'
+        FAST_HIGHLIGHT_STYLES[path-to-dir]='fg=009,underline' 
         FAST_HIGHLIGHT_STYLES[arg0]='fg=025'
         FAST_HIGHLIGHT_STYLES[globbing]='fg=green,bold'
         FAST_HIGHLIGHT_STYLES[single-hyphen-option]='fg=cyan'
         FAST_HIGHLIGHT_STYLES[double-hyphen-option]='fg=cyan'
         FAST_HIGHLIGHT_STYLES[default]='fg=cyan'
         FAST_HIGHLIGHT_STYLES[unknown-token]='fg=196'
-        FAST_HIGHLIGHT_STYLES[builtin]='fg=blue'
         FAST_HIGHLIGHT_STYLES[global-alias]='fg=green'
       }
 set_fast_theme
