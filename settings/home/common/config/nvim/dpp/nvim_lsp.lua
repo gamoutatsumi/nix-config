@@ -356,7 +356,7 @@ lspconfig.terraformls.setup({
     on_attach = on_attach,
 })
 
-lspconfig.pylsp.setup({
+lspconfig.pyright.setup({
     autostart = true,
     on_attach = on_attach,
 })
