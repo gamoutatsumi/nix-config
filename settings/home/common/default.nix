@@ -89,6 +89,7 @@ in
       enable = true;
       generate = {
         variant = "dark";
+        system = "base24";
       };
       shell = "zsh";
       themes = {

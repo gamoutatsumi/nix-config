@@ -361,6 +361,11 @@ lspconfig.pyright.setup({
     on_attach = on_attach,
 })
 
+lspconfig.rust_analyzer.setup({
+    autostart = true,
+    on_attach = on_attach,
+})
+
 lspconfig.fennel_language_server.setup({
     settings = {
         fennel = {
