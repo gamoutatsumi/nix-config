@@ -190,7 +190,7 @@
       '';
     };
     ollama = {
-      package = upkgs.ollama;
+      package = pkgs.ollama;
       enable = true;
       acceleration = "cuda";
     };

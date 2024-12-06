@@ -52,9 +52,11 @@ in
         kubectl
         kubie
         moreutils
+        mycli
         nix-diff
         nix-index
         nix-output-monitor
+        nix-search-cli
         nix-tree
         q-text-as-data
         sheldon
@@ -66,7 +68,6 @@ in
         # keep-sorted end
       ])
       ++ (with upkgs; [
-        mycli
         vim
       ]);
   };
@@ -217,8 +218,12 @@ in
       signing = {
         key = "8BABD254FC4AB38A";
       };
-      delta = {
+      difftastic = {
         enable = true;
+        background = "dark";
+      };
+      delta = {
+        enable = false;
         options = {
           features = "line-numbers decorations";
           plus-style = ''syntax "#012800"'';
