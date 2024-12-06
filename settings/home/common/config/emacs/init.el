@@ -8,7 +8,6 @@
 (prefer-coding-system 'utf-8)
 
 (leaf ddskk
-      :ensure t
       :bind (("C-x C-j" . skk-mode))
       :init
       (defvar dired-bind-jump nil)
@@ -18,12 +17,10 @@
   :config
   (setopt treesit-font-lock-level 4))
 (leaf org
-      :ensure t
       :require t)
-(leaf leaf-tree :ensure t)
-(leaf leaf-convert :ensure t)
+(leaf leaf-tree)
+(leaf leaf-convert )
 (leaf modus-themes
-      :ensure t
       :require t
       :config
        (modus-themes-load-theme 'modus-vivendi)
@@ -32,19 +29,15 @@
         (modus-themes-italic-constructs . t)))
 
 (leaf lsp-mode
-      :ensure t
       :require t)
 
 (leaf go-mode
-      :ensure t
       :require t)
 
 (leaf bind-key
-      :ensure t
       :require t)
 
 (leaf htmlize
-      :ensure t
       :require t)
 
 (defvar user/standard-fontset
