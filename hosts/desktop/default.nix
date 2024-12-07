@@ -67,7 +67,7 @@
       ]);
   };
   hardware = {
-    opengl = {
+    graphics = {
       enable = true;
     };
     nvidia = {

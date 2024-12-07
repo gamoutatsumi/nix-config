@@ -106,7 +106,6 @@ name=p11-kit-proxy\n";
       };
     };
     configFile = {
-      "rofi".source = ./config/rofi;
       "easyeffects/output/Happy_your_Life_+_Downmix_to_mono.json".source =
         ./config/easyeffects/Happy_your_Life_+_Downmix_to_mono.json;
       "libskk".source = ./config/libskk;

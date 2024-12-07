@@ -72,19 +72,15 @@
     };
     rofi = {
       enable = true;
-      plugins = with pkgs; [
-        # keep-sorted start
-        rofi-power-menu
-        # keep-sorted end
-      ];
       font = "IBM Plex Sans JP 14";
       location = "center";
       theme = "Arc-Dark";
       extraConfig = {
-        modi = "drun,power-menu:rofi-power-menu";
+        modi = "drun,power-menu:${pkgs.rofi-power-menu}/bin/rofi-power-menu";
         kb-cancel = "Escape";
         kb-mode-previous = "Shift+Tab";
         kb-mode-next = "Tab";
+        kb-element-next = "";
         show-icons = true;
         sidebar-mode = true;
         icon-theme = "Vimix-Doder-dark";

@@ -49,7 +49,9 @@
   security = {
     pam = {
       u2f = {
-        cue = true;
+        settings = {
+          cue = true;
+        };
       };
       services = {
         login = {
