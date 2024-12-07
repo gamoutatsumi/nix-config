@@ -15,7 +15,6 @@
         discord
         firefox
         kcachegrind
-        mpd
         pavucontrol
         slack
         xsel
