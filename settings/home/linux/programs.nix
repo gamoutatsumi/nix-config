@@ -54,6 +54,9 @@
     };
     ncmpcpp = {
       enable = true;
+      settings = {
+        media_library_primary_tag = "album_artist";
+      };
       bindings = [
         {
           key = "j";
@@ -62,6 +65,14 @@
         {
           key = "k";
           command = "scroll_up";
+        }
+        {
+          key = "h";
+          command = "previous_column";
+        }
+        {
+          key = "l";
+          command = "next_column";
         }
       ];
     };

@@ -13,6 +13,10 @@
     mpd = {
       enable = true;
       extraConfig = ''
+        playlist_plugin {
+        name "cue"
+        enabled "false"
+        }
         audio_output {
         type "pipewire"
         name "PipeWire Sound Server"
