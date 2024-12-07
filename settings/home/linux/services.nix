@@ -3,6 +3,12 @@
   services = {
     mpd-discord-rpc = {
       enable = true;
+      settings = {
+        format = {
+          large_image = "";
+          small_image = "";
+        };
+      };
     };
     mpd = {
       enable = true;
