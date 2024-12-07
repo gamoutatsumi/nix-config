@@ -2,6 +2,9 @@
 {
   nix = {
     package = pkgs.nixVersions.latest;
+    monitored = {
+      enable = false;
+    };
     optimise = {
       automatic = true;
     };

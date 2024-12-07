@@ -159,6 +159,26 @@
         };
       };
     };
+    hmd = {
+      url = "github:pedorich-n/home-manager-diff";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs-unstable";
+        };
+        systems = {
+          follows = "systems";
+        };
+        flake-parts = {
+          follows = "flake-parts";
+        };
+        flake-utils = {
+          follows = "flake-utils";
+        };
+        poetry2nix = {
+          follows = "poetry2nix";
+        };
+      };
+    };
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs = {
@@ -190,6 +210,14 @@
         };
         nixpkgs = {
           follows = "nixpkgs";
+        };
+      };
+    };
+    monitored = {
+      url = "github:ners/nix-monitored";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs-unstable";
         };
       };
     };
@@ -269,6 +297,26 @@
         };
         nixpkgs = {
           follows = "nixpkgs";
+        };
+      };
+    };
+    poetry2nix = {
+      url = "github:nix-community/poetry2nix";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+        systems = {
+          follows = "systems";
+        };
+        flake-utils = {
+          follows = "flake-utils";
+        };
+        nix-github-actions = {
+          follows = "";
+        };
+        treefmt-nix = {
+          follows = "";
         };
       };
     };
@@ -375,8 +423,10 @@
       disko,
       emacs-overlay,
       flake-parts,
+      hmd,
       home-manager,
       lanzaboote,
+      monitored,
       neovim-nightly-overlay,
       nix-darwin,
       nixpkgs,
@@ -426,7 +476,10 @@
             useUserPackages = false;
             users = {
               "${username}" = {
-                imports = [ oreore.homeManagerModules.theme ] ++ imports;
+                imports = [
+                  oreore.homeManagerModules.theme
+                  hmd.hmModules.default
+                ] ++ imports;
               };
             };
             backupFileExtension = "bak";
@@ -478,6 +531,7 @@
                   username = username;
                 };
                 modules = [
+                  monitored.nixosModules.default
                   lanzaboote.nixosModules.lanzaboote
                   xremap-nix.nixosModules.default
                   agenix.nixosModules.default
@@ -513,12 +567,12 @@
               in
               nixpkgs.lib.nixosSystem {
                 specialArgs = {
-                  inherit inputs inputs';
+                  inherit inputs inputs' upkgs;
                   username = username;
-                  upkgs = upkgs;
                   device = "/dev/disk/by-id/nvme-WD_BLACK_SN770_1TB_24116U400484";
                 };
                 modules = [
+                  monitored.nixosModules.default
                   lanzaboote.nixosModules.lanzaboote
                   disko.nixosModules.disko
                   agenix.nixosModules.default
@@ -537,16 +591,16 @@
               }
             );
           };
-          apps = withSystem "aarch64-darwin" (
-            {
-              config,
-              inputs',
-              system,
-              pkgs,
-              ...
-            }:
-            {
-              ${system} = {
+          apps = {
+            "aarch64-darwin" = withSystem "aarth64-darwin" (
+              {
+                config,
+                inputs',
+                system,
+                pkgs,
+                ...
+              }:
+              {
                 update = {
                   program = toString (
                     pkgs.writeShellScript "update" ''
@@ -559,9 +613,36 @@
                   );
                   type = "app";
                 };
-              };
-            }
-          );
+              }
+            );
+            "x86_64-linux" = withSystem "x86_64-linux" (
+              {
+                config,
+                inputs',
+                system,
+                pkgs,
+                ...
+              }:
+              {
+                update = {
+                  program = toString (
+                    pkgs.writeShellScript "update" ''
+                      set -e
+                      set -o pipefail
+                      echo "Updating ${system}..."
+                      nix flake update --commit-lock-file
+                      old_system=$(${pkgs.coreutils}/bin/readlink -f /run/current-system)
+                      old_homemanaer=$(${pkgs.coreutils}/bin/readlink -f ~/.nix-profile)
+                      sudo nixos-rebuild switch --flake . --show-trace |& ${pkgs.nix-output-monitor}/bin/nom
+                      new_system=$(${pkgs.coreutils}/bin/readlink -f /run/current-system)
+                      new_homemanaer=$(${pkgs.coreutils}/bin/readlink -f ~/.nix-profile)
+                      ${pkgs.nvd}/bin/nvd diff "''${old_system}" "''${new_system}"
+                    ''
+                  );
+                };
+              }
+            );
+          };
           darwinConfigurations = {
             work = withSystem "aarch64-darwin" (
               {
@@ -590,6 +671,7 @@
                 modules = [
                   ./hosts/work_darwin
                   ./settings/darwin.nix
+                  monitored.darwinModules.default
                   home-manager.darwinModules.home-manager
                   (
                     { lib, ... }:

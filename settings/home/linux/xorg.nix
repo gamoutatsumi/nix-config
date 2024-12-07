@@ -53,7 +53,8 @@
               "XF86AudioMute" = ''"exec --no-startup-id changeVolume mute"'';
               "XF86AudioMicMute" = ''"exec --no-startup-id toggleMicMute"'';
               "Shift+XF86AudioMute" = ''"exec --no-startup-id toggleMicMute"'';
-              "${modifier}+w" = ''"exec --no-startup-id runorraise class Vivaldi-stable vivaldi --force-dark-mode"'';
+              "${modifier}+w" =
+                ''"exec --no-startup-id runorraise class Vivaldi-stable vivaldi --force-dark-mode"'';
               "${modifier}+Shift+s" = ''"exec --no-startup-id runorraise class Slack slack"'';
               "${modifier}+Shift+h" = ''"move workspace to output left"'';
               "${modifier}+Shift+l" = ''"move workspace to output right"'';

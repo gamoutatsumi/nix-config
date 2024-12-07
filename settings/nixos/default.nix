@@ -16,6 +16,11 @@
       gparted
       gptfdisk
     ];
+    etc = {
+      "pkcs11/modules/opensc-pkcs11".text = ''
+        module: ${pkgs.opensc}/lib/opensc-pkcs11.so
+      '';
+    };
   };
   fonts = {
     fontDir = {

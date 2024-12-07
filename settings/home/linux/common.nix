@@ -36,13 +36,14 @@
   home = {
     homeDirectory = "/home/${username}";
     file = {
-      ".pki/nssdb/pkcs11.txt".text = "library=
+      ".pki/nssdb/pkcs11.txt".text =
+        "library=
 name=NSS Internal PKCS #11 Module
 parameters=configdir='sql:${config.home.homeDirectory}/.pki/nssdb' certPrefix='' keyPrefix='' secmod='secmod.db' flags=optimizeSpace updatedir='' updateCertPrefix='' updateKeyPrefix='' updateid='' updateTokenDescription=''
 NSS=Flags=internal,critical trustOrder=75 cipherOrder=100 slotParams=(1={slotFlags=[ECC,RSA,DSA,DH,RC2,RC4,DES,RANDOM,SHA1,MD5,MD2,SSL,TLS,AES,Camellia,SEED,SHA256,SHA512] askpw=any timeout=30})
 
-library=${pkgs.opensc}/lib/opensc-pkcs11.so
-name=CAC Module\n";
+library=${pkgs.p11-kit}/lib/p11-kit-proxy.so
+name=p11-kit-proxy\n";
     };
     pointerCursor = {
       name = "Vimix-cursors";
@@ -106,7 +107,8 @@ name=CAC Module\n";
     };
     configFile = {
       "rofi".source = ./config/rofi;
-      "easyeffects/output/Happy_your_Life_+_Downmix_to_mono.json".source = ./config/easyeffects/Happy_your_Life_+_Downmix_to_mono.json;
+      "easyeffects/output/Happy_your_Life_+_Downmix_to_mono.json".source =
+        ./config/easyeffects/Happy_your_Life_+_Downmix_to_mono.json;
       "libskk".source = ./config/libskk;
     };
   };
