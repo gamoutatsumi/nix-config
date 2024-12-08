@@ -16,6 +16,7 @@
         firefox
         kcachegrind
         pavucontrol
+        playerctl
         slack
         xsel
         zoom-us

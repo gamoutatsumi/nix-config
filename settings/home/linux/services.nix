@@ -1,6 +1,9 @@
 { pkgs, networkManager, ... }:
 {
   services = {
+    playerctld = {
+      enable = true;
+    };
     mpd-discord-rpc = {
       enable = true;
       settings = {

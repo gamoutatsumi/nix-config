@@ -1,6 +1,7 @@
 {
   # keep-sorted start
   config,
+  lib,
   pkgs,
   upkgs,
   # keep-sorted end
@@ -327,10 +328,14 @@ in
     };
     neovim = {
       enable = true;
-      extraPackages = with upkgs; [
-        nil
-        tree-sitter
-      ];
+      extraPackages =
+        (with upkgs; [
+          nil
+          tree-sitter
+        ])
+        ++ lib.optionals (pkgs.stdenv.isLinux) [
+          upkgs.gcc
+        ];
       package = upkgs.neovim;
       defaultEditor = true;
       vimAlias = false;

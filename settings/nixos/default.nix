@@ -39,6 +39,11 @@
   i18n = {
     defaultLocale = "ja_JP.UTF-8";
   };
+  networking = {
+    extraHosts = ''
+      18.181.90.171 isuride.xiv.isucon.net
+    '';
+  };
   programs = {
     # keep-sorted start block=yes
     dconf = {
