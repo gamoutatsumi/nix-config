@@ -359,6 +359,7 @@ local languages = {
 }
 lspconfig.efm.setup({
     autostart = true,
+    cmd = { "efm-langserver", "-q" },
     on_attach = on_attach,
     filetypes = vim.tbl_keys(languages),
     settings = {
