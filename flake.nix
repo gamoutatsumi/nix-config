@@ -592,7 +592,7 @@
             );
           };
           apps = {
-            "aarch64-darwin" = withSystem "aarth64-darwin" (
+            "aarch64-darwin" = withSystem "aarch64-darwin" (
               {
                 config,
                 inputs',
