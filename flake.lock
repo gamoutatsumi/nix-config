@@ -93,39 +93,6 @@
         "type": "github"
       }
     },
-    "cachix": {
-      "inputs": {
-        "devenv": [
-          "oreore",
-          "devenv"
-        ],
-        "flake-compat": [
-          "oreore",
-          "flake-compat"
-        ],
-        "git-hooks": [
-          "oreore",
-          "pre-commit-hooks"
-        ],
-        "nixpkgs": [
-          "oreore",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1733424942,
-        "narHash": "sha256-5t7Sl6EkOaoP4FvzLmH7HFDbdl9SizmLh53RjDQCbWQ=",
-        "owner": "cachix",
-        "repo": "cachix",
-        "rev": "8b6b0e4694b9aa78b2ea4c93bff6e1a222dc7e4a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "cachix",
-        "repo": "cachix",
-        "type": "github"
-      }
-    },
     "crane": {
       "locked": {
         "lastModified": 1733418579,
@@ -558,15 +525,12 @@
     },
     "oreore": {
       "inputs": {
-        "cachix": "cachix",
-        "devenv": [],
         "flake-compat": [
           "flake-compat"
         ],
         "flake-parts": [
           "flake-parts"
         ],
-        "nix": [],
         "nixpkgs": [
           "nixpkgs"
         ],
@@ -586,11 +550,11 @@
         "treefmt-nix": []
       },
       "locked": {
-        "lastModified": 1733746022,
-        "narHash": "sha256-jT7BdMPge5qL4gkHklnQ437kFBNRcVgdSsPm2XRn9H8=",
+        "lastModified": 1733746197,
+        "narHash": "sha256-iyCKe3mP7sZZHMQfce9lOz1LOQLZ6EY319sSeV4yxT8=",
         "owner": "gamoutatsumi",
         "repo": "oreore-flake",
-        "rev": "898a413c6564394f3ed6859f96cf60a6179ffaff",
+        "rev": "25603423cb72d8bb45e99bd972f53d57f49b1827",
         "type": "github"
       },
       "original": {
