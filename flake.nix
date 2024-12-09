@@ -280,9 +280,6 @@
         flake-compat = {
           follows = "flake-compat";
         };
-        nix = {
-          follows = "";
-        };
         flake-parts = {
           follows = "flake-parts";
         };
