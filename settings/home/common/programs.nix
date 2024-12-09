@@ -333,7 +333,7 @@ in
           nil
           tree-sitter
         ])
-        ++ lib.optionals (pkgs.stdenv.isLinux) [
+        ++ lib.optionals pkgs.stdenv.isLinux [
           upkgs.gcc
         ];
       package = upkgs.neovim;

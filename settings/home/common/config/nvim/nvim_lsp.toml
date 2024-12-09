@@ -28,3 +28,6 @@ require('lsp-lens').setup()
 
 [[plugins]]
 repo = 'ray-x/lsp_signature.nvim'
+
+[[plugins]]
+repo = 'creativenull/efmls-configs-nvim'

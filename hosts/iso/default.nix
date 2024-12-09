@@ -16,15 +16,27 @@
     curl
   ];
 
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.systemd-boot.enable = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot = {
+    loader = {
+      efi = {
+        canTouchEfiVariables = true;
+      };
+      systemd-boot = {
+        enable = true;
+      };
+    };
+    kernelPackages = pkgs.linuxPackages_latest;
+  };
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking = {
+    hostName = "nixos"; # Define your hostname.
+    networkmanager = {
+      enable = true;
+    };
+  };
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-  networking.networkmanager.enable = true;
   # networking.wireless.enable = true;
 
   # Enable the X11 windowing system.
@@ -51,16 +63,18 @@
 
   users = {
     mutableUsers = false;
-    users.${username} = {
-      isNormalUser = true;
-      extraGroups = [
-        "users"
-        "wheel"
-        "video"
-        "audio"
-      ];
-      shell = pkgs.zsh;
-      hashedPasswordFile = config.age.secrets.${username}.path;
+    users = {
+      ${username} = {
+        isNormalUser = true;
+        extraGroups = [
+          "users"
+          "wheel"
+          "video"
+          "audio"
+        ];
+        shell = pkgs.zsh;
+        hashedPasswordFile = config.age.secrets.${username}.path;
+      };
     };
   };
 

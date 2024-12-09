@@ -459,16 +459,15 @@
             oreore.overlays.default
             vim-overlay.overlays.default
             # keep-sorted end
-          ] ++ lib.optionals (stdenv.isLinux) [ deno.overlays.deno-overlay ];
+          ] ++ lib.optionals stdenv.isLinux [ deno.overlays.deno-overlay ];
         });
-      denoVersion = "2.0.5";
+      denoVersion = "2.1.3";
       homeManagerConf =
         {
           imports,
           username,
           upkgs,
           networkManager ? false,
-          lib,
         }:
         {
           home-manager = {
@@ -494,7 +493,7 @@
           };
         };
     in
-    (flake-parts.lib.mkFlake { inherit inputs; } (
+    flake-parts.lib.mkFlake { inherit inputs; } (
       {
         inputs,
         lib,
@@ -504,15 +503,13 @@
       {
         systems = import systems;
         imports =
-          [ ]
-          ++ lib.optionals (inputs.pre-commit-hooks ? flakeModule) [ inputs.pre-commit-hooks.flakeModule ]
+          lib.optionals (inputs.pre-commit-hooks ? flakeModule) [ inputs.pre-commit-hooks.flakeModule ]
           ++ lib.optionals (inputs.treefmt-nix ? flakeModule) [ inputs.treefmt-nix.flakeModule ]
           ++ lib.optionals (inputs.agenix-rekey ? flakeModule) [ inputs.agenix-rekey.flakeModule ];
         flake = {
           nixosConfigurations = {
             "tat-nixos-laptop" = withSystem "x86_64-linux" (
               {
-                config,
                 inputs',
                 system,
                 pkgs,
@@ -527,8 +524,12 @@
               in
               nixpkgs.lib.nixosSystem {
                 specialArgs = {
-                  inherit inputs inputs' upkgs;
-                  username = username;
+                  inherit
+                    inputs
+                    inputs'
+                    upkgs
+                    username
+                    ;
                 };
                 modules = [
                   monitored.nixosModules.default
@@ -540,9 +541,9 @@
                   ./settings/nixos.nix
                   home-manager.nixosModules.home-manager
                   (
-                    { lib, ... }:
+                    _:
                     homeManagerConf {
-                      inherit username upkgs lib;
+                      inherit username upkgs;
                       imports = [ ./settings/home/linux.nix ];
                       networkManager = true;
                     }
@@ -552,7 +553,6 @@
             );
             "tat-nixos-desktop" = withSystem "x86_64-linux" (
               {
-                config,
                 inputs',
                 system,
                 pkgs,
@@ -567,8 +567,12 @@
               in
               nixpkgs.lib.nixosSystem {
                 specialArgs = {
-                  inherit inputs inputs' upkgs;
-                  username = username;
+                  inherit
+                    inputs
+                    inputs'
+                    upkgs
+                    username
+                    ;
                   device = "/dev/disk/by-id/nvme-WD_BLACK_SN770_1TB_24116U400484";
                 };
                 modules = [
@@ -581,9 +585,9 @@
                   ./settings/nixos.nix
                   home-manager.nixosModules.home-manager
                   (
-                    { lib, ... }:
+                    _:
                     homeManagerConf {
-                      inherit username upkgs lib;
+                      inherit username upkgs;
                       imports = [ ./settings/home/linux.nix ];
                     }
                   )
@@ -594,8 +598,6 @@
           apps = {
             "aarch64-darwin" = withSystem "aarch64-darwin" (
               {
-                config,
-                inputs',
                 system,
                 pkgs,
                 ...
@@ -619,8 +621,6 @@
             );
             "x86_64-linux" = withSystem "x86_64-linux" (
               {
-                config,
-                inputs',
                 system,
                 pkgs,
                 ...
@@ -646,8 +646,6 @@
           darwinConfigurations = {
             work = withSystem "aarch64-darwin" (
               {
-                config,
-                inputs',
                 system,
                 pkgs,
                 ...
@@ -663,9 +661,8 @@
               nix-darwin.lib.darwinSystem {
                 inherit system;
                 specialArgs = {
-                  inherit inputs;
+                  inherit inputs upkgs;
                   username = darwinUser;
-                  upkgs = upkgs;
                   hostname = darwinHost;
                 };
                 modules = [
@@ -674,9 +671,9 @@
                   monitored.darwinModules.default
                   home-manager.darwinModules.home-manager
                   (
-                    { lib, ... }:
+                    _:
                     homeManagerConf {
-                      inherit upkgs lib;
+                      inherit upkgs;
                       imports = [ ./settings/home/darwin.nix ];
                       username = darwinUser;
                     }
@@ -686,7 +683,7 @@
             );
           };
         };
-        perSystem = (
+        perSystem =
           {
             system,
             pkgs,
@@ -698,10 +695,12 @@
               inherit system;
               inherit (pkgs) stdenv lib;
             };
+            treefmtBuild = config.treefmt.build;
+            deno = if pkgs.stdenv.isLinux then upkgs.deno."${denoVersion}" else upkgs.deno;
           in
           {
             agenix-rekey = {
-              nixosConfigurations = self.nixosConfigurations;
+              inherit (self) nixosConfigurations;
               pkgs = upkgs;
             };
             devShells = {
@@ -719,7 +718,7 @@
                         directory
                         haskell-language-server
                       ]
-                      ++ lib.optionals (pkgs.stdenv.isLinux) [
+                      ++ lib.optionals pkgs.stdenv.isLinux [
                         xmonad
                         xmonad-extras
                         xmonad-contrib
@@ -728,9 +727,8 @@
                   ])
                   ++ [ dagger.packages.${system}.dagger ];
                 inputsFrom =
-                  [ ]
-                  ++ lib.optionals (inputs.pre-commit-hooks ? flakeModule) [ config.pre-commit.devShell ]
-                  ++ lib.optionals (inputs.treefmt-nix ? flakeModule) [ config.treefmt.build.devShell ];
+                  lib.optionals (inputs.pre-commit-hooks ? flakeModule) [ config.pre-commit.devShell ]
+                  ++ lib.optionals (inputs.treefmt-nix ? flakeModule) [ treefmtBuild.devShell ];
               };
             };
           }
@@ -742,29 +740,40 @@
               settings = {
                 src = ./.;
                 hooks = {
-                  treefmt = {
+                  # keep-sorted start block=yes
+                  check-json = {
                     enable = true;
-                    packageOverrides.treefmt = config.treefmt.build.wrapper;
-                  };
-                  denolint = {
-                    enable = true;
-                    package = if (pkgs.stdenv.isLinux) then upkgs.deno."${denoVersion}" else upkgs.deno;
                   };
                   check-toml = {
                     enable = true;
                   };
-                  check-json = {
+                  deadnix = {
                     enable = true;
+                  };
+                  denolint = {
+                    enable = true;
+                    package = deno;
+                  };
+                  flake-checker = {
+                    enable = false;
+                  };
+                  statix = {
+                    enable = true;
+                  };
+                  treefmt = {
+                    enable = true;
+                    packageOverrides.treefmt = treefmtBuild.wrapper;
                   };
                   yamllint = {
                     enable = true;
                   };
+                  # keep-sorted end
                 };
               };
             };
           }
           // lib.optionalAttrs (inputs.treefmt-nix ? flakeModule) {
-            formatter = config.treefmt.build.wrapper;
+            formatter = treefmtBuild.wrapper;
             treefmt = {
               projectRootFile = "flake.nix";
               flakeCheck = false;
@@ -775,7 +784,7 @@
                 };
                 deno = {
                   enable = true;
-                  package = if (pkgs.stdenv.isLinux) then upkgs.deno."${denoVersion}" else upkgs.deno;
+                  package = deno;
                 };
                 jsonfmt = {
                   enable = true;
@@ -801,8 +810,7 @@
                 # keep-sorted end
               };
             };
-          }
-        );
+          };
       }
-    ));
+    );
 }

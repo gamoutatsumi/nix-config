@@ -16,7 +16,7 @@
     mpd = {
       enable = true;
       package = pkgs.mpd.overrideAttrs (
-        final: prev: {
+        _: prev: {
           buildInputs = prev.buildInputs ++ [ pkgs.wavpack ];
           nativeBuildInputs = prev.nativeBuildInputs ++ [ pkgs.wavpack ];
           mesonFlags = prev.mesonFlags ++ [ "-Dwavpack=enabled" ];

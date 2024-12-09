@@ -4,8 +4,8 @@
     devices = {
       disk = {
         main = {
+          inherit device;
           type = "disk";
-          device = device;
           content = {
             type = "gpt";
             partitions = {

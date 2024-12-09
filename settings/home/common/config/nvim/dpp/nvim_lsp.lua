@@ -1,9 +1,6 @@
 -- lua_add {{{
 local lspconfig = require("lspconfig")
 local schemas = require("schemastore")
-local util = require("lspconfig/util")
-
-local buf_name = vim.api.nvim_buf_get_name(0) == "" and vim.fn.getcwd() or vim.api.nvim_buf_get_name(0)
 
 local function setInlayHintHL()
     local has_hl, hl = pcall(vim.api.nvim_get_hl, 0, { name = "LspInlayHint" })
@@ -94,13 +91,7 @@ lspconfig.yamlls.setup({
 })
 
 lspconfig.lua_ls.setup({
-    on_attach = function(client, bufnr)
-        client.server_capabilities.document_formatting = false
-        on_attach(client, bufnr)
-    end,
-    init_options = {
-        provideFormatter = false,
-    },
+    on_attach = on_attach,
     settings = {
         Lua = {
             runtime = { version = "LuaJIT" },
@@ -113,6 +104,9 @@ lspconfig.lua_ls.setup({
             },
             hint = {
                 enable = true,
+            },
+            format = {
+                enable = false,
             },
             workspace = {
                 library = vim.api.nvim_get_runtime_file("", true),
@@ -336,18 +330,45 @@ lspconfig.jsonls.setup({
     init_options = {
         provideFormatter = true,
     },
+    on_attach = on_attach,
 })
 
+local eslint_d = require("efmls-configs.linters.eslint_d")
+local prettierd = require("efmls-configs.formatters.prettier_d")
+local languages = {
+    lua = {
+        require("efmls-configs.formatters.stylua"),
+    },
+    go = {
+        require("efmls-configs.linters.golangci_lint"),
+    },
+    dockerfile = {
+        require("efmls-configs.linters.hadolint"),
+    },
+    sh = {
+        require("efmls-configs.linters.shellcheck"),
+        require("efmls-configs.formatters.shfmt"),
+    },
+    javascript = { eslint_d, prettierd },
+    typescript = { eslint_d, prettierd },
+    typescriptreact = { eslint_d, prettierd },
+    javascriptreact = { eslint_d, prettierd },
+    nix = {
+        require("efmls-configs.linters.statix"),
+    },
+}
 lspconfig.efm.setup({
     autostart = true,
-    cmd = { "efm-langserver", "-q" },
+    on_attach = on_attach,
+    filetypes = vim.tbl_keys(languages),
+    settings = {
+        rootMarkers = { ".git/" },
+        languages = languages,
+        logLevel = 3,
+    },
     init_options = {
         documentFormatting = true,
-        completion = false,
-        rangeFormatting = true,
-        hover = false,
-        documentSymbol = true,
-        codeAction = true,
+        documentRangeFormatting = true,
     },
 })
 
