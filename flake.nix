@@ -607,8 +607,10 @@
                       set -e
                       echo "Updating ${system}..."
                       nix flake update --commit-lock-file nixpkgs neovim-nightly-overlay neovim-src nixpkgs-unstable oreore
+                      old_system=$(${pkgs.coreutils}/bin/readlink -f /run/current-system)
                       nix run nix-darwin -- switch --flake .#$1 --impure --show-trace |& ${pkgs.nix-output-monitor}/bin/nom
-                      echo "Updated ${system}"
+                      new_system=$(${pkgs.coreutils}/bin/readlink -f /run/current-system)
+                      ${pkgs.nvd}/bin/nvd diff "''${old_system}" "''${new_system}"
                     ''
                   );
                   type = "app";
@@ -632,10 +634,8 @@
                       echo "Updating ${system}..."
                       nix flake update --commit-lock-file
                       old_system=$(${pkgs.coreutils}/bin/readlink -f /run/current-system)
-                      old_homemanaer=$(${pkgs.coreutils}/bin/readlink -f ~/.nix-profile)
                       sudo nixos-rebuild switch --flake . --show-trace |& ${pkgs.nix-output-monitor}/bin/nom
                       new_system=$(${pkgs.coreutils}/bin/readlink -f /run/current-system)
-                      new_homemanaer=$(${pkgs.coreutils}/bin/readlink -f ~/.nix-profile)
                       ${pkgs.nvd}/bin/nvd diff "''${old_system}" "''${new_system}"
                     ''
                   );
