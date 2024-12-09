@@ -708,8 +708,6 @@
               default = pkgs.mkShellNoCC {
                 packages =
                   (with pkgs; [
-                    nixfmt-rfc-style
-                    stylua
                     efm-langserver
                     lua-language-server
                     (pkgs.haskell.packages.ghc98.ghcWithPackages (
@@ -731,7 +729,8 @@
                   ++ [ dagger.packages.${system}.dagger ];
                 inputsFrom =
                   [ ]
-                  ++ lib.optionals (inputs.pre-commit-hooks ? flakeModule) [ config.pre-commit.devShell ];
+                  ++ lib.optionals (inputs.pre-commit-hooks ? flakeModule) [ config.pre-commit.devShell ]
+                  ++ lib.optionals (inputs.treefmt-nix ? flakeModule) [ config.treefmt.build.devShell ];
               };
             };
           }
