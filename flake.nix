@@ -280,9 +280,6 @@
         flake-compat = {
           follows = "flake-compat";
         };
-        devenv = {
-          follows = "";
-        };
         nix = {
           follows = "";
         };
