@@ -121,6 +121,28 @@
         };
       };
     };
+    fenix = {
+      url = "https://flakehub.com/f/nix-community/fenix/0.1.*";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+      };
+    };
+    flake-checker = {
+      url = "github:DeterminateSystems/flake-checker";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+        fenix = {
+          follows = "fenix";
+        };
+        naersk = {
+          follows = "naersk";
+        };
+      };
+    };
     flake-compat = {
       url = "github:edolstra/flake-compat";
     };
@@ -218,6 +240,14 @@
       inputs = {
         nixpkgs = {
           follows = "nixpkgs-unstable";
+        };
+      };
+    };
+    naersk = {
+      url = "https://flakehub.com/f/nix-community/naersk/0.1.*";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs";
         };
       };
     };
@@ -416,6 +446,7 @@
       deno,
       disko,
       emacs-overlay,
+      flake-checker,
       flake-parts,
       hmd,
       home-manager,
@@ -749,7 +780,8 @@
                     package = deno;
                   };
                   flake-checker = {
-                    enable = false;
+                    enable = true;
+                    package = flake-checker.packages.${system}.flake-checker;
                   };
                   statix = {
                     enable = true;
