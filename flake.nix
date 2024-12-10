@@ -527,10 +527,11 @@
       }:
       {
         systems = import systems;
-        imports =
-          lib.optionals (inputs.pre-commit-hooks ? flakeModule) [ inputs.pre-commit-hooks.flakeModule ]
-          ++ lib.optionals (inputs.treefmt-nix ? flakeModule) [ inputs.treefmt-nix.flakeModule ]
-          ++ lib.optionals (inputs.agenix-rekey ? flakeModule) [ inputs.agenix-rekey.flakeModule ];
+        imports = with inputs; [
+          pre-commit-hooks.flakeModule
+          treefmt-nix.flakeModule
+          agenix-rekey.flakeModule
+        ];
         flake = {
           nixosConfigurations = {
             "tat-nixos-laptop" = withSystem "x86_64-linux" (
@@ -751,13 +752,12 @@
                     ))
                   ])
                   ++ [ dagger.packages.${system}.dagger ];
-                inputsFrom =
-                  lib.optionals (inputs.pre-commit-hooks ? flakeModule) [ config.pre-commit.devShell ]
-                  ++ lib.optionals (inputs.treefmt-nix ? flakeModule) [ treefmtBuild.devShell ];
+                inputsFrom = [
+                  config.pre-commit.devShell
+                  treefmtBuild.devShell
+                ];
               };
             };
-          }
-          // lib.optionalAttrs (inputs.pre-commit-hooks ? flakeModule) {
             pre-commit = {
               check = {
                 enable = true;
@@ -797,8 +797,6 @@
                 };
               };
             };
-          }
-          // lib.optionalAttrs (inputs.treefmt-nix ? flakeModule) {
             formatter = treefmtBuild.wrapper;
             treefmt = {
               projectRootFile = "flake.nix";
