@@ -772,9 +772,6 @@
                   check-toml = {
                     enable = true;
                   };
-                  deadnix = {
-                    enable = true;
-                  };
                   denolint = {
                     enable = true;
                     package = deno;
@@ -782,9 +779,6 @@
                   flake-checker = {
                     enable = true;
                     package = flake-checker.packages.${system}.flake-checker;
-                  };
-                  statix = {
-                    enable = true;
                   };
                   treefmt = {
                     enable = true;
@@ -806,6 +800,9 @@
                 cue = {
                   enable = true;
                 };
+                deadnix = {
+                  enable = true;
+                };
                 deno = {
                   enable = true;
                   package = deno;
@@ -820,6 +817,9 @@
                   enable = true;
                 };
                 shfmt = {
+                  enable = true;
+                };
+                statix = {
                   enable = true;
                 };
                 stylua = {
