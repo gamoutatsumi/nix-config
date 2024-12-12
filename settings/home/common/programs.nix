@@ -261,6 +261,7 @@ in
         };
         commit = {
           gpgSign = true;
+          verbose = true;
         };
         core = {
           untrackedCache = true;
