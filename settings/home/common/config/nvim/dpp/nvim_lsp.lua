@@ -339,9 +339,6 @@ local languages = {
     lua = {
         require("efmls-configs.formatters.stylua"),
     },
-    go = {
-        require("efmls-configs.linters.golangci_lint"),
-    },
     dockerfile = {
         require("efmls-configs.linters.hadolint"),
     },
