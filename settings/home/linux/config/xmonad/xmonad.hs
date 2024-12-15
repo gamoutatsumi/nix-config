@@ -50,9 +50,6 @@ polybarColor fore_color back_color =
   wrap ("%{B" <> back_color <> "} ") " %{B-}"
     . wrap ("%{F" <> fore_color <> "} ") " %{F-}"
 
-myStartupHook = do
-  setDefaultCursor xC_left_ptr
-
 myConfig =
   desktopConfig
     { borderWidth = fromIntegral borderwidth,
@@ -62,8 +59,7 @@ myConfig =
       layoutHook = myLayoutHook,
       workspaces = myWorkspaces,
       modMask = modm,
-      mouseBindings = newMouse,
-      startupHook = myStartupHook
+      mouseBindings = newMouse
     }
     `removeKeysP` myRemoveKeysP
     `additionalKeysP` myAdditionalKeysP
