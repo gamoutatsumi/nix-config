@@ -4,7 +4,6 @@
     enable = true;
     initExtra = ''
       ${pkgs.xorg.xinput}/bin/xinput disable 'SynPS/2 Synaptics TouchPad'
-      ${pkgs.xorg.xsetroot}/bin/xsetroot -cursor_name left_ptr &
       ${pkgs.lightlocker}/bin/light-locker &
     '';
     windowManager = {

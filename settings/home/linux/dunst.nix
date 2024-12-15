@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   services = {
     dunst = {
@@ -86,7 +86,7 @@
         };
       };
       iconTheme = {
-        package = pkgs.vimix-icon-theme;
+        inherit (config.gtk.iconTheme) package;
         name = "Vimix-Doder-dark";
       };
     };

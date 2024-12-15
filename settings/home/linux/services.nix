@@ -5,7 +5,7 @@
       enable = true;
     };
     mpd-discord-rpc = {
-      enable = true;
+      enable = false;
       settings = {
         format = {
           large_image = "";
