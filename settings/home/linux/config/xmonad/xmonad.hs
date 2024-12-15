@@ -62,7 +62,8 @@ myConfig =
       layoutHook = myLayoutHook,
       workspaces = myWorkspaces,
       modMask = modm,
-      mouseBindings = newMouse
+      mouseBindings = newMouse,
+      startupHook = myStartupHook
     }
     `removeKeysP` myRemoveKeysP
     `additionalKeysP` myAdditionalKeysP
