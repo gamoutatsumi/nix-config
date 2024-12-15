@@ -7,9 +7,9 @@ module Workspace
   )
 where
 
-import XMonad
-import XMonad.Actions.CycleWS
-import XMonad.StackSet qualified as W
+import           XMonad
+import           XMonad.Actions.CycleWS
+import qualified XMonad.StackSet        as W
 
 myWorkspaces = ["1", "2", "3", "4", "5"]
 

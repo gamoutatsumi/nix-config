@@ -18,22 +18,22 @@ module Layouts
   )
 where
 
-import Control.Monad
-import XMonad
-import XMonad.Core
-import XMonad.Hooks.ManageDocks
-import XMonad.Hooks.ManageHelpers
-import XMonad.Layout
-import XMonad.Layout.DragPane
-import XMonad.Layout.NoBorders
-import XMonad.Layout.ResizableTile
-import XMonad.Layout.Simplest
-import XMonad.Layout.SimplestFloat
-import XMonad.Layout.Spacing
-import XMonad.Layout.ToggleLayouts
-import XMonad.Layout.TwoPane
-import XMonad.StackSet qualified as W
-import XMonad.Util.NamedScratchpad
+import           Control.Monad
+import           XMonad
+import           XMonad.Core
+import           XMonad.Hooks.ManageDocks
+import           XMonad.Hooks.ManageHelpers
+import           XMonad.Layout
+import           XMonad.Layout.DragPane
+import           XMonad.Layout.NoBorders
+import           XMonad.Layout.ResizableTile
+import           XMonad.Layout.Simplest
+import           XMonad.Layout.SimplestFloat
+import           XMonad.Layout.Spacing
+import           XMonad.Layout.ToggleLayouts
+import           XMonad.Layout.TwoPane
+import qualified XMonad.StackSet             as W
+import           XMonad.Util.NamedScratchpad
 
 -- Color Setting
 colorBlue = "#868bae"

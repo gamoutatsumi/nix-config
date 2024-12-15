@@ -807,6 +807,10 @@
                   enable = true;
                   package = deno;
                 };
+                hlint = {
+                  enable = true;
+
+                };
                 jsonfmt = {
                   enable = true;
                 };
@@ -820,6 +824,9 @@
                   enable = true;
                 };
                 statix = {
+                  enable = true;
+                };
+                stylish-haskell = {
                   enable = true;
                 };
                 stylua = {

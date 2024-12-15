@@ -1,17 +1,17 @@
-import Keys
-import Layouts
-import Workspace
-import XMonad
-import XMonad.Config.Desktop
-import XMonad.Hooks.EwmhDesktops
-import XMonad.Hooks.ManageDocks
-import XMonad.Hooks.Rescreen
-import XMonad.Hooks.StatusBar
-import XMonad.Hooks.StatusBar.PP
-import XMonad.Util.EZConfig
-import XMonad.Util.NamedScratchpad
-import XMonad.Util.SpawnOnce
-import XMonad.Util.Cursor
+import           Keys
+import           Layouts
+import           Workspace
+import           XMonad
+import           XMonad.Config.Desktop
+import           XMonad.Hooks.EwmhDesktops
+import           XMonad.Hooks.ManageDocks
+import           XMonad.Hooks.Rescreen
+import           XMonad.Hooks.StatusBar
+import           XMonad.Hooks.StatusBar.PP
+import           XMonad.Util.Cursor
+import           XMonad.Util.EZConfig
+import           XMonad.Util.NamedScratchpad
+import           XMonad.Util.SpawnOnce
 
 main =
   xmonad $
@@ -25,7 +25,7 @@ mydefLogPP =
   def {ppHiddenNoWindows = stickmyfavorit}
 
 stickmyfavorit "home" = "home"
-stickmyfavorit _ = ""
+stickmyfavorit _      = ""
 
 myPolybarConf =
   def
@@ -49,6 +49,9 @@ polybarColor :: String -> String -> String -> String
 polybarColor fore_color back_color =
   wrap ("%{B" <> back_color <> "} ") " %{B-}"
     . wrap ("%{F" <> fore_color <> "} ") " %{F-}"
+
+myStartupHook = do
+  setDefaultCursor xC_left_ptr
 
 myConfig =
   desktopConfig

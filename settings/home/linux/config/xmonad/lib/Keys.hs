@@ -7,20 +7,20 @@ module Keys
   )
 where
 
-import Data.Map qualified as M
-import Layouts
-import Workspace
-import XMonad
-import XMonad.Actions.CopyWindow
-import XMonad.Actions.CycleWS
-import XMonad.Actions.FlexibleResize qualified as Flex
-import XMonad.Actions.FloatKeys
-import XMonad.Config.Desktop (desktopConfig)
-import XMonad.Layout.ResizableTile
-import XMonad.Layout.ToggleLayouts
-import XMonad.StackSet qualified as W
-import XMonad.Util.EZConfig
-import XMonad.Util.NamedScratchpad
+import qualified Data.Map                      as M
+import           Layouts
+import           Workspace
+import           XMonad
+import           XMonad.Actions.CopyWindow
+import           XMonad.Actions.CycleWS
+import qualified XMonad.Actions.FlexibleResize as Flex
+import           XMonad.Actions.FloatKeys
+import           XMonad.Config.Desktop         (desktopConfig)
+import           XMonad.Layout.ResizableTile
+import           XMonad.Layout.ToggleLayouts
+import qualified XMonad.StackSet               as W
+import           XMonad.Util.EZConfig
+import           XMonad.Util.NamedScratchpad
 
 myRemoveKeysP =
   [ "M-S-p",
