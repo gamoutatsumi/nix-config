@@ -17,7 +17,7 @@ export class Config extends BaseConfig {
   }): Promise<void> {
     contextBuilder.patchGlobal({
       ui: "pum",
-      sources: ["denippet", "copilot", "lsp", "file", "around"],
+      sources: ["denippet", "copilot", "file", "lsp", "around"],
       filterParams: {
         converter_kind_labels: {
           kindLabels: {
