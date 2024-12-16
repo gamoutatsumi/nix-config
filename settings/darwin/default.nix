@@ -1,6 +1,9 @@
 {
-  # Nixデーモンの自動アップグレードを有効化
-  services.nix-daemon.enable = true;
+  services = {
+    nix-daemon = {
+      enable = true;
+    };
+  };
   nix = {
     extraOptions = ''
       build-users-group = nixbld
@@ -34,5 +37,37 @@
       # keep-sorted end
     ];
     brews = [ "mas" ];
+  };
+  launchd = {
+    daemons = {
+      "limits.maxfile" = {
+        serviceConfig = {
+          Label = "limits.maxfile";
+          ProgramArguments = [
+            "/bin/launchctl"
+            "limit"
+            "maxfiles"
+            "524288"
+            "524288"
+          ];
+          RunAtLoad = true;
+          ServiceIPC = false;
+        };
+      };
+      "limits.maxproc" = {
+        serviceConfig = {
+          Label = "limits.maxproc";
+          ProgramArguments = [
+            "/bin/launchctl"
+            "limit"
+            "maxproc"
+            "2048"
+            "2048"
+          ];
+          RunAtLoad = true;
+          ServiceIPC = false;
+        };
+      };
+    };
   };
 }
