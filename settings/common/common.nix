@@ -5,7 +5,22 @@
   ...
 }:
 {
+  # keep-sorted start block=yes
   nix = {
+    # keep-sorted start block=yes
+    channel = {
+      enable = false;
+    };
+    monitored = {
+      enable = false;
+    };
+    nixPath = [
+      "nixpkgs=flake"
+      "nixpkgs"
+    ];
+    optimise = {
+      automatic = true;
+    };
     package = pkgs.nixVersions.latest;
     registry = {
       nixpkgs = {
@@ -18,12 +33,6 @@
           path = "${inputs.nixpkgs.outPath}";
         };
       };
-    };
-    monitored = {
-      enable = false;
-    };
-    optimise = {
-      automatic = true;
     };
     settings = {
       experimental-features = [
@@ -39,10 +48,12 @@
       keep-outputs = true;
       keep-derivations = true;
     };
+    # keep-sorted end
   };
   nixpkgs = {
     config = {
       allowUnfree = true;
     };
   };
+  # keep-sorted end
 }
