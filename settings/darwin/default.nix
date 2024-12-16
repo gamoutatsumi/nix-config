@@ -9,13 +9,10 @@
       # keep-sorted start
       "chatgpt"
       "karabiner-elements"
-      "notion"
-      "obsidian"
       "ollama"
       "raycast"
       "utm"
       "vivaldi"
-      "wezterm"
       # keep-sorted end
     ];
     brews = [ "mas" ];
