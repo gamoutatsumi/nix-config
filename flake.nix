@@ -816,7 +816,6 @@
                 };
                 hlint = {
                   enable = true;
-
                 };
                 jsonfmt = {
                   enable = true;

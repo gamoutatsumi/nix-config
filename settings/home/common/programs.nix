@@ -225,11 +225,11 @@ in
         key = "8BABD254FC4AB38A";
       };
       difftastic = {
-        enable = true;
+        enable = false;
         background = "dark";
       };
       delta = {
-        enable = false;
+        enable = true;
         options = {
           features = "line-numbers decorations";
           plus-style = ''syntax "#012800"'';
