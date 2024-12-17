@@ -57,28 +57,6 @@ apply = ['defer']
 [plugins.fast-syntax-highlighting]
 github = "zdharma-continuum/fast-syntax-highlighting"
 
-# [plugins.bash-completions-fallback]
-# github = "3v1n0/zsh-bash-completions-fallback"
-# apply = ['defer']
-
-# [plugins.local]
-# local = '~/.config/zsh/modules'
-# use = ['*.zsh']
-#
-# [plugins.local-defer]
-# local = '~/.config/zsh/defer'
-# use = ['*.zsh']
-# apply = ['defer']
-#
-# [plugins.completions]
-# local = '~/.config/zsh/completions'
-# apply = ['fpath']
-
 [plugins.zeno]
 github = "yuki-yano/zeno.zsh"
 apply = ['defer']
-
-# For example:
-#
-# [plugins.base16]
-# github = "chriskempson/base16-shell"
