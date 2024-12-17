@@ -59,4 +59,3 @@ github = "zdharma-continuum/fast-syntax-highlighting"
 
 [plugins.zeno]
 github = "yuki-yano/zeno.zsh"
-apply = ['defer']
