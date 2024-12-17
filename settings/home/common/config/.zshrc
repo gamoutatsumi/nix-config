@@ -552,7 +552,7 @@ function git_auto_save() {
 export COMPINIT_DIFF=""
 _chpwd_compinit() {
   if [ -n "$IN_NIX_SHELL" -a "$COMPINIT_DIFF" != "$DIRENV_DIFF" ]; then
-    compinit -u
+    compinit
     COMPINIT_DIFF="$DIRENV_DIFF"
   fi
 }
