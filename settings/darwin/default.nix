@@ -15,7 +15,6 @@
       "vivaldi"
       # keep-sorted end
     ];
-    brews = [ "mas" ];
   };
   launchd = {
     daemons = {

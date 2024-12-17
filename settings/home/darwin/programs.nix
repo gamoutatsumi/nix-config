@@ -18,7 +18,14 @@
   };
   home = {
     packages =
-      (with pkgs; [ docker-client ])
+      (with pkgs; [
+        # keep-sorted start
+        colima
+        docker-client
+        lima
+        mas
+        # keep-sorted end
+      ])
       ++ (with upkgs; [
         aicommit2
         deno
