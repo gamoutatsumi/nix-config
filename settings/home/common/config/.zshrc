@@ -556,11 +556,11 @@ _chpwd_compinit() {
     COMPINIT_DIFF="$DIRENV_DIFF"
   fi
 }
-if [[ -z ''${precmd_functions[(r)_chpwd_compinit]} ]]; then
-  precmd_functions=( ''${precmd_functions[@]} _chpwd_compinit )
+if [[ -z ${precmd_functions[(r)_chpwd_compinit]} ]]; then
+  precmd_functions=( ${precmd_functions[@]} _chpwd_compinit )
 fi
-if [[ -z ''${chpwd_functions[(r)_chpwd_compinit]} ]]; then
-  chpwd_functions=( ''${chpwd_functions[@]} _chpwd_compinit )
+if [[ -z ${chpwd_functions[(r)_chpwd_compinit]} ]]; then
+  chpwd_functions=( ${chpwd_functions[@]} _chpwd_compinit )
 fi
 # }}}
 
