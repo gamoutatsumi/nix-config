@@ -446,6 +446,7 @@ in
       initExtra = ''
         ${builtins.readFile ./config/.zshrc}
         ${pkgs.any-nix-shell}/bin/any-nix-shell zsh --info-right | source /dev/stdin
+        export $FPATH
       '';
       envExtra = builtins.readFile ./config/.zshenv;
     };

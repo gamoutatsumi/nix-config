@@ -548,6 +548,21 @@ function git_auto_save() {
     fi
   fi
 }
+
+export COMPINIT_DIFF=""
+_chpwd_compinit() {
+  if [ -n "$IN_NIX_SHELL" -a "$COMPINIT_DIFF" != "$DIRENV_DIFF" ]; then
+    compinit -u
+    COMPINIT_DIFF="$DIRENV_DIFF"
+    echo "compinited !"
+  fi
+}
+if [[ -z ''${precmd_functions[(r)_chpwd_compinit]} ]]; then
+  precmd_functions=( ''${precmd_functions[@]} _chpwd_compinit )
+fi
+if [[ -z ''${chpwd_functions[(r)_chpwd_compinit]} ]]; then
+  chpwd_functions=( ''${chpwd_functions[@]} _chpwd_compinit )
+fi
 # }}}
 
 # unfunction source
