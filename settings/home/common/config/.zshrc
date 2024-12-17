@@ -554,7 +554,6 @@ _chpwd_compinit() {
   if [ -n "$IN_NIX_SHELL" -a "$COMPINIT_DIFF" != "$DIRENV_DIFF" ]; then
     compinit -u
     COMPINIT_DIFF="$DIRENV_DIFF"
-    echo "compinited !"
   fi
 }
 if [[ -z ''${precmd_functions[(r)_chpwd_compinit]} ]]; then
