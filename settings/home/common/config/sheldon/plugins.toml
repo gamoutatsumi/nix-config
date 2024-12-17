@@ -60,14 +60,6 @@ github = "zdharma-continuum/fast-syntax-highlighting"
 [plugins.zsh-completions]
 github = "zsh-users/zsh-completions"
 
-[plugins.docker-compose-completion]
-remote = "https://raw.githubusercontent.com/docker/compose/1.29.2/contrib/completion/zsh/_docker-compose"
-apply = ["fpath"]
-
-[plugins.zig-completion]
-remote = "https://raw.githubusercontent.com/ziglang/shell-completions/master/_zig"
-apply = ["fpath"]
-
 # [plugins.bash-completions-fallback]
 # github = "3v1n0/zsh-bash-completions-fallback"
 # apply = ['defer']
