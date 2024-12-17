@@ -337,8 +337,8 @@ local eslint_d = require("efmls-configs.linters.eslint_d")
 local prettierd = require("efmls-configs.formatters.prettier_d")
 local languages = {
     python = {
-        require("efmls-config.formatters.ruff"),
-        require("efmls-config.linters.ruff"),
+        require("efmls-configs.formatters.ruff"),
+        require("efmls-configs.linters.ruff"),
     },
     lua = {
         require("efmls-configs.formatters.stylua"),
