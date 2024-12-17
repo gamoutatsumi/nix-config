@@ -725,6 +725,7 @@
             deno = if pkgs.stdenv.isLinux then upkgs.deno."${denoVersion}" else upkgs.deno;
           in
           {
+            # keep-sorted start block=yes
             agenix-rekey = {
               inherit (self) nixosConfigurations;
               pkgs = upkgs;
@@ -765,6 +766,7 @@
                 ];
               };
             };
+            formatter = treefmtBuild.wrapper;
             pre-commit = {
               check = {
                 enable = true;
@@ -798,7 +800,6 @@
                 };
               };
             };
-            formatter = treefmtBuild.wrapper;
             treefmt = {
               projectRootFile = "flake.nix";
               flakeCheck = false;
@@ -847,6 +848,7 @@
                 # keep-sorted end
               };
             };
+            # keep-sorted end
           };
       }
     );
