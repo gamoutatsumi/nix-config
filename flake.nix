@@ -731,6 +731,13 @@
             };
             devShells = {
               default = pkgs.mkShellNoCC {
+                PFPATH = "${
+                  pkgs.buildEnv {
+                    name = "zsh-comp";
+                    paths = config.devShells.default.nativeBuildInputs;
+                    pathsToLink = [ "/share/zsh" ];
+                  }
+                }/share/zsh/site-functions";
                 packages =
                   (with pkgs; [
                     efm-langserver
