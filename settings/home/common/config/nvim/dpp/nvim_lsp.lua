@@ -336,6 +336,10 @@ lspconfig.jsonls.setup({
 local eslint_d = require("efmls-configs.linters.eslint_d")
 local prettierd = require("efmls-configs.formatters.prettier_d")
 local languages = {
+    python = {
+        require("efmls-config.formatters.ruff"),
+        require("efmls-config.linters.ruff"),
+    },
     lua = {
         require("efmls-configs.formatters.stylua"),
     },
