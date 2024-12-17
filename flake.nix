@@ -743,7 +743,7 @@
                   (with pkgs; [
                     efm-langserver
                     lua-language-server
-                    (pkgs.haskell.packages.ghc98.ghcWithPackages (
+                    (pkgs.haskell.packages.ghc910.ghcWithPackages (
                       haskellPackages:
                       with haskellPackages;
                       [
