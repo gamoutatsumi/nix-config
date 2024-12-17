@@ -442,6 +442,7 @@
       self,
       # keep-sorted start
       agenix,
+      agenix-rekey,
       dagger,
       deno,
       disko,
@@ -477,9 +478,9 @@
           config.allowUnfree = true;
           overlays = [
             # keep-sorted start
+            agenix-rekey.overlays.default
             agenix.overlays.default
             emacs-overlay.overlays.default
-            inputs.agenix-rekey.overlays.default
             neovim-nightly-overlay.overlays.default
             oreore.overlays.default
             vim-overlay.overlays.default
@@ -527,7 +528,7 @@
       }:
       {
         systems = import systems;
-        imports = with inputs; [
+        imports = [
           pre-commit-hooks.flakeModule
           treefmt-nix.flakeModule
           agenix-rekey.flakeModule
@@ -562,7 +563,7 @@
                   lanzaboote.nixosModules.lanzaboote
                   xremap-nix.nixosModules.default
                   agenix.nixosModules.default
-                  inputs.agenix-rekey.nixosModules.default
+                  agenix-rekey.nixosModules.default
                   ./hosts/laptop
                   ./settings/nixos.nix
                   home-manager.nixosModules.home-manager
@@ -606,7 +607,7 @@
                   lanzaboote.nixosModules.lanzaboote
                   disko.nixosModules.disko
                   agenix.nixosModules.default
-                  inputs.agenix-rekey.nixosModules.default
+                  agenix-rekey.nixosModules.default
                   ./hosts/desktop
                   ./settings/nixos.nix
                   home-manager.nixosModules.home-manager
