@@ -280,6 +280,9 @@ in
           user = "gamoutatsumi";
           root = "~/Repositories";
         };
+        http = {
+          postBuffer = 524288000;
+        };
         init = {
           defaultBranch = "main";
         };
