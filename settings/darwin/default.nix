@@ -15,6 +15,10 @@
       "vivaldi"
       # keep-sorted end
     ];
+    masApps = {
+      Bitwarden = 1352778147;
+      "Slack for Desktop" = 803453959;
+    };
   };
   launchd = {
     daemons = {

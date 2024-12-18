@@ -23,7 +23,6 @@
         colima
         docker-client
         lima
-        mas
         # keep-sorted end
       ])
       ++ (with upkgs; [

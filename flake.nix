@@ -640,6 +640,7 @@
                       nix run nix-darwin -- switch --flake .#$1 --impure --show-trace |& ${pkgs.nix-output-monitor}/bin/nom
                       new_system=$(${pkgs.coreutils}/bin/readlink -f /run/current-system)
                       ${pkgs.nvd}/bin/nvd diff "''${old_system}" "''${new_system}"
+                      osascript -e 'display notification "Updated ${system}" with title "Nix(OS) Update"'
                     ''
                   );
                   type = "app";
