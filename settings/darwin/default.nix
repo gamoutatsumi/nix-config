@@ -18,6 +18,7 @@
     masApps = {
       Bitwarden = 1352778147;
       "Slack for Desktop" = 803453959;
+      Velja = 1607635845;
     };
   };
   launchd = {
