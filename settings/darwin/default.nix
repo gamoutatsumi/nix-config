@@ -9,6 +9,7 @@
       # keep-sorted start
       "chatgpt"
       "karabiner-elements"
+      "mtgto/macskk/macskk"
       "ollama"
       "raycast"
       "utm"
