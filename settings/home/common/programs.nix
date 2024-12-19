@@ -58,6 +58,7 @@ in
         nix-tree
         q-text-as-data
         sheldon
+        ssm-session-manager-plugin
         stern
         unar
         unzip
