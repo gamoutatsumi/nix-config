@@ -430,6 +430,7 @@ in
         MAKEFLAGS = "-j";
         MANPAGER = "${config.programs.neovim.package}/bin/nvim -c ASMANPAGER -";
         MYCLI_HISTFILE = "${config.xdg.dataHome}/mycli/history";
+        NIX_CONFIG = "access-tokens = github.com=$(gh auth token)";
         PAGER = "${pkgs.ov}/bin/ov";
         PURE_GIT_PULL = 0;
         SAVEHIST = 100000;
