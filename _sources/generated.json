@@ -1,0 +1,42 @@
+{
+  "powerlevel10k": {
+    "cargoLocks": null,
+    "date": null,
+    "extract": null,
+    "name": "powerlevel10k",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "romkatv",
+      "repo": "powerlevel10k",
+      "rev": "v1.20.0",
+      "sha256": "sha256-ES5vJXHjAKw/VHjWs8Au/3R+/aotSbY7PWnWAMzCR8E=",
+      "type": "github"
+    },
+    "version": "v1.20.0"
+  },
+  "zsh-256color": {
+    "cargoLocks": null,
+    "date": "2022-09-13",
+    "extract": null,
+    "name": "zsh-256color",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "chrissicool",
+      "repo": "zsh-256color",
+      "rev": "559fee48bb74b75cec8b9887f8f3e046f01d5d8f",
+      "sha256": "sha256-P/pbpDJmsMSZkNi5GjVTDy7R+OxaIVZhb/bEnYQlaLo=",
+      "type": "github"
+    },
+    "version": "559fee48bb74b75cec8b9887f8f3e046f01d5d8f"
+  }
+}
