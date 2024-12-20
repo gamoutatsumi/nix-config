@@ -416,6 +416,7 @@ in
       history = {
         size = 1000;
         path = "${config.xdg.dataHome}/zsh/history";
+        save = 100000;
       };
       sessionVariables = {
         # keep-sorted start block = yes
@@ -435,7 +436,6 @@ in
         NIX_CONFIG = "access-tokens = github.com=$(gh auth token)";
         PAGER = "${pkgs.ov}/bin/ov";
         PURE_GIT_PULL = 0;
-        SAVEHIST = 100000;
         TERM = "alacritty";
         WORDCHARS = "*?_.[]~-=&;!#$%^(){}<>";
         ZENO_ENABLE_FZF_TMUX = 1;
