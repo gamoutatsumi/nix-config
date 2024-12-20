@@ -413,6 +413,10 @@ in
     };
     zsh = {
       enable = true;
+      history = {
+        size = 1000;
+        path = "${config.xdg.dataHome}/zsh/history";
+      };
       sessionVariables = {
         # keep-sorted start block = yes
         ANSIBLE_HOME = "${config.xdg.dataHome}/ansible";
@@ -422,8 +426,6 @@ in
         FZF_PREVIEW_DEFAULT_BIND = "ctrl-d:preview-page-down,ctrl-u:preview-page-up,?:toggle-preview";
         FZF_PREVIEW_DEFAULT_SETTING = "--sync --height='80%' --preview-window='right:50%' --expect='ctrl-space' --header='C-Space: continue fzf completion'";
         FZF_PREVIEW_ENABLE_TMUX = 1;
-        HISTFILE = "${config.xdg.dataHome}/zsh/history";
-        HISTSIZE = 1000;
         LANG = "ja_JP.UTF-8";
         LC_ALL = "ja_JP.UTF-8";
         LUAROCKS_HOME = "${config.xdg.dataHome}/luarocks";
