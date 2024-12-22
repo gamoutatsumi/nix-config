@@ -475,7 +475,9 @@
         }:
         (import nixpkgs-unstable {
           inherit system;
-          config.allowUnfree = true;
+          config = {
+            allowUnfree = true;
+          };
           overlays = [
             # keep-sorted start
             agenix-rekey.overlays.default
