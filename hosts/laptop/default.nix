@@ -98,11 +98,7 @@
     };
   };
   hardware = {
-    cpu = {
-      amd = {
-        updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-      };
-    };
+    # keep-sorted start block=yes
     bluetooth = {
       enable = true;
       powerOnBoot = true;
@@ -113,6 +109,17 @@
         };
       };
     };
+    cpu = {
+      amd = {
+        updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+      };
+    };
+    sane = {
+      brscan5 = {
+        enable = true;
+      };
+    };
+    # keep-sorted end
   };
   networking = {
     hostName = "tat-nixos-laptop";
@@ -221,6 +228,7 @@
     };
     printing = {
       enable = true;
+      drivers = with upkgs; [ mfcj7100cdw-cups ];
     };
     tlp = {
       enable = true;
@@ -281,6 +289,7 @@
           "audio"
           "docker"
           "network"
+          "lp"
         ];
         shell = pkgs.zsh;
         hashedPasswordFile = config.age.secrets.${username}.path;
