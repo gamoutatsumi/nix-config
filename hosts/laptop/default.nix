@@ -51,7 +51,6 @@
         wget
         git
         curl
-        autorandr
         gcc
         sbctl
         efitools
@@ -126,21 +125,103 @@
     hostPlatform = lib.mkDefault "x86_64-linux";
   };
   services = {
+    # keep-sorted start block=yes
+    autorandr = {
+      enable = true;
+      profiles = {
+        # keep-sorted start block=yes
+        "clamshell-dual-usbc-home" = {
+          fingerprint = {
+            "DP-1" =
+              "00ffffffffffff0015c3483139f0ac02351f0104a53c2278fab095ab524ea0260f5054a10800a9408180d100b300a9c0810081c00101565e00a0a0a029503020350055502100001a000000ff0034343838383132310a20202020000000fd003b3d1f5919010a202020202020000000fc004556323739350a202020202020011a020312f145100403020123097f07830100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000063";
+            "DP-2" =
+              "00ffffffffffff0025e4911601010101081a010380301b782ead45a35752a1270d5054bfef0081808140b300950081c00101010101011a3680a070381f4030203500dd0d1100001a000000fd00374c1f530f000a202020202020000000ff004736504630333033313252370a000000fc004c43442d4d46323235580a20200091";
+          };
+          config = {
+            "DP-1" = {
+              enable = true;
+              primary = true;
+              mode = "2560x1440";
+              position = "1920x0";
+              rate = "60";
+              crtc = 0;
+            };
+            "DP-2" = {
+              enable = true;
+              position = "0x0";
+              mode = "1920x1080";
+              rate = "60";
+              crtc = 2;
+            };
+            "eDP-1" = {
+              enable = false;
+            };
+          };
+        };
+        "default" = {
+          fingerprint = {
+            "eDP-1" =
+              "00ffffffffffff0006af3d5700000000001c0104a51f1178022285a5544d9a270e505400000001010101010101010101010101010101b43780a070383e401010350035ae100000180000000f0000000000000000000000000020000000fe0041554f0a202020202020202020000000fe004231343048414e30352e37200a0070";
+          };
+          config = {
+            "eDP-1" = {
+              enable = true;
+              primary = true;
+              mode = "1920x1080";
+              position = "0x0";
+              rate = "60";
+              crtc = 0;
+            };
+          };
+        };
+        # keep-sorted end
+      };
+    };
+    blueman = {
+      enable = true;
+    };
+    displayManager = {
+      autoLogin = {
+        enable = false;
+        user = username;
+      };
+      defaultSession = "xsession";
+    };
+    openssh = {
+      settings = {
+        PasswordAuthentication = false;
+        PermitRootLogin = "no";
+      };
+    };
+    pipewire = {
+      extraConfig = {
+        pipewire = {
+          "11-clock-rate" = {
+            default = {
+              clock = {
+                allowed-rates = [
+                  192000
+                  176400
+                  96000
+                  88200
+                  48000
+                  44100
+                ];
+                quantum = 4096;
+              };
+            };
+          };
+        };
+      };
+    };
+    printing = {
+      enable = true;
+    };
     tlp = {
       enable = true;
       settings = {
         USB_AUTOSUSPEND = 0;
       };
-    };
-    udev = {
-      extraRules = ''
-        ACTION=="remove",\
-         ENV{ID_BUS}=="usb",\
-         ENV{ID_MODEL_ID}=="0407",\
-         ENV{ID_VENDOR_ID}=="1050",\
-         ENV{ID_VENDOR}=="Yubico",\
-         RUN+="${pkgs.systemd}/bin/loginctl lock-sessions"
-      '';
     };
     xremap = {
       withX11 = true;
@@ -177,51 +258,7 @@
         ];
       };
     };
-    blueman = {
-      enable = true;
-    };
-    printing = {
-      enable = true;
-    };
-    pipewire = {
-      extraConfig = {
-        pipewire = {
-          "11-clock-rate" = {
-            default = {
-              clock = {
-                allowed-rates = [
-                  192000
-                  176400
-                  96000
-                  88200
-                  48000
-                  44100
-                ];
-                quantum = 4096;
-              };
-            };
-          };
-        };
-      };
-    };
-    displayManager = {
-      autoLogin = {
-        enable = false;
-        user = username;
-      };
-      defaultSession = "xsession";
-    };
-    xserver = {
-      displayManager = {
-        setupCommands = "${pkgs.autorandr}/bin/autorandr -c";
-      };
-    };
-    openssh = {
-      settings = {
-        PasswordAuthentication = false;
-        PermitRootLogin = "no";
-      };
-    };
+    # keep-sorted end
   };
   swapDevices = [ { device = "/.swapvol/swapfile"; } ];
   system = {

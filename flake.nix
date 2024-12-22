@@ -746,7 +746,7 @@
                     efm-langserver
                     lua-language-server
                     nvfetcher
-                    (pkgs.haskell.packages.ghc910.ghcWithPackages (
+                    (pkgs.haskell.packages.ghc98.ghcWithPackages (
                       haskellPackages:
                       with haskellPackages;
                       [

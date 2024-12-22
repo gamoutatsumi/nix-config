@@ -14,7 +14,6 @@ module Layouts
     myScratchpads,
     myLayoutHook,
     myManageHook,
-    myRandrChangeHook,
   )
 where
 
@@ -197,6 +196,3 @@ myManageHook =
     <+> myManageHookShift
     <+> myManageHookFloat
     <+> namedScratchpadManageHook myScratchpads
-
-myRandrChangeHook :: X ()
-myRandrChangeHook = spawn "autorandr --change"

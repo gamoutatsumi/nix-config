@@ -15,11 +15,10 @@ import           XMonad.Util.SpawnOnce
 
 main =
   xmonad $
-    addRandrChangeHook myRandrChangeHook $
-      ewmhFullscreen . ewmh $
-        withSB myPolybarConf $
-          docks
-            myConfig
+    ewmhFullscreen . ewmh $
+      withSB myPolybarConf $
+        docks
+          myConfig
 
 mydefLogPP =
   def {ppHiddenNoWindows = stickmyfavorit}

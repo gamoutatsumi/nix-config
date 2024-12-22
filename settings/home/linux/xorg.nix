@@ -11,7 +11,7 @@
         enable = true;
         config = ./config/xmonad/xmonad.hs;
         enableContribAndExtras = true;
-        haskellPackages = pkgs.haskell.packages.ghc910;
+        haskellPackages = pkgs.haskell.packages.ghc98;
         extraPackages =
           haskellPackages: with haskellPackages; [
             containers
