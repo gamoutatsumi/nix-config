@@ -745,7 +745,6 @@
                 }/share/zsh/site-functions";
                 packages =
                   (with pkgs; [
-                    efm-langserver
                     lua-language-server
                     nvfetcher
                     (pkgs.haskell.packages.ghc98.ghcWithPackages (

@@ -335,6 +335,7 @@ in
         (with upkgs; [
           nil
           tree-sitter
+          efm-langserver
         ])
         ++ lib.optionals pkgs.stdenv.isLinux [
           upkgs.gcc
