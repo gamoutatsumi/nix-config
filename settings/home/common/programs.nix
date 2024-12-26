@@ -46,6 +46,7 @@ in
         gnused
         gojq
         gomi
+        google-cloud-sdk
         killall
         kubectl
         kubie
