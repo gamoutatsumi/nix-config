@@ -1,8 +1,8 @@
 import {
   BaseConfig,
   ContextBuilder,
-} from "https://deno.land/x/ddc_vim@v5.0.0/types.ts";
-import { Denops } from "https://deno.land/x/ddc_vim@v5.0.0/deps.ts";
+} from "https://deno.land/x/ddc_vim@v6.0.0/types.ts";
+import { Denops } from "https://deno.land/x/ddc_vim@v6.0.0/deps.ts";
 
 const CONVERTERS = [
   "converter_fuzzy",

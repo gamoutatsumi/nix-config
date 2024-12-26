@@ -275,7 +275,7 @@
       };
     };
     neovim-src = {
-      url = "github:neovim/neovim";
+      url = "github:neovim/neovim?shallow=1";
       flake = false;
     };
     nix-darwin = {
@@ -287,10 +287,10 @@
       };
     };
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-24.11";
+      url = "github:NixOS/nixpkgs/nixos-24.11?shallow=1";
     };
     nixpkgs-unstable = {
-      url = "github:NixOS/nixpkgs/nixos-unstable";
+      url = "github:NixOS/nixpkgs/nixos-unstable?shallow=1";
     };
     oreore = {
       url = "github:gamoutatsumi/oreore-flake";

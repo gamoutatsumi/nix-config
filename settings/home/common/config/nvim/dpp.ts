@@ -4,15 +4,15 @@ import {
   ContextBuilder,
   Dpp,
   Plugin,
-} from "https://deno.land/x/dpp_vim@v0.2.0/types.ts";
+} from "https://deno.land/x/dpp_vim@v1.0.0/types.ts";
 import {
   convert2List,
   parseHooksFile,
-} from "https://deno.land/x/dpp_vim@v0.2.0/utils.ts";
-import { Denops } from "https://deno.land/x/dpp_vim@v0.2.0/deps.ts";
-import { assert, ensure, is } from "jsr:@core/unknownutil@3.18.1";
-import { joinGlobs } from "jsr:@std/path@0.225.1";
-import { expandGlob } from "jsr:@std/fs@0.229.1";
+} from "https://deno.land/x/dpp_vim@v1.0.0/utils.ts";
+import { Denops } from "https://deno.land/x/dpp_vim@v1.0.0/deps.ts";
+import { assert, ensure, is } from "jsr:@core/unknownutil@4.3.0";
+import { joinGlobs } from "jsr:@std/path@1.0.8";
+import { expandGlob } from "jsr:@std/fs@1.0.8";
 
 async function fennelCompile(denops: Denops, text: string): Promise<string> {
   const compiled = await denops.call(

@@ -3,10 +3,10 @@ import {
   ActionFlags,
   BaseConfig,
   ContextBuilder,
-} from "https://deno.land/x/ddu_vim@v4.1.0/types.ts";
-import { Denops } from "https://deno.land/x/ddu_vim@v4.1.0/deps.ts";
-import * as stdpath from "jsr:@std/path@0.225.1";
-import * as u from "jsr:@core/unknownutil@3.18.1";
+} from "https://deno.land/x/ddu_vim@v5.0.0/types.ts";
+import { Denops } from "https://deno.land/x/ddu_vim@v5.0.0/deps.ts";
+import * as stdpath from "jsr:@std/path@1.0.8";
+import * as u from "jsr:@core/unknownutil@4.3.0";
 import { ActionData as GitStatusActionData } from "https://raw.githubusercontent.com/kuuote/ddu-source-git_status/main/denops/%40ddu-kinds/git_status.ts";
 
 type Never = Record<never, never>;
