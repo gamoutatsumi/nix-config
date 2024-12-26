@@ -52,17 +52,6 @@ repo = 'MunifTanjim/nui.nvim'
 repo = 'zah/nim.vim'
 
 [[plugins]]
-repo = 'gamoutatsumi/orgmode'
-rev = 'feature/support-emacsclient'
-lua_add = '''
-require('orgmode').setup_ts_grammar()
-require('orgmode').setup {
-  org_agenda_files = {'~/Google Drive/マイドライブ/org/*', '~/Repositories/github.com/gamoutatsumi/my-orgs/**/*'},
-  org_default_notes_file = '~/Google Drive/マイドライブ/org/refile.org',
-}
-'''
-
-[[plugins]]
 repo = 'levouh/tint.nvim'
 lua_add = '''
 require('tint').setup {}
