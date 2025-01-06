@@ -30,6 +30,7 @@
       ++ (with upkgs; [
         agenix-rekey
         deno.${denoVersion}
+        ghostty
 
         # keep-sorted start
         changeBrightness

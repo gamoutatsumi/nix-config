@@ -69,7 +69,6 @@ in
       ])
       ++ (with upkgs; [
         vim
-        ghostty
       ]);
   };
   programs = {
