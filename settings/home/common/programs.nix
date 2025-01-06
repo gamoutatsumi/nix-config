@@ -39,7 +39,6 @@ in
         file
         findutils
         gawk
-        ghostty
         ghq
         git-crypt
         gnugrep
@@ -70,6 +69,7 @@ in
       ])
       ++ (with upkgs; [
         vim
+        ghostty
       ]);
   };
   programs = {
