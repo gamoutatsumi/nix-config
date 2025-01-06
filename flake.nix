@@ -1,12 +1,15 @@
 {
   description = "Nix(OS) Configurations";
   nixConfig = {
-    extra-substituters = [ "https://nix-community.cachix.org" ];
+    extra-substituters = [
+      "https://nix-community.cachix.org"
+      "https://ghostty.cachix.org"
+    ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns="
     ];
   };
-
   inputs = {
     # keep-sorted start block=yes
     agenix = {
@@ -145,6 +148,7 @@
     };
     flake-compat = {
       url = "github:edolstra/flake-compat";
+      flake = false;
     };
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
@@ -159,6 +163,23 @@
       inputs = {
         systems = {
           follows = "systems";
+        };
+      };
+    };
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+      inputs = {
+        nixpkgs-unstable = {
+          follows = "nixpkgs-unstable";
+        };
+        nixpkgs-stable = {
+          follows = "nixpkgs";
+        };
+        zig = {
+          follows = "zig";
+        };
+        flake-compat = {
+          follows = "flake-compat";
         };
       };
     };
@@ -353,9 +374,6 @@
         gitignore = {
           follows = "gitignore";
         };
-        nixpkgs-stable = {
-          follows = "nixpkgs";
-        };
         nixpkgs = {
           follows = "nixpkgs-unstable";
         };
@@ -435,6 +453,20 @@
         };
       };
     };
+    zig = {
+      url = "github:mitchellh/zig-overlay";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+        flake-compat = {
+          follows = "";
+        };
+        flake-utils = {
+          follows = "flake-utils";
+        };
+      };
+    };
     # keep-sorted end
   };
   outputs =
@@ -449,6 +481,7 @@
       emacs-overlay,
       flake-checker,
       flake-parts,
+      ghostty,
       hmd,
       home-manager,
       lanzaboote,
@@ -483,6 +516,7 @@
             agenix-rekey.overlays.default
             agenix.overlays.default
             emacs-overlay.overlays.default
+            ghostty.overlays.default
             neovim-nightly-overlay.overlays.default
             oreore.overlays.default
             vim-overlay.overlays.default

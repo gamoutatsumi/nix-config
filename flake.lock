@@ -371,6 +371,35 @@
         "type": "github"
       }
     },
+    "ghostty": {
+      "inputs": {
+        "flake-compat": [
+          "flake-compat"
+        ],
+        "nixpkgs-stable": [
+          "nixpkgs"
+        ],
+        "nixpkgs-unstable": [
+          "nixpkgs-unstable"
+        ],
+        "zig": [
+          "zig"
+        ]
+      },
+      "locked": {
+        "lastModified": 1736115260,
+        "narHash": "sha256-9VrUz+JNq90Z1QOBojSxKDdUHr0I5XsK/OHjZSyvXwU=",
+        "owner": "ghostty-org",
+        "repo": "ghostty",
+        "rev": "2485482aecc02c6c377a30c36a34c647cc521ddf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ghostty-org",
+        "repo": "ghostty",
+        "type": "github"
+      }
+    },
     "gitignore": {
       "inputs": {
         "nixpkgs": [
@@ -772,6 +801,7 @@
         "flake-compat": "flake-compat",
         "flake-parts": "flake-parts",
         "flake-utils": "flake-utils",
+        "ghostty": "ghostty",
         "gitignore": "gitignore",
         "hercules-ci-effects": "hercules-ci-effects",
         "hmd": "hmd",
@@ -794,7 +824,8 @@
         "vim-overlay": "vim-overlay",
         "vim-src": "vim-src",
         "xremap": "xremap",
-        "xremap-nix": "xremap-nix"
+        "xremap-nix": "xremap-nix",
+        "zig": "zig"
       }
     },
     "rust-analyzer-src": {
@@ -1018,6 +1049,30 @@
       "original": {
         "owner": "xremap",
         "repo": "nix-flake",
+        "type": "github"
+      }
+    },
+    "zig": {
+      "inputs": {
+        "flake-compat": [],
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1736123496,
+        "narHash": "sha256-j1k1Z4YlxWAdYyXZML2fGhKfueZ9J0Tz8x0U853dhu4=",
+        "owner": "mitchellh",
+        "repo": "zig-overlay",
+        "rev": "6e8d9aa1984801e44140290d336e7b9fbe49c4b4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mitchellh",
+        "repo": "zig-overlay",
         "type": "github"
       }
     }

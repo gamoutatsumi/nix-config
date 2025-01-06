@@ -39,6 +39,7 @@ in
         file
         findutils
         gawk
+        ghostty
         ghq
         git-crypt
         gnugrep
