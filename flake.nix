@@ -252,7 +252,7 @@
       };
     };
     neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay?ref=54f4dbfdc4304444c43b11be1e63471005aa1d05";
+      url = "github:nix-community/neovim-nightly-overlay";
       inputs = {
         hercules-ci-effects = {
           follows = "";

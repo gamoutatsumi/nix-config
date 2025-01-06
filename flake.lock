@@ -578,16 +578,15 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1735141262,
-        "narHash": "sha256-AZPN+QVvVF+bhZAumVicFCC791g4av9U/4m7mOIo4wQ=",
+        "lastModified": 1736035694,
+        "narHash": "sha256-hsJH+qsn3hdE2Axo+MGQv2oVPzAXoBTdVJEhmUIprzo=",
         "owner": "nix-community",
         "repo": "neovim-nightly-overlay",
-        "rev": "54f4dbfdc4304444c43b11be1e63471005aa1d05",
+        "rev": "75151f049969a87404442dbcf16e885875e29e72",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
-        "ref": "54f4dbfdc4304444c43b11be1e63471005aa1d05",
         "repo": "neovim-nightly-overlay",
         "type": "github"
       }
