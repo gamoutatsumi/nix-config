@@ -80,7 +80,7 @@
         };
       };
     };
-    deno = {
+    deno-overlay = {
       url = "github:haruki7049/deno-overlay";
       inputs = {
         flake-parts = {
@@ -475,11 +475,9 @@
       # keep-sorted start
       agenix,
       agenix-rekey,
-      dagger,
-      deno,
+      deno-overlay,
       disko,
       emacs-overlay,
-      flake-checker,
       flake-parts,
       ghostty,
       hmd,
@@ -521,7 +519,7 @@
             oreore.overlays.default
             vim-overlay.overlays.default
             # keep-sorted end
-          ] ++ lib.optionals stdenv.isLinux [ deno.overlays.deno-overlay ];
+          ] ++ lib.optionals stdenv.isLinux [ deno-overlay.overlays.deno-overlay ];
         });
       denoVersion = "2.1.4";
       homeManagerConf =
@@ -560,8 +558,12 @@
         inputs,
         lib,
         withSystem,
+        flake-parts-lib,
         ...
       }:
+      let
+        inherit (flake-parts-lib) importApply;
+      in
       {
         systems = import systems;
         imports = [
@@ -573,7 +575,6 @@
           nixosConfigurations = {
             "tat-nixos-laptop" = withSystem "x86_64-linux" (
               {
-                inputs',
                 system,
                 pkgs,
                 ...
@@ -589,7 +590,6 @@
                 specialArgs = {
                   inherit
                     inputs
-                    inputs'
                     upkgs
                     username
                     ;
@@ -616,7 +616,6 @@
             );
             "tat-nixos-desktop" = withSystem "x86_64-linux" (
               {
-                inputs',
                 system,
                 pkgs,
                 ...
@@ -632,7 +631,6 @@
                 specialArgs = {
                   inherit
                     inputs
-                    inputs'
                     upkgs
                     username
                     ;
@@ -658,53 +656,8 @@
               }
             );
           };
-          apps = {
-            "aarch64-darwin" = withSystem "aarch64-darwin" (
-              {
-                system,
-                pkgs,
-                ...
-              }:
-              {
-                update = {
-                  program = toString (
-                    pkgs.writeShellScript "update" ''
-                      set -e
-                      echo "Updating ${system}..."
-                      nix flake update --commit-lock-file nixpkgs neovim-nightly-overlay neovim-src nixpkgs-unstable oreore home-manager hmd systems treefmt-nix pre-commit-hooks
-                      old_system=$(${pkgs.coreutils}/bin/readlink -f /run/current-system)
-                      nix run nix-darwin -- switch --flake .#$1 --impure --show-trace |& ${pkgs.nix-output-monitor}/bin/nom
-                      new_system=$(${pkgs.coreutils}/bin/readlink -f /run/current-system)
-                      ${pkgs.nvd}/bin/nvd diff "''${old_system}" "''${new_system}"
-                    ''
-                  );
-                  type = "app";
-                };
-              }
-            );
-            "x86_64-linux" = withSystem "x86_64-linux" (
-              {
-                system,
-                pkgs,
-                ...
-              }:
-              {
-                update = {
-                  program = toString (
-                    pkgs.writeShellScript "update" ''
-                      set -e
-                      set -o pipefail
-                      echo "Updating ${system}..."
-                      nix flake update --commit-lock-file
-                      old_system=$(${pkgs.coreutils}/bin/readlink -f /run/current-system)
-                      sudo nixos-rebuild switch --flake . --show-trace |& ${pkgs.nix-output-monitor}/bin/nom
-                      new_system=$(${pkgs.coreutils}/bin/readlink -f /run/current-system)
-                      ${pkgs.nvd}/bin/nvd diff "''${old_system}" "''${new_system}"
-                    ''
-                  );
-                };
-              }
-            );
+          apps = import ./flake/parts/apps.nix {
+            inherit withSystem;
           };
           darwinConfigurations = {
             work = withSystem "aarch64-darwin" (
@@ -746,147 +699,10 @@
             );
           };
         };
-        perSystem =
-          {
-            system,
-            pkgs,
-            config,
-            ...
-          }:
-          let
-            upkgs = upkgsConf {
-              inherit system;
-              inherit (pkgs) stdenv lib;
-            };
-            treefmtBuild = config.treefmt.build;
-            deno = if pkgs.stdenv.isLinux then upkgs.deno."${denoVersion}" else upkgs.deno;
-          in
-          {
-            # keep-sorted start block=yes
-            agenix-rekey = {
-              inherit (self) nixosConfigurations;
-              pkgs = upkgs;
-            };
-            devShells = {
-              default = pkgs.mkShellNoCC {
-                PFPATH = "${
-                  pkgs.buildEnv {
-                    name = "zsh-comp";
-                    paths = config.devShells.default.nativeBuildInputs;
-                    pathsToLink = [ "/share/zsh" ];
-                  }
-                }/share/zsh/site-functions";
-                packages =
-                  (with pkgs; [
-                    lua-language-server
-                    nvfetcher
-                    (pkgs.haskell.packages.ghc98.ghcWithPackages (
-                      haskellPackages:
-                      with haskellPackages;
-                      [
-                        containers
-                        unix
-                        directory
-                        haskell-language-server
-                      ]
-                      ++ lib.optionals pkgs.stdenv.isLinux [
-                        xmonad
-                        xmonad-extras
-                        xmonad-contrib
-                      ]
-                    ))
-                  ])
-                  ++ [ dagger.packages.${system}.dagger ];
-                inputsFrom = [
-                  config.pre-commit.devShell
-                  treefmtBuild.devShell
-                ];
-              };
-            };
-            formatter = treefmtBuild.wrapper;
-            pre-commit = {
-              check = {
-                enable = true;
-              };
-              settings = {
-                src = ./.;
-                hooks = {
-                  # keep-sorted start block=yes
-                  check-json = {
-                    enable = true;
-                  };
-                  check-toml = {
-                    enable = true;
-                  };
-                  denolint = {
-                    enable = true;
-                    package = deno;
-                  };
-                  flake-checker = {
-                    enable = true;
-                    package = flake-checker.packages.${system}.flake-checker;
-                  };
-                  treefmt = {
-                    enable = true;
-                    packageOverrides.treefmt = treefmtBuild.wrapper;
-                  };
-                  yamllint = {
-                    enable = true;
-                  };
-                  # keep-sorted end
-                };
-              };
-            };
-            treefmt = {
-              projectRootFile = "flake.nix";
-              flakeCheck = false;
-              programs = {
-                # keep-sorted start block=yes
-                cue = {
-                  enable = true;
-                };
-                deadnix = {
-                  enable = true;
-                };
-                deno = {
-                  enable = true;
-                  package = deno;
-                };
-                hlint = {
-                  enable = true;
-                };
-                jsonfmt = {
-                  enable = true;
-                };
-                keep-sorted = {
-                  enable = true;
-                };
-                nixfmt = {
-                  enable = true;
-                };
-                shfmt = {
-                  enable = true;
-                };
-                statix = {
-                  enable = true;
-                };
-                stylish-haskell = {
-                  enable = true;
-                };
-                stylua = {
-                  enable = true;
-                };
-                taplo = {
-                  enable = true;
-                };
-                yamlfmt = {
-                  enable = true;
-                };
-                # keep-sorted end
-              };
-            };
-            # keep-sorted end
-          };
+        perSystem = importApply ./flake/parts/perSystem.nix {
+          inherit upkgsConf denoVersion;
+          localFlake = self;
+        };
       }
     );
 }

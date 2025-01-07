@@ -128,7 +128,7 @@
         "type": "github"
       }
     },
-    "deno": {
+    "deno-overlay": {
       "inputs": {
         "flake-compat": [
           "flake-compat"
@@ -144,11 +144,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1734654377,
+        "lastModified": 1735259201,
         "narHash": "sha256-na0sVQk6ty/OaRoxA0KMWIA3++NkXter9OWMrj4ifG0=",
         "owner": "haruki7049",
         "repo": "deno-overlay",
-        "rev": "fbfe09fe324efc3c04da8e048f8a519c2627a907",
+        "rev": "b3ca7deda66597a80660a6fa6fd4c5b939a284c5",
         "type": "github"
       },
       "original": {
@@ -793,7 +793,7 @@
         "agenix_orig": "agenix_orig",
         "crane": "crane",
         "dagger": "dagger",
-        "deno": "deno",
+        "deno-overlay": "deno-overlay",
         "devshell": "devshell",
         "disko": "disko",
         "emacs-overlay": "emacs-overlay",
