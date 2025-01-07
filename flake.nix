@@ -316,6 +316,9 @@
     oreore = {
       url = "github:gamoutatsumi/oreore-flake";
       inputs = {
+        flake-checker = {
+          follows = "";
+        };
         tinty-schemes = {
           follows = "tinty-schemes";
         };

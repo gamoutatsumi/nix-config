@@ -287,35 +287,6 @@
         "type": "github"
       }
     },
-    "flake-checker_2": {
-      "inputs": {
-        "fenix": [
-          "oreore",
-          "fenix"
-        ],
-        "naersk": [
-          "oreore",
-          "naersk"
-        ],
-        "nixpkgs": [
-          "oreore",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1733522564,
-        "narHash": "sha256-kWjq25+VKL4ANqFG5UyVv/TqO2i5q400mqaUVbKg4GE=",
-        "owner": "DeterminateSystems",
-        "repo": "flake-checker",
-        "rev": "ca7cfb3bb7cc7d758a4ed0766a16e5e3ae7b6762",
-        "type": "github"
-      },
-      "original": {
-        "owner": "DeterminateSystems",
-        "repo": "flake-checker",
-        "type": "github"
-      }
-    },
     "flake-compat": {
       "locked": {
         "lastModified": 1733328505,
@@ -692,7 +663,7 @@
     "oreore": {
       "inputs": {
         "fenix": "fenix_2",
-        "flake-checker": "flake-checker_2",
+        "flake-checker": [],
         "flake-compat": [
           "flake-compat"
         ],
