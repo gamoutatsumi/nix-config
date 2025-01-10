@@ -38,11 +38,14 @@ export class Config extends BaseConfig {
       "$BASE_DIR/init/core/keys.vim",
     ];
     const hasNvim = args.denops.meta.host === "nvim";
+    const ghCommand = new Deno.Command("gh", { args: ["auth", "token"] });
+    const ghOutput = await ghCommand.output();
+    const ghToken = new TextDecoder().decode(ghOutput.stdout).trim();
     args.contextBuilder.setGlobal({
       inlineVimrcs,
       extParams: {
         installer: {
-          githubAPIToken: Deno.env.get("GITHUB_API_TOKEN"),
+          githubAPIToken: ghToken,
         },
       },
       protocolParams: {
