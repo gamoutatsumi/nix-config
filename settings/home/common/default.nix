@@ -28,7 +28,7 @@ in
           sections = {
             OLLAMA = {
               temperature = "0.7";
-              "model[]" = [ "codestral:22b" ];
+              "model[]" = [ "codestral:22b-v0.1-q4_K_S" ];
               host = "http://127.0.0.1:11434";
             };
           };
