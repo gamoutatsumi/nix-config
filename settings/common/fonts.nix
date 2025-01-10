@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ upkgs, ... }:
 {
   fonts = {
-    packages = with pkgs; [
+    packages = with upkgs; [
       # keep-sorted start
       hackgen-font
       hackgen-nf-font
