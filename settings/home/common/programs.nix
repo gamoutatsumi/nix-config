@@ -27,6 +27,7 @@ in
         })
         # keep-sorted start
         age-plugin-yubikey
+        argocd
         bc
         binutils
         coreutils-full
