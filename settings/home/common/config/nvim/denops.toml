@@ -1,10 +1,6 @@
 [[plugins]]
 repo = 'vim-denops/denops.vim'
 lazy = 0
-hook_add = '''
-let g:denops#server#deno_args = ['-q', '--no-lock', '--unstable-kv', '--unstable-ffi', '-A']
-let g:denops#deno = '@deno@'
-'''
 
 [[plugins]]
 repo = 'vim-denops/denops-shared-server.vim'

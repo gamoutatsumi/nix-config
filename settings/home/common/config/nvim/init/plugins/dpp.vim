@@ -1,4 +1,6 @@
 const s:dpp_dir = stdpath('data') .. '/dpp'
+let g:denops#deno = '@deno@'
+let g:denops#server#deno_args = ['-q', '--no-lock', '--unstable-kv', '--unstable-ffi', '-A']
 
 function InitPlugin(plugin)
   let s:dir = s:dpp_dir .. '/repos/github.com/' .. a:plugin

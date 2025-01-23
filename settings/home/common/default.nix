@@ -55,11 +55,11 @@ in
               src = ./config/nvim;
               files = [
                 "dpp/skkeleton.vim"
-                "denops.toml"
+                "init/plugins/dpp.vim"
               ];
               skk_dict = "${pkgs.skkDictionaries.l}/share/skk/SKK-JISYO.L";
               deno =
-                if pkgs.stdenv.isLinux then "${upkgs.deno."${denoVersion}"}/bin/deno" else "${upkgs.deno}/bin/deno";
+                if pkgs.stdenv.isLinux then "${upkgs.deno."${denoVersion}"}/bin/deno" else "${pkgs.deno}/bin/deno";
             })
             ./config/nvim
           ];
