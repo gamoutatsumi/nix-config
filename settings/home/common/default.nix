@@ -59,7 +59,7 @@ in
               ];
               skk_dict = "${pkgs.skkDictionaries.l}/share/skk/SKK-JISYO.L";
               deno =
-                if pkgs.stdenv.isLinux then "${upkgs.deno."${denoVersion}"}/bin/deno" else "${pkgs.deno}/bin/deno";
+                if pkgs.stdenv.isLinux then "${upkgs.deno."${denoVersion}"}/bin/deno" else "${upkgs.deno}/bin/deno";
             })
             ./config/nvim
           ];
