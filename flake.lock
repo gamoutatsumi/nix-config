@@ -359,11 +359,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1738595538,
-        "narHash": "sha256-aATaMESxw5PuuJ1+FEVHE5ds5xG1ZABW3D14VugTodY=",
+        "lastModified": 1738595941,
+        "narHash": "sha256-tA/lhpyR8F4/3uozv9E02aksXzXb4Arz6RPYxgq1etE=",
         "owner": "ghostty-org",
         "repo": "ghostty",
-        "rev": "1a1d3db207c84a70b600221fe35d0967d30b38b7",
+        "rev": "61fd41116a06ce8802587583a1df53e4fa042efb",
         "type": "github"
       },
       "original": {
