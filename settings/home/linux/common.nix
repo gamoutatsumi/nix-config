@@ -155,11 +155,28 @@ name=p11-kit-proxy\n";
         };
       };
     };
-    configFile = {
-      "easyeffects/output/Happy_your_Life_+_Downmix_to_mono.json".source =
-        ./config/easyeffects/Happy_your_Life_+_Downmix_to_mono.json;
-      "libskk".source = ./config/libskk;
-    };
+    configFile =
+      {
+        "easyeffects/output/Happy_your_Life_+_Downmix_to_mono.json".source =
+          ./config/easyeffects/Happy_your_Life_+_Downmix_to_mono.json;
+        "libskk".source = ./config/libskk;
+      }
+      // builtins.listToAttrs (
+        map (pkg: {
+          name = "autostart/${pkg.pname}.desktop";
+          value =
+            if pkg ? desktopItem then
+              {
+                inherit (pkg.desktopItem) text;
+              }
+            else if pkg ? desktopItems then
+              { inherit (builtins.elemAt pkg.desktopItems 0) text; }
+            else
+              {
+                source = "${pkg}/share/applications/${pkg.pname}.desktop";
+              };
+        }) (with pkgs; [ bitwarden-desktop ])
+      );
   };
   # keep-sorted end
 }
