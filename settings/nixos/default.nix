@@ -12,10 +12,16 @@
     };
   };
   environment = {
-    systemPackages = with pkgs; [
-      gparted
-      gptfdisk
-    ];
+    systemPackages =
+      with pkgs;
+      [
+        gparted
+        gptfdisk
+        bitwarden-desktop
+      ]
+      ++ (with kdePackages; [
+        kwalletmanager
+      ]);
     etc = {
       "pkcs11/modules/opensc-pkcs11".text = ''
         module: ${pkgs.opensc}/lib/opensc-pkcs11.so
@@ -47,18 +53,21 @@
     # keep-sorted end
   };
   security = {
+    polkit = {
+      enable = true;
+    };
     pam = {
       u2f = {
+        enable = true;
         settings = {
           cue = true;
         };
       };
       services = {
         login = {
-          u2fAuth = true;
-        };
-        sudo = {
-          u2fAuth = true;
+          kwallet = {
+            enable = true;
+          };
         };
       };
     };

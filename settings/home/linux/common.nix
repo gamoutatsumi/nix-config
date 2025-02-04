@@ -123,9 +123,6 @@ name=p11-kit-proxy\n";
     };
   };
   services = {
-    gnome-keyring = {
-      enable = true;
-    };
     picom = {
       enable = true;
       backend = "glx";
@@ -155,28 +152,71 @@ name=p11-kit-proxy\n";
         };
       };
     };
-    configFile =
-      {
-        "easyeffects/output/Happy_your_Life_+_Downmix_to_mono.json".source =
-          ./config/easyeffects/Happy_your_Life_+_Downmix_to_mono.json;
-        "libskk".source = ./config/libskk;
-      }
-      // builtins.listToAttrs (
-        map (pkg: {
-          name = "autostart/${pkg.pname}.desktop";
-          value =
-            if pkg ? desktopItem then
-              {
-                inherit (pkg.desktopItem) text;
-              }
-            else if pkg ? desktopItems then
-              { inherit (builtins.elemAt pkg.desktopItems 0) text; }
-            else
-              {
-                source = "${pkg}/share/applications/${pkg.pname}.desktop";
-              };
-        }) (with pkgs; [ bitwarden-desktop ])
-      );
+    configFile = {
+      "easyeffects/output/Happy_your_Life_+_Downmix_to_mono.json" = {
+        source = ./config/easyeffects/Happy_your_Life_+_Downmix_to_mono.json;
+      };
+      "libskk" = {
+        source = ./config/libskk;
+      };
+    };
+  };
+  systemd = {
+    user = {
+      services = {
+        kwalletd6 = {
+          Install = {
+            WantedBy = [ "graphical-session.target" ];
+          };
+          Unit = {
+            Description = "KDE Wallet Daemon";
+            After = [ "graphical-session.target" ];
+            Wants = [ "graphical-session.target" ];
+          };
+          Service = {
+            Type = "simple";
+            ExecStart = "${pkgs.kdePackages.kwallet}/bin/kwalletd6";
+            Restart = "on-failure";
+            RestartSec = 5;
+            TimeoutStopSec = 10;
+          };
+        };
+        bitwarden-desktop = {
+          Install = {
+            WantedBy = [ "graphical-session.target" ];
+          };
+          Unit = {
+            Description = "Bitwarden Desktop";
+            After = [ "basic.target" ];
+            PartOf = [ "graphical-session.target" ];
+          };
+          Service = {
+            Type = "simple";
+            ExecStart = "${pkgs.bitwarden-desktop}/bin/bitwarden";
+            Restart = "on-failure";
+            RestartSec = 5;
+            TimeoutStopSec = 10;
+          };
+        };
+        polkit-kde-agent = {
+          Install = {
+            WantedBy = [ "graphical-session.target" ];
+          };
+          Unit = {
+            Description = "PolicyKit authentication agent for KDE";
+            After = [ "graphical-session.target" ];
+            Wants = [ "graphical-session.target" ];
+          };
+          Service = {
+            Type = "simple";
+            ExecStart = "${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1";
+            Restart = "on-failure";
+            RestartSec = 5;
+            TimeoutStopSec = 10;
+          };
+        };
+      };
+    };
   };
   # keep-sorted end
 }
