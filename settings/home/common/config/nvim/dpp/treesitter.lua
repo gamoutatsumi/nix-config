@@ -30,7 +30,6 @@ require("nvim-treesitter.configs").setup({
         "regex",
         "rust",
         "sql",
-        "swift",
         "toml",
         "tsx",
         "typescript",
