@@ -61,7 +61,7 @@ repo = 'Shougo/ddc-source-cmdline'
 on_source = 'ddc.vim'
 
 [[plugins]]
-repo = 'Shougo/ddc-source-cmdline-history'
+repo = 'Shougo/ddc-source-cmdline_history'
 on_source = 'ddc.vim'
 
 [[plugins]]

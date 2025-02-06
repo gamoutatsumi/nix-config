@@ -65,7 +65,7 @@ export class Config extends BaseConfig {
         "CmdlineChanged",
       ],
       cmdlineSources: {
-        ":": ["cmdline", "cmdline-history", "around"],
+        ":": ["cmdline", "cmdline_history", "around"],
         "@": ["around"],
       },
       sourceParams: {
@@ -95,7 +95,7 @@ export class Config extends BaseConfig {
           minAutoCompleteLength: 0,
           isVolatile: true,
         },
-        "cmdline-history": {
+        "cmdline_history": {
           mark: "[History]",
         },
         lsp: {
