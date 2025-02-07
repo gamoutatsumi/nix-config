@@ -202,6 +202,7 @@ in
       gitCredentialHelper = {
         enable = true;
       };
+      extensions = with pkgs; [ gh-copilot ];
       settings = {
         git_protocol = "https";
         editor = "${config.programs.neovim.package}/bin/nvim";
