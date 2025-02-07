@@ -34,13 +34,19 @@ local on_attach = function(client, bufnr)
         }
         vim.lsp.buf.format(formatOpts)
     end
+    vim.diagnostic.config({
+        virtual_lines = true,
+        virtual_text = false,
+        float = false,
+        underline = true,
+    })
     local opts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set("n", "<Leader>e", vim.diagnostic.open_float, opts)
     vim.keymap.set("n", "[d", function()
-        vim.diagnostic.jump({ count = -1, float = true })
+        vim.diagnostic.jump({ count = -1, float = false })
     end, opts)
     vim.keymap.set("n", "]d", function()
-        vim.diagnostic.jump({ count = 1, float = true })
+        vim.diagnostic.jump({ count = 1, float = false })
     end, opts)
     vim.keymap.set("n", "<Leader>f", format, opts)
     require("lsp_signature").on_attach({

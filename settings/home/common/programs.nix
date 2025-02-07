@@ -367,7 +367,7 @@ in
       sensibleOnTop = false;
       prefix = "C-s";
       shell = "${pkgs.zsh}/bin/zsh";
-      terminal = "tmux-256color";
+      terminal = "alacritty";
       extraConfig = lib.strings.concatLines [
         (builtins.readFile ./config/tmux/tmux.conf)
         (builtins.readFile ./config/tmux/tmuxline-nightfly.conf)
@@ -440,6 +440,7 @@ in
         PAGER = "${pkgs.ov}/bin/ov";
         PURE_GIT_PULL = 0;
         TERM = "alacritty";
+        TERMINFO = "${pkgs.alacritty}/share/terminfo";
         WORDCHARS = "*?_.[]~-=&;!#$%^(){}<>";
         ZENO_ENABLE_FZF_TMUX = 1;
         ZENO_ENABLE_SOCK = 1;
