@@ -6,7 +6,7 @@
   ...
 }:
 let
-  toINI = lib.generators.toINIWithGlobalSection { listsAsDuplicateKeys = true; };
+  toKeyValue = lib.generators.toKeyValue { listsAsDuplicateKeys = true; };
 in
 {
   imports = [
@@ -18,20 +18,20 @@ in
       ".p10k.zsh" = {
         source = ./config/p10k.zsh;
       };
-      ".aicommit2" = {
-        text = toINI {
-          globalSection = {
-            logging = false;
-            generate = "2";
-            temperature = "1.0";
-          };
-          sections = {
-            OLLAMA = {
-              temperature = "0.7";
-              "model[]" = [ "codestral:22b-v0.1-q4_K_S" ];
-              host = "http://127.0.0.1:11434";
-            };
-          };
+      ".opencommit" = {
+        text = toKeyValue {
+          # keep-sorted start
+          OCO_AI_PROVIDER = "ollama";
+          OCO_API_KEY = "ollama";
+          OCO_API_URL = "http://127.0.0.1:11434/api/chat";
+          OCO_DESCRIPTION = true;
+          OCO_EMOJI = true;
+          OCO_GITPUSH = false;
+          OCO_LANGUAGE = "en";
+          OCO_MODEL = "codestral:22b-v0.1-q4_K_S";
+          OCO_ONE_LINE_COMMIT = false;
+          OCO_PROMPT_MODULE = "conventional-commit";
+          # keep-sorted end
         };
       };
     };

@@ -26,7 +26,6 @@
         # keep-sorted end
       ])
       ++ (with upkgs; [
-        aicommit2
         deno
       ]);
   };

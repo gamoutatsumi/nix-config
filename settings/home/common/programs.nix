@@ -58,6 +58,7 @@ in
         nix-output-monitor
         nix-search-cli
         nix-tree
+        opencommit
         q-text-as-data
         sheldon
         ssm-session-manager-plugin

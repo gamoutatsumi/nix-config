@@ -62,7 +62,6 @@
         cifs-utils
       ])
       ++ (with upkgs; [
-        aicommit2
         vim
       ]);
   };
