@@ -442,7 +442,7 @@ in
         PAGER = "${pkgs.ov}/bin/ov";
         PURE_GIT_PULL = 0;
         TERM = "alacritty";
-        TERMINFO = "${pkgs.alacritty}/share/terminfo";
+        TERMINFO = "${builtins.elemAt config.environment.profiles 0}/share/terminfo";
         WORDCHARS = "*?_.[]~-=&;!#$%^(){}<>";
         ZENO_ENABLE_FZF_TMUX = 1;
         ZENO_ENABLE_SOCK = 1;
