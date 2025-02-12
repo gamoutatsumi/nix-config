@@ -1,9 +1,10 @@
 if [[ -z "$TMUX" ]] && [[ "$USE_TMUX" == "true" ]] ;then
   SESSION=$(tmux list-sessions | fzf --height 40% --reverse --border --select-1 --exit-0 --prompt "Select a session: " | awk '{print $1}')
   if [[ -z "$SESSION" ]]; then
-    SESSION=$(tmux new-session -d -P -c $PWD)
+    exec tmux a
+    else
+    exec tmux attach-session -t $SESSION
   fi
-  exec tmux attach-session -t $SESSION
 fi
 # ZCOMPILE {{{
 # function source {
