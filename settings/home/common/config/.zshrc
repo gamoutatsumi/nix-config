@@ -1,5 +1,9 @@
 if [[ -z "$TMUX" ]] && [[ "$USE_TMUX" == "true" ]] ;then
-  exec tmux a
+  SESSION=$(tmux list-sessions | fzf --height 40% --reverse --border --select-1 --exit-0 --prompt "Select a session: " | awk '{print $1}')
+  if [[ -z "$SESSION" ]]; then
+    SESSION=$(tmux new-session -d -P -c $PWD)
+  fi
+  exec tmux attach-session -t $SESSION
 fi
 # ZCOMPILE {{{
 # function source {
@@ -38,8 +42,6 @@ fi
 
 # {{{ ENVVARS
 # Setting PATH
-#export PYENV_ROOT="$HOME/.pyenv"
-#export NODENV_ROOT="$HOME/.nodenv"
 export WORDCHARS='*?_.[]~-=&;!#$%^(){}<>' 
 
 export PURE_GIT_PULL=0
