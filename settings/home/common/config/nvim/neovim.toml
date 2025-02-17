@@ -158,3 +158,11 @@ require('overseer').setup()
 
 [[plugins]]
 repo = 'wojciech-kulik/xcodebuild.nvim'
+
+[[plugins]]
+repo = 'liangxianzhe/floating-input.nvim'
+lua_add = '''
+vim.ui.input = function(opts, on_confirm)
+  require('floating-input').input(opts, on_confirm, { border = 'double' })
+end
+'''
