@@ -32,13 +32,14 @@ require("nvim-treesitter.configs").setup({
         "toml",
         "tsx",
         "typescript",
+        "vim",
         "vimdoc",
         "yaml",
         -- keep-sorted end
     },
     highlight = {
         enable = true,
-        additional_vim_regex_highlighting = { "org" },
+        disable = { "vim" },
     },
     auto_install = false,
     incremental_selection = { enable = true },
