@@ -24,7 +24,6 @@ require("nvim-treesitter.configs").setup({
         "markdown_inline",
         "mermaid",
         "nix",
-        "org",
         "proto",
         "python",
         "regex",
