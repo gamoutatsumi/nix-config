@@ -30,6 +30,7 @@ in
         argocd
         bc
         binutils
+        cacerts
         coreutils-full
         curlFull
         docker-credential-helpers
