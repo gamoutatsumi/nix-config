@@ -23,7 +23,7 @@ local function setInlayHintHL()
     vim.api.nvim_set_hl(0, "LspInlayHint", { fg = foreground, bg = background })
 end
 
-require("ddc_source_lsp_setup").setup()
+require("ddc_source_lsp_setup").setup({ override_capabilities = true, respect_trigger = true })
 
 local on_attach = function(client, bufnr)
     local function format()
@@ -40,6 +40,7 @@ local on_attach = function(client, bufnr)
         float = false,
         underline = true,
     })
+    vim.b.copilot_workspace_folder = vim.lsp.buf.list_workspace_folders()[1]
     local opts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set("n", "<Leader>e", vim.diagnostic.open_float, opts)
     vim.keymap.set("n", "[d", function()
