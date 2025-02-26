@@ -171,4 +171,4 @@ end
 repo = 'yetone/avante.nvim'
 hooks_file = ['$BASE_DIR/dpp/avante.lua']
 merged = false
-extAtrrs = { installerBuild = 'make BUILD_FROM_SOURCE=true' }
+extAttrs = { installerBuild = 'make BUILD_FROM_SOURCE=true' }
