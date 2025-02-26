@@ -170,3 +170,4 @@ end
 [[plugins]]
 repo = 'yetone/avante.nvim'
 hooks_file = ['$BASE_DIR/dpp/avante.lua']
+build = 'make BUILD_FROM_SOURCE=true'
