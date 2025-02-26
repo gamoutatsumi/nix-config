@@ -158,7 +158,7 @@ function s:lsp_attach() abort
         \   }
         \ }
         \ })<CR>
-  nnoremap <silent><buffer> <Leader>a <Cmd>call ddu#start(#{
+  nnoremap <silent><buffer> ;a <Cmd>call ddu#start(#{
         \ sources: [#{
         \   name: 'lsp_codeAction',
         \ }],
