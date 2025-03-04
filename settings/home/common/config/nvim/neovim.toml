@@ -186,3 +186,6 @@ default = {
 },
 }
 '''
+
+[[plugins]]
+repo = 'takeshid/avante-status.nvim'
