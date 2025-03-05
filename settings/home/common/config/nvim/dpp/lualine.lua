@@ -1,10 +1,9 @@
--- lua_add {{{
+-- lua_source {{{
 local function skkstatus()
     local alias = { [""] = "A", hira = "あ", kata = "ア", hankata = "ｱ", zenkaku = "Ａ", abbrev = "@" }
     return alias[vim.g["skkeleton#mode"]]
 end
 local avante_chat_component = require("avante-status.lualine").chat_component
-local avante_suggestions_component = require("avante-status.lualine").suggestions_component
 
 local custom_nightfly = require("lualine.themes.nightfly")
 custom_nightfly.insert.a.bg = custom_nightfly.normal.a.bg
@@ -44,7 +43,6 @@ require("lualine").setup({
         lualine_c = {},
         lualine_x = {
             avante_chat_component,
-            avante_suggestions_component,
             "filetype",
             { "encoding", separator = "", padding = { left = 1, right = 0 } },
             "fileformat",

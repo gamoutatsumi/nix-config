@@ -10,6 +10,7 @@ hooks_file = '$BASE_DIR/dpp/gitsigns.lua'
 
 [[plugins]]
 repo = 'nvim-lualine/lualine.nvim'
+depends = ['avante-status.nvim']
 hooks_file = '$BASE_DIR/dpp/lualine.lua'
 
 [[plugins]]
@@ -169,6 +170,7 @@ end
 
 [[plugins]]
 repo = 'yetone/avante.nvim'
+depends = ['avante-status.nvim']
 hooks_file = ['$BASE_DIR/dpp/avante.lua']
 merged = false
 extAttrs = { installerBuild = 'make' }
@@ -189,3 +191,6 @@ default = {
 
 [[plugins]]
 repo = 'takeshid/avante-status.nvim'
+lua_add = '''
+require('avante-status').setup()
+'''

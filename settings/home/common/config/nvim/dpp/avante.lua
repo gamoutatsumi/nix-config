@@ -1,6 +1,6 @@
--- lua_add {{{
+-- lua_source {{{
 require("avante").setup({
-    provider = "copilot",
+    provider = require("avante-status").get_chat_provider({ "copilot" }),
     auto_suggestions_provider = "copilot",
     copilot = {
         model = "claude-3.7-sonnet",
