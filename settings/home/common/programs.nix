@@ -109,6 +109,16 @@ in
               action = "ToggleFullScreen";
               key = "F11";
             }
+            {
+              chars = "\\u001b[98;6u";
+              key = "b";
+              mods = "Control|Shift";
+            }
+            {
+              chars = "\\u001b[102;6u";
+              key = "f";
+              mods = "Control|Shift";
+            }
           ];
         };
         mouse = {
