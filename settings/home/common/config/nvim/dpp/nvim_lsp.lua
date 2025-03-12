@@ -50,6 +50,9 @@ local on_attach = function(client, bufnr)
         vim.diagnostic.jump({ count = 1, float = false })
     end, opts)
     vim.keymap.set("n", "<Leader>f", format, opts)
+    vim.keymap.set("n", "<Leader>ld", function()
+        vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+    end, opts)
     require("lsp_signature").on_attach({
         bind = true,
         handler_opts = {
