@@ -441,6 +441,7 @@ in
         MYCLI_HISTFILE = "${config.xdg.dataHome}/mycli/history";
         NIX_CONFIG = "access-tokens = github.com=$(gh auth token)";
         PAGER = "${pkgs.ov}/bin/ov";
+        POWERLEVEL9K_TERM_SHELL_INTEGRATION = "true";
         PURE_GIT_PULL = 0;
         TERM = "alacritty";
         WORDCHARS = "*?_.[]~-=&;!#$%^(){}<>";
