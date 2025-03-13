@@ -78,6 +78,7 @@ in
     # keep-sorted start block=yes
     alacritty = {
       enable = true;
+      package = upkgs.alacritty;
       settings = {
         general = {
           import = [
