@@ -5,6 +5,9 @@ require("avante").setup({
     copilot = {
         model = "claude-3.5-sonnet",
     },
+    ollama = {
+        model = "codestral:22b-v0.1-q4_K_S",
+    },
     file_selector = {
         provider = "native",
     },
