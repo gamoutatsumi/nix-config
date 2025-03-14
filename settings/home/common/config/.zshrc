@@ -512,6 +512,11 @@ function awsp() {
   export AWS_PROFILE="$profile"
 }
 
+function osp() {
+  local profile=$(cat ~/.config/openstack/clouds.yaml | yq '.clouds | keys | .[]' | fzf)
+  export OS_CLOUD="$profile"
+}
+
 function dockercon() {
   ssh -L localhost:23750:/var/run/docker.sock $@
 }
