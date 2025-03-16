@@ -14,6 +14,7 @@
         chntpw
         discord
         firefox
+        gcr
         kcachegrind
         pavucontrol
         playerctl
@@ -111,6 +112,8 @@
           eamodio.gitlens
           editorconfig.editorconfig
           enkia.tokyo-night
+          github.copilot
+          github.copilot-chat
           oderwat.indent-rainbow
           # keep-sorted end
         ]

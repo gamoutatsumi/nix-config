@@ -1,17 +1,25 @@
 { pkgs, networkManager, ... }:
 {
   services = {
-    playerctld = {
+    # keep-sorted start block=yes
+    blueman-applet = {
       enable = true;
     };
-    mpd-discord-rpc = {
-      enable = false;
-      settings = {
-        format = {
-          large_image = "";
-          small_image = "";
-        };
+    emacs = {
+      enable = true;
+      client = {
+        enable = true;
       };
+    };
+    gnome-keyring = {
+      enable = true;
+    };
+    gpg-agent = {
+      enable = true;
+      enableScDaemon = true;
+      enableSshSupport = true;
+      enableZshIntegration = true;
+      pinentryPackage = pkgs.pinentry-gtk2;
     };
     mpd = {
       enable = true;
@@ -33,10 +41,25 @@
         }
       '';
     };
+    mpd-discord-rpc = {
+      enable = false;
+      settings = {
+        format = {
+          large_image = "";
+          small_image = "";
+        };
+      };
+    };
+    mpdris2 = {
+      enable = true;
+    };
     mpris-proxy = {
       enable = true;
     };
-    mpdris2 = {
+    network-manager-applet = {
+      enable = networkManager;
+    };
+    playerctld = {
       enable = true;
     };
     screen-locker = {
@@ -46,24 +69,6 @@
         enable = false;
       };
     };
-    emacs = {
-      enable = true;
-      client = {
-        enable = true;
-      };
-    };
-    network-manager-applet = {
-      enable = networkManager;
-    };
-    gpg-agent = {
-      enable = true;
-      enableScDaemon = true;
-      enableSshSupport = true;
-      enableZshIntegration = true;
-      pinentryPackage = pkgs.pinentry-gtk2;
-    };
-    blueman-applet = {
-      enable = true;
-    };
+    # keep-sorted end
   };
 }

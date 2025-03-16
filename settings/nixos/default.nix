@@ -2,6 +2,7 @@
   pkgs,
   username,
   config,
+  lib,
   ...
 }:
 {
@@ -12,16 +13,11 @@
     };
   };
   environment = {
-    systemPackages =
-      with pkgs;
-      [
-        gparted
-        gptfdisk
-        bitwarden-desktop
-      ]
-      ++ (with kdePackages; [
-        kwalletmanager
-      ]);
+    systemPackages = with pkgs; [
+      gparted
+      gptfdisk
+      bitwarden-desktop
+    ];
     etc = {
       "pkcs11/modules/opensc-pkcs11".text = ''
         module: ${pkgs.opensc}/lib/opensc-pkcs11.so
@@ -65,9 +61,8 @@
       };
       services = {
         login = {
-          kwallet = {
-            enable = true;
-          };
+          u2fAuth = lib.mkForce false;
+          enableGnomeKeyring = true;
         };
       };
     };

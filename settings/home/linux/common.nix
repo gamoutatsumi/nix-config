@@ -164,23 +164,6 @@ name=p11-kit-proxy\n";
   systemd = {
     user = {
       services = {
-        kwalletd6 = {
-          Install = {
-            WantedBy = [ "graphical-session.target" ];
-          };
-          Unit = {
-            Description = "KDE Wallet Daemon";
-            After = [ "graphical-session.target" ];
-            Wants = [ "graphical-session.target" ];
-          };
-          Service = {
-            Type = "simple";
-            ExecStart = "${pkgs.kdePackages.kwallet}/bin/kwalletd6";
-            Restart = "on-failure";
-            RestartSec = 5;
-            TimeoutStopSec = 10;
-          };
-        };
         bitwarden-desktop = {
           Install = {
             WantedBy = [ "graphical-session.target" ];
