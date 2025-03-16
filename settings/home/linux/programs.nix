@@ -16,8 +16,10 @@
         firefox
         gcr
         kcachegrind
+        lssecret
         pavucontrol
         playerctl
+        seahorse
         slack
         xsel
         zoom-us
@@ -25,7 +27,7 @@
         (vivaldi.override {
           enableWidevine = true;
           proprietaryCodecs = true;
-          commandLineArgs = "--force-dark-mode";
+          commandLineArgs = "--force-dark-mode --password-store=gnome-libsecret";
         })
       ]
       ++ (with upkgs; [

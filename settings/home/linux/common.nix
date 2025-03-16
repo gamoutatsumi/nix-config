@@ -2,6 +2,7 @@
   pkgs,
   config,
   username,
+  lib,
   ...
 }:
 {
@@ -36,6 +37,7 @@
   home = {
     homeDirectory = "/home/${username}";
     file = {
+      ".vscode/argv.json".text = lib.strings.toJSON { password-store = "gnome-libsecret"; };
       ".pki/nssdb/pkcs11.txt".text =
         "library=
 name=NSS Internal PKCS #11 Module
@@ -176,23 +178,6 @@ name=p11-kit-proxy\n";
           Service = {
             Type = "simple";
             ExecStart = "${pkgs.bitwarden-desktop}/bin/bitwarden";
-            Restart = "on-failure";
-            RestartSec = 5;
-            TimeoutStopSec = 10;
-          };
-        };
-        polkit-kde-agent = {
-          Install = {
-            WantedBy = [ "graphical-session.target" ];
-          };
-          Unit = {
-            Description = "PolicyKit authentication agent for KDE";
-            After = [ "graphical-session.target" ];
-            Wants = [ "graphical-session.target" ];
-          };
-          Service = {
-            Type = "simple";
-            ExecStart = "${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1";
             Restart = "on-failure";
             RestartSec = 5;
             TimeoutStopSec = 10;
