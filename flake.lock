@@ -650,6 +650,29 @@
         "type": "github"
       }
     },
+    "nix-vscode-extensions": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1742090119,
+        "narHash": "sha256-I+NlLtHpTsItYkHo4fFdM6moBHF156wM11TPWLcwdic=",
+        "owner": "nix-community",
+        "repo": "nix-vscode-extensions",
+        "rev": "adcb8b54d64484bb74f1480acefc3c686f318917",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nix-vscode-extensions",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1741862977,
@@ -806,6 +829,7 @@
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "neovim-src": "neovim-src",
         "nix-darwin": "nix-darwin",
+        "nix-vscode-extensions": "nix-vscode-extensions",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "oreore": "oreore",
@@ -976,11 +1000,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1742017626,
-        "narHash": "sha256-HA6Kka3eyumgj7Tri2b0aX6PXa4EuHCdThZAI8B2HVk=",
+        "lastModified": 1742106991,
+        "narHash": "sha256-u63aZuhykPBxHkzQLk95cePntN/w5V2g47hlgH2JfkU=",
         "owner": "kawarimidoll",
         "repo": "vim-overlay",
-        "rev": "aae41ea2d1458f93804bb1e58ff48d1109947d84",
+        "rev": "9df2b4e77b50ecfe155036f2d2793555448ffedb",
         "type": "github"
       },
       "original": {
