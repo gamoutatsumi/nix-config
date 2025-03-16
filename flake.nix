@@ -305,6 +305,17 @@
         };
       };
     };
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+        flake-utils = {
+          follows = "flake-utils";
+        };
+      };
+    };
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-24.11?shallow=1";
     };
@@ -487,6 +498,7 @@
       monitored,
       neovim-nightly-overlay,
       nix-darwin,
+      nix-vscode-extensions,
       nixpkgs,
       nixpkgs-unstable,
       oreore,
@@ -517,6 +529,7 @@
             emacs-overlay.overlays.default
             ghostty.overlays.default
             neovim-nightly-overlay.overlays.default
+            nix-vscode-extensions.overlays.default
             oreore.overlays.default
             vim-overlay.overlays.default
             # keep-sorted end

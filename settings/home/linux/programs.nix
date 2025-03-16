@@ -98,6 +98,41 @@
         icon-theme = "Vimix-Doder-dark";
       };
     };
+    vscode = {
+      enable = true;
+      package = upkgs.vscode;
+      enableUpdateCheck = false;
+      enableExtensionUpdateCheck = false;
+      extensions =
+        with upkgs.vscode-extensions;
+        [
+          # keep-sorted start
+          bbenoist.nix
+          eamodio.gitlens
+          editorconfig.editorconfig
+          enkia.tokyo-night
+          oderwat.indent-rainbow
+          # keep-sorted end
+        ]
+        ++ (with upkgs.vscode-marketplace; [
+          taiyofujii.novel-writer
+        ]);
+      userSettings = {
+        editor = {
+          renderWhitespace = "boundary";
+          minimap = {
+            enabled = true;
+            renderCharacters = true;
+          };
+        };
+        workbench = {
+          colorTheme = "Tokyo Night";
+          sidebar = {
+            location = "left";
+          };
+        };
+      };
+    };
     # keep-sorted end
   };
 }
