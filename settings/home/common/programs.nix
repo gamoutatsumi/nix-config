@@ -392,6 +392,43 @@ in
       escapeTime = 10;
       historyLimit = 4096;
     };
+    vscode = {
+      enable = true;
+      package = upkgs.vscode;
+      enableUpdateCheck = false;
+      enableExtensionUpdateCheck = false;
+      extensions =
+        with upkgs.vscode-extensions;
+        [
+          # keep-sorted start
+          bbenoist.nix
+          eamodio.gitlens
+          editorconfig.editorconfig
+          enkia.tokyo-night
+          github.copilot
+          github.copilot-chat
+          oderwat.indent-rainbow
+          # keep-sorted end
+        ]
+        ++ (with upkgs.vscode-marketplace; [
+          taiyofujii.novel-writer
+        ]);
+      userSettings = {
+        editor = {
+          renderWhitespace = "boundary";
+          minimap = {
+            enabled = true;
+            renderCharacters = true;
+          };
+        };
+        workbench = {
+          colorTheme = "Tokyo Night";
+          sidebar = {
+            location = "left";
+          };
+        };
+      };
+    };
     wezterm = {
       enable = false;
       extraConfig = builtins.readFile ./config/wezterm/wezterm.lua;
