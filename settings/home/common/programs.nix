@@ -60,6 +60,7 @@ in
         nix-search-cli
         nix-tree
         opencommit
+        pinact
         q-text-as-data
         sheldon
         ssm-session-manager-plugin
