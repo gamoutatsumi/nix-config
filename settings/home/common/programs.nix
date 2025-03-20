@@ -334,7 +334,7 @@ in
     };
     hmd = {
       enable = true;
-      runOnSwitch = true;
+      runOnSwitch = false;
     };
     home-manager = {
       enable = false;
