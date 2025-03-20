@@ -21,14 +21,8 @@
   ];
   # keep-sorted start block=yes
   boot = {
-    loader = {
-      systemd-boot = {
-        enable = true;
-      };
-      efi = {
-        canTouchEfiVariables = true;
-      };
-    };
+    # keep-sorted start block=yes
+    extraModulePackages = [ ];
     initrd = {
       availableKernelModules = [
         "nvme"
@@ -41,9 +35,18 @@
       kernelModules = [ ];
     };
     kernelModules = [ "kvm-amd" ];
-    extraModulePackages = [ ];
-    kernelParams = [ "video.use_native_backlight=1" ];
     kernelPackages = pkgs.linuxPackages_latest;
+    kernelParams = [ "video.use_native_backlight=1" ];
+    loader = {
+      systemd-boot = {
+        enable = true;
+      };
+      efi = {
+        canTouchEfiVariables = true;
+      };
+    };
+    supportedFilesystems = [ "ntfs" ];
+    # keep-sorted end
   };
   environment = {
     systemPackages =

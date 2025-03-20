@@ -22,6 +22,8 @@
   ];
   # keep-sorted start block=yes
   boot = {
+    # keep-sorted start block=yes
+    extraModulePackages = [ ];
     initrd = {
       availableKernelModules = [
         "vmd"
@@ -35,24 +37,24 @@
       ];
       kernelModules = [ "nvidia-uvm" ];
     };
-    kernelModules = [ "kvm-intel" ];
-    extraModulePackages = [ ];
-    supportedFilesystems = [ "ntfs" ];
-    loader = {
-      systemd-boot = {
-        enable = lib.mkForce false;
-      };
-    };
-    lanzaboote = {
-      enable = true;
-      pkiBundle = "/etc/secureboot";
-    };
     kernel = {
       sysctl = {
         "net.ipv6.conf.enp0s20f0u8u4.disable_ipv6" = true;
         "net.ipv6.conf.enp5s0.disable_ipv6" = true;
       };
     };
+    kernelModules = [ "kvm-intel" ];
+    lanzaboote = {
+      enable = true;
+      pkiBundle = "/etc/secureboot";
+    };
+    loader = {
+      systemd-boot = {
+        enable = lib.mkForce false;
+      };
+    };
+    supportedFilesystems = [ "ntfs" ];
+    # keep-sorted end
   };
   environment = {
     systemPackages =
