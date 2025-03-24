@@ -1,6 +1,6 @@
 -- lua_source {{{
 require("avante").setup({
-    provider = "ollama",
+    provider = "copilot",
     auto_suggestions_provider = "copilot",
     copilot = {
         model = "gpt-4o",
