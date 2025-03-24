@@ -82,7 +82,8 @@ on_source = 'ddu.vim'
 
 [[plugins]]
 repo = 'matsui54/ddu-vim-ui-select'
-on_source = 'ddu.vim'
+# on_source = 'ddu.vim'
+lazy = false
 
 [[plugins]]
 repo = 'matsui54/ddu-source-help'
