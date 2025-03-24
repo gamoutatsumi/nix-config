@@ -73,6 +73,9 @@ export class Config extends BaseConfig {
           displayFile: "",
           displayDir: "",
         },
+        copilot: {
+          copilot: "lua",
+        },
         lsp: {
           lspEngine: "nvim-lsp",
           enableAdditionalTextEdit: true,

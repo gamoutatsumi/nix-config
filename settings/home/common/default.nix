@@ -56,10 +56,12 @@ in
               files = [
                 "dpp/skkeleton.vim"
                 "init/plugins/dpp.vim"
+                "dpp/copilot.lua"
               ];
               skk_dict = "${pkgs.skkDictionaries.l}/share/skk/SKK-JISYO.L";
               deno =
                 if pkgs.stdenv.isLinux then "${upkgs.deno."${denoVersion}"}/bin/deno" else "${upkgs.deno}/bin/deno";
+              copilot_ls = "${upkgs.copilot-language-server}/bin/copilot-language-server";
             })
             ./config/nvim
           ];

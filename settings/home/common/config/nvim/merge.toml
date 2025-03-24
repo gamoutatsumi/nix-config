@@ -91,10 +91,6 @@ repo = 'tani/vim-artemis'
 if = false
 
 [[plugins]]
-repo = 'github/copilot.vim'
-hooks_file = '$BASE_DIR/dpp/copilot.vim'
-
-[[plugins]]
 repo = 'chrisbra/csv.vim'
 
 [[plugins]]

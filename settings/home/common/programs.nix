@@ -352,6 +352,7 @@ in
           nil
           tree-sitter
           efm-langserver
+          copilot-language-server
         ])
         ++ lib.optionals pkgs.stdenv.isLinux [
           upkgs.gcc
