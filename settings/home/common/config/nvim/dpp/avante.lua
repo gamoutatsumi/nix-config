@@ -3,7 +3,7 @@ require("avante").setup({
     provider = "ollama",
     auto_suggestions_provider = "copilot",
     copilot = {
-        model = "claude-3.5-sonnet",
+        model = "gpt-4o",
     },
     ollama = {
         model = "codestral:22b-v0.1-q4_K_S",
