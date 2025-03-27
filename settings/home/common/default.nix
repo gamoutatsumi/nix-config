@@ -65,7 +65,10 @@ in
               deno =
                 if pkgs.stdenv.isLinux then "${upkgs.deno."${denoVersion}"}/bin/deno" else "${upkgs.deno}/bin/deno";
               copilot_ls = "${upkgs.copilot-language-server}/bin/copilot-language-server";
-              treesitter_parsers = "${upkgs.vimPlugins.nvim-treesitter.withAllGrammars.dependencies}";
+              treesitter_parsers = "${upkgs.symlinkJoin {
+                name = "ts-parsers";
+                paths = upkgs.vimPlugins.nvim-treesitter.withAllGrammars.dependencies;
+              }}";
             })
             ./config/nvim
           ];
