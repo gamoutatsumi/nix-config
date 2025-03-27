@@ -3,53 +3,10 @@ local data_dir = vim.fn.stdpath("data")
 if type(data_dir) ~= "string" then
     data_dir = data_dir[1]
 end
-local parser_install_dir = vim.fs.joinpath(data_dir, "treesitter")
-vim.opt.runtimepath:prepend(parser_install_dir)
+vim.opt.runtimepath:prepend("@treesitter_parsers@")
 require("nvim-treesitter.configs").setup({
     -- Modules and its options go here
-    ensure_installed = {
-        -- keep-sorted start
-        "astro",
-        "bash",
-        "comment",
-        "git_config",
-        "git_rebase",
-        "gitattributes",
-        "gitcommit",
-        "gitignore",
-        "go",
-        "gomod",
-        "gosum",
-        "gotmpl",
-        "gowork",
-        "graphql",
-        "haskell",
-        "hcl",
-        "ini",
-        "javascript",
-        "jinja",
-        "jinja_inline",
-        "jq",
-        "json",
-        "lua",
-        "markdown_inline",
-        "mermaid",
-        "nix",
-        "proto",
-        "python",
-        "regex",
-        "rust",
-        "sql",
-        "ssh_config",
-        "terraform",
-        "toml",
-        "tsx",
-        "typescript",
-        "vim",
-        "vimdoc",
-        "yaml",
-        -- keep-sorted end
-    },
+    ensure_installed = {},
     highlight = {
         enable = true,
         disable = { "vim" },
@@ -77,7 +34,6 @@ require("nvim-treesitter.configs").setup({
     autotag = {
         enable = true,
     },
-    parser_install_dir = parser_install_dir,
     sync_install = false,
     ignore_install = {},
     modules = {},
