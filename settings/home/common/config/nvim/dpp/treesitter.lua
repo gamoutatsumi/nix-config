@@ -25,6 +25,7 @@ require("nvim-treesitter.configs").setup({
         "graphql",
         "haskell",
         "hcl",
+        "ini",
         "javascript",
         "jinja",
         "jinja_inline",
