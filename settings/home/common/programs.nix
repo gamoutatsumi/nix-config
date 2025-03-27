@@ -60,6 +60,7 @@ in
         nix-search-cli
         nix-tree
         opencommit
+        picocom
         pinact
         q-text-as-data
         sheldon
