@@ -60,6 +60,7 @@ in
                 "dpp/skkeleton.vim"
                 "init/plugins/dpp.vim"
                 "dpp/copilot.lua"
+                "dpp/treesitter.lua"
               ];
               skk_dict = "${pkgs.skkDictionaries.l}/share/skk/SKK-JISYO.L";
               deno =
