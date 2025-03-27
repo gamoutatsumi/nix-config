@@ -1,4 +1,4 @@
--- lua_source {{{
+-- lua_add {{{
 require("copilot").setup({
     panel = {
         enabled = false,
