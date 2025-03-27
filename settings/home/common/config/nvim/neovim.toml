@@ -199,3 +199,7 @@ require('avante-status').setup()
 repo = 'zbirenbaum/copilot.lua'
 on_event = ['InsertEnter']
 hooks_file = ['$BASE_DIR/dpp/copilot.lua']
+
+[[plugins]]
+repo = 'ravitemer/mcphub.nvim'
+hooks_file = ['$BASE_DIR/dpp/mcphub.lua']

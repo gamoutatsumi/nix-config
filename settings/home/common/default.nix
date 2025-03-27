@@ -47,6 +47,9 @@ in
       "sheldon" = {
         source = ./config/sheldon;
       };
+      "mcp/mcpservers.json" = {
+        text = lib.strings.toJSON { mcpServers = { }; };
+      };
       "nvim" = {
         source = pkgs.symlinkJoin {
           name = "nvim";
