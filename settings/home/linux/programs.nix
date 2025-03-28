@@ -60,6 +60,7 @@
       enable = true;
       settings = {
         media_library_primary_tag = "album_artist";
+        execute_on_song_change = ''${pkgs.libnotify}/bin/notify-send "Now Playing" "$(${pkgs.mpc}/bin/mpc --format '%title% \n %artist% - %album%' current)"'';
       };
       bindings = [
         {
