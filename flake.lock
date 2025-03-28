@@ -144,11 +144,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1742644998,
-        "narHash": "sha256-wtBsRU2Mz/5OMezYjWgIeJcVxsn++3Fu38YcgEIOsjY=",
+        "lastModified": 1743163909,
+        "narHash": "sha256-w5jsdSP76yT0AUExmiLcjPVv16Cm4EwHu6gf1BVzu8U=",
         "owner": "haruki7049",
         "repo": "deno-overlay",
-        "rev": "cc8a0bd9d9ab1cda8b7b2122d65234332bf61799",
+        "rev": "a723dac067b305f86b44210e3af73262fb5c3c6a",
         "type": "github"
       },
       "original": {
@@ -615,11 +615,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1743145742,
-        "narHash": "sha256-F5NOFkD+K4Hvwpsymv0/FnpyR090JoqoyaMJ1FAJPbU=",
+        "lastModified": 1743165970,
+        "narHash": "sha256-Ao8tkFWPNlO08jFX/1za5mOLIb7llnaL6zFvU7N+sG8=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "18fa61049a9e19a3e8cbac73d963ac1dac251b39",
+        "rev": "5554fcc28683e5d182198158b293851a96f0d6a0",
         "type": "github"
       },
       "original": {
@@ -1096,11 +1096,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1743121907,
-        "narHash": "sha256-wlZ383euYC+hiXHYBVLrP/4R0rIxaRs7HKajIODaspk=",
+        "lastModified": 1743163921,
+        "narHash": "sha256-yj0FRE0AbEAZkfvNgWICP6/0K0pzit94UTUW5Dngkzo=",
         "owner": "mitchellh",
         "repo": "zig-overlay",
-        "rev": "724b767001ab77ffdc80420862800be3f618d083",
+        "rev": "38b3548cbe91380bf33b1c960f95e149daf839b0",
         "type": "github"
       },
       "original": {
