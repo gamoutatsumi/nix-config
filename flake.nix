@@ -535,7 +535,7 @@
             # keep-sorted end
           ] ++ lib.optionals stdenv.isLinux [ deno-overlay.overlays.deno-overlay ];
         });
-      denoVersion = "2.2.4";
+      denoVersion = "2.2.6";
       homeManagerConf =
         {
           imports,
