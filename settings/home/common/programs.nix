@@ -210,9 +210,11 @@ in
         enableShellIntegration = false;
       };
       enableZshIntegration = true;
+      package = upkgs.fzf;
     };
     gh = {
       enable = true;
+      package = upkgs.gh;
       gitCredentialHelper = {
         enable = true;
       };
