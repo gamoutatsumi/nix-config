@@ -59,7 +59,7 @@ local on_attach = function(client, bufnr)
             border = "rounded",
         },
     }, bufnr)
-    if client.supports_method("textDocument/inlayHint") or client.name == "sourcekit" then
+    if client:supports_method("textDocument/inlayHint") or client.name == "sourcekit" then
         setInlayHintHL()
         vim.api.nvim_create_autocmd({ "InsertEnter" }, {
             buffer = bufnr,
@@ -194,9 +194,6 @@ lspconfig.hls.setup({
 lspconfig["nil_ls"].setup({
     on_attach = on_attach,
     autostart = true,
-    on_init = function(client, _)
-        client.server_capabilities.semanticTokensProvider = nil
-    end,
     settings = {
         ["nil"] = {
             formatting = {
