@@ -219,9 +219,9 @@ in
       extensions = with pkgs; [ gh-copilot ];
       settings = {
         git_protocol = "https";
-        editor = "${config.programs.neovim.package}/bin/nvim";
+        editor = lib.getExe config.programs.neovim.package;
         prompt = "enabled";
-        pager = "${pkgs.ov}/bin/ov";
+        pager = lib.getExe' pkgs.ov "ov";
         aliases = {
           co = "pr checkout";
           is = ''!gh issue list -s all | fzf-tmux --prompt "issue preview>" --preview "echo {} | cut -f1 | xargs gh issue view " | cut -f1 | xargs --no-run-if-empty gh issue ''${@:-view -w}'';
@@ -286,7 +286,7 @@ in
           quotepath = false;
         };
         diff = {
-          tool = "${config.programs.neovim.package}/bin/nvim -d";
+          tool = "${lib.getExe config.programs.neovim.package} -d";
           algorithm = "histogram";
         };
         difftool = {
@@ -384,7 +384,7 @@ in
       enable = true;
       sensibleOnTop = false;
       prefix = "C-s";
-      shell = "${pkgs.zsh}/bin/zsh";
+      shell = lib.getExe pkgs.zsh;
       terminal = "alacritty";
       extraConfig = lib.strings.concatLines [
         (builtins.readFile ./config/tmux/tmux.conf)
@@ -489,10 +489,10 @@ in
         LC_ALL = "ja_JP.UTF-8";
         LUAROCKS_HOME = "${config.xdg.dataHome}/luarocks";
         MAKEFLAGS = "-j";
-        MANPAGER = "${config.programs.neovim.package}/bin/nvim -c ASMANPAGER -";
+        MANPAGER = "${lib.getExe config.programs.neovim.package} -c ASMANPAGER -";
         MYCLI_HISTFILE = "${config.xdg.dataHome}/mycli/history";
         NIX_CONFIG = "access-tokens = github.com=$(gh auth token)";
-        PAGER = "${pkgs.ov}/bin/ov";
+        PAGER = "${lib.getExe' pkgs.ov "ov"}";
         PURE_GIT_PULL = 0;
         TERM = "alacritty";
         WORDCHARS = "*?_.[]~-=&;!#$%^(){}<>";
@@ -510,7 +510,7 @@ in
       dotDir = ".config/zsh";
       initExtra = ''
         ${builtins.readFile ./config/.zshrc}
-        ${pkgs.any-nix-shell}/bin/any-nix-shell zsh --info-right | source /dev/stdin
+        ${lib.getExe pkgs.any-nix-shell} zsh --info-right | source /dev/stdin
         export FPATH
       '';
       envExtra = builtins.readFile ./config/.zshenv;

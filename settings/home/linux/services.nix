@@ -1,4 +1,9 @@
-{ pkgs, networkManager, ... }:
+{
+  pkgs,
+  networkManager,
+  lib,
+  ...
+}:
 {
   services = {
     # keep-sorted start block=yes
@@ -64,7 +69,7 @@
     };
     screen-locker = {
       enable = false;
-      lockCmd = "${pkgs.systemd}/bin/loginctl lock-sessions";
+      lockCmd = "${lib.getExe' pkgs.systemd "loginctl"} lock-sessions";
       xautolock = {
         enable = false;
       };

@@ -180,7 +180,7 @@
     xserver = {
       videoDrivers = [ "nvidia" ];
       displayManager = {
-        setupCommands = "${pkgs.xorg.xrandr}/bin/xrandr --output DP-0 --auto --primary --output HDMI-0 --auto --left-of DP-0";
+        setupCommands = "${lib.getExe pkgs.xorg.xrandr} --output DP-0 --auto --primary --output HDMI-0 --auto --left-of DP-0";
       };
       serverLayoutSection = ''
         Option "StandbyTime" "0"

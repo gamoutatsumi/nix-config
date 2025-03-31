@@ -177,7 +177,7 @@ name=p11-kit-proxy\n";
           };
           Service = {
             Type = "simple";
-            ExecStart = "${pkgs.bitwarden-desktop}/bin/bitwarden";
+            ExecStart = lib.getExe pkgs.bitwarden-desktop;
             Restart = "on-failure";
             RestartSec = 5;
             TimeoutStopSec = 10;

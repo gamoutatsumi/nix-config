@@ -1,10 +1,14 @@
-{ pkgs, upkgs, ... }:
+{
+  upkgs,
+  lib,
+  ...
+}:
 {
   services = {
     polybar = {
       enable = true;
       package = upkgs.polybarFull;
-      script = "${upkgs.launchPolybar}/bin/launchPolybar";
+      script = lib.getExe upkgs.launchPolybar;
       config = {
         colors = {
           bg = "#222D32";
@@ -70,7 +74,7 @@
 
         "module/xmonad" = {
           type = "custom/script";
-          exec = "${upkgs.xmonadpropread}/bin/xmonadpropread";
+          exec = lib.getExe upkgs.xmonadpropread;
           tail = true;
           format-padding = 1;
         };
@@ -83,7 +87,7 @@
           ramp-volume-0 = "";
           ramp-volume-1 = "";
           ramp-volume-2 = "";
-          click-right = "${pkgs.pavucontrol}/bin/pavucontrol";
+          click-right = lib.getExe upkgs.pavucontrol;
           format-volume-underline = ''''${colors.adapta-cyan}'';
           format-muted-underline = ''''${colors.adapta-grey}'';
           format-volume-margin = 1;
@@ -148,10 +152,10 @@
           label-padding = 2;
           label-foreground = ''''${colors.fg}'';
           exec = ''LC_ALL=C pulseaudio-control --icons-volume " , " --icon-muted " " --sink-nicknames-from "device.description" listen'';
-          click-right = ''${upkgs.pavucontrol}/bin/pavucontrol'';
-          click-left = ''${upkgs.changeVolume}/bin/changeVolume mute'';
-          scroll-up = ''${upkgs.changeVolume}/bin/changeVolume +1%'';
-          scroll-down = ''${upkgs.changeVolume}/bin/changeVolume -1%'';
+          click-right = lib.getExe upkgs.pavucontrol;
+          click-left = ''${lib.getExe upkgs.changeVolume} mute'';
+          scroll-up = ''${lib.getExe upkgs.changeVolume} +1%'';
+          scroll-down = ''${lib.getExe upkgs.changeVolume} -1%'';
         };
 
         "module/cpu" = {

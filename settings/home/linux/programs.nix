@@ -2,6 +2,7 @@
   upkgs,
   pkgs,
   denoVersion,
+  lib,
   ...
 }:
 {
@@ -60,7 +61,7 @@
       enable = true;
       settings = {
         media_library_primary_tag = "album_artist";
-        execute_on_song_change = ''${pkgs.libnotify}/bin/notify-send "Now Playing" "$(${pkgs.mpc}/bin/mpc --format '%title% \n %artist% - %album%' current)"'';
+        execute_on_song_change = ''${lib.getExe' pkgs.libnotify "notify-send"} "Now Playing" "$(${lib.getExe pkgs.mpc} --format '%title% \n %artist% - %album%' current)"'';
       };
       bindings = [
         {
@@ -92,7 +93,7 @@
       location = "center";
       theme = "Arc-Dark";
       extraConfig = {
-        modi = "drun,power-menu:${pkgs.rofi-power-menu}/bin/rofi-power-menu";
+        modi = "drun,power-menu:${lib.getExe pkgs.rofi-power-menu}";
         kb-cancel = "Escape";
         kb-mode-previous = "Shift+Tab";
         kb-mode-next = "Tab";

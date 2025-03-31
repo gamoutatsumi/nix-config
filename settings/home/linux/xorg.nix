@@ -3,8 +3,8 @@
   xsession = {
     enable = true;
     initExtra = ''
-      ${pkgs.xorg.xinput}/bin/xinput disable 'SynPS/2 Synaptics TouchPad'
-      ${pkgs.lightlocker}/bin/light-locker &
+      ${lib.getExe pkgs.xorg.xinput} disable 'SynPS/2 Synaptics TouchPad'
+      ${lib.getExe pkgs.lightlocker} &
     '';
     windowManager = {
       xmonad = {
