@@ -167,7 +167,11 @@ in
     emacs = {
       enable = true;
       package = upkgs.emacsWithPackagesFromUsePackage {
-        package = upkgs.emacs-unstable;
+        package =
+          if upkgs.stdenv.isLinux then
+            upkgs.emacs-unstable
+          else
+            upkgs.emacs-unstable.override { withNativeCompilation = false; };
         config = ./config/emacs/init.el;
         defaultInitFile = true;
         extraEmacsPackages =
