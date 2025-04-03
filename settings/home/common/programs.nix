@@ -52,6 +52,7 @@ in
         killall
         kubectl
         kubie
+        magika
         moreutils
         mycli
         nix-diff
