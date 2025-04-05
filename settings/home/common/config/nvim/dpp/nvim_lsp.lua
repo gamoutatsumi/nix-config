@@ -128,8 +128,13 @@ lspconfig.lua_ls.setup({
     },
 })
 
+lspconfig.biome.setup({
+    on_attach = on_attach,
+    autostart = true,
+})
+
 lspconfig.astro.setup({
-    on_on_attach = on_attach,
+    on_attach = on_attach,
     autostart = true,
 })
 
@@ -328,6 +333,7 @@ lspconfig.gopls.setup({
 })
 
 lspconfig.jsonls.setup({
+    cmd = { "vscode-json-languageserver", "--stdio" },
     filetypes = { "json", "jsonc" },
     settings = {
         json = {
