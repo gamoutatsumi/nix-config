@@ -4,7 +4,7 @@
     enable = true;
     initExtra = ''
       ${lib.getExe pkgs.xorg.xinput} disable 'SynPS/2 Synaptics TouchPad'
-      ${lib.getExe pkgs.lightlocker} &
+      ${lib.getExe' pkgs.lightlocker "light-locker"} &
     '';
     windowManager = {
       xmonad = {
