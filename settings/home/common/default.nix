@@ -63,9 +63,10 @@ in
                 "dpp/treesitter.lua"
               ];
               skk_dict = "${pkgs.skkDictionaries.l}/share/skk/SKK-JISYO.L";
-              deno =
-                if pkgs.stdenv.isLinux then lib.getExe upkgs.deno."${denoVersion}" else lib.getExe upkgs.deno;
-              copilot_ls = lib.getExe upkgs.copilot-language-server;
+              deno = lib.getExe (if pkgs.stdenv.isLinux then upkgs.deno."${denoVersion}" else upkgs.deno);
+              copilot_ls = lib.getExe (
+                if pkgs.stdenv.isLinux then upkgs.copilot-language-server-fhs else upkgs.copilot-language-server
+              );
               treesitter_parsers = "${upkgs.symlinkJoin {
                 name = "ts-parsers";
                 paths = upkgs.vimPlugins.nvim-treesitter.withAllGrammars.dependencies;

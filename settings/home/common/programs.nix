@@ -360,7 +360,6 @@ in
           nil
           tree-sitter
           efm-langserver
-          copilot-language-server
           mcp-hub
         ])
         ++ lib.optionals pkgs.stdenv.isLinux [
