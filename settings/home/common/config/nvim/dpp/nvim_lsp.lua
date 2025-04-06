@@ -100,6 +100,12 @@ lspconfig.yamlls.setup({
     on_attach = on_attach,
 })
 
+lspconfig.unocss.setup({
+    cmd = { "./node_modules/.bin/unocss-language-server", "--stdio" },
+    on_attach = on_attach,
+    autostart = true,
+})
+
 lspconfig.lua_ls.setup({
     on_attach = on_attach,
     settings = {
