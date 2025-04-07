@@ -3,6 +3,7 @@
   pkgs,
   upkgs,
   denoVersion,
+  mcp-servers-nix,
   ...
 }:
 let
@@ -48,7 +49,13 @@ in
         source = ./config/sheldon;
       };
       "mcp/mcpservers.json" = {
-        text = lib.strings.toJSON { mcpServers = { }; };
+        source = mcp-servers-nix.lib.mkConfig upkgs {
+          programs = {
+            fetch = {
+              enable = true;
+            };
+          };
+        };
       };
       "nvim" = {
         source = pkgs.symlinkJoin {

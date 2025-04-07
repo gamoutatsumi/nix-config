@@ -254,6 +254,14 @@
         };
       };
     };
+    mcp-servers-nix = {
+      url = "github:natsukium/mcp-servers-nix";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs-unstable";
+        };
+      };
+    };
     monitored = {
       url = "github:ners/nix-monitored";
       inputs = {
@@ -541,6 +549,7 @@
           imports,
           username,
           upkgs,
+          mcp-servers-nix,
           networkManager ? false,
         }:
         {
@@ -562,6 +571,7 @@
                 upkgs
                 denoVersion
                 networkManager
+                mcp-servers-nix
                 ;
             };
           };
@@ -621,6 +631,7 @@
                     _:
                     homeManagerConf {
                       inherit username upkgs;
+                      inherit (inputs) mcp-servers-nix;
                       imports = [ ./settings/home/linux.nix ];
                       networkManager = true;
                     }
@@ -663,6 +674,7 @@
                     _:
                     homeManagerConf {
                       inherit username upkgs;
+                      inherit (inputs) mcp-servers-nix;
                       imports = [ ./settings/home/linux.nix ];
                     }
                   )
@@ -704,6 +716,7 @@
                     _:
                     homeManagerConf {
                       inherit upkgs;
+                      inherit (inputs) mcp-servers-nix;
                       imports = [ ./settings/home/darwin.nix ];
                       username = darwinUser;
                     }

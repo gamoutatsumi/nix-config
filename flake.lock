@@ -523,6 +523,26 @@
         "type": "github"
       }
     },
+    "mcp-servers-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1743964260,
+        "narHash": "sha256-y09nlk3cPazQUu8mVTyaZBGpJ9iOs18jZvQh2DkuLWI=",
+        "owner": "natsukium",
+        "repo": "mcp-servers-nix",
+        "rev": "2f242905643b0b1145def24d66cd1b98ef5bf71f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "natsukium",
+        "repo": "mcp-servers-nix",
+        "type": "github"
+      }
+    },
     "monitored": {
       "inputs": {
         "nixpkgs": [
@@ -824,6 +844,7 @@
         "hmd": "hmd",
         "home-manager": "home-manager",
         "lanzaboote": "lanzaboote",
+        "mcp-servers-nix": "mcp-servers-nix",
         "monitored": "monitored",
         "naersk": "naersk",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
