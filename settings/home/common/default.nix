@@ -54,6 +54,12 @@ in
             fetch = {
               enable = true;
             };
+            time = {
+              enable = true;
+            };
+            git = {
+              enable = true;
+            };
           };
         };
       };
