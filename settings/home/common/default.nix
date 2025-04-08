@@ -56,6 +56,10 @@ in
             };
             time = {
               enable = true;
+              args = [
+                "--local-timezone"
+                "Asia/Tokyo"
+              ];
             };
             git = {
               enable = true;

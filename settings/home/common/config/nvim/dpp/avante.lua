@@ -1,16 +1,6 @@
 -- lua_source {{{
 require("avante").setup({
-    provider = require("avante-status").get_chat_provider({ "copilot", "ollama" }),
-    auto_suggestions_provider = require("avante-status").get_suggestions_provider({ "copilot", "ollama" }),
-    copilot = {
-        model = "o1",
-    },
-    ollama = {
-        model = "codestral:22b-v0.1-q4_K_S",
-    },
-    file_selector = {
-        provider = "native",
-    },
+    auto_suggestions_provider = "copilot",
     behaviour = {
         auto_suggestions = false,
         auto_set_highlight_group = true,
@@ -21,6 +11,37 @@ require("avante").setup({
         enable_cursor_planning_mode = false,
         support_paste_from_clipboard = false,
     },
+    copilot = {
+        model = "gpt-4o",
+    },
+    custom_tools = function()
+        return {
+            require("mcphub.extensions.avante").mcp_tool(),
+        }
+    end,
+    disabled_tools = {
+        "list_files",
+        "search_files",
+        "read_file",
+        "create_file",
+        "rename_file",
+        "delete_file",
+        "create_dir",
+        "rename_dir",
+        "delete_dir",
+        "bash",
+    },
+    file_selector = {
+        provider = "native",
+    },
+    ollama = {
+        model = "codestral:22b-v0.1-q4_K_S",
+    },
+    provider = "copilot",
+    system_prompt = function()
+        local hub = require("mcphub").get_hub_instance()
+        return hub:get_active_servers_prompt()
+    end,
     windows = {
         position = "right",
         wrap = true,

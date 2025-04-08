@@ -10,7 +10,7 @@ hooks_file = '$BASE_DIR/dpp/gitsigns.lua'
 
 [[plugins]]
 repo = 'nvim-lualine/lualine.nvim'
-depends = ['avante-status.nvim']
+depends = ['avante-status.nvim', 'mcphub.nvim']
 hooks_file = '$BASE_DIR/dpp/lualine.lua'
 
 [[plugins]]

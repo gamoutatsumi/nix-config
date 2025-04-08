@@ -17,5 +17,8 @@ require("mcphub").setup({
         file_path = nil,
         prefix = "MCPHub",
     },
+    extensions = {
+        avante = {},
+    },
 })
 -- }}}
