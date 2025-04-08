@@ -64,6 +64,15 @@ in
             git = {
               enable = true;
             };
+            sequential-thinking = {
+              enable = true;
+            };
+            github = {
+              enable = false;
+            };
+            filesystem = {
+              enable = false;
+            };
           };
         };
       };
