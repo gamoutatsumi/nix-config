@@ -27,6 +27,7 @@ require("avante").setup({
         "rename_dir",
         "delete_dir",
         "bash",
+        "web_search",
     },
     file_selector = {
         provider = "native",
