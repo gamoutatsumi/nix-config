@@ -1,6 +1,6 @@
 -- lua_source {{{
 require("avante").setup({
-    auto_suggestions_provider = "ollama",
+    auto_suggestions_provider = "copilot",
     behaviour = {
         auto_suggestions = false,
         auto_set_highlight_group = true,
@@ -37,7 +37,7 @@ require("avante").setup({
     ollama = {
         model = "phi4",
     },
-    provider = "ollama",
+    provider = "copilot",
     system_prompt = function()
         local hub = require("mcphub").get_hub_instance()
         return hub:get_active_servers_prompt()
