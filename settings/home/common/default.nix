@@ -75,6 +75,9 @@ in
             filesystem = {
               enable = false;
             };
+            playwright = {
+              enable = true;
+            };
           };
         };
       };
