@@ -68,7 +68,8 @@ in
               enable = true;
             };
             github = {
-              enable = false;
+              enable = true;
+              passwordCommand = "gh auth token";
             };
             filesystem = {
               enable = false;
