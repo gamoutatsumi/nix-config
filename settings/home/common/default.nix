@@ -9,6 +9,41 @@
 }:
 let
   toKeyValue = lib.generators.toKeyValue { listsAsDuplicateKeys = true; };
+  mcpConfig =
+    {
+      format ? "json",
+    }:
+    mcp-servers-nix.lib.mkConfig upkgs {
+      inherit format;
+      programs = {
+        fetch = {
+          enable = true;
+        };
+        time = {
+          enable = true;
+          args = [
+            "--local-timezone"
+            "Asia/Tokyo"
+          ];
+        };
+        git = {
+          enable = true;
+        };
+        sequential-thinking = {
+          enable = true;
+        };
+        github = {
+          enable = true;
+          passwordCommand = ''echo "GITHUB_PERSONAL_ACCESS_TOKEN=''$(${upkgs.lib.getExe config.programs.gh.package} auth token)"'';
+        };
+        filesystem = {
+          enable = false;
+        };
+        playwright = {
+          enable = true;
+        };
+      };
+    };
 in
 {
   imports = [
@@ -49,38 +84,6 @@ in
       "sheldon" = {
         source = ./config/sheldon;
       };
-      "mcp/mcpservers.json" = {
-        source = mcp-servers-nix.lib.mkConfig upkgs {
-          programs = {
-            fetch = {
-              enable = true;
-            };
-            time = {
-              enable = true;
-              args = [
-                "--local-timezone"
-                "Asia/Tokyo"
-              ];
-            };
-            git = {
-              enable = true;
-            };
-            sequential-thinking = {
-              enable = true;
-            };
-            github = {
-              enable = true;
-              passwordCommand = ''echo "GITHUB_PERSONAL_ACCESS_TOKEN=''$(${upkgs.lib.getExe config.programs.gh.package} auth token)"'';
-            };
-            filesystem = {
-              enable = false;
-            };
-            playwright = {
-              enable = true;
-            };
-          };
-        };
-      };
       "nvim" = {
         source = pkgs.symlinkJoin {
           name = "nvim";
@@ -100,6 +103,7 @@ in
                 if pkgs.stdenv.isLinux then upkgs.copilot-language-server-fhs else upkgs.copilot-language-server
               );
               mcp_hub = lib.getExe' upkgs.mcp-hub "mcp-hub";
+              mcp_config = "${mcpConfig { format = "json"; }}";
               treesitter_parsers = "${upkgs.symlinkJoin {
                 name = "ts-parsers";
                 paths = upkgs.vimPlugins.nvim-treesitter.withAllGrammars.dependencies;

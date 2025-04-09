@@ -1,7 +1,7 @@
 -- lua_add {{{
 require("mcphub").setup({
     port = 3000,
-    config = vim.fn.expand("~/.config/mcp/mcpservers.json"),
+    config = "@mcp_config@",
     cmd = "@mcp_hub@",
 
     on_ready = function(hub) end,
