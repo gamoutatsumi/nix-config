@@ -202,4 +202,5 @@ hooks_file = ['$BASE_DIR/dpp/copilot.lua']
 
 [[plugins]]
 repo = 'ravitemer/mcphub.nvim'
+dependa = ['plenary.nvim']
 hooks_file = ['$BASE_DIR/dpp/mcphub.lua']

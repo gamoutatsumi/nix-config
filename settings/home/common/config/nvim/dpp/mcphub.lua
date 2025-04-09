@@ -18,7 +18,10 @@ require("mcphub").setup({
         prefix = "MCPHub",
     },
     extensions = {
-        avante = {},
+        avante = {
+            make_slash_command = true,
+        },
     },
+    use_bundled_binary = false,
 })
 -- }}}
