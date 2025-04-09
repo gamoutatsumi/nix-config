@@ -96,7 +96,7 @@ in
               copilot_ls = lib.getExe (
                 if pkgs.stdenv.isLinux then upkgs.copilot-language-server-fhs else upkgs.copilot-language-server
               );
-              mcp_hub = lib.getExe upkgs.mcp-hub;
+              mcp_hub = lib.getExe' upkgs.mcp-hub "mcp-hub";
               treesitter_parsers = "${upkgs.symlinkJoin {
                 name = "ts-parsers";
                 paths = upkgs.vimPlugins.nvim-treesitter.withAllGrammars.dependencies;
