@@ -29,7 +29,7 @@ in
           OCO_EMOJI = true;
           OCO_GITPUSH = false;
           OCO_LANGUAGE = "en";
-          OCO_MODEL = "codestral:22b-v0.1-q4_K_S";
+          OCO_MODEL = "phi4";
           OCO_ONE_LINE_COMMIT = false;
           OCO_PROMPT_MODULE = "conventional-commit";
           # keep-sorted end

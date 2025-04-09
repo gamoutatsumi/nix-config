@@ -194,7 +194,7 @@
       package = pkgs.ollama;
       enable = true;
       acceleration = "cuda";
-      loadModels = [ "codestral:22b-v0.1-q4_K_S" ];
+      loadModels = [ "phi4" ];
     };
     openssh = {
       settings = {

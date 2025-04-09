@@ -1,6 +1,6 @@
 -- lua_source {{{
 require("avante").setup({
-    auto_suggestions_provider = "copilot",
+    auto_suggestions_provider = "ollama",
     behaviour = {
         auto_suggestions = false,
         auto_set_highlight_group = true,
@@ -10,9 +10,6 @@ require("avante").setup({
         enable_token_counting = true,
         enable_cursor_planning_mode = false,
         support_paste_from_clipboard = false,
-    },
-    copilot = {
-        model = "gpt-4o",
     },
     custom_tools = function()
         return {
@@ -34,10 +31,13 @@ require("avante").setup({
     file_selector = {
         provider = "native",
     },
-    ollama = {
-        model = "codestral:22b-v0.1-q4_K_S",
+    copilot = {
+        model = "gpt-4o",
     },
-    provider = "copilot",
+    ollama = {
+        model = "phi4",
+    },
+    provider = "ollama",
     system_prompt = function()
         local hub = require("mcphub").get_hub_instance()
         return hub:get_active_servers_prompt()
