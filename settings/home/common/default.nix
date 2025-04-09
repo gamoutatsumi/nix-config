@@ -4,6 +4,7 @@
   upkgs,
   denoVersion,
   mcp-servers-nix,
+  config,
   ...
 }:
 let
@@ -69,7 +70,7 @@ in
             };
             github = {
               enable = true;
-              passwordCommand = "gh auth token";
+              passwordCommand = ''echo "GITHUB_PERSONAL_ACCESS_TOKEN=''$(${upkgs.lib.getExe config.programs.gh.package} auth token)"'';
             };
             filesystem = {
               enable = false;
