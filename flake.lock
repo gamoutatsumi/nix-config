@@ -523,6 +523,29 @@
         "type": "github"
       }
     },
+    "mcp-hub": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1744045021,
+        "narHash": "sha256-nwbqi3sd4IBTZstZ9m++/JS4TrEiOG/4vx0/KDy5j3c=",
+        "owner": "ravitemer",
+        "repo": "mcp-hub",
+        "rev": "3381c41e74f00e6479005b838b44b98484be2644",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ravitemer",
+        "repo": "mcp-hub",
+        "type": "github"
+      }
+    },
     "mcp-servers-nix": {
       "inputs": {
         "nixpkgs": [
@@ -844,6 +867,7 @@
         "hmd": "hmd",
         "home-manager": "home-manager",
         "lanzaboote": "lanzaboote",
+        "mcp-hub": "mcp-hub",
         "mcp-servers-nix": "mcp-servers-nix",
         "monitored": "monitored",
         "naersk": "naersk",

@@ -254,6 +254,17 @@
         };
       };
     };
+    mcp-hub = {
+      url = "github:ravitemer/mcp-hub";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs-unstable";
+        };
+        flake-parts = {
+          follows = "flake-parts";
+        };
+      };
+    };
     mcp-servers-nix = {
       url = "github:natsukium/mcp-servers-nix";
       inputs = {
@@ -503,6 +514,7 @@
       hmd,
       home-manager,
       lanzaboote,
+      mcp-hub,
       monitored,
       neovim-nightly-overlay,
       nix-darwin,
@@ -532,6 +544,7 @@
           };
           overlays = [
             # keep-sorted start
+            (_final: prev: { inherit (mcp-hub.packages.${prev.system}) mcp-hub; })
             agenix-rekey.overlays.default
             agenix.overlays.default
             emacs-overlay.overlays.default

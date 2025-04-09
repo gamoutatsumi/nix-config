@@ -360,7 +360,6 @@ in
           nil
           tree-sitter
           efm-langserver
-          mcp-hub
         ])
         ++ lib.optionals pkgs.stdenv.isLinux [
           upkgs.gcc

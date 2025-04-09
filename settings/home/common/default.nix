@@ -89,12 +89,14 @@ in
                 "init/plugins/dpp.vim"
                 "dpp/copilot.lua"
                 "dpp/treesitter.lua"
+                "dpp/mcphub.lua"
               ];
               skk_dict = "${pkgs.skkDictionaries.l}/share/skk/SKK-JISYO.L";
               deno = lib.getExe (if pkgs.stdenv.isLinux then upkgs.deno."${denoVersion}" else upkgs.deno);
               copilot_ls = lib.getExe (
                 if pkgs.stdenv.isLinux then upkgs.copilot-language-server-fhs else upkgs.copilot-language-server
               );
+              mcp_hub = lib.getExe upkgs.mcp-hub;
               treesitter_parsers = "${upkgs.symlinkJoin {
                 name = "ts-parsers";
                 paths = upkgs.vimPlugins.nvim-treesitter.withAllGrammars.dependencies;
