@@ -43,6 +43,13 @@ let
           enable = true;
         };
       };
+      settings = {
+        servers = {
+          yasunori = {
+            command = lib.getExe upkgs.yasunori-mcp;
+          };
+        };
+      };
     };
 in
 {

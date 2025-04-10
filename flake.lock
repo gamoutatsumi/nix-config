@@ -888,6 +888,7 @@
         "vim-src": "vim-src",
         "xremap": "xremap",
         "xremap-nix": "xremap-nix",
+        "yasunori": "yasunori",
         "zig": "zig"
       }
     },
@@ -1127,6 +1128,35 @@
       "original": {
         "owner": "xremap",
         "repo": "nix-flake",
+        "type": "github"
+      }
+    },
+    "yasunori": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ],
+        "systems": [
+          "systems"
+        ],
+        "treefmt-nix": [
+          "treefmt-nix"
+        ]
+      },
+      "locked": {
+        "lastModified": 1744247347,
+        "narHash": "sha256-9ejAqHiGebe2MEo/6xus6/PRMI8c0MqSYwOQMzloO20=",
+        "owner": "times-yasunori",
+        "repo": "awesome-yasunori",
+        "rev": "94130833c9e3fe67ceb46de2272d75ee00c73402",
+        "type": "github"
+      },
+      "original": {
+        "owner": "times-yasunori",
+        "repo": "awesome-yasunori",
         "type": "github"
       }
     },

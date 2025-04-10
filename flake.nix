@@ -484,6 +484,23 @@
         };
       };
     };
+    yasunori = {
+      url = "github:times-yasunori/awesome-yasunori";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs-unstable";
+        };
+        treefmt-nix = {
+          follows = "treefmt-nix";
+        };
+        flake-parts = {
+          follows = "flake-parts";
+        };
+        systems = {
+          follows = "systems";
+        };
+      };
+    };
     zig = {
       url = "github:mitchellh/zig-overlay";
       inputs = {
@@ -527,6 +544,7 @@
       treefmt-nix,
       vim-overlay,
       xremap-nix,
+      yasunori,
       # keep-sorted end
       ...
     }@inputs:
@@ -545,6 +563,7 @@
           overlays = [
             # keep-sorted start
             (_final: prev: { inherit (mcp-hub.packages.${prev.system}) mcp-hub; })
+            (_final: prev: { inherit (yasunori.packages.${prev.system}) yasunori-mcp; })
             agenix-rekey.overlays.default
             agenix.overlays.default
             emacs-overlay.overlays.default
