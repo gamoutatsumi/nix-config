@@ -226,7 +226,7 @@ in
       extensions = with pkgs; [ gh-copilot ];
       settings = {
         git_protocol = "https";
-        editor = lib.getExe config.programs.neovim.package;
+        editor = lib.getExe config.programs.neovim.finalPackage;
         prompt = "enabled";
         pager = lib.getExe' pkgs.ov "ov";
         aliases = {
@@ -293,7 +293,7 @@ in
           quotepath = false;
         };
         diff = {
-          tool = "${lib.getExe config.programs.neovim.package} -d";
+          tool = "${lib.getExe config.programs.neovim.finalPackage} -d";
           algorithm = "histogram";
         };
         difftool = {
@@ -416,26 +416,28 @@ in
           enkia.tokyo-night
           github.copilot
           github.copilot-chat
+          ms-ceintl.vscode-language-pack-ja
           oderwat.indent-rainbow
+          saoudrizwan.claude-dev
+          vscode-icons-team.vscode-icons
           # keep-sorted end
         ]
         ++ (with upkgs.vscode-marketplace; [
           taiyofujii.novel-writer
         ]);
       userSettings = {
-        editor = {
-          renderWhitespace = "boundary";
-          minimap = {
-            enabled = true;
-            renderCharacters = true;
-          };
-        };
-        workbench = {
-          colorTheme = "Tokyo Night";
-          sidebar = {
-            location = "left";
-          };
-        };
+        "chat.mcp.enabled" = true;
+        "chat.mcp.discovery.enabled" = true;
+        "editor.fontFamily" = "PlemolJP Console NF";
+        "editor.fontLigatures" = true;
+        "editor.fontSize" = 14;
+        "editor.renderWhitespace" = "boundary";
+        "editor.minimap.enabled" = true;
+        "editor.minimap.renderCharacters" = true;
+        "workbench.colorTheme" = "Tokyo Night";
+        "workbench.iconTheme" = "vscode-icons";
+        "cline.mcpMarketplace.enabled" = false;
+        "cline.preferredLanguage" = "Japanese - 日本語";
       };
     };
     wezterm = {
@@ -494,7 +496,7 @@ in
         LC_ALL = "ja_JP.UTF-8";
         LUAROCKS_HOME = "${config.xdg.dataHome}/luarocks";
         MAKEFLAGS = "-j";
-        MANPAGER = "${lib.getExe config.programs.neovim.package} -c ASMANPAGER -";
+        MANPAGER = "${lib.getExe config.programs.neovim.finalPackage} -c ASMANPAGER -";
         MYCLI_HISTFILE = "${config.xdg.dataHome}/mycli/history";
         NIX_CONFIG = "access-tokens = github.com=$(gh auth token)";
         PAGER = "${lib.getExe' pkgs.ov "ov"}";

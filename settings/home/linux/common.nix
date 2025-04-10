@@ -37,7 +37,6 @@
   home = {
     homeDirectory = "/home/${username}";
     file = {
-      ".vscode/argv.json".text = lib.strings.toJSON { password-store = "gnome-libsecret"; };
       ".pki/nssdb/pkcs11.txt".text =
         "library=
 name=NSS Internal PKCS #11 Module

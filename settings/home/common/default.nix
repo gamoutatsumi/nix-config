@@ -12,9 +12,10 @@ let
   mcpConfig =
     {
       format ? "json",
+      flavor ? "claude",
     }:
     mcp-servers-nix.lib.mkConfig upkgs {
-      inherit format;
+      inherit format flavor;
       programs = {
         fetch = {
           enable = true;
@@ -59,6 +60,15 @@ in
   ];
   home = {
     file = {
+      ".vscode/argv.json".text = lib.strings.toJSON {
+        password-store = "gnome-libsecret";
+        locale = "ja";
+      };
+      ".cursor/mcp.json" = {
+        source = mcpConfig {
+          format = "json";
+        };
+      };
       ".p10k.zsh" = {
         source = ./config/p10k.zsh;
       };
@@ -82,6 +92,12 @@ in
   };
   xdg = {
     configFile = {
+      "Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json" = {
+        source = mcpConfig {
+          format = "json";
+          flavor = "claude";
+        };
+      };
       "zeno" = {
         source = ./config/zeno;
       };
