@@ -255,7 +255,7 @@
       };
     };
     mcp-hub = {
-      url = "github:ravitemer/mcp-hub/v2.1.1";
+      url = "github:ravitemer/mcp-hub/3381c41e74f00e6479005b838b44b98484be2644";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs-unstable";
