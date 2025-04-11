@@ -413,9 +413,9 @@ in
           bbenoist.nix
           eamodio.gitlens
           editorconfig.editorconfig
-          enkia.tokyo-night
           github.copilot
           github.copilot-chat
+          github.github-vscode-theme
           ms-ceintl.vscode-language-pack-ja
           oderwat.indent-rainbow
           saoudrizwan.claude-dev
@@ -434,7 +434,7 @@ in
         "editor.renderWhitespace" = "boundary";
         "editor.minimap.enabled" = true;
         "editor.minimap.renderCharacters" = true;
-        "workbench.colorTheme" = "Tokyo Night";
+        "workbench.colorTheme" = "GitHub Dark Dimmed";
         "workbench.iconTheme" = "vscode-icons";
         "cline.mcpMarketplace.enabled" = false;
         "cline.preferredLanguage" = "Japanese - 日本語";
