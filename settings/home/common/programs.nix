@@ -74,6 +74,7 @@ in
         # keep-sorted end
       ])
       ++ (with upkgs; [
+        deno
         vim
       ]);
   };

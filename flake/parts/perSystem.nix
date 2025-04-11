@@ -1,6 +1,5 @@
 {
   upkgsConf,
-  denoVersion,
   localFlake,
 }:
 {
@@ -16,7 +15,6 @@ let
     inherit (pkgs) stdenv lib;
   };
   treefmtBuild = config.treefmt.build;
-  deno = if pkgs.stdenv.isLinux then upkgs.deno."${denoVersion}" else upkgs.deno;
 in
 {
   # keep-sorted start block=yes
@@ -77,7 +75,7 @@ in
         };
         denolint = {
           enable = true;
-          package = deno;
+          package = upkgs.deno;
         };
         flake-checker = {
           enable = true;
@@ -107,7 +105,7 @@ in
       };
       deno = {
         enable = true;
-        package = deno;
+        package = upkgs.deno;
       };
       hlint = {
         enable = true;

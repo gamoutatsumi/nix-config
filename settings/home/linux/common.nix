@@ -3,6 +3,8 @@
   config,
   username,
   lib,
+  mcpConfig,
+  upkgs,
   ...
 }:
 {
@@ -154,6 +156,14 @@ name=p11-kit-proxy\n";
       };
     };
     configFile = {
+      "Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json" = {
+        source = mcpConfig {
+          format = "json";
+          flavor = "claude";
+          inherit config lib;
+          pkgs = upkgs;
+        };
+      };
       "easyeffects/output/Happy_your_Life_+_Downmix_to_mono.json" = {
         source = ./config/easyeffects/Happy_your_Life_+_Downmix_to_mono.json;
       };

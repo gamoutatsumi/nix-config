@@ -532,6 +532,7 @@
       home-manager,
       lanzaboote,
       mcp-hub,
+      mcp-servers-nix,
       monitored,
       neovim-nightly-overlay,
       nix-darwin,
@@ -549,6 +550,7 @@
       ...
     }@inputs:
     let
+      denoVersion = "2.2.8";
       upkgsConf =
         {
           system,
@@ -560,28 +562,32 @@
           config = {
             allowUnfree = true;
           };
-          overlays = [
-            # keep-sorted start
-            (_final: prev: { inherit (mcp-hub.packages.${prev.system}) mcp-hub; })
-            (_final: prev: { inherit (yasunori.packages.${prev.system}) yasunori-mcp; })
-            agenix-rekey.overlays.default
-            agenix.overlays.default
-            emacs-overlay.overlays.default
-            ghostty.overlays.default
-            neovim-nightly-overlay.overlays.default
-            nix-vscode-extensions.overlays.default
-            oreore.overlays.default
-            vim-overlay.overlays.default
-            # keep-sorted end
-          ] ++ lib.optionals stdenv.isLinux [ deno-overlay.overlays.deno-overlay ];
+          overlays =
+            [
+              # keep-sorted start
+              (_final: prev: { inherit (mcp-hub.packages.${prev.system}) mcp-hub; })
+              (_final: prev: { inherit (yasunori.packages.${prev.system}) yasunori-mcp; })
+              agenix-rekey.overlays.default
+              agenix.overlays.default
+              emacs-overlay.overlays.default
+              ghostty.overlays.default
+              neovim-nightly-overlay.overlays.default
+              nix-vscode-extensions.overlays.default
+              oreore.overlays.default
+              vim-overlay.overlays.default
+              # keep-sorted end
+            ]
+            ++ lib.optionals stdenv.isLinux [
+              deno-overlay.overlays.deno-overlay
+              (_final: prev: { deno = prev.deno.${denoVersion}; })
+              (_final: prev: { copilot-language-server = prev.copilot-language-server-fhs; })
+            ];
         });
-      denoVersion = "2.2.8";
       homeManagerConf =
         {
           imports,
           username,
           upkgs,
-          mcp-servers-nix,
           networkManager ? false,
         }:
         {
@@ -601,10 +607,55 @@
               inherit
                 username
                 upkgs
-                denoVersion
                 networkManager
-                mcp-servers-nix
+                mcpConfig
                 ;
+            };
+          };
+        };
+      mcpConfig =
+        {
+          format ? "json",
+          flavor ? "claude",
+          pkgs,
+          config,
+          lib,
+        }:
+        mcp-servers-nix.lib.mkConfig pkgs {
+          inherit format flavor;
+          programs = {
+            fetch = {
+              enable = true;
+            };
+            time = {
+              enable = true;
+              args = [
+                "--local-timezone"
+                "Asia/Tokyo"
+              ];
+            };
+            git = {
+              enable = true;
+            };
+            sequential-thinking = {
+              enable = true;
+            };
+            github = {
+              enable = true;
+              passwordCommand = ''echo "GITHUB_PERSONAL_ACCESS_TOKEN=''$(${pkgs.lib.getExe config.programs.gh.package} auth token)"'';
+            };
+            filesystem = {
+              enable = false;
+            };
+            playwright = {
+              enable = true;
+            };
+          };
+          settings = {
+            servers = {
+              yasunori = {
+                command = lib.getExe pkgs.yasunori-mcp;
+              };
             };
           };
         };
@@ -663,7 +714,6 @@
                     _:
                     homeManagerConf {
                       inherit username upkgs;
-                      inherit (inputs) mcp-servers-nix;
                       imports = [ ./settings/home/linux.nix ];
                       networkManager = true;
                     }
@@ -706,7 +756,6 @@
                     _:
                     homeManagerConf {
                       inherit username upkgs;
-                      inherit (inputs) mcp-servers-nix;
                       imports = [ ./settings/home/linux.nix ];
                     }
                   )
@@ -748,7 +797,6 @@
                     _:
                     homeManagerConf {
                       inherit upkgs;
-                      inherit (inputs) mcp-servers-nix;
                       imports = [ ./settings/home/darwin.nix ];
                       username = darwinUser;
                     }
@@ -759,7 +807,7 @@
           };
         };
         perSystem = importApply ./flake/parts/perSystem.nix {
-          inherit upkgsConf denoVersion;
+          inherit upkgsConf;
           localFlake = self;
         };
       }

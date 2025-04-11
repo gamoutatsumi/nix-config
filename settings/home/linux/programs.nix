@@ -1,7 +1,6 @@
 {
   upkgs,
   pkgs,
-  denoVersion,
   lib,
   ...
 }:
@@ -33,7 +32,6 @@
       ]
       ++ (with upkgs; [
         agenix-rekey
-        deno.${denoVersion}
         ghostty
 
         # keep-sorted start

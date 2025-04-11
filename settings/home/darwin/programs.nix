@@ -1,4 +1,4 @@
-{ pkgs, upkgs, ... }:
+{ pkgs, ... }:
 {
   programs = {
     # keep-sorted start block=yes
@@ -17,16 +17,12 @@
     # keep-sorted end
   };
   home = {
-    packages =
-      (with pkgs; [
-        # keep-sorted start
-        colima
-        docker-client
-        lima
-        # keep-sorted end
-      ])
-      ++ (with upkgs; [
-        deno
-      ]);
+    packages = with pkgs; [
+      # keep-sorted start
+      colima
+      docker-client
+      lima
+      # keep-sorted end
+    ];
   };
 }

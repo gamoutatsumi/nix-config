@@ -2,56 +2,12 @@
   lib,
   pkgs,
   upkgs,
-  denoVersion,
-  mcp-servers-nix,
+  mcpConfig,
   config,
   ...
 }:
 let
   toKeyValue = lib.generators.toKeyValue { listsAsDuplicateKeys = true; };
-  mcpConfig =
-    {
-      format ? "json",
-      flavor ? "claude",
-    }:
-    mcp-servers-nix.lib.mkConfig upkgs {
-      inherit format flavor;
-      programs = {
-        fetch = {
-          enable = true;
-        };
-        time = {
-          enable = true;
-          args = [
-            "--local-timezone"
-            "Asia/Tokyo"
-          ];
-        };
-        git = {
-          enable = true;
-        };
-        sequential-thinking = {
-          enable = true;
-        };
-        github = {
-          enable = true;
-          passwordCommand = ''echo "GITHUB_PERSONAL_ACCESS_TOKEN=''$(${upkgs.lib.getExe config.programs.gh.package} auth token)"'';
-        };
-        filesystem = {
-          enable = false;
-        };
-        playwright = {
-          enable = true;
-        };
-      };
-      settings = {
-        servers = {
-          yasunori = {
-            command = lib.getExe upkgs.yasunori-mcp;
-          };
-        };
-      };
-    };
 in
 {
   imports = [
@@ -63,11 +19,6 @@ in
       ".vscode/argv.json".text = lib.strings.toJSON {
         password-store = "gnome-libsecret";
         locale = "ja";
-      };
-      ".cursor/mcp.json" = {
-        source = mcpConfig {
-          format = "json";
-        };
       };
       ".p10k.zsh" = {
         source = ./config/p10k.zsh;
@@ -92,12 +43,6 @@ in
   };
   xdg = {
     configFile = {
-      "Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json" = {
-        source = mcpConfig {
-          format = "json";
-          flavor = "claude";
-        };
-      };
       "zeno" = {
         source = ./config/zeno;
       };
@@ -121,12 +66,14 @@ in
                 "dpp/mcphub.lua"
               ];
               skk_dict = "${pkgs.skkDictionaries.l}/share/skk/SKK-JISYO.L";
-              deno = lib.getExe (if pkgs.stdenv.isLinux then upkgs.deno."${denoVersion}" else upkgs.deno);
-              copilot_ls = lib.getExe (
-                if pkgs.stdenv.isLinux then upkgs.copilot-language-server-fhs else upkgs.copilot-language-server
-              );
+              deno = lib.getExe upkgs.deno;
+              copilot_ls = lib.getExe upkgs.copilot-language-server;
               mcp_hub = lib.getExe' upkgs.mcp-hub "mcp-hub";
-              mcp_config = "${mcpConfig { format = "json"; }}";
+              mcp_config = "${mcpConfig {
+                format = "json";
+                pkgs = upkgs;
+                inherit config lib;
+              }}";
               treesitter_parsers = "${upkgs.symlinkJoin {
                 name = "ts-parsers";
                 paths = upkgs.vimPlugins.nvim-treesitter.withAllGrammars.dependencies;
