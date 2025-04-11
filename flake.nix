@@ -580,7 +580,7 @@
             ++ lib.optionals stdenv.isLinux [
               deno-overlay.overlays.deno-overlay
               (_final: prev: { deno = prev.deno.${denoVersion}; })
-              (_final: prev: { copilot-language-server = prev.copilot-language-server-fhs; })
+              (_final: prev: { copilot-language-server = prev.copilot-language-server.fhs; })
             ];
         });
       homeManagerConf =
