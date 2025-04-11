@@ -533,17 +533,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1744045021,
-        "narHash": "sha256-nwbqi3sd4IBTZstZ9m++/JS4TrEiOG/4vx0/KDy5j3c=",
+        "lastModified": 1744307637,
+        "narHash": "sha256-XNaH6Lkg1xR+BU/VNIHKHnuuk7weyho/jMxgQTrdPgg=",
         "owner": "ravitemer",
         "repo": "mcp-hub",
-        "rev": "3381c41e74f00e6479005b838b44b98484be2644",
+        "rev": "a3f3692d1f991ea02940096992fb8e744cc52fec",
         "type": "github"
       },
       "original": {
         "owner": "ravitemer",
         "repo": "mcp-hub",
-        "rev": "3381c41e74f00e6479005b838b44b98484be2644",
         "type": "github"
       }
     },
