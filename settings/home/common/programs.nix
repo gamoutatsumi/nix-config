@@ -439,6 +439,8 @@ in
         "workbench.iconTheme" = "vscode-icons";
         "cline.mcpMarketplace.enabled" = false;
         "cline.preferredLanguage" = "Japanese - 日本語";
+        "github.copilot.chat.codesearch.enabled" = true;
+        "github.copilot.chat.agent.thinkingTool" = true;
       };
     };
     wezterm = {
