@@ -194,7 +194,11 @@
       package = pkgs.ollama;
       enable = true;
       acceleration = "cuda";
-      loadModels = [ "phi4" ];
+      loadModels = [ "phi4:14b-q4_K_M" ];
+      environmentVariables = {
+        OLLAMA_FLASH_ATTENTION = "1";
+        OLLAMA_KV_CACHE_TYPE = "q8_0";
+      };
     };
     openssh = {
       settings = {
