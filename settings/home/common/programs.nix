@@ -417,6 +417,7 @@ in
           github.copilot
           github.copilot-chat
           github.github-vscode-theme
+          golang.go
           ms-ceintl.vscode-language-pack-ja
           oderwat.indent-rainbow
           saoudrizwan.claude-dev
