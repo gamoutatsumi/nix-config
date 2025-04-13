@@ -16,26 +16,14 @@
         agenix = {
           follows = "agenix_orig";
         };
-        crane = {
-          follows = "crane";
-        };
-        rust-overlay = {
-          follows = "rust-overlay";
-        };
         nixpkgs = {
           follows = "nixpkgs-unstable";
-        };
-        flake-utils = {
-          follows = "flake-utils";
         };
       };
     };
     agenix-rekey = {
       url = "github:oddlama/agenix-rekey";
       inputs = {
-        devshell = {
-          follows = "devshell";
-        };
         pre-commit-hooks = {
           follows = "pre-commit-hooks";
         };
@@ -67,9 +55,6 @@
         };
       };
     };
-    crane = {
-      url = "github:ipetkov/crane";
-    };
     dagger = {
       url = "github:dagger/nix";
       inputs = {
@@ -89,17 +74,6 @@
         };
         treefmt-nix = {
           follows = "treefmt-nix";
-        };
-        flake-compat = {
-          follows = "flake-compat";
-        };
-      };
-    };
-    devshell = {
-      url = "github:numtide/devshell";
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs";
         };
       };
     };
@@ -122,45 +96,19 @@
         };
       };
     };
-    fenix = {
-      url = "https://flakehub.com/f/nix-community/fenix/0.1.*";
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs";
-        };
-      };
-    };
     flake-checker = {
       url = "github:DeterminateSystems/flake-checker";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs";
         };
-        fenix = {
-          follows = "fenix";
-        };
-        naersk = {
-          follows = "naersk";
-        };
       };
-    };
-    flake-compat = {
-      url = "github:edolstra/flake-compat";
-      flake = false;
     };
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs = {
         nixpkgs-lib = {
           follows = "nixpkgs-unstable";
-        };
-      };
-    };
-    flake-utils = {
-      url = "github:numtide/flake-utils";
-      inputs = {
-        systems = {
-          follows = "systems";
         };
       };
     };
@@ -172,31 +120,6 @@
         };
         nixpkgs-stable = {
           follows = "nixpkgs";
-        };
-        zig = {
-          follows = "zig";
-        };
-        flake-compat = {
-          follows = "flake-compat";
-        };
-      };
-    };
-    gitignore = {
-      url = "github:hercules-ci/gitignore.nix";
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs";
-        };
-      };
-    };
-    hercules-ci-effects = {
-      url = "github:hercules-ci/hercules-ci-effects";
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs";
-        };
-        flake-parts = {
-          follows = "flake-parts";
         };
       };
     };
@@ -212,12 +135,6 @@
         flake-parts = {
           follows = "flake-parts";
         };
-        flake-utils = {
-          follows = "flake-utils";
-        };
-        poetry2nix = {
-          follows = "poetry2nix";
-        };
       };
     };
     home-manager = {
@@ -231,19 +148,7 @@
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.1";
       inputs = {
-        crane = {
-          follows = "crane";
-        };
-        rust-overlay = {
-          follows = "rust-overlay";
-        };
-        flake-utils = {
-          follows = "flake-utils";
-        };
         pre-commit-hooks-nix = {
-          follows = "";
-        };
-        flake-compat = {
           follows = "";
         };
         flake-parts = {
@@ -281,24 +186,30 @@
         };
       };
     };
-    naersk = {
-      url = "https://flakehub.com/f/nix-community/naersk/0.1.*";
+    mpd-mcp-server = {
+      url = "github:gamoutatsumi/mpd-mcp-server";
       inputs = {
-        nixpkgs = {
-          follows = "nixpkgs";
+        systems = {
+          follows = "systems";
+        };
+        flake-parts = {
+          follows = "flake-parts";
+        };
+        pre-commit-hooks = {
+          follows = "pre-commit-hooks";
+        };
+        treefmt-nix = {
+          follows = "treefmt-nix";
+        };
+        flake-checker = {
+          follows = "flake-checker";
         };
       };
     };
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
       inputs = {
-        hercules-ci-effects = {
-          follows = "";
-        };
         git-hooks = {
-          follows = "";
-        };
-        flake-compat = {
           follows = "";
         };
         flake-parts = {
@@ -330,9 +241,6 @@
         nixpkgs = {
           follows = "nixpkgs";
         };
-        flake-utils = {
-          follows = "flake-utils";
-        };
       };
     };
     nixpkgs = {
@@ -353,14 +261,8 @@
         nixpkgs-unstable = {
           follows = "nixpkgs-unstable";
         };
-        rust-overlay = {
-          follows = "rust-overlay";
-        };
         systems = {
           follows = "systems";
-        };
-        flake-compat = {
-          follows = "flake-compat";
         };
         flake-parts = {
           follows = "flake-parts";
@@ -376,50 +278,13 @@
         };
       };
     };
-    poetry2nix = {
-      url = "github:nix-community/poetry2nix";
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs";
-        };
-        systems = {
-          follows = "systems";
-        };
-        flake-utils = {
-          follows = "flake-utils";
-        };
-        nix-github-actions = {
-          follows = "";
-        };
-        treefmt-nix = {
-          follows = "";
-        };
-      };
-    };
     pre-commit-hooks = {
       url = "github:cachix/git-hooks.nix";
       inputs = {
-        flake-compat = {
-          follows = "flake-compat";
-        };
-        gitignore = {
-          follows = "gitignore";
-        };
         nixpkgs = {
           follows = "nixpkgs-unstable";
         };
       };
-    };
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs-unstable";
-        };
-      };
-    };
-    systems = {
-      url = "github:nix-systems/default";
     };
     tinty-schemes = {
       url = "github:tinted-theming/schemes";
@@ -458,12 +323,6 @@
     xremap-nix = {
       url = "github:xremap/nix-flake";
       inputs = {
-        crane = {
-          follows = "crane";
-        };
-        devshell = {
-          follows = "devshell";
-        };
         hyprland = {
           follows = "";
         };
@@ -501,20 +360,6 @@
         };
       };
     };
-    zig = {
-      url = "github:mitchellh/zig-overlay";
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs";
-        };
-        flake-compat = {
-          follows = "";
-        };
-        flake-utils = {
-          follows = "flake-utils";
-        };
-      };
-    };
     # keep-sorted end
   };
   outputs =
@@ -534,6 +379,7 @@
       mcp-hub,
       mcp-servers-nix,
       monitored,
+      mpd-mcp-server,
       neovim-nightly-overlay,
       nix-darwin,
       nix-vscode-extensions,
@@ -566,6 +412,7 @@
             [
               # keep-sorted start
               (_final: prev: { inherit (mcp-hub.packages.${prev.system}) mcp-hub; })
+              (_final: prev: { inherit (mpd-mcp-server.packages.${prev.system}) mpd-mcp-server; })
               (_final: prev: { inherit (yasunori.packages.${prev.system}) yasunori-mcp; })
               agenix-rekey.overlays.default
               agenix.overlays.default
@@ -655,6 +502,9 @@
             servers = {
               yasunori = {
                 command = lib.getExe pkgs.yasunori-mcp;
+              };
+              mpd = {
+                command = lib.getExe pkgs.mpd-mcp-server;
               };
             };
           };
