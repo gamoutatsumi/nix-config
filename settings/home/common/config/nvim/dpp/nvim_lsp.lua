@@ -84,8 +84,9 @@ local on_attach = function(client, bufnr)
     end
 end
 
-lspconfig.yamlls.setup({
-    autostart = true,
+vim.lsp.config("*", { on_attach = on_attach })
+
+vim.lsp.config("yamlls", {
     settings = {
         yaml = {
             schemaStore = {
@@ -97,20 +98,32 @@ lspconfig.yamlls.setup({
             },
         },
     },
-    on_attach = on_attach,
 })
 
-lspconfig.unocss.setup({
+vim.lsp.config("unocss", {
     cmd = { "./node_modules/.bin/unocss-language-server", "--stdio" },
-    on_attach = on_attach,
-    autostart = true,
 })
+vim.lsp.enable("unocss")
 
-lspconfig.lua_ls.setup({
-    on_attach = on_attach,
+vim.lsp.config("lua_ls", {
     settings = {
-        Lua = {
-            runtime = { version = "LuaJIT" },
+        Lua = {},
+    },
+    on_init = function(client)
+        if client.workspace_folders then
+            local path = client.workspace_folders[1].name
+            if
+                path ~= vim.fn.stdpath("config")
+                and (vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc"))
+            then
+                return
+            end
+        end
+
+        client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
+            runtime = {
+                version = "LuaJIT",
+            },
             diagnostics = {
                 enable = true,
                 globals = { "vim" },
@@ -124,35 +137,84 @@ lspconfig.lua_ls.setup({
             format = {
                 enable = false,
             },
-            workspace = {
-                library = vim.api.nvim_get_runtime_file("", true),
-            },
             telemetry = {
                 enable = false,
             },
-        },
-    },
+            workspace = {
+                checkThirdParty = false,
+                library = {
+                    vim.env.VIMRUNTIME,
+                },
+            },
+        })
+    end,
 })
+vim.lsp.enable("lua_ls")
 
-lspconfig.biome.setup({
-    on_attach = on_attach,
-    autostart = true,
-})
+if vim.fn.executable("./node_modules/.bin/biome") == 1 then
+    vim.lsp.config("biome", {
+        cmd = { "./node_modules/.bin/biome", "lsp" },
+    })
+end
+
+vim.lsp.enable("biome")
 
 lspconfig.astro.setup({
     on_attach = on_attach,
     autostart = true,
 })
 
-lspconfig.ts_ls.setup({
-    on_attach = on_attach,
-    autostart = true,
-})
+if vim.fn.executable("typescript-language-server") == 1 then
+    vim.lsp.enable("ts_ls")
+end
+
+if vim.fn.executable("vtsls") == 1 then
+    vim.lsp.config("vtsls", {
+        on_attach = function(client, bufnr)
+            on_attach(client, bufnr)
+            client.server_capabilities.document_formatting = false
+        end,
+        settings = {
+            javascript = {
+                preferGoToSourceDefinition = true,
+                suggest = {
+                    autoImports = false,
+                },
+            },
+            typescript = {
+                preferGoToSourceDefinition = true,
+                suggest = {
+                    completeFunctionCalls = true,
+                    autoImports = false,
+                },
+                inlayHints = {
+                    parameterNames = {
+                        enabled = "all",
+                    },
+                    variableTypes = {
+                        enabled = true,
+                    },
+                    propertyDeclarationTypes = {
+                        enabled = true,
+                    },
+                    functionLikeReturnTypes = {
+                        enabled = true,
+                    },
+                    enumMemberValues = {
+                        enabled = true,
+                    },
+                    parameterTypes = {
+                        enabled = true,
+                    },
+                },
+            },
+        },
+    })
+    vim.lsp.enable("vtsls")
+end
 
 if vim.fn.executable("typescript-language-server") == 0 and vim.fn.executable("vtsls") == 0 then
-    lspconfig.denols.setup({
-        on_attach = on_attach,
-        autostart = true,
+    vim.lsp.config("denols", {
         settings = {
             typescript = {
                 suggest = {
@@ -195,16 +257,12 @@ if vim.fn.executable("typescript-language-server") == 0 and vim.fn.executable("v
             },
         },
     })
+    vim.lsp.enable("denols")
 end
 
-lspconfig.hls.setup({
-    on_attach = on_attach,
-    autostart = true,
-})
+vim.lsp.enable("hls")
 
-lspconfig["nil_ls"].setup({
-    on_attach = on_attach,
-    autostart = true,
+vim.lsp.config("nil_ls", {
     settings = {
         ["nil"] = {
             formatting = {
@@ -213,40 +271,9 @@ lspconfig["nil_ls"].setup({
         },
     },
 })
+vim.lsp.enable("nil_ls")
 
--- require("typescript").setup({
---   disable_commands = false,
---   debug = false,
---   go_to_source_definition = {
---     fallback = true,
---   },
---   server = {
---     autostart = is_node_repo,
---     on_attach = function(client, bufnr)
---       on_attach(client, bufnr)
---       client.server_capabilities.document_formatting = false
---     end,
---     settings = {
---       javascript = {
---         format = {
---           enable = false,
---         },
---       },
---       typescript = {
---         format = {
---           enable = false,
---         },
---         tsserver = {
---           useSyntaxServer = false,
---         },
---       },
---     },
---   },
--- })
-
-lspconfig.sourcekit.setup({
-    on_attach = on_attach,
-    autostart = true,
+vim.lsp.config("sourcekit", {
     capabilities = {
         workspace = {
             didChangeWatchedFiles = {
@@ -267,6 +294,7 @@ lspconfig.sourcekit.setup({
         "arm64-apple-ios17.5-simulator",
     },
 })
+vim.lsp.enable("sourcekit")
 
 require("go").setup({
     filstruct = "gopls",
@@ -275,50 +303,7 @@ require("go").setup({
     lsp_inlay_hints = { enable = false },
 })
 
-lspconfig.vtsls.setup({
-    autostart = true,
-    on_attach = function(client, bufnr)
-        on_attach(client, bufnr)
-        client.server_capabilities.document_formatting = false
-    end,
-    settings = {
-        javascript = {
-            preferGoToSourceDefinition = true,
-            suggest = {
-                autoImports = false,
-            },
-        },
-        typescript = {
-            preferGoToSourceDefinition = true,
-            suggest = {
-                completeFunctionCalls = true,
-                autoImports = false,
-            },
-            inlayHints = {
-                parameterNames = {
-                    enabled = "all",
-                },
-                variableTypes = {
-                    enabled = true,
-                },
-                propertyDeclarationTypes = {
-                    enabled = true,
-                },
-                functionLikeReturnTypes = {
-                    enabled = true,
-                },
-                enumMemberValues = {
-                    enabled = true,
-                },
-                parameterTypes = {
-                    enabled = true,
-                },
-            },
-        },
-    },
-})
-
-lspconfig.gopls.setup({
+vim.lsp.config("gopls", {
     on_attach = function(client, bufnr)
         on_attach(client, bufnr)
         client.server_capabilities.document_formatting = false
@@ -337,10 +322,9 @@ lspconfig.gopls.setup({
         },
     },
 })
+vim.lsp.enable("gopls")
 
-lspconfig.jsonls.setup({
-    cmd = { "vscode-json-languageserver", "--stdio" },
-    filetypes = { "json", "jsonc" },
+vim.lsp.config("jsonls", {
     settings = {
         json = {
             schemas = schemas.json.schemas(),
@@ -349,8 +333,8 @@ lspconfig.jsonls.setup({
     init_options = {
         provideFormatter = true,
     },
-    on_attach = on_attach,
 })
+vim.lsp.enable("jsonls")
 
 local eslint_d = require("efmls-configs.linters.eslint_d")
 local prettierd = require("efmls-configs.formatters.prettier_d")
@@ -393,22 +377,13 @@ lspconfig.efm.setup({
     },
 })
 
-lspconfig.terraformls.setup({
-    autostart = true,
-    on_attach = on_attach,
-})
+vim.lsp.enable("terraformls")
 
-lspconfig.pyright.setup({
-    autostart = true,
-    on_attach = on_attach,
-})
+vim.lsp.enable("pyright")
 
-lspconfig.rust_analyzer.setup({
-    autostart = true,
-    on_attach = on_attach,
-})
+vim.lsp.enable("rust_analyzer")
 
-lspconfig.fennel_language_server.setup({
+vim.lsp.config("fennel_language_server", {
     settings = {
         fennel = {
             diagnostics = {
@@ -420,4 +395,5 @@ lspconfig.fennel_language_server.setup({
         },
     },
 })
+vim.lsp.enable("fennel_language_server")
 -- }}}
