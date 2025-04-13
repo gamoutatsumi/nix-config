@@ -10,6 +10,4 @@ nnoremap <Leader>q <Cmd>confirm quit<CR>
 nnoremap Q <Nop>
 nunmap gra
 nunmap gri
-nunmap gra
-nunmap gra
 xunmap gra
