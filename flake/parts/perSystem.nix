@@ -130,6 +130,7 @@ in
       };
       stylua = {
         enable = true;
+        package = upkgs.stylua;
       };
       taplo = {
         enable = true;

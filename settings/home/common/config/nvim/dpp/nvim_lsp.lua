@@ -119,7 +119,6 @@ vim.lsp.config("lua_ls", {
                 return
             end
         end
-
         client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
             runtime = {
                 version = "LuaJIT",
@@ -262,15 +261,6 @@ end
 
 vim.lsp.enable("hls")
 
-vim.lsp.config("nil_ls", {
-    settings = {
-        ["nil"] = {
-            formatting = {
-                command = { "nixfmt" },
-            },
-        },
-    },
-})
 vim.lsp.enable("nil_ls")
 
 vim.lsp.config("sourcekit", {
