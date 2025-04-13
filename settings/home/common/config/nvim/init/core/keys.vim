@@ -8,3 +8,8 @@ nnoremap <expr> 0 getline('.')[0 : col('.') - 2] =~# '^\\s\\+$' ? '0' : '^'
 nnoremap <Leader>w <Cmd>update<CR>
 nnoremap <Leader>q <Cmd>confirm quit<CR>
 nnoremap Q <Nop>
+nunmap gra
+nunmap gri
+nunmap gra
+nunmap gra
+xunmap gra
