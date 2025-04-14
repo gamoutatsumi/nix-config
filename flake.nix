@@ -499,14 +499,17 @@
             };
           };
           settings = {
-            servers = {
-              yasunori = {
-                command = lib.getExe pkgs.yasunori-mcp;
+            servers =
+              {
+                yasunori = {
+                  command = lib.getExe pkgs.yasunori-mcp;
+                };
+              }
+              // lib.optionalAttrs config.services.mpd.enable {
+                mpd = {
+                  command = lib.getExe pkgs.mpd-mcp-server;
+                };
               };
-              mpd = {
-                command = lib.getExe pkgs.mpd-mcp-server;
-              };
-            };
           };
         };
     in
