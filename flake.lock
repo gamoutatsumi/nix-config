@@ -932,11 +932,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1744596456,
-        "narHash": "sha256-WxfXHDt3LNm+xzOxcTFYQlEPgZMBM74412prn1PmQAg=",
+        "lastModified": 1744616876,
+        "narHash": "sha256-dxPp4xXMxtLcSiNNXMrUjYqu31KkRJyCmth6o6BZPxE=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "fd76646a95e3035a166a2582fdd7a21dca9ececa",
+        "rev": "287955cfb401df4e43bd22c10fa29ff234ffdef6",
         "type": "github"
       },
       "original": {
