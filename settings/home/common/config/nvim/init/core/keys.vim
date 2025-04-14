@@ -1,5 +1,4 @@
 nnoremap x "_x
-nnoremap <silent> <CR> <Cmd>call append('.', '')<CR>
 nnoremap j gj
 nnoremap k gk
 nnoremap <expr> i len(getline('.')) ? 'i' : 'cc'
