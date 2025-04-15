@@ -36,7 +36,7 @@ require("avante").setup({
         model = "gpt-4o",
     },
     ollama = {
-        model = "phi4",
+        model = "hf.co/QuantFactory/Mistral-Nemo-Japanese-Instruct-2408-GGUF:Q4_K_M",
     },
     provider = "copilot",
     system_prompt = function()
