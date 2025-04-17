@@ -341,10 +341,6 @@ in
         }
       ];
     };
-    hmd = {
-      enable = true;
-      runOnSwitch = false;
-    };
     home-manager = {
       enable = false;
     };

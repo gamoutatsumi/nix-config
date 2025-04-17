@@ -115,20 +115,6 @@
         };
       };
     };
-    hmd = {
-      url = "github:pedorich-n/home-manager-diff";
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs-unstable";
-        };
-        systems = {
-          follows = "systems";
-        };
-        flake-parts = {
-          follows = "flake-parts";
-        };
-      };
-    };
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs = {
@@ -365,7 +351,6 @@
       emacs-overlay,
       flake-parts,
       ghostty,
-      hmd,
       home-manager,
       lanzaboote,
       mcp-hub,
@@ -437,7 +422,6 @@
               "${username}" = {
                 imports = [
                   oreore.homeManagerModules.theme
-                  hmd.hmModules.default
                 ] ++ imports;
               };
             };
