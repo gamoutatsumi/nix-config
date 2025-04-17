@@ -24,6 +24,7 @@ end
 
 require("ddc_source_lsp_setup").setup({ override_capabilities = true, respect_trigger = true })
 
+---@type vim.lsp.client.on_attach_cb
 local on_attach = function(client, bufnr)
     local function format()
         local formatOpts = {
@@ -109,18 +110,22 @@ if vim.fn.executable("typescript-language-server") == 0 and vim.fn.executable("v
     vim.lsp.enable("denols")
 end
 
-vim.lsp.enable({
-    "hls",
-    "nil_ls",
-    "sourcekit",
+local ensure_enabled = {
+    -- keep-sorted start
+    "biome",
+    "efm",
+    "fennel_language_server",
     "gopls",
+    "hls",
     "jsonls",
-    "terraformls",
+    "lua_ls",
+    "nil_ls",
     "pyright",
     "rust_analyzer",
-    "fennel_language_server",
-    "biome",
+    "sourcekit",
+    "terraformls",
     "unocss",
-    "lua_ls",
-})
+    -- keep-sorted end
+}
+vim.lsp.enable(ensure_enabled)
 -- }}}

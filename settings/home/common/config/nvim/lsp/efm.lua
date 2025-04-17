@@ -23,8 +23,9 @@ local languages = {
         require("efmls-configs.linters.statix"),
     },
 }
+
+---@type vim.lsp.Config
 return {
-    autostart = true,
     cmd = { "efm-langserver", "-q" },
     filetypes = vim.tbl_keys(languages),
     settings = {
