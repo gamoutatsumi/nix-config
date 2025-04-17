@@ -55,14 +55,6 @@
         };
       };
     };
-    dagger = {
-      url = "github:dagger/nix";
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs-unstable";
-        };
-      };
-    };
     deno-overlay = {
       url = "github:haruki7049/deno-overlay";
       inputs = {

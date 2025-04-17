@@ -31,27 +31,25 @@ in
           pathsToLink = [ "/share/zsh" ];
         }
       }/share/zsh/site-functions";
-      packages =
-        (with pkgs; [
-          lua-language-server
-          nvfetcher
-          (pkgs.haskell.packages.ghc98.ghcWithPackages (
-            haskellPackages:
-            with haskellPackages;
-            [
-              containers
-              unix
-              directory
-              haskell-language-server
-            ]
-            ++ lib.optionals pkgs.stdenv.isLinux [
-              xmonad
-              xmonad-extras
-              xmonad-contrib
-            ]
-          ))
-        ])
-        ++ [ inputs'.dagger.packages.dagger ];
+      packages = with pkgs; [
+        lua-language-server
+        nvfetcher
+        (pkgs.haskell.packages.ghc98.ghcWithPackages (
+          haskellPackages:
+          with haskellPackages;
+          [
+            containers
+            unix
+            directory
+            haskell-language-server
+          ]
+          ++ lib.optionals pkgs.stdenv.isLinux [
+            xmonad
+            xmonad-extras
+            xmonad-contrib
+          ]
+        ))
+      ];
       inputsFrom = [
         config.pre-commit.devShell
         treefmtBuild.devShell

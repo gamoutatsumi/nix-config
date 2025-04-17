@@ -136,26 +136,6 @@
         "type": "github"
       }
     },
-    "dagger": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs-unstable"
-        ]
-      },
-      "locked": {
-        "lastModified": 1744640986,
-        "narHash": "sha256-u+cUMJjfpw7HTbp/nXlD8ib+gmlvgrgeRxM8B5/JiHM=",
-        "owner": "dagger",
-        "repo": "nix",
-        "rev": "0b0d25ff7f0e951c402c04ccab9d62b9e7da30cb",
-        "type": "github"
-      },
-      "original": {
-        "owner": "dagger",
-        "repo": "nix",
-        "type": "github"
-      }
-    },
     "deno-overlay": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -1169,7 +1149,6 @@
         "agenix": "agenix",
         "agenix-rekey": "agenix-rekey",
         "agenix_orig": "agenix_orig",
-        "dagger": "dagger",
         "deno-overlay": "deno-overlay",
         "disko": "disko",
         "emacs-overlay": "emacs-overlay",
