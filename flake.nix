@@ -465,7 +465,13 @@
             };
             github = {
               enable = true;
-              passwordCommand = ''echo "GITHUB_PERSONAL_ACCESS_TOKEN=''$(${pkgs.lib.getExe config.programs.gh.package} auth token)"'';
+              passwordCommand = {
+                GITHUB_PERSONAL_ACCESS_TOKEN = [
+                  (pkgs.lib.getExe config.programs.gh.package)
+                  "auth"
+                  "token"
+                ];
+              };
             };
             filesystem = {
               enable = false;
@@ -479,6 +485,9 @@
               {
                 yasunori = {
                   command = lib.getExe pkgs.yasunori-mcp;
+                };
+                astro = {
+                  url = "http://localhost:4321/__mcp/sse";
                 };
               }
               // lib.optionalAttrs config.services.mpd.enable {
