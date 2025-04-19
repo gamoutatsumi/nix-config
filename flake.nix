@@ -373,7 +373,7 @@
       ...
     }@inputs:
     let
-      denoVersion = "2.2.9";
+      denoVersion = "2.2.11";
       upkgsConf =
         {
           system,
