@@ -296,11 +296,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1745023948,
-        "narHash": "sha256-zBRAJLR7JXy7U1mkO41TK/Juuh0/e2KTpp8vIy0wOEo=",
+        "lastModified": 1745153636,
+        "narHash": "sha256-fXozGC+hg1npLiYVs+9D3Ag1eQTqQsyK10f1ljyF1nQ=",
         "owner": "DeterminateSystems",
         "repo": "flake-checker",
-        "rev": "e097cbb0516a139a3816c54e24b33b19edff430e",
+        "rev": "e7256c3704740f66ed5ec79da470061a08604095",
         "type": "github"
       },
       "original": {
@@ -724,11 +724,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1744951805,
-        "narHash": "sha256-LJZTHtaENbndcrWnnPBiJ7D66zekzGNKq8q+qC6mLJQ=",
+        "lastModified": 1745154386,
+        "narHash": "sha256-ESWJkT3xNbDI2DvMVMuyqByI10G/JVdDy9dycj885dA=",
         "owner": "natsukium",
         "repo": "mcp-servers-nix",
-        "rev": "a40fb6f920cae336329af5fafbf75bce11205e8d",
+        "rev": "c070dfe98001b4c9330d67aa9df59d10af85d099",
         "type": "github"
       },
       "original": {
