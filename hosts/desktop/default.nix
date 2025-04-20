@@ -148,6 +148,7 @@
     };
     printing = {
       enable = true;
+      drivers = with upkgs; [ mfcj7100cdw-cups ];
     };
     pipewire = {
       extraConfig = {
