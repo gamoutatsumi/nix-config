@@ -1,13 +1,16 @@
 {
   upkgs,
   lib,
+  config,
   ...
 }:
 {
   services = {
     polybar = {
       enable = true;
-      package = upkgs.polybarFull;
+      package = upkgs.polybarFull.overrideAttrs (old: {
+        buildInputs = old.buildInputs ++ [ config.services.mpd.package ];
+      });
       script = lib.getExe upkgs.launchPolybar;
       config = {
         colors = {
