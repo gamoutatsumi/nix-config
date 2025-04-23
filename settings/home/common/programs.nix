@@ -64,6 +64,7 @@ in
         picocom
         pinact
         q-text-as-data
+        s3cmd
         sheldon
         ssm-session-manager-plugin
         stern
