@@ -116,7 +116,7 @@
       };
     };
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager?ref=release-24.11";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs";
@@ -124,7 +124,7 @@
       };
     };
     lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.4.1";
+      url = "github:nix-community/lanzaboote?ref=v0.4.1";
       inputs = {
         pre-commit-hooks-nix = {
           follows = "";
@@ -202,11 +202,11 @@
       };
     };
     neovim-src = {
-      url = "github:neovim/neovim/master?shallow=1";
+      url = "github:neovim/neovim?ref=master&shallow=1";
       flake = false;
     };
     nix-darwin = {
-      url = "github:nix-darwin/nix-darwin/nix-darwin-24.11";
+      url = "github:nix-darwin/nix-darwin?ref=nix-darwin-24.11";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs";
@@ -222,10 +222,10 @@
       };
     };
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-24.11?shallow=1";
+      url = "github:NixOS/nixpkgs?ref=nixos-24.11&shallow=1";
     };
     nixpkgs-unstable = {
-      url = "github:NixOS/nixpkgs/nixos-unstable?shallow=1";
+      url = "github:NixOS/nixpkgs?ref=nixos-unstable&shallow=1";
     };
     oreore = {
       url = "github:gamoutatsumi/oreore-flake";
@@ -236,7 +236,7 @@
         tinty-schemes = {
           follows = "tinty-schemes";
         };
-        nixpkgs-unstable = {
+        nixpkgs = {
           follows = "nixpkgs-unstable";
         };
         systems = {
@@ -251,7 +251,7 @@
         treefmt-nix = {
           follows = "";
         };
-        nixpkgs = {
+        nixpkgs-stable = {
           follows = "nixpkgs";
         };
       };
@@ -291,11 +291,11 @@
       };
     };
     vim-src = {
-      url = "github:vim/vim";
+      url = "github:vim/vim?shallow=1";
       flake = false;
     };
     xremap = {
-      url = "github:xremap/xremap?ref=v0.10.2";
+      url = "github:xremap/xremap?ref=v0.10.10";
       flake = false;
     };
     xremap-nix = {
