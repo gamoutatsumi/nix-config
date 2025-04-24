@@ -1,6 +1,7 @@
 {
   upkgsConf,
   localFlake,
+  nixpkgs,
 }:
 {
   system,
@@ -17,6 +18,14 @@ let
   treefmtBuild = config.treefmt.build;
 in
 {
+  _module = {
+    args = {
+      pkgs = import nixpkgs {
+        overlays = [ (_final: _prev: { inherit (upkgs) nodejs; }) ];
+        inherit system;
+      };
+    };
+  };
   # keep-sorted start block=yes
   agenix-rekey = {
     inherit (localFlake) nixosConfigurations;

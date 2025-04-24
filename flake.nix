@@ -645,7 +645,7 @@
           };
         };
         perSystem = importApply ./flake/parts/perSystem.nix {
-          inherit upkgsConf;
+          inherit upkgsConf nixpkgs;
           localFlake = self;
         };
       }
