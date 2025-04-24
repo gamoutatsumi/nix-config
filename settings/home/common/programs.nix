@@ -60,7 +60,6 @@ in
         nix-output-monitor
         nix-search-cli
         nix-tree
-        opencommit
         picocom
         pinact
         q-text-as-data
@@ -77,6 +76,7 @@ in
       ++ (with upkgs; [
         deno
         vim
+        opencommit
       ]);
   };
   programs = {
@@ -358,6 +358,7 @@ in
           nil
           tree-sitter
           efm-langserver
+          nodejs
         ])
         ++ lib.optionals pkgs.stdenv.isLinux [
           upkgs.gcc
@@ -366,7 +367,7 @@ in
       defaultEditor = true;
       vimAlias = false;
       viAlias = false;
-      withNodeJs = true;
+      withNodeJs = false;
       withRuby = false;
       withPython3 = false;
     };

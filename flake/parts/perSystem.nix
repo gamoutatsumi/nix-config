@@ -21,7 +21,7 @@ in
   _module = {
     args = {
       pkgs = import nixpkgs {
-        overlays = [ (_final: _prev: { inherit (upkgs) nodejs; }) ];
+        overlays = [ (_final: _prev: { nodejs = upkgs.nodejs_20; }) ];
         inherit system;
       };
     };
