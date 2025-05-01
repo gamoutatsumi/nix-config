@@ -668,11 +668,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1745416336,
-        "narHash": "sha256-zXmMMQPHx2TrWDJ2l4GWCrukjhesyMB7vdDx0SVNozo=",
+        "lastModified": 1745990356,
+        "narHash": "sha256-cnyWZhpxi+7SiLH/MbSABn6FxoR4i6/pvPH8RUyKttA=",
         "owner": "ravitemer",
         "repo": "mcp-hub",
-        "rev": "dfe53aa6096a9b225e96eefad719b85c90f712d6",
+        "rev": "2458c39a707a4bf7952eb030160c2734c657571e",
         "type": "github"
       },
       "original": {
@@ -688,11 +688,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1745154386,
-        "narHash": "sha256-ESWJkT3xNbDI2DvMVMuyqByI10G/JVdDy9dycj885dA=",
+        "lastModified": 1745852191,
+        "narHash": "sha256-OAzrHoRGd+VvpIRWFaCdmvFYyVVYIiZQ1/txRz8+lw0=",
         "owner": "natsukium",
         "repo": "mcp-servers-nix",
-        "rev": "c070dfe98001b4c9330d67aa9df59d10af85d099",
+        "rev": "2438ab305de6939cdba9e379e0a19a527b1b9b68",
         "type": "github"
       },
       "original": {
