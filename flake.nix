@@ -539,6 +539,7 @@
                     username
                     ;
                 };
+                profileName = "ThinkPadT14Gen2";
                 modules = [
                   monitored.nixosModules.default
                   lanzaboote.nixosModules.lanzaboote
@@ -581,6 +582,7 @@
                     ;
                   device = "/dev/disk/by-id/nvme-WD_BLACK_SN770_1TB_24116U400484";
                 };
+                profileName = "Desktop";
                 modules = [
                   monitored.nixosModules.default
                   lanzaboote.nixosModules.lanzaboote
