@@ -98,21 +98,10 @@ lspconfig.astro.setup({
     autostart = true,
 })
 
-if vim.fn.executable("typescript-language-server") == 1 then
-    vim.lsp.enable("ts_ls")
-end
-
-if vim.fn.executable("vtsls") == 1 then
-    vim.lsp.enable("vtsls")
-end
-
-if vim.fn.executable("typescript-language-server") == 0 and vim.fn.executable("vtsls") == 0 then
-    vim.lsp.enable("denols")
-end
-
 local ensure_enabled = {
     -- keep-sorted start
     "biome",
+    "denols",
     "efm",
     "fennel_language_server",
     "gopls",
@@ -125,6 +114,7 @@ local ensure_enabled = {
     "sourcekit",
     "terraformls",
     "unocss",
+    "vtsls",
     -- keep-sorted end
 }
 vim.lsp.enable(ensure_enabled)
