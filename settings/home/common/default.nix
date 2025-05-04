@@ -1,8 +1,8 @@
 {
   lib,
+  inputs,
   pkgs,
   upkgs,
-  mcpConfig,
   config,
   ...
 }:
@@ -69,10 +69,10 @@ in
               deno = lib.getExe upkgs.deno;
               copilot_ls = lib.getExe upkgs.copilot-language-server;
               mcp_hub = lib.getExe' upkgs.mcp-hub "mcp-hub";
-              mcp_config = "${mcpConfig {
+              mcp_config = "${import ../../../mcp.nix {
                 format = "json";
                 pkgs = upkgs;
-                inherit config lib;
+                inherit config lib inputs;
               }}";
               treesitter_parsers = "${upkgs.symlinkJoin {
                 name = "ts-parsers";

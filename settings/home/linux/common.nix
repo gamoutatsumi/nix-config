@@ -1,9 +1,9 @@
 {
   pkgs,
+  inputs,
   config,
   username,
   lib,
-  mcpConfig,
   upkgs,
   ...
 }:
@@ -157,10 +157,10 @@ name=p11-kit-proxy\n";
     };
     configFile = {
       "Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json" = {
-        source = mcpConfig {
+        source = import ../../../mcp.nix {
           format = "json";
           flavor = "claude";
-          inherit config lib;
+          inherit config lib inputs;
           pkgs = upkgs;
         };
       };
