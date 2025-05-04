@@ -15,6 +15,7 @@
         discord
         firefox
         gcr
+        gimp
         kcachegrind
         lssecret
         pavucontrol
