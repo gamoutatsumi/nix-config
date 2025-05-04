@@ -225,7 +225,7 @@
       url = "github:NixOS/nixpkgs?ref=nixos-24.11&shallow=1";
     };
     nixpkgs-unstable = {
-      url = "github:NixOS/nixpkgs?ref=nixos-unstable&shallow=1";
+      url = "github:NixOS/nixpkgs?ref=5bf57e211f39a0e219c756789ed8d915b7e33389&shallow=1";
     };
     oreore = {
       url = "github:gamoutatsumi/oreore-flake";
