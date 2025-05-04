@@ -3,15 +3,6 @@ repo = 'neovim/nvim-lspconfig'
 hooks_file = ['$BASE_DIR/dpp/nvim_lsp.lua']
 
 [[plugins]]
-repo = 'ray-x/go.nvim'
-
-[[plugins]]
-repo = 'yioneko/nvim-vtsls'
-
-[[plugins]]
-repo = 'jose-elias-alvarez/typescript.nvim'
-
-[[plugins]]
 repo = 'hrsh7th/nvim-gtd'
 lua_add = '''
 require('gtd').setup({})
