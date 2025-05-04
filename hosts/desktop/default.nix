@@ -221,7 +221,7 @@
           Unit = "backup-pictures-truenas.service";
         };
       };
-      "fetch-musics-truenas" = {
+      "fetch-music-truenas" = {
         wantedBy = [ "timers.target" ];
         timerConfig = {
           OnCalendar = "daily";
