@@ -483,9 +483,9 @@
           settings = {
             servers =
               {
-                yasunori = {
-                  command = lib.getExe pkgs.yasunori-mcp;
-                };
+                # yasunori = {
+                #   command = lib.getExe pkgs.yasunori-mcp;
+                # };
                 astro = {
                   url = "http://localhost:4321/__mcp/sse";
                 };
