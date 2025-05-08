@@ -16,7 +16,7 @@
                 echo "Updating ${system}..."
                 nix flake update --commit-lock-file nixpkgs neovim-nightly-overlay neovim-src nixpkgs-unstable oreore home-manager systems treefmt-nix pre-commit-hooks nix-darwin
                 old_system=$(${pkgs.lib.getExe' pkgs.coreutils "readlink"} -f /run/current-system)
-                nix run nix-darwin -- switch --flake .#$1 --impure --show-trace |& ${pkgs.lib.getExe pkgs.nix-output-monitor}
+                nix run nix-darwin -- switch --flake .#$1 --impure --show-trace
                 new_system=$(${pkgs.lib.getExe' pkgs.coreutils "readlink"} -f /run/current-system)
                 ${pkgs.lib.getExe pkgs.nvd} diff "''${old_system}" "''${new_system}"
               ''
@@ -40,7 +40,7 @@
                 echo "Updating ${system}..."
                 nix flake update --commit-lock-file
                 old_system=$(${pkgs.lib.getExe' pkgs.coreutils "readlink"} -f /run/current-system)
-                sudo nixos-rebuild switch --flake . --show-trace |& ${pkgs.lib.getExe pkgs.nix-output-monitor}
+                sudo nixos-rebuild switch --flake . --show-trace
                 new_system=$(${pkgs.lib.getExe' pkgs.coreutils "readlink"} -f /run/current-system)
                 ${pkgs.lib.getExe pkgs.nvd} diff "''${old_system}" "''${new_system}"
               ''

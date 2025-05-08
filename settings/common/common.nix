@@ -1,6 +1,5 @@
 {
   inputs,
-  pkgs,
   username,
   ...
 }:
@@ -12,7 +11,7 @@
       enable = false;
     };
     monitored = {
-      enable = false;
+      enable = true;
     };
     nixPath = [
       "nixpkgs=flake"
@@ -21,7 +20,6 @@
     optimise = {
       automatic = true;
     };
-    package = pkgs.nixVersions.latest;
     registry = {
       nixpkgs = {
         from = {
