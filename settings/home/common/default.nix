@@ -56,28 +56,48 @@ in
         source = pkgs.symlinkJoin {
           name = "nvim";
           paths = [
-            (pkgs.substituteAllFiles {
-              src = ./config/nvim;
-              files = [
-                "dpp/skkeleton.vim"
-                "init/plugins/dpp.vim"
-                "dpp/copilot.lua"
-                "dpp/treesitter.lua"
-                "dpp/mcphub.lua"
-              ];
-              skk_dict = "${pkgs.skkDictionaries.l}/share/skk/SKK-JISYO.L";
-              deno = lib.getExe upkgs.deno;
-              copilot_ls = lib.getExe upkgs.copilot-language-server;
-              mcp_hub = lib.getExe' upkgs.mcp-hub "mcp-hub";
-              mcp_config = "${import ../../../mcp.nix {
-                format = "json";
-                pkgs = upkgs;
-                inherit config lib inputs;
-              }}";
-              treesitter_parsers = "${upkgs.symlinkJoin {
-                name = "ts-parsers";
-                paths = upkgs.vimPlugins.nvim-treesitter.withAllGrammars.dependencies;
-              }}";
+            (pkgs.replaceVarsWith {
+              src = ./config/nvim/dpp/skkeleton.vim;
+              replacements = {
+                skk_dict = "${pkgs.skkDictionaries.l}/share/skk/SKK-JISYO.L";
+              };
+              dir = "dpp";
+            })
+            (pkgs.replaceVarsWith {
+              src = ./config/nvim/init/plugins/dpp.vim;
+              replacements = {
+                deno = lib.getExe upkgs.deno;
+              };
+              dir = "init/plugins";
+            })
+            (pkgs.replaceVarsWith {
+              src = ./config/nvim/dpp/copilot.lua;
+              replacements = {
+                copilot_ls = lib.getExe upkgs.copilot-language-server;
+              };
+              dir = "dpp";
+            })
+            (pkgs.replaceVarsWith {
+              src = ./config/nvim/dpp/treesitter.lua;
+              replacements = {
+                treesitter_parsers = "${upkgs.symlinkJoin {
+                  name = "ts-parsers";
+                  paths = upkgs.vimPlugins.nvim-treesitter.withAllGrammars.dependencies;
+                }}";
+              };
+              dir = "dpp";
+            })
+            (pkgs.replaceVarsWith {
+              src = ./config/nvim/dpp/mcphub.lua;
+              replacements = {
+                mcp_hub = lib.getExe' upkgs.mcp-hub "mcp-hub";
+                mcp_config = "${import ../../../mcp.nix {
+                  format = "json";
+                  pkgs = upkgs;
+                  inherit config lib inputs;
+                }}";
+              };
+              dir = "dpp";
             })
             ./config/nvim
           ];

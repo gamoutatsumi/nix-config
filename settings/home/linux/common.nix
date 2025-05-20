@@ -142,6 +142,29 @@ name=p11-kit-proxy\n";
       imageDirectory = "%h/backgrounds";
     };
   };
+  systemd = {
+    user = {
+      services = {
+        bitwarden-desktop = {
+          Install = {
+            WantedBy = [ "graphical-session.target" ];
+          };
+          Unit = {
+            Description = "Bitwarden Desktop";
+            After = [ "basic.target" ];
+            PartOf = [ "graphical-session.target" ];
+          };
+          Service = {
+            Type = "simple";
+            ExecStart = lib.getExe pkgs.bitwarden-desktop;
+            Restart = "on-failure";
+            RestartSec = 5;
+            TimeoutStopSec = 10;
+          };
+        };
+      };
+    };
+  };
   xdg = {
     userDirs = {
       enable = true;
@@ -169,29 +192,6 @@ name=p11-kit-proxy\n";
       };
       "libskk" = {
         source = ./config/libskk;
-      };
-    };
-  };
-  systemd = {
-    user = {
-      services = {
-        bitwarden-desktop = {
-          Install = {
-            WantedBy = [ "graphical-session.target" ];
-          };
-          Unit = {
-            Description = "Bitwarden Desktop";
-            After = [ "basic.target" ];
-            PartOf = [ "graphical-session.target" ];
-          };
-          Service = {
-            Type = "simple";
-            ExecStart = lib.getExe pkgs.bitwarden-desktop;
-            Restart = "on-failure";
-            RestartSec = 5;
-            TimeoutStopSec = 10;
-          };
-        };
       };
     };
   };

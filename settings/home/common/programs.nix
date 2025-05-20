@@ -403,43 +403,47 @@ in
     vscode = {
       enable = true;
       package = upkgs.vscode;
-      enableUpdateCheck = false;
-      enableExtensionUpdateCheck = false;
-      extensions =
-        with upkgs.vscode-extensions;
-        [
-          # keep-sorted start
-          bbenoist.nix
-          eamodio.gitlens
-          editorconfig.editorconfig
-          github.copilot
-          github.copilot-chat
-          github.github-vscode-theme
-          golang.go
-          ms-ceintl.vscode-language-pack-ja
-          oderwat.indent-rainbow
-          saoudrizwan.claude-dev
-          vscode-icons-team.vscode-icons
-          # keep-sorted end
-        ]
-        ++ (with upkgs.vscode-marketplace; [
-          taiyofujii.novel-writer
-        ]);
-      userSettings = {
-        "chat.mcp.enabled" = true;
-        "chat.mcp.discovery.enabled" = true;
-        "editor.fontFamily" = "PlemolJP Console NF";
-        "editor.fontLigatures" = true;
-        "editor.fontSize" = 14;
-        "editor.renderWhitespace" = "boundary";
-        "editor.minimap.enabled" = true;
-        "editor.minimap.renderCharacters" = true;
-        "workbench.colorTheme" = "GitHub Dark Dimmed";
-        "workbench.iconTheme" = "vscode-icons";
-        "cline.mcpMarketplace.enabled" = false;
-        "cline.preferredLanguage" = "Japanese - 日本語";
-        "github.copilot.chat.codesearch.enabled" = true;
-        "github.copilot.chat.agent.thinkingTool" = true;
+      profiles = {
+        default = {
+          enableUpdateCheck = false;
+          enableExtensionUpdateCheck = false;
+          extensions =
+            with upkgs.vscode-extensions;
+            [
+              # keep-sorted start
+              bbenoist.nix
+              eamodio.gitlens
+              editorconfig.editorconfig
+              github.copilot
+              github.copilot-chat
+              github.github-vscode-theme
+              golang.go
+              ms-ceintl.vscode-language-pack-ja
+              oderwat.indent-rainbow
+              saoudrizwan.claude-dev
+              vscode-icons-team.vscode-icons
+              # keep-sorted end
+            ]
+            ++ (with upkgs.vscode-marketplace; [
+              taiyofujii.novel-writer
+            ]);
+          userSettings = {
+            "chat.mcp.enabled" = true;
+            "chat.mcp.discovery.enabled" = true;
+            "editor.fontFamily" = "PlemolJP Console NF";
+            "editor.fontLigatures" = true;
+            "editor.fontSize" = 14;
+            "editor.renderWhitespace" = "boundary";
+            "editor.minimap.enabled" = true;
+            "editor.minimap.renderCharacters" = true;
+            "workbench.colorTheme" = "GitHub Dark Dimmed";
+            "workbench.iconTheme" = "vscode-icons";
+            "cline.mcpMarketplace.enabled" = false;
+            "cline.preferredLanguage" = "Japanese - 日本語";
+            "github.copilot.chat.codesearch.enabled" = true;
+            "github.copilot.chat.agent.thinkingTool" = true;
+          };
+        };
       };
     };
     wezterm = {
@@ -517,7 +521,7 @@ in
       };
       defaultKeymap = "emacs";
       dotDir = ".config/zsh";
-      initExtra = ''
+      initContent = ''
         ${builtins.readFile ./config/.zshrc}
         ${lib.getExe pkgs.any-nix-shell} zsh --info-right | source /dev/stdin
         export FPATH
