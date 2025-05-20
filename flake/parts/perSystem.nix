@@ -20,14 +20,6 @@
       treefmtBuild = config.treefmt.build;
     in
     {
-      _module = {
-        args = {
-          pkgs = import inputs.nixpkgs {
-            overlays = [ (_final: _prev: { nodejs = upkgs.nodejs_20; }) ];
-            inherit system;
-          };
-        };
-      };
       # keep-sorted start block=yes
       agenix-rekey = {
         inherit (self') nixosConfigurations;
