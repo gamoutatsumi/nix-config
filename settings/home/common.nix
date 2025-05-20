@@ -5,7 +5,7 @@
   # manage.
   home = {
     username = "${username}";
-    stateVersion = "24.11"; # Please read the comment before changing.
+    stateVersion = "25.05"; # Please read the comment before changing.
   };
 
   # This value determines the Home Manager release that your configuration is

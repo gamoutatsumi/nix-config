@@ -116,7 +116,7 @@
       };
     };
     home-manager = {
-      url = "github:nix-community/home-manager?ref=release-24.11";
+      url = "github:nix-community/home-manager?ref=release-25.05";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs";
@@ -206,7 +206,7 @@
       flake = false;
     };
     nix-darwin = {
-      url = "github:nix-darwin/nix-darwin?ref=nix-darwin-24.11";
+      url = "github:nix-darwin/nix-darwin?ref=nix-darwin-25.05";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs";
@@ -222,7 +222,7 @@
       };
     };
     nixpkgs = {
-      url = "github:NixOS/nixpkgs?ref=nixos-24.11&shallow=1";
+      url = "github:NixOS/nixpkgs?ref=nixos-25.05&shallow=1";
     };
     nixpkgs-unstable = {
       url = "github:NixOS/nixpkgs?ref=5bf57e211f39a0e219c756789ed8d915b7e33389&shallow=1";

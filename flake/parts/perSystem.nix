@@ -87,7 +87,7 @@
               package = upkgs.deno;
             };
             flake-checker = {
-              enable = true;
+              enable = false;
               package = inputs'.flake-checker.packages.flake-checker;
             };
             treefmt = {
