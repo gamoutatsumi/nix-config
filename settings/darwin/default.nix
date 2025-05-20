@@ -77,10 +77,5 @@
       };
     };
   };
-  services = {
-    nix-daemon = {
-      enable = true;
-    };
-  };
   # keep-sorted end
 }
