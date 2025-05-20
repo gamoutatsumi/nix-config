@@ -16,7 +16,7 @@
                 echo "Updating ${system}..."
                 nix flake update --commit-lock-file nixpkgs neovim-nightly-overlay neovim-src nixpkgs-unstable oreore home-manager systems treefmt-nix pre-commit-hooks nix-darwin
                 old_system=$(${pkgs.lib.getExe' pkgs.coreutils "readlink"} -f /run/current-system)
-                ${
+                sudo -E ${
                   pkgs.lib.getExe inputs.nix-darwin.packages.${system}.darwin-rebuild
                 } switch --flake .#$1 --impure --show-trace
                 new_system=$(${pkgs.lib.getExe' pkgs.coreutils "readlink"} -f /run/current-system)
