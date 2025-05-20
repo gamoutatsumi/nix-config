@@ -11,7 +11,7 @@
   # ];
 
   system = {
-    stateVersion = 4;
+    stateVersion = 5;
     primaryUser = username;
     defaults = {
       finder = {
