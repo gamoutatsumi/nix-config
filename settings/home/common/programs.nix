@@ -216,6 +216,9 @@ in
       tmux = {
         enableShellIntegration = false;
       };
+      defaultOptions = [
+        "--tmux 80% --sync"
+      ];
       enableZshIntegration = true;
       package = upkgs.fzf;
     };
@@ -233,10 +236,10 @@ in
         pager = lib.getExe' pkgs.ov "ov";
         aliases = {
           co = "pr checkout";
-          is = ''!gh issue list -s all | fzf-tmux --prompt "issue preview>" --preview "echo {} | cut -f1 | xargs gh issue view " | cut -f1 | xargs --no-run-if-empty gh issue ''${@:-view -w}'';
-          myissue = ''!gh issue list -s all -A gamoutatsumi | fzf-tmux --prompt "issue preview>" --preview "echo {} | cut -f1 | xargs gh issue view " | cut -f1 | xargs --no-run-if-empty gh issue ''${@:-view -w}'';
-          assigned = ''!gh issue list -s all -a gamoutatsumi | fzf-tmux --prompt "issue preview>" --preview "echo {} | cut -f1 | xargs gh issue view " | cut -f1 | xargs --no-run-if-empty gh issue ''${@:-view -w}'';
-          prs = ''!gh pr list -s all | fzf-tmux --prompt "PR preview>" --preview "echo {} | cut -f1 | xargs gh pr view " | cut -f1 | xargs --no-run-if-empty gh pr ''${@:-view -w}'';
+          is = ''!gh issue list -s all | fzf --prompt "issue preview>" --preview "echo {} | cut -f1 | xargs gh issue view " | cut -f1 | xargs --no-run-if-empty gh issue ''${@:-view -w}'';
+          myissue = ''!gh issue list -s all -A gamoutatsumi | fzf --prompt "issue preview>" --preview "echo {} | cut -f1 | xargs gh issue view " | cut -f1 | xargs --no-run-if-empty gh issue ''${@:-view -w}'';
+          assigned = ''!gh issue list -s all -a gamoutatsumi | fzf --prompt "issue preview>" --preview "echo {} | cut -f1 | xargs gh issue view " | cut -f1 | xargs --no-run-if-empty gh issue ''${@:-view -w}'';
+          prs = ''!gh pr list -s all | fzf --prompt "PR preview>" --preview "echo {} | cut -f1 | xargs gh pr view " | cut -f1 | xargs --no-run-if-empty gh pr ''${@:-view -w}'';
           prv = ''pr view -w'';
           iv = ''issue view -w'';
         };
@@ -496,8 +499,7 @@ in
         DOCKER_BUILDKIT = 1;
         ESLINT_D_LOCAL_ESLINT_ONLY = 1;
         FZF_PREVIEW_DEFAULT_BIND = "ctrl-d:preview-page-down,ctrl-u:preview-page-up,?:toggle-preview";
-        FZF_PREVIEW_DEFAULT_SETTING = "--sync --height='80%' --preview-window='right:50%' --expect='ctrl-space' --header='C-Space: continue fzf completion'";
-        FZF_PREVIEW_ENABLE_TMUX = 1;
+        FZF_PREVIEW_DEFAULT_SETTING = "--preview-window='right:50%' --expect='ctrl-space' --header='C-Space: continue fzf completion'";
         LANG = "ja_JP.UTF-8";
         LC_ALL = "ja_JP.UTF-8";
         LUAROCKS_HOME = "${config.xdg.dataHome}/luarocks";
@@ -509,7 +511,6 @@ in
         PURE_GIT_PULL = 0;
         TERM = "alacritty";
         WORDCHARS = "*?_.[]~-=&;!#$%^(){}<>";
-        ZENO_ENABLE_FZF_TMUX = 1;
         ZENO_ENABLE_SOCK = 1;
         ZENO_GIT_CAT = "bat";
         ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=8";
