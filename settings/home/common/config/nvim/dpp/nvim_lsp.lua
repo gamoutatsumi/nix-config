@@ -101,6 +101,7 @@ lspconfig.astro.setup({
 local ensure_enabled = {
     -- keep-sorted start
     "biome",
+    "dagger",
     "denols",
     "efm",
     "fennel_language_server",
