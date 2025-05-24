@@ -1,5 +1,5 @@
 let
-  denoVersion = "2.3.1";
+  denoVersion = "2.3.3";
 in
 {
   system,

@@ -856,16 +856,16 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1744959208,
-        "narHash": "sha256-XhsbSs1MGMZqiYKHS2pB3e5Jv7w+3E8iWeOwLwk2pzY=",
+        "lastModified": 1747744144,
+        "narHash": "sha256-W7lqHp0qZiENCDwUZ5EX/lNhxjMdNapFnbErcbnP11Q=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "5bf57e211f39a0e219c756789ed8d915b7e33389",
+        "rev": "2795c506fe8fb7b03c36ccb51f75b6df0ab2553f",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "5bf57e211f39a0e219c756789ed8d915b7e33389",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -1230,16 +1230,16 @@
     "xremap": {
       "flake": false,
       "locked": {
-        "lastModified": 1744930504,
-        "narHash": "sha256-U2TSx0O2T53lUiJNpSCUyvkG4Awa0+a4N6meFn09LbI=",
+        "lastModified": 1746943305,
+        "narHash": "sha256-ZOiQffTHXw+anFckKO0jyd+LPw2zTqtqk87niCC38Q8=",
         "owner": "xremap",
         "repo": "xremap",
-        "rev": "dc7b1453a3cc481e885b44221adb968c2946e605",
+        "rev": "f89ce2ecebf908114eb54058e324dfd82d8bd7c9",
         "type": "github"
       },
       "original": {
         "owner": "xremap",
-        "ref": "v0.10.10",
+        "ref": "v0.10.12",
         "repo": "xremap",
         "type": "github"
       }
