@@ -91,8 +91,7 @@
         };
       };
       iconTheme = {
-        inherit (config.gtk.iconTheme) package;
-        name = "Vimix-Doder-dark";
+        inherit (config.gtk.iconTheme) package name;
       };
     };
   };

@@ -28,7 +28,7 @@
     };
     iconTheme = {
       package = pkgs.vimix-icon-theme;
-      name = "Vimix-Doder-dark";
+      name = "Vimix-doder-dark";
     };
     theme = {
       package = pkgs.vimix-gtk-themes;
@@ -57,17 +57,69 @@ name=p11-kit-proxy\n";
         enable = true;
         defaultCursor = "left_ptr";
       };
-      package = pkgs.vimix-cursors;
+      package = pkgs.vimix-cursors.overrideAttrs (
+        _final: _prev: {
+          patches = [
+            (pkgs.writeText "diff.patch" ''
+              diff --git a/build.sh b/build.sh
+              index 71d26e6..f402af3 100755
+              --- a/build.sh
+              +++ b/build.sh
+              @@ -47,7 +47,7 @@ function create {
+               	cd $SRC
+               
+               	# generate cursors
+              -	if [[ "$THEME" =~ White$ ]]; then
+              +	if [[ "$THEME" =~ white-cursors$ ]]; then
+               		BUILD="$SRC"/../dist-white
+               	else BUILD="$SRC"/../dist
+               	fi
+              @@ -100,10 +100,10 @@ function create {
+               
+               # generate pixmaps from svg source
+               SRC=$PWD/src
+              -THEME="Vimix Cursors"
+              +THEME="Vimix-cursors"
+               
+               create svg
+               
+              -THEME="Vimix Cursors - White"
+              +THEME="Vimix-white-cursors"
+               
+               create svg-white
+              diff --git a/dist/index.theme b/dist/index.theme
+              index 988f265..f996f59 100644
+              --- a/dist/index.theme
+              +++ b/dist/index.theme
+              @@ -1,3 +1,3 @@
+               [Icon Theme]
+              -Name=Vimix Cursors
+              +Name=Vimix-cursors
+               
+              diff --git a/src/index.theme b/src/index.theme
+              index 988f265..f996f59 100644
+              --- a/src/index.theme
+              +++ b/src/index.theme
+              @@ -1,3 +1,3 @@
+               [Icon Theme]
+              -Name=Vimix Cursors
+              +Name=Vimix-cursors
+            '')
+          ];
+        }
+      );
     };
   };
   i18n = {
     inputMethod = {
       type = "fcitx5";
       enable = true;
-      fcitx5.addons = with pkgs; [
-        fcitx5-gtk
-        fcitx5-skk
-      ];
+      fcitx5 = {
+        addons = with pkgs; [
+          fcitx5-gtk
+          fcitx5-skk
+        ];
+      };
     };
   };
   qt = {

@@ -2,6 +2,7 @@
   upkgs,
   pkgs,
   lib,
+  config,
   ...
 }:
 {
@@ -99,7 +100,7 @@
         kb-element-next = "";
         show-icons = true;
         sidebar-mode = true;
-        icon-theme = "Vimix-Doder-dark";
+        icon-theme = config.gtk.iconTheme.name;
       };
     };
     # keep-sorted end
