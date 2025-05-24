@@ -16,7 +16,7 @@
         firefox
         gcr
         gimp
-        kcachegrind
+        kdePackages.kcachegrind
         lssecret
         pavucontrol
         playerctl
