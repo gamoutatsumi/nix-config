@@ -222,7 +222,7 @@ in
         enableShellIntegration = false;
       };
       defaultOptions = [
-        "--tmux 80% --sync"
+        "--sync"
       ];
       enableZshIntegration = true;
       package = upkgs.fzf;
@@ -516,6 +516,7 @@ in
         PURE_GIT_PULL = 0;
         TERM = "alacritty";
         WORDCHARS = "*?_.[]~-=&;!#$%^(){}<>";
+        ZENO_ENABLE_FZF_TMUX = 1;
         ZENO_ENABLE_SOCK = 1;
         ZENO_GIT_CAT = "bat";
         ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=8";

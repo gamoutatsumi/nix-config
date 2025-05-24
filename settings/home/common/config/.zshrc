@@ -397,7 +397,7 @@ function f() {
   local project dir repository session current_session out
   local ghq_command="ghq list -p | sed -e \"s|$HOME|~|\""
   local fzf_options_="--expect=ctrl-space --preview='eval bat --paging=never --style=plain --color=always {}/README.md'"
-  local fzf_command="fzf ${fzf_options_}"
+  local fzf_command="fzf-tmux ${fzf_options_}"
   fzf_command+=" ${FZF_PREVIEW_DEFAULT_SETTING}"
   fzf_command+=" --bind='${FZF_PREVIEW_DEFAULT_BIND}'"
   local command="${ghq_command} | ${fzf_command}"
@@ -527,7 +527,13 @@ function sheldonupdate() {
 
 function fk() {
   local pid
-  pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+  local fzf_command
+  if [[ -z $TMUX ]]; then
+    fzf_command="fzf"
+  else
+    fzf_command="fzf-tmux"
+  fi
+  pid=$(ps -ef | sed 1d | $fzf_command -m | awk '{print $2}')
 
   if [[ "x$pid" != "x" ]]; then
     echo $pid | xargs kill -${1:-9}
