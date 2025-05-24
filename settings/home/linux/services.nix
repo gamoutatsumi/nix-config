@@ -24,7 +24,9 @@
       enableScDaemon = true;
       enableSshSupport = true;
       enableZshIntegration = true;
-      pinentryPackage = pkgs.pinentry-gtk2;
+      pinentry = {
+        package = pkgs.pinentry-gtk2;
+      };
     };
     mpd = {
       enable = true;
