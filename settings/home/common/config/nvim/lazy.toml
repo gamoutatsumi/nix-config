@@ -127,10 +127,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'jjo/vim-cue'
-on_ft = ['cue']
-
-[[plugins]]
 repo = 'cappyzawa/starlark.vim'
 on_ft = ['starlark']
 
