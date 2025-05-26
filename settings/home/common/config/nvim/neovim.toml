@@ -27,8 +27,8 @@ repo = 'nvim-lua/popup.nvim'
 repo = 'nvim-lua/plenary.nvim'
 
 [[plugins]]
-repo = 'phaazon/hop.nvim'
-hooks_file = '$BASE_DIR/dpp/hop.lua'
+repo = 'folke/flash.nvim'
+hooks_file = '$BASE_DIR/dpp/flash.lua'
 
 [[plugins]]
 repo = 'kwkarlwang/bufresize.nvim'

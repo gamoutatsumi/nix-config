@@ -5,14 +5,26 @@ if type(data_dir) ~= "string" then
 end
 vim.opt.runtimepath:prepend("@treesitter_parsers@")
 require("nvim-treesitter.configs").setup({
-    -- Modules and its options go here
+    -- keep-sorted start block=yes
+    auto_install = false,
+    autotag = {
+        enable = true,
+    },
     ensure_installed = {},
     highlight = {
         enable = true,
         disable = { "vim" },
     },
-    auto_install = false,
+    ignore_install = {},
     incremental_selection = { enable = true },
+    indent = { enable = true },
+    modules = {},
+    selection_modes = {
+        ["@parameter.outer"] = "v",
+        ["@function.outer"] = "V",
+        ["@class.outer"] = "V",
+    },
+    sync_install = false,
     textobjects = {
         enable = true,
         lookahead = true,
@@ -21,21 +33,18 @@ require("nvim-treesitter.configs").setup({
             ["if"] = "@function.inner",
             ["ac"] = "@class.outer",
             ["ic"] = "@class.inner",
+            ["as"] = { query = "@local.scope", query_group = "locals", desc = "Select language scope" },
+        },
+        swap = {
+            enable = true,
+            swap_next = {
+                ["g>"] = "@parameter.inner",
+            },
+            swap_previous = {
+                ["g<"] = "@parameter.inner",
+            },
         },
     },
-    indent = { enable = true },
-    refactor = {
-        highlight_definitions = { enable = false },
-        highlight_current_scope = { enable = false },
-        smart_rename = {
-            enable = false,
-        },
-    },
-    autotag = {
-        enable = true,
-    },
-    sync_install = false,
-    ignore_install = {},
-    modules = {},
+    -- keep-sorted end
 })
 -- }}}

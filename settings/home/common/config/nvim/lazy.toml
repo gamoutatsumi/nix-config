@@ -59,15 +59,6 @@ repo = 'whatyouhide/vim-textobj-xmlattr'
 on_ft = ['typescriptreact', 'javascriptreact', 'html', 'xml']
 
 [[plugins]]
-repo = "machakann/vim-swap"
-on_map = ['<Plug>']
-hook_add = '''
-  let g:swap_no_default_key_mappings = 1
-  map g< <Plug>(swap-prev)
-  map g> <Plug>(swap-next)
-'''
-
-[[plugins]]
 repo = 'AndrewRadev/switch.vim'
 on_map = ['<Plug>(Switch)']
 hook_add = '''
