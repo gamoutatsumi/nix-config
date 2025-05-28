@@ -107,10 +107,7 @@
     ghostty = {
       url = "github:ghostty-org/ghostty";
       inputs = {
-        nixpkgs-unstable = {
-          follows = "nixpkgs-unstable";
-        };
-        nixpkgs-stable = {
+        nixpkgs = {
           follows = "nixpkgs";
         };
       };
@@ -222,10 +219,10 @@
       };
     };
     nixpkgs = {
-      url = "github:NixOS/nixpkgs?ref=nixos-25.05&shallow=1";
+      url = "https://nixos.org/channels/nixos-25.05/nixexprs.tar.xz";
     };
     nixpkgs-unstable = {
-      url = "github:NixOS/nixpkgs?ref=nixos-unstable&shallow=1";
+      url = "https://nixos.org/channels/nixos-unstable/nixexprs.tar.xz";
     };
     oreore = {
       url = "github:gamoutatsumi/oreore-flake";
