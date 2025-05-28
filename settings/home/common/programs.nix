@@ -60,6 +60,7 @@ in
         nix-output-monitor
         nix-search-cli
         nix-tree
+        paperkey
         picocom
         pinact
         q-text-as-data
@@ -71,6 +72,7 @@ in
         unzip
         yubico-piv-tool
         yubikey-manager
+        zbar
         # keep-sorted end
       ])
       ++ (with upkgs; [
@@ -367,6 +369,8 @@ in
           tree-sitter
           efm-langserver
           nodejs
+          yaml-language-server
+          nodePackages_latest.vscode-json-languageserver
         ])
         ++ lib.optionals pkgs.stdenv.isLinux [
           upkgs.gcc
