@@ -438,6 +438,7 @@ in
             ]
             ++ (with upkgs.vscode-marketplace; [
               taiyofujii.novel-writer
+              yuki-yano.vscode-resonator
             ]);
           userSettings = {
             "chat.mcp.enabled" = true;
