@@ -779,11 +779,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1748823994,
-        "narHash": "sha256-ZogUoq1syZ2v0p1zrKAR1mdXlQUPOxQEFjHe2YQOZT0=",
+        "lastModified": 1748912623,
+        "narHash": "sha256-H+pA3DmzdXF+m6lLwUoi/AQGyOQ8viwoFYL2myaJogA=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "5fd03508aab15f2c94bbc1a5098fa3d3d62ae3e1",
+        "rev": "ee84518b94a4159c230ff11436f465bcbedd3c06",
         "type": "github"
       },
       "original": {
@@ -866,11 +866,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1748842312,
-        "narHash": "sha256-Jvvr4/8zsEKQJo+vdHC0eqT1onlTUq711N7kkvEFUcs=",
-        "rev": "a59eb7800787c926045d51b70982ae285faa2346",
+        "lastModified": 1748911815,
+        "narHash": "sha256-VYpxyyvf+ptRW+XaHaeelL+RSt4cDp/qJE84M/kL2p4=",
+        "rev": "10d7f8d34e5eb9c0f9a0485186c1ca691d2c5922",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/25.05/nixos-25.05.802985.a59eb7800787/nixexprs.tar.xz"
+        "url": "https://releases.nixos.org/nixos/25.05/nixos-25.05.803297.10d7f8d34e5e/nixexprs.tar.xz"
       },
       "original": {
         "type": "tarball",
