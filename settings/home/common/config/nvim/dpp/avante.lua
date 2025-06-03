@@ -32,11 +32,13 @@ require("avante").setup({
     file_selector = {
         provider = "native",
     },
-    copilot = {
-        model = "gpt-4o",
-    },
-    ollama = {
-        model = "hf.co/QuantFactory/Mistral-Nemo-Japanese-Instruct-2408-GGUF:Q4_K_M",
+    providers = {
+        copilot = {
+            model = "gpt-4o",
+        },
+        ollama = {
+            model = "hf.co/QuantFactory/Mistral-Nemo-Japanese-Instruct-2408-GGUF:Q4_K_M",
+        },
     },
     provider = "copilot",
     system_prompt = function()
