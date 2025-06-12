@@ -1,8 +1,10 @@
 {
+  "$schema": "https://raw.githubusercontent.com/denoland/deno/refs/heads/main/cli/schemas/config-file.v1.json",
   "tasks": {
     "lint": "deno lint && deno check ./**/*.ts",
     "molt": "deno run --allow-env --allow-read --allow-write --allow-run=git,deno --allow-net jsr:@molt/cli ./**/*.ts --write"
   },
+  "lock": false,
   "fmt": {
     "exclude": [
       ".deno",

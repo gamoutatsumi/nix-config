@@ -89,6 +89,14 @@ local on_attach = function(client, bufnr)
             end)
         )
     end
+    if client:supports_method("textDocument/codeLens") then
+        vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
+            buffer = bufnr,
+            callback = function()
+                vim.lsp.codelens.refresh()
+            end,
+        })
+    end
 end
 
 vim.lsp.config("*", { on_attach = on_attach })

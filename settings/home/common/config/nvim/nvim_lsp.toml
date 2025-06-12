@@ -12,12 +12,6 @@ require('gtd').setup({})
 repo = 'b0o/schemastore.nvim'
 
 [[plugins]]
-repo = 'VidocqH/lsp-lens.nvim'
-lua_add = '''
-require('lsp-lens').setup()
-'''
-
-[[plugins]]
 repo = 'ray-x/lsp_signature.nvim'
 
 [[plugins]]

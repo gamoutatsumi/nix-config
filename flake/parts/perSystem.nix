@@ -37,6 +37,7 @@
           packages = with pkgs; [
             lua-language-server
             nvfetcher
+            nodePackages_latest.vscode-json-languageserver
             (pkgs.haskell.packages.ghc98.ghcWithPackages (
               haskellPackages:
               with haskellPackages;
