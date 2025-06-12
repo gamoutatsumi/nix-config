@@ -16,13 +16,4 @@
     };
     # keep-sorted end
   };
-  home = {
-    packages = with pkgs; [
-      # keep-sorted start
-      colima
-      docker-client
-      lima
-      # keep-sorted end
-    ];
-  };
 }

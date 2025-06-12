@@ -13,7 +13,6 @@
       "mtgto/macskk/macskk"
       "ollama"
       "raycast"
-      "utm"
       "vivaldi"
       # keep-sorted end
     ];
