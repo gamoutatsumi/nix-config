@@ -423,6 +423,7 @@ in
             with upkgs.vscode-extensions;
             [
               # keep-sorted start
+              Google.geminicodeassist
               bbenoist.nix
               eamodio.gitlens
               editorconfig.editorconfig
