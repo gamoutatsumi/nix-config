@@ -114,6 +114,9 @@ snippets:
   - name: git main branch
     keyword: main_branch
     snippet: basename "$(git symbolic-ref --short refs/remotes/origin/HEAD)"
+  - name: git new branch with date suffix
+    keyword: gnb
+    snippet: git switch -c "{{branch}}-$(date +%Y%m%d)"
   - name: tms
     keyword: t
     snippet: tms
