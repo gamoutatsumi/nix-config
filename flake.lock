@@ -693,11 +693,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1749753479,
-        "narHash": "sha256-X9PZFPp/3Dvh/n2MhMC4N+7p8CsV7KCwYdUwdetlau4=",
+        "lastModified": 1749782833,
+        "narHash": "sha256-SU0VZc0UbVaS6FL/7VZ4gs3T2KJDegyv5QvACbOVRls=",
         "owner": "natsukium",
         "repo": "mcp-servers-nix",
-        "rev": "82094471adaf27d27c75782d1be25d8d6731c945",
+        "rev": "6cf49154ce473e812082ee730dd6a9f77baaa53a",
         "type": "github"
       },
       "original": {
@@ -1283,11 +1283,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1749709603,
-        "narHash": "sha256-3TI85d6DccKBzx/wFj5K6NC09hcHXYaxnNML5cV38TQ=",
+        "lastModified": 1749791130,
+        "narHash": "sha256-llDdA4TskXuwQ2Nce5tk8dBNQvxyFslQpJy51A+KrY8=",
         "owner": "kawarimidoll",
         "repo": "vim-overlay",
-        "rev": "622ca91ed4090f907433d8ffc407efa90b718410",
+        "rev": "e82bf15fec853122daa8043156051d04ece7ddbf",
         "type": "github"
       },
       "original": {
