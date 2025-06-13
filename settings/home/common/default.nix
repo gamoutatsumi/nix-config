@@ -64,11 +64,11 @@ in
               dir = "dpp";
             })
             (pkgs.replaceVarsWith {
-              src = ./config/nvim/init/plugins/dpp.vim;
+              src = ./config/nvim/lua/core/dpp.lua;
               replacements = {
                 deno = lib.getExe upkgs.deno;
               };
-              dir = "init/plugins";
+              dir = "lua/core";
             })
             (pkgs.replaceVarsWith {
               src = ./config/nvim/dpp/copilot.lua;

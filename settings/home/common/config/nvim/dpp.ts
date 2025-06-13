@@ -32,17 +32,11 @@ export class Config extends BaseConfig {
     basePath: string;
     dpp: Dpp;
   }): Promise<ConfigReturn> {
-    const inlineVimrcs = [
-      "$BASE_DIR/init/core/vars.vim",
-      "$BASE_DIR/init/core/opts.vim",
-      "$BASE_DIR/init/core/keys.vim",
-    ];
     const hasNvim = args.denops.meta.host === "nvim";
     const ghCommand = new Deno.Command("gh", { args: ["auth", "token"] });
     const ghOutput = await ghCommand.output();
     const ghToken = new TextDecoder().decode(ghOutput.stdout).trim();
     args.contextBuilder.setGlobal({
-      inlineVimrcs,
       extParams: {
         installer: {
           githubAPIToken: ghToken,
