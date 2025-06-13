@@ -436,9 +436,8 @@ in
               vscode-icons-team.vscode-icons
               # keep-sorted end
             ]
-            ++ (with upkgs.vscode-marketplace; [
+            ++ (with upkgs.nix-vscode-extensions.vscode-marketplace; [
               taiyofujii.novel-writer
-              yuki-yano.vscode-resonator
             ]);
           userSettings = {
             "chat.mcp.enabled" = true;
