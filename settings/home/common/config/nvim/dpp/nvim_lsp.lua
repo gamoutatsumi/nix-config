@@ -122,6 +122,7 @@ local ensure_enabled = {
     "rust_analyzer",
     "sourcekit",
     "terraformls",
+    "tombi",
     "unocss",
     "vtsls",
     -- keep-sorted end

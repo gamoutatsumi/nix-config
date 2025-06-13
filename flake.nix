@@ -265,6 +265,14 @@
       url = "github:tinted-theming/schemes";
       flake = false;
     };
+    tombi = {
+      url = "github:tombi-toml/tombi";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs-unstable";
+        };
+      };
+    };
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
       inputs = {
