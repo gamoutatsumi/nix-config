@@ -423,7 +423,6 @@ in
             with upkgs.vscode-extensions;
             [
               # keep-sorted start
-              Google.geminicodeassist
               bbenoist.nix
               eamodio.gitlens
               editorconfig.editorconfig
@@ -439,6 +438,7 @@ in
             ]
             ++ (with upkgs.nix-vscode-extensions.vscode-marketplace; [
               taiyofujii.novel-writer
+              google.geminicodeassist
             ]);
           userSettings = {
             "chat.mcp.enabled" = true;
