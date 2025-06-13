@@ -227,7 +227,7 @@ in
         "--sync"
       ];
       enableZshIntegration = true;
-      package = upkgs.fzf;
+      package = pkgs.fzf;
     };
     gh = {
       enable = true;
