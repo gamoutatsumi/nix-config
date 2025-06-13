@@ -1,7 +1,7 @@
 [[plugins]]
-repo = 'nvim-telescope/telescope.nvim'
-on_lua = ['telescope']
-depends = ['plenary.nvim']
+repo = "nvim-telescope/telescope.nvim"
+on_lua = ["telescope"]
+depends = ["plenary.nvim"]
 lazy = 1
 hook_add = '''
 lua << EOF

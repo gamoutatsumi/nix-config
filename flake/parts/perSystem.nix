@@ -8,6 +8,7 @@
       self',
       system,
       pkgs,
+      lib,
       config,
       inputs',
       ...
@@ -34,26 +35,27 @@
               pathsToLink = [ "/share/zsh" ];
             }
           }/share/zsh/site-functions";
-          packages = with pkgs; [
-            lua-language-server
-            nvfetcher
-            nodePackages_latest.vscode-json-languageserver
-            (pkgs.haskell.packages.ghc98.ghcWithPackages (
-              haskellPackages:
-              with haskellPackages;
-              [
-                containers
-                unix
-                directory
-                haskell-language-server
-              ]
-              ++ lib.optionals pkgs.stdenv.isLinux [
-                xmonad
-                xmonad-extras
-                xmonad-contrib
-              ]
-            ))
-          ];
+          packages =
+            (with pkgs; [
+              lua-language-server
+              nodePackages_latest.vscode-json-languageserver
+              (pkgs.haskell.packages.ghc98.ghcWithPackages (
+                haskellPackages:
+                with haskellPackages;
+                [
+                  containers
+                  unix
+                  directory
+                  haskell-language-server
+                ]
+                ++ lib.optionals pkgs.stdenv.isLinux [
+                  xmonad
+                  xmonad-extras
+                  xmonad-contrib
+                ]
+              ))
+            ])
+            ++ (with upkgs; [ tombi ]);
           inputsFrom = [
             config.pre-commit.devShell
             treefmtBuild.devShell
@@ -97,6 +99,15 @@
       treefmt = {
         projectRootFile = "flake.nix";
         flakeCheck = false;
+        settings = {
+          formatter = {
+            tombi = {
+              command = lib.getExe' upkgs.tombi "tombi";
+              options = [ "format" ];
+              includes = [ "*.toml" ];
+            };
+          };
+        };
         programs = {
           # keep-sorted start block=yes
           cue = {

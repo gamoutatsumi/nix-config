@@ -1,5 +1,5 @@
 [[plugins]]
-repo = 'prabirshrestha/vim-lsp'
+repo = "prabirshrestha/vim-lsp"
 hook_add = '''
   if (executable('haskell-language-server-wrapper'))
     au User lsp_setup call lsp#register_server({
@@ -35,11 +35,11 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'mattn/vim-lsp-settings'
+repo = "mattn/vim-lsp-settings"
 
 [[plugins]]
-repo = 'shun/ddc-vim-lsp'
-on_source = ['ddc.vim']
+repo = "shun/ddc-vim-lsp"
+on_source = ["ddc.vim"]
 hook_add = '''
   call ddc#custom#patch_global('sources', ['vim-lsp', 'file', 'emoji', 'around'])
   call ddc#custom#patch_global('sourceOptions', {
@@ -53,8 +53,8 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'gamoutatsumi/denite-vim-lsp'
-on_source = ['denite.nvim']
+repo = "gamoutatsumi/denite-vim-lsp"
+on_source = ["denite.nvim"]
 hook_source = '''
 nnoremap <silent> ,d <Cmd>Denite lsp/workspace_diagnostic<CR>
 '''

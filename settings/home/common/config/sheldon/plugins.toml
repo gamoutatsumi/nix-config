@@ -13,31 +13,22 @@
 shell = "zsh"
 
 [plugins]
-
 [plugins.zsh-defer]
 github = "romkatv/zsh-defer"
 
-[templates]
-defer = '''
-{% for file in files %}
-#ensure_zcompiled "{{ file }}"
-zsh-defer source "{{ file }}"
-{% endfor %}
-'''
-
 [plugins.bashcompinit]
-inline = 'autoload bashcompinit && zsh-defer bashcompinit'
+inline = "autoload bashcompinit && zsh-defer bashcompinit"
 
 [plugins.compinit]
 inline = "autoload -Uz compinit && zsh-defer compinit"
 
 [plugins.ni]
 github = "azu/ni.zsh"
-apply = ['defer']
+apply = ["defer"]
 
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
-apply = ['defer']
+apply = ["defer"]
 
 [plugins.powerlevel10k]
 github = "romkatv/powerlevel10k"
@@ -47,14 +38,22 @@ github = "chrissicool/zsh-256color"
 
 [plugins.tmk]
 github = "yuki-yano/tmk"
-apply = ['defer']
+apply = ["defer"]
 
 [plugins.tms]
 github = "yuki-yano/tms"
-apply = ['defer']
+apply = ["defer"]
 
 [plugins.fast-syntax-highlighting]
 github = "zdharma-continuum/fast-syntax-highlighting"
 
 [plugins.zeno]
 github = "yuki-yano/zeno.zsh"
+
+[templates]
+defer = '''
+{% for file in files %}
+#ensure_zcompiled "{{ file }}"
+zsh-defer source "{{ file }}"
+{% endfor %}
+'''

@@ -1,8 +1,8 @@
 [[plugins]]
-repo = 'fatih/vim-go'
+repo = "fatih/vim-go"
 lazy = 1
-on_ft = ['go']
+on_ft = ["go"]
 
 [[plugins]]
-repo = 'github/copilot.vim'
-hooks_file = '$BASE_DIR/dpp/copilot.vim'
+repo = "github/copilot.vim"
+hooks_file = "$BASE_DIR/dpp/copilot.vim"

@@ -1,5 +1,5 @@
 [[plugins]]
-repo = 'mfussenegger/nvim-dap'
+repo = "mfussenegger/nvim-dap"
 hook_add = '''
 nnoremap <silent> <F5> <Cmd>lua require'dap'.continue()<CR>
 nnoremap <silent> <F10> <Cmd>lua require'dap'.step_over()<CR>
@@ -13,10 +13,10 @@ nnoremap <silent> <Leader>dl <Cmd>lua require'dap'.run_last()<CR>
 '''
 
 [[plugins]]
-repo = 'rcarriga/nvim-dap-ui'
+repo = "rcarriga/nvim-dap-ui"
 hook_add = '''
 nnoremap <silent> <Leader>du <Cmd>lua require'dapui'.toggle()<CR>
 '''
 
 [[plugins]]
-repo = 'theHamsta/nvim-dap-virtual-text'
+repo = "theHamsta/nvim-dap-virtual-text"

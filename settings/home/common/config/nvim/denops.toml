@@ -1,64 +1,64 @@
 [[plugins]]
-repo = 'vim-denops/denops.vim'
+repo = "vim-denops/denops.vim"
 lazy = 0
 
 [[plugins]]
-repo = 'vim-denops/denops-shared-server.vim'
+repo = "vim-denops/denops-shared-server.vim"
 
 [[plugins]]
-repo = 'gamoutatsumi/dps-ghosttext.vim'
-depends = 'denops.vim'
-on_cmd = 'GhostStart'
+repo = "gamoutatsumi/dps-ghosttext.vim"
+depends = "denops.vim"
+on_cmd = "GhostStart"
 
 [[plugins]]
-repo = 'vim-skk/skkeleton'
-hooks_file = '$BASE_DIR/dpp/skkeleton.vim'
-on_map = { ict = '<Plug>(skkeleton-toggle)' }
-on_event = 'CursorHold'
+repo = "vim-skk/skkeleton"
+hooks_file = "$BASE_DIR/dpp/skkeleton.vim"
+on_map = { ict = "<Plug>(skkeleton-toggle)" }
+on_event = "CursorHold"
 
 [[plugins]]
-repo = 'gamoutatsumi/gyazoupload.vim'
-depends = 'denops.vim'
-on_cmd = 'GyazoUpload'
+repo = "gamoutatsumi/gyazoupload.vim"
+depends = "denops.vim"
+on_cmd = "GyazoUpload"
 hook_add = '''
   let g:gyazo#token=$GYAZO_TOKEN
 '''
 
 [[plugins]]
-repo = 'kat0h/bufpreview.vim'
-build = 'deno task prepare'
-depends = 'denops.vim'
+repo = "kat0h/bufpreview.vim"
+build = "deno task prepare"
+depends = "denops.vim"
 
 [[plugins]]
-repo = 'yuki-yano/fuzzy-motion.vim'
-depends = 'denops.vim'
+repo = "yuki-yano/fuzzy-motion.vim"
+depends = "denops.vim"
 hook_add = '''
   nnoremap gfs <Cmd>FuzzyMotion<CR>
 '''
 
 [[plugins]]
-repo = 'lambdalisue/vim-gin'
-depends = 'denops.vim'
+repo = "lambdalisue/vim-gin"
+depends = "denops.vim"
 
 [[plugins]]
-repo = 'lambdalisue/vim-kensaku'
-depends = 'denops.vim'
+repo = "lambdalisue/vim-kensaku"
+depends = "denops.vim"
 denops_wait = false
 hook_add = '''
 let g:kensaku_disable_v3_migration_warning = 1
 '''
 
 [[plugins]]
-repo = 'tani/vim-glance'
-depends = 'denops.vim'
+repo = "tani/vim-glance"
+depends = "denops.vim"
 hook_add = '''
 let g:glance#config = expand('$BASE_DIR/glance/init.ts')
 '''
 
 [[plugins]]
-repo = 'lambdalisue/vim-guise'
+repo = "lambdalisue/vim-guise"
 lazy = 0
 
 [[plugins]]
-repo = 'yuki-yano/resonator.vim'
-depends = 'denops.vim'
+repo = "yuki-yano/resonator.vim"
+depends = "denops.vim"

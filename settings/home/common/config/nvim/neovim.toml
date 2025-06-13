@@ -1,40 +1,40 @@
 [[plugins]]
-repo = 'tversteeg/registers.nvim'
+repo = "tversteeg/registers.nvim"
 lua_add = '''
 require('registers').setup {}
 '''
 
 [[plugins]]
-repo = 'lewis6991/gitsigns.nvim'
-hooks_file = '$BASE_DIR/dpp/gitsigns.lua'
+repo = "lewis6991/gitsigns.nvim"
+hooks_file = "$BASE_DIR/dpp/gitsigns.lua"
 
 [[plugins]]
-repo = 'nvim-lualine/lualine.nvim'
-depends = ['avante-status.nvim', 'mcphub.nvim']
-hooks_file = '$BASE_DIR/dpp/lualine.lua'
+repo = "nvim-lualine/lualine.nvim"
+depends = ["avante-status.nvim", "mcphub.nvim"]
+hooks_file = "$BASE_DIR/dpp/lualine.lua"
 
 [[plugins]]
-repo = 'kyazdani42/nvim-web-devicons'
+repo = "kyazdani42/nvim-web-devicons"
 
 [[plugins]]
-repo = 'romgrk/barbar.nvim'
+repo = "romgrk/barbar.nvim"
 hooks_file = ["$BASE_DIR/dpp/barbar.vim", "$BASE_DIR/dpp/barbar.lua"]
 
 [[plugins]]
-repo = 'nvim-lua/popup.nvim'
+repo = "nvim-lua/popup.nvim"
 
 [[plugins]]
-repo = 'nvim-lua/plenary.nvim'
+repo = "nvim-lua/plenary.nvim"
 
 [[plugins]]
-repo = 'folke/flash.nvim'
-hooks_file = '$BASE_DIR/dpp/flash.lua'
+repo = "folke/flash.nvim"
+hooks_file = "$BASE_DIR/dpp/flash.lua"
 
 [[plugins]]
-repo = 'kwkarlwang/bufresize.nvim'
+repo = "kwkarlwang/bufresize.nvim"
 
 [[plugins]]
-repo = 'aserowy/tmux.nvim'
+repo = "aserowy/tmux.nvim"
 lua_add = '''
 require('tmux').setup({
   navigation = {
@@ -47,25 +47,25 @@ require('tmux').setup({
 '''
 
 [[plugins]]
-repo = 'MunifTanjim/nui.nvim'
+repo = "MunifTanjim/nui.nvim"
 
 [[plugins]]
-repo = 'zah/nim.vim'
+repo = "zah/nim.vim"
 
 [[plugins]]
-repo = 'levouh/tint.nvim'
+repo = "levouh/tint.nvim"
 lua_add = '''
 require('tint').setup {}
 '''
 
 [[plugins]]
-repo = 'uga-rosa/ccc.nvim'
+repo = "uga-rosa/ccc.nvim"
 lua_add = '''
 require('ccc').setup {}
 '''
 
 [[plugins]]
-repo = 'rcarriga/nvim-notify'
+repo = "rcarriga/nvim-notify"
 lua_add = '''
   require('notify').setup {
     background_colour = "#000000",
@@ -73,24 +73,24 @@ lua_add = '''
 '''
 
 [[plugins]]
-repo = 'monaqa/dial.nvim'
-hooks_file = ['$BASE_DIR/dpp/dial.vim']
+repo = "monaqa/dial.nvim"
+hooks_file = ["$BASE_DIR/dpp/dial.vim"]
 
 [[plugins]]
-repo = 'ray-x/guihua.lua'
+repo = "ray-x/guihua.lua"
 
 [[plugins]]
-repo = 'linrongbin16/gitlinker.nvim'
+repo = "linrongbin16/gitlinker.nvim"
 lua_add = '''
 require('gitlinker').setup()
 '''
 
 [[plugins]]
-repo = 'stevearc/aerial.nvim'
-hooks_file = '$BASE_DIR/dpp/aerial.lua'
+repo = "stevearc/aerial.nvim"
+hooks_file = "$BASE_DIR/dpp/aerial.lua"
 
 [[plugins]]
-repo = 'tani/podium'
+repo = "tani/podium"
 lua_add = '''
 vim.api.nvim_create_user_command("Podium", function()
   local podium = require("podium")
@@ -103,7 +103,7 @@ end, {})
 '''
 
 [[plugins]]
-repo = 'uga-rosa/translate.nvim'
+repo = "uga-rosa/translate.nvim"
 lua_add = '''
 require("translate").setup {
    default = {
@@ -115,26 +115,26 @@ require("translate").setup {
 '''
 
 [[plugins]]
-repo = 'lukas-reineke/indent-blankline.nvim'
+repo = "lukas-reineke/indent-blankline.nvim"
 hooks_file = ["$BASE_DIR/dpp/indent_blankline.lua"]
 
 [[plugins]]
-repo = 'numToStr/Comment.nvim'
-hooks_file = ['$BASE_DIR/dpp/comment.lua']
+repo = "numToStr/Comment.nvim"
+hooks_file = ["$BASE_DIR/dpp/comment.lua"]
 
 [[plugins]]
-repo = 'bakpakin/Fennel'
-rev = '1.3.1'
-rtp = 'nvim'
+repo = "bakpakin/Fennel"
+rev = "1.3.1"
+rtp = "nvim"
 extAttrs = { installerBuild = 'make LUA="nvim -ll" fennel.lua && mv fennel.lua nvim/lua/fennel.lua' }
 
 [[plugins]]
-repo = 'j-hui/fidget.nvim'
-rev = 'v1.4.5'
-hooks_file = ['$BASE_DIR/dpp/fidget.lua']
+repo = "j-hui/fidget.nvim"
+rev = "v1.4.5"
+hooks_file = ["$BASE_DIR/dpp/fidget.lua"]
 
 [[plugins]]
-repo = 'CopilotC-Nvim/CopilotChat.nvim'
+repo = "CopilotC-Nvim/CopilotChat.nvim"
 lua_add = '''
 require('CopilotChat').setup {
   language = 'Japanese'
@@ -142,26 +142,26 @@ require('CopilotChat').setup {
 '''
 
 [[plugins]]
-repo = 'stevearc/dressing.nvim'
-hooks_file = ['$BASE_DIR/dpp/dressing.lua']
+repo = "stevearc/dressing.nvim"
+hooks_file = ["$BASE_DIR/dpp/dressing.lua"]
 
 [[plugins]]
-repo = 'stevearc/oil.nvim'
+repo = "stevearc/oil.nvim"
 lua_add = '''
 require('oil').setup()
 '''
 
 [[plugins]]
-repo = 'stevearc/overseer.nvim'
+repo = "stevearc/overseer.nvim"
 lua_add = '''
 require('overseer').setup()
 '''
 
 [[plugins]]
-repo = 'wojciech-kulik/xcodebuild.nvim'
+repo = "wojciech-kulik/xcodebuild.nvim"
 
 [[plugins]]
-repo = 'liangxianzhe/floating-input.nvim'
+repo = "liangxianzhe/floating-input.nvim"
 lua_add = '''
 vim.ui.input = function(opts, on_confirm)
   require('floating-input').input(opts, on_confirm, { border = 'double' })
@@ -169,14 +169,14 @@ end
 '''
 
 [[plugins]]
-repo = 'yetone/avante.nvim'
-depends = ['avante-status.nvim']
-hooks_file = ['$BASE_DIR/dpp/avante.lua']
+repo = "yetone/avante.nvim"
+depends = ["avante-status.nvim"]
+hooks_file = ["$BASE_DIR/dpp/avante.lua"]
 merged = false
-extAttrs = { installerBuild = 'make' }
+extAttrs = { installerBuild = "make" }
 
 [[plugins]]
-repo = 'HakonHarnes/img-clip.nvim'
+repo = "HakonHarnes/img-clip.nvim"
 lua_add = '''
 require('img-clip').setup {
 default = {
@@ -190,20 +190,20 @@ default = {
 '''
 
 [[plugins]]
-repo = 'takeshid/avante-status.nvim'
+repo = "takeshid/avante-status.nvim"
 lua_add = '''
 require('avante-status').setup()
 '''
 
 [[plugins]]
-repo = 'zbirenbaum/copilot.lua'
-on_event = ['InsertEnter']
-hooks_file = ['$BASE_DIR/dpp/copilot.lua']
+repo = "zbirenbaum/copilot.lua"
+on_event = ["InsertEnter"]
+hooks_file = ["$BASE_DIR/dpp/copilot.lua"]
 
 [[plugins]]
-repo = 'ravitemer/mcphub.nvim'
-dependa = ['plenary.nvim']
-hooks_file = ['$BASE_DIR/dpp/mcphub.lua']
+repo = "ravitemer/mcphub.nvim"
+dependa = ["plenary.nvim"]
+hooks_file = ["$BASE_DIR/dpp/mcphub.lua"]
 
 [[plugins]]
-repo = 'h3pei/trace-pr.nvim'
+repo = "h3pei/trace-pr.nvim"
