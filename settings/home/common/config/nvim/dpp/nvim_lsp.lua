@@ -123,6 +123,7 @@ local ensure_enabled = {
     "sourcekit",
     "terraformls",
     "tombi",
+    "typos_lsp",
     "unocss",
     "vtsls",
     -- keep-sorted end

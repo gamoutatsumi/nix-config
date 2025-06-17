@@ -371,6 +371,7 @@ in
           nodejs
           yaml-language-server
           nodePackages_latest.vscode-json-languageserver
+          typos-lsp
         ])
         ++ lib.optionals pkgs.stdenv.isLinux [
           upkgs.gcc
