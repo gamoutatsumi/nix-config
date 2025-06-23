@@ -47,7 +47,7 @@
         "nixbld"
         username
       ];
-      download-buffer-size = 128 * 1024 * 1024;
+      download-buffer-size = 512 * 1024 * 1024;
       keep-outputs = true;
       keep-derivations = true;
     };
