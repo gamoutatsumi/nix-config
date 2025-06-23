@@ -364,8 +364,8 @@ in
     neovim = {
       enable = true;
       extraPackages =
-        (with upkgs; [
-          nil
+        (with pkgs; [ nil ])
+        ++ (with upkgs; [
           tree-sitter
           efm-langserver
           nodejs

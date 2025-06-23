@@ -11,7 +11,7 @@
       "chatgpt"
       "karabiner-elements"
       "mtgto/macskk/macskk"
-      "ollama"
+      "ollama-app"
       "raycast"
       "vivaldi"
       # keep-sorted end

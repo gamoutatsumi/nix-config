@@ -10,7 +10,7 @@ inputs.mcp-servers-nix.lib.mkConfig pkgs {
   inherit format flavor;
   programs = {
     fetch = {
-      enable = true;
+      enable = false;
     };
     time = {
       enable = true;
