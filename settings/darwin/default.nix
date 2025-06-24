@@ -9,6 +9,7 @@
     casks = [
       # keep-sorted start
       "chatgpt"
+      "discord"
       "karabiner-elements"
       "mtgto/macskk/macskk"
       "ollama-app"
