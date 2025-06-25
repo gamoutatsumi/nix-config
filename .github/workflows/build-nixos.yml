@@ -1,0 +1,23 @@
+name: "Build NixOS Configurations"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build-nixos:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        host: [desktop, iso, laptop] # Add other hosts here
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install Nix
+        uses: cachix/install-nix-action@v26
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+      - name: Build NixOS Configuration
+        run: nixos-rebuild build --flake .#${{ matrix.host }} --show-trace

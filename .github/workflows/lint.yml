@@ -1,0 +1,24 @@
+name: "Lint"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install Nix
+        uses: cachix/install-nix-action@v26
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+      - name: Run Linters
+        run: |
+          nix develop -c statix check
+          # Add other linters here if needed, for example:
+          # nix develop -c deadnix
+          # nix develop -c nixpkgs-fmt --check
