@@ -11,7 +11,7 @@
       "chatgpt"
       "discord"
       "karabiner-elements"
-      "mtgto/macskk/macskk"
+      "macskk"
       "ollama-app"
       "raycast"
       "vivaldi"
