@@ -2,7 +2,6 @@
   # keep-sorted start block=yes
   homebrew = {
     enable = true;
-    taps = [ "homebrew/bundle" ];
     onActivation = {
       autoUpdate = true;
       upgrade = true;
