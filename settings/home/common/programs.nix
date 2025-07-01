@@ -33,6 +33,7 @@ in
         cacert
         coreutils-full
         curlFull
+        dblab
         docker-credential-helpers
         docker-slim
         dogdns
