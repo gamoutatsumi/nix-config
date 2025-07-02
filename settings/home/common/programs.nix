@@ -42,6 +42,7 @@ in
         file
         findutils
         gawk
+        gemini-cli
         ghq
         git-crypt
         gnugrep
