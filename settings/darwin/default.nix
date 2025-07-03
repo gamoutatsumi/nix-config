@@ -12,7 +12,6 @@
       "discord"
       "karabiner-elements"
       "macskk"
-      "ollama-app"
       "raycast"
       "vivaldi"
       # keep-sorted end
