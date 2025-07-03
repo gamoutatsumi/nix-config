@@ -6,6 +6,7 @@
         {
           system,
           pkgs,
+          inputs',
           ...
         }:
         let
@@ -31,7 +32,7 @@
             (
               _:
               import ../../homemanager.nix {
-                inherit upkgs inputs;
+                inherit upkgs inputs inputs';
                 imports = [ ../../settings/home/darwin.nix ];
                 username = darwinUser;
               }

@@ -4,6 +4,7 @@
   upkgs,
   networkManager ? false,
   inputs,
+  inputs',
 }:
 {
   home-manager = {
@@ -23,6 +24,7 @@
         upkgs
         networkManager
         inputs
+        inputs'
         ;
     };
   };

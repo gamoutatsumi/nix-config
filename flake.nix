@@ -202,6 +202,14 @@
       url = "github:neovim/neovim?ref=master&shallow=1";
       flake = false;
     };
+    nix-cue = {
+      url = "github:jmgilman/nix-cue";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+      };
+    };
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin?ref=nix-darwin-25.05";
       inputs = {
@@ -375,6 +383,9 @@
             ./flake/parts/darwin.nix
             ./flake/parts/nixos.nix
           ];
+          transposition = {
+            lib = { };
+          };
         }
       );
 }

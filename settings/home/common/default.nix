@@ -4,6 +4,7 @@
   pkgs,
   upkgs,
   config,
+  inputs',
   ...
 }:
 let
@@ -43,8 +44,12 @@ in
   };
   xdg = {
     configFile = {
-      "zeno" = {
-        source = ./config/zeno;
+      "zeno/config.yml" = {
+        source = inputs'.nix-cue.lib.eval {
+          inherit pkgs;
+          inputFiles = [ ./config/zeno/config.cue ];
+          outputFile = "config.yml";
+        };
       };
       "ov/config.yaml" = {
         source = ./config/ov/config.yaml;
