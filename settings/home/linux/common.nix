@@ -49,7 +49,8 @@ library=${pkgs.p11-kit}/lib/p11-kit-proxy.so
 name=p11-kit-proxy\n";
     };
     pointerCursor = {
-      name = "Vimix-cursors";
+      name = "macOS";
+      size = 22;
       gtk = {
         enable = true;
       };
@@ -57,57 +58,7 @@ name=p11-kit-proxy\n";
         enable = true;
         defaultCursor = "left_ptr";
       };
-      package = pkgs.vimix-cursors.overrideAttrs (
-        _final: _prev: {
-          patches = [
-            (pkgs.writeText "diff.patch" ''
-              diff --git a/build.sh b/build.sh
-              index 71d26e6..f402af3 100755
-              --- a/build.sh
-              +++ b/build.sh
-              @@ -47,7 +47,7 @@ function create {
-               	cd $SRC
-               
-               	# generate cursors
-              -	if [[ "$THEME" =~ White$ ]]; then
-              +	if [[ "$THEME" =~ white-cursors$ ]]; then
-               		BUILD="$SRC"/../dist-white
-               	else BUILD="$SRC"/../dist
-               	fi
-              @@ -100,10 +100,10 @@ function create {
-               
-               # generate pixmaps from svg source
-               SRC=$PWD/src
-              -THEME="Vimix Cursors"
-              +THEME="Vimix-cursors"
-               
-               create svg
-               
-              -THEME="Vimix Cursors - White"
-              +THEME="Vimix-white-cursors"
-               
-               create svg-white
-              diff --git a/dist/index.theme b/dist/index.theme
-              index 988f265..f996f59 100644
-              --- a/dist/index.theme
-              +++ b/dist/index.theme
-              @@ -1,3 +1,3 @@
-               [Icon Theme]
-              -Name=Vimix Cursors
-              +Name=Vimix-cursors
-               
-              diff --git a/src/index.theme b/src/index.theme
-              index 988f265..f996f59 100644
-              --- a/src/index.theme
-              +++ b/src/index.theme
-              @@ -1,3 +1,3 @@
-               [Icon Theme]
-              -Name=Vimix Cursors
-              +Name=Vimix-cursors
-            '')
-          ];
-        }
-      );
+      package = pkgs.apple-cursor;
     };
   };
   i18n = {

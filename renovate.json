@@ -13,5 +13,8 @@
   "automergeStrategy": "rebase",
   "nix": {
     "enabled": true
+  },
+  "regex": {
+    "pinDigests": false
   }
 }
