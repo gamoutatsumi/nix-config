@@ -6,6 +6,7 @@
         {
           system,
           pkgs,
+          inputs',
           ...
         }:
         let
@@ -35,7 +36,12 @@
             (
               _:
               import ../../homemanager.nix {
-                inherit username upkgs inputs;
+                inherit
+                  username
+                  upkgs
+                  inputs
+                  inputs'
+                  ;
                 imports = [ ../../settings/home/linux.nix ];
                 networkManager = true;
               }
