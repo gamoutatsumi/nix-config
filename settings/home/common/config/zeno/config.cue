@@ -249,12 +249,6 @@ completions: [{
 		"--preview":        "gh workflow view {1}"
 	}
 }, {
-	name: "Makefile"
-	patterns: ["^make $"]
-	sourceCommand: "make help | sed -E \"s/\\x1b\\[([0-9]{1,3}((;[0-9]{1,3})*)?)?[mGK]//g\""
-	callback:      "awk '{printf $1}'"
-	options: "--prompt": "'Target> '"
-}, {
 	name: "GitHub PRs"
 	patterns: [
 		"^gh co $",
