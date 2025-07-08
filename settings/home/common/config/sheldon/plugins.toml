@@ -44,8 +44,8 @@ apply = ["defer"]
 github = "yuki-yano/tms"
 apply = ["defer"]
 
-[plugins.fast-syntax-highlighting]
-github = "zdharma-continuum/fast-syntax-highlighting"
+[plugins.f-sy-h]
+github = "z-shell/F-Sy-H"
 
 [plugins.zeno]
 github = "yuki-yano/zeno.zsh"
