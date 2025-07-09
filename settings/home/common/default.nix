@@ -45,7 +45,7 @@ in
   xdg = {
     configFile = {
       "claude/settings.json" = {
-        source = builtins.toJSON {
+        text = builtins.toJSON {
           "permissions" = {
             "allow" = [
             ];
