@@ -12,6 +12,7 @@
       "discord"
       "karabiner-elements"
       "macskk"
+      "obsidian"
       "raycast"
       "vivaldi"
       # keep-sorted end
