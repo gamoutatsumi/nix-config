@@ -19,6 +19,24 @@
         inherit (pkgs) stdenv lib;
       };
       treefmtBuild = config.treefmt.build;
+      mcpJson = inputs.mcp-servers-nix.lib.mkConfig upkgs {
+        format = "json";
+        flavor = "claude";
+        settings = {
+          servers = {
+            sitemcp = {
+              command = lib.getExe' upkgs.nodejs "npx";
+              args = [
+                "-y"
+                "sitemcp"
+                "https://nix-community.github.io"
+                "-m"
+                "/home-manager/**"
+              ];
+            };
+          };
+        };
+      };
     in
     {
       # keep-sorted start block=yes
@@ -28,6 +46,11 @@
       };
       devShells = {
         default = pkgs.mkShellNoCC {
+          shellHook = ''
+            GIT_WC=`${lib.getExe pkgs.git} rev-parse --show-toplevel`
+            mkdir -p ''${GIT_WC}/.claude
+            ln -sf ${mcpJson} ''${GIT_WC}/.claude/mcp.json
+          '';
           PFPATH = "${
             pkgs.buildEnv {
               name = "zsh-comp";
