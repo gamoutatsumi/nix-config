@@ -24,14 +24,11 @@
         flavor = "claude";
         settings = {
           servers = {
-            sitemcp = {
-              command = lib.getExe' upkgs.nodejs "npx";
+            nixos = {
+              command = lib.getExe' upkgs.bun "bunx";
               args = [
-                "-y"
                 "sitemcp"
-                "https://nix-community.github.io"
-                "-m"
-                "/home-manager/**"
+                "https://wiki.nixos.org/wiki/NixOS_Wiki"
               ];
             };
           };
