@@ -48,8 +48,7 @@
         default = pkgs.mkShellNoCC {
           shellHook = ''
             GIT_WC=`${lib.getExe pkgs.git} rev-parse --show-toplevel`
-            mkdir -p ''${GIT_WC}/.claude
-            ln -sf ${mcpJson} ''${GIT_WC}/.claude/mcp.json
+            ln -sf ${mcpJson} ''${GIT_WC}/.mcp.json
           '';
           PFPATH = "${
             pkgs.buildEnv {

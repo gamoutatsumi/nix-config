@@ -2,4 +2,4 @@
 .direnv
 /direnv
 .pre-commit-config.yaml
-.claude/mcp.json
+.mcp.json
