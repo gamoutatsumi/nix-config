@@ -31,6 +31,7 @@ in
         bc
         binutils
         cacert
+        claude-code
         coreutils-full
         curlFull
         dblab
