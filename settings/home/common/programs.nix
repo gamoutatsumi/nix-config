@@ -509,6 +509,7 @@ in
       sessionVariables = {
         # keep-sorted start block = yes
         ANSIBLE_HOME = "${config.xdg.dataHome}/ansible";
+        CLAUDE_CONFIG_DIR = "${config.xdg.configHome}/claude";
         DIRENV_LOG_FORMAT = "";
         DOCKER_BUILDKIT = 1;
         ESLINT_D_LOCAL_ESLINT_ONLY = 1;

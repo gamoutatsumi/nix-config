@@ -44,6 +44,14 @@ in
   };
   xdg = {
     configFile = {
+      "claude/.mcp.json" = {
+        source = import ../../../mcp.nix {
+          format = "json";
+          flavor = "claude";
+          inherit config lib inputs;
+          pkgs = upkgs;
+        };
+      };
       "zeno/config.yml" = {
         source = inputs'.nix-cue.lib.eval {
           inherit pkgs;
