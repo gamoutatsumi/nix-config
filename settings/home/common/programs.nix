@@ -31,7 +31,6 @@ in
         bc
         binutils
         cacert
-        claude-code
         coreutils-full
         curlFull
         dblab
@@ -80,6 +79,7 @@ in
       ])
       ++ (with upkgs; [
         deno
+        claude-code
         vim
         opencommit
       ]);
