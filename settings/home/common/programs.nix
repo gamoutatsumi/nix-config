@@ -525,6 +525,7 @@ in
         PAGER = "${lib.getExe' pkgs.ov "ov"}";
         PURE_GIT_PULL = 0;
         TERM = "alacritty";
+        TMUX_PLUGIN_MANAGER_PATH = "${config.xdg.dataHome}/tmux/plugins";
         WORDCHARS = "*?_.[]~-=&;!#$%^(){}<>";
         ZENO_ENABLE_FZF_TMUX = 1;
         ZENO_ENABLE_SOCK = 1;
