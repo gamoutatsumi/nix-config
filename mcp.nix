@@ -41,6 +41,9 @@ inputs.mcp-servers-nix.lib.mkConfig pkgs {
     playwright = {
       enable = true;
     };
+    context7 = {
+      enable = true;
+    };
   };
   settings = {
     servers =
