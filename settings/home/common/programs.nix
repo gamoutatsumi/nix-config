@@ -12,6 +12,7 @@ let
     url = "https://github.com/gamoutatsumi.gpg";
     sha256 = "0p1xp2rq7r0hbdi7dkhw3fzrf2ij7b3p6a5nnk0fflda4cs6a814";
   };
+  nodePkgs = pkgs.callPackage ../../../node2nix { };
 in
 {
   # keep-sorted start block=yes
@@ -62,6 +63,7 @@ in
         nix-output-monitor
         nix-search-cli
         nix-tree
+        nodePkgs.ccusage
         paperkey
         picocom
         pinact
@@ -409,6 +411,7 @@ in
       extraConfig = lib.strings.concatLines [
         (builtins.readFile ./config/tmux/tmux.conf)
         (builtins.readFile ./config/tmux/tmuxline-nightfly.conf)
+        ''run "''${TMUX_PLUGIN_MANAGER_PATH}/tpm/tpm"''
       ];
       mouse = true;
       baseIndex = 1;

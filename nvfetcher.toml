@@ -1,7 +1,0 @@
-[powerlevel10k]
-src.github = "romkatv/powerlevel10k"
-fetch.github = "romkatv/powerlevel10k"
-
-[zsh-256color]
-src.git = "https://github.com/chrissicool/zsh-256color.git"
-fetch.github = "chrissicool/zsh-256color"
