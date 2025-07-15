@@ -169,13 +169,6 @@ end
 '''
 
 [[plugins]]
-repo = "yetone/avante.nvim"
-depends = ["avante-status.nvim"]
-hooks_file = ["$BASE_DIR/dpp/avante.lua"]
-merged = false
-extAttrs = { installerBuild = "make" }
-
-[[plugins]]
 repo = "HakonHarnes/img-clip.nvim"
 lua_add = '''
 require('img-clip').setup {
