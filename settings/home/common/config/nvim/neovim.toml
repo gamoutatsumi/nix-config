@@ -207,3 +207,4 @@ repo = "folke/snacks.nvim"
 [[plugins]]
 repo = "coder/claudecode.nvim"
 depends = ["snacks.nvim"]
+hooks_file = ["$BASE_DIR/dpp/claudecode.lua"]
