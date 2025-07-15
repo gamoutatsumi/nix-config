@@ -274,7 +274,7 @@
       flake = false;
     };
     tombi = {
-      url = "github:tombi-toml/tombi?ref=v0.4.17";
+      url = "github:tombi-toml/tombi?ref=v0.4.32";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs-unstable";
@@ -308,7 +308,7 @@
       flake = false;
     };
     xremap = {
-      url = "github:xremap/xremap?ref=v0.10.12";
+      url = "github:xremap/xremap?ref=v0.10.13";
       flake = false;
     };
     xremap-nix = {
