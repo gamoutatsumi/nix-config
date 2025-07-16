@@ -22,6 +22,17 @@
       mcpJson = inputs.mcp-servers-nix.lib.mkConfig upkgs {
         format = "json";
         flavor = "claude";
+        programs = {
+          git = {
+            enable = true;
+          };
+          sequential-thinking = {
+            enable = true;
+          };
+          context7 = {
+            enable = true;
+          };
+        };
         settings = {
           servers = {
             nixos = {
@@ -112,6 +123,9 @@
             yamllint = {
               enable = true;
             };
+            actionlint = {
+              enable = true;
+            };
             # keep-sorted end
           };
         };
@@ -147,6 +161,9 @@
             enable = true;
           };
           keep-sorted = {
+            enable = true;
+          };
+          mdformat = {
             enable = true;
           };
           nixfmt = {
