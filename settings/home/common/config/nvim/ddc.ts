@@ -1,8 +1,6 @@
-import {
-  BaseConfig,
-  ContextBuilder,
-} from "https://deno.land/x/ddc_vim@v6.0.0/types.ts";
-import { Denops } from "https://deno.land/x/ddc_vim@v6.0.0/deps.ts";
+import { BaseConfig } from "jsr:@shougo/ddc-vim@9.5.0/config";
+import { ContextBuilder } from "jsr:@shougo/ddc-vim@9.5.0/types";
+import { Denops } from "jsr:@denops/std@~7.6.0";
 
 const CONVERTERS = [
   "converter_fuzzy",

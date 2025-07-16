@@ -1,11 +1,11 @@
 import {
   ActionArguments,
   ActionFlags,
-  BaseConfig,
   ContextBuilder,
-} from "https://deno.land/x/ddu_vim@v5.0.0/types.ts";
-import { Denops } from "https://deno.land/x/ddu_vim@v5.0.0/deps.ts";
-import * as stdpath from "jsr:@std/path@1.1.0";
+} from "jsr:@shougo/ddu-vim@10.3.0/types";
+import { BaseConfig } from "jsr:@shougo/ddu-vim@10.3.0/config";
+import { Denops } from "jsr:@denops/std@7.6.0";
+import * as stdpath from "jsr:@std/path@1.1.1";
 import * as u from "jsr:@core/unknownutil@4.3.0";
 import { ActionData as GitStatusActionData } from "https://raw.githubusercontent.com/kuuote/ddu-source-git_status/main/denops/%40ddu-kinds/git_status.ts";
 
