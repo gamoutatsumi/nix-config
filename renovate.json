@@ -41,27 +41,8 @@
       ],
       "datasourceTemplate": "github-tags",
       "extractVersionTemplate": "^v(?<version>.*)$"
-    },
-    {
-      "customType": "regex",
-      "managerFilePatterns": [
-        "/^flake\\.nix$/"
-      ],
-      "matchStrings": [
-        "url = \"https://nixos\\.org/channels/(?<depName>nixos-[^/]+)/nixexprs\\.tar\\.xz"
-      ],
-      "datasourceTemplate": "custom.nixos-channels",
-      "currentValueTemplate": "{{depName}}"
     }
   ],
-  "customDatasources": {
-    "nixos-channels": {
-      "defaultRegistryUrlTemplate": "https://api.github.com/repos/NixOS/nixpkgs/branches?per_page=100",
-      "transformTemplates": [
-        "{\"releases\": $filter($, function($v) { $v.name ~> /^nixos-\\d+\\.\\d+$/ or $v.name = \"nixos-unstable\" }) ~> | $ | {\"version\": name}, [\"name\"] |}"
-      ]
-    }
-  },
   "prConcurrentLimit": 10,
   "prHourlyLimit": 5,
   "timezone": "Asia/Tokyo",
@@ -92,28 +73,6 @@
       ]
     },
     {
-      "groupName": "nixpkgs-stable",
-      "schedule": [
-        "after 8am on Monday"
-      ],
-      "matchPackageNames": [
-        "/nixos-\\d+\\.\\d+/"
-      ]
-    },
-    {
-      "matchDatasources": [
-        "custom.nixos-channels"
-      ],
-      "enabled": false
-    },
-    {
-      "description": "Automerge lock file maintenance",
-      "matchUpdateTypes": [
-        "lockFileMaintenance"
-      ],
-      "automerge": true
-    },
-    {
       "matchManagers": [
         "github-actions"
       ],
@@ -137,21 +96,6 @@
         "major"
       ],
       "enabled": true
-    },
-    {
-      "matchDepTypes": [
-        "action"
-      ],
-      "pinDigests": true
-    },
-    {
-      "matchPackageNames": [
-        "denoland/deno"
-      ],
-      "groupName": "deno",
-      "schedule": [
-        "after 10am on tuesday"
-      ]
     }
   ]
 }
