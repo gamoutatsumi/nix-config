@@ -1,13 +1,16 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "config:recommended",
+    ":gitSignOff",
+    ":separateMajorReleases"
   ],
   "lockFileMaintenance": {
     "enabled": true,
     "extends": [
       "schedule:daily"
-    ]
+    ],
+    "automerge": true
   },
   "automerge": false,
   "automergeStrategy": "rebase",
@@ -16,5 +19,150 @@
   },
   "regex": {
     "pinDigests": false
-  }
+  },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "^flake\\.nix$"
+      ],
+      "matchStrings": [
+        "url = \"github:(?<depName>[^/]+/[^?]+)\\?ref=(?<currentValue>[^&\"]+)"
+      ],
+      "datasourceTemplate": "github-tags"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "^flake\\.nix$"
+      ],
+      "matchStrings": [
+        "url = \"github:(?<depName>[^/]+/[^?]+)\\?ref=v(?<currentValue>[^&\"]+)"
+      ],
+      "datasourceTemplate": "github-tags",
+      "extractVersionTemplate": "^v(?<version>.*)$"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "^flake\\.nix$"
+      ],
+      "matchStrings": [
+        "url = \"https://nixos\\.org/channels/(?<depName>nixos-[^/]+)/nixexprs\\.tar\\.xz"
+      ],
+      "datasourceTemplate": "custom.nixos-channels",
+      "currentValueTemplate": "{{depName}}"
+    }
+  ],
+  "customDatasources": {
+    "nixos-channels": {
+      "defaultRegistryUrlTemplate": "https://api.github.com/repos/NixOS/nixpkgs/branches?per_page=100",
+      "transformTemplates": [
+        "{\"releases\": $filter($, function($v) { $v.name ~> /^nixos-\\d+\\.\\d+$/ or $v.name = \"nixos-unstable\" }) ~> | $ | {\"version\": name}, [\"name\"] |}"
+      ]
+    }
+  },
+  "prConcurrentLimit": 10,
+  "prHourlyLimit": 5,
+  "timezone": "Asia/Tokyo",
+  "github-actions": {
+    "enabled": true
+  },
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "^\\.github/workflows/[^/]+\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "uses: (?<depName>[^@]+)@(?<currentValue>[a-f0-9]{40}|[a-f0-9]{7})(?:\\s+#\\s*(?:tag=)?(?<currentTag>v?[\\d.]+))?"
+      ],
+      "datasourceTemplate": "github-tags"
+    },
+    {
+      "fileMatch": [
+        "^\\.github/workflows/[^/]+\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "uses: (?<depName>[^@]+)@(?<currentValue>v[\\d.]+)"
+      ],
+      "datasourceTemplate": "github-tags"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchDatasources": [
+        "github-tags"
+      ],
+      "matchPackagePatterns": [
+        "^nix-community/",
+        "^numtide/",
+        "^cachix/"
+      ],
+      "groupName": "nix-community",
+      "automerge": true
+    },
+    {
+      "matchPackagePatterns": [
+        "nixos-unstable",
+        "nixpkgs-unstable"
+      ],
+      "groupName": "nixpkgs-unstable",
+      "schedule": [
+        "after 8am on Monday"
+      ]
+    },
+    {
+      "matchPackagePatterns": [
+        "nixos-\\d+\\.\\d+"
+      ],
+      "groupName": "nixpkgs-stable",
+      "schedule": [
+        "after 8am on Monday"
+      ]
+    },
+    {
+      "matchDatasources": [
+        "custom.nixos-channels"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Automerge lock file maintenance",
+      "matchUpdateTypes": [
+        "lockFileMaintenance"
+      ],
+      "automerge": true
+    },
+    {
+      "matchManagers": [
+        "github-actions"
+      ],
+      "groupName": "github-actions",
+      "automerge": true,
+      "automergeType": "pr",
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "digest"
+      ],
+      "schedule": [
+        "after 9am on monday"
+      ]
+    },
+    {
+      "matchManagers": [
+        "github-actions"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "enabled": true
+    },
+    {
+      "matchDepTypes": [
+        "action"
+      ],
+      "pinDigests": true
+    }
+  ]
 }
