@@ -1,5 +1,5 @@
----
 name: Claude Code
+
 on:
   issue_comment:
     types: [created]
@@ -9,6 +9,7 @@ on:
     types: [opened, assigned]
   pull_request_review:
     types: [submitted]
+
 jobs:
   claude:
     if: |
@@ -25,44 +26,39 @@ jobs:
       actions: read # Required for Claude to read CI results on PRs
     steps:
       - name: Checkout repository
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 1
-      - uses: cachix/install-nix-action@f0fe604f8a612776892427721526b4c7cfb23aba # v31.4.1
-      - uses: cachix/cachix-action@18cf96c7c98e048e10a83abd92116114cd8504be # v14
-        with:
-          name: gamoutatsumi-nix-config
-          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
-      - uses: nicknovitski/nix-develop@9be7cfb4b10451d3390a75dc18ad0465bed4932a # v1.2.1
-        with:
-          arguments: --accept-flake-config
+
       - name: Run Claude Code
         id: claude
-        uses: anthropics/claude-code-action@a9d9ad3612d6d61922fb1af719a32b9f1366f3f2 # v0.0.33
+        uses: anthropics/claude-code-action@beta
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+
           # This is an optional setting that allows Claude to read CI results on PRs
           additional_permissions: |
             actions: read
+          
+          # Optional: Specify model (defaults to Claude Sonnet 4, uncomment for Claude Opus 4)
+          # model: "claude-opus-4-20250514"
+          
+          # Optional: Customize the trigger phrase (default: @claude)
+          # trigger_phrase: "/claude"
+          
+          # Optional: Trigger when specific user is assigned to an issue
+          # assignee_trigger: "claude-bot"
+          
+          # Optional: Allow Claude to run specific commands
+          # allowed_tools: "Bash(npm install),Bash(npm run build),Bash(npm run test:*),Bash(npm run lint:*)"
+          
+          # Optional: Add custom instructions for Claude to customize its behavior for your project
+          # custom_instructions: |
+          #   Follow our coding standards
+          #   Ensure all new code has tests
+          #   Use TypeScript for new files
+          
+          # Optional: Custom environment variables for Claude
+          # claude_env: |
+          #   NODE_ENV: test
 
-# Optional: Specify model (defaults to Claude Sonnet 4, uncomment for Claude Opus 4)
-# model: "claude-opus-4-20250514"
-
-# Optional: Customize the trigger phrase (default: @claude)
-# trigger_phrase: "/claude"
-
-# Optional: Trigger when specific user is assigned to an issue
-# assignee_trigger: "claude-bot"
-
-# Optional: Allow Claude to run specific commands
-# allowed_tools: "Bash(npm install),Bash(npm run build),Bash(npm run test:*),Bash(npm run lint:*)"
-
-# Optional: Add custom instructions for Claude to customize its behavior for your project
-# custom_instructions: |
-#   Follow our coding standards
-#   Ensure all new code has tests
-#   Use TypeScript for new files
-
-# Optional: Custom environment variables for Claude
-# claude_env: |
-#   NODE_ENV: test
