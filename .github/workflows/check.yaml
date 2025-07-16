@@ -5,7 +5,7 @@ on:
   push:
     branches: [main]
 jobs:
-  typescript-lint:
+  flake-check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

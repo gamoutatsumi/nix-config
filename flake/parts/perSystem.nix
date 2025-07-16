@@ -134,7 +134,10 @@
           formatter = {
             tombi = {
               command = lib.getExe' upkgs.tombi "tombi";
-              options = [ "format" ];
+              options = [
+                "format"
+                "--offline"
+              ];
               includes = [ "*.toml" ];
             };
           };
