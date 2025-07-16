@@ -35,12 +35,9 @@
         };
         settings = {
           servers = {
-            nixos = {
-              command = lib.getExe' upkgs.bun "bunx";
-              args = [
-                "sitemcp"
-                "https://wiki.nixos.org/wiki/NixOS_Wiki"
-              ];
+            github-server = {
+              type = "http";
+              url = "https://api.githubcopilot.com/mcp";
             };
           };
         };
