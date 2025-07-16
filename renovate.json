@@ -86,6 +86,17 @@
         "uses: (?<depName>[^@]+)@(?<currentValue>v[\\d.]+)"
       ],
       "datasourceTemplate": "github-tags"
+    },
+    {
+      "fileMatch": [
+        "^\\.github/workflows/[^/]+\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "deno-version:\\s*[\"']?(?<currentValue>v?[\\d.]+)[\"']?"
+      ],
+      "depNameTemplate": "denoland/deno",
+      "datasourceTemplate": "github-releases",
+      "extractVersionTemplate": "^v?(?<version>.*)$"
     }
   ],
   "packageRules": [
@@ -163,6 +174,15 @@
         "action"
       ],
       "pinDigests": true
+    },
+    {
+      "matchPackageNames": [
+        "denoland/deno"
+      ],
+      "groupName": "deno",
+      "schedule": [
+        "after 10am on tuesday"
+      ]
     }
   ]
 }
