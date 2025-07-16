@@ -23,8 +23,8 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": [
-        "^flake\\.nix$"
+      "managerFilePatterns": [
+        "/^flake\\.nix$/"
       ],
       "matchStrings": [
         "url = \"github:(?<depName>[^/]+/[^?]+)\\?ref=(?<currentValue>[^&\"]+)"
@@ -33,8 +33,8 @@
     },
     {
       "customType": "regex",
-      "fileMatch": [
-        "^flake\\.nix$"
+      "managerFilePatterns": [
+        "/^flake\\.nix$/"
       ],
       "matchStrings": [
         "url = \"github:(?<depName>[^/]+/[^?]+)\\?ref=v(?<currentValue>[^&\"]+)"
@@ -44,8 +44,8 @@
     },
     {
       "customType": "regex",
-      "fileMatch": [
-        "^flake\\.nix$"
+      "managerFilePatterns": [
+        "/^flake\\.nix$/"
       ],
       "matchStrings": [
         "url = \"https://nixos\\.org/channels/(?<depName>nixos-[^/]+)/nixexprs\\.tar\\.xz"
@@ -68,67 +68,36 @@
   "github-actions": {
     "enabled": true
   },
-  "regexManagers": [
-    {
-      "fileMatch": [
-        "^\\.github/workflows/[^/]+\\.ya?ml$"
-      ],
-      "matchStrings": [
-        "uses: (?<depName>[^@]+)@(?<currentValue>[a-f0-9]{40}|[a-f0-9]{7})(?:\\s+#\\s*(?:tag=)?(?<currentTag>v?[\\d.]+))?"
-      ],
-      "datasourceTemplate": "github-tags"
-    },
-    {
-      "fileMatch": [
-        "^\\.github/workflows/[^/]+\\.ya?ml$"
-      ],
-      "matchStrings": [
-        "uses: (?<depName>[^@]+)@(?<currentValue>v[\\d.]+)"
-      ],
-      "datasourceTemplate": "github-tags"
-    },
-    {
-      "fileMatch": [
-        "^\\.github/workflows/[^/]+\\.ya?ml$"
-      ],
-      "matchStrings": [
-        "deno-version:\\s*[\"']?(?<currentValue>v?[\\d.]+)[\"']?"
-      ],
-      "depNameTemplate": "denoland/deno",
-      "datasourceTemplate": "github-releases",
-      "extractVersionTemplate": "^v?(?<version>.*)$"
-    }
-  ],
   "packageRules": [
     {
       "matchDatasources": [
         "github-tags"
       ],
-      "matchPackagePatterns": [
-        "^nix-community/",
-        "^numtide/",
-        "^cachix/"
-      ],
       "groupName": "nix-community",
-      "automerge": true
-    },
-    {
-      "matchPackagePatterns": [
-        "nixos-unstable",
-        "nixpkgs-unstable"
-      ],
-      "groupName": "nixpkgs-unstable",
-      "schedule": [
-        "after 8am on Monday"
+      "automerge": true,
+      "matchPackageNames": [
+        "/^nix-community//",
+        "/^numtide//",
+        "/^cachix//"
       ]
     },
     {
-      "matchPackagePatterns": [
-        "nixos-\\d+\\.\\d+"
+      "groupName": "nixpkgs-unstable",
+      "schedule": [
+        "after 8am on Monday"
       ],
+      "matchPackageNames": [
+        "/nixos-unstable/",
+        "/nixpkgs-unstable/"
+      ]
+    },
+    {
       "groupName": "nixpkgs-stable",
       "schedule": [
         "after 8am on Monday"
+      ],
+      "matchPackageNames": [
+        "/nixos-\\d+\\.\\d+/"
       ]
     },
     {
