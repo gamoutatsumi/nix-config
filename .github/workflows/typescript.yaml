@@ -1,0 +1,31 @@
+---
+name: TypeScript Lint
+on:
+  pull_request:
+    paths:
+      - "**/*.ts"
+      - "**/*.tsx"
+  push:
+    branches: [main]
+    paths:
+      - "**/*.ts"
+      - "**/*.tsx"
+jobs:
+  typescript-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+      - name: Lint TypeScript files
+        run: |-
+          # Find all TypeScript files and run deno lint on them
+          find . -name "*.ts" -o -name "*.tsx" | grep -v node_modules | while read -r file; do
+            echo "Linting: $file"
+            deno lint "$file"
+          done
