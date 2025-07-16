@@ -1,5 +1,5 @@
 ---
-name: TypeScript Lint
+name: Check
 on:
   pull_request:
   push:
