@@ -124,9 +124,6 @@
             actionlint = {
               enable = true;
             };
-            lua-ls = {
-              enable = true;
-            };
             # keep-sorted end
           };
         };
