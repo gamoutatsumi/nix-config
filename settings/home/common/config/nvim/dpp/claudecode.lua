@@ -1,5 +1,5 @@
 -- lua_add {{{
-require("claudecode").setup({})
+require("claudecode").setup({ terminal = { provider = "native" } })
 vim.keymap.set("n", "<Leader>ac", "<Cmd>ClaudeCode<CR>", { desc = "Toggle Claude" })
 vim.keymap.set("n", "<Leader>ac", "<Cmd>ClaudeCode<CR>", { desc = "Toggle Claude" })
 vim.keymap.set("n", "<Leader>af", "<Cmd>ClaudeCodeFocus<CR>", { desc = "Focus Claude" })
