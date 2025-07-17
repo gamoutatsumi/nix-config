@@ -49,6 +49,8 @@ jobs:
           allowed_tools: |
             mcp__git__*
             Bash(git push)
+            Bash(rm -rf)
+            Bash(rm)
 
 # Optional: Specify model (defaults to Claude Sonnet 4, uncomment for Claude Opus 4)
 # model: "claude-opus-4-20250514"
