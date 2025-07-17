@@ -59,6 +59,7 @@ jobs:
             - Test coverage
 
             Be constructive and helpful in your feedback.
+            You should use the `mcp__sequential-thinking__sequentialthinking` to analyze the code and provide a detailed review.
 
 # Optional: Use sticky comments to make Claude reuse the same comment on subsequent pushes to the same PR
 # use_sticky_comment: true
