@@ -9,7 +9,6 @@ local utils = require("claudecode.utils")
 
 --- @type string?
 local terminal_name = nil
-local is_open = false
 local config = {
     name = "claudecode",
     size = 15,
@@ -19,9 +18,149 @@ local config = {
     close_on_exit = true,
 }
 
+-- Function existence cache for performance optimization
+local function_cache = {}
+
+--- Check if a function exists with caching
+--- @param func_name string
+--- @return boolean
+local function is_function_available(func_name)
+    if function_cache[func_name] ~= nil then
+        return function_cache[func_name]
+    end
+
+    local exists = vim.fn.exists("*" .. func_name) == 1
+    function_cache[func_name] = exists
+    return exists
+end
+
+--- Validate that all required ddt.vim API functions are available
+--- @return boolean, string?
+local function validate_ddt_api()
+    local required_functions = {
+        "ddt#start",
+        "ddt#ui#do_action",
+        "ddt#custom#load_config",
+        "ddt#ui#get_current",
+    }
+
+    for _, func in ipairs(required_functions) do
+        if not is_function_available(func) then
+            return false, "Missing required ddt.vim function: " .. func
+        end
+    end
+
+    return true
+end
+
+--- Validate configuration parameters
+--- @param cfg table
+--- @return boolean, string?
+local function validate_config(cfg)
+    if not cfg or type(cfg) ~= "table" then
+        return false, "Configuration must be a table"
+    end
+
+    -- Validate direction
+    if cfg.direction then
+        local valid_directions = { "horizontal", "vertical", "float" }
+        if not vim.tbl_contains(valid_directions, cfg.direction) then
+            return false,
+                "Invalid direction: " .. cfg.direction .. ". Must be one of: " .. table.concat(valid_directions, ", ")
+        end
+    end
+
+    -- Validate split
+    if cfg.split and type(cfg.split) ~= "string" then
+        return false, "split must be a string"
+    end
+
+    -- Validate size
+    if cfg.size and (type(cfg.size) ~= "number" or cfg.size <= 0) then
+        return false, "size must be a positive number"
+    end
+
+    -- Validate boolean parameters
+    local boolean_params = { "focus_on_open", "close_on_exit" }
+    for _, param in ipairs(boolean_params) do
+        if cfg[param] ~= nil and type(cfg[param]) ~= "boolean" then
+            return false, param .. " must be a boolean"
+        end
+    end
+
+    -- Validate name
+    if cfg.name and type(cfg.name) ~= "string" then
+        return false, "name must be a string"
+    end
+
+    return true
+end
+
+--- Validate and sanitize input text/commands
+--- @param input string
+--- @param input_type string
+--- @return boolean, string?
+local function validate_and_sanitize_input(input, input_type)
+    if type(input) ~= "string" then
+        return false, input_type .. " must be a string"
+    end
+
+    if input == "" then
+        return false, input_type .. " cannot be empty"
+    end
+
+    -- Remove null bytes and control characters for safety
+    local sanitized = input:gsub("[\0\1-\8\11-\12\14-\31\127]", "")
+
+    -- Check for potentially dangerous command patterns
+    local dangerous_patterns = {
+        "rm%s+%-rf",
+        "sudo%s+rm",
+        ">/dev/null",
+        "2>&1",
+        "&&",
+        "||",
+        ";",
+        "|",
+    }
+
+    for _, pattern in ipairs(dangerous_patterns) do
+        if sanitized:match(pattern) then
+            logger.warn("terminal", "Potentially dangerous " .. input_type .. " pattern detected: " .. pattern)
+        end
+    end
+
+    return true, sanitized
+end
+
+--- Get actual ddt.vim terminal state
+--- @return boolean
+local function get_actual_ddt_state()
+    if not is_function_available("ddt#ui#get_current") then
+        return false
+    end
+
+    local success, result = pcall(vim.fn["ddt#ui#get_current"])
+    if not success then
+        logger.error("terminal", "Failed to get ddt.vim state: " .. tostring(result))
+        return false
+    end
+
+    return result ~= nil and result ~= ""
+end
+
+--- Enhanced cleanup with ddt.vim cleanup actions
 local function cleanup_state()
+    -- Try to call ddt.vim cleanup action
+    if is_function_available("ddt#ui#do_action") then
+        local success, _ = pcall(vim.fn["ddt#ui#do_action"], "cleanup")
+        if not success then
+            logger.debug("terminal", "ddt.vim cleanup action failed, continuing with local cleanup")
+        end
+    end
+
     terminal_name = nil
-    is_open = false
+    logger.debug("terminal", "Terminal state cleaned up")
 end
 
 --- @return boolean
@@ -31,8 +170,9 @@ local function is_valid()
     end
 
     -- Check if ddt.vim is available
-    if not vim.fn.exists("*ddt#start") then
-        logger.error("terminal", "ddt.vim is not available")
+    local api_valid, api_error = validate_ddt_api()
+    if not api_valid then
+        logger.error("terminal", "ddt.vim API validation failed: " .. (api_error or "unknown error"))
         return false
     end
 
@@ -70,19 +210,30 @@ local function create_ddt_config(cmd_string, env_table)
     return ddt_config
 end
 
-local function open_terminal(cmd_string, env_table, effective_config, focus)
+local function open_terminal(cmd_string, env_table, focus)
     focus = utils.normalize_focus(focus)
 
-    -- Check if ddt.vim is available
-    if not vim.fn.exists("*ddt#start") then
-        logger.error("terminal", "ddt.vim is not available")
+    -- Validate ddt.vim API availability
+    local api_valid, api_error = validate_ddt_api()
+    if not api_valid then
+        logger.error("terminal", "ddt.vim API validation failed: " .. (api_error or "unknown error"))
         return false
     end
 
+    -- Validate command string if provided
+    if cmd_string then
+        local cmd_valid, sanitized_cmd = validate_and_sanitize_input(cmd_string, "command")
+        if not cmd_valid then
+            logger.error("terminal", "Invalid command: " .. (sanitized_cmd or "unknown error"))
+            return false
+        end
+        cmd_string = sanitized_cmd
+    end
+
     -- If terminal is already open, just focus if requested
-    if is_open and focus then
-        local result = vim.fn["ddt#ui#do_action"]("focus")
-        if result then
+    if get_actual_ddt_state() and focus then
+        local success, result = pcall(vim.fn["ddt#ui#do_action"], "focus")
+        if success and result then
             vim.cmd("startinsert")
         end
         return true
@@ -91,16 +242,20 @@ local function open_terminal(cmd_string, env_table, effective_config, focus)
     -- Create ddt.vim configuration
     local ddt_config = create_ddt_config(cmd_string, env_table)
 
-    -- Start ddt.vim terminal
-    local result = vim.fn["ddt#start"](ddt_config)
+    -- Start ddt.vim terminal with safe API call
+    local success, result = pcall(vim.fn["ddt#start"], ddt_config)
+
+    if not success then
+        logger.error("terminal", "Failed to start ddt.vim terminal: " .. tostring(result))
+        return false
+    end
 
     if not result then
-        logger.error("terminal", "Failed to start ddt.vim terminal")
+        logger.error("terminal", "ddt.vim terminal start returned false")
         return false
     end
 
     terminal_name = config.name
-    is_open = true
 
     if focus then
         vim.cmd("startinsert")
@@ -113,6 +268,14 @@ end
 --- Initialize the terminal provider
 --- @param user_config table?
 function M.init(user_config)
+    if user_config then
+        local config_valid, config_error = validate_config(user_config)
+        if not config_valid then
+            logger.error("terminal", "Invalid configuration: " .. (config_error or "unknown error"))
+            return
+        end
+    end
+
     config = vim.tbl_deep_extend("force", config, user_config or {})
     logger.debug("terminal", "ddt.vim terminal provider initialized")
 end
@@ -120,11 +283,10 @@ end
 --- Open terminal with optional command
 --- @param cmd_string string?
 --- @param env_table table?
---- @param effective_config table?
 --- @param focus boolean?
 --- @return boolean
-function M.open(cmd_string, env_table, effective_config, focus)
-    return open_terminal(cmd_string, env_table, effective_config, focus)
+function M.open(cmd_string, env_table, focus)
+    return open_terminal(cmd_string, env_table, focus)
 end
 
 --- Close the terminal
@@ -134,14 +296,19 @@ function M.close()
         return false
     end
 
-    local result = vim.fn["ddt#ui#do_action"]("quit")
+    local success, result = pcall(vim.fn["ddt#ui#do_action"], "quit")
+
+    if not success then
+        logger.error("terminal", "Failed to close ddt.vim terminal: " .. tostring(result))
+        return false
+    end
 
     if result then
         cleanup_state()
         logger.debug("terminal", "ddt.vim terminal closed")
         return true
     else
-        logger.error("terminal", "Failed to close ddt.vim terminal")
+        logger.error("terminal", "ddt.vim terminal close returned false")
         return false
     end
 end
@@ -149,21 +316,28 @@ end
 --- Toggle terminal visibility
 --- @param cmd_string string?
 --- @param env_table table?
---- @param effective_config table?
 --- @param focus boolean?
 --- @return boolean
-function M.toggle(cmd_string, env_table, effective_config, focus)
-    if not vim.fn.exists("*ddt#ui#do_action") then
-        logger.error("terminal", "ddt.vim UI actions not available")
+function M.toggle(cmd_string, env_table, focus)
+    -- Validate ddt.vim API availability
+    local api_valid, api_error = validate_ddt_api()
+    if not api_valid then
+        logger.error("terminal", "ddt.vim API validation failed: " .. (api_error or "unknown error"))
         return false
     end
 
-    -- Use ddt.vim's toggle action
-    local result = vim.fn["ddt#ui#do_action"]("toggle")
+    -- Use ddt.vim's toggle action with safe API call
+    local success, result = pcall(vim.fn["ddt#ui#do_action"], "toggle")
+
+    if not success then
+        logger.error("terminal", "Failed to toggle ddt.vim terminal: " .. tostring(result))
+        -- If toggle fails, try to open the terminal
+        return M.open(cmd_string, env_table, focus)
+    end
 
     if result then
-        is_open = not is_open
-        if is_open then
+        local actual_state = get_actual_ddt_state()
+        if actual_state then
             terminal_name = config.name
             if utils.normalize_focus(focus) then
                 vim.cmd("startinsert")
@@ -175,7 +349,7 @@ function M.toggle(cmd_string, env_table, effective_config, focus)
         return true
     else
         -- If toggle fails, try to open the terminal
-        return M.open(cmd_string, env_table, effective_config, focus)
+        return M.open(cmd_string, env_table, focus)
     end
 end
 
@@ -187,14 +361,19 @@ function M.focus()
         return false
     end
 
-    local result = vim.fn["ddt#ui#do_action"]("focus")
+    local success, result = pcall(vim.fn["ddt#ui#do_action"], "focus")
+
+    if not success then
+        logger.error("terminal", "Failed to focus ddt.vim terminal: " .. tostring(result))
+        return false
+    end
 
     if result then
         vim.cmd("startinsert")
         logger.debug("terminal", "ddt.vim terminal focused")
         return true
     else
-        logger.error("terminal", "Failed to focus ddt.vim terminal")
+        logger.error("terminal", "ddt.vim terminal focus returned false")
         return false
     end
 end
@@ -208,13 +387,25 @@ function M.send_text(text)
         return false
     end
 
-    local result = vim.fn["ddt#ui#do_action"]("sendText", { text = text })
+    -- Validate and sanitize input text
+    local text_valid, sanitized_text = validate_and_sanitize_input(text, "text")
+    if not text_valid then
+        logger.error("terminal", "Invalid text input: " .. (sanitized_text or "unknown error"))
+        return false
+    end
+
+    local success, result = pcall(vim.fn["ddt#ui#do_action"], "sendText", { text = sanitized_text })
+
+    if not success then
+        logger.error("terminal", "Failed to send text to ddt.vim terminal: " .. tostring(result))
+        return false
+    end
 
     if result then
-        logger.debug("terminal", "Sent text to ddt.vim terminal: " .. text)
+        logger.debug("terminal", "Sent text to ddt.vim terminal: " .. sanitized_text)
         return true
     else
-        logger.error("terminal", "Failed to send text to ddt.vim terminal")
+        logger.error("terminal", "ddt.vim terminal send text returned false")
         return false
     end
 end
@@ -228,13 +419,25 @@ function M.send_command(command)
         return false
     end
 
-    local result = vim.fn["ddt#ui#do_action"]("sendCommand", { command = command })
+    -- Validate and sanitize input command
+    local cmd_valid, sanitized_cmd = validate_and_sanitize_input(command, "command")
+    if not cmd_valid then
+        logger.error("terminal", "Invalid command input: " .. (sanitized_cmd or "unknown error"))
+        return false
+    end
+
+    local success, result = pcall(vim.fn["ddt#ui#do_action"], "sendCommand", { command = sanitized_cmd })
+
+    if not success then
+        logger.error("terminal", "Failed to send command to ddt.vim terminal: " .. tostring(result))
+        return false
+    end
 
     if result then
-        logger.debug("terminal", "Sent command to ddt.vim terminal: " .. command)
+        logger.debug("terminal", "Sent command to ddt.vim terminal: " .. sanitized_cmd)
         return true
     else
-        logger.error("terminal", "Failed to send command to ddt.vim terminal")
+        logger.error("terminal", "ddt.vim terminal send command returned false")
         return false
     end
 end
@@ -242,7 +445,7 @@ end
 --- Check if terminal is open
 --- @return boolean
 function M.is_open()
-    return is_open and is_valid()
+    return get_actual_ddt_state() and is_valid()
 end
 
 --- Get terminal name
