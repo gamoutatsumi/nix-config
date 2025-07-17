@@ -48,18 +48,27 @@ local on_attach = function(client, bufnr)
         underline = true,
     })
     vim.b.copilot_workspace_folder = vim.lsp.buf.list_workspace_folders()[1]
-    local opts = { noremap = true, silent = true, buffer = bufnr }
-    vim.keymap.set("n", "<Leader>e", vim.diagnostic.open_float, opts)
+    vim.keymap.set(
+        "n",
+        "<Leader>e",
+        vim.diagnostic.open_float,
+        { noremap = true, silent = true, buffer = bufnr, desc = "vim.diagnostic.open_float" }
+    )
     vim.keymap.set("n", "[d", function()
         vim.diagnostic.jump({ count = -1, float = false })
-    end, opts)
+    end, { noremap = true, silent = true, buffer = bufnr, desc = "vim.diagnostic.prev" })
     vim.keymap.set("n", "]d", function()
         vim.diagnostic.jump({ count = 1, float = false })
-    end, opts)
-    vim.keymap.set("n", "<Leader>f", format, opts)
+    end, { noremap = true, silent = true, buffer = bufnr, desc = "vim.diagnostic.next" })
+    vim.keymap.set(
+        "n",
+        "<Leader>f",
+        format,
+        { noremap = true, silent = true, buffer = bufnr, desc = "vim.lsp.buf.format" }
+    )
     vim.keymap.set("n", "<Leader>ld", function()
         vim.diagnostic.enable(not vim.diagnostic.is_enabled())
-    end, opts)
+    end, { noremap = true, silent = true, buffer = bufnr, desc = "vim.diagnostic.toggle" })
     require("lsp_signature").on_attach({
         bind = true,
         handler_opts = {
