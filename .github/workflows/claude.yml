@@ -46,6 +46,7 @@ jobs:
           custom_instructions: |
             You should always use git tools provided by MCP server.
             You should always think with using Sequential Thinking.
+            You should response in Japanese.
           additional_permissions: |
             actions: read
           allowed_tools: |
