@@ -42,6 +42,13 @@ jobs:
           model: "claude-opus-4-0"
           fallback_model: "claude-sonnet-4-0"
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          additional_permissions: |
+            actions: read
+          allowed_tools: |
+            mcp__git__*
+            Bash(git push)
+            Bash(rm -rf)
+            Bash(rm)
           direct_prompt: |
             Please review this pull request and provide feedback on:
             - Code quality and best practices
