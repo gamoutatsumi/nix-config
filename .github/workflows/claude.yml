@@ -43,14 +43,16 @@ jobs:
           model: "claude-opus-4-0"
           fallback_model: "claude-sonnet-4-0"
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          # This is an optional setting that allows Claude to read CI results on PRs
+          custom_instructions: |
+            You should always use git tools provided by MCP server.
+            You should always think with using Sequential Thinking.
           additional_permissions: |
             actions: read
           allowed_tools: |
             mcp__git__*
-            Bash(git push)
-            Bash(rm -rf)
-            Bash(rm)
+            Bash(git push:*)
+            Bash(rm -rf:*)
+            Bash(rm:*)
             mcp__sequential-thinking__sequentialthinking
 
 # Optional: Specify model (defaults to Claude Sonnet 4, uncomment for Claude Opus 4)
