@@ -91,6 +91,7 @@ export class Config extends BaseConfig {
         "$BASE_DIR/denops.toml",
         "$BASE_DIR/ddc.toml",
         "$BASE_DIR/ddu.toml",
+        "$BASE_DIR/ddt.toml",
       ].filter(is.String)
     ) {
       tomls.push(
