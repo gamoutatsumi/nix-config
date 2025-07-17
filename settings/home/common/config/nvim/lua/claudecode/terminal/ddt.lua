@@ -7,14 +7,11 @@ local M = {}
 local logger = require("claudecode.logger")
 local utils = require("claudecode.utils")
 
---- @type integer?
-local bufnr = nil
---- @type integer?
-local winid = nil
---- @type integer?
-local jobid = nil
+--- @type string?
+local terminal_name = nil
 local is_open = false
 local config = {
+    name = "claudecode",
     size = 15,
     direction = "horizontal", -- horizontal, vertical, float
     split = "botright",
@@ -23,117 +20,93 @@ local config = {
 }
 
 local function cleanup_state()
-    bufnr = nil
-    winid = nil
-    jobid = nil
+    terminal_name = nil
     is_open = false
 end
 
 --- @return boolean
 local function is_valid()
-    if not bufnr or not vim.api.nvim_buf_is_valid(bufnr) then
-        cleanup_state()
+    if not terminal_name then
         return false
     end
 
-    if not winid or not vim.api.nvim_win_is_valid(winid) then
-        local windows = vim.api.nvim_list_wins()
-        for _, win in ipairs(windows) do
-            if vim.api.nvim_win_get_buf(win) == bufnr then
-                winid = win
-                logger.debug("terminal", "Recovered terminal window ID: " .. win)
-                return true
-            end
-        end
+    -- Check if ddt.vim is available
+    if not vim.fn.exists("*ddt#start") then
+        logger.error("terminal", "ddt.vim is not available")
         return false
     end
+
     return true
 end
 
-local function setup_terminal_buffer()
-    if bufnr and vim.api.nvim_buf_is_valid(bufnr) then
-        return bufnr
+--- Create ddt.vim configuration for terminal
+--- @param cmd_string string?
+--- @param env_table table?
+--- @return table
+local function create_ddt_config(cmd_string, env_table)
+    local ddt_config = {
+        name = config.name,
+        ui = "terminal",
+        uiParams = {
+            terminal = {
+                split = config.direction,
+                size = config.size,
+                direction = config.split,
+                focus = config.focus_on_open,
+                closeOnExit = config.close_on_exit,
+            },
+        },
+    }
+
+    -- Add command and environment if provided
+    if cmd_string then
+        ddt_config.command = cmd_string
     end
 
-    bufnr = vim.api.nvim_create_buf(false, true)
-    vim.api.nvim_buf_set_option(bufnr, "bufhidden", "wipe")
-    vim.api.nvim_buf_set_option(bufnr, "filetype", "terminal")
-    vim.api.nvim_buf_set_option(bufnr, "buflisted", false)
-
-    -- Auto-cleanup on buffer deletion
-    vim.api.nvim_create_autocmd("BufDelete", {
-        buffer = bufnr,
-        callback = function()
-            cleanup_state()
-        end,
-    })
-
-    return bufnr
-end
-
-local function open_terminal_window()
-    if winid and vim.api.nvim_win_is_valid(winid) then
-        return winid
+    if env_table and next(env_table) then
+        ddt_config.env = env_table
     end
 
-    local buf = setup_terminal_buffer()
-
-    -- Use ddt.vim to create terminal UI
-    vim.cmd("botright split")
-    winid = vim.api.nvim_get_current_win()
-    vim.api.nvim_win_set_buf(winid, buf)
-    vim.api.nvim_win_set_height(winid, config.size)
-
-    return winid
+    return ddt_config
 end
 
 local function open_terminal(cmd_string, env_table, effective_config, focus)
     focus = utils.normalize_focus(focus)
 
-    if is_valid() then
-        --- @cast winid -?
-        if focus then
-            vim.api.nvim_set_current_win(winid)
+    -- Check if ddt.vim is available
+    if not vim.fn.exists("*ddt#start") then
+        logger.error("terminal", "ddt.vim is not available")
+        return false
+    end
+
+    -- If terminal is already open, just focus if requested
+    if is_open and focus then
+        local result = vim.fn["ddt#ui#do_action"]("focus")
+        if result then
             vim.cmd("startinsert")
         end
         return true
     end
 
-    -- Setup terminal window
-    local win = open_terminal_window()
-    if not win then
-        logger.error("terminal", "Failed to create terminal window")
+    -- Create ddt.vim configuration
+    local ddt_config = create_ddt_config(cmd_string, env_table)
+
+    -- Start ddt.vim terminal
+    local result = vim.fn["ddt#start"](ddt_config)
+
+    if not result then
+        logger.error("terminal", "Failed to start ddt.vim terminal")
         return false
     end
 
-    -- Start terminal job
-    vim.api.nvim_set_current_win(win)
-
-    local cmd = cmd_string or vim.o.shell
-    local env = env_table or {}
-
-    jobid = vim.fn.termopen(cmd, {
-        env = env,
-        on_exit = function(job_id, exit_code, event_type)
-            logger.debug("terminal", "Terminal exited with code: " .. exit_code)
-            if config.close_on_exit then
-                M.close()
-            end
-        end,
-    })
-
-    if jobid <= 0 then
-        logger.error("terminal", "Failed to start terminal job")
-        return false
-    end
-
+    terminal_name = config.name
     is_open = true
 
     if focus then
         vim.cmd("startinsert")
     end
 
-    logger.debug("terminal", "Terminal opened successfully")
+    logger.debug("terminal", "ddt.vim terminal opened successfully")
     return true
 end
 
@@ -161,21 +134,16 @@ function M.close()
         return false
     end
 
-    if jobid then
-        vim.fn.jobstop(jobid)
-    end
+    local result = vim.fn["ddt#ui#do_action"]("quit")
 
-    if winid and vim.api.nvim_win_is_valid(winid) then
-        vim.api.nvim_win_close(winid, true)
+    if result then
+        cleanup_state()
+        logger.debug("terminal", "ddt.vim terminal closed")
+        return true
+    else
+        logger.error("terminal", "Failed to close ddt.vim terminal")
+        return false
     end
-
-    if bufnr and vim.api.nvim_buf_is_valid(bufnr) then
-        vim.api.nvim_buf_delete(bufnr, { force = true })
-    end
-
-    cleanup_state()
-    logger.debug("terminal", "Terminal closed")
-    return true
 end
 
 --- Toggle terminal visibility
@@ -185,9 +153,28 @@ end
 --- @param focus boolean?
 --- @return boolean
 function M.toggle(cmd_string, env_table, effective_config, focus)
-    if is_valid() and is_open then
-        return M.close()
+    if not vim.fn.exists("*ddt#ui#do_action") then
+        logger.error("terminal", "ddt.vim UI actions not available")
+        return false
+    end
+
+    -- Use ddt.vim's toggle action
+    local result = vim.fn["ddt#ui#do_action"]("toggle")
+
+    if result then
+        is_open = not is_open
+        if is_open then
+            terminal_name = config.name
+            if utils.normalize_focus(focus) then
+                vim.cmd("startinsert")
+            end
+        else
+            cleanup_state()
+        end
+        logger.debug("terminal", "ddt.vim terminal toggled")
+        return true
     else
+        -- If toggle fails, try to open the terminal
         return M.open(cmd_string, env_table, effective_config, focus)
     end
 end
@@ -196,66 +183,78 @@ end
 --- @return boolean
 function M.focus()
     if not is_valid() then
-        logger.warn("terminal", "No valid terminal to focus")
+        logger.warn("terminal", "No valid ddt.vim terminal to focus")
         return false
     end
 
-    --- @cast winid -?
-    vim.api.nvim_set_current_win(winid)
-    vim.cmd("startinsert")
-    return true
+    local result = vim.fn["ddt#ui#do_action"]("focus")
+
+    if result then
+        vim.cmd("startinsert")
+        logger.debug("terminal", "ddt.vim terminal focused")
+        return true
+    else
+        logger.error("terminal", "Failed to focus ddt.vim terminal")
+        return false
+    end
 end
 
 --- Send text to terminal
 --- @param text string
 --- @return boolean
 function M.send_text(text)
-    if not is_valid() or not jobid then
-        logger.warn("terminal", "No active terminal to send text to")
+    if not is_valid() then
+        logger.warn("terminal", "No active ddt.vim terminal to send text to")
         return false
     end
 
-    vim.api.nvim_chan_send(jobid, text)
-    logger.debug("terminal", "Sent text to terminal: " .. text)
-    return true
+    local result = vim.fn["ddt#ui#do_action"]("sendText", { text = text })
+
+    if result then
+        logger.debug("terminal", "Sent text to ddt.vim terminal: " .. text)
+        return true
+    else
+        logger.error("terminal", "Failed to send text to ddt.vim terminal")
+        return false
+    end
 end
 
 --- Send command to terminal
 --- @param command string
 --- @return boolean
 function M.send_command(command)
-    if not is_valid() or not jobid then
-        logger.warn("terminal", "No active terminal to send command to")
+    if not is_valid() then
+        logger.warn("terminal", "No active ddt.vim terminal to send command to")
         return false
     end
 
-    vim.api.nvim_chan_send(jobid, command .. "\n")
-    logger.debug("terminal", "Sent command to terminal: " .. command)
-    return true
+    local result = vim.fn["ddt#ui#do_action"]("sendCommand", { command = command })
+
+    if result then
+        logger.debug("terminal", "Sent command to ddt.vim terminal: " .. command)
+        return true
+    else
+        logger.error("terminal", "Failed to send command to ddt.vim terminal")
+        return false
+    end
 end
 
 --- Check if terminal is open
 --- @return boolean
 function M.is_open()
-    return is_valid() and is_open
+    return is_open and is_valid()
 end
 
---- Get terminal buffer number
---- @return integer?
-function M.get_bufnr()
-    return bufnr
+--- Get terminal name
+--- @return string?
+function M.get_terminal_name()
+    return terminal_name
 end
 
---- Get terminal window ID
---- @return integer?
-function M.get_winid()
-    return winid
-end
-
---- Get terminal job ID
---- @return integer?
-function M.get_jobid()
-    return jobid
+--- Get configuration
+--- @return table
+function M.get_config()
+    return config
 end
 
 return M
