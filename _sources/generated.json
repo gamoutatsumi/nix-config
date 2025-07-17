@@ -1,0 +1,23 @@
+{
+  "blocc": {
+    "cargoLocks": null,
+    "date": null,
+    "extract": null,
+    "name": "blocc",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "shuntaka9576",
+      "repo": "blocc",
+      "rev": "v0.1.1",
+      "sha256": "sha256-4OnC9S145i9MtIhKeqh/U1wsjZUps5WNuukpOGes0vA=",
+      "sparseCheckout": [],
+      "type": "github"
+    },
+    "version": "v0.1.1"
+  }
+}

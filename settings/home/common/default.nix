@@ -9,6 +9,7 @@
 }:
 let
   toKeyValue = lib.generators.toKeyValue { listsAsDuplicateKeys = true; };
+  # blocc = upkgs.callPackage ../../../nvfetcher/blocc.nix { };
 in
 {
   imports = [
@@ -46,10 +47,23 @@ in
     configFile = {
       "claude/settings.json" = {
         text = builtins.toJSON {
-          "permissions" = {
-            "allow" = [
+          # hooks = {
+          #   PostToolUse = [
+          #     {
+          #       matcher = "Write|Edit|MultiEdit";
+          #       hooks = [
+          #         {
+          #           type = "command";
+          #           command = "${lib.getExe blocc} 'nix flake check'";
+          #         }
+          #       ];
+          #     }
+          #   ];
+          # };
+          permissions = {
+            allow = [
             ];
-            "deny" = [
+            deny = [
               "Bash(sudo:*)"
               "Bash(rm:*)"
               "Bash(rm -rf:*)"
