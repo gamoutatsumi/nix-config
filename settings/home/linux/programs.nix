@@ -26,15 +26,15 @@
         xsel
         zoom-us
         # keep-sorted end
-        (vivaldi.override {
-          enableWidevine = true;
-          proprietaryCodecs = true;
-          commandLineArgs = "--force-dark-mode --password-store=gnome-libsecret";
-        })
       ]
       ++ (with upkgs; [
         agenix-rekey
         ghostty
+        (vivaldi.override {
+          enableWidevine = true;
+          proprietaryCodecs = false;
+          commandLineArgs = "--force-dark-mode --password-store=gnome-libsecret";
+        })
 
         # keep-sorted start
         changeBrightness
