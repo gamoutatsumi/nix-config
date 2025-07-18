@@ -61,20 +61,6 @@
         };
       };
     };
-    deno-overlay = {
-      url = "github:haruki7049/deno-overlay";
-      inputs = {
-        flake-parts = {
-          follows = "flake-parts";
-        };
-        nixpkgs = {
-          follows = "nixpkgs-unstable";
-        };
-        treefmt-nix = {
-          follows = "treefmt-nix";
-        };
-      };
-    };
     disko = {
       url = "github:nix-community/disko";
       inputs = {

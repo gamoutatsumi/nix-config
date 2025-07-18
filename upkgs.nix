@@ -1,6 +1,3 @@
-let
-  denoVersion = "2.4.1";
-in
 {
   system,
   stdenv,
@@ -30,8 +27,6 @@ in
       # keep-sorted end
     ]
     ++ lib.optionals stdenv.isLinux [
-      inputs.deno-overlay.overlays.deno-overlay
-      (_final: prev: { deno = prev.deno.${denoVersion}; })
       (_final: prev: { copilot-language-server = prev.copilot-language-server.fhs; })
     ];
 })
