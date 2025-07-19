@@ -12,4 +12,15 @@
       sha256 = "sha256-4OnC9S145i9MtIhKeqh/U1wsjZUps5WNuukpOGes0vA=";
     };
   };
+  plamo = {
+    pname = "plamo";
+    version = "1.0.4";
+    src = fetchFromGitHub {
+      owner = "pfnet";
+      repo = "plamo-translate-cli";
+      rev = "1.0.4";
+      fetchSubmodules = false;
+      sha256 = "sha256-dpvshY2kw31UtsFjWbf1shPil3ke5b5Wp+i14ndI098=";
+    };
+  };
 }

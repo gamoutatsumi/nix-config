@@ -1,3 +1,7 @@
 [blocc]
 src.github_tag = "shuntaka9576/blocc"
 fetch.github = "shuntaka9576/blocc"
+
+[plamo]
+src.github_tag = "pfnet/plamo-translate-cli"
+fetch.github = "pfnet/plamo-translate-cli"
