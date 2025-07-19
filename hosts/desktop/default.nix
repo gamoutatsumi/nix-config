@@ -195,7 +195,7 @@
       package = pkgs.ollama;
       enable = true;
       acceleration = "cuda";
-      loadModels = [ "hf.co/mradermacher/Llama-3.1-8B-EZO-1.1-it-i1-GGUF:Q4_K_M" ];
+      loadModels = [ "hf.co/mmnga/webbigdata-ALMA-7B-Ja-V2-gguf:Q5_K_M" ];
       environmentVariables = {
         OLLAMA_FLASH_ATTENTION = "1";
         OLLAMA_KV_CACHE_TYPE = "q8_0";
