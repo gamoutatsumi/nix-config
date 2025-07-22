@@ -1,4 +1,5 @@
 [
   "ccusage",
-  "editprompt"
+  "editprompt",
+  "@anthropic-ai/claude-code"
 ]

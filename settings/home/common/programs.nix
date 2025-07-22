@@ -63,8 +63,6 @@ in
         nix-output-monitor
         nix-search-cli
         nix-tree
-        nodePkgs.ccusage
-        nodePkgs.editprompt
         paperkey
         picocom
         pinact
@@ -82,9 +80,10 @@ in
       ])
       ++ (with upkgs; [
         deno
-        claude-code
         vim
-        opencommit
+        nodePkgs.ccusage
+        nodePkgs.editprompt
+        nodePkgs."@anthropic-ai/claude-code"
       ]);
   };
   programs = {
