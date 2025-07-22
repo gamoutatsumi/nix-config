@@ -3,6 +3,10 @@
 {
   nodeEnv,
   fetchurl,
+  fetchgit,
+  nix-gitignore,
+  stdenv,
+  lib,
   globalBuildInputs ? [ ],
 }:
 

@@ -133,6 +133,7 @@
         flakeCheck = false;
         settings = {
           formatter = {
+            # keep-sorted start block=yes
             tombi = {
               command = lib.getExe' upkgs.tombi "tombi";
               options = [
@@ -141,6 +142,13 @@
               ];
               includes = [ "*.toml" ];
             };
+            statix = {
+              excludes = [ "node2nix/*" ];
+            };
+            deadnix = {
+              excludes = [ "node2nix/*" ];
+            };
+            # keep-sorted end
           };
         };
         programs = {
@@ -150,7 +158,6 @@
           };
           deadnix = {
             enable = true;
-            excludes = [ "node2nix" ];
           };
           deno = {
             enable = true;
@@ -176,7 +183,6 @@
           };
           statix = {
             enable = true;
-            excludes = [ "node2nix" ];
           };
           stylish-haskell = {
             enable = true;

@@ -14,9 +14,9 @@
 
 let
   # Workaround to cope with utillinux in Nixpkgs 20.09 and util-linux in Nixpkgs master
-  utillinux = pkgs.utillinux or pkgs.util-linux;
+  utillinux = if pkgs ? utillinux then pkgs.utillinux else pkgs.util-linux;
 
-  python = nodejs.python or python2;
+  python = if nodejs ? python then nodejs.python else python2;
 
   # Create a tar wrapper that filters all the 'Ignoring unknown extended header keyword' noise
   tarWrapper = runCommand "tarWrapper" { } ''
@@ -125,11 +125,12 @@ let
   # Recursively composes the dependencies of a package
   composePackage =
     {
+      name,
       packageName,
       src,
       dependencies ? [ ],
       ...
-    }:
+    }@args:
     builtins.addErrorContext "while evaluating node package '${packageName}'" ''
       installPackage "${packageName}" "${src}"
       ${includeDependencies { inherit dependencies; }}
@@ -204,7 +205,7 @@ let
         if [ -d node_modules ]
         then
             cd node_modules
-            ${lib.concatMapStrings pinpointDependenciesOfPackage dependencies}
+            ${lib.concatMapStrings (dependency: pinpointDependenciesOfPackage dependency) dependencies}
             cd ..
         fi
       ''}
@@ -220,7 +221,7 @@ let
       dependencies ? [ ],
       production ? true,
       ...
-    }:
+    }@args:
     ''
       if [ -d "${packageName}" ]
       then
@@ -513,6 +514,7 @@ let
       name,
       packageName,
       version ? null,
+      dependencies ? [ ],
       buildInputs ? [ ],
       production ? true,
       npmFlags ? "",
@@ -549,8 +551,8 @@ let
             python
             nodejs
           ]
-          ++ lib.optional stdenv.isLinux utillinux
-          ++ lib.optional stdenv.isDarwin libtool
+          ++ lib.optional (stdenv.isLinux) utillinux
+          ++ lib.optional (stdenv.isDarwin) libtool
           ++ buildInputs;
 
         inherit nodejs;
@@ -628,7 +630,7 @@ let
 
         meta = {
           # default to Node.js' platforms
-          inherit (nodejs.meta) platforms;
+          platforms = nodejs.meta.platforms;
         } // meta;
       }
       // extraArgs
@@ -671,8 +673,8 @@ let
             python
             nodejs
           ]
-          ++ lib.optional stdenv.isLinux utillinux
-          ++ lib.optional stdenv.isDarwin libtool
+          ++ lib.optional (stdenv.isLinux) utillinux
+          ++ lib.optional (stdenv.isDarwin) libtool
           ++ buildInputs;
 
         inherit dontStrip; # Stripping may fail a build for some package deployments
@@ -734,9 +736,19 @@ let
   buildNodeShell =
     {
       name,
+      packageName,
       version ? null,
+      src,
       dependencies ? [ ],
       buildInputs ? [ ],
+      production ? true,
+      npmFlags ? "",
+      dontNpmInstall ? false,
+      bypassCache ? false,
+      reconstructLock ? false,
+      dontStrip ? true,
+      unpackPhase ? "true",
+      buildPhase ? "true",
       ...
     }@args:
 
@@ -761,7 +773,7 @@ let
             python
             nodejs
           ]
-          ++ lib.optional stdenv.isLinux utillinux
+          ++ lib.optional (stdenv.isLinux) utillinux
           ++ buildInputs;
         buildCommand = ''
           mkdir -p $out/bin
