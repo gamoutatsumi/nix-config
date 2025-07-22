@@ -64,6 +64,7 @@ in
         nix-search-cli
         nix-tree
         nodePkgs.ccusage
+        nodePkgs.editprompt
         paperkey
         picocom
         pinact

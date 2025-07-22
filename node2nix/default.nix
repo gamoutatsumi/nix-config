@@ -23,8 +23,6 @@ let
   };
 in
 import ./node-packages.nix {
-  inherit (pkgs)
-    fetchurl
-    ;
+  inherit (pkgs) fetchurl;
   inherit nodeEnv;
 }
