@@ -150,6 +150,7 @@
           };
           deadnix = {
             enable = true;
+            excludes = [ "node2nix" ];
           };
           deno = {
             enable = true;
@@ -175,6 +176,7 @@
           };
           statix = {
             enable = true;
+            excludes = [ "node2nix" ];
           };
           stylish-haskell = {
             enable = true;

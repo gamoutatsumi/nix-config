@@ -680,10 +680,10 @@ in
   editprompt = nodeEnv.buildNodePackage {
     name = "editprompt";
     packageName = "editprompt";
-    version = "0.1.0";
+    version = "0.2.0";
     src = fetchurl {
-      url = "https://registry.npmjs.org/editprompt/-/editprompt-0.1.0.tgz";
-      sha512 = "W7+c8UjXIvNN8Dw/zrnfBfkcvBr2sbW23nYBqHHvAnoSscQP0Way0GEukbnOnY+K6RI0pAHN3EIp760HWDW7Qw==";
+      url = "https://registry.npmjs.org/editprompt/-/editprompt-0.2.0.tgz";
+      sha512 = "Elzscr8GzdgbDrIjgihUWftZi+JAZh3jxBCgqcyeyfiH0UjOCR+L3ndlyjdPc9VKUeRcdALfZntnbh8wnd8UEw==";
     };
     dependencies = [
       sources."@inquirer/checkbox-4.2.0"
