@@ -3,7 +3,8 @@
   "extends": [
     "config:recommended",
     ":gitSignOff",
-    ":separateMajorReleases"
+    ":separateMajorReleases",
+    "github>Omochice/renovate-config:deno"
   ],
   "lockFileMaintenance": {
     "enabled": true,
