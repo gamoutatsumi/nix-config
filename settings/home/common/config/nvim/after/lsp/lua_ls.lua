@@ -16,11 +16,14 @@ return {
         end
         client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
             runtime = {
+                path = {
+                    "lua/?.lua",
+                    "lua/?/init.lua",
+                },
                 version = "LuaJIT",
             },
             diagnostics = {
                 enable = true,
-                globals = { "vim" },
             },
             completion = {
                 callSnippet = "Replace",
@@ -35,12 +38,8 @@ return {
                 enable = false,
             },
             workspace = {
-                library = vim.list_extend(vim.api.nvim_get_runtime_file("lua", true), {
-                    "${3rd}/luv/library",
-                    "${3rd}/busted/library",
-                    "${3rd}/luassert/library",
-                }),
-                checkThirdParty = "Disable",
+                library = vim.api.nvim_get_runtime_file("", true),
+                checkThirdParty = false,
             },
         })
     end,

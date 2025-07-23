@@ -46,3 +46,4 @@ vim.opt.shortmess = vim.opt.shortmess + "Ic"
 vim.opt.diffopt = "internal,filler,algorithm:histogram,indent-heuristic"
 vim.o.grepprg = "rg --vimgrep --smart-case --follow"
 vim.opt.history = 100
+vim.o.winborder = "bold"

@@ -77,13 +77,13 @@ local on_attach = function(client, bufnr)
     }, bufnr)
     if client:supports_method("textDocument/inlayHint") or client.name == "sourcekit" then
         setInlayHintHL()
-        vim.api.nvim_create_autocmd({ "InsertEnter" }, {
+        vim.api.nvim_create_autocmd("InsertEnter", {
             buffer = bufnr,
             callback = function()
                 vim.lsp.inlay_hint.enable(false, { bufnr = bufnr })
             end,
         })
-        vim.api.nvim_create_autocmd({ "InsertLeave" }, {
+        vim.api.nvim_create_autocmd("InsertLeave", {
             buffer = bufnr,
             callback = function()
                 vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
