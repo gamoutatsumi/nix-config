@@ -14,7 +14,8 @@
       "${username}" = {
         imports = [
           inputs.oreore.homeManagerModules.theme
-        ] ++ imports;
+        ]
+        ++ imports;
       };
     };
     backupFileExtension = "bak";
