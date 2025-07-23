@@ -28,20 +28,9 @@
         "/^flake\\.nix$/"
       ],
       "matchStrings": [
-        "url = \"github:(?<depName>[^/]+/[^?]+)\\?ref=(?<currentValue>[^&\"]+)"
+        "url = \"github:(?<depName>[^/]+/[^?\\n]+)\\?ref=(?<currentValue>[^&\"]+)"
       ],
       "datasourceTemplate": "github-tags"
-    },
-    {
-      "customType": "regex",
-      "managerFilePatterns": [
-        "/^flake\\.nix$/"
-      ],
-      "matchStrings": [
-        "url = \"github:(?<depName>[^/]+/[^?]+)\\?ref=v(?<currentValue>[^&\"]+)"
-      ],
-      "datasourceTemplate": "github-tags",
-      "extractVersionTemplate": "^v(?<version>.*)$"
     }
   ],
   "prConcurrentLimit": 10,
