@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           fetch-depth: 1
-      - uses: cachix/install-nix-action@f0fe604f8a612776892427721526b4c7cfb23aba # v31.4.1
+      - uses: cachix/install-nix-action@c134e4c9e34bac6cab09cf239815f9339aaaf84e # v31.5.1
       - uses: cachix/cachix-action@0fc020193b5a1fa3ac4575aa3a7d3aa6a35435ad # v16
         with:
           name: gamoutatsumi-nix-config
@@ -38,7 +38,7 @@ jobs:
           arguments: --accept-flake-config
       - name: Run Claude Code
         id: claude
-        uses: anthropics/claude-code-action@a9d9ad3612d6d61922fb1af719a32b9f1366f3f2 # v0.0.33
+        uses: anthropics/claude-code-action@0d204a659945e889be1b5a7d7f9e9ea83515a682 # v0.0.42
         with:
           model: "claude-opus-4-0"
           fallback_model: "claude-sonnet-4-0"
