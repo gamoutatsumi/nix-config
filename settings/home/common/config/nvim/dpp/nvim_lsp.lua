@@ -122,6 +122,7 @@ local ensure_enabled = {
     "denols",
     "efm",
     "fennel_language_server",
+    "golangci_lint_ls",
     "gopls",
     "hls",
     "jsonls",
