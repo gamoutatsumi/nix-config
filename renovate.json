@@ -55,16 +55,6 @@
       ]
     },
     {
-      "groupName": "nixpkgs-unstable",
-      "schedule": [
-        "after 8am on Monday"
-      ],
-      "matchPackageNames": [
-        "/nixos-unstable/",
-        "/nixpkgs-unstable/"
-      ]
-    },
-    {
       "matchManagers": [
         "github-actions"
       ],
