@@ -1,10 +1,6 @@
 -- lua_add {{{
-local data_dir = vim.fn.stdpath("data")
-if type(data_dir) ~= "string" then
-    data_dir = data_dir[1]
-end
 vim.opt.runtimepath:prepend("@treesitter_parsers@")
-require("nvim-treesitter.configs").setup({
+require("nvim-treesitter").setup({
     -- keep-sorted start block=yes
     auto_install = false,
     autotag = {
