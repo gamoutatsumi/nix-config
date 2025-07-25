@@ -16,8 +16,8 @@
     ],
     "automerge": true
   },
-  "automerge": false,
-  "automergeStrategy": "rebase",
+  "automerge": true,
+  "automergeStrategy": "merge-commit",
   "nix": {
     "enabled": true
   },
