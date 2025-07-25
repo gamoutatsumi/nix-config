@@ -1,5 +1,6 @@
 [[plugins]]
 repo = "nvim-treesitter/nvim-treesitter"
+rev = "main"
 hooks_file = "$BASE_DIR/dpp/treesitter.lua"
 
 [[plugins]]
