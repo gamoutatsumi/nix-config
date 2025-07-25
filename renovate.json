@@ -3,6 +3,7 @@
   "platformAutomerge": true,
   "platformCommit": "enabled",
   "configMigration": true,
+  "automergeType": "pr",
   "extends": [
     "config:recommended",
     ":gitSignOff",
@@ -13,8 +14,7 @@
     "enabled": true,
     "extends": [
       "schedule:daily"
-    ],
-    "automerge": true
+    ]
   },
   "automerge": true,
   "automergeStrategy": "merge-commit",
@@ -48,7 +48,6 @@
         "github-tags"
       ],
       "groupName": "nix-community",
-      "automerge": true,
       "matchPackageNames": [
         "/^nix-community//",
         "/^numtide//",
@@ -70,8 +69,6 @@
         "github-actions"
       ],
       "groupName": "github-actions",
-      "automerge": true,
-      "automergeType": "pr",
       "matchUpdateTypes": [
         "minor",
         "patch",
