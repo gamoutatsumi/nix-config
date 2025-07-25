@@ -13,6 +13,7 @@ jobs:
         with:
           ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}
           fetch-depth: 0
+          persist-credentials: false
       - uses: cachix/install-nix-action@c134e4c9e34bac6cab09cf239815f9339aaaf84e # v31.5.1
       - uses: cachix/cachix-action@0fc020193b5a1fa3ac4575aa3a7d3aa6a35435ad # v16
         with:
@@ -27,12 +28,7 @@ jobs:
         run: |
           git diff --name-only --exit-code
         continue-on-error: true
-      - name: Commit & Push
-        if: steps.diff.outcome == 'failure' && github.event_name == 'pull_request'
-        run: |-
-          set -x
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit --author=. -m 'Update flake.lock'
-          git push
+      - uses: suzuki-shunsuke/commit-action@v0.0.4
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          app_private_key: ${{ secrets.APP_PRIVATE_KEY }}
