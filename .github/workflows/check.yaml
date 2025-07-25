@@ -30,3 +30,7 @@ jobs:
         with:
           app_id: ${{ secrets.APP_ID }}
           app_private_key: ${{ secrets.APP_PRIVATE_KEY }}
+          files: |
+            flake.lock
+          commit_message: |-
+            Update flake.lock
