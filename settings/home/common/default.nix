@@ -171,7 +171,6 @@ in
           ];
         };
       };
-      # "nvim".source = ./config/nvim;
       "git/template/hooks/pre-push" = {
         source = builtins.fetchurl {
           url = "https://gist.githubusercontent.com/quintok/815396509ff79d886656b2855e1a8a46/raw/e6770add98e7db57177c16d33be31bfdf2c23042/pre-push";
