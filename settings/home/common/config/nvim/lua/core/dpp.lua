@@ -107,6 +107,9 @@ function M.setup()
     vim.api.nvim_create_user_command("DppInstall", function()
         vim.fn["dpp#async_ext_action"]("installer", "install")
     end, {})
+    vim.api.nvim_create_user_command("DppMakeState", function()
+        vim.fn["dpp#make_state"]()
+    end, {})
 end
 
 return M

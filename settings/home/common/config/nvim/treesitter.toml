@@ -21,5 +21,4 @@ on_ft = ["typescript", "javascript", "javascriptreact", "typescriptreact"]
 
 [[plugins]]
 repo = "nvim-treesitter/nvim-treesitter-context"
-rev = "main"
 hooks_file = "$BASE_DIR/dpp/context.lua"

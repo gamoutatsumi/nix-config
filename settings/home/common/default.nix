@@ -159,6 +159,13 @@ in
               };
               dir = "dpp";
             })
+            (pkgs.replaceVarsWith {
+              src = ./config/nvim/lua/core/vars.lua;
+              replacements = {
+                python3 = lib.getExe upkgs.python3Full;
+              };
+              dir = "lua/core";
+            })
             ./config/nvim
           ];
         };
