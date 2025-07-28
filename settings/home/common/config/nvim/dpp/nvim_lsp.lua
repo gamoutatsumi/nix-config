@@ -118,6 +118,7 @@ lspconfig.astro.setup({
 local ensure_enabled = {
     -- keep-sorted start
     "biome",
+    "buf_ls",
     "cue",
     "denols",
     "efm",
