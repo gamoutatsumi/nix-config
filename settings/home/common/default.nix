@@ -140,6 +140,7 @@ in
             (pkgs.replaceVarsWith {
               src = ./config/nvim/dpp/treesitter.lua;
               replacements = {
+                runtime = "${config.home.homeDirectory}/.local/share/nvim/dpp/repos/github.com/nvim-treesitter/nvim-treesitter_main/runtime";
                 treesitter_parsers = "${upkgs.symlinkJoin {
                   name = "ts-parsers";
                   paths = upkgs.vimPlugins.nvim-treesitter.withAllGrammars.dependencies;
