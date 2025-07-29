@@ -216,10 +216,11 @@ snippets: [{
 completions: [{
 	name: "kill"
 	patterns: ["^kill( -9)? $"]
-	sourceCommand: "ps -ef | sed 1d"
+	sourceCommand: "ps -ef"
 	options: {
-		"--multi":  true
-		"--prompt": "'Kill Process> '"
+		"--multi":        true
+		"--prompt":       "'Kill Process> '"
+		"--header-lines": 1
 	}
 	callback: "awk '{print $2}'"
 }, {
@@ -279,9 +280,10 @@ completions: [{
 		"--preview-window": "right:50%"
 		"--preview":        "docker image inspect {1}"
 		"--multi":          true
+		"--header-lines":   1
 	}
 	callback:      "awk '{print $3}'"
-	sourceCommand: "docker images | sed 1d"
+	sourceCommand: "docker images"
 }, {
 	name: "docker containers (all)"
 	patterns: ["^docker rm $"]
@@ -290,9 +292,10 @@ completions: [{
 		"--preview-window": "right:50%"
 		"--preview":        "docker container inspect {1}"
 		"--multi":          true
+		"--header-lines":   1
 	}
 	callback:      "awk '{print $1}'"
-	sourceCommand: "docker ps --filter status=exited | sed 1d"
+	sourceCommand: "docker ps --filter status=exited"
 }, {
 	name: "docker containers (running)"
 	patterns: ["^docker stop $"]
@@ -301,25 +304,28 @@ completions: [{
 		"--preview-window": "right:50%"
 		"--preview":        "docker container inspect {1}"
 		"--multi":          true
+		"--header-lines":   1
 	}
 	callback:      "awk '{print $1}'"
-	sourceCommand: "docker ps | sed 1d"
+	sourceCommand: "docker ps"
 }, {
 	name: "kubernetes pods"
 	patterns: ["^kubectl delete pods $", "^kubectl exec pods $", "^kubectl logs pods $", "^kubectl port-forward pods $", "^kubectl describe pods $", "^kubectl get pods $"]
 	options: {
-		"--prompt": "'Pod> '"
-		"--multi":  false
+		"--prompt":       "'Pod> '"
+		"--multi":        false
+		"--header-lines": 1
 	}
 	callback:      "awk '{print $1}'"
-	sourceCommand: "kubectl get pods --no-headers"
+	sourceCommand: "kubectl get pods"
 }, {
 	name: "kubernetes deployments"
 	patterns: ["^kubectl delete deployments $", "^kubectl describe deployments $", "^kubectl get deployments $", "^stern $"]
 	options: {
-		"--prompt": "'Deployment> '"
-		"--multi":  false
+		"--prompt":       "'Deployment> '"
+		"--multi":        false
+		"--header-lines": 1
 	}
 	callback:      "awk '{print $1}'"
-	sourceCommand: "kubectl get deployments --no-headers"
+	sourceCommand: "kubectl get deployments"
 }]
