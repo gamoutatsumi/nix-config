@@ -7,12 +7,6 @@ return {
             suggest = {
                 completeFunctionCalls = true,
                 autoImports = false,
-                imports = {
-                    hosts = {
-                        ["https://deno.land"] = true,
-                        ["https://x.nest.land"] = false,
-                    },
-                },
             },
             lint = true,
             unstable = true,
