@@ -172,7 +172,7 @@ in
         };
       };
       "git/template/hooks/pre-push" = {
-        source = builtins.fetchurl {
+        source = pkgs.fetchurl {
           url = "https://gist.githubusercontent.com/quintok/815396509ff79d886656b2855e1a8a46/raw/e6770add98e7db57177c16d33be31bfdf2c23042/pre-push";
           sha256 = "0lynwihky1b6r8ssjzzw99p38vya39x204gknpi2fdg720jj87yj";
         };
@@ -185,7 +185,7 @@ in
   };
   theme = {
     wallpaper = {
-      file = builtins.fetchurl {
+      file = pkgs.fetchurl {
         url = "https://atri-mdm.com/assets/img/special/present/wp_ATRI.jpg";
         sha256 = "069z1m3664xaciw9hhpqzsa5x5k802fpk9wxbkjxz4chmjnazzfj";
       };
