@@ -20,7 +20,7 @@ jobs:
       - uses: nicknovitski/nix-develop@9be7cfb4b10451d3390a75dc18ad0465bed4932a # v1.2.1
         with:
           arguments: --accept-flake-config
-      - run: nix flake check
+      - run: nix flake check --accept-flake-config
       - name: Check diff
         id: diff
         run: |
