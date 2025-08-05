@@ -99,6 +99,9 @@ in
           pkgs = upkgs;
         };
       };
+      "claude/commands" = {
+        source = ./config/claude/commands;
+      };
       "zeno/config.yml" = {
         source = inputs'.nix-cue.lib.eval {
           inherit pkgs;

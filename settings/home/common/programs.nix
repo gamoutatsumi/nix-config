@@ -65,7 +65,6 @@ in
         nix-tree
         paperkey
         picocom
-        pinact
         q-text-as-data
         s3cmd
         sheldon

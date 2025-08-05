@@ -148,6 +148,9 @@
             deadnix = {
               excludes = [ "node2nix/*" ];
             };
+            prettier = {
+              includes = lib.mkForce [ "*.md" ];
+            };
             # keep-sorted end
           };
         };
@@ -172,10 +175,13 @@
           keep-sorted = {
             enable = true;
           };
-          mdformat = {
+          nixfmt = {
             enable = true;
           };
-          nixfmt = {
+          pinact = {
+            enable = true;
+          };
+          prettier = {
             enable = true;
           };
           shfmt = {
