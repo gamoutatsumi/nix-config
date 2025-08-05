@@ -55,7 +55,7 @@
 ## Context (Auto-gathered)
 
 - Project files:
-  !`find . -maxdepth 2 -name "package.json" -o -name "*.config.*" | head -5 2>/dev/null || echo "No config files"`
+  !`find . -maxdepth 2 -name "package.json" -o -name "*.config.*" -o -name "go.mod" -o -name "deno.json" -o -name "deno.jsonc"| head -5 2>/dev/null || echo "No config files"`
 - Git status:
   !`git status --porcelain 2>/dev/null | head -3 || echo "Not git repo"`
 
