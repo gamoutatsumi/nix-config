@@ -72,11 +72,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1754323089,
-        "narHash": "sha256-qpmyMBMyksBbyXkc9kSIkY2zIuPRixQZDorec216FfM=",
+        "lastModified": 1754337839,
+        "narHash": "sha256-fEc2/4YsJwtnLU7HCFMRckb0u9UNnDZmwGhXT5U5NTw=",
         "owner": "ryantm",
         "repo": "agenix",
-        "rev": "6d194f7522b9ed8aadb0856f1316f6d660ceb42a",
+        "rev": "856df6f6922845abd4fd958ce21febc07ca2fa45",
         "type": "github"
       },
       "original": {
@@ -489,11 +489,11 @@
         "zon2nix": "zon2nix"
       },
       "locked": {
-        "lastModified": 1754329077,
-        "narHash": "sha256-RQ1rxVlvecblYEgGPwysVYMLzLoVIAHAS8eENC597rQ=",
+        "lastModified": 1754336706,
+        "narHash": "sha256-FhW2atJxgOTsa1zTAYpdAcb2y4XKpEL0HvcQ+f+jbKw=",
         "owner": "ghostty-org",
         "repo": "ghostty",
-        "rev": "1d62f37cbbe98387e374f20f8b8a83dba99f7a3d",
+        "rev": "37bac094c7bf1c602e3bfa115d8d7a70736b0e8e",
         "type": "github"
       },
       "original": {
@@ -893,11 +893,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1754095709,
-        "narHash": "sha256-4N2c5x+gs3d/fJHEVaqGD/HJHwwglKzhmlyH56jNpHI=",
-        "rev": "59e69648d345d6e8fef86158c555730fa12af9de",
+        "lastModified": 1754336651,
+        "narHash": "sha256-2dza0z/JSa9hZNJ5eNSxnk8ob7bI0TxJNVgo8fh7CWA=",
+        "rev": "ce01daebf8489ba97bd1609d185ea276efdeb121",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/25.05/nixos-25.05.807313.59e69648d345/nixexprs.tar.xz"
+        "url": "https://releases.nixos.org/nixos/25.05/nixos-25.05.807449.ce01daebf848/nixexprs.tar.xz"
       },
       "original": {
         "type": "tarball",
