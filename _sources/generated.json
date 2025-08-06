@@ -13,12 +13,12 @@
       "name": null,
       "owner": "shuntaka9576",
       "repo": "blocc",
-      "rev": "v0.1.1",
-      "sha256": "sha256-4OnC9S145i9MtIhKeqh/U1wsjZUps5WNuukpOGes0vA=",
+      "rev": "v0.6.0",
+      "sha256": "sha256-QLBfjnStNDrabp1oQWDA5qZLWsvpB6R1e3OVVxowod0=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "v0.1.1"
+    "version": "v0.6.0"
   },
   "plamo": {
     "cargoLocks": null,
@@ -40,5 +40,26 @@
       "type": "github"
     },
     "version": "1.0.4"
+  },
+  "treesitter": {
+    "cargoLocks": null,
+    "date": "2025-08-05",
+    "extract": null,
+    "name": "treesitter",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "nvim-treesitter",
+      "repo": "nvim-treesitter",
+      "rev": "4d9916e477e5d4e3b245845dfd285edf429f3252",
+      "sha256": "sha256-uiM64rs87jL/5u+v3EyYci1iJpJr1bWX0oklAUHr/uE=",
+      "sparseCheckout": [],
+      "type": "github"
+    },
+    "version": "4d9916e477e5d4e3b245845dfd285edf429f3252"
   }
 }

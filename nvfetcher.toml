@@ -5,3 +5,8 @@ fetch.github = "shuntaka9576/blocc"
 [plamo]
 src.github_tag = "pfnet/plamo-translate-cli"
 fetch.github = "pfnet/plamo-translate-cli"
+
+[treesitter]
+src.git = "https://github.com/nvim-treesitter/nvim-treesitter.git"
+src.branch = "main"
+fetch.github = "nvim-treesitter/nvim-treesitter"

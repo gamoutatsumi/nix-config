@@ -3,13 +3,13 @@
 {
   blocc = {
     pname = "blocc";
-    version = "v0.1.1";
+    version = "v0.6.0";
     src = fetchFromGitHub {
       owner = "shuntaka9576";
       repo = "blocc";
-      rev = "v0.1.1";
+      rev = "v0.6.0";
       fetchSubmodules = false;
-      sha256 = "sha256-4OnC9S145i9MtIhKeqh/U1wsjZUps5WNuukpOGes0vA=";
+      sha256 = "sha256-QLBfjnStNDrabp1oQWDA5qZLWsvpB6R1e3OVVxowod0=";
     };
   };
   plamo = {
@@ -22,5 +22,17 @@
       fetchSubmodules = false;
       sha256 = "sha256-dpvshY2kw31UtsFjWbf1shPil3ke5b5Wp+i14ndI098=";
     };
+  };
+  treesitter = {
+    pname = "treesitter";
+    version = "4d9916e477e5d4e3b245845dfd285edf429f3252";
+    src = fetchFromGitHub {
+      owner = "nvim-treesitter";
+      repo = "nvim-treesitter";
+      rev = "4d9916e477e5d4e3b245845dfd285edf429f3252";
+      fetchSubmodules = false;
+      sha256 = "sha256-uiM64rs87jL/5u+v3EyYci1iJpJr1bWX0oklAUHr/uE=";
+    };
+    date = "2025-08-05";
   };
 }
