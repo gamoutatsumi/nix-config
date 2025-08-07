@@ -14,6 +14,9 @@
         pinentry = pkgs.pinentry_mac;
       };
     };
+    ssh = {
+      package = pkgs.openssh;
+    };
     # keep-sorted end
   };
 }
