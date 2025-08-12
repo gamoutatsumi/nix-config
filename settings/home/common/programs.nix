@@ -82,7 +82,6 @@ in
         vim
       ])
       ++ [
-        nodePkgs.ccusage
         nodePkgs.editprompt
         nodePkgs."@anthropic-ai/claude-code"
       ];
