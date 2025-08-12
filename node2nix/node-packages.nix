@@ -39,13 +39,13 @@ let
         sha512 = "8xrp836RZvKkpNbVvgWUlxjT4CraKk2q+I3Ksy+seI2zkcE+y6wNs1BVhgcv8VyImFecUhdQrYLdW32pAjwBdA==";
       };
     };
-    "@inquirer/editor-4.2.15" = {
+    "@inquirer/editor-4.2.16" = {
       name = "_at_inquirer_slash_editor";
       packageName = "@inquirer/editor";
-      version = "4.2.15";
+      version = "4.2.16";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@inquirer/editor/-/editor-4.2.15.tgz";
-        sha512 = "wst31XT8DnGOSS4nNJDIklGKnf+8shuauVrWzgKegWUe28zfCftcWZ2vktGdzJgcylWSS2SrDnYUb6alZcwnCQ==";
+        url = "https://registry.npmjs.org/@inquirer/editor/-/editor-4.2.16.tgz";
+        sha512 = "iSzLjT4C6YKp2DU0fr8T7a97FnRRxMO6CushJnW5ktxLNM2iNeuyUuUA5255eOLPORoGYCrVnuDOEBdGkHGkpw==";
       };
     };
     "@inquirer/expand-4.0.17" = {
@@ -55,6 +55,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/@inquirer/expand/-/expand-4.0.17.tgz";
         sha512 = "PSqy9VmJx/VbE3CT453yOfNa+PykpKg/0SYP7odez1/NWBGuDXgPhp4AeGYYKjhLn5lUUavVS/JbeYMPdH50Mw==";
+      };
+    };
+    "@inquirer/external-editor-1.0.0" = {
+      name = "_at_inquirer_slash_external-editor";
+      packageName = "@inquirer/external-editor";
+      version = "1.0.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@inquirer/external-editor/-/external-editor-1.0.0.tgz";
+        sha512 = "5v3YXc5ZMfL6OJqXPrX9csb4l7NlQA2doO1yynUjpUChT9hg4JcuBVP0RbsEJ/3SL/sxWEyFjT2W69ZhtoBWqg==";
       };
     };
     "@inquirer/figures-1.0.13" = {
@@ -93,13 +102,13 @@ let
         sha512 = "DJolTnNeZ00E1+1TW+8614F7rOJJCM4y4BAGQ3Gq6kQIG+OJ4zr3GLjIjVVJCbKsk2jmkmv6v2kQuN/vriHdZA==";
       };
     };
-    "@inquirer/prompts-7.7.1" = {
+    "@inquirer/prompts-7.8.1" = {
       name = "_at_inquirer_slash_prompts";
       packageName = "@inquirer/prompts";
-      version = "7.7.1";
+      version = "7.8.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@inquirer/prompts/-/prompts-7.7.1.tgz";
-        sha512 = "XDxPrEWeWUBy8scAXzXuFY45r/q49R0g72bUzgQXZ1DY/xEFX+ESDMkTQolcb5jRBzaNJX2W8XQl6krMNDTjaA==";
+        url = "https://registry.npmjs.org/@inquirer/prompts/-/prompts-7.8.1.tgz";
+        sha512 = "LpBPeIpyCF1H3C7SK/QxJQG4iV1/SRmJdymfcul8PuwtVhD0JI1CSwqmd83VgRgt1QEsDojQYFSXJSgo81PVMw==";
       };
     };
     "@inquirer/rawlist-4.1.5" = {
@@ -111,13 +120,13 @@ let
         sha512 = "R5qMyGJqtDdi4Ht521iAkNqyB6p2UPuZUbMifakg1sWtu24gc2Z8CJuw8rP081OckNDMgtDCuLe42Q2Kr3BolA==";
       };
     };
-    "@inquirer/search-3.0.17" = {
+    "@inquirer/search-3.1.0" = {
       name = "_at_inquirer_slash_search";
       packageName = "@inquirer/search";
-      version = "3.0.17";
+      version = "3.1.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@inquirer/search/-/search-3.0.17.tgz";
-        sha512 = "CuBU4BAGFqRYors4TNCYzy9X3DpKtgIW4Boi0WNkm4Ei1hvY9acxKdBdyqzqBCEe4YxSdaQQsasJlFlUJNgojw==";
+        url = "https://registry.npmjs.org/@inquirer/search/-/search-3.1.0.tgz";
+        sha512 = "PMk1+O/WBcYJDq2H7foV0aAZSmDdkzZB9Mw2v/DmONRJopwA/128cS9M/TXWLKKdEQKZnKwBzqu2G4x/2Nqx8Q==";
       };
     };
     "@inquirer/select-4.3.1" = {
@@ -138,13 +147,13 @@ let
         sha512 = "lg9Whz8onIHRthWaN1Q9EGLa/0LFJjyM8mEUbL1eTi6yMGvBf8gvyDLtxSXztQsxMvhxxNpJYrwa1YHdq+w4Jw==";
       };
     };
-    "@types/node-24.0.15" = {
+    "@types/node-24.2.1" = {
       name = "_at_types_slash_node";
       packageName = "@types/node";
-      version = "24.0.15";
+      version = "24.2.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/node/-/node-24.0.15.tgz";
-        sha512 = "oaeTSbCef7U/z7rDeJA138xpG3NuKc64/rZ2qmUFkFJmnMsAPaluIifqyWd8hSSMxyP9oie3dLAqYPblag9KgA==";
+        url = "https://registry.npmjs.org/@types/node/-/node-24.2.1.tgz";
+        sha512 = "DRh5K+ka5eJic8CjH7td8QpYEV6Zo10gfRkjHCO3weqZHWDtAaSTFtl4+VMqOJ4N5jcuhZ9/l+yy8rVgw7BQeQ==";
       };
     };
     "ansi-escapes-4.3.2" = {
@@ -192,13 +201,13 @@ let
         sha512 = "oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==";
       };
     };
-    "chardet-0.7.0" = {
+    "chardet-2.1.0" = {
       name = "chardet";
       packageName = "chardet";
-      version = "0.7.0";
+      version = "2.1.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/chardet/-/chardet-0.7.0.tgz";
-        sha512 = "mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==";
+        url = "https://registry.npmjs.org/chardet/-/chardet-2.1.0.tgz";
+        sha512 = "bNFETTG/pM5ryzQ9Ad0lJOTa6HWD/YsScAR3EnCPZRPlQh77JocYktSHOUHelyhm8IARL+o4c4F1bP5KVOjiRA==";
       };
     };
     "cli-width-4.1.0" = {
@@ -273,15 +282,6 @@ let
         sha512 = "VyhnebXciFV2DESc+p6B+y0LjSm0krU4OgJN44qFAhBY0TJ+1V61tYD2+wHusZ6F9n5K+vl8k0sTy7PEfV4qpg==";
       };
     };
-    "external-editor-3.1.0" = {
-      name = "external-editor";
-      packageName = "external-editor";
-      version = "3.1.0";
-      src = fetchurl {
-        url = "https://registry.npmjs.org/external-editor/-/external-editor-3.1.0.tgz";
-        sha512 = "hMQ4CX1p1izmuLYyZqLMO/qGNw10wSv9QDCPfzXfyFrOaCSSoRfqE1Kf1s5an66J5JZC62NewG+mK49jOCtQew==";
-      };
-    };
     "find-process-1.4.11" = {
       name = "find-process";
       packageName = "find-process";
@@ -327,22 +327,22 @@ let
         sha512 = "AXcZb6vzzrFAUE61HnN4mpLqd/cSIwNQjtNWR0euPm6y0iqx3G4gOXaIDdtdDwZmhwe82LA6+zinmW4UBWVePQ==";
       };
     };
-    "iconv-lite-0.4.24" = {
+    "iconv-lite-0.6.3" = {
       name = "iconv-lite";
       packageName = "iconv-lite";
-      version = "0.4.24";
+      version = "0.6.3";
       src = fetchurl {
-        url = "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.24.tgz";
-        sha512 = "v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==";
+        url = "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.6.3.tgz";
+        sha512 = "4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==";
       };
     };
-    "inquirer-12.8.2" = {
+    "inquirer-12.9.1" = {
       name = "inquirer";
       packageName = "inquirer";
-      version = "12.8.2";
+      version = "12.9.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/inquirer/-/inquirer-12.8.2.tgz";
-        sha512 = "oBDL9f4+cDambZVJdfJu2M5JQfvaug9lbo6fKDlFV40i8t3FGA1Db67ov5Hp5DInG4zmXhHWTSnlXBntnJ7GMA==";
+        url = "https://registry.npmjs.org/inquirer/-/inquirer-12.9.1.tgz";
+        sha512 = "G7uXAb9OiLcd+9jmA/7KKrItvFF00kKk/jb6CtG+Tm2zSPWfzzhyJwDhVCy+mBmE32o2zJnB5JnknIIv2Ft+AA==";
       };
     };
     "is-docker-3.0.0" = {
@@ -462,15 +462,6 @@ let
         sha512 = "1FlR+gjXK7X+AsAHso35MnyN5KqGwJRi/31ft6x0M194ht7S+rWAvd7PHss9xSKMzE0asv1pyIHaJYq+BbacAQ==";
       };
     };
-    "os-tmpdir-1.0.2" = {
-      name = "os-tmpdir";
-      packageName = "os-tmpdir";
-      version = "1.0.2";
-      src = fetchurl {
-        url = "https://registry.npmjs.org/os-tmpdir/-/os-tmpdir-1.0.2.tgz";
-        sha512 = "D2FR03Vir7FIu45XBY20mTb+/ZSWB00sjU9jdQXt83gDrI4Ztz5Fs7/yy74g2N5SVQY4xY1qDr4rNddwYRVX0g==";
-      };
-    };
     "path-key-3.1.1" = {
       name = "path-key";
       packageName = "path-key";
@@ -489,13 +480,13 @@ let
         sha512 = "haREypq7xkM7ErfgIyA0z+Bj4AGKlMSdlQE2jvJo6huWD1EdkKYV+G/T4nq0YEF2vgTT8kqMFKo1uHn950r4SQ==";
       };
     };
-    "run-async-4.0.5" = {
+    "run-async-4.0.6" = {
       name = "run-async";
       packageName = "run-async";
-      version = "4.0.5";
+      version = "4.0.6";
       src = fetchurl {
-        url = "https://registry.npmjs.org/run-async/-/run-async-4.0.5.tgz";
-        sha512 = "oN9GTgxUNDBumHTTDmQ8dep6VIJbgj9S3dPP+9XylVLIK4xB9XTXtKWROd5pnhdXR9k0EgO1JRcNh0T+Ny2FsA==";
+        url = "https://registry.npmjs.org/run-async/-/run-async-4.0.6.tgz";
+        sha512 = "IoDlSLTs3Yq593mb3ZoKWKXMNu3UpObxhgA/Xuid5p4bbfi2jdY1Hj0m1K+0/tEuQTxIGMhQDqGjKb7RuxGpAQ==";
       };
     };
     "rxjs-7.8.2" = {
@@ -588,15 +579,6 @@ let
         sha512 = "ulAk51I9UVUyJgxlv9M6lFot2WP3e7t8Kz9+IS6D4rVba1tR9kON+Ey69f+1R4Q8cd45Lod6a4IcJIxnzGc/zA==";
       };
     };
-    "tmp-0.0.33" = {
-      name = "tmp";
-      packageName = "tmp";
-      version = "0.0.33";
-      src = fetchurl {
-        url = "https://registry.npmjs.org/tmp/-/tmp-0.0.33.tgz";
-        sha512 = "jRCJlojKnZ3addtTOjdIqoRuPEKBvNXcGYqzO6zWZX8KfKEpnGY5jfggJQ3EjKuu8D4bJRr0y+cYJFmYbImXGw==";
-      };
-    };
     "tslib-2.8.1" = {
       name = "tslib";
       packageName = "tslib";
@@ -615,22 +597,22 @@ let
         sha512 = "t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==";
       };
     };
-    "typescript-5.8.3" = {
+    "typescript-5.9.2" = {
       name = "typescript";
       packageName = "typescript";
-      version = "5.8.3";
+      version = "5.9.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/typescript/-/typescript-5.8.3.tgz";
-        sha512 = "p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==";
+        url = "https://registry.npmjs.org/typescript/-/typescript-5.9.2.tgz";
+        sha512 = "CWBzXQrc/qOkhidw1OzBTQuYRbfyxDXJMVJ1XNwUHGROVmuaeiEm3OslpZ1RV96d7SKKjZKrSJu3+t/xlw3R9A==";
       };
     };
-    "undici-types-7.8.0" = {
+    "undici-types-7.10.0" = {
       name = "undici-types";
       packageName = "undici-types";
-      version = "7.8.0";
+      version = "7.10.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/undici-types/-/undici-types-7.8.0.tgz";
-        sha512 = "9UJ2xGDvQ43tYyVMpuHlsgApydB8ZKfVYTsLDhXkFL/6gfkp+U8xTGdh8pMJv1SpZna0zxG1DwsKZsreLbXBxw==";
+        url = "https://registry.npmjs.org/undici-types/-/undici-types-7.10.0.tgz";
+        sha512 = "t5Fy/nfn+14LuOc2KNYg75vZqClpAiqscVvMygNnlsHBFpSXdJaYtXMcdNLpl/Qvc3P2cB3s6lOV51nqsFq4ag==";
       };
     };
     "which-2.0.2" = {
@@ -666,10 +648,10 @@ in
   ccusage = nodeEnv.buildNodePackage {
     name = "ccusage";
     packageName = "ccusage";
-    version = "15.5.0";
+    version = "15.9.3";
     src = fetchurl {
-      url = "https://registry.npmjs.org/ccusage/-/ccusage-15.5.0.tgz";
-      sha512 = "Cdyayhh0vuF6sutvguTmSyAjkLyFfXmInkovtWW1zbcna1LcwqFn+uJ+N+504zI/Vl7pHEwOa6hFQ0fiOu7TEg==";
+      url = "https://registry.npmjs.org/ccusage/-/ccusage-15.9.3.tgz";
+      sha512 = "sNioHFlNUlwKgw79JSU4pFpIwLrUSx4Ot7mju+KDZuseD7o++2URoqeqQ0HIa3+8BErTtVJBLEGf9436Qrf+tw==";
     };
     buildInputs = globalBuildInputs;
     meta = {
@@ -684,33 +666,34 @@ in
   editprompt = nodeEnv.buildNodePackage {
     name = "editprompt";
     packageName = "editprompt";
-    version = "0.2.0";
+    version = "0.2.1";
     src = fetchurl {
-      url = "https://registry.npmjs.org/editprompt/-/editprompt-0.2.0.tgz";
-      sha512 = "Elzscr8GzdgbDrIjgihUWftZi+JAZh3jxBCgqcyeyfiH0UjOCR+L3ndlyjdPc9VKUeRcdALfZntnbh8wnd8UEw==";
+      url = "https://registry.npmjs.org/editprompt/-/editprompt-0.2.1.tgz";
+      sha512 = "z3YKR19RMDTPr/Dw1qpkyLHnLx1mJNO8ffX9yqRVHipc2gkVjOYMA2IQ4IoO9YZ9VvxweY7hf1K85ZhqKOPtvA==";
     };
     dependencies = [
       sources."@inquirer/checkbox-4.2.0"
       sources."@inquirer/confirm-5.1.14"
       sources."@inquirer/core-10.1.15"
-      sources."@inquirer/editor-4.2.15"
+      sources."@inquirer/editor-4.2.16"
       sources."@inquirer/expand-4.0.17"
+      sources."@inquirer/external-editor-1.0.0"
       sources."@inquirer/figures-1.0.13"
       sources."@inquirer/input-4.2.1"
       sources."@inquirer/number-3.0.17"
       sources."@inquirer/password-4.0.17"
-      sources."@inquirer/prompts-7.7.1"
+      sources."@inquirer/prompts-7.8.1"
       sources."@inquirer/rawlist-4.1.5"
-      sources."@inquirer/search-3.0.17"
+      sources."@inquirer/search-3.1.0"
       sources."@inquirer/select-4.3.1"
       sources."@inquirer/type-3.0.8"
-      sources."@types/node-24.0.15"
+      sources."@types/node-24.2.1"
       sources."ansi-escapes-4.3.2"
       sources."ansi-regex-5.0.1"
       sources."ansi-styles-4.3.0"
       sources."args-tokens-0.20.1"
       sources."chalk-4.1.2"
-      sources."chardet-0.7.0"
+      sources."chardet-2.1.0"
       sources."cli-width-4.1.0"
       sources."clipboardy-4.0.0"
       sources."color-convert-2.0.1"
@@ -719,14 +702,13 @@ in
       sources."cross-spawn-7.0.6"
       sources."emoji-regex-8.0.0"
       sources."execa-8.0.1"
-      sources."external-editor-3.1.0"
       sources."find-process-1.4.11"
       sources."get-stream-8.0.1"
       sources."gunshi-0.26.3"
       sources."has-flag-4.0.0"
       sources."human-signals-5.0.0"
-      sources."iconv-lite-0.4.24"
-      sources."inquirer-12.8.2"
+      sources."iconv-lite-0.6.3"
+      sources."inquirer-12.9.1"
       sources."is-docker-3.0.0"
       sources."is-fullwidth-code-point-3.0.0"
       sources."is-inside-container-1.0.0"
@@ -747,9 +729,8 @@ in
         }
       )
       sources."onetime-6.0.0"
-      sources."os-tmpdir-1.0.2"
       sources."path-key-3.1.1"
-      sources."run-async-4.0.5"
+      sources."run-async-4.0.6"
       sources."rxjs-7.8.2"
       sources."safer-buffer-2.1.2"
       sources."shebang-command-2.0.0"
@@ -760,11 +741,10 @@ in
       sources."strip-final-newline-3.0.0"
       sources."supports-color-7.2.0"
       sources."system-architecture-0.1.0"
-      sources."tmp-0.0.33"
       sources."tslib-2.8.1"
       sources."type-fest-0.21.3"
-      sources."typescript-5.8.3"
-      sources."undici-types-7.8.0"
+      sources."typescript-5.9.2"
+      sources."undici-types-7.10.0"
       sources."which-2.0.2"
       sources."wrap-ansi-6.2.0"
       sources."yoctocolors-cjs-2.1.2"
@@ -782,10 +762,10 @@ in
   "@anthropic-ai/claude-code" = nodeEnv.buildNodePackage {
     name = "_at_anthropic-ai_slash_claude-code";
     packageName = "@anthropic-ai/claude-code";
-    version = "1.0.57";
+    version = "1.0.73";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-1.0.57.tgz";
-      sha512 = "zMymGZzjG+JO9iKC5N5pAy8AxyHIMPCL6U3HYCR3vCj5M+Y0s3GAMma6GkvCXWFixRN6KSZItKw3HbQiaIBYlw==";
+      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-1.0.73.tgz";
+      sha512 = "UVBkta/BWy49xR9fgi/Oy2tl7p/k+lOCinv21zSK/E9KB4JObAAZ1BAOWteu4fhv7gs3Ipfev5r6yo3OplmwNg==";
     };
     buildInputs = globalBuildInputs;
     meta = {
