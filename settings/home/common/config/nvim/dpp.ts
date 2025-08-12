@@ -1,7 +1,7 @@
-import { ContextBuilder, Plugin } from "jsr:@shougo/dpp-vim@4.6.0/types";
-import { BaseConfig, ConfigReturn } from "jsr:@shougo/dpp-vim@4.6.0/config";
-import { Dpp } from "jsr:@shougo/dpp-vim@4.6.0/dpp";
-import { convert2List, parseHooksFile } from "jsr:@shougo/dpp-vim@4.6.0/utils";
+import { ContextBuilder, Plugin } from "jsr:@shougo/dpp-vim@4.7.0/types";
+import { BaseConfig, ConfigReturn } from "jsr:@shougo/dpp-vim@4.7.0/config";
+import { Dpp } from "jsr:@shougo/dpp-vim@4.7.0/dpp";
+import { convert2List, parseHooksFile } from "jsr:@shougo/dpp-vim@4.7.0/utils";
 import { Denops } from "jsr:@denops/std@7.6.0";
 import { assert, ensure, is } from "jsr:@core/unknownutil@4.3.0";
 import { joinGlobs } from "jsr:@std/path@1.1.1";
