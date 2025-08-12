@@ -178,9 +178,6 @@
           nixfmt = {
             enable = true;
           };
-          pinact = {
-            enable = true;
-          };
           prettier = {
             enable = true;
           };
