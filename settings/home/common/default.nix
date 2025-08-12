@@ -74,7 +74,6 @@ in
               "Bash(rm:*)"
               "Bash(rm -rf:*)"
               "Bash(git push:*)"
-              "Bash(git commit:*)"
               "Bash(git reset:*)"
               "Bash(git rebase:*)"
               "Read(.env.*)"
