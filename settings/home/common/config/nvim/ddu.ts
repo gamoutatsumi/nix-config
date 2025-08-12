@@ -2,8 +2,8 @@ import {
   ActionArguments,
   ActionFlags,
   ContextBuilder,
-} from "jsr:@shougo/ddu-vim@10.3.0/types";
-import { BaseConfig } from "jsr:@shougo/ddu-vim@10.3.0/config";
+} from "jsr:@shougo/ddu-vim@10.4.0/types";
+import { BaseConfig } from "jsr:@shougo/ddu-vim@10.4.0/config";
 import { Denops } from "jsr:@denops/std@7.6.0";
 import * as stdpath from "jsr:@std/path@1.1.1";
 import * as u from "jsr:@core/unknownutil@4.3.0";
