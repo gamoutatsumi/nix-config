@@ -10,6 +10,8 @@
 let
   toKeyValue = lib.generators.toKeyValue { listsAsDuplicateKeys = true; };
   # blocc = upkgs.callPackage ../../../nvfetcher/blocc.nix { };
+
+  nodePkgs = upkgs.callPackage ../../../node2nix { };
 in
 {
   imports = [
@@ -60,6 +62,10 @@ in
           #     }
           #   ];
           # };
+          statusLine = {
+            type = "command";
+            command = "${lib.getExe' nodePkgs.ccusage "ccusage"} statusline";
+          };
           permissions = {
             allow = [
             ];
