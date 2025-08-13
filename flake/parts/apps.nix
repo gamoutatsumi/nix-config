@@ -42,7 +42,7 @@
                 echo "Updating ${system}..."
                 nix flake update --commit-lock-file
                 old_system=$(${pkgs.lib.getExe' pkgs.coreutils "readlink"} -f /run/current-system)
-                sudo nixos-rebuild switch --flake . --show-trace
+                sudo nixos-rebuild switch --flake . --show-trace --accept-flake-config
                 new_system=$(${pkgs.lib.getExe' pkgs.coreutils "readlink"} -f /run/current-system)
                 ${pkgs.lib.getExe pkgs.nvd} diff "''${old_system}" "''${new_system}"
               ''
