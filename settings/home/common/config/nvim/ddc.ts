@@ -1,6 +1,7 @@
-import { BaseConfig } from "jsr:@shougo/ddc-vim@9.5.0/config";
-import { ContextBuilder } from "jsr:@shougo/ddc-vim@9.5.0/types";
-import { Denops } from "jsr:@denops/std@~7.6.0";
+import {
+  BaseConfig,
+  type ConfigArguments,
+} from "jsr:@shougo/ddc-vim@9.5.0/config";
 
 const CONVERTERS = [
   "converter_fuzzy",
@@ -9,10 +10,7 @@ const CONVERTERS = [
 ];
 
 export class Config extends BaseConfig {
-  override config({ contextBuilder, denops }: {
-    denops: Denops;
-    contextBuilder: ContextBuilder;
-  }): Promise<void> {
+  override config({ contextBuilder, denops }: ConfigArguments): Promise<void> {
     contextBuilder.patchGlobal({
       ui: "pum",
       sources: ["denippet", "copilot", "file", "lsp", "around"],
