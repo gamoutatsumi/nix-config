@@ -489,11 +489,11 @@
         "zon2nix": "zon2nix"
       },
       "locked": {
-        "lastModified": 1755192055,
-        "narHash": "sha256-EvrVK0p3n9r21GV+N9UPBzDpM/R3GLAYjzRIgIueFyo=",
+        "lastModified": 1755209210,
+        "narHash": "sha256-L/9twq6NXnIOKtKV9IP5uGVcz7Hf6KeEkFU1tluPplg=",
         "owner": "ghostty-org",
         "repo": "ghostty",
-        "rev": "000efba31c3877fcf1b1e5e27a2cfb5ae24df7be",
+        "rev": "4e26bb65ae9f49c444bcfa59736e1cc1e52049cd",
         "type": "github"
       },
       "original": {
@@ -785,11 +785,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1755158577,
-        "narHash": "sha256-SeIkPx9OItyZvydY17RNb0R/r/eSMuHZnBvH8fqVKo0=",
+        "lastModified": 1755216392,
+        "narHash": "sha256-yGKTNIUrWHuRCuodP+77XDVkg6OgOQIAQiWHjZzJZPE=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "38986188ba0f57c48065ad430706435d622911a1",
+        "rev": "8d154e5927d728cc2ad74a0dec8b45fab1333f8c",
         "type": "github"
       },
       "original": {
@@ -893,11 +893,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1755006716,
-        "narHash": "sha256-0DozJw4Dxu/AiFm1aFc0/mu7wT6vzcUkDSq7Nx8UK2M=",
-        "rev": "ddae11e58c0c345bf66efbddbf2192ed0e58f896",
+        "lastModified": 1755199302,
+        "narHash": "sha256-2viV7iX/mxc1nQfA01ms9HxFtmshRon9D98OAVGAozo=",
+        "rev": "3385ca0cd7e14c1a1eb80401fe011705ff012323",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/25.05/nixos-25.05.808080.ddae11e58c0c/nixexprs.tar.xz"
+        "url": "https://releases.nixos.org/nixos/25.05/nixos-25.05.808129.3385ca0cd7e1/nixexprs.tar.xz"
       },
       "original": {
         "type": "tarball",
@@ -1293,11 +1293,11 @@
     "vim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1755117577,
-        "narHash": "sha256-TjqVqmk5Kjc55Cbj06af14J3qT0Y5GBXcNhs2we1r2U=",
+        "lastModified": 1755202185,
+        "narHash": "sha256-PRTvJ7DwdPE8pl2/12iTqaXUB4Jmnr8xqrHIaXbt3nQ=",
         "owner": "vim",
         "repo": "vim",
-        "rev": "706b6f5867cb0fe65c4fefac8382fe2995eedde7",
+        "rev": "126bc4690fb94c6628c704a3044bbc58d84dec42",
         "type": "github"
       },
       "original": {
