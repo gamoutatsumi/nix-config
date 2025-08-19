@@ -12,22 +12,22 @@
 
 let
   sources = {
-    "@inquirer/checkbox-4.2.0" = {
+    "@inquirer/checkbox-4.2.1" = {
       name = "_at_inquirer_slash_checkbox";
       packageName = "@inquirer/checkbox";
-      version = "4.2.0";
+      version = "4.2.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@inquirer/checkbox/-/checkbox-4.2.0.tgz";
-        sha512 = "fdSw07FLJEU5vbpOPzXo5c6xmMGDzbZE2+niuDHX5N6mc6V0Ebso/q3xiHra4D73+PMsC8MJmcaZKuAAoaQsSA==";
+        url = "https://registry.npmjs.org/@inquirer/checkbox/-/checkbox-4.2.1.tgz";
+        sha512 = "bevKGO6kX1eM/N+pdh9leS5L7TBF4ICrzi9a+cbWkrxeAeIcwlo/7OfWGCDERdRCI2/Q6tjltX4bt07ALHDwFw==";
       };
     };
-    "@inquirer/confirm-5.1.14" = {
+    "@inquirer/confirm-5.1.15" = {
       name = "_at_inquirer_slash_confirm";
       packageName = "@inquirer/confirm";
-      version = "5.1.14";
+      version = "5.1.15";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@inquirer/confirm/-/confirm-5.1.14.tgz";
-        sha512 = "5yR4IBfe0kXe59r1YCTG8WXkUbl7Z35HK87Sw+WUyGD8wNUx7JvY7laahzeytyE1oLn74bQnL7hstctQxisQ8Q==";
+        url = "https://registry.npmjs.org/@inquirer/confirm/-/confirm-5.1.15.tgz";
+        sha512 = "SwHMGa8Z47LawQN0rog0sT+6JpiL0B7eW9p1Bb7iCeKDGTI5Ez25TSc2l8kw52VV7hA4sX/C78CGkMrKXfuspA==";
       };
     };
     "@inquirer/core-10.1.15" = {
@@ -39,13 +39,13 @@ let
         sha512 = "8xrp836RZvKkpNbVvgWUlxjT4CraKk2q+I3Ksy+seI2zkcE+y6wNs1BVhgcv8VyImFecUhdQrYLdW32pAjwBdA==";
       };
     };
-    "@inquirer/editor-4.2.16" = {
+    "@inquirer/editor-4.2.17" = {
       name = "_at_inquirer_slash_editor";
       packageName = "@inquirer/editor";
-      version = "4.2.16";
+      version = "4.2.17";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@inquirer/editor/-/editor-4.2.16.tgz";
-        sha512 = "iSzLjT4C6YKp2DU0fr8T7a97FnRRxMO6CushJnW5ktxLNM2iNeuyUuUA5255eOLPORoGYCrVnuDOEBdGkHGkpw==";
+        url = "https://registry.npmjs.org/@inquirer/editor/-/editor-4.2.17.tgz";
+        sha512 = "r6bQLsyPSzbWrZZ9ufoWL+CztkSatnJ6uSxqd6N+o41EZC51sQeWOzI6s5jLb+xxTWxl7PlUppqm8/sow241gg==";
       };
     };
     "@inquirer/expand-4.0.17" = {
@@ -57,13 +57,13 @@ let
         sha512 = "PSqy9VmJx/VbE3CT453yOfNa+PykpKg/0SYP7odez1/NWBGuDXgPhp4AeGYYKjhLn5lUUavVS/JbeYMPdH50Mw==";
       };
     };
-    "@inquirer/external-editor-1.0.0" = {
+    "@inquirer/external-editor-1.0.1" = {
       name = "_at_inquirer_slash_external-editor";
       packageName = "@inquirer/external-editor";
-      version = "1.0.0";
+      version = "1.0.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@inquirer/external-editor/-/external-editor-1.0.0.tgz";
-        sha512 = "5v3YXc5ZMfL6OJqXPrX9csb4l7NlQA2doO1yynUjpUChT9hg4JcuBVP0RbsEJ/3SL/sxWEyFjT2W69ZhtoBWqg==";
+        url = "https://registry.npmjs.org/@inquirer/external-editor/-/external-editor-1.0.1.tgz";
+        sha512 = "Oau4yL24d2B5IL4ma4UpbQigkVhzPDXLoqy1ggK4gnHg/stmkffJE4oOXHXF3uz0UEpywG68KcyXsyYpA1Re/Q==";
       };
     };
     "@inquirer/figures-1.0.13" = {
@@ -102,13 +102,13 @@ let
         sha512 = "DJolTnNeZ00E1+1TW+8614F7rOJJCM4y4BAGQ3Gq6kQIG+OJ4zr3GLjIjVVJCbKsk2jmkmv6v2kQuN/vriHdZA==";
       };
     };
-    "@inquirer/prompts-7.8.1" = {
+    "@inquirer/prompts-7.8.3" = {
       name = "_at_inquirer_slash_prompts";
       packageName = "@inquirer/prompts";
-      version = "7.8.1";
+      version = "7.8.3";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@inquirer/prompts/-/prompts-7.8.1.tgz";
-        sha512 = "LpBPeIpyCF1H3C7SK/QxJQG4iV1/SRmJdymfcul8PuwtVhD0JI1CSwqmd83VgRgt1QEsDojQYFSXJSgo81PVMw==";
+        url = "https://registry.npmjs.org/@inquirer/prompts/-/prompts-7.8.3.tgz";
+        sha512 = "iHYp+JCaCRktM/ESZdpHI51yqsDgXu+dMs4semzETftOaF8u5hwlqnbIsuIR/LrWZl8Pm1/gzteK9I7MAq5HTA==";
       };
     };
     "@inquirer/rawlist-4.1.5" = {
@@ -147,13 +147,13 @@ let
         sha512 = "lg9Whz8onIHRthWaN1Q9EGLa/0LFJjyM8mEUbL1eTi6yMGvBf8gvyDLtxSXztQsxMvhxxNpJYrwa1YHdq+w4Jw==";
       };
     };
-    "@types/node-24.2.1" = {
+    "@types/node-24.3.0" = {
       name = "_at_types_slash_node";
       packageName = "@types/node";
-      version = "24.2.1";
+      version = "24.3.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/node/-/node-24.2.1.tgz";
-        sha512 = "DRh5K+ka5eJic8CjH7td8QpYEV6Zo10gfRkjHCO3weqZHWDtAaSTFtl4+VMqOJ4N5jcuhZ9/l+yy8rVgw7BQeQ==";
+        url = "https://registry.npmjs.org/@types/node/-/node-24.3.0.tgz";
+        sha512 = "aPTXCrfwnDLj4VvXrm+UUCQjNEvJgNA8s5F1cvwQU+3KNltTOkBm1j30uNLyqqPNe7gE3KFzImYoZEfLhp4Yow==";
       };
     };
     "ansi-escapes-4.3.2" = {
@@ -336,13 +336,13 @@ let
         sha512 = "4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==";
       };
     };
-    "inquirer-12.9.1" = {
+    "inquirer-12.9.3" = {
       name = "inquirer";
       packageName = "inquirer";
-      version = "12.9.1";
+      version = "12.9.3";
       src = fetchurl {
-        url = "https://registry.npmjs.org/inquirer/-/inquirer-12.9.1.tgz";
-        sha512 = "G7uXAb9OiLcd+9jmA/7KKrItvFF00kKk/jb6CtG+Tm2zSPWfzzhyJwDhVCy+mBmE32o2zJnB5JnknIIv2Ft+AA==";
+        url = "https://registry.npmjs.org/inquirer/-/inquirer-12.9.3.tgz";
+        sha512 = "Hpw2JWdrYY8xJSmhU05Idd5FPshQ1CZErH00WO+FK6fKxkBeqj+E+yFXSlERZLKtzWeQYFCMfl8U2TK9SvVbtQ==";
       };
     };
     "is-docker-3.0.0" = {
@@ -648,10 +648,10 @@ in
   ccusage = nodeEnv.buildNodePackage {
     name = "ccusage";
     packageName = "ccusage";
-    version = "15.9.4";
+    version = "15.10.0";
     src = fetchurl {
-      url = "https://registry.npmjs.org/ccusage/-/ccusage-15.9.4.tgz";
-      sha512 = "sWJxbwMrjvJx0P8PRaQq4YJTfIiI2sKsObS3Oxdw0kYVV4/0xI8YKuCkclwqAavhoAGGnrTfiD4erksyzGi5Ug==";
+      url = "https://registry.npmjs.org/ccusage/-/ccusage-15.10.0.tgz";
+      sha512 = "TiHj3yRuEWNklVZXh+uABMKU5nqdX6o5JHj54/VvdPWirziH71h6tP6jsksVFj94DrLybyjRjiBSexBB9svtsg==";
     };
     buildInputs = globalBuildInputs;
     meta = {
@@ -672,22 +672,22 @@ in
       sha512 = "z3YKR19RMDTPr/Dw1qpkyLHnLx1mJNO8ffX9yqRVHipc2gkVjOYMA2IQ4IoO9YZ9VvxweY7hf1K85ZhqKOPtvA==";
     };
     dependencies = [
-      sources."@inquirer/checkbox-4.2.0"
-      sources."@inquirer/confirm-5.1.14"
+      sources."@inquirer/checkbox-4.2.1"
+      sources."@inquirer/confirm-5.1.15"
       sources."@inquirer/core-10.1.15"
-      sources."@inquirer/editor-4.2.16"
+      sources."@inquirer/editor-4.2.17"
       sources."@inquirer/expand-4.0.17"
-      sources."@inquirer/external-editor-1.0.0"
+      sources."@inquirer/external-editor-1.0.1"
       sources."@inquirer/figures-1.0.13"
       sources."@inquirer/input-4.2.1"
       sources."@inquirer/number-3.0.17"
       sources."@inquirer/password-4.0.17"
-      sources."@inquirer/prompts-7.8.1"
+      sources."@inquirer/prompts-7.8.3"
       sources."@inquirer/rawlist-4.1.5"
       sources."@inquirer/search-3.1.0"
       sources."@inquirer/select-4.3.1"
       sources."@inquirer/type-3.0.8"
-      sources."@types/node-24.2.1"
+      sources."@types/node-24.3.0"
       sources."ansi-escapes-4.3.2"
       sources."ansi-regex-5.0.1"
       sources."ansi-styles-4.3.0"
@@ -708,7 +708,7 @@ in
       sources."has-flag-4.0.0"
       sources."human-signals-5.0.0"
       sources."iconv-lite-0.6.3"
-      sources."inquirer-12.9.1"
+      sources."inquirer-12.9.3"
       sources."is-docker-3.0.0"
       sources."is-fullwidth-code-point-3.0.0"
       sources."is-inside-container-1.0.0"
@@ -762,10 +762,10 @@ in
   "@anthropic-ai/claude-code" = nodeEnv.buildNodePackage {
     name = "_at_anthropic-ai_slash_claude-code";
     packageName = "@anthropic-ai/claude-code";
-    version = "1.0.77";
+    version = "1.0.84";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-1.0.77.tgz";
-      sha512 = "P4jQ9bd9DEcgQUXb94gh8h7bnconmS2qE3eGUHyxNAi8fhSDqA038fmduCKZ/0wCVGPaldYoFIaO35M/ChRtGA==";
+      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-1.0.84.tgz";
+      sha512 = "+Qu+z1jTdZPu0UL4dalntkofDGL0BgWqs6XmRlq+RuxurHJy58zKae4PL8naevrkbgazauIPYDDGmHF3u+B0uQ==";
     };
     buildInputs = globalBuildInputs;
     meta = {
