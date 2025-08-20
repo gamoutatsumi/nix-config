@@ -266,7 +266,7 @@
       flake = false;
     };
     tombi = {
-      url = "github:tombi-toml/tombi?ref=v0.5.3";
+      url = "github:tombi-toml/tombi?ref=v0.5.13";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs-unstable";
