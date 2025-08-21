@@ -137,6 +137,7 @@ local ensure_enabled = {
     "typos_lsp",
     "unocss",
     "vtsls",
+    "yamlls",
     -- keep-sorted end
 }
 vim.lsp.enable(ensure_enabled)
