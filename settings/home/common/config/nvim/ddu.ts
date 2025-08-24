@@ -4,7 +4,7 @@ import {
   ContextBuilder,
 } from "jsr:@shougo/ddu-vim@10.4.0/types";
 import { BaseConfig } from "jsr:@shougo/ddu-vim@10.4.0/config";
-import { Denops } from "jsr:@denops/std@7.6.0";
+import { Denops } from "jsr:@denops/std@8.0.0";
 import * as stdpath from "jsr:@std/path@1.1.2";
 import * as u from "jsr:@core/unknownutil@4.3.0";
 import { ActionData as GitStatusActionData } from "https://raw.githubusercontent.com/kuuote/ddu-source-git_status/main/denops/%40ddu-kinds/git_status.ts";
