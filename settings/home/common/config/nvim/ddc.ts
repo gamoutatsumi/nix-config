@@ -1,7 +1,7 @@
 import {
   BaseConfig,
   type ConfigArguments,
-} from "jsr:@shougo/ddc-vim@9.5.0/config";
+} from "jsr:@shougo/ddc-vim@10.0.0/config";
 
 const CONVERTERS = [
   "converter_fuzzy",
