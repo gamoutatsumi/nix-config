@@ -16,5 +16,7 @@
       ".deno",
       ".git"
     ]
-  }
+  },
+  "scopes": {},
+  "imports": {}
 }
