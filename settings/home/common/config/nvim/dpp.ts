@@ -41,6 +41,7 @@ export class Config extends BaseConfig {
         },
       },
       protocols: ["git"],
+      skipMergeFilenamePattern: "^deno.jsonc?$",
     });
 
     type Toml = {
