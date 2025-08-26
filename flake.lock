@@ -214,11 +214,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1756139563,
-        "narHash": "sha256-VZYhV7vCI3mi9xC9R6/1BoVRw/KexzPoG1cPXwqKcfs=",
+        "lastModified": 1756141823,
+        "narHash": "sha256-Fakm5F02Z7pO2+RwPG8SXN/WIqUvqZERrwT76ISXfjo=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "2c3341cc0fb268c865bfa1e932b89ec4614f22bd",
+        "rev": "6e64ccc5fe49ef8bbda0cecb3e281afdb53b3af7",
         "type": "github"
       },
       "original": {
@@ -489,11 +489,11 @@
         "zon2nix": "zon2nix"
       },
       "locked": {
-        "lastModified": 1756131615,
-        "narHash": "sha256-rmmsEZglqzgxIePTKe5wCIQ3syzAb4jE3RpNxD/2tzY=",
+        "lastModified": 1756161176,
+        "narHash": "sha256-zLetZrleZUwThD7tdpjN1iZ5h1IOiDpo43aCBbNm+8Y=",
         "owner": "ghostty-org",
         "repo": "ghostty",
-        "rev": "8aa0b4c92a54f822043e134d2b84ee29844f944e",
+        "rev": "9a56e779374a522ca5503cf51426d16172bf4c65",
         "type": "github"
       },
       "original": {
@@ -785,11 +785,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1756107234,
-        "narHash": "sha256-Qbqosof8i/1DkdoUsU25BNWasKfknJ8AxgdpqpWVhl8=",
+        "lastModified": 1756164261,
+        "narHash": "sha256-VOjIxnuuOGxglYA91ra5dZkUTP12kWWuGJK13JLSB3g=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "516363e6baa0329dac4b048526e3deadb0d580d0",
+        "rev": "821bfc02fbae7f1cf984037cf479c9cbc0eb1418",
         "type": "github"
       },
       "original": {
@@ -1306,11 +1306,11 @@
     "vim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1756033744,
-        "narHash": "sha256-Ym45OIxr9bz7Ab1GENEz/9r71x2u0RoddxEJ356n4iY=",
+        "lastModified": 1756159321,
+        "narHash": "sha256-1L/uuR8Q/K0kMDC5eNM6IzKdIq2YVODgK2dBtruGmyU=",
         "owner": "vim",
         "repo": "vim",
-        "rev": "3b3b9361257c6659abb79586712886d8636387c5",
+        "rev": "3571388ded6fc4e849e7ded3a4e6594d7bb8efaf",
         "type": "github"
       },
       "original": {
@@ -1388,11 +1388,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1756122838,
-        "narHash": "sha256-6i0ykVuy85PbW45tU6YDFd0qRDCpV1Ev5OUoUGgPpME=",
+        "lastModified": 1756166133,
+        "narHash": "sha256-1XyRJg42cnaYG+BobxuWEdI6Nqx0lBulTTbV2F9wjPY=",
         "owner": "times-yasunori",
         "repo": "awesome-yasunori",
-        "rev": "1b22bbdc2fe6db7a49a13b3fb6af7d9d406c63ee",
+        "rev": "a2582061614ad057666e6c611b039c56a478c31a",
         "type": "github"
       },
       "original": {
