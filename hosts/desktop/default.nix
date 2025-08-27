@@ -143,12 +143,32 @@
     };
   };
   services = {
+    # keep-sorted start block=yes
     blueman = {
       enable = true;
     };
-    printing = {
+    displayManager = {
+      autoLogin = {
+        enable = false;
+        user = username;
+      };
+      defaultSession = "xsession";
+    };
+    ollama = {
+      package = pkgs.ollama;
       enable = true;
-      drivers = with upkgs; [ mfcj7100cdw-cups ];
+      acceleration = "cuda";
+      loadModels = [ "hf.co/mmnga/webbigdata-ALMA-7B-Ja-V2-gguf:Q5_K_M" ];
+      environmentVariables = {
+        OLLAMA_FLASH_ATTENTION = "1";
+        OLLAMA_KV_CACHE_TYPE = "q8_0";
+      };
+    };
+    openssh = {
+      settings = {
+        PasswordAuthentication = false;
+        PermitRootLogin = "no";
+      };
     };
     pipewire = {
       extraConfig = {
@@ -171,12 +191,9 @@
         };
       };
     };
-    displayManager = {
-      autoLogin = {
-        enable = false;
-        user = username;
-      };
-      defaultSession = "xsession";
+    printing = {
+      enable = true;
+      drivers = with upkgs; [ mfcj7100cdw-cups ];
     };
     xserver = {
       videoDrivers = [ "nvidia" ];
@@ -191,22 +208,7 @@
         Option "OffTime" "0"
       '';
     };
-    ollama = {
-      package = pkgs.ollama;
-      enable = true;
-      acceleration = "cuda";
-      loadModels = [ "hf.co/mmnga/webbigdata-ALMA-7B-Ja-V2-gguf:Q5_K_M" ];
-      environmentVariables = {
-        OLLAMA_FLASH_ATTENTION = "1";
-        OLLAMA_KV_CACHE_TYPE = "q8_0";
-      };
-    };
-    openssh = {
-      settings = {
-        PasswordAuthentication = false;
-        PermitRootLogin = "no";
-      };
-    };
+    # keep-sorted end
   };
   system = {
     stateVersion = "25.05";

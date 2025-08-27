@@ -38,6 +38,12 @@
       };
     };
   };
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+  };
   i18n = {
     defaultLocale = "ja_JP.UTF-8";
   };
