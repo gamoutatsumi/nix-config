@@ -971,11 +971,11 @@
         "treefmt-nix": []
       },
       "locked": {
-        "lastModified": 1748484124,
-        "narHash": "sha256-Gl8l3spc2jik9gq7z2yMCV/bJwzOtTSrK/HZM4RJXVE=",
+        "lastModified": 1756256630,
+        "narHash": "sha256-iaWNlfVsC55UXoePy/fX1C1/wUUQiMKub63/Lo/L1U0=",
         "owner": "gamoutatsumi",
         "repo": "oreore-flake",
-        "rev": "bffad3fb7858e7894418f2435feef1e028a7ed04",
+        "rev": "f943abe547f5bf2752ac7cf5fb6426fca31ad8e2",
         "type": "github"
       },
       "original": {
