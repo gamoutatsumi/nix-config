@@ -149,6 +149,12 @@
     # keep-sorted start block=yes
     autorandr = {
       enable = true;
+      hooks = {
+        postswitch = {
+          feh = "systemctl restart --user feh.service";
+          polybar = "systemctl restart --user polybar.service";
+        };
+      };
       profiles = {
         # keep-sorted start block=yes
         "clamshell-dual-usbc-home" = {
