@@ -300,6 +300,7 @@
               "Space" = {
                 alone = "Space";
                 held = "Shift_L";
+                free_hold = true;
               };
             };
           }
@@ -309,10 +310,12 @@
               "Alt_L" = {
                 alone = "Muhenkan";
                 held = "Alt_L";
+                free_hold = true;
               };
               "Alt_R" = {
                 alone = "Henkan";
                 held = "Alt_R";
+                free_hold = true;
               };
             };
           }

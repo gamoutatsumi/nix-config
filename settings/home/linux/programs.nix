@@ -29,6 +29,7 @@
       ]
       ++ (with upkgs; [
         agenix-rekey
+        mpv
         ghostty
         (vivaldi.override {
           enableWidevine = true;
