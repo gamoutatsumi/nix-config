@@ -29,7 +29,6 @@
       ]
       ++ (with upkgs; [
         agenix-rekey
-        mpv
         ghostty
         (vivaldi.override {
           enableWidevine = true;
@@ -56,6 +55,18 @@
         font = {
           size = 11.5;
         };
+      };
+    };
+    mpv = {
+      enable = true;
+      package = upkgs.mpv;
+      config = {
+        "sub-auto" = "fuzzy";
+        "sub-font" = "IBM Plex Sans JP";
+        "sub-bold" = true;
+        "profile" = "gpu-hq";
+        "vo" = "gpu";
+        "slang" = "jp,ja,japanese,jpn";
       };
     };
     ncmpcpp = {
