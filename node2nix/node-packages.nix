@@ -12,49 +12,49 @@
 
 let
   sources = {
-    "@inquirer/checkbox-4.2.1" = {
+    "@inquirer/checkbox-4.2.2" = {
       name = "_at_inquirer_slash_checkbox";
       packageName = "@inquirer/checkbox";
-      version = "4.2.1";
+      version = "4.2.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@inquirer/checkbox/-/checkbox-4.2.1.tgz";
-        sha512 = "bevKGO6kX1eM/N+pdh9leS5L7TBF4ICrzi9a+cbWkrxeAeIcwlo/7OfWGCDERdRCI2/Q6tjltX4bt07ALHDwFw==";
+        url = "https://registry.npmjs.org/@inquirer/checkbox/-/checkbox-4.2.2.tgz";
+        sha512 = "E+KExNurKcUJJdxmjglTl141EwxWyAHplvsYJQgSwXf8qiNWkTxTuCCqmhFEmbIXd4zLaGMfQFJ6WrZ7fSeV3g==";
       };
     };
-    "@inquirer/confirm-5.1.15" = {
+    "@inquirer/confirm-5.1.16" = {
       name = "_at_inquirer_slash_confirm";
       packageName = "@inquirer/confirm";
-      version = "5.1.15";
+      version = "5.1.16";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@inquirer/confirm/-/confirm-5.1.15.tgz";
-        sha512 = "SwHMGa8Z47LawQN0rog0sT+6JpiL0B7eW9p1Bb7iCeKDGTI5Ez25TSc2l8kw52VV7hA4sX/C78CGkMrKXfuspA==";
+        url = "https://registry.npmjs.org/@inquirer/confirm/-/confirm-5.1.16.tgz";
+        sha512 = "j1a5VstaK5KQy8Mu8cHmuQvN1Zc62TbLhjJxwHvKPPKEoowSF6h/0UdOpA9DNdWZ+9Inq73+puRq1df6OJ8Sag==";
       };
     };
-    "@inquirer/core-10.1.15" = {
+    "@inquirer/core-10.2.0" = {
       name = "_at_inquirer_slash_core";
       packageName = "@inquirer/core";
-      version = "10.1.15";
+      version = "10.2.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@inquirer/core/-/core-10.1.15.tgz";
-        sha512 = "8xrp836RZvKkpNbVvgWUlxjT4CraKk2q+I3Ksy+seI2zkcE+y6wNs1BVhgcv8VyImFecUhdQrYLdW32pAjwBdA==";
+        url = "https://registry.npmjs.org/@inquirer/core/-/core-10.2.0.tgz";
+        sha512 = "NyDSjPqhSvpZEMZrLCYUquWNl+XC/moEcVFqS55IEYIYsY0a1cUCevSqk7ctOlnm/RaSBU5psFryNlxcmGrjaA==";
       };
     };
-    "@inquirer/editor-4.2.17" = {
+    "@inquirer/editor-4.2.18" = {
       name = "_at_inquirer_slash_editor";
       packageName = "@inquirer/editor";
-      version = "4.2.17";
+      version = "4.2.18";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@inquirer/editor/-/editor-4.2.17.tgz";
-        sha512 = "r6bQLsyPSzbWrZZ9ufoWL+CztkSatnJ6uSxqd6N+o41EZC51sQeWOzI6s5jLb+xxTWxl7PlUppqm8/sow241gg==";
+        url = "https://registry.npmjs.org/@inquirer/editor/-/editor-4.2.18.tgz";
+        sha512 = "yeQN3AXjCm7+Hmq5L6Dm2wEDeBRdAZuyZ4I7tWSSanbxDzqM0KqzoDbKM7p4ebllAYdoQuPJS6N71/3L281i6w==";
       };
     };
-    "@inquirer/expand-4.0.17" = {
+    "@inquirer/expand-4.0.18" = {
       name = "_at_inquirer_slash_expand";
       packageName = "@inquirer/expand";
-      version = "4.0.17";
+      version = "4.0.18";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@inquirer/expand/-/expand-4.0.17.tgz";
-        sha512 = "PSqy9VmJx/VbE3CT453yOfNa+PykpKg/0SYP7odez1/NWBGuDXgPhp4AeGYYKjhLn5lUUavVS/JbeYMPdH50Mw==";
+        url = "https://registry.npmjs.org/@inquirer/expand/-/expand-4.0.18.tgz";
+        sha512 = "xUjteYtavH7HwDMzq4Cn2X4Qsh5NozoDHCJTdoXg9HfZ4w3R6mxV1B9tL7DGJX2eq/zqtsFjhm0/RJIMGlh3ag==";
       };
     };
     "@inquirer/external-editor-1.0.1" = {
@@ -75,67 +75,67 @@ let
         sha512 = "lGPVU3yO9ZNqA7vTYz26jny41lE7yoQansmqdMLBEfqaGsmdg7V3W9mK9Pvb5IL4EVZ9GnSDGMO/cJXud5dMaw==";
       };
     };
-    "@inquirer/input-4.2.1" = {
+    "@inquirer/input-4.2.2" = {
       name = "_at_inquirer_slash_input";
       packageName = "@inquirer/input";
-      version = "4.2.1";
+      version = "4.2.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@inquirer/input/-/input-4.2.1.tgz";
-        sha512 = "tVC+O1rBl0lJpoUZv4xY+WGWY8V5b0zxU1XDsMsIHYregdh7bN5X5QnIONNBAl0K765FYlAfNHS2Bhn7SSOVow==";
+        url = "https://registry.npmjs.org/@inquirer/input/-/input-4.2.2.tgz";
+        sha512 = "hqOvBZj/MhQCpHUuD3MVq18SSoDNHy7wEnQ8mtvs71K8OPZVXJinOzcvQna33dNYLYE4LkA9BlhAhK6MJcsVbw==";
       };
     };
-    "@inquirer/number-3.0.17" = {
+    "@inquirer/number-3.0.18" = {
       name = "_at_inquirer_slash_number";
       packageName = "@inquirer/number";
-      version = "3.0.17";
+      version = "3.0.18";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@inquirer/number/-/number-3.0.17.tgz";
-        sha512 = "GcvGHkyIgfZgVnnimURdOueMk0CztycfC8NZTiIY9arIAkeOgt6zG57G+7vC59Jns3UX27LMkPKnKWAOF5xEYg==";
+        url = "https://registry.npmjs.org/@inquirer/number/-/number-3.0.18.tgz";
+        sha512 = "7exgBm52WXZRczsydCVftozFTrrwbG5ySE0GqUd2zLNSBXyIucs2Wnm7ZKLe/aUu6NUg9dg7Q80QIHCdZJiY4A==";
       };
     };
-    "@inquirer/password-4.0.17" = {
+    "@inquirer/password-4.0.18" = {
       name = "_at_inquirer_slash_password";
       packageName = "@inquirer/password";
-      version = "4.0.17";
+      version = "4.0.18";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@inquirer/password/-/password-4.0.17.tgz";
-        sha512 = "DJolTnNeZ00E1+1TW+8614F7rOJJCM4y4BAGQ3Gq6kQIG+OJ4zr3GLjIjVVJCbKsk2jmkmv6v2kQuN/vriHdZA==";
+        url = "https://registry.npmjs.org/@inquirer/password/-/password-4.0.18.tgz";
+        sha512 = "zXvzAGxPQTNk/SbT3carAD4Iqi6A2JS2qtcqQjsL22uvD+JfQzUrDEtPjLL7PLn8zlSNyPdY02IiQjzoL9TStA==";
       };
     };
-    "@inquirer/prompts-7.8.3" = {
+    "@inquirer/prompts-7.8.4" = {
       name = "_at_inquirer_slash_prompts";
       packageName = "@inquirer/prompts";
-      version = "7.8.3";
+      version = "7.8.4";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@inquirer/prompts/-/prompts-7.8.3.tgz";
-        sha512 = "iHYp+JCaCRktM/ESZdpHI51yqsDgXu+dMs4semzETftOaF8u5hwlqnbIsuIR/LrWZl8Pm1/gzteK9I7MAq5HTA==";
+        url = "https://registry.npmjs.org/@inquirer/prompts/-/prompts-7.8.4.tgz";
+        sha512 = "MuxVZ1en1g5oGamXV3DWP89GEkdD54alcfhHd7InUW5BifAdKQEK9SLFa/5hlWbvuhMPlobF0WAx7Okq988Jxg==";
       };
     };
-    "@inquirer/rawlist-4.1.5" = {
+    "@inquirer/rawlist-4.1.6" = {
       name = "_at_inquirer_slash_rawlist";
       packageName = "@inquirer/rawlist";
-      version = "4.1.5";
+      version = "4.1.6";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@inquirer/rawlist/-/rawlist-4.1.5.tgz";
-        sha512 = "R5qMyGJqtDdi4Ht521iAkNqyB6p2UPuZUbMifakg1sWtu24gc2Z8CJuw8rP081OckNDMgtDCuLe42Q2Kr3BolA==";
+        url = "https://registry.npmjs.org/@inquirer/rawlist/-/rawlist-4.1.6.tgz";
+        sha512 = "KOZqa3QNr3f0pMnufzL7K+nweFFCCBs6LCXZzXDrVGTyssjLeudn5ySktZYv1XiSqobyHRYYK0c6QsOxJEhXKA==";
       };
     };
-    "@inquirer/search-3.1.0" = {
+    "@inquirer/search-3.1.1" = {
       name = "_at_inquirer_slash_search";
       packageName = "@inquirer/search";
-      version = "3.1.0";
+      version = "3.1.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@inquirer/search/-/search-3.1.0.tgz";
-        sha512 = "PMk1+O/WBcYJDq2H7foV0aAZSmDdkzZB9Mw2v/DmONRJopwA/128cS9M/TXWLKKdEQKZnKwBzqu2G4x/2Nqx8Q==";
+        url = "https://registry.npmjs.org/@inquirer/search/-/search-3.1.1.tgz";
+        sha512 = "TkMUY+A2p2EYVY3GCTItYGvqT6LiLzHBnqsU1rJbrpXUijFfM6zvUx0R4civofVwFCmJZcKqOVwwWAjplKkhxA==";
       };
     };
-    "@inquirer/select-4.3.1" = {
+    "@inquirer/select-4.3.2" = {
       name = "_at_inquirer_slash_select";
       packageName = "@inquirer/select";
-      version = "4.3.1";
+      version = "4.3.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@inquirer/select/-/select-4.3.1.tgz";
-        sha512 = "Gfl/5sqOF5vS/LIrSndFgOh7jgoe0UXEizDqahFRkq5aJBLegZ6WjuMh/hVEJwlFQjyLq1z9fRtvUMkb7jM1LA==";
+        url = "https://registry.npmjs.org/@inquirer/select/-/select-4.3.2.tgz";
+        sha512 = "nwous24r31M+WyDEHV+qckXkepvihxhnyIaod2MG7eCE6G0Zm/HUF6jgN8GXgf4U7AU6SLseKdanY195cwvU6w==";
       };
     };
     "@inquirer/type-3.0.8" = {
@@ -336,13 +336,13 @@ let
         sha512 = "4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==";
       };
     };
-    "inquirer-12.9.3" = {
+    "inquirer-12.9.4" = {
       name = "inquirer";
       packageName = "inquirer";
-      version = "12.9.3";
+      version = "12.9.4";
       src = fetchurl {
-        url = "https://registry.npmjs.org/inquirer/-/inquirer-12.9.3.tgz";
-        sha512 = "Hpw2JWdrYY8xJSmhU05Idd5FPshQ1CZErH00WO+FK6fKxkBeqj+E+yFXSlERZLKtzWeQYFCMfl8U2TK9SvVbtQ==";
+        url = "https://registry.npmjs.org/inquirer/-/inquirer-12.9.4.tgz";
+        sha512 = "5bV3LOgLtMAiJq1QpaUddfRrvaX59wiMYppS7z2jNRSQ64acI0yqx7WMxWhgymenSXOyD657g9tlsTjqGYM8sg==";
       };
     };
     "is-docker-3.0.0" = {
@@ -633,13 +633,13 @@ let
         sha512 = "r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA==";
       };
     };
-    "yoctocolors-cjs-2.1.2" = {
+    "yoctocolors-cjs-2.1.3" = {
       name = "yoctocolors-cjs";
       packageName = "yoctocolors-cjs";
-      version = "2.1.2";
+      version = "2.1.3";
       src = fetchurl {
-        url = "https://registry.npmjs.org/yoctocolors-cjs/-/yoctocolors-cjs-2.1.2.tgz";
-        sha512 = "cYVsTjKl8b+FrnidjibDWskAv7UKOfcwaVZdp/it9n1s9fU3IkgDbhdIRKCW4JDsAlECJY0ytoVPT3sK6kideA==";
+        url = "https://registry.npmjs.org/yoctocolors-cjs/-/yoctocolors-cjs-2.1.3.tgz";
+        sha512 = "U/PBtDf35ff0D8X8D0jfdzHYEPFxAI7jJlxZXwCSez5M3190m+QobIfh+sWDWSHMCWWJN2AWamkegn6vr6YBTw==";
       };
     };
   };
@@ -648,10 +648,10 @@ in
   ccusage = nodeEnv.buildNodePackage {
     name = "ccusage";
     packageName = "ccusage";
-    version = "16.1.0";
+    version = "16.2.0";
     src = fetchurl {
-      url = "https://registry.npmjs.org/ccusage/-/ccusage-16.1.0.tgz";
-      sha512 = "EkI394v3XzThaIN1LCUK74S71ePtEB7q5+yJMU6vlR57ryTldJtq9eNi/jZF+UZEkRD7gZLX7W+dhO8MjgSxUg==";
+      url = "https://registry.npmjs.org/ccusage/-/ccusage-16.2.0.tgz";
+      sha512 = "eP7RosNkL44L4N0tAevlQxbgwfihNQ6jsGdtK00JXe89KmXaoLawm2nDrW+R/sAJv3Yk2+S0uS7K/sidYtYQdg==";
     };
     buildInputs = globalBuildInputs;
     meta = {
@@ -672,20 +672,20 @@ in
       sha512 = "z3YKR19RMDTPr/Dw1qpkyLHnLx1mJNO8ffX9yqRVHipc2gkVjOYMA2IQ4IoO9YZ9VvxweY7hf1K85ZhqKOPtvA==";
     };
     dependencies = [
-      sources."@inquirer/checkbox-4.2.1"
-      sources."@inquirer/confirm-5.1.15"
-      sources."@inquirer/core-10.1.15"
-      sources."@inquirer/editor-4.2.17"
-      sources."@inquirer/expand-4.0.17"
+      sources."@inquirer/checkbox-4.2.2"
+      sources."@inquirer/confirm-5.1.16"
+      sources."@inquirer/core-10.2.0"
+      sources."@inquirer/editor-4.2.18"
+      sources."@inquirer/expand-4.0.18"
       sources."@inquirer/external-editor-1.0.1"
       sources."@inquirer/figures-1.0.13"
-      sources."@inquirer/input-4.2.1"
-      sources."@inquirer/number-3.0.17"
-      sources."@inquirer/password-4.0.17"
-      sources."@inquirer/prompts-7.8.3"
-      sources."@inquirer/rawlist-4.1.5"
-      sources."@inquirer/search-3.1.0"
-      sources."@inquirer/select-4.3.1"
+      sources."@inquirer/input-4.2.2"
+      sources."@inquirer/number-3.0.18"
+      sources."@inquirer/password-4.0.18"
+      sources."@inquirer/prompts-7.8.4"
+      sources."@inquirer/rawlist-4.1.6"
+      sources."@inquirer/search-3.1.1"
+      sources."@inquirer/select-4.3.2"
       sources."@inquirer/type-3.0.8"
       sources."@types/node-24.3.0"
       sources."ansi-escapes-4.3.2"
@@ -708,7 +708,7 @@ in
       sources."has-flag-4.0.0"
       sources."human-signals-5.0.0"
       sources."iconv-lite-0.6.3"
-      sources."inquirer-12.9.3"
+      sources."inquirer-12.9.4"
       sources."is-docker-3.0.0"
       sources."is-fullwidth-code-point-3.0.0"
       sources."is-inside-container-1.0.0"
@@ -747,7 +747,7 @@ in
       sources."undici-types-7.10.0"
       sources."which-2.0.2"
       sources."wrap-ansi-6.2.0"
-      sources."yoctocolors-cjs-2.1.2"
+      sources."yoctocolors-cjs-2.1.3"
     ];
     buildInputs = globalBuildInputs;
     meta = {
@@ -762,10 +762,10 @@ in
   "@anthropic-ai/claude-code" = nodeEnv.buildNodePackage {
     name = "_at_anthropic-ai_slash_claude-code";
     packageName = "@anthropic-ai/claude-code";
-    version = "1.0.85";
+    version = "1.0.98";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-1.0.85.tgz";
-      sha512 = "rvLGGSnHQLJI3dP7C/d3Or5LQvgDEae5wurMG4Fs9ourzt+k8YA6WAHeuJmSUq7o7Z2fZTaojcM3VOLzUBEl7w==";
+      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-1.0.98.tgz";
+      sha512 = "IV193Eh8STdRcN3VkNcojPIlLnQPch+doBVrDSEV1rPPePISy7pzHFZL0Eg7zIPj9gHkHV1D2s0RMMwzVXJThA==";
     };
     buildInputs = globalBuildInputs;
     meta = {
