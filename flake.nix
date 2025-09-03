@@ -222,7 +222,7 @@
       url = "https://nixos.org/channels/nixos-25.05/nixexprs.tar.xz";
     };
     nixpkgs-unstable = {
-      url = "https://nixos.org/channels/nixos-unstable/nixexprs.tar.xz";
+      url = "https://nixos.org/channels/nixpkgs-unstable/nixexprs.tar.xz";
     };
     oreore = {
       url = "github:gamoutatsumi/oreore-flake";
