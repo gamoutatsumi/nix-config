@@ -180,7 +180,7 @@ in
       };
     };
     emacs = {
-      enable = false;
+      enable = true;
       package = upkgs.emacsWithPackagesFromUsePackage {
         package =
           if upkgs.stdenv.isLinux then
