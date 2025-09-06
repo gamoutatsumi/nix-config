@@ -234,7 +234,8 @@
     };
     services = {
       "backup-pictures-truenas" = {
-        wantedBy = [ "network-online.target" ];
+        wantedBy = [ "multi-user.target" ];
+        wants = [ "network-online.target" ];
         after = [ "network-online.target" ];
         script = ''
           ${pkgs.rsync}/bin/rsync -r -e "${pkgs.openssh}/bin/ssh -i /home/gamoutatsumi/.ssh/rsync_id_ed25519" /home/gamoutatsumi/Pictures/ wakaryu@truenas::desktop
@@ -245,7 +246,8 @@
         };
       };
       "fetch-music-truenas" = {
-        wantedBy = [ "network-online.target" ];
+        wantedBy = [ "multi-user.target" ];
+        wants = [ "network-online.target" ];
         after = [ "network-online.target" ];
         script = ''
           ${pkgs.rsync}/bin/rsync -r --update -avz --exclude "*.cue" --exclude "*(mp3)" --exclude "*(MP3)" --delete -e "${pkgs.openssh}/bin/ssh -i /home/gamoutatsumi/.ssh/rsync_id_ed25519" wakaryu@truenas::music /home/gamoutatsumi/Music/
