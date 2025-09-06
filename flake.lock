@@ -1306,11 +1306,11 @@
     "vim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1757099964,
-        "narHash": "sha256-kYpKeMrQC2SNl5LaJ1oHnAbCfONFjVeAABsgrFWbFZo=",
+        "lastModified": 1757146299,
+        "narHash": "sha256-wbOHb9s5CyPBj+bHypnSxoDabsN1XGcrsdWcoWE5GjA=",
         "owner": "vim",
         "repo": "vim",
-        "rev": "39acad46fa7bce974f2bb036843009b8f4669ff8",
+        "rev": "58c5a778707398fe4662530e0a06f5402bdedbf6",
         "type": "github"
       },
       "original": {
