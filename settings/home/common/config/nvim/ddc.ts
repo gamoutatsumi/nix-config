@@ -102,7 +102,7 @@ export class Config extends BaseConfig {
           ignoreCase: true,
           isVolatile: true,
           converters: [...CONVERTERS, "converter_kind_labels"],
-          sorters: ["sorter_ascii", "sorter_fuzzy", "sorter_lsp-kind"],
+          sorters: ["sorter_ascii", "sorter_fuzzy", "sorter_lsp_kind"],
           dup: "keep",
           keywordPattern: "\\k+",
         },
@@ -116,7 +116,7 @@ export class Config extends BaseConfig {
           dup: "keep",
           isVolatile: true,
           converters: [...CONVERTERS, "converter_kind_labels"],
-          sorters: ["sorter_ascii", "sorter_fuzzy", "sorter_lsp-kind"],
+          sorters: ["sorter_ascii", "sorter_fuzzy", "sorter_lsp_kind"],
         },
         file: {
           mark: "[File]",

@@ -214,11 +214,19 @@
         ]
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1757149542,
         "narHash": "sha256-nea8RTJJq78shii1qn6FKd7Fg0Sy0bfE8Rq+4OQ55BI=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
         "rev": "855ce6d45c9a753612790353d72c36b974531d8b",
+=======
+        "lastModified": 1757178312,
+        "narHash": "sha256-Z1HEVI+sphdRndNu8/iqGuupjtj1i3vBZXRXj9UA2RQ=",
+        "owner": "nix-community",
+        "repo": "emacs-overlay",
+        "rev": "132734acf812c4cbe44fd6aed54920ae731da986",
+>>>>>>> cea759cbccc2f5aeddb75f857927ae7aa35dd439
         "type": "github"
       },
       "original": {
@@ -489,11 +497,19 @@
         "zon2nix": "zon2nix"
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1757111114,
         "narHash": "sha256-pf/XTuWIJWcEXb/hcZ30MV6Alpnz8iP9dF4v1YBFqMI=",
         "owner": "ghostty-org",
         "repo": "ghostty",
         "rev": "e4c3a56242c3e70366bdd8013537a8fed8f7a147",
+=======
+        "lastModified": 1757170704,
+        "narHash": "sha256-faELbx7wEAzsG/w7OS+iIkc691EOBNPqLQ1Cpu/eBdQ=",
+        "owner": "ghostty-org",
+        "repo": "ghostty",
+        "rev": "26e9b0a0f3b07149c7fd7474519eba6b21f8c5fd",
+>>>>>>> cea759cbccc2f5aeddb75f857927ae7aa35dd439
         "type": "github"
       },
       "original": {
@@ -1306,11 +1322,19 @@
     "vim-src": {
       "flake": false,
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1757146299,
         "narHash": "sha256-wbOHb9s5CyPBj+bHypnSxoDabsN1XGcrsdWcoWE5GjA=",
         "owner": "vim",
         "repo": "vim",
         "rev": "58c5a778707398fe4662530e0a06f5402bdedbf6",
+=======
+        "lastModified": 1757179860,
+        "narHash": "sha256-mUaA7dUwlYfyUPK6lxJKQUyFskTgSkw4GRj/FAa+Liw=",
+        "owner": "vim",
+        "repo": "vim",
+        "rev": "6505dc69d3a663448045d653112aa52e74894327",
+>>>>>>> cea759cbccc2f5aeddb75f857927ae7aa35dd439
         "type": "github"
       },
       "original": {
@@ -1432,24 +1456,20 @@
     },
     "zon2nix": {
       "inputs": {
-        "flake-utils": [
-          "ghostty",
-          "flake-utils"
-        ],
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1756000480,
-        "narHash": "sha256-fR5pdcjO0II5MNdCzqvyokyuFkmff7/FyBAjUS6sMfA=",
+        "lastModified": 1757167408,
+        "narHash": "sha256-4XyJ6fmKd9wgJ7vHUQuULYy5ps2gUgkkDk/PrJb2OPY=",
         "owner": "jcollie",
         "repo": "zon2nix",
-        "rev": "d9dc9ef1ab9ae45b5c9d80c6a747cc9968ee0c60",
+        "rev": "dc78177e2ad28d5a407c9e783ee781bd559d7dd5",
         "type": "github"
       },
       "original": {
         "owner": "jcollie",
         "repo": "zon2nix",
-        "rev": "d9dc9ef1ab9ae45b5c9d80c6a747cc9968ee0c60",
+        "rev": "dc78177e2ad28d5a407c9e783ee781bd559d7dd5",
         "type": "github"
       }
     }

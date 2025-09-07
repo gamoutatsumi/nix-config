@@ -106,6 +106,7 @@ export class Config extends BaseConfig {
             path: toml,
             options: {
               lazy: true,
+              merged: false,
             },
           },
         )) as Toml,
