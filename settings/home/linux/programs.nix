@@ -14,7 +14,6 @@
         bitwarden-desktop
         chntpw
         discord
-        firefox
         gcr
         gimp
         kdePackages.kcachegrind
