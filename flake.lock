@@ -214,11 +214,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1757265531,
-        "narHash": "sha256-qivcU4dbflK4DR703s0YlmOzk365zKUJKzdei8oBdWE=",
+        "lastModified": 1757322698,
+        "narHash": "sha256-eUOyjGer4C+hMbOOb9pXa/bpq89+3vfxJox9N/ColQs=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "eabe03335ec98f151eefcdbe859abacfeea5e7f5",
+        "rev": "1ce287ba4398f442fbaa6a8aaf17f159a029e824",
         "type": "github"
       },
       "original": {
@@ -785,11 +785,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1757285134,
-        "narHash": "sha256-Iq2uZRJEiqafQFGI05Gw5/PvqV3iGOyM1RKaMd6ER/s=",
+        "lastModified": 1757303122,
+        "narHash": "sha256-wIR5HGfXh2KvPWljC1CfYjsbfKfuoPqfoNaE5m8MPhs=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "ad22d0ace9965907a83088fb52dd407b92222992",
+        "rev": "1cb1cfead017df79aa590d1d297b116a85cb31c0",
         "type": "github"
       },
       "original": {
@@ -849,11 +849,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1757210357,
-        "narHash": "sha256-bg36ANsd4jVmTMYhYpRoYoNh+9Z6d6VMJm8iKI2xBYQ=",
+        "lastModified": 1757296711,
+        "narHash": "sha256-7u9/tXUdmTj8x7ofet8aELLBlCHSoA+QOhYKheRdacM=",
         "owner": "nix-community",
         "repo": "nix-vscode-extensions",
-        "rev": "34a2ba2ce0129dc06db7e1b9a5a4d3441f24b4a7",
+        "rev": "ab9374ac8c162dacffcd4400e668fd7f9b6f173a",
         "type": "github"
       },
       "original": {
@@ -906,11 +906,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1757070365,
-        "narHash": "sha256-Bp4oYE+R51hn04h20WLUkHbWZgRj0IH3AS3QUg0r74c=",
-        "rev": "fe83bbdde2ccdc2cb9573aa846abe8363f79a97a",
+        "lastModified": 1757320227,
+        "narHash": "sha256-yl/F5IOnnay7bF/sZIfGl4ZIYFqJ3BvUOalDhy2No50=",
+        "rev": "092c565d333be1e17b4779ac22104338941d913f",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/25.05/nixos-25.05.809451.fe83bbdde2cc/nixexprs.tar.xz"
+        "url": "https://releases.nixos.org/nixos/25.05/nixos-25.05.809550.092c565d333b/nixexprs.tar.xz"
       },
       "original": {
         "type": "tarball",
@@ -1290,11 +1290,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1757219661,
-        "narHash": "sha256-Yj6vhJUUWgjW6FpkkvOLlS/HO6zGeMvwQ4BWJhhiPAc=",
+        "lastModified": 1757306013,
+        "narHash": "sha256-xTlclRQZ9oUSCGBpdvj47FrPXG4OvR9jT5zqNIW3+zo=",
         "owner": "kawarimidoll",
         "repo": "vim-overlay",
-        "rev": "e539051df93fa1ea41da93f17c237fc90fbe3964",
+        "rev": "113b712ab16973211d9612450dc2aba60be1c3b3",
         "type": "github"
       },
       "original": {
