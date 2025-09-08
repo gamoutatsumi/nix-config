@@ -1,17 +1,17 @@
 {
   description = "Nix(OS) Configurations";
-  nixConfig = {
-    extra-substituters = [
-      "https://nix-community.cachix.org"
-      "https://cache.garnix.io"
-      "https://gamoutatsumi-nix-config.cachix.org"
-    ];
-    extra-trusted-public-keys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
-      "gamoutatsumi-nix-config.cachix.org-1:5quoMby5QSByFx7JxJy75/JOkMmvbD314bwph5BToSw="
-    ];
-  };
+  # nixConfig = {
+  #   extra-substituters = [
+  #     "https://nix-community.cachix.org"
+  #     "https://cache.garnix.io"
+  #     "https://gamoutatsumi-nix-config.cachix.org"
+  #   ];
+  #   extra-trusted-public-keys = [
+  #     "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+  #     "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
+  #     "gamoutatsumi-nix-config.cachix.org-1:5quoMby5QSByFx7JxJy75/JOkMmvbD314bwph5BToSw="
+  #   ];
+  # };
   inputs = {
     # keep-sorted start block=yes
     agenix = {
@@ -217,10 +217,10 @@
       };
     };
     nixpkgs = {
-      url = "https://nixos.org/channels/nixos-25.05/nixexprs.tar.xz";
+      url = "github:NixOS/nixpkgs?ref=nixos-25.05";
     };
     nixpkgs-unstable = {
-      url = "https://nixos.org/channels/nixpkgs-unstable/nixexprs.tar.xz";
+      url = "github:NixOS/nixpkgs?ref=nixos-unstable";
     };
     oreore = {
       url = "github:gamoutatsumi/oreore-flake";
