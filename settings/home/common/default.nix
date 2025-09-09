@@ -14,6 +14,22 @@ let
   nodePkgs = upkgs.callPackage ../../../node2nix { };
 in
 {
+  nix = {
+    settings = {
+      nix-path = [
+        "nixpkgs=${inputs.nixpkgs.outPath}"
+        "nixpkgs-unstable=${inputs.nixpkgs-unstable.outPath}"
+      ];
+    };
+    registry = {
+      nixpkgs = {
+        flake = inputs.nixpkgs;
+      };
+      nixpkgs-unstable = {
+        flake = inputs.nixpkgs-unstable;
+      };
+    };
+  };
   imports = [
     ./programs.nix
     ./services.nix

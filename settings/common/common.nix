@@ -24,14 +24,10 @@
     package = pkgs.nixVersions.latest;
     registry = {
       nixpkgs = {
-        from = {
-          type = "indirect";
-          id = "nixpkgs";
-        };
-        to = {
-          type = "path";
-          path = "${inputs.nixpkgs.outPath}";
-        };
+        flake = inputs.nixpkgs;
+      };
+      nixpkgs-unstable = {
+        flake = inputs.nixpkgs-unstable;
       };
     };
     settings = {
@@ -50,6 +46,10 @@
       download-buffer-size = 512 * 1024 * 1024;
       keep-outputs = true;
       keep-derivations = true;
+      nix-path = [
+        "nixpkgs=${inputs.nixpkgs.outPath}"
+        "nixpkgs-unstable=${inputs.nixpkgs-unstable.outPath}"
+      ];
     };
     # keep-sorted end
   };
