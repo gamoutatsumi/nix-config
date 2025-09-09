@@ -1,7 +1,7 @@
 ---@type vim.lsp.Config
 return {
     workspace_required = true,
-    root_markers = { "package.json" },
+    root_markers = { "package.json", "node_modules" },
     settings = {
         javascript = {
             preferGoToSourceDefinition = true,
