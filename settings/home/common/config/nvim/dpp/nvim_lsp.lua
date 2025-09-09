@@ -128,7 +128,6 @@ local ensure_enabled = {
     "hls",
     "jsonls",
     "lua_ls",
-    "nil_ls",
     "pyright",
     "rust_analyzer",
     "sourcekit",
