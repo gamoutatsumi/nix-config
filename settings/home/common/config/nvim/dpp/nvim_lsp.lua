@@ -110,17 +110,12 @@ end
 
 vim.lsp.config("*", { on_attach = on_attach })
 
-lspconfig.astro.setup({
-    on_attach = on_attach,
-    autostart = true,
-})
-
 local ensure_enabled = {
     -- keep-sorted start
+    "astro",
     "biome",
     "buf_ls",
     "cue",
-    "denols",
     "efm",
     "fennel_language_server",
     "golangci_lint_ls",
@@ -135,9 +130,31 @@ local ensure_enabled = {
     "tombi",
     "typos_lsp",
     "unocss",
-    "vtsls",
     "yamlls",
     -- keep-sorted end
 }
 vim.lsp.enable(ensure_enabled)
+
+vim.api.nvim_create_autocmd("FileType", {
+    group = vim.api.nvim_create_augroup("LspStartNodeOrDeno", { clear = true }),
+    callback = function(ctx)
+        if
+            not vim.tbl_contains(
+                { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+                ctx.match
+            )
+        then
+            return
+        end
+
+        -- node
+        if vim.fn.finddir("node_modules", ".;") ~= "" then
+            vim.lsp.enable("vtsls")
+            return
+        end
+
+        -- deno
+        vim.lsp.enable("denols")
+    end,
+})
 -- }}}
