@@ -1,6 +1,7 @@
 local eslint_d = require("efmls-configs.linters.eslint_d")
 local prettierd = require("efmls-configs.formatters.prettier_d")
 local languages = {
+    markdown = { require("efmls-configs.linters.textlint") },
     python = {
         require("efmls-configs.formatters.ruff"),
         require("efmls-configs.linters.ruff"),
