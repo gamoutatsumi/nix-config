@@ -5,6 +5,8 @@ for _, lang in ipairs(ts.get_available(2)) do
     for _, ft in ipairs(vim.treesitter.language.get_filetypes(lang)) do
         table.insert(filetypes, ft)
     end
+    table.insert(filetypes, "typescriptreact")
+    table.insert(filetypes, "javascriptreact")
 end
 
 vim.treesitter.language.register("tsx", { "typescriptreact", "javascriptreact" })
