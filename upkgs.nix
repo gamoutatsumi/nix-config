@@ -1,7 +1,5 @@
 {
   system,
-  stdenv,
-  lib,
   inputs,
 }:
 (import inputs.nixpkgs-unstable {
@@ -24,8 +22,5 @@
     inputs.oreore.overlays.default
     inputs.vim-overlay.overlays.default
     # keep-sorted end
-  ]
-  ++ lib.optionals stdenv.isLinux [
-    (_final: prev: { copilot-language-server = prev.copilot-language-server.fhs; })
   ];
 })
