@@ -5,7 +5,6 @@
       "tat-nixos-laptop" = withSystem "x86_64-linux" (
         {
           system,
-          pkgs,
           inputs',
           ...
         }:
@@ -13,7 +12,6 @@
           username = "gamoutatsumi";
           upkgs = import ../../upkgs.nix {
             inherit system inputs;
-            inherit (pkgs) stdenv lib;
           };
         in
         inputs.nixpkgs.lib.nixosSystem {
@@ -52,7 +50,6 @@
       "tat-nixos-desktop" = withSystem "x86_64-linux" (
         {
           system,
-          pkgs,
           inputs',
           ...
         }:
@@ -60,7 +57,6 @@
           username = "gamoutatsumi";
           upkgs = import ../../upkgs.nix {
             inherit system inputs;
-            inherit (pkgs) stdenv lib;
           };
         in
         inputs.nixpkgs.lib.nixosSystem {

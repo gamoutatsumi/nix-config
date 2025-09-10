@@ -5,7 +5,6 @@
       work = withSystem "aarch64-darwin" (
         {
           system,
-          pkgs,
           inputs',
           ...
         }:
@@ -14,7 +13,6 @@
           darwinHost = builtins.getEnv "DARWIN_HOST";
           upkgs = import ../../upkgs.nix {
             inherit system inputs;
-            inherit (pkgs) stdenv lib;
           };
         in
         inputs.nix-darwin.lib.darwinSystem {

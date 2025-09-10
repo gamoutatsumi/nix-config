@@ -16,7 +16,6 @@
     let
       upkgs = import ../../upkgs.nix {
         inherit system inputs;
-        inherit (pkgs) stdenv lib;
       };
       treefmtBuild = config.treefmt.build;
       mcpJson = inputs.mcp-servers-nix.lib.mkConfig upkgs {
