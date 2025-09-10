@@ -1,5 +1,4 @@
 -- lua_add {{{
-local lspconfig = require("lspconfig")
 
 local function setInlayHintHL()
     local has_hl, hl = pcall(vim.api.nvim_get_hl, 0, { name = "LspInlayHint" })
@@ -123,6 +122,7 @@ local ensure_enabled = {
     "hls",
     "jsonls",
     "lua_ls",
+    "nil_ls",
     "pyright",
     "rust_analyzer",
     "sourcekit",

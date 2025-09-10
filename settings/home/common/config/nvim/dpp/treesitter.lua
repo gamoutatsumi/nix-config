@@ -7,6 +7,8 @@ for _, lang in ipairs(ts.get_available(2)) do
     end
 end
 
+vim.treesitter.language.register("tsx", { "typescriptreact", "javascriptreact" })
+
 vim.api.nvim_create_autocmd("FileType", {
     pattern = filetypes,
     callback = function(args)
