@@ -176,7 +176,7 @@ in
             (pkgs.replaceVarsWith {
               src = ./config/nvim/lua/core/vars.lua;
               replacements = {
-                python3 = lib.getExe upkgs.python3Full;
+                python3 = lib.getExe upkgs.python313;
               };
               dir = "lua/core";
             })
