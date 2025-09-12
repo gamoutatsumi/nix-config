@@ -549,6 +549,13 @@ in
       '';
       envExtra = builtins.readFile ./config/.zshenv;
     };
+    zathura = {
+      enable = true;
+      options = {
+        synctex = true;
+        synctex-editor-command = "texlab inverse-search -i %{input} -l %{line}";
+      };
+    };
     # keep-sorted end
   };
   # keep-sorted end

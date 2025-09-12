@@ -127,6 +127,7 @@ local ensure_enabled = {
     "rust_analyzer",
     "sourcekit",
     "terraformls",
+    "texlab",
     "tombi",
     "typos_lsp",
     "unocss",
