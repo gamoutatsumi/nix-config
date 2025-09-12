@@ -10,7 +10,6 @@ for _, lang in ipairs(ts.get_available(2)) do
 end
 
 vim.treesitter.language.register("tsx", { "typescriptreact", "javascriptreact" })
-vim.treesitter.language.register("latex", { "tex" })
 
 vim.api.nvim_create_autocmd("FileType", {
     pattern = filetypes,
