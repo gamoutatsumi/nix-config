@@ -6,7 +6,7 @@ return {
                 executable = "lualatex",
                 args = { "-synctex=1", "%f" },
                 onSave = true,
-                forwardSearchAfter = true,
+                forwardSearchAfter = false,
             },
             forwardSearch = {
                 executable = "zathura",
