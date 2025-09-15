@@ -3,6 +3,7 @@
   username,
   config,
   lib,
+  upkgs,
   ...
 }:
 {
@@ -131,6 +132,7 @@
     };
     tailscale = {
       enable = true;
+      package = upkgs.tailscale;
     };
     udev = {
       packages = with pkgs; [ yubikey-personalization ];
