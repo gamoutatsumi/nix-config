@@ -9,6 +9,7 @@ vim.filetype.add({
         astro = "astro",
         cue = "cue",
         jsonnet = "jsonnet",
+        j2 = "jinja",
     },
     filename = {
         [".textlintrc"] = "json",
