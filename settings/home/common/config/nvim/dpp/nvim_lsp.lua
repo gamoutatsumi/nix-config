@@ -125,6 +125,7 @@ local ensure_enabled = {
     "golangci_lint_ls",
     "gopls",
     "hls",
+    "jinja_lsp",
     "jsonls",
     "lua_ls",
     "nil_ls",

@@ -372,6 +372,7 @@ in
         (with pkgs; [ nil ])
         ++ (with upkgs; [
           tree-sitter
+          jinja-lsp
           efm-langserver
           nodejs
           yaml-language-server
