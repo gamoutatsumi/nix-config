@@ -513,8 +513,20 @@ function awsp() {
 }
 
 function osp() {
-  local profile=$(cat ~/.config/openstack/clouds.yaml | yq '.clouds | keys | .[]' | fzf)
+  local profile=$(cat ~/.config/openstack/clouds.yaml | yq ".clouds | keys | .[]" | fzf)
+  local auth_url=$(cat ~/.config/openstack/clouds.yaml | yq ".clouds.${profile}.auth.auth_url")
+  local password=$(cat ~/.config/openstack/clouds.yaml | yq ".clouds.${profile}.auth.password")
+  local username=$(cat ~/.config/openstack/clouds.yaml | yq ".clouds.${profile}.auth.username")
+  local project_name=$(cat ~/.config/openstack/clouds.yaml | yq ".clouds.${profile}.auth.project_name")
+  local project_id=$(cat ~/.config/openstack/clouds.yaml | yq ".clouds.${profile}.auth.project_id")
+  local user_domain_name=$(cat ~/.config/openstack/clouds.yaml | yq ".clouds.${profile}.auth.user_domain_name")
   export OS_CLOUD="$profile"
+  export OS_AUTH_URL="$auth_url"
+  export OS_PASSWORD="$password"
+  export OS_USERNAME="$username"
+  export OS_PROJECT_NAME="$project_name"
+  export OS_PROJECT_ID="$project_id"
+  export OS_USER_DOMAIN_NAME="$user_domain_name"
 }
 
 function dockercon() {
