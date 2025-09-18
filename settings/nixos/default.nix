@@ -34,8 +34,14 @@
       defaultFonts = {
         emoji = [ "Noto Color Emoji" ];
         monospace = [ "PlemolJP Console" ];
-        sansSerif = [ "IBM Plex Sans JP" ];
-        serif = [ "IBM Plex Serif JP" ];
+        sansSerif = [
+          "IBM Plex Sans JP"
+          "Noto Sans CJK JP"
+        ];
+        serif = [
+          "IBM Plex Serif JP"
+          "Noto Serif CJK JP"
+        ];
       };
     };
   };

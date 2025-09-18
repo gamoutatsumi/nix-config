@@ -45,9 +45,9 @@
   "Standard fontset for user.")
 (defvar user/font-size 16
   "Default font size in px.")
-(defvar user/cjk-font "HackGen Nerd" "Default font for CJK characters.")
-(defvar user/latin-font "HackGen Nerd" "Default font for Latin characters.")
-(defvar user/unicode-font "Noto Emoji" "Default font for Unicode characters, including emojis.")
+(defvar user/cjk-font "PlemolJP Console NF" "Default font for CJK characters.")
+(defvar user/latin-font "PlemolJP Console NF" "Default font for Latin characters.")
+(defvar user/unicode-font "Noto Color Emoji" "Default font for Unicode characters, including emojis.")
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

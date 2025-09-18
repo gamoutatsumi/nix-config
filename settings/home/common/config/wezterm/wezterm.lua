@@ -4,7 +4,6 @@ if wezterm.config_builder then
 end
 config.font = wezterm.font_with_fallback({
     { family = "PlemolJP Console NF" },
-    { family = "HackGen Console NF" },
 })
 config.font_size = 15.5
 config.enable_tab_bar = true

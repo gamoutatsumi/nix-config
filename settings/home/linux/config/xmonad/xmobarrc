@@ -1,4 +1,4 @@
-Config { font             = "xft:HackGen Regular:size=10:antialias=true"
+Config { font             = "xft:PlemolJP Regular:size=10:antialias=true"
        , bgColor          = "#1c1c1c"
        , fgColor          = "#555555"
        , position         = TopP 0 150
