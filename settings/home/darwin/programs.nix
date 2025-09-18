@@ -1,8 +1,5 @@
 { pkgs, ... }:
 {
-  home = {
-    packages = [ pkgs.code-cursor ];
-  };
   programs = {
     # keep-sorted start block=yes
     alacritty = {
