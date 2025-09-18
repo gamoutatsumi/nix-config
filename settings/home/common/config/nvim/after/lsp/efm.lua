@@ -11,9 +11,6 @@ local languages = {
     typescript = { eslint_d, prettierd },
     typescriptreact = { eslint_d, prettierd },
     javascriptreact = { eslint_d, prettierd },
-    nix = {
-        require("efmls-configs.linters.statix"),
-    },
 }
 
 ---@type vim.lsp.Config

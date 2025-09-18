@@ -131,6 +131,7 @@ local ensure_enabled = {
     "pyright",
     "rust_analyzer",
     "sourcekit",
+    "statix",
     "terraformls",
     "texlab",
     "tombi",
