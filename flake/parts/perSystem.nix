@@ -64,6 +64,8 @@
           packages =
             (with pkgs; [
               lua-language-server
+              docker-language-server
+              bash-language-server
               nvfetcher
               nodePackages_latest.vscode-json-languageserver
               nodePackages_latest.node2nix

@@ -89,6 +89,9 @@ local on_attach = function(client, bufnr)
             end,
         })
         local timer = vim.uv.new_timer()
+        if not timer then
+            return
+        end
         timer:start(
             100,
             0,
@@ -112,9 +115,11 @@ vim.lsp.config("*", { on_attach = on_attach })
 local ensure_enabled = {
     -- keep-sorted start
     "astro",
+    "bashls",
     "biome",
     "buf_ls",
     "cue",
+    "docker_language_server",
     "efm",
     "fennel_language_server",
     "golangci_lint_ls",

@@ -4,19 +4,8 @@ local textlint = require("efmls-configs.linters.textlint")
 local languages = {
     markdown = { textlint },
     tex = { textlint },
-    python = {
-        require("efmls-configs.formatters.ruff"),
-        require("efmls-configs.linters.ruff"),
-    },
     lua = {
         require("efmls-configs.formatters.stylua"),
-    },
-    dockerfile = {
-        require("efmls-configs.linters.hadolint"),
-    },
-    sh = {
-        require("efmls-configs.linters.shellcheck"),
-        require("efmls-configs.formatters.shfmt"),
     },
     javascript = { eslint_d, prettierd },
     typescript = { eslint_d, prettierd },
