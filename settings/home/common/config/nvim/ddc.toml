@@ -45,14 +45,6 @@ on_source = "ddc.vim"
 repo = "kristijanhusak/vim-dadbod-completion"
 
 [[plugins]]
-repo = "yuki-yano/tsnip.nvim"
-on_source = "ddc.vim"
-if = "has('nvim')"
-hook_add = '''
-  let g:tsnip_snippet_dir = $HOME .. '/.config/nvim/tsnip'
-'''
-
-[[plugins]]
 repo = "gamoutatsumi/ddc-sorter_ascii"
 on_source = "ddc.vim"
 
