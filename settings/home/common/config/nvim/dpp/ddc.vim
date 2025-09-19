@@ -38,7 +38,7 @@ function! s:commandlinePost() abort
 endfunction
 nnoremap :       <Cmd>call <SID>commandlinePre()<CR>:
 
-call join([$BASE_DIR, 'ddc.ts'], '/')->expand()->ddc#custom#load_config()
+call join([$BASE_DIR, 'dpp', 'ddc.ts'], '/')->expand()->ddc#custom#load_config()
 call ddc#enable(#{context_filetype: "treesitter"})
 " pum.vim
 imap <silent><expr> <TAB> pum#visible() ? '<Cmd>call pum#map#insert_relative(+1, "loop")<CR>' : denippet#jumpable(1) ? '<Plug>(denippet-jump-next)' : '<TAB>'

@@ -304,7 +304,7 @@ cnoremap <C-c> <Home>Capture <CR>
 " }}}
 " hook_source {{{
 call ddu#custom#alias('default', 'action', 'preview_ripgrep', 'preview')
-call join([$BASE_DIR, 'ddu.ts'], '/')->expand()->ddu#custom#load_config()
+call join([$BASE_DIR, 'dpp', 'ddu.ts'], '/')->expand()->ddu#custom#load_config()
 " }}}
 " hook_post_update {{{
 call ddu#set_static_import_path()

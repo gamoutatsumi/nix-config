@@ -49,13 +49,6 @@ let g:kensaku_disable_v3_migration_warning = 1
 '''
 
 [[plugins]]
-repo = "tani/vim-glance"
-depends = "denops.vim"
-hook_add = '''
-let g:glance#config = expand('$BASE_DIR/glance/init.ts')
-'''
-
-[[plugins]]
 repo = "lambdalisue/vim-guise"
 lazy = 0
 

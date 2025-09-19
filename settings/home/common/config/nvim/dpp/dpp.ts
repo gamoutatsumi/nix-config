@@ -1,11 +1,11 @@
-import { ContextBuilder, Plugin } from "jsr:@shougo/dpp-vim@5.0.0/types";
-import { BaseConfig, ConfigReturn } from "jsr:@shougo/dpp-vim@5.0.0/config";
-import { Dpp } from "jsr:@shougo/dpp-vim@5.0.0/dpp";
-import { convert2List, parseHooksFile } from "jsr:@shougo/dpp-vim@5.0.0/utils";
-import { Denops } from "jsr:@denops/std@8.0.0";
-import { assert, ensure, is } from "jsr:@core/unknownutil@4.3.0";
-import { joinGlobs } from "jsr:@std/path@1.1.2";
-import { expandGlob } from "jsr:@std/fs@1.0.19";
+import { ContextBuilder, Plugin } from "@shougo/dpp-vim/types";
+import { BaseConfig, ConfigReturn } from "@shougo/dpp-vim/config";
+import { Dpp } from "@shougo/dpp-vim/dpp";
+import { convert2List, parseHooksFile } from "@shougo/dpp-vim/utils";
+import { Denops } from "@denops/std";
+import { assert, ensure, is } from "@core/unknownutil";
+import { joinGlobs } from "@std/path";
+import { expandGlob } from "@std/fs";
 
 async function fennelCompile(denops: Denops, text: string): Promise<string> {
   const compiled = await denops.call(

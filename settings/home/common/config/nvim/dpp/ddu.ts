@@ -2,12 +2,12 @@ import {
   ActionArguments,
   ActionFlags,
   ContextBuilder,
-} from "jsr:@shougo/ddu-vim@11.1.0/types";
-import { BaseConfig } from "jsr:@shougo/ddu-vim@11.1.0/config";
-import { Denops } from "jsr:@denops/std@8.0.0";
-import * as stdpath from "jsr:@std/path@1.1.2";
-import * as u from "jsr:@core/unknownutil@4.3.0";
-import { ActionData as GitStatusActionData } from "https://raw.githubusercontent.com/kuuote/ddu-source-git_status/main/denops/%40ddu-kinds/git_status.ts";
+} from "@shougo/ddu-vim/types";
+import { BaseConfig } from "@shougo/ddu-vim/config";
+import { Denops } from "@denops/std";
+import * as stdpath from "@std/path";
+import * as u from "@core/unknownutil";
+import { ActionData as GitStatusActionData } from "@kuuote/ddu-kind-git-status";
 
 type Never = Record<never, never>;
 
