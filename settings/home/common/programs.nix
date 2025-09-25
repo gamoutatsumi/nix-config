@@ -376,7 +376,7 @@ in
           efm-langserver
           nodejs
           yaml-language-server
-          nodePackages_latest.vscode-json-languageserver
+          vscode-langservers-extracted
           typos-lsp
         ])
         ++ lib.optionals pkgs.stdenv.isLinux [
