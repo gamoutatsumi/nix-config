@@ -121,6 +121,7 @@ local ensure_enabled = {
     "cue",
     "docker_language_server",
     "efm",
+    "eslint",
     "fennel_language_server",
     "golangci_lint_ls",
     "gopls",

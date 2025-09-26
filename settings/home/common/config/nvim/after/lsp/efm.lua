@@ -1,4 +1,3 @@
-local eslint_d = require("efmls-configs.linters.eslint_d")
 local prettierd = require("efmls-configs.formatters.prettier_d")
 local textlint = require("efmls-configs.linters.textlint")
 local languages = {
@@ -7,10 +6,10 @@ local languages = {
     lua = {
         require("efmls-configs.formatters.stylua"),
     },
-    javascript = { eslint_d, prettierd },
-    typescript = { eslint_d, prettierd },
-    typescriptreact = { eslint_d, prettierd },
-    javascriptreact = { eslint_d, prettierd },
+    javascript = { prettierd },
+    typescript = { prettierd },
+    typescriptreact = { prettierd },
+    javascriptreact = { prettierd },
 }
 
 ---@type vim.lsp.Config
