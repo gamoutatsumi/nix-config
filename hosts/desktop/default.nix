@@ -100,11 +100,6 @@
     };
   };
   networking = {
-    extraHosts = ''
-      43.207.80.85 admin.t.isucon.local
-      43.207.80.85 isucon.t.isucon.local
-      43.207.80.85 kayac.t.isucon.local
-    '';
     hostName = "tat-nixos-desktop";
     networkmanager = {
       enable = false;
