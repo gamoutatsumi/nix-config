@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           persist-credentials: false
-      - uses: cachix/install-nix-action@a809471b5c7c913aa67bec8f459a11a0decc3fce # v31.6.2
+      - uses: cachix/install-nix-action@9280e7aca88deada44c930f1e2c78e21c3ae3edd # v31.7.0
       - uses: cachix/cachix-action@0fc020193b5a1fa3ac4575aa3a7d3aa6a35435ad # v16
         with:
           name: gamoutatsumi-nix-config
@@ -26,7 +26,7 @@ jobs:
         run: |
           git diff --name-only --exit-code
         continue-on-error: true
-      - uses: suzuki-shunsuke/commit-action@ca8e761ccb3533295065c3e90a8555fcdde8b467 # v0.0.10
+      - uses: suzuki-shunsuke/commit-action@b4aee3f297a855b761e0db5736a73566a7807fe2 # v0.0.11
         if: steps.diff.outcome == 'failure' && github.event_name == 'pull_request'
         with:
           app_id: ${{ secrets.APP_ID }}
