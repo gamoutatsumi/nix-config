@@ -134,6 +134,7 @@ local ensure_enabled = {
     "rust_analyzer",
     "sourcekit",
     "statix",
+    "stylua",
     "terraformls",
     "texlab",
     "tombi",
