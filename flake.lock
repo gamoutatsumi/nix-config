@@ -1210,16 +1210,16 @@
         "rust-overlay": "rust-overlay_3"
       },
       "locked": {
-        "lastModified": 1758932871,
-        "narHash": "sha256-AC3HUFY4q+YAyG73PXsyooaMPN+ZMh3r1VvoDPB8h5c=",
+        "lastModified": 1759210126,
+        "narHash": "sha256-iFO3G0UuHGJJMp/C74xAeB6k6QP6fnXUHVwkDaSG2jg=",
         "owner": "tombi-toml",
         "repo": "tombi",
-        "rev": "adac1f2c683f4095b7d68f2bfd45b9b4874f9965",
+        "rev": "d52a81c898bcb3bf47120fa8c5dade730313758c",
         "type": "github"
       },
       "original": {
         "owner": "tombi-toml",
-        "ref": "v0.6.17",
+        "ref": "v0.6.18",
         "repo": "tombi",
         "type": "github"
       }
@@ -1310,16 +1310,16 @@
     "xremap": {
       "flake": false,
       "locked": {
-        "lastModified": 1758860852,
-        "narHash": "sha256-80Fzf5hnRBWx0NxV1z8majc7JbDNj0DZSRNkbPvI7Ck=",
+        "lastModified": 1755238869,
+        "narHash": "sha256-ghGlyjBqW9UyXno1l4+a6AzgIJx7RNuJEVCQkae2pww=",
         "owner": "xremap",
         "repo": "xremap",
-        "rev": "05b66b23b8e16ca8d4a143259c8f303c10e3cb70",
+        "rev": "b903c00c1701fde989854f7bac47244752a8a204",
         "type": "github"
       },
       "original": {
         "owner": "xremap",
-        "ref": "v0.14.1",
+        "ref": "v0.10.15",
         "repo": "xremap",
         "type": "github"
       }
