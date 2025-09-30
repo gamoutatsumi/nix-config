@@ -3,9 +3,6 @@ local textlint = require("efmls-configs.linters.textlint")
 local languages = {
     markdown = { textlint },
     tex = { textlint },
-    lua = {
-        require("efmls-configs.formatters.stylua"),
-    },
     javascript = { prettierd },
     typescript = { prettierd },
     typescriptreact = { prettierd },

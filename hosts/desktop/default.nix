@@ -100,11 +100,6 @@
     };
   };
   networking = {
-    extraHosts = ''
-      43.207.80.85 admin.t.isucon.local
-      43.207.80.85 isucon.t.isucon.local
-      43.207.80.85 kayac.t.isucon.local
-    '';
     hostName = "tat-nixos-desktop";
     networkmanager = {
       enable = false;
@@ -236,7 +231,10 @@
       "backup-pictures-truenas" = {
         wantedBy = [ "multi-user.target" ];
         wants = [ "network-online.target" ];
-        after = [ "network-online.target" ];
+        after = [
+          "network-online.target"
+          "tailscaled.service"
+        ];
         script = ''
           ${pkgs.rsync}/bin/rsync -r -e "${pkgs.openssh}/bin/ssh -i /home/gamoutatsumi/.ssh/rsync_id_ed25519" /home/gamoutatsumi/Pictures/ wakaryu@truenas::desktop
         '';
@@ -248,7 +246,10 @@
       "fetch-music-truenas" = {
         wantedBy = [ "multi-user.target" ];
         wants = [ "network-online.target" ];
-        after = [ "network-online.target" ];
+        after = [
+          "network-online.target"
+          "tailscaled.service"
+        ];
         script = ''
           ${pkgs.rsync}/bin/rsync -r --update -avz --exclude "*.cue" --exclude "*(mp3)" --exclude "*(MP3)" --delete -e "${pkgs.openssh}/bin/ssh -i /home/gamoutatsumi/.ssh/rsync_id_ed25519" wakaryu@truenas::music /home/gamoutatsumi/Music/
         '';

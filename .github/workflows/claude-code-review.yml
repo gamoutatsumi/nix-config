@@ -30,7 +30,7 @@ jobs:
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           fetch-depth: 1
-      - uses: cachix/install-nix-action@a809471b5c7c913aa67bec8f459a11a0decc3fce # v31.6.2
+      - uses: cachix/install-nix-action@9280e7aca88deada44c930f1e2c78e21c3ae3edd # v31.7.0
       - uses: cachix/cachix-action@0fc020193b5a1fa3ac4575aa3a7d3aa6a35435ad # v16
         with:
           name: gamoutatsumi-nix-config
@@ -40,7 +40,7 @@ jobs:
           arguments: --accept-flake-config
       - name: Run Claude Code Review
         id: claude-review
-        uses: anthropics/claude-code-action@7ed3b616d54fd445625b77b219342949146bae9e # v1.0.8
+        uses: anthropics/claude-code-action@426380f01bad0a17200865605a85cb28926dccbf # v1.0.9
         with:
           model: "claude-opus-4-0"
           fallback_model: "claude-sonnet-4-0"
