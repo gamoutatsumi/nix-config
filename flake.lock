@@ -214,11 +214,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1759396170,
-        "narHash": "sha256-zu8sepuVsRVYmpOZ3CsHiSUnIcZQ2/cRryt4cYe8ROo=",
+        "lastModified": 1759425175,
+        "narHash": "sha256-RiZ/hh21blseTtqH+y1qfnKceIBJjAp6zHQjWs70C/4=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "a00b3ead3ecc7128243ed28fd21a1d49508e730c",
+        "rev": "d9b6b807f63697236c11efd101e85c051a532213",
         "type": "github"
       },
       "original": {
@@ -468,11 +468,11 @@
         "zon2nix": "zon2nix"
       },
       "locked": {
-        "lastModified": 1759413470,
-        "narHash": "sha256-3UhnnvQ49pSUIGa5aYep1Ua3gV3H1UYxjymJTJccPjo=",
+        "lastModified": 1759429425,
+        "narHash": "sha256-lAuWwYMXRi7z18y8H/Ys8130En6X0vR65ex6YXQIuKk=",
         "owner": "ghostty-org",
         "repo": "ghostty",
-        "rev": "f11a4f7a683e2936ec97375868bca7a1ae879caf",
+        "rev": "16dab3b8dcdb2406973c3c661e9de4a9642a9df5",
         "type": "github"
       },
       "original": {
@@ -648,11 +648,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1759417345,
-        "narHash": "sha256-RgUHJF0kt8W+z1O6ZZYf6LrYv2bDfqKvx/l//lv2d/M=",
+        "lastModified": 1759430143,
+        "narHash": "sha256-7Fg4mADYoLxRZIoPoCpiNji49W6CSPPGe65KzOjPqz4=",
         "owner": "natsukium",
         "repo": "mcp-servers-nix",
-        "rev": "8f62df26f5485be22483e1f85e1d9802a168393d",
+        "rev": "07ba88c442cb01f756a04343514603f40641d08d",
         "type": "github"
       },
       "original": {
