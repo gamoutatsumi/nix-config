@@ -557,6 +557,10 @@ in
         synctex-editor-command = "texlab inverse-search -i %{input} -l %{line}";
       };
     };
+    nh = {
+      enable = true;
+      flake = "${config.xdg.configHome}/home-manager";
+    };
     # keep-sorted end
   };
   # keep-sorted end
