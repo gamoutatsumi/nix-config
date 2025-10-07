@@ -40,7 +40,7 @@ jobs:
           arguments: --accept-flake-config
       - name: Run Claude Code Review
         id: claude-review
-        uses: anthropics/claude-code-action@426380f01bad0a17200865605a85cb28926dccbf # v1.0.9
+        uses: anthropics/claude-code-action@ac1a3207f3f00b4a37e2f3a6f0935733c7c64651 # v1.0.11
         with:
           model: "claude-opus-4-0"
           fallback_model: "claude-sonnet-4-0"
