@@ -28,7 +28,6 @@
       ]
       ++ (with upkgs; [
         agenix-rekey
-        ghostty
         (vivaldi.override {
           enableWidevine = true;
           proprietaryCodecs = false;
