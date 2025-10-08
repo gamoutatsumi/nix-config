@@ -421,7 +421,7 @@ in
       historyLimit = 4096;
     };
     vscode = {
-      enable = true;
+      enable = false;
       package = upkgs.vscode;
       profiles = {
         default = {
