@@ -259,6 +259,9 @@
         };
       };
     };
+    systems = {
+      url = "github:nix-systems/default";
+    };
     tinty-schemes = {
       url = "github:tinted-theming/schemes";
       flake = false;
@@ -346,28 +349,25 @@
   outputs =
     {
       # keep-sorted start
-      agenix-rekey,
       flake-parts,
-      pre-commit-hooks,
-      systems,
-      treefmt-nix,
       # keep-sorted end
       ...
-    }@inputs:
+    }@_inputs:
     flake-parts.lib.mkFlake
       {
-        inherit inputs;
+        inputs = _inputs;
       }
       (
         {
+          inputs,
           ...
         }:
         {
-          systems = import systems;
+          systems = import inputs.systems;
           imports = [
-            pre-commit-hooks.flakeModule
-            treefmt-nix.flakeModule
-            agenix-rekey.flakeModule
+            inputs.pre-commit-hooks.flakeModule
+            inputs.treefmt-nix.flakeModule
+            inputs.agenix-rekey.flakeModule
             ./flake/parts/perSystem.nix
             ./flake/parts/apps.nix
             ./flake/parts/darwin.nix
