@@ -1,8 +1,5 @@
 {
   # keep-sorted start block=yes
-  environment = {
-    enableAllTerminfo = true;
-  };
   homebrew = {
     enable = true;
     onActivation = {
