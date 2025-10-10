@@ -1211,16 +1211,16 @@
         "rust-overlay": "rust-overlay_3"
       },
       "locked": {
-        "lastModified": 1759800069,
-        "narHash": "sha256-J7H7m6Z6CpzvZuX2PF2DAvw4UT6GIs1qGWZ5xJmQUO8=",
+        "lastModified": 1760114151,
+        "narHash": "sha256-eW7e1yyoDiMe76w4NmmMWHtBydlaY2RT7JnIm7toCqw=",
         "owner": "tombi-toml",
         "repo": "tombi",
-        "rev": "30354b40a1b6d8df25d9e7a2fa95994372b1ffed",
+        "rev": "d3114c72786c73cb514529d3e0b42bfd548c7c96",
         "type": "github"
       },
       "original": {
         "owner": "tombi-toml",
-        "ref": "v0.6.25",
+        "ref": "v0.6.26",
         "repo": "tombi",
         "type": "github"
       }
