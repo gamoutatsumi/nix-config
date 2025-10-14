@@ -35,6 +35,14 @@ in
     ./services.nix
   ];
   home = {
+    activation = {
+      zcompileZshrc = lib.hm.dag.entryAfter [ "linkGeneration" ] ''
+        run ${lib.getExe config.programs.zsh.package} -c 'zcompile ${config.programs.zsh.dotDir}/.zshrc'
+      '';
+      zcompileZshenv = lib.hm.dag.entryAfter [ "linkGeneration" ] ''
+        run ${lib.getExe config.programs.zsh.package} -c 'zcompile ${config.programs.zsh.dotDir}/.zshenv'
+      '';
+    };
     file = {
       ".vscode/argv.json".text = lib.strings.toJSON {
         password-store = "gnome-libsecret";
