@@ -4,7 +4,6 @@
   pkgs,
   upkgs,
   config,
-  inputs',
   ...
 }:
 let
@@ -131,12 +130,8 @@ in
       "claude/commands" = {
         source = ./config/claude/commands;
       };
-      "zeno/config.yml" = {
-        source = inputs'.nix-cue.lib.eval {
-          inherit pkgs;
-          inputFiles = [ ./config/zeno/config.cue ];
-          outputFile = "config.yml";
-        };
+      "zeno" = {
+        source = ./config/zeno;
       };
       "ov/config.yaml" = {
         source = ./config/ov/config.yaml;
