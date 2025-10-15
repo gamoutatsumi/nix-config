@@ -28,6 +28,7 @@
       ]
       ++ (with upkgs; [
         agenix-rekey
+        obsidian
         (vivaldi.override {
           enableWidevine = true;
           proprietaryCodecs = false;

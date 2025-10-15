@@ -4,7 +4,6 @@
   pkgs,
   upkgs,
   config,
-  inputs',
   ...
 }:
 let
@@ -35,6 +34,14 @@ in
     ./services.nix
   ];
   home = {
+    activation = {
+      zcompileZshrc = lib.hm.dag.entryAfter [ "linkGeneration" ] ''
+        run ${lib.getExe config.programs.zsh.package} -c 'zcompile ${config.programs.zsh.dotDir}/.zshrc'
+      '';
+      zcompileZshenv = lib.hm.dag.entryAfter [ "linkGeneration" ] ''
+        run ${lib.getExe config.programs.zsh.package} -c 'zcompile ${config.programs.zsh.dotDir}/.zshenv'
+      '';
+    };
     file = {
       ".vscode/argv.json".text = lib.strings.toJSON {
         password-store = "gnome-libsecret";
@@ -123,12 +130,8 @@ in
       "claude/commands" = {
         source = ./config/claude/commands;
       };
-      "zeno/config.yml" = {
-        source = inputs'.nix-cue.lib.eval {
-          inherit pkgs;
-          inputFiles = [ ./config/zeno/config.cue ];
-          outputFile = "config.yml";
-        };
+      "zeno" = {
+        source = ./config/zeno;
       };
       "ov/config.yaml" = {
         source = ./config/ov/config.yaml;
