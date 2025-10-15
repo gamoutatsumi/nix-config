@@ -94,14 +94,6 @@
         };
       };
     };
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs";
-        };
-      };
-    };
     home-manager = {
       url = "github:nix-community/home-manager?ref=release-25.05";
       inputs = {
@@ -265,14 +257,6 @@
     tinty-schemes = {
       url = "github:tinted-theming/schemes";
       flake = false;
-    };
-    tombi = {
-      url = "github:tombi-toml/tombi?ref=v0.6.31";
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs-unstable";
-        };
-      };
     };
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";

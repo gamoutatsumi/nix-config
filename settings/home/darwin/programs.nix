@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, upkgs, ... }:
 {
   programs = {
     # keep-sorted start block=yes
@@ -8,6 +8,9 @@
           size = 15;
         };
       };
+    };
+    ghostty = {
+      package = upkgs.ghostty-bin;
     };
     rbw = {
       settings = {

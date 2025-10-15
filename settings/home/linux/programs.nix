@@ -56,6 +56,9 @@
         };
       };
     };
+    ghostty = {
+      package = upkgs.ghostty;
+    };
     mpv = {
       enable = true;
       package = upkgs.mpv;
@@ -112,6 +115,12 @@
         show-icons = true;
         sidebar-mode = true;
         icon-theme = config.gtk.iconTheme.name;
+      };
+    };
+    zsh = {
+      shellAliases = {
+        pbcopy = "xsel --clipboard --input";
+        open = "xdg-open";
       };
     };
     # keep-sorted end

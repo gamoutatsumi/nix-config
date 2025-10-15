@@ -50,7 +50,6 @@ in
         gnumake
         gnused
         gojq
-        gomi
         google-cloud-sdk
         killall
         kubectl
@@ -94,7 +93,7 @@ in
       settings = {
         general = {
           import = [
-            "${builtins.fetchurl {
+            "${pkgs.fetchurl {
               url = "https://raw.githubusercontent.com/bluz71/vim-nightfly-colors/master/extras/nightfly-alacritty.toml";
               sha256 = "0ssgf9i5nrc2m57zvgfzlgfvyhcrwd73pkiny266ba201niv6qi1";
             }}"
@@ -365,8 +364,10 @@ in
     };
     lsd = {
       enable = true;
+      enableZshIntegration = true;
     };
     neovim = {
+      vimdiffAlias = true;
       enable = true;
       extraPackages =
         (with pkgs; [ nil ])
@@ -504,12 +505,29 @@ in
       };
     };
     zsh = {
+      # keep-sorted start block=yes
+      defaultKeymap = "emacs";
+      dotDir = ".config/zsh";
       enable = true;
+      envExtra = lib.strings.concatLines [
+        (builtins.readFile ./config/.zshenv)
+        (builtins.readFile (
+          pkgs.fetchurl {
+            url = "https://raw.githubusercontent.com/bluz71/vim-nightfly-colors/refs/heads/master/extras/nightfly-fzf.sh";
+            sha256 = "sha256-KHRkQEPk7rzgnPK/sehr6AXo267YB0Tfi8KaVDjnkUE=";
+          }
+        ))
+      ];
       history = {
         size = 1000;
         path = "${config.xdg.dataHome}/zsh/history";
         save = 100000;
       };
+      initContent = ''
+        ${builtins.readFile ./config/.zshrc}
+        ${lib.getExe pkgs.any-nix-shell} zsh --info-right | source /dev/stdin
+        export FPATH
+      '';
       sessionVariables = {
         # keep-sorted start block = yes
         ANSIBLE_HOME = "${config.xdg.dataHome}/ansible";
@@ -541,14 +559,20 @@ in
         ];
         # keep-sorted end
       };
-      defaultKeymap = "emacs";
-      dotDir = ".config/zsh";
-      initContent = ''
-        ${builtins.readFile ./config/.zshrc}
-        ${lib.getExe pkgs.any-nix-shell} zsh --info-right | source /dev/stdin
-        export FPATH
-      '';
-      envExtra = builtins.readFile ./config/.zshenv;
+      shellAliases = {
+        # keep-sorted start
+        ".." = "cd ..";
+        dot = "cd ${config.xdg.configHome}/home-manager";
+        q = "exit";
+        rm = "${lib.getExe upkgs.gomi}";
+        ssh = "TERM=xterm ssh";
+        tree = "${config.programs.lsd.package} --tree";
+        v = "${lib.getExe config.programs.neovim.finalPackage}";
+        vi = "${lib.getExe config.programs.neovim.finalPackage}";
+        vim = "${lib.getExe config.programs.neovim.finalPackage}";
+        # keep-sorted end
+      };
+      #keep-sorted end
     };
     zathura = {
       enable = true;
@@ -560,6 +584,11 @@ in
     nh = {
       enable = true;
       flake = "${config.xdg.configHome}/home-manager";
+    };
+    ghostty = {
+      enable = true;
+      enableZshIntegration = true;
+      installBatSyntax = true;
     };
     # keep-sorted end
   };

@@ -135,22 +135,22 @@
         settings = {
           formatter = {
             # keep-sorted start block=yes
-            tombi = {
-              command = lib.getExe' upkgs.tombi "tombi";
-              options = [
-                "format"
-                "--offline"
-              ];
-              includes = [ "*.toml" ];
-            };
-            statix = {
-              excludes = [ "node2nix/*" ];
-            };
             deadnix = {
               excludes = [ "node2nix/*" ];
             };
             prettier = {
               includes = lib.mkForce [ "*.md" ];
+            };
+            statix = {
+              excludes = [ "node2nix/*" ];
+            };
+            tombi = {
+              command = lib.getExe upkgs.tombi;
+              options = [
+                "format"
+                "--offline"
+              ];
+              includes = [ "*.toml" ];
             };
             # keep-sorted end
           };
