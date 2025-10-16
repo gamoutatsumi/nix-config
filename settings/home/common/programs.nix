@@ -589,6 +589,9 @@ in
       enable = true;
       enableZshIntegration = true;
       installBatSyntax = true;
+      settings = {
+        theme = "nightfly";
+      };
     };
     # keep-sorted end
   };
