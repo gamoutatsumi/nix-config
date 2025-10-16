@@ -591,6 +591,7 @@ in
       installBatSyntax = true;
       settings = {
         theme = "nightfly";
+        auto-update = "off";
       };
     };
     # keep-sorted end
