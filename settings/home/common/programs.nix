@@ -590,8 +590,11 @@ in
       enableZshIntegration = true;
       installBatSyntax = true;
       settings = {
-        theme = "nightfly";
+        # keep-sorted start
         auto-update = "off";
+        background-opacity = 0.8;
+        theme = "nightfly";
+        # keep-sorted end
       };
     };
     # keep-sorted end
