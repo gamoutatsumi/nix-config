@@ -70,6 +70,12 @@ in
   };
   xdg = {
     configFile = {
+      "ghostty/themes/nightfly.conf" = {
+        source = pkgs.fetchurl {
+          url = "https://raw.githubusercontent.com/bluz71/vim-nightfly-colors/refs/heads/master/extras/nightfly-ghostty.conf";
+          sha256 = lib.fakeSha256;
+        };
+      };
       "claude/settings.json" = {
         text = builtins.toJSON {
           # hooks = {
