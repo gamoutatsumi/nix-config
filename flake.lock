@@ -1166,11 +1166,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1758929268,
-        "narHash": "sha256-WIxpQYzXUKZRCLZ1djg5vZiakWrcjhybrq85oQJ6n/c=",
+        "lastModified": 1760596096,
+        "narHash": "sha256-WT0sRDzj2Ma/2pdFmddYuNSTUd5ZOmAfgDREjkWtwQ4=",
         "owner": "xremap",
         "repo": "nix-flake",
-        "rev": "226fcadfe1d810a89ce318f6a304df3caf7f9cd7",
+        "rev": "e8f58f1351824e9cd5cb32c75df6fbee804059de",
         "type": "github"
       },
       "original": {
