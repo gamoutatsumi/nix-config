@@ -73,7 +73,7 @@ in
       "ghostty/themes/nightfly.conf" = {
         source = pkgs.fetchurl {
           url = "https://raw.githubusercontent.com/bluz71/vim-nightfly-colors/refs/heads/master/extras/nightfly-ghostty.conf";
-          sha256 = "zLUkcqXw9Vh/8+SyV7mLmaMN8AUIRzrn/R0=";
+          sha256 = "fFoSxXC+zLUkcqXw9Vh/8+SyV7mLmaMN8AUIRzrn/R0=";
         };
       };
       "claude/settings.json" = {
