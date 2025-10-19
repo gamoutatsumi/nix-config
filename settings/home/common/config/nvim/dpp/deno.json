@@ -20,7 +20,7 @@
   "scopes": {},
   "imports": {
     "@shougo/ddu-vim": "jsr:@shougo/ddu-vim@11.1.0",
-    "@denops/std": "jsr:@denops/std@8.1.0",
+    "@denops/std": "jsr:@denops/std@8.1.1",
     "@std/path": "jsr:@std/path@1.1.2",
     "@core/unknownutil": "jsr:@core/unknownutil@4.3.0",
     "@kuuote/ddu-kind-git-status": "jsr:@kuuote/ddu-kind-git-status@1.1.0",
