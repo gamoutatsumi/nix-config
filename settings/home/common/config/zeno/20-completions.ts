@@ -101,36 +101,6 @@ export default defineConfig(() => {
       },
       callback: "awk '{print $1}'",
       sourceCommand: "docker ps",
-    }, {
-      name: "kubernetes pods",
-      patterns: [
-        "^kubectl delete pods $",
-        "^kubectl exec pods $",
-        "^kubectl logs pods $",
-        "^kubectl port-forward pods $",
-        "^kubectl describe pods $",
-        "^kubectl get pods $",
-      ],
-      options: {
-        "--prompt": "'Pod> '",
-        "--header-lines": 1,
-      },
-      callback: "awk '{print $1}'",
-      sourceCommand: "kubectl get pods",
-    }, {
-      name: "kubernetes deployments",
-      patterns: [
-        "^kubectl delete deployments $",
-        "^kubectl describe deployments $",
-        "^kubectl get deployments $",
-        "^stern $",
-      ],
-      options: {
-        "--prompt": "'Deployment> '",
-        "--header-lines": 1,
-      },
-      callback: "awk '{print $1}'",
-      sourceCommand: "kubectl get deployments",
     }],
   };
 });
