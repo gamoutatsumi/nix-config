@@ -36,12 +36,13 @@ export default defineConfig(() => {
           `^kubectl get ${resource} $`,
           ...(resource === "pods"
             ? [
-              "^kubectl exec pods $",
-              "^kubectl logs pods $",
-              "^kubectl port-forward pods $",
+              `^kubectl exec ${resource} $`,
+              `^kubectl logs ${resource} $`,
+              `^kubectl port-forward ${resource} $`,
+              "^stern pod/$",
             ]
             : []),
-          ...(resource === "deployments.apps" ? ["^stern $"] : []),
+          ...(resource === "deployments.apps" ? ["^stern deployment/$"] : []),
         ],
         options: {
           "--prompt": `'${

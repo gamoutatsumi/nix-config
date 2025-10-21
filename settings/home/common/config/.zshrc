@@ -6,50 +6,9 @@ if [[ -z "$TMUX" ]] && [[ "$USE_TMUX" == "true" ]] ;then
     exec tmux attach-session -t $SESSION
   fi
 fi
-# ZCOMPILE {{{
-# function source {
-#   ensure_zcompiled $1
-#   builtin source $1
-# }
-# function ensure_zcompiled {
-#   local compiled="$1.zwc"
-#   local target="$1"
-#   if [[ -L "$1" ]]; then
-#     target=$(readlink "$1")
-#   fi
-#   if [[ ! -r "$compiled" || "$target" -nt "$compiled" ]]; then
-#     echo "Compiling $1"
-#     zcompile $1
-#   fi
-# }
-# ensure_zcompiled ~/.config/zsh/.zshrc
-# ensure_zcompiled ~/.zshrc.local
-# ensure_zcompiled ~/.zprofile
-# ensure_zcompiled ~/.config/zsh/.zshenv
-# ensure_zcompiled ~/.zshenv.local
-# () {
-#   local src
-#   for src in $@; do
-#     ([[ ! -e $src.zwc ]] || [ ${src:A} -nt $src ]) && zcompile $src
-#   done
-# } ~/.config/zsh/.zshrc
-# }}}
-
-# INITIALIZE {{{
-if [[ -n "$ZSHRC_PROFILE" ]]; then
-  zmodload zsh/zprof && zprof > /dev/null
-fi
-# }}}
-
-# {{{ ENVVARS
-# Setting PATH
-export WORDCHARS='*?_.[]~-=&;!#$%^(){}<>' 
-
-export PURE_GIT_PULL=0
-
-# }}}
 
 # {{{ PLUGINS
+setopt nonomatch
 if [[ ! -d "${XDG_STATE_HOME}"/sheldon ]]; then
   mkdir "${XDG_STATE_HOME}"/sheldon
 fi
@@ -57,28 +16,6 @@ if [[ ! -e "${XDG_STATE_HOME}/sheldon/sheldon.lock.zsh" ]] || [[ "${XDG_CONFIG_H
   sheldon source > "${XDG_STATE_HOME}/sheldon/sheldon.lock.zsh"
 fi
 source "${XDG_STATE_HOME}/sheldon/sheldon.lock.zsh"
-
-ZSH_AUTOSUGGEST_CLEAR_WIDGETS+="zeno-auto-snippet-and-accept-line-fallback"
-
-setopt nonomatch
-      function set_fast_theme() {
-        FAST_HIGHLIGHT_STYLES[path]='fg=cyan,underline'
-        FAST_HIGHLIGHT_STYLES[path-to-dir]='fg=cyan,underline' 
-        FAST_HIGHLIGHT_STYLES[suffix-alias]='fg=blue'
-        FAST_HIGHLIGHT_STYLES[alias]='fg=blue'
-        FAST_HIGHLIGHT_STYLES[precommand]='fg=blue'
-        FAST_HIGHLIGHT_STYLES[command]='fg=blue'
-        FAST_HIGHLIGHT_STYLES[arg0]='fg=025'
-        FAST_HIGHLIGHT_STYLES[globbing]='fg=green,bold'
-        FAST_HIGHLIGHT_STYLES[single-hyphen-option]='fg=cyan'
-        FAST_HIGHLIGHT_STYLES[double-hyphen-option]='fg=cyan'
-        FAST_HIGHLIGHT_STYLES[default]='fg=cyan'
-        FAST_HIGHLIGHT_STYLES[unknown-token]='fg=196'
-        FAST_HIGHLIGHT_STYLES[builtin]='fg=blue'
-        FAST_HIGHLIGHT_STYLES[global-alias]='fg=green'
-      }
-set_fast_theme
-
 # }}}
 
 # KEY {{{
@@ -124,71 +61,7 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
   zle -N zle-line-finish
 fi
 
-function zeno-auto-snippet-fallback() {
-  if [[ -n "$ZENO_LOADED" ]]; then
-    zeno-auto-snippet
-  else
-    zle self-insert
-  fi
-}
-
-function zeno-auto-snippet-and-accept-line-fallback() {
-  if [[ -n "$ZENO_LOADED" ]]; then
-    zeno-auto-snippet-and-accept-line
-  else
-    zle accept-line
-  fi
-}
-
-function zeno-insert-snippet-fallback() {
-  if [[ -n "$ZENO_LOADED" ]]; then
-    zeno-insert-snippet
-  fi
-}
-
-function zeno-completion-fallback() {
-  if [[ -n "$ZENO_LOADED" ]]; then
-    zeno-completion
-  else
-    zle expand-or-complete
-  fi
-}
-
-function zeno-history-selection-fallback() {
-  if [[ -n "$ZENO_LOADED" ]]; then
-    zeno-history-selection
-  else
-    zle history-incremental-search-backward
-  fi
-}
-
-function zeno-ghq-cd-fallback() {
- if [[ -n $ZENO_LOADED ]]; then
-   zeno-ghq-cd
- else
-   zle vi-find-next-char
- fi
-}
-
-zle -N zeno-auto-snippet-fallback
-zle -N zeno-auto-snippet-and-accept-line-fallback
-zle -N zeno-insert-snippet-fallback
-zle -N zeno-completion-fallback
-zle -N zeno-history-selection-fallback
-zle -N zeno-ghq-cd-fallback
-
-# zeno.zsh
-bindkey ' '    zeno-auto-snippet-fallback
-bindkey '^m'   zeno-auto-snippet-and-accept-line-fallback
-bindkey '^x^s' zeno-insert-snippet-fallback
-bindkey '^i'   zeno-completion-fallback
-bindkey '^r'   zeno-history-selection-fallback
-bindkey '^x^f' zeno-ghq-cd-fallback
-
 bindkey '\e[Z' reverse-menu-complete
-
-bindkey '^[k' tmk
-bindkey '^[t' tms
 
 autoload -z edit-command-line
 zle -N edit-command-line
@@ -252,50 +125,6 @@ zstyle ':prompt:pure:git:branch' color green
 
 # Disalbe Right Prompt
 RPROMPT=""
-# }}}
-
-# {{{ GPG-SSH
-# export GPG_TTY=$(tty)
-#
-# if ! is_ssh; then
-#   if type "gpg" > /dev/null 2>&1; then
-#     if ! is_wsl; then
-#       if [[ -z $SSH_AUTH_SOCK ]]; then
-#         gpg-connect-agent updatestartuptty /bye >/dev/null
-#         gpgconf --launch gpg-agent
-#         export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-#       fi
-#     fi
-#   fi
-# fi
-
-# In WSL2
-if is_wsl; then
-  export SSH_AUTH_SOCK=$HOME/.ssh/agent.sock
-  if ! ss -a | grep -q $SSH_AUTH_SOCK; then
-    rm -f $SSH_AUTH_SOCK
-    wsl2_ssh_pagent_bin="$HOME/.ssh/wsl2-ssh-pagent.exe"
-    if test -x "$wsl2_ssh_pagent_bin"; then
-      (setsid nohup socat UNIX-LISTEN:$SSH_AUTH_SOCK,fork EXEC:"$wsl2_ssh_pagent_bin" >/dev/null 2>&1 &)
-    else
-      echo >&2 "WARNING: $wsl2_ssh_pagent_bin"
-    fi
-    unset wsl2_ssh_pagent_bin
-  fi
-
-  export GPG_AGENT_SOCK=$HOME/.gnupg/S.gpg-agent
-  if ! ss -a | grep -q $GPG_AGENT_SOCK; then
-    /usr/bin/rm -rf $GPG_AGENT_SOCK
-    config_path="C\:/Users/$USERNAME/AppData/Local/gnupg"
-    wsl2_ssh_pagent_bin="$HOME/.ssh/wsl2-ssh-pagent.exe"
-    if test -x "$wsl2_ssh_pagent_bin"; then
-      (setsid nohup socat UNIX-LISTEN:$GPG_AGENT_SOCK,fork EXEC:"$wsl2_ssh_pagent_bin -gpgConfigBasepath ${config_path} -gpg S.gpg-agent" >/dev/null 2>&1 &)
-    else
-      echo >&2 "WARNING: $wsl2_ssh_pagent_bin"
-    fi
-    unset wsl2_ssh_pagent_bin
-  fi
-fi
 # }}}
 
 # {{{ TMUX
@@ -424,9 +253,6 @@ function vim-startuptime-detail() {
   tail -n 1 "$time_file" | cut -d " " -f1 | tr -d "\n" && printf " [ms]\n"
   sort -n -k 2 < "$time_file" | tail -n 20
 }
-function zsh-profiler() {
-  ZSHRC_PROFILE=1 zsh -i -c zprof
-}
 
 function awsp() {
   local profile=$(aws configure list-profiles | sort | fzf)
@@ -448,10 +274,6 @@ function osp() {
   export OS_PROJECT_NAME="$project_name"
   export OS_PROJECT_ID="$project_id"
   export OS_USER_DOMAIN_NAME="$user_domain_name"
-}
-
-function dockercon() {
-  ssh -L localhost:23750:/var/run/docker.sock $@
 }
 
 function sheldonupdate() {
@@ -504,5 +326,3 @@ if [[ -z ${chpwd_functions[(r)_chpwd_compinit]} ]]; then
   chpwd_functions=( ${chpwd_functions[@]} _chpwd_compinit )
 fi
 # }}}
-
-# unfunction source

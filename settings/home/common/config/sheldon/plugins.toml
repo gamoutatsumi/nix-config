@@ -36,24 +36,67 @@ github = "romkatv/powerlevel10k"
 [plugins.zsh-256color]
 github = "chrissicool/zsh-256color"
 
+[plugins.f-sy-h]
+github = "z-shell/F-Sy-H"
+hooks.post = '''
+function set_fast_theme() {
+  FAST_HIGHLIGHT_STYLES[path]='fg=cyan,underline'
+  FAST_HIGHLIGHT_STYLES[path-to-dir]='fg=cyan,underline' 
+  FAST_HIGHLIGHT_STYLES[suffix-alias]='fg=blue'
+  FAST_HIGHLIGHT_STYLES[alias]='fg=blue'
+  FAST_HIGHLIGHT_STYLES[precommand]='fg=blue'
+  FAST_HIGHLIGHT_STYLES[command]='fg=blue'
+  FAST_HIGHLIGHT_STYLES[arg0]='fg=025'
+  FAST_HIGHLIGHT_STYLES[globbing]='fg=green,bold'
+  FAST_HIGHLIGHT_STYLES[single-hyphen-option]='fg=cyan'
+  FAST_HIGHLIGHT_STYLES[double-hyphen-option]='fg=cyan'
+  FAST_HIGHLIGHT_STYLES[default]='fg=cyan'
+  FAST_HIGHLIGHT_STYLES[unknown-token]='fg=196'
+  FAST_HIGHLIGHT_STYLES[builtin]='fg=blue'
+  FAST_HIGHLIGHT_STYLES[global-alias]='fg=green'
+}
+set_fast_theme
+'''
+
 [plugins.tmk]
 github = "yuki-yano/tmk"
 apply = ["defer"]
+hooks.post = '''
+bindkey '^[k' tmk
+'''
 
 [plugins.tms]
 github = "yuki-yano/tms"
 apply = ["defer"]
-
-[plugins.f-sy-h]
-github = "z-shell/F-Sy-H"
+hooks.post = '''
+bindkey '^[t' tms
+'''
 
 [plugins.zeno]
 github = "yuki-yano/zeno.zsh"
+hooks.post = '''
+if [[ -n "${ZENO_LOADED}" ]]; then
+  zle -N zeno-auto-snippet
+  zle -N zeno-auto-snippet-and-accept-line
+  zle -N zeno-insert-snippet
+  zle -N zeno-completion
+  zle -N zeno-history-selection
+  zle -N zeno-ghq-cd
+  bindkey ' '    zeno-auto-snippet
+  bindkey '^m'   zeno-auto-snippet-and-accept-line
+  bindkey '^x^s' zeno-insert-snippet
+  bindkey '^i'   zeno-completion
+  bindkey '^r'   zeno-history-selection
+  bindkey '^x^f' zeno-ghq-cd
+  ZSH_AUTOSUGGEST_CLEAR_WIDGETS+="zeno-auto-snippet-and-accept-line"
+fi
+'''
 
 [templates]
 defer = '''
+{{ hooks?.pre | nl }}
 {% for file in files %}
-#ensure_zcompiled "{{ file }}"
 zsh-defer source "{{ file }}"
 {% endfor %}
+{{ hooks?.post | nl }}
 '''
