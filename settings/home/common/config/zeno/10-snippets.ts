@@ -27,21 +27,6 @@ export default defineConfig(() => {
   return {
     snippets: [
       {
-        name: "kubectl",
-        keyword: "kc",
-        snippet: "kubectl {{command}}",
-      },
-      {
-        name: "kubie ctx",
-        keyword: "kx",
-        snippet: "kubie ctx",
-      },
-      {
-        name: "kubie ns",
-        keyword: "kn",
-        snippet: "kubie ns",
-      },
-      {
         name: "docker compose",
         keyword: "dc",
         snippet: "docker compose",

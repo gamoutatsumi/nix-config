@@ -10,7 +10,23 @@ export default defineConfig(() => {
   const { stdout } = command.outputSync();
   const resources = new TextDecoder().decode(stdout).split("\n");
   return {
-    snippets: [],
+    snippets: [
+      {
+        name: "kubectl",
+        keyword: "kc",
+        snippet: "kubectl {{command}}",
+      },
+      {
+        name: "kubie ctx",
+        keyword: "kx",
+        snippet: "kubie ctx",
+      },
+      {
+        name: "kubie ns",
+        keyword: "kn",
+        snippet: "kubie ns",
+      },
+    ],
     completions: resources.map((resource) => {
       return {
         name: `kubernetes ${resource}`,
