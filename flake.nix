@@ -116,17 +116,6 @@
         };
       };
     };
-    mcp-hub = {
-      url = "github:ravitemer/mcp-hub";
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs-unstable";
-        };
-        flake-parts = {
-          follows = "flake-parts";
-        };
-      };
-    };
     mcp-servers-nix = {
       url = "github:natsukium/mcp-servers-nix";
       inputs = {

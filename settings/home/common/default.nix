@@ -125,14 +125,6 @@ in
           };
         };
       };
-      "claude/.mcp.json" = {
-        source = import ../../../mcp.nix {
-          format = "json";
-          flavor = "claude";
-          inherit config lib inputs;
-          pkgs = upkgs;
-        };
-      };
       "claude/commands" = {
         source = ./config/claude/commands;
       };
@@ -167,18 +159,6 @@ in
               src = ./config/nvim/dpp/copilot.lua;
               replacements = {
                 copilot_ls = lib.getExe upkgs.copilot-language-server;
-              };
-              dir = "dpp";
-            })
-            (pkgs.replaceVarsWith {
-              src = ./config/nvim/dpp/mcphub.lua;
-              replacements = {
-                mcp_hub = lib.getExe' upkgs.mcp-hub "mcp-hub";
-                mcp_config = "${import ../../../mcp.nix {
-                  format = "json";
-                  pkgs = upkgs;
-                  inherit config lib inputs;
-                }}";
               };
               dir = "dpp";
             })

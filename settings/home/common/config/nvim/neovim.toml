@@ -10,7 +10,6 @@ hooks_file = "$BASE_DIR/dpp/gitsigns.lua"
 
 [[plugins]]
 repo = "nvim-lualine/lualine.nvim"
-depends = ["avante-status.nvim", "mcphub.nvim"]
 hooks_file = "$BASE_DIR/dpp/lualine.lua"
 
 [[plugins]]
@@ -183,20 +182,9 @@ default = {
 '''
 
 [[plugins]]
-repo = "takeshid/avante-status.nvim"
-lua_add = '''
-require('avante-status').setup()
-'''
-
-[[plugins]]
 repo = "zbirenbaum/copilot.lua"
 on_event = ["InsertEnter"]
 hooks_file = ["$BASE_DIR/dpp/copilot.lua"]
-
-[[plugins]]
-repo = "ravitemer/mcphub.nvim"
-dependa = ["plenary.nvim"]
-hooks_file = ["$BASE_DIR/dpp/mcphub.lua"]
 
 [[plugins]]
 repo = "h3pei/trace-pr.nvim"
