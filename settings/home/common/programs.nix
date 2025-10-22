@@ -506,11 +506,14 @@ in
     };
     zsh = {
       # keep-sorted start block=yes
+      autocd = true;
       defaultKeymap = "emacs";
+      dirHashes = {
+        dot = "${config.xdg.configHome}/home-manager";
+      };
       dotDir = ".config/zsh";
       enable = true;
       envExtra = lib.strings.concatLines [
-        (builtins.readFile ./config/.zshenv)
         (builtins.readFile (
           pkgs.fetchurl {
             url = "https://raw.githubusercontent.com/bluz71/vim-nightfly-colors/refs/heads/master/extras/nightfly-fzf.sh";
@@ -519,9 +522,24 @@ in
         ))
       ];
       history = {
+        extended = true;
         size = 1000;
         path = "${config.xdg.dataHome}/zsh/history";
         save = 100000;
+        ignoreDups = true;
+        expireDuplicatesFirst = true;
+        ignoreAllDups = true;
+        ignoreSpace = true;
+        findNoDups = true;
+        saveNoDups = true;
+        ignorePatterns = [
+          "q"
+          "exit"
+          "cd"
+          "pwd"
+          "dot"
+          ".."
+        ];
       };
       initContent = ''
         ${builtins.readFile ./config/.zshrc}
@@ -561,8 +579,6 @@ in
       };
       shellAliases = {
         # keep-sorted start
-        ".." = "cd ..";
-        dot = "cd ${config.xdg.configHome}/home-manager";
         q = "exit";
         rm = "${lib.getExe upkgs.gomi}";
         ssh = "TERM=xterm ssh";

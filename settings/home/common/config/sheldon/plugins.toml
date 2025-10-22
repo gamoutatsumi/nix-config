@@ -76,12 +76,6 @@ bindkey '^[t' tms
 github = "yuki-yano/zeno.zsh"
 hooks.post = '''
 if [[ -n "${ZENO_LOADED}" ]]; then
-  zle -N zeno-auto-snippet
-  zle -N zeno-auto-snippet-and-accept-line
-  zle -N zeno-insert-snippet
-  zle -N zeno-completion
-  zle -N zeno-history-selection
-  zle -N zeno-ghq-cd
   bindkey ' '    zeno-auto-snippet
   bindkey '^m'   zeno-auto-snippet-and-accept-line
   bindkey '^x^s' zeno-insert-snippet

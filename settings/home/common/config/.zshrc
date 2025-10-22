@@ -70,7 +70,6 @@ bindkey "^x^e" edit-command-line
 # }}}
 
 # GENERAL {{{
-setopt AUTO_CD
 setopt IGNOREEOF
 
 stty stop undef
@@ -83,20 +82,11 @@ fi
 #}}}
 
 #{{{ HISTORY
-export HISTORY_IGNORE="q|exit|cd|pwd|dot"
-
 zshaddhistory() {
   emulate -L zsh
   [[ ${1%%$'\n'} != ${~HISTORY_IGNORE} ]]
 }
 
-setopt EXTENDED_HISTORY
-setopt HIST_EXPIRE_DUPS_FIRST
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_IGNORE_SPACE
-setopt HIST_FIND_NO_DUPS
-setopt HIST_SAVE_NO_DUPS
 setopt HIST_BEEP
 setopt HIST_REDUCE_BLANKS
 #}}}
