@@ -3,7 +3,14 @@ import { defineConfig } from "jsr:@yuki-yano/zeno@0.1.0";
 
 export default defineConfig(() => {
   const command = new Deno.Command("kubectl", {
-    args: ["api-resources", "--verbs=list", "-o", "name"],
+    args: [
+      "api-resources",
+      "--verbs=list",
+      "-o",
+      "name",
+      "--request-timeout",
+      "100ms",
+    ],
     stdout: "piped",
     stderr: "null",
   });
