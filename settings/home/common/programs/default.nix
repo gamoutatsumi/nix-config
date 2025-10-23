@@ -12,9 +12,17 @@ let
     url = "https://github.com/gamoutatsumi.gpg";
     sha256 = "0p1xp2rq7r0hbdi7dkhw3fzrf2ij7b3p6a5nnk0fflda4cs6a814";
   };
-  nodePkgs = upkgs.callPackage ../../../node2nix { };
+  nodePkgs = upkgs.callPackage ../../../../node2nix { };
 in
 {
+  imports = [
+    # keep-sorted start
+    ./alacritty.nix
+    ./emacs.nix
+    ./vscode.nix
+    ./zsh.nix
+    # keep-sorted end
+  ];
   # keep-sorted start block=yes
   home = {
     packages =
@@ -87,65 +95,6 @@ in
   };
   programs = {
     # keep-sorted start block=yes
-    alacritty = {
-      enable = true;
-      package = upkgs.alacritty;
-      settings = {
-        general = {
-          import = [
-            "${pkgs.fetchurl {
-              url = "https://raw.githubusercontent.com/bluz71/vim-nightfly-colors/master/extras/nightfly-alacritty.toml";
-              sha256 = "0ssgf9i5nrc2m57zvgfzlgfvyhcrwd73pkiny266ba201niv6qi1";
-            }}"
-          ];
-        };
-        terminal = {
-          shell = {
-            args = [ "--login" ];
-            program = "zsh";
-          };
-        };
-        env = {
-          TERM = "alacritty";
-          USE_TMUX = "true";
-          WINIT_X11_SCALE_FACTOR = "1.1";
-        };
-        font = {
-          normal = {
-            family = "PlemolJP Console NF";
-          };
-        };
-        keyboard = {
-          bindings = [
-            {
-              action = "ToggleFullScreen";
-              key = "F11";
-            }
-            {
-              chars = "\\u001b[98;6u";
-              key = "b";
-              mods = "Control|Shift";
-            }
-            {
-              chars = "\\u001b[102;6u";
-              key = "f";
-              mods = "Control|Shift";
-            }
-          ];
-        };
-        mouse = {
-          bindings = [
-            {
-              action = "none";
-              mouse = "Middle";
-            }
-          ];
-        };
-        window = {
-          option_as_alt = "Both";
-        };
-      };
-    };
     awscli = {
       enable = true;
     };
@@ -176,50 +125,6 @@ in
         global = {
           hide_env_diff = true;
         };
-      };
-    };
-    emacs = {
-      enable = true;
-      package = upkgs.emacsWithPackagesFromUsePackage {
-        package =
-          if upkgs.stdenv.isLinux then
-            upkgs.emacs-unstable
-          else
-            upkgs.emacs-unstable.override { withNativeCompilation = false; };
-        config = ./config/emacs/init.el;
-        defaultInitFile = true;
-        extraEmacsPackages =
-          epkgs: with epkgs; [
-            (treesit-grammars.with-grammars (
-              p: with p; [
-                # keep-sorted start
-                tree-sitter-bash
-                tree-sitter-c
-                tree-sitter-c-sharp
-                tree-sitter-cmake
-                tree-sitter-css
-                tree-sitter-dockerfile
-                tree-sitter-elisp
-                tree-sitter-go
-                tree-sitter-html
-                tree-sitter-javascript
-                tree-sitter-json
-                tree-sitter-make
-                tree-sitter-markdown
-                tree-sitter-markdown-inline
-                tree-sitter-nix
-                tree-sitter-python
-                tree-sitter-ruby
-                tree-sitter-rust
-                tree-sitter-scss
-                tree-sitter-toml
-                tree-sitter-tsx
-                tree-sitter-typescript
-                tree-sitter-yaml
-                # keep-sorted end
-              ]
-            ))
-          ];
       };
     };
     fzf = {
@@ -411,8 +316,8 @@ in
       shell = lib.getExe pkgs.zsh;
       terminal = "alacritty";
       extraConfig = lib.strings.concatLines [
-        (builtins.readFile ./config/tmux/tmux.conf)
-        (builtins.readFile ./config/tmux/tmuxline-nightfly.conf)
+        (builtins.readFile ../config/tmux/tmux.conf)
+        (builtins.readFile ../config/tmux/tmuxline-nightfly.conf)
         ''run "''${TMUX_PLUGIN_MANAGER_PATH}/tpm/tpm"''
       ];
       mouse = true;
@@ -421,56 +326,9 @@ in
       escapeTime = 10;
       historyLimit = 4096;
     };
-    vscode = {
-      enable = false;
-      package = upkgs.vscode;
-      profiles = {
-        default = {
-          enableUpdateCheck = false;
-          enableExtensionUpdateCheck = false;
-          extensions =
-            with upkgs.vscode-extensions;
-            [
-              # keep-sorted start
-              bbenoist.nix
-              eamodio.gitlens
-              editorconfig.editorconfig
-              github.copilot
-              github.copilot-chat
-              github.github-vscode-theme
-              golang.go
-              ms-ceintl.vscode-language-pack-ja
-              oderwat.indent-rainbow
-              saoudrizwan.claude-dev
-              vscode-icons-team.vscode-icons
-              # keep-sorted end
-            ]
-            ++ (with upkgs.nix-vscode-extensions.vscode-marketplace; [
-              taiyofujii.novel-writer
-              google.geminicodeassist
-            ]);
-          userSettings = {
-            "chat.mcp.enabled" = true;
-            "chat.mcp.discovery.enabled" = true;
-            "editor.fontFamily" = "PlemolJP Console NF";
-            "editor.fontLigatures" = true;
-            "editor.fontSize" = 14;
-            "editor.renderWhitespace" = "boundary";
-            "editor.minimap.enabled" = true;
-            "editor.minimap.renderCharacters" = true;
-            "workbench.colorTheme" = "GitHub Dark Dimmed";
-            "workbench.iconTheme" = "vscode-icons";
-            "cline.mcpMarketplace.enabled" = false;
-            "cline.preferredLanguage" = "Japanese - 日本語";
-            "github.copilot.chat.codesearch.enabled" = true;
-            "github.copilot.chat.agent.thinkingTool" = true;
-          };
-        };
-      };
-    };
     wezterm = {
       enable = false;
-      extraConfig = builtins.readFile ./config/wezterm/wezterm.lua;
+      extraConfig = builtins.readFile ../config/wezterm/wezterm.lua;
       colorSchemes = {
         nightfly = {
           background = "#011627";
@@ -503,92 +361,6 @@ in
           ];
         };
       };
-    };
-    zsh = {
-      # keep-sorted start block=yes
-      autocd = true;
-      defaultKeymap = "emacs";
-      dirHashes = {
-        dot = "${config.xdg.configHome}/home-manager";
-      };
-      dotDir = ".config/zsh";
-      enable = true;
-      envExtra = lib.strings.concatLines [
-        (builtins.readFile (
-          pkgs.fetchurl {
-            url = "https://raw.githubusercontent.com/bluz71/vim-nightfly-colors/refs/heads/master/extras/nightfly-fzf.sh";
-            sha256 = "sha256-KHRkQEPk7rzgnPK/sehr6AXo267YB0Tfi8KaVDjnkUE=";
-          }
-        ))
-      ];
-      history = {
-        extended = true;
-        size = 1000;
-        path = "${config.xdg.dataHome}/zsh/history";
-        save = 100000;
-        ignoreDups = true;
-        expireDuplicatesFirst = true;
-        ignoreAllDups = true;
-        ignoreSpace = true;
-        findNoDups = true;
-        saveNoDups = true;
-        ignorePatterns = [
-          "q"
-          "exit"
-          "cd"
-          "pwd"
-          "dot"
-          ".."
-        ];
-      };
-      initContent = ''
-        ${builtins.readFile ./config/.zshrc}
-        ${lib.getExe pkgs.any-nix-shell} zsh --info-right | source /dev/stdin
-        export FPATH
-      '';
-      sessionVariables = {
-        # keep-sorted start block = yes
-        ANSIBLE_HOME = "${config.xdg.dataHome}/ansible";
-        CLAUDE_CONFIG_DIR = "${config.xdg.configHome}/claude";
-        DIRENV_LOG_FORMAT = "";
-        DOCKER_BUILDKIT = 1;
-        ESLINT_D_LOCAL_ESLINT_ONLY = 1;
-        FZF_PREVIEW_DEFAULT_BIND = "ctrl-d:preview-page-down,ctrl-u:preview-page-up,?:toggle-preview";
-        FZF_PREVIEW_DEFAULT_SETTING = "--preview-window='right:50%' --expect='ctrl-space' --header='C-Space: continue fzf completion'";
-        LANG = "ja_JP.UTF-8";
-        LC_ALL = "ja_JP.UTF-8";
-        LUAROCKS_HOME = "${config.xdg.dataHome}/luarocks";
-        MAKEFLAGS = "-j";
-        MANPAGER = "${lib.getExe config.programs.neovim.finalPackage} -c ASMANPAGER -";
-        MYCLI_HISTFILE = "${config.xdg.dataHome}/mycli/history";
-        NIX_CONFIG = "access-tokens = github.com=$(gh auth token)";
-        PAGER = "${lib.getExe' pkgs.ov "ov"}";
-        PURE_GIT_PULL = 0;
-        TERM = "alacritty";
-        TMUX_PLUGIN_MANAGER_PATH = "${config.xdg.dataHome}/tmux/plugins";
-        WORDCHARS = "*?_.[]~-=&;!#$%^(){}<>";
-        ZENO_ENABLE_FZF_TMUX = 1;
-        ZENO_ENABLE_SOCK = 1;
-        ZENO_GIT_CAT = "bat";
-        ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=8";
-        ZSH_AUTOSUGGEST_STRATEGY = [
-          "match_prev_cmd"
-          "history"
-        ];
-        # keep-sorted end
-      };
-      shellAliases = {
-        # keep-sorted start
-        q = "exit";
-        rm = "${lib.getExe upkgs.gomi}";
-        ssh = "TERM=xterm ssh";
-        tree = "${config.programs.lsd.package} --tree";
-        v = "${lib.getExe config.programs.neovim.finalPackage}";
-        vi = "${lib.getExe config.programs.neovim.finalPackage}";
-        vim = "${lib.getExe config.programs.neovim.finalPackage}";
-        # keep-sorted end
-      };
-      #keep-sorted end
     };
     zathura = {
       enable = true;

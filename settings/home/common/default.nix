@@ -8,9 +8,6 @@
 }:
 let
   toKeyValue = lib.generators.toKeyValue { listsAsDuplicateKeys = true; };
-  # blocc = upkgs.callPackage ../../../nvfetcher/blocc.nix { };
-
-  nodePkgs = upkgs.callPackage ../../../node2nix { };
 in
 {
   nix = {
@@ -30,7 +27,7 @@ in
     };
   };
   imports = [
-    ./programs.nix
+    ./programs
     ./services.nix
   ];
   home = {
@@ -78,23 +75,6 @@ in
       };
       "claude/settings.json" = {
         text = builtins.toJSON {
-          # hooks = {
-          #   PostToolUse = [
-          #     {
-          #       matcher = "Write|Edit|MultiEdit";
-          #       hooks = [
-          #         {
-          #           type = "command";
-          #           command = "${lib.getExe blocc} 'nix flake check'";
-          #         }
-          #       ];
-          #     }
-          #   ];
-          # };
-          statusLine = {
-            type = "command";
-            command = "${lib.getExe' nodePkgs.ccusage "ccusage"} statusline";
-          };
           permissions = {
             allow = [
             ];
