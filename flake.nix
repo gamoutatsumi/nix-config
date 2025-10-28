@@ -155,9 +155,6 @@
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
       inputs = {
-        git-hooks = {
-          follows = "";
-        };
         flake-parts = {
           follows = "flake-parts";
         };
