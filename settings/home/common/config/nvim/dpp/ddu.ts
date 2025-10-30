@@ -22,11 +22,15 @@ export class Config extends BaseConfig {
       sourceOptions: {
         _: {
           ignoreCase: true,
-          matchers: ["merge"],
+          matchers: ["matcher_fzf"],
           converters: ["converter_devicon", "converter_hl_dir"],
         },
         mr: {
-          matchers: ["matcher_relative", "converter_relativepath", "merge"],
+          matchers: [
+            "matcher_relative",
+            "converter_relativepath",
+            "matcher_fzf",
+          ],
         },
         help: { converters: [] },
         git_diff: {

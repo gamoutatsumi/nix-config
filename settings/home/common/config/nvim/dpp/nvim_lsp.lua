@@ -1,5 +1,4 @@
 -- lua_add {{{
-
 local function setInlayHintHL()
     local has_hl, hl = pcall(vim.api.nvim_get_hl, 0, { name = "LspInlayHint" })
     if has_hl and (hl["fg"] or hl["bg"]) then
