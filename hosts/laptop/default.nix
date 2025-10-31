@@ -285,6 +285,7 @@
       };
     };
     xremap = {
+      enable = true;
       withX11 = true;
       config = {
         modmap = [

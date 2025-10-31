@@ -12,7 +12,6 @@ let
     url = "https://github.com/gamoutatsumi.gpg";
     sha256 = "0p1xp2rq7r0hbdi7dkhw3fzrf2ij7b3p6a5nnk0fflda4cs6a814";
   };
-  nodePkgs = upkgs.callPackage ../../../../node2nix { };
 in
 {
   imports = [
@@ -87,11 +86,7 @@ in
       ++ (with upkgs; [
         deno
         vim
-      ])
-      ++ [
-        nodePkgs.editprompt
-        nodePkgs."@anthropic-ai/claude-code"
-      ];
+      ]);
   };
   programs = {
     # keep-sorted start block=yes
