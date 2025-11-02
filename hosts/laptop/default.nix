@@ -137,8 +137,14 @@
   };
   networking = {
     hostName = "tat-nixos-laptop";
+    resolvconf = {
+      enable = true;
+    };
     networkmanager = {
       enable = true;
+      wifi = {
+        backend = "wpa_supplicant";
+      };
     };
     useDHCP = lib.mkDefault true;
   };
