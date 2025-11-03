@@ -103,7 +103,7 @@
       };
     };
     lanzaboote = {
-      url = "github:nix-community/lanzaboote?ref=v0.4.2";
+      url = "github:nix-community/lanzaboote?ref=v0.4.3";
       inputs = {
         pre-commit-hooks-nix = {
           follows = "";
