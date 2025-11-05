@@ -137,6 +137,11 @@
       cudaSupport = true;
     };
   };
+  programs = {
+    steam = {
+      enable = true;
+    };
+  };
   services = {
     # keep-sorted start block=yes
     blueman = {
