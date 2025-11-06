@@ -46,11 +46,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = "cohama/lexima.vim"
-on_event = "InsertEnter"
-hooks_file = "$BASE_DIR/dpp/lexima.vim"
-
-[[plugins]]
 repo = "previm/previm"
 on_ft = ["markdown"]
 hook_add = '''

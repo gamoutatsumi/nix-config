@@ -189,10 +189,6 @@ hooks_file = ["$BASE_DIR/dpp/copilot.lua"]
 [[plugins]]
 repo = "h3pei/trace-pr.nvim"
 
-# [[plugins]]
-# repo = "folke/snacks.nvim"
-
-# [[plugins]]
-# repo = "coder/claudecode.nvim"
-# depends = ["snacks.nvim"]
-# hooks_file = ["$BASE_DIR/dpp/claudecode.lua"]
+[[plugins]]
+repo = "hrsh7th/nvim-insx"
+hooks_file = ["$BASE_DIR/dpp/insx.lua"]
