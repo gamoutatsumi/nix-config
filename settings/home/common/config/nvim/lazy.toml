@@ -1,58 +1,10 @@
 [[plugins]]
-repo = "sharat87/roast.vim"
-on_ft = ["roast"]
-
-[[plugins]]
-on_ft = ["tjs"]
-repo = "vim-scripts/tjs.vim"
-
-[[plugins]]
-on_ft = ["rust"]
-repo = "rust-lang/rust.vim"
-
-[[plugins]]
-repo = "hashivim/vim-terraform"
-on_ft = ["terraform"]
-
-[[plugins]]
-repo = "mmisono/viminesweeper"
-on_cmd = ["MineSweeper"]
-
-[[plugins]]
-repo = "skanehira/badapple.vim"
-on_cmd = ["BadApple"]
-
-[[plugins]]
-repo = "bellflower2015/vim-syntax-tyranoscript"
-on_ft = ["TyranoScript"]
-
-[[plugins]]
-repo = "mattn/vim-maketable"
-on_ft = ["markdown"]
-
-[[plugins]]
-repo = "koron/nyancat-vim"
-on_cmd = ["Nyancat", "Nyancat2"]
-
-[[plugins]]
-repo = "rhysd/vim-goyacc"
-on_path = "*.go.y"
-
-[[plugins]]
-repo = "qnighy/satysfi.vim"
-on_ft = ["satysfi"]
-
-[[plugins]]
 repo = "Shougo/deol.nvim"
 on_cmd = ["Deol"]
 hook_add = '''
   nnoremap <silent> <C-o> <Cmd>Deol -split=otherwise -toggle -winheight=10<CR>
   tnoremap <Esc> <C-\><C-n>
 '''
-
-[[plugins]]
-repo = "kristijanhusak/vim-dadbod-ui"
-on_cmd = ["DBUI"]
 
 [[plugins]]
 repo = "whatyouhide/vim-textobj-xmlattr"
@@ -71,25 +23,9 @@ repo = "tweekmonster/helpful.vim"
 on_cmd = ["HelpfulVersion"]
 
 [[plugins]]
-repo = "reireias/vim-cheatsheet"
-on_cmd = ["Cheat"]
-
-[[plugins]]
 repo = "thinca/vim-quickrun"
 on_cmd = ["QuickRun"]
 hooks_file = "$BASE_DIR/dpp/quickrun.vim"
-
-[[plugins]]
-repo = "plasticboy/vim-markdown"
-on_ft = ["markdown", "pandoc.markdown", "rmd"]
-hook_add = '''
-  let g:vim_markdown_conceal = 0
-  let g:vim_markdown_folding_disabled = 1
-'''
-
-[[plugins]]
-repo = "mattn/sonictemplate-vim"
-on_cmd = ["Template"]
 
 [[plugins]]
 repo = "lambdalisue/vim-glyph-palette"
@@ -115,38 +51,11 @@ on_event = "InsertEnter"
 hooks_file = "$BASE_DIR/dpp/lexima.vim"
 
 [[plugins]]
-repo = "thosakwe/vim-flutter"
-on_ft = ["dart"]
-
-[[plugins]]
-repo = "ziglang/zig.vim"
-on_ft = ["zig"]
-hook_add = '''
-  let g:zig_fmt_autosave = 0
-'''
-
-[[plugins]]
-repo = "cappyzawa/starlark.vim"
-on_ft = ["starlark"]
-
-[[plugins]]
-repo = "google/vim-jsonnet"
-on_ft = ["jsonnet"]
-
-[[plugins]]
 repo = "previm/previm"
 on_ft = ["markdown"]
 hook_add = '''
   let g:previm_open_cmd='open'
 '''
-
-[[plugins]]
-repo = "thinca/vim-scouter"
-on_cmd = ["Scouter"]
-
-[[plugins]]
-repo = "thinca/vim-partedit"
-on_cmd = ["Partedit"]
 
 [[plugins]]
 repo = "machakann/vim-sandwich"

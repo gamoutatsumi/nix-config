@@ -78,9 +78,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = "aklt/plantuml-syntax"
-
-[[plugins]]
 repo = "rhysd/committia.vim"
 
 [[plugins]]
@@ -89,9 +86,6 @@ repo = "tpope/vim-dadbod"
 [[plugins]]
 repo = "tani/vim-artemis"
 if = false
-
-[[plugins]]
-repo = "chrisbra/csv.vim"
 
 [[plugins]]
 repo = "Shougo/cmdline.vim"
