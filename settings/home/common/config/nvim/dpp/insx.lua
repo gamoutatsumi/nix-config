@@ -181,6 +181,28 @@ insx.add(
         },
     })
 )
+insx.add(
+    [[`]],
+    auto_pair.strings({
+        open = [[`]],
+        close = [[`]],
+    })
+)
+insx.add(
+    "<BS>",
+    delete_pair.strings({
+        open_pat = esc([[`]]),
+        close_pat = esc([[`]]),
+    })
+)
+insx.add(
+    [[`]],
+    jump_next({
+        jump_pat = {
+            [[\%#]] .. esc([[`]]) .. [[\zs]],
+        },
+    })
+)
 vim.keymap.set("i", "<CR>", function()
     return vim.fn["pum#visible"]() and "<Cmd>call pum#map#confirm()<CR>"
         or [[<Cmd>call luaeval("require('insx.kit.Vim.Keymap').send(require('insx').expand('<LT>CR>'))")<CR>]]
