@@ -16,3 +16,6 @@ repo = "ray-x/lsp_signature.nvim"
 
 [[plugins]]
 repo = "creativenull/efmls-configs-nvim"
+
+[[plugins]]
+repo = "uga-rosa/ddc-source-lsp-setup"

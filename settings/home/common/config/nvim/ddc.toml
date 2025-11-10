@@ -85,7 +85,3 @@ on_source = "ddc.vim"
 [[plugins]]
 repo = "Shougo/ddc-filter-converter_kind_labels"
 on_source = "ddc.vim"
-
-[[plugins]]
-repo = "uga-rosa/ddc-source-lsp-setup"
-on_lua = "ddc_source_lsp_setup"
