@@ -86,6 +86,7 @@ in
       ++ (with upkgs; [
         deno
         vim
+        edge.claude-code
       ]);
   };
   programs = {

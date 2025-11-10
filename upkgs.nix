@@ -13,6 +13,7 @@
     (_final: prev: { inherit (inputs.yasunori.packages.${prev.system}) yasunori-mcp; })
     inputs.agenix-rekey.overlays.default
     inputs.agenix.overlays.default
+    inputs.edgepkgs.overlays.default
     inputs.emacs-overlay.overlays.default
     inputs.neovim-nightly-overlay.overlays.default
     inputs.nix-vscode-extensions.overlays.default

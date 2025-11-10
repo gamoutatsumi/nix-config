@@ -67,6 +67,14 @@
         };
       };
     };
+    edgepkgs = {
+      url = "github:natsukium/edgepkgs";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs-unstable";
+        };
+      };
+    };
     emacs-overlay = {
       url = "github:nix-community/emacs-overlay";
       inputs = {

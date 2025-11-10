@@ -192,3 +192,7 @@ repo = "h3pei/trace-pr.nvim"
 [[plugins]]
 repo = "hrsh7th/nvim-insx"
 hooks_file = ["$BASE_DIR/dpp/insx.lua"]
+
+[[plugins]]
+repo = "lambdalisue/nvim-aibo"
+hooks_file = ["$BASE_DIR/dpp/aibo.lua"]
