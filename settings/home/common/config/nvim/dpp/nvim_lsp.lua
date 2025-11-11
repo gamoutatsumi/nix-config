@@ -111,6 +111,7 @@ vim.lsp.config("*", { on_attach = on_attach })
 
 local ensure_enabled = {
     -- keep-sorted start
+    "alloy_ls",
     "astro",
     "bashls",
     "biome",

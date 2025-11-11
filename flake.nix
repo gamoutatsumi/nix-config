@@ -59,6 +59,24 @@
         };
       };
     };
+    brew-api = {
+      url = "github:BatteredBunny/brew-api";
+      flake = false;
+    };
+    brew-nix = {
+      url = "github:BatteredBunny/brew-nix";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs-unstable";
+        };
+        nix-darwin = {
+          follows = "nix-darwin";
+        };
+        brew-api = {
+          follows = "brew-api";
+        };
+      };
+    };
     disko = {
       url = "github:nix-community/disko";
       inputs = {

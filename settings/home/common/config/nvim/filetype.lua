@@ -10,6 +10,7 @@ vim.filetype.add({
         cue = "cue",
         jsonnet = "jsonnet",
         j2 = "jinja",
+        als = "alloy",
     },
     filename = {
         [".textlintrc"] = "json",
