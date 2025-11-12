@@ -205,7 +205,7 @@
       };
     };
     nix-darwin = {
-      url = "github:gamoutatsumi/nix-darwin?ref=backport_tahoe_etc_zsh";
+      url = "github:nix-darwin/nix-darwin?ref=nix-darwin-25.05";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs";
