@@ -88,11 +88,11 @@
     "brew-api": {
       "flake": false,
       "locked": {
-        "lastModified": 1762909122,
-        "narHash": "sha256-6DhKCkvdWFbhU8SDBdIXfjbKg7UcmWlsGg67pQb9nI4=",
+        "lastModified": 1762923197,
+        "narHash": "sha256-rUZrKiGKag/afjpKatoQA/bYf3XGzm8Y1dqXu8+CNi4=",
         "owner": "BatteredBunny",
         "repo": "brew-api",
-        "rev": "c38d92327496e4a1ed06c7172eb2e3db0a3aa1b3",
+        "rev": "e1ea79ee2693b8245e7a64746d69cb599f6c6147",
         "type": "github"
       },
       "original": {
@@ -297,11 +297,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1762878399,
-        "narHash": "sha256-PIGlWd1st5Bfis4P4TBuUkIYtgxUkRGsLv3PD8CoD8E=",
+        "lastModified": 1762910805,
+        "narHash": "sha256-4rRL4BJySO6REgwlzLC2YDyKj9jcKVA0odRC3H3sTwQ=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "d9a8d59a173829c6c9683f099329aeeaaf8ed0d5",
+        "rev": "d4a5be09cb09698522e7d1cf82dd26355bac4e89",
         "type": "github"
       },
       "original": {
@@ -711,11 +711,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1762907015,
-        "narHash": "sha256-WtYp7ZzeYv/ytS5yoAbV5k5QFIUiW5lmLGsNm8tF2KU=",
+        "lastModified": 1762912053,
+        "narHash": "sha256-b5TeDe2+o6GvWJB/+GrA+VFB51R6cNbSREyHTW4BSro=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "3606b74d248269bcdc90fe83887f86cff23f6ba9",
+        "rev": "1bc85d29c135c9593c93f8744215d59fc079fddd",
         "type": "github"
       },
       "original": {
@@ -753,16 +753,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1762833222,
-        "narHash": "sha256-4hpBE7bGd24SfD28rzMdUGXsLsNEYxCCrTipFdoqoNM=",
+        "lastModified": 1759509947,
+        "narHash": "sha256-4XifSIHfpJKcCf5bZZRhj8C4aCpjNBaE3kXr02s4rHU=",
         "owner": "gamoutatsumi",
         "repo": "nix-darwin",
-        "rev": "51e413434b88ce0c963887b3b68e021a532d2e66",
+        "rev": "000eadb231812ad6ea6aebd7526974aaf4e79355",
         "type": "github"
       },
       "original": {
         "owner": "gamoutatsumi",
-        "ref": "backport_tahoe_etc_zsh",
+        "ref": "nix-darwin-25.05",
         "repo": "nix-darwin",
         "type": "github"
       }
@@ -774,11 +774,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1762826252,
-        "narHash": "sha256-7VqX6Z8Pq5DzVV5YM7o92vC6goNGtucCv71dXwpy01Q=",
+        "lastModified": 1762912605,
+        "narHash": "sha256-ekyaqHW6fidE5gAzO8zX+aXNMnb1O/kCsmEZ4n0PnMQ=",
         "owner": "nix-community",
         "repo": "nix-vscode-extensions",
-        "rev": "f10a42469c4db9b4ae7b3cd3a5c0d8bffb4a8b98",
+        "rev": "6110f762f238177ba231e8726fabcf4706c9c378",
         "type": "github"
       },
       "original": {
