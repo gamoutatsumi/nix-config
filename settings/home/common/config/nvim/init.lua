@@ -9,7 +9,8 @@ vim.g.mapleader = " "
 require("core.vars")
 require("core.opts")
 require("core.keys")
-require("core.dpp").setup({})
+require("core.dpp").setup()
+require("core.commands")
 
 -- NVUI specific settings (if used)
 -- pcall(require, 'core.nvui')
@@ -21,5 +22,5 @@ vim.api.nvim_create_user_command("ToggleNum", function()
 end, {})
 
 vim.api.nvim_create_user_command("InlayHintToggle", function()
-    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(0), { bufnr = 0 })
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }), { bufnr = 0 })
 end, {})
