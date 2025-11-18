@@ -38,9 +38,16 @@ insx.add(
         },
     })
 )
-require("insx").add(
+insx.add(
     "<Space>",
     pair_spacing.increase({
+        open_pat = esc("("),
+        close_pat = esc(")"),
+    })
+)
+insx.add(
+    "<BS>",
+    pair_spacing.decrease({
         open_pat = esc("("),
         close_pat = esc(")"),
     })
@@ -77,9 +84,16 @@ insx.add(
         },
     })
 )
-require("insx").add(
+insx.add(
     "<Space>",
     pair_spacing.increase({
+        open_pat = esc("{"),
+        close_pat = esc("}"),
+    })
+)
+insx.add(
+    "<BS>",
+    pair_spacing.decrease({
         open_pat = esc("{"),
         close_pat = esc("}"),
     })
@@ -116,7 +130,7 @@ insx.add(
         },
     })
 )
-require("insx").add(
+insx.add(
     "<Space>",
     pair_spacing.increase({
         open_pat = esc("["),
