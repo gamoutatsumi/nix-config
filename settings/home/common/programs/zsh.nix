@@ -25,6 +25,8 @@
             sha256 = "sha256-KHRkQEPk7rzgnPK/sehr6AXo267YB0Tfi8KaVDjnkUE=";
           }
         ))
+        "source ${config.xdg.configHome}/zsh/.zshenv.local"
+        "export FPATH=${config.xdg.dataHome}/zsh/functions:\$FPATH"
       ];
       history = {
         extended = true;
