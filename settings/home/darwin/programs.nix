@@ -1,5 +1,8 @@
 { pkgs, upkgs, ... }:
 {
+  home = {
+    packages = with upkgs; [ container ];
+  };
   programs = {
     # keep-sorted start block=yes
     alacritty = {
