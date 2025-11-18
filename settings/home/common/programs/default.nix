@@ -36,6 +36,7 @@ in
         # keep-sorted start
         age-plugin-yubikey
         argocd
+        ast-grep
         bc
         binutils
         cacert
