@@ -1,7 +1,13 @@
 { pkgs, upkgs, ... }:
 {
   home = {
-    packages = with upkgs; [ container ];
+    packages = with upkgs; [
+      # keep-sorted start block=yes
+      colima
+      container
+      docker-client
+      # keep-sorted end
+    ];
   };
   programs = {
     # keep-sorted start block=yes
