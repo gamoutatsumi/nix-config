@@ -21,7 +21,7 @@
   "imports": {
     "@shougo/ddu-vim": "jsr:@shougo/ddu-vim@11.1.0",
     "@denops/std": "jsr:@denops/std@8.2.0",
-    "@std/path": "jsr:@std/path@1.1.2",
+    "@std/path": "jsr:@std/path@1.1.3",
     "@core/unknownutil": "jsr:@core/unknownutil@4.3.0",
     "@kuuote/ddu-kind-git-status": "jsr:@kuuote/ddu-kind-git-status@1.1.0",
     "@shougo/ddc-vim": "jsr:@shougo/ddc-vim@10.1.0",
