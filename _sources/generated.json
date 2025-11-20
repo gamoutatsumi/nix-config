@@ -1,49 +1,7 @@
 {
-  "blocc": {
-    "cargoLocks": null,
-    "date": null,
-    "extract": null,
-    "name": "blocc",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "shuntaka9576",
-      "repo": "blocc",
-      "rev": "v0.6.0",
-      "sha256": "sha256-QLBfjnStNDrabp1oQWDA5qZLWsvpB6R1e3OVVxowod0=",
-      "sparseCheckout": [],
-      "type": "github"
-    },
-    "version": "v0.6.0"
-  },
-  "plamo": {
-    "cargoLocks": null,
-    "date": null,
-    "extract": null,
-    "name": "plamo",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "pfnet",
-      "repo": "plamo-translate-cli",
-      "rev": "1.0.4",
-      "sha256": "sha256-dpvshY2kw31UtsFjWbf1shPil3ke5b5Wp+i14ndI098=",
-      "sparseCheckout": [],
-      "type": "github"
-    },
-    "version": "1.0.4"
-  },
   "treesitter": {
     "cargoLocks": null,
-    "date": "2025-08-19",
+    "date": "2025-11-19",
     "extract": null,
     "name": "treesitter",
     "passthru": null,
@@ -55,11 +13,11 @@
       "name": null,
       "owner": "nvim-treesitter",
       "repo": "nvim-treesitter",
-      "rev": "6fd7117c1dc4e279f4153af70ae60bd4134b0f01",
-      "sha256": "sha256-sANM5wjk62FHubG62xH74n3ykWR1NUpBwRLxkmTn3n8=",
+      "rev": "bb83a676128d95c865e40ba71376d883bdadec14",
+      "sha256": "sha256-0m+dFTs6U93u3aCGMzETwVJjYnWgCu5wwYkUiqbdfFQ=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "6fd7117c1dc4e279f4153af70ae60bd4134b0f01"
+    "version": "bb83a676128d95c865e40ba71376d883bdadec14"
   }
 }
