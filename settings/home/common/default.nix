@@ -155,12 +155,12 @@ in
                 treesitter_runtime = "${
                   (pkgs.callPackage ../../../_sources/generated.nix { }).treesitter.src
                 }/runtime";
+                treesitter_parsers = "${upkgs.symlinkJoin {
+                  name = "ts-parsers";
+                  paths = upkgs.vimPlugins.nvim-treesitter.withAllGrammars.dependencies;
+                }}";
               };
               dir = "lua/core";
-            })
-            (upkgs.symlinkJoin {
-              name = "ts-parsers";
-              paths = upkgs.vimPlugins.nvim-treesitter.withAllGrammars.dependencies;
             })
             (pkgs.callPackage ./dpp { })
             ./config/nvim

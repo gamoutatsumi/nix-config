@@ -29,10 +29,7 @@ vim.filetype.add({
     },
     pattern = {
         -- keep-sorted start
-        [".*/templates/.*%.tpl"] = "helm",
-        [".*/templates/.*%.ya?ml"] = "helm",
         [".swcrc*"] = "json",
-        ["helmfile.*%.ya?ml"] = "helm",
         --keep-sorted end
     },
 })
