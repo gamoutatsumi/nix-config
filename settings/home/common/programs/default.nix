@@ -60,6 +60,7 @@ in
         gojq
         google-cloud-sdk
         killall
+        kn
         kubectl
         kubie
         magika
