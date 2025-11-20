@@ -117,69 +117,48 @@ in
       "sheldon" = {
         source = ./config/sheldon;
       };
-      "nvim" =
-        let
-          tomlFormat = upkgs.formats.toml { };
-        in
-        {
-          source = pkgs.symlinkJoin {
-            name = "nvim";
-            paths = [
-              (pkgs.replaceVarsWith {
-                src = ./config/nvim/dpp/skkeleton.vim;
-                replacements = {
-                  skk_dict = "${pkgs.skkDictionaries.l}/share/skk/SKK-JISYO.L";
-                };
-                dir = "dpp";
-              })
-              (pkgs.replaceVarsWith {
-                src = ./config/nvim/lua/core/dpp.lua;
-                replacements = {
-                  deno = lib.getExe upkgs.deno;
-                };
-                dir = "lua/core";
-              })
-              (pkgs.replaceVarsWith {
-                src = ./config/nvim/dpp/copilot.lua;
-                replacements = {
-                  copilot_ls = lib.getExe upkgs.copilot-language-server;
-                };
-                dir = "dpp";
-              })
-              (pkgs.replaceVarsWith {
-                src = ./config/nvim/lua/core/vars.lua;
-                replacements = {
-                  python3 = lib.getExe upkgs.python313;
-                };
-                dir = "lua/core";
-              })
-              "${(pkgs.callPackage ../../../_sources/generated.nix { }).treesitter.src}/runtime"
-              (upkgs.symlinkJoin {
-                name = "ts-parsers";
-                paths = upkgs.vimPlugins.nvim-treesitter.withAllGrammars.dependencies;
-              })
-              (pkgs.linkFarm "dpp-tomls" [
-                {
-                  name = "vim.toml";
-                  path = tomlFormat.generate "vim.toml" {
-                    plugins = [
-                      {
-                        repo = "fatih/vim-go";
-                        lazy = 1;
-                        on_ft = [ "go" ];
-                      }
-                      {
-                        repo = "github/copilot.vim";
-                        hooks_file = "$BASE_DIR/dpp/copilot.vim";
-                      }
-                    ];
-                  };
-                }
-              ])
-              ./config/nvim
-            ];
-          };
+      "nvim" = {
+        source = pkgs.symlinkJoin {
+          name = "nvim";
+          paths = [
+            (pkgs.replaceVarsWith {
+              src = ./config/nvim/dpp/skkeleton.vim;
+              replacements = {
+                skk_dict = "${pkgs.skkDictionaries.l}/share/skk/SKK-JISYO.L";
+              };
+              dir = "dpp";
+            })
+            (pkgs.replaceVarsWith {
+              src = ./config/nvim/lua/core/dpp.lua;
+              replacements = {
+                deno = lib.getExe upkgs.deno;
+              };
+              dir = "lua/core";
+            })
+            (pkgs.replaceVarsWith {
+              src = ./config/nvim/dpp/copilot.lua;
+              replacements = {
+                copilot_ls = lib.getExe upkgs.copilot-language-server;
+              };
+              dir = "dpp";
+            })
+            (pkgs.replaceVarsWith {
+              src = ./config/nvim/lua/core/vars.lua;
+              replacements = {
+                python3 = lib.getExe upkgs.python313;
+              };
+              dir = "lua/core";
+            })
+            "${(pkgs.callPackage ../../../_sources/generated.nix { }).treesitter.src}/runtime"
+            (upkgs.symlinkJoin {
+              name = "ts-parsers";
+              paths = upkgs.vimPlugins.nvim-treesitter.withAllGrammars.dependencies;
+            })
+            (pkgs.callPackage ./dpp { })
+            ./config/nvim
+          ];
         };
+      };
       "git/template/hooks/pre-push" = {
         source = pkgs.fetchurl {
           url = "https://gist.githubusercontent.com/quintok/815396509ff79d886656b2855e1a8a46/raw/e6770add98e7db57177c16d33be31bfdf2c23042/pre-push";
