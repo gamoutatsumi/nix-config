@@ -59,6 +59,7 @@ in
         gnused
         gojq
         google-cloud-sdk
+        istioctl
         killall
         kn
         kubectl
