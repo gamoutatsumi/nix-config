@@ -1,8 +1,9 @@
+{ pkgs }:
 {
   plugins = [
     {
       repo = "vim-denops/denops.vim";
-      lazy = 0;
+      lazy = false;
     }
     {
       repo = "vim-denops/denops-shared-server.vim";

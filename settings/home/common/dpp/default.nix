@@ -25,7 +25,7 @@ pkgs.linkFarm "dpp-tomls" [
   }
   {
     name = "denops.toml";
-    path = tomlFormat.generate "denops.toml" (import ./denops.nix);
+    path = tomlFormat.generate "denops.toml" (import ./denops.nix { inherit pkgs; });
   }
   {
     name = "dpp.toml";

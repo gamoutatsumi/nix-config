@@ -3,7 +3,6 @@
     {
       repo = "tversteeg/registers.nvim";
       lua_add = ''
-        ;
         require('registers').setup {}
       '';
     }
