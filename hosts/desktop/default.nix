@@ -277,6 +277,7 @@
           "audio"
           "docker"
           "dialout"
+          "plugdev"
         ];
         shell = pkgs.zsh;
         hashedPasswordFile = config.age.secrets.${username}.path;
