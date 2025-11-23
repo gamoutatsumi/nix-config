@@ -1,0 +1,26 @@
+{
+  plugins = [
+    {
+      repo = "neovim/nvim-lspconfig";
+      hooks_file = [ "$BASE_DIR/dpp/nvim_lsp.lua" ];
+    }
+    {
+      repo = "hrsh7th/nvim-gtd";
+      lua_add = ''
+        require('gtd').setup({})
+      '';
+    }
+    {
+      repo = "b0o/schemastore.nvim";
+    }
+    {
+      repo = "ray-x/lsp_signature.nvim";
+    }
+    {
+      repo = "creativenull/efmls-configs-nvim";
+    }
+    {
+      repo = "uga-rosa/ddc-source-lsp-setup";
+    }
+  ];
+}

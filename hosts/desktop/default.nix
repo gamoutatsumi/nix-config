@@ -267,6 +267,12 @@
   };
   users = {
     mutableUsers = false;
+    extraGroups = {
+      "plugdev" = {
+        name = "plugdev";
+        members = [ username ];
+      };
+    };
     users = {
       ${username} = {
         isNormalUser = true;
@@ -277,7 +283,6 @@
           "audio"
           "docker"
           "dialout"
-          "plugdev"
         ];
         shell = pkgs.zsh;
         hashedPasswordFile = config.age.secrets.${username}.path;
