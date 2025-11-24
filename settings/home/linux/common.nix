@@ -141,15 +141,6 @@ name=p11-kit-proxy\n";
     userDirs = {
       enable = true;
     };
-    portal = {
-      enable = true;
-      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-      config = {
-        common = {
-          default = [ "gtk" ];
-        };
-      };
-    };
     configFile = {
       "Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json" = {
         source = import ../../../mcp.nix {

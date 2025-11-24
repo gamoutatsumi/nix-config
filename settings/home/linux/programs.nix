@@ -30,6 +30,7 @@
       ++ (with upkgs; [
         agenix-rekey
         obsidian
+        xwayland-satellite
         (vivaldi.override {
           enableWidevine = true;
           proprietaryCodecs = false;
@@ -54,6 +55,10 @@
       settings = {
         font = {
           size = 11.5;
+        };
+        window = {
+          opacity = 0.9;
+          decorations = "none";
         };
       };
     };

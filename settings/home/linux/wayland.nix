@@ -1,4 +1,22 @@
-_: {
+{ pkgs, ... }:
+let
+  atri_wp = pkgs.fetchurl {
+    url = "https://atri-mdm.com/assets/img/special/present/wp_ATRI.jpg";
+    sha256 = "069z1m3664xaciw9hhpqzsa5x5k802fpk9wxbkjxz4chmjnazzfj";
+  };
+in
+{
+  services = {
+    hyprpaper = {
+      enable = true;
+      settings = {
+        ipc = "on";
+        splash = false;
+        preload = [ "${atri_wp}" ];
+        wallpaper = [ ", ${atri_wp}" ];
+      };
+    };
+  };
   programs = {
     waybar = {
       enable = true;
