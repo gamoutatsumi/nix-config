@@ -59,6 +59,9 @@
     dconf = {
       enable = true;
     };
+    niri = {
+      enable = true;
+    };
     # keep-sorted end
   };
   security = {
@@ -87,6 +90,12 @@
     # keep-sorted start block=yes
     avahi = {
       enable = true;
+    };
+    displayManager = {
+      enable = true;
+      ly = {
+        enable = true;
+      };
     };
     kmscon = {
       enable = true;
@@ -153,13 +162,13 @@
       displayManager = {
         session = [
           {
-            manage = "desktop";
+            manage = "window";
             name = "xsession";
             start = ''exec ${config.users.users.${username}.home}/.xsession'';
           }
         ];
         lightdm = {
-          enable = true;
+          enable = false;
           greeters = {
             mini = {
               enable = true;
