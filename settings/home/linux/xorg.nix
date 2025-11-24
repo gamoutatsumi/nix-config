@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 {
   xsession = {
-    enable = true;
+    enable = false;
     initExtra = ''
       ${lib.getExe pkgs.xorg.xinput} disable 'SynPS/2 Synaptics TouchPad'
       ${lib.getExe' pkgs.lightlocker "light-locker"} &
