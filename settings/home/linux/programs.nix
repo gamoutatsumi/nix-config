@@ -22,6 +22,7 @@
         playerctl
         seahorse
         slack
+        wl-clipboard
         xsel
         zoom-us
         # keep-sorted end
