@@ -103,6 +103,7 @@
     };
     rofi = {
       enable = true;
+      package = upkgs.rofi;
       font = "IBM Plex Sans JP 14";
       location = "center";
       theme = "Arc-Dark";

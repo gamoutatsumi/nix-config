@@ -9,6 +9,13 @@
 }:
 {
   # keep-sorted start block=yes
+  dconf = {
+    settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+      };
+    };
+  };
   gtk = {
     # keep-sorted start block=yes
     enable = true;
@@ -16,16 +23,25 @@
       package = pkgs.ibm-plex;
       name = "IBM Plex Sans";
     };
+    gtk2 = {
+      extraConfig = ''
+        gtk-application-prefer-dark-theme = 0
+        gtk-enable-primary-paste = 0
+        gtk-im-module = "fcitx"
+      '';
+    };
     gtk3 = {
       extraConfig = {
         gtk-application-prefer-dark-theme = true;
         gtk-enable-primary-paste = false;
+        gtk-im-module = "fcitx";
       };
     };
     gtk4 = {
       extraConfig = {
-        gtk-application-prefer-dark-theme = 1;
+        gtk-application-prefer-dark-theme = true;
         gtk-enable-primary-paste = false;
+        gtk-im-module = "fcitx";
       };
     };
     iconTheme = {
