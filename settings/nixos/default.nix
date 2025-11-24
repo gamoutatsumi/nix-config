@@ -61,6 +61,7 @@
     };
     niri = {
       enable = true;
+      package = upkgs.niri;
     };
     # keep-sorted end
   };
