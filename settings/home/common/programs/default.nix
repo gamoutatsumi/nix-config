@@ -35,38 +35,24 @@ in
         })
         # keep-sorted start
         age-plugin-yubikey
-        argocd
         ast-grep
         bc
         binutils
         cacert
         coreutils-full
-        curlFull
         dblab
-        docker-credential-helpers
-        docker-slim
-        dogdns
-        dust
-        fd
         file
         findutils
         gawk
-        gemini-cli
         ghq
         git-crypt
         gnugrep
         gnumake
         gnused
         gojq
-        google-cloud-sdk
-        istioctl
         killall
-        kn
-        kubectl
-        kubie
         magika
         moreutils
-        mycli
         nix-diff
         nix-index
         nix-output-monitor
@@ -75,11 +61,7 @@ in
         paperkey
         picocom
         q-text-as-data
-        s3cmd
-        sheldon
         ssm-session-manager-plugin
-        stern
-        unar
         unzip
         yubico-piv-tool
         yubikey-manager
@@ -87,9 +69,28 @@ in
         # keep-sorted end
       ])
       ++ (with upkgs; [
+        # keep-sorted start
+        argocd
+        curlFull
         deno
-        vim
+        docker-credential-helpers
+        docker-slim
+        dogdns
+        dust
         edge.claude-code
+        fd
+        google-cloud-sdk
+        istioctl
+        kn
+        kubectl
+        kubie
+        mycli
+        s3cmd
+        sheldon
+        stern
+        unar
+        vim
+        # keep-sorted end
       ]);
   };
   programs = {
