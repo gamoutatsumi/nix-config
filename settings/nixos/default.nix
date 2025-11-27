@@ -151,10 +151,10 @@
       package = upkgs.tailscale;
     };
     udev = {
-      packages = with pkgs; [ yubikey-personalization ];
-      extraRules = ''
-        KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="04d8", ATTRS{idProduct}=="eae7", MODE="0660" GROUP="plugdev", TAG+="uaccess"
-      '';
+      packages = with pkgs; [
+        yubikey-personalization
+        via
+      ];
     };
     xserver = {
       enable = true;

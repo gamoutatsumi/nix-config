@@ -68,6 +68,11 @@
       ]);
   };
   hardware = {
+    keyboard = {
+      qmk = {
+        enable = true;
+      };
+    };
     graphics = {
       enable = true;
     };
