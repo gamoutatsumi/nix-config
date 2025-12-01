@@ -221,7 +221,7 @@
       };
     };
     nixpkgs = {
-      url = "github:NixOS/nixpkgs?ref=nixos-25.11";
+      url = "github:NixOS/nixpkgs?ref=v208";
     };
     nixpkgs-unstable = {
       url = "github:NixOS/nixpkgs?ref=nixos-unstable";
