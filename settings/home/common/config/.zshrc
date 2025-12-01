@@ -133,54 +133,6 @@ function precmd() {
   fi
 }
 
-function f() {
-  local project dir repository session current_session out
-  local ghq_command="ghq list -p | sed -e \"s|$HOME|~|\""
-  local fzf_options_="--expect=ctrl-space --preview='eval bat --paging=never --style=plain --color=always {}/README.md'"
-  local fzf_command="fzf-tmux ${fzf_options_}"
-  fzf_command+=" ${FZF_PREVIEW_DEFAULT_SETTING}"
-  fzf_command+=" --bind='${FZF_PREVIEW_DEFAULT_BIND}'"
-  local command="${ghq_command} | ${fzf_command}"
-
-  out=$(eval "${command}")
-  dir=$(tail -1 <<< "${out}")
-  project=${dir/$(ghq root)//}
-
-  if [[ $project == "" ]]; then
-    return 1
-  fi
-
-  if [[ -n ${TMUX} ]]; then
-    repository=${dir##*/}
-    session=${repository//./-}
-    current_session=$(tmux list-sessions | grep 'attached' | cut -d":" -f1)
-
-    tmux list-sessions | cut -d":" -f1 | grep -qe "^${session}\$"
-    local ret=$?
-    if [[ $ret = 0 ]]; then
-      local is_duplicate=true
-    else
-      local is_duplicate=false
-    fi
-
-    if [[ $current_session =~ ^[0-9]+$ ]]; then
-      if ! $is_duplicate; then
-        eval builtin cd "$dir"
-        tmux rename-session -t "$current_session" "$session"
-      else
-        tmux switch-client -t "$session"
-      fi
-    else
-      if ! $is_duplicate; then
-        eval tmux new-session -d -c "${dir}" -s "${session}"
-        tmux switch-client -t "$session"
-      else
-        tmux switch-client -t "$session"
-      fi
-    fi
-  fi
-}
-
 function _left-pane() {
   tmux select-pane -L
 }
@@ -242,32 +194,6 @@ function vim-startuptime-detail() {
   time nvim --startuptime "$time_file" -c q
   tail -n 1 "$time_file" | cut -d " " -f1 | tr -d "\n" && printf " [ms]\n"
   sort -n -k 2 < "$time_file" | tail -n 20
-}
-
-function awsp() {
-  local profile=$(aws configure list-profiles | sort | fzf)
-  export AWS_PROFILE="$profile"
-}
-
-function osp() {
-  local profile=$(cat ~/.config/openstack/clouds.yaml | yq ".clouds | keys | .[]" | fzf)
-  local auth_url=$(cat ~/.config/openstack/clouds.yaml | yq ".clouds.${profile}.auth.auth_url")
-  local password=$(cat ~/.config/openstack/clouds.yaml | yq ".clouds.${profile}.auth.password")
-  local username=$(cat ~/.config/openstack/clouds.yaml | yq ".clouds.${profile}.auth.username")
-  local project_name=$(cat ~/.config/openstack/clouds.yaml | yq ".clouds.${profile}.auth.project_name")
-  local project_id=$(cat ~/.config/openstack/clouds.yaml | yq ".clouds.${profile}.auth.project_id")
-  local user_domain_name=$(cat ~/.config/openstack/clouds.yaml | yq ".clouds.${profile}.auth.user_domain_name")
-  export OS_CLOUD="$profile"
-  export OS_AUTH_URL="$auth_url"
-  export OS_PASSWORD="$password"
-  export OS_USERNAME="$username"
-  export OS_PROJECT_NAME="$project_name"
-  export OS_PROJECT_ID="$project_id"
-  export OS_USER_DOMAIN_NAME="$user_domain_name"
-}
-
-function sheldonupdate() {
-  sheldon lock --update && sheldon source | grep -v "^$" > "${XDG_STATE_HOME}/sheldon/sheldon.lock.zsh"
 }
 
 function fk() {

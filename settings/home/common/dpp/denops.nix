@@ -1,5 +1,4 @@
-{ pkgs }:
-{
+_: {
   plugins = [
     {
       repo = "vim-denops/denops.vim";
