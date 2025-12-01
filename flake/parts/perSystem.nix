@@ -69,21 +69,21 @@
               nvfetcher
               nodePackages_latest.vscode-json-languageserver
               nodePackages_latest.node2nix
-              (pkgs.haskell.packages.ghc98.ghcWithPackages (
-                haskellPackages:
-                with haskellPackages;
-                [
-                  containers
-                  unix
-                  directory
-                  haskell-language-server
-                ]
-                ++ lib.optionals pkgs.stdenv.isLinux [
-                  xmonad
-                  xmonad-extras
-                  xmonad-contrib
-                ]
-              ))
+              # (pkgs.haskell.packages.ghc98.ghcWithPackages (
+              #   haskellPackages:
+              #   with haskellPackages;
+              #   [
+              #     containers
+              #     unix
+              #     directory
+              #     haskell-language-server
+              #   ]
+              #   ++ lib.optionals pkgs.stdenv.isLinux [
+              #     xmonad
+              #     xmonad-extras
+              #     xmonad-contrib
+              #   ]
+              # ))
             ])
             ++ (with upkgs; [ tombi ]);
           inputsFrom = [
