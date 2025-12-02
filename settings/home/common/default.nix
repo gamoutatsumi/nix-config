@@ -149,11 +149,20 @@ in
               };
               dir = "lua/core";
             })
-            "${(pkgs.callPackage ../../../_sources/generated.nix { }).treesitter.src}/runtime"
-            (upkgs.symlinkJoin {
-              name = "ts-parsers";
-              paths = upkgs.vimPlugins.nvim-treesitter.withAllGrammars.dependencies;
+            (pkgs.replaceVarsWith {
+              src = ./config/nvim/lua/core/treesitter.lua;
+              replacements = {
+                treesitter_runtime = "${
+                  (pkgs.callPackage ../../../_sources/generated.nix { }).treesitter.src
+                }/runtime";
+                treesitter_parsers = "${upkgs.symlinkJoin {
+                  name = "ts-parsers";
+                  paths = upkgs.vimPlugins.nvim-treesitter.withAllGrammars.dependencies;
+                }}";
+              };
+              dir = "lua/core";
             })
+            (pkgs.callPackage ./dpp { })
             ./config/nvim
           ];
         };
@@ -169,29 +178,5 @@ in
       };
     };
     enable = true;
-  };
-  theme = {
-    wallpaper = {
-      file = pkgs.fetchurl {
-        url = "https://atri-mdm.com/assets/img/special/present/wp_ATRI.jpg";
-        sha256 = "069z1m3664xaciw9hhpqzsa5x5k802fpk9wxbkjxz4chmjnazzfj";
-      };
-    };
-    tinty = {
-      enable = false;
-      generate = {
-        variant = "dark";
-        system = "base24";
-      };
-      shell = "zsh";
-      themes = {
-        alacritty = {
-          enable = true;
-        };
-        shell = {
-          enable = true;
-        };
-      };
-    };
   };
 }

@@ -47,7 +47,9 @@ smap <silent><expr> <TAB> denippet#jumpable(1) ? '<Plug>(denippet-jump-next)' : 
 imap <silent><expr> <S-TAB> pum#visible() ? '<Cmd>call pum#map#insert_relative(-1, "loop")<CR>' : denippet#jumpable(-1) ? '<Plug>(denippet-jump-prev)' : '<S-TAB>'
 imap <silent><expr> <C-p> pum#visible() ? '<Cmd>call pum#map#select_relative(-1, "loop")<CR>' : '<Cmd>call ddc#map#manual_complete()<CR><Cmd>call pum#map#select_relative(-1, "loop")<CR>'
 smap <silent><expr> <S-TAB> denippet#jumpable(-1) ? '<Plug>(denippet-jump-prev)' : '<S-TAB>'
-imap <silent><expr> <CR>   pum#visible() ? '<Cmd>call pum#map#confirm()<CR>' : '<CR>'
+"imap <silent><expr> <CR>   pum#visible() ? '<Cmd>call pum#map#confirm()<CR>' : '<CR>'
+
+lua require("ddc_source_lsp_setup").setup({ override_capabilities = true, respect_trigger = true })
 " }}}
 " hook_post_update {{{
 call ddc#set_static_import_path()

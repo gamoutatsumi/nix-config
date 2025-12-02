@@ -59,8 +59,34 @@
         };
       };
     };
+    brew-api = {
+      url = "github:BatteredBunny/brew-api";
+      flake = false;
+    };
+    brew-nix = {
+      url = "github:BatteredBunny/brew-nix";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs-unstable";
+        };
+        nix-darwin = {
+          follows = "nix-darwin";
+        };
+        brew-api = {
+          follows = "brew-api";
+        };
+      };
+    };
     disko = {
       url = "github:nix-community/disko";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs-unstable";
+        };
+      };
+    };
+    edgepkgs = {
+      url = "github:natsukium/edgepkgs";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs-unstable";
@@ -95,7 +121,7 @@
       };
     };
     home-manager = {
-      url = "github:nix-community/home-manager?ref=release-25.05";
+      url = "github:nix-community/home-manager?ref=release-25.11";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs";
@@ -179,7 +205,7 @@
       };
     };
     nix-darwin = {
-      url = "github:nix-darwin/nix-darwin?ref=nix-darwin-25.05";
+      url = "github:nix-darwin/nix-darwin?ref=nix-darwin-25.11";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs";
@@ -195,7 +221,7 @@
       };
     };
     nixpkgs = {
-      url = "github:NixOS/nixpkgs?ref=nixos-25.05";
+      url = "github:NixOS/nixpkgs?ref=nixos-25.11";
     };
     nixpkgs-unstable = {
       url = "github:NixOS/nixpkgs?ref=nixos-unstable";

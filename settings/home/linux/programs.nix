@@ -22,6 +22,7 @@
         playerctl
         seahorse
         slack
+        wl-clipboard
         xsel
         zoom-us
         # keep-sorted end
@@ -29,6 +30,7 @@
       ++ (with upkgs; [
         agenix-rekey
         obsidian
+        xwayland-satellite
         (vivaldi.override {
           enableWidevine = true;
           proprietaryCodecs = false;
@@ -53,6 +55,10 @@
       settings = {
         font = {
           size = 11.5;
+        };
+        window = {
+          opacity = 0.9;
+          decorations = "none";
         };
       };
     };
@@ -103,6 +109,7 @@
     };
     rofi = {
       enable = true;
+      package = upkgs.rofi;
       font = "IBM Plex Sans JP 14";
       location = "center";
       theme = "Arc-Dark";

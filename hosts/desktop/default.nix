@@ -68,6 +68,11 @@
       ]);
   };
   hardware = {
+    keyboard = {
+      qmk = {
+        enable = true;
+      };
+    };
     graphics = {
       enable = true;
     };
@@ -135,6 +140,19 @@
     hostPlatform = lib.mkDefault "x86_64-linux";
     config = {
       cudaSupport = true;
+    };
+  };
+  programs = {
+    gamescope = {
+      enable = true;
+      capSysNice = true;
+    };
+    steam = {
+      enable = true;
+      gamescopeSession = {
+        enable = true;
+      };
+      extraCompatPackages = [ upkgs.proton-ge-bin ];
     };
   };
   services = {
@@ -206,7 +224,7 @@
     # keep-sorted end
   };
   system = {
-    stateVersion = "25.05";
+    stateVersion = "25.11";
   };
   systemd = {
     timers = {
@@ -262,6 +280,12 @@
   };
   users = {
     mutableUsers = false;
+    extraGroups = {
+      "plugdev" = {
+        name = "plugdev";
+        members = [ username ];
+      };
+    };
     users = {
       ${username} = {
         isNormalUser = true;

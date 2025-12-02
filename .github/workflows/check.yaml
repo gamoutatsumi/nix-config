@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
         with:
           persist-credentials: false
-      - uses: cachix/install-nix-action@456688f15bc354bef6d396e4a35f4f89d40bf2b7 # v31.8.2
+      - uses: cachix/install-nix-action@0b0e072294b088b73964f1d72dfdac0951439dbd # v31.8.4
       - uses: cachix/cachix-action@0fc020193b5a1fa3ac4575aa3a7d3aa6a35435ad # v16
         with:
           name: gamoutatsumi-nix-config
@@ -26,7 +26,7 @@ jobs:
         run: |
           git diff --name-only --exit-code
         continue-on-error: true
-      - uses: suzuki-shunsuke/commit-action@75b215c45f1ded3868b7d525e0e40bcb73dc5ccc # v0.0.12
+      - uses: suzuki-shunsuke/commit-action@87b297f0ce551411b43d1880f4fb3cbc60381055 # v0.0.14
         if: steps.diff.outcome == 'failure' && github.event_name == 'pull_request'
         with:
           app_id: ${{ secrets.APP_ID }}

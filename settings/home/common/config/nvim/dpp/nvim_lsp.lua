@@ -20,8 +20,6 @@ local function setInlayHintHL()
     vim.api.nvim_set_hl(0, "LspInlayHint", { fg = foreground, bg = background })
 end
 
-require("ddc_source_lsp_setup").setup({ override_capabilities = true, respect_trigger = true })
-
 ---@type vim.lsp.client.on_attach_cb
 local on_attach = function(client, bufnr)
     local function format()
@@ -113,6 +111,7 @@ vim.lsp.config("*", { on_attach = on_attach })
 
 local ensure_enabled = {
     -- keep-sorted start
+    "alloy_ls",
     "astro",
     "bashls",
     "biome",

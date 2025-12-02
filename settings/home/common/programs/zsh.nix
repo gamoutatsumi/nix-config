@@ -7,16 +7,18 @@
   # keep-sorted end
   ...
 }:
+let
+  fzf_preview_default_bind = "ctrl-d:preview-page-down,ctrl-u:preview-page-up,?:toggle-preview";
+in
 {
   programs = {
     zsh = {
-      # keep-sorted start block=yes
       autocd = true;
       defaultKeymap = "emacs";
       dirHashes = {
         dot = "${config.xdg.configHome}/home-manager";
       };
-      dotDir = ".config/zsh";
+      dotDir = "${config.xdg.configHome}/zsh";
       enable = true;
       envExtra = lib.strings.concatLines [
         (builtins.readFile (
@@ -25,6 +27,8 @@
             sha256 = "sha256-KHRkQEPk7rzgnPK/sehr6AXo267YB0Tfi8KaVDjnkUE=";
           }
         ))
+        "source ${config.xdg.configHome}/zsh/.zshenv.local"
+        "export FPATH=${config.xdg.dataHome}/zsh/functions:\$FPATH"
       ];
       history = {
         extended = true;
@@ -54,11 +58,12 @@
       sessionVariables = {
         # keep-sorted start block = yes
         ANSIBLE_HOME = "${config.xdg.dataHome}/ansible";
+        ANTHROPIC_MODEL = "claude-opus-4-5-20251101";
         CLAUDE_CONFIG_DIR = "${config.xdg.configHome}/claude";
         DIRENV_LOG_FORMAT = "";
         DOCKER_BUILDKIT = 1;
         ESLINT_D_LOCAL_ESLINT_ONLY = 1;
-        FZF_PREVIEW_DEFAULT_BIND = "ctrl-d:preview-page-down,ctrl-u:preview-page-up,?:toggle-preview";
+        FZF_PREVIEW_DEFAULT_BIND = fzf_preview_default_bind;
         FZF_PREVIEW_DEFAULT_SETTING = "--preview-window='right:50%' --expect='ctrl-space' --header='C-Space: continue fzf completion'";
         LANG = "ja_JP.UTF-8";
         LC_ALL = "ja_JP.UTF-8";
@@ -93,7 +98,88 @@
         vim = "${lib.getExe config.programs.neovim.finalPackage}";
         # keep-sorted end
       };
-      #keep-sorted end
+      siteFunctions =
+        let
+          tmux_exe = lib.getExe config.programs.tmux.package;
+          yq_exe = lib.getExe upkgs.yq;
+          fzf-tmux_exe = lib.getExe' config.programs.fzf.package "fzf-tmux";
+          openstackConfig = "${config.xdg.configHome}/openstack/clouds.yaml";
+        in
+        {
+          f = ''
+            local project dir repository session current_session out
+            local ghq_command="${lib.getExe pkgs.ghq} list -p | ${lib.getExe pkgs.gnused} -e \"s|$HOME|~|\""
+            local fzf_options_="--expect=ctrl-space --preview='eval bat --paging=never --style=plain --color=always {}/README.md'"
+            local fzf_command="${fzf-tmux_exe} ''${fzf_options_}"
+            fzf_command+=" ''${FZF_PREVIEW_DEFAULT_SETTING}"
+            fzf_command+=" --bind='${fzf_preview_default_bind}'"
+            local command="''${ghq_command} | ''${fzf_command}"
+
+            out=$(eval "''${command}")
+            dir=$(tail -1 <<< "''${out}")
+            project=''${dir/$(ghq root)//}
+
+            if [[ $project == "" ]]; then
+              return 1
+            fi
+
+            if [[ -n ''${TMUX} ]]; then
+              repository=''${dir##*/}
+              session=''${repository//./-}
+              current_session=$(${tmux_exe} list-sessions | grep 'attached' | cut -d":" -f1)
+
+              ${tmux_exe} list-sessions | cut -d":" -f1 | grep -qe "^''${session}\$"
+              local ret=$?
+              if [[ $ret = 0 ]]; then
+                local is_duplicate=true
+              else
+                local is_duplicate=false
+              fi
+
+              if [[ $current_session =~ ^[0-9]+$ ]]; then
+                if ! $is_duplicate; then
+                  eval builtin cd "$dir"
+                  ${tmux_exe} rename-session -t "$current_session" "$session"
+                else
+                  ${tmux_exe} switch-client -t "$session"
+                fi
+              else
+                if ! $is_duplicate; then
+                  eval ${tmux_exe} new-session -d -c "''${dir}" -s "''${session}"
+                  ${tmux_exe} switch-client -t "$session"
+                else
+                  ${tmux_exe} switch-client -t "$session"
+                fi
+              fi
+            fi
+          '';
+          sheldonupdate = ''
+            ${lib.getExe upkgs.sheldon} lock --update && ${lib.getExe upkgs.sheldon} source | grep -v "^$" > "${config.xdg.stateHome}/sheldon/sheldon.lock.zsh"
+          '';
+          awsp = ''
+            local profile=$(${lib.getExe config.programs.awscli.package} configure list-profiles | sort | ${fzf-tmux_exe})
+            export AWS_PROFILE="$profile"
+          '';
+          osp = ''
+            local profile=$(cat ${openstackConfig} | ${yq_exe} ".clouds | keys | .[]" | ${fzf-tmux_exe})
+            if [ -z "$profile" ]; then
+              return 1
+            fi
+            local auth_url=$(cat ${openstackConfig} | ${yq_exe} -r ".clouds.''${profile}.auth.auth_url")
+            local password=$(cat ${openstackConfig} | ${yq_exe} -r ".clouds.''${profile}.auth.password")
+            local username=$(cat ${openstackConfig} | ${yq_exe} -r ".clouds.''${profile}.auth.username")
+            local project_name=$(cat ${openstackConfig} | ${yq_exe} -r ".clouds.''${profile}.auth.project_name")
+            local project_id=$(cat ${openstackConfig} | ${yq_exe} -r ".clouds.''${profile}.auth.project_id")
+            local user_domain_name=$(cat ${openstackConfig} | ${yq_exe} -r ".clouds.''${profile}.auth.user_domain_name")
+            export OS_CLOUD="$profile"
+            export OS_AUTH_URL="$auth_url"
+            export OS_PASSWORD="$password"
+            export OS_USERNAME="$username"
+            export OS_PROJECT_NAME="$project_name"
+            export OS_PROJECT_ID="$project_id"
+            export OS_USER_DOMAIN_NAME="$user_domain_name"
+          '';
+        };
     };
   };
 }

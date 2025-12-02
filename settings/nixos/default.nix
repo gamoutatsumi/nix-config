@@ -59,6 +59,10 @@
     dconf = {
       enable = true;
     };
+    niri = {
+      enable = true;
+      package = upkgs.niri;
+    };
     # keep-sorted end
   };
   security = {
@@ -87,6 +91,12 @@
     # keep-sorted start block=yes
     avahi = {
       enable = true;
+    };
+    displayManager = {
+      enable = true;
+      ly = {
+        enable = true;
+      };
     };
     kmscon = {
       enable = true;
@@ -141,7 +151,10 @@
       package = upkgs.tailscale;
     };
     udev = {
-      packages = with pkgs; [ yubikey-personalization ];
+      packages = with pkgs; [
+        yubikey-personalization
+        via
+      ];
     };
     xserver = {
       enable = true;
@@ -150,13 +163,13 @@
       displayManager = {
         session = [
           {
-            manage = "desktop";
+            manage = "window";
             name = "xsession";
             start = ''exec ${config.users.users.${username}.home}/.xsession'';
           }
         ];
         lightdm = {
-          enable = true;
+          enable = false;
           greeters = {
             mini = {
               enable = true;

@@ -35,35 +35,23 @@ in
         })
         # keep-sorted start
         age-plugin-yubikey
-        argocd
+        ast-grep
         bc
         binutils
         cacert
         coreutils-full
-        curlFull
-        dblab
-        docker-credential-helpers
-        docker-slim
-        dogdns
-        dust
-        fd
         file
         findutils
         gawk
-        gemini-cli
         ghq
         git-crypt
         gnugrep
         gnumake
         gnused
         gojq
-        google-cloud-sdk
         killall
-        kubectl
-        kubie
         magika
         moreutils
-        mycli
         nix-diff
         nix-index
         nix-output-monitor
@@ -72,11 +60,7 @@ in
         paperkey
         picocom
         q-text-as-data
-        s3cmd
-        sheldon
         ssm-session-manager-plugin
-        stern
-        unar
         unzip
         yubico-piv-tool
         yubikey-manager
@@ -84,8 +68,28 @@ in
         # keep-sorted end
       ])
       ++ (with upkgs; [
+        # keep-sorted start
+        argocd
+        curlFull
         deno
+        docker-credential-helpers
+        docker-slim
+        dogdns
+        dust
+        edge.claude-code
+        fd
+        google-cloud-sdk
+        istioctl
+        kn
+        kubectl
+        kubie
+        mycli
+        s3cmd
+        sheldon
+        stern
+        unar
         vim
+        # keep-sorted end
       ]);
   };
   programs = {
@@ -158,33 +162,7 @@ in
     };
     git = {
       enable = true;
-      userEmail = "tatsumi@gamou.dev";
-      userName = "gamoutatsumi";
-      lfs = {
-        enable = true;
-      };
-      signing = {
-        key = "8BABD254FC4AB38A";
-      };
-      difftastic = {
-        enable = false;
-        background = "dark";
-      };
-      delta = {
-        enable = true;
-        options = {
-          features = "line-numbers decorations";
-          plus-style = ''syntax "#012800"'';
-          minus-style = ''syntax "#340001"'';
-          hunk-header-style = "file line-number";
-          side-by-side = true;
-          tabs = 0;
-          interactive = {
-            keep-plus-minus-markers = false;
-          };
-        };
-      };
-      extraConfig = {
+      settings = {
         # keep-sorted start block=yes
         alias = {
           graph = ''log --graph --date-order -C -M --pretty=format:"<%h> %ad [%an] %Cgreen%d%Creset %s" --all --date=short'';
@@ -241,7 +219,32 @@ in
         status = {
           showUntrackedFiles = "all";
         };
+        user = {
+          email = "tatsumi@gamou.dev";
+          name = "gamoutatsumi";
+        };
         # keep-sorted end
+      };
+      lfs = {
+        enable = true;
+      };
+      signing = {
+        key = "8BABD254FC4AB38A";
+      };
+    };
+    delta = {
+      enable = true;
+      enableGitIntegration = true;
+      options = {
+        features = "line-numbers decorations";
+        plus-style = ''syntax "#012800"'';
+        minus-style = ''syntax "#340001"'';
+        hunk-header-style = "file line-number";
+        side-by-side = true;
+        tabs = 0;
+        interactive = {
+          keep-plus-minus-markers = false;
+        };
       };
     };
     gpg = {
@@ -303,6 +306,21 @@ in
     ssh = {
       enable = true;
       includes = [ "${config.home.homeDirectory}/.ssh/config_work" ];
+      enableDefaultConfig = false;
+      matchBlocks = {
+        "*" = {
+          forwardAgent = false;
+          addKeysToAgent = "no";
+          compression = false;
+          serverAliveInterval = 0;
+          serverAliveCountMax = 3;
+          hashKnownHosts = false;
+          userKnownHostsFile = "~/.ssh/known_hosts";
+          controlMaster = "no";
+          controlPath = "~/.ssh/master-%r@%n:%p";
+          controlPersist = "no";
+        };
+      };
     };
     tmux = {
       enable = true;

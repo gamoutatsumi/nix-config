@@ -28,6 +28,9 @@
         package = pkgs.pinentry-gtk2;
       };
     };
+    mako = {
+      enable = true;
+    };
     mpd = {
       enable = true;
       package = pkgs.mpd.overrideAttrs (

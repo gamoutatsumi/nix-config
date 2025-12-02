@@ -1,0 +1,92 @@
+{
+  plugins = [
+    {
+      repo = "Shougo/ddc.vim";
+      on_event = "InsertEnter";
+      hooks_file = "$BASE_DIR/dpp/ddc.vim";
+      build = "git update-index --skip-worktree denops/ddc/_mods.js";
+    }
+    {
+      repo = "Shougo/ddc-ui-pum";
+      on_source = "ddc.vim";
+    }
+    {
+      repo = "Shougo/ddc-sorter_rank";
+      on_source = "ddc.vim";
+    }
+    {
+      repo = "Shougo/ddc-matcher_head";
+      on_source = "ddc.vim";
+    }
+    {
+      repo = "tani/ddc-fuzzy";
+      on_source = "ddc.vim";
+    }
+    {
+      repo = "Shougo/ddc-around";
+      on_source = "ddc.vim";
+    }
+    {
+      repo = "LumaKernel/ddc-source-file";
+      on_source = "ddc.vim";
+    }
+    {
+      repo = "Shougo/pum.vim";
+      hooks_file = "$BASE_DIR/dpp/pum.vim";
+      on_source = "ddc.vim";
+    }
+    {
+      repo = "hrsh7th/completion-snippet";
+      merged = 0;
+    }
+    {
+      repo = "Shougo/ddc-source-omni";
+      on_source = "ddc.vim";
+    }
+    {
+      repo = "kristijanhusak/vim-dadbod-completion";
+    }
+    {
+      repo = "gamoutatsumi/ddc-sorter_ascii";
+      on_source = "ddc.vim";
+    }
+    {
+      repo = "Shougo/ddc-source-cmdline";
+      on_source = "ddc.vim";
+    }
+    {
+      repo = "Shougo/ddc-source-cmdline_history";
+      on_source = "ddc.vim";
+    }
+    {
+      repo = "Shougo/ddc-filter-converter_truncate_abbr";
+      on_source = "ddc.vim";
+    }
+    {
+      repo = "Shougo/ddc-filter-converter_remove_overlap";
+      on_source = "ddc.vim";
+    }
+    {
+      repo = "Shougo/ddc-source-copilot";
+      on_source = "ddc.vim";
+    }
+    {
+      repo = "uga-rosa/denippet.vim";
+      hooks_file = "$BASE_DIR/dpp/denippet.lua";
+      on_source = "ddc.vim";
+    }
+    {
+      repo = "Shougo/ddc-source-lsp";
+      on_lua = "ddc_source_lsp";
+      on_source = "ddc.vim";
+    }
+    {
+      repo = "Shougo/ddc-filter-sorter_lsp_kind";
+      on_source = "ddc.vim";
+    }
+    {
+      repo = "Shougo/ddc-filter-converter_kind_labels";
+      on_source = "ddc.vim";
+    }
+  ];
+}

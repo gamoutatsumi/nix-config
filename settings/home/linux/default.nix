@@ -1,11 +1,10 @@
 {
   imports = [
     ./services.nix
-    ./dunst.nix
+    # ./dunst.nix
     ./common.nix
-    ./polybar.nix
     ./sound.nix
-    ./xorg.nix
     ./programs.nix
+    ./wayland.nix
   ];
 }
