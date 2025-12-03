@@ -137,6 +137,9 @@
             prettier = {
               includes = lib.mkForce [ "*.md" ];
             };
+            statix = {
+              excludes = [ ".direnv/*" ];
+            };
             tombi = {
               command = lib.getExe upkgs.tombi;
               options = [
