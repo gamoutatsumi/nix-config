@@ -17,6 +17,7 @@ in
   imports = [
     # keep-sorted start
     ./alacritty.nix
+    ./claude.nix
     ./emacs.nix
     ./vscode.nix
     ./zsh.nix
@@ -76,7 +77,6 @@ in
         docker-slim
         dogdns
         dust
-        edge.claude-code
         fd
         google-cloud-sdk
         istioctl

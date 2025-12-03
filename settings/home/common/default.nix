@@ -73,41 +73,6 @@ in
           sha256 = "/cR4H3FN7lHVD5dMXq7khjn+a5nMdXuEPpM5hC94meE=";
         };
       };
-      "claude/settings.json" = {
-        text = builtins.toJSON {
-          permissions = {
-            allow = [
-            ];
-            deny = [
-              "Bash(sudo:*)"
-              "Bash(rm:*)"
-              "Bash(rm -rf:*)"
-              "Bash(git push:*)"
-              "Bash(git reset:*)"
-              "Bash(git rebase:*)"
-              "Read(.env.*)"
-              "Read(id_rsa)"
-              "Read(id_ed25519)"
-              "Read(**/*token*)"
-              "Read(**/*key*)"
-              "Write(.env*)"
-              "Write(**/secrets/**)"
-              "Bash(curl:*)"
-              "Bash(wget:*)"
-              "Bash(nc:*)"
-              "Bash(npm uninstall:*)"
-              "Bash(npm remove:*)"
-              "Bash(psql:*)"
-              "Bash(mysql:*)"
-              "Bash(mongod:*)"
-              "mcp__supabase__execute_sql"
-            ];
-          };
-        };
-      };
-      "claude/commands" = {
-        source = ./config/claude/commands;
-      };
       "zeno" = {
         source = ./config/zeno;
       };

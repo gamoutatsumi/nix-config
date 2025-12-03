@@ -68,7 +68,6 @@
               bash-language-server
               nvfetcher
               nodePackages_latest.vscode-json-languageserver
-              nodePackages_latest.node2nix
               # (pkgs.haskell.packages.ghc98.ghcWithPackages (
               #   haskellPackages:
               #   with haskellPackages;
@@ -135,14 +134,8 @@
         settings = {
           formatter = {
             # keep-sorted start block=yes
-            deadnix = {
-              excludes = [ "node2nix/*" ];
-            };
             prettier = {
               includes = lib.mkForce [ "*.md" ];
-            };
-            statix = {
-              excludes = [ "node2nix/*" ];
             };
             tombi = {
               command = lib.getExe upkgs.tombi;
