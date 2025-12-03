@@ -160,16 +160,16 @@ in
             export AWS_PROFILE="$profile"
           '';
           osp = ''
-            local profile=$(cat ${openstackConfig} | ${yq_exe} ".clouds | keys | .[]" | ${fzf-tmux_exe})
+            local profile=$(cat ${openstackConfig} | ${yq_exe} -r ".clouds | keys | .[]" | ${fzf-tmux_exe})
             if [ -z "$profile" ]; then
               return 1
             fi
-            local auth_url=$(cat ${openstackConfig} | ${yq_exe} -r ".clouds.''${profile}.auth.auth_url")
-            local password=$(cat ${openstackConfig} | ${yq_exe} -r ".clouds.''${profile}.auth.password")
-            local username=$(cat ${openstackConfig} | ${yq_exe} -r ".clouds.''${profile}.auth.username")
-            local project_name=$(cat ${openstackConfig} | ${yq_exe} -r ".clouds.''${profile}.auth.project_name")
-            local project_id=$(cat ${openstackConfig} | ${yq_exe} -r ".clouds.''${profile}.auth.project_id")
-            local user_domain_name=$(cat ${openstackConfig} | ${yq_exe} -r ".clouds.''${profile}.auth.user_domain_name")
+            local auth_url=$(cat ${openstackConfig} | ${yq_exe} -r ".clouds.\"''${profile}\".auth.auth_url")
+            local password=$(cat ${openstackConfig} | ${yq_exe} -r ".clouds.\"''${profile}\".auth.password")
+            local username=$(cat ${openstackConfig} | ${yq_exe} -r ".clouds.\"''${profile}\".auth.username")
+            local project_name=$(cat ${openstackConfig} | ${yq_exe} -r ".clouds.\"''${profile}\".auth.project_name")
+            local project_id=$(cat ${openstackConfig} | ${yq_exe} -r ".clouds.\"''${profile}\".auth.project_id")
+            local user_domain_name=$(cat ${openstackConfig} | ${yq_exe} -r ".clouds.\"''${profile}\".auth.user_domain_name")
             export OS_CLOUD="$profile"
             export OS_AUTH_URL="$auth_url"
             export OS_PASSWORD="$password"
