@@ -25,12 +25,6 @@
       ];
     }
     {
-      repo = "nvim-lua/popup.nvim";
-    }
-    {
-      repo = "nvim-lua/plenary.nvim";
-    }
-    {
       repo = "folke/flash.nvim";
       hooks_file = "$BASE_DIR/dpp/flash.lua";
     }

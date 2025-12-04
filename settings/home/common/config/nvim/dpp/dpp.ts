@@ -113,6 +113,33 @@ export class Config extends BaseConfig {
       );
     }
 
+    for (
+      const toml of [
+        hasNvim ? "$BASE_DIR/neotest.toml" : null,
+        hasNvim ? "$BASE_DIR/nvim_lua.toml" : null,
+      ].filter(is.String)
+    ) {
+      tomls.push(
+        await args.dpp.extAction(
+          args.denops,
+          context,
+          options,
+          "toml",
+          "load",
+          {
+            path: toml,
+            options: {
+              lazy: false,
+              local: true,
+              merged: false,
+              protocols: [],
+              extParams: { installer: { installerFrozen: true } },
+            },
+          },
+        ) as Toml,
+      );
+    }
+
     const recordPlugins: Record<string, Plugin> = {};
     const ftplugins: Record<string, string> = {};
 

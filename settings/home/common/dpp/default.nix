@@ -59,4 +59,12 @@ pkgs.linkFarm "dpp-tomls" [
     name = "vim_lsp.toml";
     path = tomlFormat.generate "vim_lsp.toml" (import ./vim_lsp.nix);
   }
+  {
+    name = "neotest.toml";
+    path = tomlFormat.generate "neotest.toml" (import ./neotest.nix { inherit pkgs; });
+  }
+  {
+    name = "nvim_lua.toml";
+    path = tomlFormat.generate "nvim_lua.toml" (import ./nvim_lua.nix { inherit pkgs; });
+  }
 ]

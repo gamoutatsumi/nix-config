@@ -6,3 +6,23 @@ fetch.github = "nvim-treesitter/nvim-treesitter"
 [denops]
 src.github = "vim-denops/denops.vim"
 fetch.github = "vim-denops/denops.vim"
+
+[neotest]
+src.github = "nvim-neotest/neotest"
+fetch.github = "nvim-neotest/neotest"
+
+[nio]
+src.github = "nvim-neotest/nvim-nio"
+fetch.github = "nvim-neotest/nvim-nio"
+
+[neotest-go]
+src.git = "https://github.com/nvim-neotest/neotest-go.git"
+fetch.github = "nvim-neotest/neotest-go"
+
+[plenary]
+src.git = "https://github.com/nvim-lua/plenary.nvim.git"
+fetch.github = "nvim-lua/plenary.nvim"
+
+[popup]
+src.git = "https://github.com/nvim-lua/popup.nvim.git"
+fetch.github = "nvim-lua/popup.nvim"

@@ -12,16 +12,74 @@
       sha256 = "sha256-4AACZ3h6uAqiXW24gUF1+uq7dnWA0w/PcxAeO4yxitc=";
     };
   };
+  neotest = {
+    pname = "neotest";
+    version = "v5.13.4";
+    src = fetchFromGitHub {
+      owner = "nvim-neotest";
+      repo = "neotest";
+      rev = "v5.13.4";
+      fetchSubmodules = false;
+      sha256 = "sha256-0C4CWTHXXsC/dbZvW5KT+oNXX07rweh2Nem385hwLmI=";
+    };
+  };
+  neotest-go = {
+    pname = "neotest-go";
+    version = "59b50505053f9c45a9febb79e11a56206c3e3901";
+    src = fetchFromGitHub {
+      owner = "nvim-neotest";
+      repo = "neotest-go";
+      rev = "59b50505053f9c45a9febb79e11a56206c3e3901";
+      fetchSubmodules = false;
+      sha256 = "sha256-btvAwNck/MAS0Xv2NzmPEYLuBb50DEiMjbkW3E7tg3I=";
+    };
+    date = "2025-10-31";
+  };
+  nio = {
+    pname = "nio";
+    version = "v1.10.1";
+    src = fetchFromGitHub {
+      owner = "nvim-neotest";
+      repo = "nvim-nio";
+      rev = "v1.10.1";
+      fetchSubmodules = false;
+      sha256 = "sha256-eDbzJAGdUBhTwuD0Nt9FihZj1MmVdQfn/GKIybuu5a8=";
+    };
+  };
+  plenary = {
+    pname = "plenary";
+    version = "b9fd5226c2f76c951fc8ed5923d85e4de065e509";
+    src = fetchFromGitHub {
+      owner = "nvim-lua";
+      repo = "plenary.nvim";
+      rev = "b9fd5226c2f76c951fc8ed5923d85e4de065e509";
+      fetchSubmodules = false;
+      sha256 = "sha256-9Un7ekhBxcnmFE1xjCCFTZ7eqIbmXvQexpnhduAg4M0=";
+    };
+    date = "2025-07-26";
+  };
+  popup = {
+    pname = "popup";
+    version = "b7404d35d5d3548a82149238289fa71f7f6de4ac";
+    src = fetchFromGitHub {
+      owner = "nvim-lua";
+      repo = "popup.nvim";
+      rev = "b7404d35d5d3548a82149238289fa71f7f6de4ac";
+      fetchSubmodules = false;
+      sha256 = "sha256-dNWz/xovUg55fDZUpVs/2kLphk3lqQyvPtc9ATwbeSQ=";
+    };
+    date = "2021-11-18";
+  };
   treesitter = {
     pname = "treesitter";
-    version = "c5871d9d870c866fea9f271f1a3b3f29049a4793";
+    version = "857fb97bb65c8a71b0c4a568cfcfef95679854d5";
     src = fetchFromGitHub {
       owner = "nvim-treesitter";
       repo = "nvim-treesitter";
-      rev = "c5871d9d870c866fea9f271f1a3b3f29049a4793";
+      rev = "857fb97bb65c8a71b0c4a568cfcfef95679854d5";
       fetchSubmodules = false;
-      sha256 = "sha256-oXHJxYFDqZ72C/sJGSMFVwkRRCXipVjE+xz+5eeCX30=";
+      sha256 = "sha256-ZCzHvx/VVL4DiF+YjMkaaupZb1jPCZKZb5tiyzxZ1ys=";
     };
-    date = "2025-11-25";
+    date = "2025-12-03";
   };
 }
