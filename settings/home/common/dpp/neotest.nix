@@ -8,6 +8,7 @@ in
       repo = "nvim-neotest/nvim-nio";
       name = "nvim-nio";
       path = neotest.nio;
+      merged = false;
     }
     {
       repo = "nvim-neotest/neotest-go";

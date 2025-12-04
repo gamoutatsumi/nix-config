@@ -62,7 +62,6 @@ function M.setup()
             "Shougo/dpp-ext-toml",
             "Shougo/dpp-ext-packspec",
             "Shougo/dpp-protocol-git",
-            "vim-denops/denops.vim", -- Denops is crucial
         }
 
         for _, plugin_repo in ipairs(essential_plugins) do

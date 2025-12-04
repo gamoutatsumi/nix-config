@@ -272,6 +272,9 @@ in
     neovim = {
       vimdiffAlias = true;
       enable = true;
+      plugins = [
+        (pkgs.callPackage ../../../../vimPlugins/denops.nix { })
+      ];
       extraPackages =
         (with pkgs; [ nil ])
         ++ (with upkgs; [

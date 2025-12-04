@@ -2,7 +2,6 @@
   plugins = [
     {
       repo = "Shougo/ddu.vim";
-      depends = [ "denops.vim" ];
       hooks_file = "$BASE_DIR/dpp/ddu.vim";
       build = "git update-index --skip-worktree denops/ddu/_mods.js";
     }
