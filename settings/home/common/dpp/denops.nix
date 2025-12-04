@@ -2,19 +2,13 @@ _: {
   plugins = [
     {
       repo = "gamoutatsumi/dps-ghosttext.vim";
-      on_cmd = "GhostStart";
     }
     {
       repo = "vim-skk/skkeleton";
       hooks_file = "$BASE_DIR/dpp/skkeleton.vim";
-      on_map = {
-        ict = "<Plug>(skkeleton-toggle)";
-      };
-      on_event = "CursorHold";
     }
     {
       repo = "gamoutatsumi/gyazoupload.vim";
-      on_cmd = "GyazoUpload";
       hook_add = ''
         let g:gyazo#token=$GYAZO_TOKEN
       '';

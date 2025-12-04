@@ -67,6 +67,10 @@ export class Config extends BaseConfig {
         hasNvim ? "$BASE_DIR/nvim_dap.toml" : null,
         hasNvim ? "$BASE_DIR/nvim_lsp.toml" : "$BASE_DIR/vim_lsp.toml",
         hasNvim ? "$BASE_DIR/neovim.toml" : "$BASE_DIR/vim.toml",
+        "$BASE_DIR/denops.toml",
+        "$BASE_DIR/ddc.toml",
+        "$BASE_DIR/ddu.toml",
+        "$BASE_DIR/ddt.toml",
       ].filter(is.String)
     ) {
       tomls.push(
@@ -89,10 +93,6 @@ export class Config extends BaseConfig {
     for (
       const toml of [
         "$BASE_DIR/lazy.toml",
-        "$BASE_DIR/denops.toml",
-        "$BASE_DIR/ddc.toml",
-        "$BASE_DIR/ddu.toml",
-        "$BASE_DIR/ddt.toml",
       ].filter(is.String)
     ) {
       tomls.push(
