@@ -286,6 +286,7 @@ in
           vscode-langservers-extracted
           typos-lsp
           gotestsum
+          luajitPackages.busted
         ])
         ++ lib.optionals pkgs.stdenv.isLinux [
           upkgs.gcc

@@ -23,6 +23,17 @@
       sha256 = "sha256-0C4CWTHXXsC/dbZvW5KT+oNXX07rweh2Nem385hwLmI=";
     };
   };
+  neotest-busted = {
+    pname = "neotest-busted";
+    version = "v1.3.1";
+    src = fetchFromGitHub {
+      owner = "MisanthropicBit";
+      repo = "neotest-busted";
+      rev = "v1.3.1";
+      fetchSubmodules = false;
+      sha256 = "sha256-Xy8SB/6T1M1NVks2GD5IUrOGKrP4x8+Hcw4uMtjC81w=";
+    };
+  };
   neotest-golang = {
     pname = "neotest-golang";
     version = "v2.5.1";
@@ -59,15 +70,15 @@
   };
   nvim-treesitter = {
     pname = "nvim-treesitter";
-    version = "f47f549f74cea5d5f25a5205c9e127cd882f1d20";
+    version = "b6271b678e035a5cbf62d637364f3eeca0890171";
     src = fetchFromGitHub {
       owner = "nvim-treesitter";
       repo = "nvim-treesitter";
-      rev = "f47f549f74cea5d5f25a5205c9e127cd882f1d20";
+      rev = "b6271b678e035a5cbf62d637364f3eeca0890171";
       fetchSubmodules = false;
-      sha256 = "sha256-nAwGkv8mthc2DPl3eLxesGlTZv64JCWlKlVJFWFo/rw=";
+      sha256 = "sha256-8wZhhvlJL0+i4OyVMile23tJvw3kxn2RwjaDkihCUC4=";
     };
-    date = "2025-12-08";
+    date = "2025-12-09";
   };
   plenary-nvim = {
     pname = "plenary-nvim";

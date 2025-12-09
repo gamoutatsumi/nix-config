@@ -127,6 +127,16 @@ in
               };
               dir = "lua/core";
             })
+            (pkgs.replaceVarsWith {
+              src = ./config/nvim/dpp/treesitter.lua;
+              replacements = {
+                treesitter_parsers = "${upkgs.symlinkJoin {
+                  name = "ts-parsers";
+                  paths = upkgs.vimPlugins.nvim-treesitter.withAllGrammars.dependencies;
+                }}";
+              };
+              dir = "dpp";
+            })
             (pkgs.callPackage ./dpp { })
             ./config/nvim
           ];

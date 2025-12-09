@@ -1,5 +1,8 @@
 -- lua_add {{{
 local ts = require("nvim-treesitter")
+ts.setup({
+    install_dir = "@treesitter_parsers@",
+})
 local filetypes = {}
 for _, lang in ipairs(ts.get_available(2)) do
     for _, ft in ipairs(vim.treesitter.language.get_filetypes(lang)) do

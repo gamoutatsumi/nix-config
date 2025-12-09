@@ -34,3 +34,7 @@ fetch.github = "andythigpen/nvim-coverage"
 [statuscol-nvim]
 src.git = "https://github.com/luukvbaal/statuscol.nvim"
 fetch.github = "luukvbaal/statuscol.nvim"
+
+[neotest-busted]
+src.github = "MisanthropicBit/neotest-busted"
+fetch.github = "MisanthropicBit/neotest-busted"

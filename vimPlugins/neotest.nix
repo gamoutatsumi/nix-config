@@ -8,4 +8,5 @@ in
   neotest-go = fetchers.neotest-go.src;
   neotest-golang = fetchers.neotest-golang.src;
   coverage = fetchers.nvim-coverage.src;
+  neotest-busted = fetchers.neotest-busted.src;
 }

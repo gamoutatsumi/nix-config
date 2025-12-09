@@ -31,5 +31,10 @@ in
         "$BASE_DIR/dpp/coverage.lua"
       ];
     }
+    {
+      repo = "MisanthropicBit/neotest-busted";
+      name = "neotest-busted";
+      path = neotest.neotest-busted;
+    }
   ];
 }
