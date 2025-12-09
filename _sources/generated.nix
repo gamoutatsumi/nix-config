@@ -23,18 +23,6 @@
       sha256 = "sha256-0C4CWTHXXsC/dbZvW5KT+oNXX07rweh2Nem385hwLmI=";
     };
   };
-  neotest-go = {
-    pname = "neotest-go";
-    version = "59b50505053f9c45a9febb79e11a56206c3e3901";
-    src = fetchFromGitHub {
-      owner = "nvim-neotest";
-      repo = "neotest-go";
-      rev = "59b50505053f9c45a9febb79e11a56206c3e3901";
-      fetchSubmodules = false;
-      sha256 = "sha256-btvAwNck/MAS0Xv2NzmPEYLuBb50DEiMjbkW3E7tg3I=";
-    };
-    date = "2025-10-31";
-  };
   neotest-golang = {
     pname = "neotest-golang";
     version = "v2.5.1";

@@ -15,10 +15,6 @@ fetch.github = "nvim-neotest/neotest"
 src.github = "nvim-neotest/nvim-nio"
 fetch.github = "nvim-neotest/nvim-nio"
 
-[neotest-go]
-src.git = "https://github.com/nvim-neotest/neotest-go.git"
-fetch.github = "nvim-neotest/neotest-go"
-
 [neotest-golang]
 src.github = "fredrikaverpil/neotest-golang"
 fetch.github = "fredrikaverpil/neotest-golang"

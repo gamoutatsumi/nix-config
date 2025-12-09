@@ -41,27 +41,6 @@
         },
         "version": "v5.13.4"
     },
-    "neotest-go": {
-        "cargoLocks": null,
-        "date": "2025-10-31",
-        "extract": null,
-        "name": "neotest-go",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "nvim-neotest",
-            "repo": "neotest-go",
-            "rev": "59b50505053f9c45a9febb79e11a56206c3e3901",
-            "sha256": "sha256-btvAwNck/MAS0Xv2NzmPEYLuBb50DEiMjbkW3E7tg3I=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "59b50505053f9c45a9febb79e11a56206c3e3901"
-    },
     "neotest-golang": {
         "cargoLocks": null,
         "date": null,
