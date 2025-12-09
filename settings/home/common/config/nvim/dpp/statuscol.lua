@@ -16,6 +16,7 @@ require("statuscol").setup({
             sign = { name = { "coverage" } },
             maxwidth = 1,
             colwidth = 1,
+            auto = true,
         },
         {
             sign = {
