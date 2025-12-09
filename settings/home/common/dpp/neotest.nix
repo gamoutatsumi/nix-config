@@ -11,9 +11,9 @@ in
       merged = false;
     }
     {
-      repo = "nvim-neotest/neotest-go";
-      name = "neotest-go";
-      path = neotest.neotest-go;
+      repo = "fredrikaverpil/neotest-golang";
+      name = "neotest-golang";
+      path = neotest.neotest-golang;
     }
     {
       repo = "nvim-neotest/neotest";

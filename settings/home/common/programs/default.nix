@@ -285,6 +285,7 @@ in
           yaml-language-server
           vscode-langservers-extracted
           typos-lsp
+          gotestsum
         ])
         ++ lib.optionals pkgs.stdenv.isLinux [
           upkgs.gcc
