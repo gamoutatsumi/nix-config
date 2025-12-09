@@ -19,6 +19,10 @@ fetch.github = "nvim-neotest/nvim-nio"
 src.git = "https://github.com/nvim-neotest/neotest-go.git"
 fetch.github = "nvim-neotest/neotest-go"
 
+[neotest-golang]
+src.github = "fredrikaverpil/neotest-golang"
+fetch.github = "fredrikaverpil/neotest-golang"
+
 [plenary]
 src.git = "https://github.com/nvim-lua/plenary.nvim.git"
 fetch.github = "nvim-lua/plenary.nvim"
