@@ -134,11 +134,26 @@
         settings = {
           formatter = {
             # keep-sorted start block=yes
+            deadnix = {
+              excludes = [ "_sources/*" ];
+            };
+            deno = {
+              excludes = [ "_sources/*" ];
+            };
+            jsonfmt = {
+              excludes = [ "_sources/*" ];
+            };
+            nixfmt = {
+              excludes = [ "_sources/*" ];
+            };
             prettier = {
               includes = lib.mkForce [ "*.md" ];
             };
             statix = {
-              excludes = [ ".direnv/*" ];
+              excludes = [
+                ".direnv/*"
+                "_sources/*"
+              ];
             };
             tombi = {
               command = lib.getExe upkgs.tombi;
