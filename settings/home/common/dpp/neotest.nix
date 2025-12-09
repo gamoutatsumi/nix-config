@@ -23,5 +23,13 @@ in
         "$BASE_DIR/dpp/neotest.lua"
       ];
     }
+    {
+      repo = "andythigpen/nvim-coverage";
+      name = "nvim-coverage";
+      path = neotest.coverage;
+      hooks_file = [
+        "$BASE_DIR/dpp/coverage.lua"
+      ];
+    }
   ];
 }
