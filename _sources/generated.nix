@@ -35,6 +35,18 @@
     };
     date = "2025-10-31";
   };
+  neotest-golang = {
+    pname = "neotest-golang";
+    version = "b982da5f39980797c1bdec875d688a302245f31f";
+    src = fetchFromGitHub {
+      owner = "fredrikaverpil";
+      repo = "neotest-golang";
+      rev = "b982da5f39980797c1bdec875d688a302245f31f";
+      fetchSubmodules = false;
+      sha256 = "sha256-f8FrtFvShPJWZY4+d2oC/ROwNDbTaYnIwd7BUvlHSnQ=";
+    };
+    date = "2025-11-17";
+  };
   nio = {
     pname = "nio";
     version = "v1.10.1";

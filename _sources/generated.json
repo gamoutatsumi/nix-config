@@ -62,6 +62,27 @@
         },
         "version": "59b50505053f9c45a9febb79e11a56206c3e3901"
     },
+    "neotest-golang": {
+        "cargoLocks": null,
+        "date": "2025-11-17",
+        "extract": null,
+        "name": "neotest-golang",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "fredrikaverpil",
+            "repo": "neotest-golang",
+            "rev": "b982da5f39980797c1bdec875d688a302245f31f",
+            "sha256": "sha256-f8FrtFvShPJWZY4+d2oC/ROwNDbTaYnIwd7BUvlHSnQ=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "b982da5f39980797c1bdec875d688a302245f31f"
+    },
     "nio": {
         "cargoLocks": null,
         "date": null,
