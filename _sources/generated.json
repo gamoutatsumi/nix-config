@@ -64,7 +64,7 @@
     },
     "neotest-golang": {
         "cargoLocks": null,
-        "date": "2025-11-17",
+        "date": null,
         "extract": null,
         "name": "neotest-golang",
         "passthru": null,
@@ -76,12 +76,12 @@
             "name": null,
             "owner": "fredrikaverpil",
             "repo": "neotest-golang",
-            "rev": "b982da5f39980797c1bdec875d688a302245f31f",
-            "sha256": "sha256-f8FrtFvShPJWZY4+d2oC/ROwNDbTaYnIwd7BUvlHSnQ=",
+            "rev": "v2.5.1",
+            "sha256": "sha256-rUuhpV/sOeIXEzuIl1nKlMQ98qrY+gE7Ng2mKu82mBA=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "b982da5f39980797c1bdec875d688a302245f31f"
+        "version": "v2.5.1"
     },
     "nio": {
         "cargoLocks": null,

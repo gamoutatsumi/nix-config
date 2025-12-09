@@ -37,15 +37,14 @@
   };
   neotest-golang = {
     pname = "neotest-golang";
-    version = "b982da5f39980797c1bdec875d688a302245f31f";
+    version = "v2.5.1";
     src = fetchFromGitHub {
       owner = "fredrikaverpil";
       repo = "neotest-golang";
-      rev = "b982da5f39980797c1bdec875d688a302245f31f";
+      rev = "v2.5.1";
       fetchSubmodules = false;
-      sha256 = "sha256-f8FrtFvShPJWZY4+d2oC/ROwNDbTaYnIwd7BUvlHSnQ=";
+      sha256 = "sha256-rUuhpV/sOeIXEzuIl1nKlMQ98qrY+gE7Ng2mKu82mBA=";
     };
-    date = "2025-11-17";
   };
   nio = {
     pname = "nio";
