@@ -166,5 +166,26 @@
             "type": "github"
         },
         "version": "b7404d35d5d3548a82149238289fa71f7f6de4ac"
+    },
+    "statuscol-nvim": {
+        "cargoLocks": null,
+        "date": "2025-06-02",
+        "extract": null,
+        "name": "statuscol-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "luukvbaal",
+            "repo": "statuscol.nvim",
+            "rev": "c46172d0911aa5d49ba5f39f4351d1bb7aa289cc",
+            "sha256": "sha256-nFEQRJ5V+0RskJoAVRPAe2yrkORMTg9Jm13ClTmTSgk=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "c46172d0911aa5d49ba5f39f4351d1bb7aa289cc"
     }
 }

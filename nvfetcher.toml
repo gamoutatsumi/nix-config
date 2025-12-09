@@ -30,3 +30,7 @@ fetch.github = "nvim-lua/popup.nvim"
 [nvim-coverage]
 src.git = "https://github.com/andythigpen/nvim-coverage"
 fetch.github = "andythigpen/nvim-coverage"
+
+[statuscol-nvim]
+src.git = "https://github.com/luukvbaal/statuscol.nvim"
+fetch.github = "luukvbaal/statuscol.nvim"

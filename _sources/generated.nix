@@ -93,4 +93,16 @@
     };
     date = "2021-11-18";
   };
+  statuscol-nvim = {
+    pname = "statuscol-nvim";
+    version = "c46172d0911aa5d49ba5f39f4351d1bb7aa289cc";
+    src = fetchFromGitHub {
+      owner = "luukvbaal";
+      repo = "statuscol.nvim";
+      rev = "c46172d0911aa5d49ba5f39f4351d1bb7aa289cc";
+      fetchSubmodules = false;
+      sha256 = "sha256-nFEQRJ5V+0RskJoAVRPAe2yrkORMTg9Jm13ClTmTSgk=";
+    };
+    date = "2025-06-02";
+  };
 }
