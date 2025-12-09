@@ -20,12 +20,6 @@ require("statuscol").setup({
         },
         {
             sign = {
-                namespace = { "diagnostic" },
-                maxwidth = 1,
-            },
-        },
-        {
-            sign = {
                 name = { "DapBreakpoint.*" },
                 maxwidth = 1,
                 colwidth = 1,
