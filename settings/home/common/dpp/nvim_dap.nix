@@ -8,25 +8,12 @@ in
       repo = "mfussenegger/nvim-dap";
       name = "nvim-dap";
       path = nvim_dap.dap;
-      hook_add = ''
-        nnoremap <silent> <F5> <Cmd>lua require'dap'.continue()<CR>
-        nnoremap <silent> <F10> <Cmd>lua require'dap'.step_over()<CR>
-        nnoremap <silent> <F11> <Cmd>lua require'dap'.step_into()<CR>
-        nnoremap <silent> <F12> <Cmd>lua require'dap'.step_out()<CR>
-        nnoremap <silent> <Leader>b <Cmd>lua require'dap'.toggle_breakpoint()<CR>
-        nnoremap <silent> <Leader>B <Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
-        nnoremap <silent> <Leader>lp <Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
-        nnoremap <silent> <Leader>dr <Cmd>lua require'dap'.repl.open()<CR>
-        nnoremap <silent> <Leader>dl <Cmd>lua require'dap'.run_last()<CR>
-      '';
+      hooks_file = [ "$BASE_DIR/dpp/dap.lua" ];
     }
     {
       repo = "rcarriga/nvim-dap-ui";
       name = "nvim-dap-ui";
       path = nvim_dap.dap-ui;
-      hook_add = ''
-        nnoremap <silent> <Leader>du <Cmd>lua require'dapui'.toggle()<CR>
-      '';
     }
     {
       repo = "theHamsta/nvim-dap-virtual-text";
