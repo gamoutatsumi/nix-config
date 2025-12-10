@@ -11,7 +11,7 @@ require("neotest").setup({
                 "-coverprofile=" .. vim.fn.getcwd() .. "/cover.out",
             },
         }),
-        require("neotest-busted"),
+        require("neotest-plenary"),
     },
 })
 -- }}}

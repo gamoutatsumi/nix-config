@@ -134,14 +134,6 @@
       hooks_file = [ "$BASE_DIR/dpp/fidget.lua" ];
     }
     {
-      repo = "CopilotC-Nvim/CopilotChat.nvim";
-      lua_add = ''
-        require('CopilotChat').setup {
-          language = 'Japanese'
-        }
-      '';
-    }
-    {
       repo = "stevearc/dressing.nvim";
       hooks_file = [ "$BASE_DIR/dpp/dressing.lua" ];
     }

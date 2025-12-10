@@ -867,6 +867,66 @@
         "type": "github"
       }
     },
+    "nvim-treesitter": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1765274540,
+        "narHash": "sha256-8wZhhvlJL0+i4OyVMile23tJvw3kxn2RwjaDkihCUC4=",
+        "owner": "nvim-treesitter",
+        "repo": "nvim-treesitter",
+        "rev": "b6271b678e035a5cbf62d637364f3eeca0890171",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-treesitter",
+        "ref": "main",
+        "repo": "nvim-treesitter",
+        "type": "github"
+      }
+    },
+    "nvim-treesitter-main": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ],
+        "nvim-treesitter": [
+          "nvim-treesitter"
+        ],
+        "nvim-treesitter-textobjects": [
+          "nvim-treesitter-textobjects"
+        ]
+      },
+      "locked": {
+        "lastModified": 1765133966,
+        "narHash": "sha256-bALsLOGiMhs8uc/kgloDX/voquDA81O9AnG0bTJDWvs=",
+        "owner": "iofq",
+        "repo": "nvim-treesitter-main",
+        "rev": "43ebb4a2f28181d15e3f7aea3e13292aa7818b63",
+        "type": "github"
+      },
+      "original": {
+        "owner": "iofq",
+        "repo": "nvim-treesitter-main",
+        "type": "github"
+      }
+    },
+    "nvim-treesitter-textobjects": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1765057291,
+        "narHash": "sha256-k4U3MGs01DBeb1NZDF3C8uerRAo4o+CZMhy5v3Ub1BU=",
+        "owner": "nvim-treesitter",
+        "repo": "nvim-treesitter-textobjects",
+        "rev": "76deedf0f1cec4496ef8d49b6d1f020f6d0c6ec9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-treesitter",
+        "ref": "main",
+        "repo": "nvim-treesitter-textobjects",
+        "type": "github"
+      }
+    },
     "oreore": {
       "inputs": {
         "flake-checker": [],
@@ -948,6 +1008,9 @@
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-unstable": "nixpkgs-unstable",
+        "nvim-treesitter": "nvim-treesitter",
+        "nvim-treesitter-main": "nvim-treesitter-main",
+        "nvim-treesitter-textobjects": "nvim-treesitter-textobjects",
         "oreore": "oreore",
         "pre-commit-hooks": "pre-commit-hooks",
         "systems": "systems_2",

@@ -32,9 +32,9 @@ in
       ];
     }
     {
-      repo = "MisanthropicBit/neotest-busted";
-      name = "neotest-busted";
-      path = neotest.neotest-busted;
+      repo = "nvim-neotest/neotest-plenary";
+      name = "neotest-plenary";
+      path = neotest.neotest-plenary;
     }
   ];
 }

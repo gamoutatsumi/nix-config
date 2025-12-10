@@ -226,6 +226,28 @@
     nixpkgs-unstable = {
       url = "github:NixOS/nixpkgs?ref=nixos-unstable";
     };
+    nvim-treesitter = {
+      url = "github:nvim-treesitter/nvim-treesitter/main";
+      flake = false;
+    };
+    nvim-treesitter-main = {
+      url = "github:iofq/nvim-treesitter-main";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs-unstable";
+        };
+        nvim-treesitter = {
+          follows = "nvim-treesitter";
+        };
+        nvim-treesitter-textobjects = {
+          follows = "nvim-treesitter-textobjects";
+        };
+      };
+    };
+    nvim-treesitter-textobjects = {
+      url = "github:nvim-treesitter/nvim-treesitter-textobjects/main";
+      flake = false;
+    };
     oreore = {
       url = "github:gamoutatsumi/oreore-flake";
       inputs = {

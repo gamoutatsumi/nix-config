@@ -1,8 +1,3 @@
-[nvim-treesitter]
-src.git = "https://github.com/nvim-treesitter/nvim-treesitter.git"
-src.branch = "main"
-fetch.github = "nvim-treesitter/nvim-treesitter"
-
 [denops-vim]
 src.github = "vim-denops/denops.vim"
 fetch.github = "vim-denops/denops.vim"
@@ -35,6 +30,10 @@ fetch.github = "andythigpen/nvim-coverage"
 src.git = "https://github.com/luukvbaal/statuscol.nvim"
 fetch.github = "luukvbaal/statuscol.nvim"
 
-[neotest-busted]
-src.github = "MisanthropicBit/neotest-busted"
-fetch.github = "MisanthropicBit/neotest-busted"
+[neotest-plenary]
+src.git = "https://github.com/nvim-neotest/neotest-plenary"
+fetch.github = "nvim-neotest/neotest-plenary"
+
+[avante-nvim]
+src.git = "https://github.com/yetone/avante.nvim"
+fetch.github = "yetone/avante.nvim"

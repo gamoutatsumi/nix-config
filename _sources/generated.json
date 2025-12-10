@@ -1,4 +1,25 @@
 {
+    "avante-nvim": {
+        "cargoLocks": null,
+        "date": "2025-12-10",
+        "extract": null,
+        "name": "avante-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "yetone",
+            "repo": "avante.nvim",
+            "rev": "bbf6d8f0d9aa072a2ccffc7701936eaa71985f92",
+            "sha256": "sha256-Ig4yMpoNEWMIHqh3Cq6taAkyBFesLk+C+nb/Kld18ag=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "bbf6d8f0d9aa072a2ccffc7701936eaa71985f92"
+    },
     "denops-vim": {
         "cargoLocks": null,
         "date": null,
@@ -41,27 +62,6 @@
         },
         "version": "v5.13.4"
     },
-    "neotest-busted": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "neotest-busted",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "MisanthropicBit",
-            "repo": "neotest-busted",
-            "rev": "v1.3.1",
-            "sha256": "sha256-Xy8SB/6T1M1NVks2GD5IUrOGKrP4x8+Hcw4uMtjC81w=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "v1.3.1"
-    },
     "neotest-golang": {
         "cargoLocks": null,
         "date": null,
@@ -82,6 +82,27 @@
             "type": "github"
         },
         "version": "v2.5.1"
+    },
+    "neotest-plenary": {
+        "cargoLocks": null,
+        "date": "2024-09-15",
+        "extract": null,
+        "name": "neotest-plenary",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "nvim-neotest",
+            "repo": "neotest-plenary",
+            "rev": "3523adcf9ffaad1911960c5813b0136c1b63a2ec",
+            "sha256": "sha256-NQGGq1HiBmu/4OhkvNruUWw+OmzS8MQ8LL9dWwaw2oo=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "3523adcf9ffaad1911960c5813b0136c1b63a2ec"
     },
     "nvim-coverage": {
         "cargoLocks": null,
@@ -124,27 +145,6 @@
             "type": "github"
         },
         "version": "v1.10.1"
-    },
-    "nvim-treesitter": {
-        "cargoLocks": null,
-        "date": "2025-12-09",
-        "extract": null,
-        "name": "nvim-treesitter",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "nvim-treesitter",
-            "repo": "nvim-treesitter",
-            "rev": "b6271b678e035a5cbf62d637364f3eeca0890171",
-            "sha256": "sha256-8wZhhvlJL0+i4OyVMile23tJvw3kxn2RwjaDkihCUC4=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "b6271b678e035a5cbf62d637364f3eeca0890171"
     },
     "plenary-nvim": {
         "cargoLocks": null,
