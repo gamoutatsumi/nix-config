@@ -42,6 +42,20 @@ local on_attach = function(client, bufnr)
         virtual_text = false,
         float = false,
         underline = true,
+        signs = {
+            text = {
+                [vim.diagnostic.severity.ERROR] = "",
+                [vim.diagnostic.severity.WARN] = "",
+                [vim.diagnostic.severity.INFO] = "",
+                [vim.diagnostic.severity.HINT] = "",
+            },
+            numhl = {
+                [vim.diagnostic.severity.WARN] = "WarningMsg",
+                [vim.diagnostic.severity.ERROR] = "ErrorMsg",
+                [vim.diagnostic.severity.INFO] = "DiagnosticInfo",
+                [vim.diagnostic.severity.HINT] = "DiagnosticHint",
+            },
+        },
     })
     vim.b.copilot_workspace_folder = vim.lsp.buf.list_workspace_folders()[1]
     vim.keymap.set(

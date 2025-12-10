@@ -1,9 +1,9 @@
-[treesitter]
+[nvim-treesitter]
 src.git = "https://github.com/nvim-treesitter/nvim-treesitter.git"
 src.branch = "main"
 fetch.github = "nvim-treesitter/nvim-treesitter"
 
-[denops]
+[denops-vim]
 src.github = "vim-denops/denops.vim"
 fetch.github = "vim-denops/denops.vim"
 
@@ -11,7 +11,7 @@ fetch.github = "vim-denops/denops.vim"
 src.github = "nvim-neotest/neotest"
 fetch.github = "nvim-neotest/neotest"
 
-[nio]
+[nvim-nio]
 src.github = "nvim-neotest/nvim-nio"
 fetch.github = "nvim-neotest/nvim-nio"
 
@@ -19,10 +19,22 @@ fetch.github = "nvim-neotest/nvim-nio"
 src.github = "fredrikaverpil/neotest-golang"
 fetch.github = "fredrikaverpil/neotest-golang"
 
-[plenary]
+[plenary-nvim]
 src.git = "https://github.com/nvim-lua/plenary.nvim.git"
 fetch.github = "nvim-lua/plenary.nvim"
 
-[popup]
+[popup-nvim]
 src.git = "https://github.com/nvim-lua/popup.nvim.git"
 fetch.github = "nvim-lua/popup.nvim"
+
+[nvim-coverage]
+src.git = "https://github.com/andythigpen/nvim-coverage"
+fetch.github = "andythigpen/nvim-coverage"
+
+[statuscol-nvim]
+src.git = "https://github.com/luukvbaal/statuscol.nvim"
+fetch.github = "luukvbaal/statuscol.nvim"
+
+[neotest-busted]
+src.github = "MisanthropicBit/neotest-busted"
+fetch.github = "MisanthropicBit/neotest-busted"

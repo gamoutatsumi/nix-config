@@ -88,11 +88,11 @@
     "brew-api": {
       "flake": false,
       "locked": {
-        "lastModified": 1765261543,
-        "narHash": "sha256-aUeEU0cDmU268MYyAoAUR8mYdEA67JUOyIVglq9aZN8=",
+        "lastModified": 1765268627,
+        "narHash": "sha256-0zkYih4IrUs62A5Jt3dynfNOCICq+4uKs+LeJoJZWhQ=",
         "owner": "BatteredBunny",
         "repo": "brew-api",
-        "rev": "15b809844b495e436609d2d904b06c37fe1b9687",
+        "rev": "596378270db142ac404e1a9e0f6fdd7bdce83146",
         "type": "github"
       },
       "original": {
@@ -711,11 +711,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1765250530,
-        "narHash": "sha256-RmsDstkKCDhGNVlbyc6+dUxuZGb+otMVzzAQPNpHxV4=",
+        "lastModified": 1765262371,
+        "narHash": "sha256-htlxwHA2M94ZJ6gUOxY9WLT6yhCUnTXBXLlSF+BLg5A=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "ed9abb1851e31b98b79b1b06eef5ceeccdbb7372",
+        "rev": "23f4fab0bdfea0003c0cbbef8399e82756c579a3",
         "type": "github"
       },
       "original": {

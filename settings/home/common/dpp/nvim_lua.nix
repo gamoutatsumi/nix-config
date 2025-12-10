@@ -14,5 +14,11 @@ in
       name = "popup.nvim";
       path = nvim_lua.popup;
     }
+    {
+      repo = "luukvbaal/statuscol.nvim";
+      name = "statuscol.nvim";
+      path = nvim_lua.statuscol;
+      hooks_file = [ "$BASE_DIR/dpp/statuscol.lua" ];
+    }
   ];
 }

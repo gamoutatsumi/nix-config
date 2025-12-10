@@ -2,7 +2,8 @@
 let
   fetchers = pkgs.callPackage ../_sources/generated.nix { };
 in
-rec {
-  plenary = fetchers.plenary.src;
-  popup = fetchers.popup.src;
+{
+  plenary = fetchers.plenary-nvim.src;
+  popup = fetchers.popup-nvim.src;
+  statuscol = fetchers.statuscol-nvim.src;
 }

@@ -1,8 +1,8 @@
 { pkgs }:
 let
-  inherit ((pkgs.callPackage ../_sources/generated.nix { })) denops;
+  inherit ((pkgs.callPackage ../_sources/generated.nix { })) denops-vim;
 in
 pkgs.vimUtils.buildVimPlugin {
   name = "denops";
-  inherit (denops) src version;
+  inherit (denops-vim) src version;
 }

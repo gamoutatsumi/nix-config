@@ -118,7 +118,7 @@ in
               src = ./config/nvim/lua/core/treesitter.lua;
               replacements = {
                 treesitter_runtime = "${
-                  (pkgs.callPackage ../../../_sources/generated.nix { }).treesitter.src
+                  (pkgs.callPackage ../../../_sources/generated.nix { }).nvim-treesitter.src
                 }/runtime";
                 treesitter_parsers = "${upkgs.symlinkJoin {
                   name = "ts-parsers";
@@ -126,6 +126,16 @@ in
                 }}";
               };
               dir = "lua/core";
+            })
+            (pkgs.replaceVarsWith {
+              src = ./config/nvim/dpp/treesitter.lua;
+              replacements = {
+                treesitter_parsers = "${upkgs.symlinkJoin {
+                  name = "ts-parsers";
+                  paths = upkgs.vimPlugins.nvim-treesitter.withAllGrammars.dependencies;
+                }}";
+              };
+              dir = "dpp";
             })
             (pkgs.callPackage ./dpp { })
             ./config/nvim
