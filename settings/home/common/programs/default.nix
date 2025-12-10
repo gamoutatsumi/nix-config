@@ -287,6 +287,7 @@ in
           typos-lsp
           gotestsum
           luajitPackages.busted
+          delve
         ])
         ++ lib.optionals pkgs.stdenv.isLinux [
           upkgs.gcc

@@ -37,3 +37,19 @@ fetch.github = "nvim-neotest/neotest-plenary"
 [avante-nvim]
 src.git = "https://github.com/yetone/avante.nvim"
 fetch.github = "yetone/avante.nvim"
+
+[nvim-dap-go]
+src.git = "https://github.com/leoluz/nvim-dap-go"
+fetch.github = "leoluz/nvim-dap-go"
+
+[nvim-dap]
+src.git = "https://github.com/mfussenegger/nvim-dap"
+fetch.github = "mfussenegger/nvim-dap"
+
+[nvim-dap-ui]
+src.git = "https://github.com/rcarriga/nvim-dap-ui"
+fetch.github = "rcarriga/nvim-dap-ui"
+
+[nvim-dap-virtual-text]
+src.git = "https://github.com/theHamsta/nvim-dap-virtual-text"
+fetch.github = "theHamsta/nvim-dap-virtual-text"

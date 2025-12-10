@@ -125,6 +125,90 @@
         },
         "version": "a939e425e363319d952a6c35fb3f38b34041ded2"
     },
+    "nvim-dap": {
+        "cargoLocks": null,
+        "date": "2025-11-17",
+        "extract": null,
+        "name": "nvim-dap",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "mfussenegger",
+            "repo": "nvim-dap",
+            "rev": "5860c7c501eb428d3137ee22c522828d20cca0b3",
+            "sha256": "sha256-WXuetpSU6wIZu6UFBM4rJTpJcnJ8pn7dxCVnBjsk0N4=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "5860c7c501eb428d3137ee22c522828d20cca0b3"
+    },
+    "nvim-dap-go": {
+        "cargoLocks": null,
+        "date": "2025-07-11",
+        "extract": null,
+        "name": "nvim-dap-go",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "leoluz",
+            "repo": "nvim-dap-go",
+            "rev": "b4421153ead5d726603b02743ea40cf26a51ed5f",
+            "sha256": "sha256-wg9kiW2eAMmg4bvgqaAS9kt7qaVsIWl36BNqRbhZIgo=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "b4421153ead5d726603b02743ea40cf26a51ed5f"
+    },
+    "nvim-dap-ui": {
+        "cargoLocks": null,
+        "date": "2025-07-09",
+        "extract": null,
+        "name": "nvim-dap-ui",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "rcarriga",
+            "repo": "nvim-dap-ui",
+            "rev": "cf91d5e2d07c72903d052f5207511bf7ecdb7122",
+            "sha256": "sha256-391zChjd6uAJycfXy1RG2Qt0OdCY3/WF9u0MWLtFZxA=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "cf91d5e2d07c72903d052f5207511bf7ecdb7122"
+    },
+    "nvim-dap-virtual-text": {
+        "cargoLocks": null,
+        "date": "2025-05-25",
+        "extract": null,
+        "name": "nvim-dap-virtual-text",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "theHamsta",
+            "repo": "nvim-dap-virtual-text",
+            "rev": "fbdb48c2ed45f4a8293d0d483f7730d24467ccb6",
+            "sha256": "sha256-8hsk+EwnvoHCNhb0dcL9e4hQg9I+t/5Cy9ZoZgcz4fU=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "fbdb48c2ed45f4a8293d0d483f7730d24467ccb6"
+    },
     "nvim-nio": {
         "cargoLocks": null,
         "date": null,

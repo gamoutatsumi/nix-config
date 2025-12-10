@@ -70,6 +70,54 @@
     };
     date = "2024-12-18";
   };
+  nvim-dap = {
+    pname = "nvim-dap";
+    version = "5860c7c501eb428d3137ee22c522828d20cca0b3";
+    src = fetchFromGitHub {
+      owner = "mfussenegger";
+      repo = "nvim-dap";
+      rev = "5860c7c501eb428d3137ee22c522828d20cca0b3";
+      fetchSubmodules = false;
+      sha256 = "sha256-WXuetpSU6wIZu6UFBM4rJTpJcnJ8pn7dxCVnBjsk0N4=";
+    };
+    date = "2025-11-17";
+  };
+  nvim-dap-go = {
+    pname = "nvim-dap-go";
+    version = "b4421153ead5d726603b02743ea40cf26a51ed5f";
+    src = fetchFromGitHub {
+      owner = "leoluz";
+      repo = "nvim-dap-go";
+      rev = "b4421153ead5d726603b02743ea40cf26a51ed5f";
+      fetchSubmodules = false;
+      sha256 = "sha256-wg9kiW2eAMmg4bvgqaAS9kt7qaVsIWl36BNqRbhZIgo=";
+    };
+    date = "2025-07-11";
+  };
+  nvim-dap-ui = {
+    pname = "nvim-dap-ui";
+    version = "cf91d5e2d07c72903d052f5207511bf7ecdb7122";
+    src = fetchFromGitHub {
+      owner = "rcarriga";
+      repo = "nvim-dap-ui";
+      rev = "cf91d5e2d07c72903d052f5207511bf7ecdb7122";
+      fetchSubmodules = false;
+      sha256 = "sha256-391zChjd6uAJycfXy1RG2Qt0OdCY3/WF9u0MWLtFZxA=";
+    };
+    date = "2025-07-09";
+  };
+  nvim-dap-virtual-text = {
+    pname = "nvim-dap-virtual-text";
+    version = "fbdb48c2ed45f4a8293d0d483f7730d24467ccb6";
+    src = fetchFromGitHub {
+      owner = "theHamsta";
+      repo = "nvim-dap-virtual-text";
+      rev = "fbdb48c2ed45f4a8293d0d483f7730d24467ccb6";
+      fetchSubmodules = false;
+      sha256 = "sha256-8hsk+EwnvoHCNhb0dcL9e4hQg9I+t/5Cy9ZoZgcz4fU=";
+    };
+    date = "2025-05-25";
+  };
   nvim-nio = {
     pname = "nvim-nio";
     version = "v1.10.1";

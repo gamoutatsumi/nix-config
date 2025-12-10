@@ -41,7 +41,7 @@ pkgs.linkFarm "dpp-tomls" [
   }
   {
     name = "nvim_dap.toml";
-    path = tomlFormat.generate "nvim_dap.toml" (import ./nvim_dap.nix);
+    path = tomlFormat.generate "nvim_dap.toml" (import ./nvim_dap.nix { inherit pkgs; });
   }
   {
     name = "nvim_lsp.toml";

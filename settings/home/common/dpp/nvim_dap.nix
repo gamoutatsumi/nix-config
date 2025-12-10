@@ -1,7 +1,13 @@
+{ pkgs }:
+let
+  nvim_dap = pkgs.callPackage ../../../../vimPlugins/nvim_dap.nix { };
+in
 {
   plugins = [
     {
       repo = "mfussenegger/nvim-dap";
+      name = "nvim-dap";
+      path = nvim_dap.dap;
       hook_add = ''
         nnoremap <silent> <F5> <Cmd>lua require'dap'.continue()<CR>
         nnoremap <silent> <F10> <Cmd>lua require'dap'.step_over()<CR>
@@ -16,12 +22,21 @@
     }
     {
       repo = "rcarriga/nvim-dap-ui";
+      name = "nvim-dap-ui";
+      path = nvim_dap.dap-ui;
       hook_add = ''
         nnoremap <silent> <Leader>du <Cmd>lua require'dapui'.toggle()<CR>
       '';
     }
     {
       repo = "theHamsta/nvim-dap-virtual-text";
+      name = "nvim-dap-virtual-text";
+      path = nvim_dap.dap-virtual-text;
+    }
+    {
+      repo = "leoluz/nvim-dap-go";
+      name = "nvim-dap-go";
+      path = nvim_dap.dap-go;
     }
   ];
 }

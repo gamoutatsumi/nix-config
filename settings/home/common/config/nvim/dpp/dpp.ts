@@ -64,7 +64,6 @@ export class Config extends BaseConfig {
         "$BASE_DIR/dpp.toml",
         "$BASE_DIR/merge.toml",
         hasNvim ? "$BASE_DIR/treesitter.toml" : null,
-        hasNvim ? "$BASE_DIR/nvim_dap.toml" : null,
         hasNvim ? "$BASE_DIR/nvim_lsp.toml" : "$BASE_DIR/vim_lsp.toml",
         hasNvim ? "$BASE_DIR/neovim.toml" : "$BASE_DIR/vim.toml",
         "$BASE_DIR/denops.toml",
@@ -117,6 +116,7 @@ export class Config extends BaseConfig {
       const toml of [
         hasNvim ? "$BASE_DIR/neotest.toml" : null,
         hasNvim ? "$BASE_DIR/nvim_lua.toml" : null,
+        hasNvim ? "$BASE_DIR/nvim_dap.toml" : null,
       ].filter(is.String)
     ) {
       tomls.push(
