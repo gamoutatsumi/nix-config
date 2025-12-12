@@ -20,7 +20,7 @@ in
       name = "neotest";
       path = neotest.neotest;
       hooks_file = [
-        "$BASE_DIR/dpp/neotest.lua"
+        ./hooks/neotest.lua
       ];
     }
     {
@@ -28,7 +28,7 @@ in
       name = "nvim-coverage";
       path = neotest.coverage;
       hooks_file = [
-        "$BASE_DIR/dpp/coverage.lua"
+        ./hooks/coverage.lua
       ];
     }
     {

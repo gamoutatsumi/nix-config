@@ -18,18 +18,12 @@ in
       repo = "luukvbaal/statuscol.nvim";
       name = "statuscol.nvim";
       path = nvim_lua.statuscol;
-      hooks_file = [ "$BASE_DIR/dpp/statuscol.lua" ];
+      hooks_file = [ ./hooks/statuscol.lua ];
     }
     {
       repo = "yetone/avante.nvim";
       name = "avante.nvim";
       path = nvim_lua.avante;
-    }
-    {
-      repo = "nvim-treesitter/nvim-treesitter";
-      name = "nvim-treesitter";
-      path = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
-      hooks_file = "$BASE_DIR/dpp/treesitter.lua";
     }
   ];
 }

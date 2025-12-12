@@ -1,9 +1,22 @@
+{ pkgs }:
 {
   plugins = [
     {
       repo = "Shougo/ddc.vim";
-      hooks_file = "$BASE_DIR/dpp/ddc.vim";
-      build = "git update-index --skip-worktree denops/ddc/_mods.js";
+      hooks_file = pkgs.replaceVars ./hooks/ddc.vim {
+        ddc_ts = "${
+          pkgs.linkFarm "ddc-hooks" [
+            {
+              name = "ddc.ts";
+              path = ./hooks/ddc.ts;
+            }
+            {
+              name = "deno.json";
+              path = ./hooks/deno.json;
+            }
+          ]
+        }/ddc.ts";
+      };
     }
     {
       repo = "Shougo/ddc-ui-pum";
@@ -25,7 +38,7 @@
     }
     {
       repo = "Shougo/pum.vim";
-      hooks_file = "$BASE_DIR/dpp/pum.vim";
+      hooks_file = ./hooks/pum.vim;
     }
     {
       repo = "hrsh7th/completion-snippet";
@@ -57,7 +70,7 @@
     }
     {
       repo = "uga-rosa/denippet.vim";
-      hooks_file = "$BASE_DIR/dpp/denippet.lua";
+      hooks_file = ./hooks/denippet.lua;
     }
     {
       repo = "Shougo/ddc-source-lsp";

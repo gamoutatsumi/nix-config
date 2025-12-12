@@ -32,7 +32,7 @@
     {
       repo = "thinca/vim-quickrun";
       on_cmd = [ "QuickRun" ];
-      hooks_file = "$BASE_DIR/dpp/quickrun.vim";
+      hooks_file = ./hooks/quickrun.vim;
     }
     {
       repo = "lambdalisue/vim-glyph-palette";
@@ -65,7 +65,7 @@
         "<Plug>(operator-sandwich"
         "<Plug>(textobj-sandwich"
       ];
-      hooks_file = "$BASE_DIR/dpp/sandwich.vim";
+      hooks_file = ./hooks/sandwich.vim;
     }
     {
       repo = "arthurxavierx/vim-caser";

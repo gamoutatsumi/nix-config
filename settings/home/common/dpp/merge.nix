@@ -36,7 +36,7 @@
     }
     {
       repo = "lambdalisue/vim-fern";
-      hooks_file = "$BASE_DIR/dpp/fern.vim";
+      hooks_file = ./hooks/fern.vim;
     }
     {
       repo = "lambdalisue/vim-fern-renderer-nerdfont";
@@ -75,7 +75,7 @@
     }
     {
       repo = "hrsh7th/vim-searchx";
-      hooks_file = "$BASE_DIR/dpp/searchx.vim";
+      hooks_file = ./hooks/searchx.vim;
     }
     {
       repo = "lambdalisue/vim-manpager";

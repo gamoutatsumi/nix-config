@@ -1,3 +1,4 @@
+{ pkgs }:
 {
   plugins = [
     {
@@ -8,11 +9,11 @@
     }
     {
       repo = "lewis6991/gitsigns.nvim";
-      hooks_file = "$BASE_DIR/dpp/gitsigns.lua";
+      hooks_file = ./hooks/gitsigns.lua;
     }
     {
       repo = "nvim-lualine/lualine.nvim";
-      hooks_file = "$BASE_DIR/dpp/lualine.lua";
+      hooks_file = ./hooks/lualine.lua;
     }
     {
       repo = "kyazdani42/nvim-web-devicons";
@@ -20,13 +21,13 @@
     {
       repo = "romgrk/barbar.nvim";
       hooks_file = [
-        "$BASE_DIR/dpp/barbar.vim"
-        "$BASE_DIR/dpp/barbar.lua"
+        ./hooks/barbar.vim
+        ./hooks/barbar.lua
       ];
     }
     {
       repo = "folke/flash.nvim";
-      hooks_file = "$BASE_DIR/dpp/flash.lua";
+      hooks_file = ./hooks/flash.lua;
     }
     {
       repo = "kwkarlwang/bufresize.nvim";
@@ -72,7 +73,7 @@
     }
     {
       repo = "monaqa/dial.nvim";
-      hooks_file = [ "$BASE_DIR/dpp/dial.vim" ];
+      hooks_file = [ ./hooks/dial.vim ];
     }
     {
       repo = "ray-x/guihua.lua";
@@ -85,7 +86,7 @@
     }
     {
       repo = "stevearc/aerial.nvim";
-      hooks_file = "$BASE_DIR/dpp/aerial.lua";
+      hooks_file = ./hooks/aerial.lua;
     }
     {
       repo = "tani/podium";
@@ -114,11 +115,11 @@
     }
     {
       repo = "lukas-reineke/indent-blankline.nvim";
-      hooks_file = [ "$BASE_DIR/dpp/indent_blankline.lua" ];
+      hooks_file = [ ./hooks/indent_blankline.lua ];
     }
     {
       repo = "numToStr/Comment.nvim";
-      hooks_file = [ "$BASE_DIR/dpp/comment.lua" ];
+      hooks_file = [ ./hooks/comment.lua ];
     }
     {
       repo = "bakpakin/Fennel";
@@ -131,11 +132,11 @@
     {
       repo = "j-hui/fidget.nvim";
       rev = "v1.6.1";
-      hooks_file = [ "$BASE_DIR/dpp/fidget.lua" ];
+      hooks_file = [ ./hooks/fidget.lua ];
     }
     {
       repo = "stevearc/dressing.nvim";
-      hooks_file = [ "$BASE_DIR/dpp/dressing.lua" ];
+      hooks_file = [ ./hooks/dressing.lua ];
     }
     {
       repo = "stevearc/oil.nvim";
@@ -154,18 +155,25 @@
     {
       repo = "zbirenbaum/copilot.lua";
       on_event = [ "InsertEnter" ];
-      hooks_file = [ "$BASE_DIR/dpp/copilot.lua" ];
+      hooks_file = [
+        (pkgs.replaceVarsWith {
+          src = ./hooks/copilot.lua;
+          replacements = {
+            copilot_ls = pkgs.lib.getExe pkgs.copilot-language-server;
+          };
+        })
+      ];
     }
     {
       repo = "h3pei/trace-pr.nvim";
     }
     {
       repo = "hrsh7th/nvim-insx";
-      hooks_file = [ "$BASE_DIR/dpp/insx.lua" ];
+      hooks_file = [ ./hooks/insx.lua ];
     }
     {
       repo = "lambdalisue/nvim-aibo";
-      hooks_file = [ "$BASE_DIR/dpp/aibo.lua" ];
+      hooks_file = [ ./hooks/aibo.lua ];
     }
   ];
 }

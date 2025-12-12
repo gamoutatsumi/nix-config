@@ -7,7 +7,7 @@
     }
     {
       repo = "github/copilot.vim";
-      hooks_file = "$BASE_DIR/dpp/copilot.vim";
+      hooks_file = ./hooks/copilot.vim;
     }
   ];
 }

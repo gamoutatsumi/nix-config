@@ -1,9 +1,22 @@
+{ pkgs }:
 {
   plugins = [
     {
       repo = "Shougo/ddu.vim";
-      hooks_file = "$BASE_DIR/dpp/ddu.vim";
-      build = "git update-index --skip-worktree denops/ddu/_mods.js";
+      hooks_file = pkgs.replaceVars ./hooks/ddu.vim {
+        ddu_ts = "${
+          pkgs.linkFarm "ddu-hooks" [
+            {
+              name = "ddu.ts";
+              path = ./hooks/ddu.ts;
+            }
+            {
+              name = "deno.json";
+              path = ./hooks/deno.json;
+            }
+          ]
+        }/ddu.ts";
+      };
     }
     {
       repo = "Shougo/ddu-ui-ff";

@@ -2,7 +2,7 @@
   plugins = [
     {
       repo = "neovim/nvim-lspconfig";
-      hooks_file = [ "$BASE_DIR/dpp/nvim_lsp.lua" ];
+      hooks_file = [ ./hooks/nvim_lsp.lua ];
     }
     {
       repo = "hrsh7th/nvim-gtd";

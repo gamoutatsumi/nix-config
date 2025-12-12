@@ -8,7 +8,7 @@ in
       repo = "mfussenegger/nvim-dap";
       name = "nvim-dap";
       path = nvim_dap.dap;
-      hooks_file = [ "$BASE_DIR/dpp/dap.lua" ];
+      hooks_file = [ ./hooks/dap.lua ];
     }
     {
       repo = "rcarriga/nvim-dap-ui";

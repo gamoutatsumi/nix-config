@@ -274,6 +274,7 @@ in
       enable = true;
       plugins = [
         (pkgs.callPackage ../../../../vimPlugins/denops.nix { })
+        upkgs.vimPlugins.nvim-treesitter.withAllGrammars
       ];
       extraPackages =
         (with pkgs; [ nil ])

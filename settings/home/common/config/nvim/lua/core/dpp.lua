@@ -35,10 +35,8 @@ function M.setup()
         return true -- Indicate success
     end
 
-    local dpp_config_file = vim.fs.joinpath(vim.fn.stdpath("config"), "dpp", "dpp.ts")
-
     local function dpp_make_state()
-        vim.fn["dpp#make_state"](dpp_dir, dpp_config_file)
+        vim.fn["dpp#make_state"](dpp_dir, "@dpp_ts@")
     end
 
     -- Initialize dpp.vim, dpp-ext-lazy, and the theme first.

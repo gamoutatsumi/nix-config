@@ -6,10 +6,11 @@
     {
       repo = "nvim-treesitter/nvim-treesitter-textobjects";
       rev = "main";
+      hooks_file = [ ./hooks/treesitter_textobjects.lua ];
     }
     {
       repo = "https://gitlab.com/HiPhish/rainbow-delimiters.nvim";
-      hooks_file = "$BASE_DIR/dpp/rainbow.lua";
+      hooks_file = ./hooks/rainbow.lua;
       build = "git update-index --skip-worktree test && /bin/rm -rf test";
     }
     {
@@ -23,7 +24,7 @@
     }
     {
       repo = "nvim-treesitter/nvim-treesitter-context";
-      hooks_file = "$BASE_DIR/dpp/context.lua";
+      hooks_file = ./hooks/context.lua;
     }
   ];
 }

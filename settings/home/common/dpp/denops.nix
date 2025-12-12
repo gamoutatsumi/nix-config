@@ -1,11 +1,17 @@
-_: {
+{ pkgs }:
+{
   plugins = [
     {
       repo = "gamoutatsumi/dps-ghosttext.vim";
     }
     {
       repo = "vim-skk/skkeleton";
-      hooks_file = "$BASE_DIR/dpp/skkeleton.vim";
+      hooks_file = pkgs.replaceVarsWith {
+        src = ./hooks/skkeleton.vim;
+        replacements = {
+          skk_dict = "${pkgs.skkDictionaries.l}/share/skk/SKK-JISYO.L";
+        };
+      };
     }
     {
       repo = "gamoutatsumi/gyazoupload.vim";

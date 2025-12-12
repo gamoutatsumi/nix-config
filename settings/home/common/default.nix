@@ -87,25 +87,23 @@ in
           name = "nvim";
           paths = [
             (pkgs.replaceVarsWith {
-              src = ./config/nvim/dpp/skkeleton.vim;
-              replacements = {
-                skk_dict = "${pkgs.skkDictionaries.l}/share/skk/SKK-JISYO.L";
-              };
-              dir = "dpp";
-            })
-            (pkgs.replaceVarsWith {
               src = ./config/nvim/lua/core/dpp.lua;
               replacements = {
                 deno = lib.getExe upkgs.deno;
+                dpp_ts = "${
+                  pkgs.linkFarm "dpp" [
+                    {
+                      name = "dpp.ts";
+                      path = pkgs.replaceVars ./dpp/hooks/dpp.ts (import ./dpp/default.nix { pkgs = upkgs; });
+                    }
+                    {
+                      name = "deno.json";
+                      path = ./dpp/hooks/deno.json;
+                    }
+                  ]
+                }/dpp.ts";
               };
               dir = "lua/core";
-            })
-            (pkgs.replaceVarsWith {
-              src = ./config/nvim/dpp/copilot.lua;
-              replacements = {
-                copilot_ls = lib.getExe upkgs.copilot-language-server;
-              };
-              dir = "dpp";
             })
             (pkgs.replaceVarsWith {
               src = ./config/nvim/lua/core/vars.lua;
@@ -114,7 +112,6 @@ in
               };
               dir = "lua/core";
             })
-            (upkgs.callPackage ./dpp { })
             ./config/nvim
           ];
         };

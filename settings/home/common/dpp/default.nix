@@ -2,69 +2,20 @@
 let
   tomlFormat = pkgs.formats.toml { };
 in
-pkgs.linkFarm "dpp-tomls" [
-  {
-    name = "vim.toml";
-    path = tomlFormat.generate "vim.toml" (import ./vim.nix);
-  }
-  {
-    name = "neovim.toml";
-    path = tomlFormat.generate "neovim.toml" (import ./neovim.nix);
-  }
-  {
-    name = "ddc.toml";
-    path = tomlFormat.generate "ddc.toml" (import ./ddc.nix);
-  }
-  {
-    name = "ddt.toml";
-    path = tomlFormat.generate "ddt.toml" (import ./ddt.nix);
-  }
-  {
-    name = "ddu.toml";
-    path = tomlFormat.generate "ddu.toml" (import ./ddu.nix);
-  }
-  {
-    name = "denops.toml";
-    path = tomlFormat.generate "denops.toml" (import ./denops.nix { inherit pkgs; });
-  }
-  {
-    name = "dpp.toml";
-    path = tomlFormat.generate "dpp.toml" (import ./dpp.nix);
-  }
-  {
-    name = "lazy.toml";
-    path = tomlFormat.generate "lazy.toml" (import ./lazy.nix);
-  }
-  {
-    name = "merge.toml";
-    path = tomlFormat.generate "merge.toml" (import ./merge.nix);
-  }
-  {
-    name = "nvim_dap.toml";
-    path = tomlFormat.generate "nvim_dap.toml" (import ./nvim_dap.nix { inherit pkgs; });
-  }
-  {
-    name = "nvim_lsp.toml";
-    path = tomlFormat.generate "nvim_lsp.toml" (import ./nvim_lsp.nix);
-  }
-  {
-    name = "telescope.toml";
-    path = tomlFormat.generate "telescope.toml" (import ./telescope.nix);
-  }
-  {
-    name = "treesitter.toml";
-    path = tomlFormat.generate "treesitter.toml" (import ./treesitter.nix);
-  }
-  {
-    name = "vim_lsp.toml";
-    path = tomlFormat.generate "vim_lsp.toml" (import ./vim_lsp.nix);
-  }
-  {
-    name = "neotest.toml";
-    path = tomlFormat.generate "neotest.toml" (import ./neotest.nix { inherit pkgs; });
-  }
-  {
-    name = "nvim_lua.toml";
-    path = tomlFormat.generate "nvim_lua.toml" (import ./nvim_lua.nix { inherit pkgs; });
-  }
-]
+{
+  vim_toml = tomlFormat.generate "vim.toml" (import ./vim.nix);
+  neovim_toml = tomlFormat.generate "neovim.toml" (import ./neovim.nix { inherit pkgs; });
+  ddc_toml = tomlFormat.generate "ddc.toml" (import ./ddc.nix { inherit pkgs; });
+  ddt_toml = tomlFormat.generate "ddt.toml" (import ./ddt.nix);
+  ddu_toml = tomlFormat.generate "ddu.toml" (import ./ddu.nix { inherit pkgs; });
+  denops_toml = tomlFormat.generate "denops.toml" (import ./denops.nix { inherit pkgs; });
+  dpp_toml = tomlFormat.generate "dpp.toml" (import ./dpp.nix);
+  lazy_toml = tomlFormat.generate "lazy.toml" (import ./lazy.nix);
+  merge_toml = tomlFormat.generate "merge.toml" (import ./merge.nix);
+  nvim_dap_toml = tomlFormat.generate "nvim_dap.toml" (import ./nvim_dap.nix { inherit pkgs; });
+  nvim_lsp_toml = tomlFormat.generate "nvim_lsp.toml" (import ./nvim_lsp.nix);
+  treesitter_toml = tomlFormat.generate "treesitter.toml" (import ./treesitter.nix);
+  vim_lsp_toml = tomlFormat.generate "vim_lsp.toml" (import ./vim_lsp.nix);
+  neotest_toml = tomlFormat.generate "neotest.toml" (import ./neotest.nix { inherit pkgs; });
+  nvim_lua_toml = tomlFormat.generate "nvim_lua.toml" (import ./nvim_lua.nix { inherit pkgs; });
+}

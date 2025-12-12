@@ -2,10 +2,8 @@ import { ContextBuilder, Plugin } from "@shougo/dpp-vim/types";
 import { BaseConfig, ConfigReturn } from "@shougo/dpp-vim/config";
 import { Dpp } from "@shougo/dpp-vim/dpp";
 import { convert2List, parseHooksFile } from "@shougo/dpp-vim/utils";
-import { Denops } from "@denops/std";
-import { assert, ensure, is } from "@core/unknownutil";
-import { joinGlobs } from "@std/path";
-import { expandGlob } from "@std/fs";
+import type { Denops } from "@denops/std";
+import { assert, is } from "@core/unknownutil";
 
 async function fennelCompile(denops: Denops, text: string): Promise<string> {
   const compiled = await denops.call(
@@ -61,15 +59,15 @@ export class Config extends BaseConfig {
 
     for (
       const toml of [
-        "$BASE_DIR/dpp.toml",
-        "$BASE_DIR/merge.toml",
-        hasNvim ? "$BASE_DIR/treesitter.toml" : null,
-        hasNvim ? "$BASE_DIR/nvim_lsp.toml" : "$BASE_DIR/vim_lsp.toml",
-        hasNvim ? "$BASE_DIR/neovim.toml" : "$BASE_DIR/vim.toml",
-        "$BASE_DIR/denops.toml",
-        "$BASE_DIR/ddc.toml",
-        "$BASE_DIR/ddu.toml",
-        "$BASE_DIR/ddt.toml",
+        "@dpp_toml@",
+        "@merge_toml@",
+        hasNvim ? "@treesitter_toml@" : null,
+        hasNvim ? "@nvim_lsp_toml@" : "@vim_lsp_toml@",
+        hasNvim ? "@neovim_toml@" : "@vim_toml@",
+        "@denops_toml@",
+        "@ddc_toml@",
+        "@ddu_toml@",
+        "@ddt_toml@",
       ].filter(is.String)
     ) {
       tomls.push(
@@ -91,7 +89,7 @@ export class Config extends BaseConfig {
 
     for (
       const toml of [
-        "$BASE_DIR/lazy.toml",
+        "@lazy_toml@",
       ].filter(is.String)
     ) {
       tomls.push(
@@ -114,9 +112,9 @@ export class Config extends BaseConfig {
 
     for (
       const toml of [
-        hasNvim ? "$BASE_DIR/neotest.toml" : null,
-        hasNvim ? "$BASE_DIR/nvim_lua.toml" : null,
-        hasNvim ? "$BASE_DIR/nvim_dap.toml" : null,
+        hasNvim ? "@neotest_toml@" : null,
+        hasNvim ? "@nvim_lua_toml@" : null,
+        hasNvim ? "@nvim_dap_toml@" : null,
       ].filter(is.String)
     ) {
       tomls.push(
@@ -244,24 +242,6 @@ export class Config extends BaseConfig {
     )) as LazyMakeStateResult | undefined;
 
     const checkFiles: string[] = [];
-    for await (
-      const entry of expandGlob(
-        joinGlobs([ensure(Deno.env.get("BASE_DIR"), is.String), "**", "*"]),
-      )
-    ) {
-      if (!entry.isFile) {
-        if (entry.isSymlink) {
-          const file = await Deno.stat(entry.path);
-          if (!file.isFile) {
-            continue;
-          }
-        } else {
-          continue;
-        }
-      }
-      checkFiles.push(entry.path);
-    }
-
     return {
       checkFiles,
       plugins: lazyResult?.plugins ?? [],
