@@ -6,6 +6,7 @@
       colima
       container
       docker-client
+      podman
       # keep-sorted end
     ];
   };
