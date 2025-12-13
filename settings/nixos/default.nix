@@ -61,8 +61,53 @@
     };
     niri = {
       enable = true;
-      package = upkgs.niri;
+      package = pkgs.niri;
     };
+    regreet =
+      let
+        atri_wp = pkgs.fetchurl {
+          url = "https://atri-mdm.com/assets/img/special/present/wp_ATRI.jpg";
+          sha256 = "069z1m3664xaciw9hhpqzsa5x5k802fpk9wxbkjxz4chmjnazzfj";
+        };
+      in
+      {
+        enable = true;
+        iconTheme = {
+          package = pkgs.vimix-icon-theme;
+          name = "Vimix-doder-dark";
+        };
+        theme = {
+          package = pkgs.vimix-gtk-themes;
+          name = "Vimix-dark-doder";
+        };
+        font = {
+          package = pkgs.plemoljp;
+          name = "PlemolJP Regular";
+        };
+        cursorTheme = {
+          name = "macOS";
+          package = pkgs.apple-cursor;
+        };
+        settings = {
+          GTK = {
+            application_prefer_dark_theme = true;
+          };
+          background = {
+            path = atri_wp;
+            fit = "Cover";
+          };
+          commands = {
+            reboot = [
+              "systemctl"
+              "reboot"
+            ];
+            poweroff = [
+              "systemctl"
+              "poweroff"
+            ];
+          };
+        };
+      };
     # keep-sorted end
   };
   security = {
@@ -70,15 +115,11 @@
       enable = true;
     };
     pam = {
-      u2f = {
-        enable = true;
-        settings = {
-          cue = true;
-        };
-      };
       services = {
         login = {
-          u2fAuth = lib.mkForce false;
+          enableGnomeKeyring = true;
+        };
+        greetd = {
           enableGnomeKeyring = true;
         };
       };
@@ -92,12 +133,24 @@
     avahi = {
       enable = true;
     };
-    displayManager = {
-      enable = true;
-      ly = {
+    greetd =
+      let
+        minimumConfig = pkgs.writeText "minimum-config.kdl" ''
+          hotkey-overlay {
+            skip-at-startup
+          }
+          spawn-at-startup "sh" "-c" "${lib.getExe config.programs.regreet.package}; niri msg action quit --skip-confirmation"
+        '';
+      in
+      {
         enable = true;
+        settings = {
+          default_session = {
+            command = "env GTK_USE_PORTAL=0 GDK_DEBUG=no-portals ${lib.getExe config.programs.niri.package} --config ${minimumConfig}";
+            user = "greeter";
+          };
+        };
       };
-    };
     kmscon = {
       enable = true;
       hwRender = true;
@@ -187,6 +240,15 @@
   time = {
     timeZone = "Asia/Tokyo";
     hardwareClockInLocalTime = true;
+  };
+  xdg = {
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gnome
+        xdg-desktop-portal-gtk
+      ];
+    };
   };
   # keep-sorted end
 }
