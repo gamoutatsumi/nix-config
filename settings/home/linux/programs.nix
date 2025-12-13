@@ -13,7 +13,6 @@
         # keep-sorted start
         bitwarden-desktop
         chntpw
-        discord
         gcr
         gimp
         kdePackages.kcachegrind
@@ -23,7 +22,6 @@
         seahorse
         slack
         wl-clipboard
-        xsel
         zoom-us
         # keep-sorted end
       ]
@@ -36,17 +34,6 @@
           proprietaryCodecs = false;
           commandLineArgs = "--force-dark-mode --password-store=gnome-libsecret";
         })
-
-        # keep-sorted start
-        changeBrightness
-        changeVolume
-        getPulseVolume
-        maimFull
-        maimSelect
-        playerctlStatus
-        toggleMicMute
-        xmonadpropread
-        # keep-sorted end
       ]);
   };
   programs = {
@@ -61,6 +48,9 @@
           decorations = "none";
         };
       };
+    };
+    discord = {
+      enable = true;
     };
     ghostty = {
       package = upkgs.ghostty;

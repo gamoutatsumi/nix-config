@@ -153,19 +153,13 @@
         enable = true;
       };
       extraCompatPackages = [ upkgs.proton-ge-bin ];
+      fontPackages = with pkgs; [ plemoljp ];
     };
   };
   services = {
     # keep-sorted start block=yes
     blueman = {
       enable = true;
-    };
-    displayManager = {
-      autoLogin = {
-        enable = false;
-        user = username;
-      };
-      defaultSession = "xsession";
     };
     ollama = {
       package = pkgs.ollama;
@@ -210,9 +204,6 @@
     };
     xserver = {
       videoDrivers = [ "nvidia" ];
-      displayManager = {
-        setupCommands = "${lib.getExe pkgs.xorg.xrandr} --output DP-0 --auto --primary --output HDMI-0 --auto --left-of DP-0";
-      };
       serverLayoutSection = ''
         Option "StandbyTime" "0"
         Option "SuspendTime" "0"

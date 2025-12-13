@@ -1,6 +1,5 @@
 {
   pkgs,
-  username,
   config,
   lib,
   upkgs,
@@ -208,32 +207,6 @@
         yubikey-personalization
         via
       ];
-    };
-    xserver = {
-      enable = true;
-      excludePackages = with pkgs; [ xterm ];
-      exportConfiguration = true;
-      displayManager = {
-        session = [
-          {
-            manage = "window";
-            name = "xsession";
-            start = ''exec ${config.users.users.${username}.home}/.xsession'';
-          }
-        ];
-        lightdm = {
-          enable = false;
-          greeters = {
-            mini = {
-              enable = true;
-              user = username;
-            };
-            gtk = {
-              enable = false;
-            };
-          };
-        };
-      };
     };
     # keep-sorted end
   };
