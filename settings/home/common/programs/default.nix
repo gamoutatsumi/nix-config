@@ -50,6 +50,7 @@ in
         gnumake
         gnused
         gojq
+        ibm-plex
         killall
         magika
         moreutils
@@ -58,8 +59,13 @@ in
         nix-output-monitor
         nix-search-cli
         nix-tree
+        noto-fonts-cjk-sans
+        noto-fonts-cjk-serif
+        noto-fonts-color-emoji
         paperkey
         picocom
+        plemoljp
+        plemoljp-nf
         q-text-as-data
         ssm-session-manager-plugin
         unzip
