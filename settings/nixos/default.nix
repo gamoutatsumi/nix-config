@@ -62,51 +62,44 @@
       enable = true;
       package = pkgs.niri;
     };
-    regreet =
-      let
-        atri_wp = pkgs.fetchurl {
-          url = "https://atri-mdm.com/assets/img/special/present/wp_ATRI.jpg";
-          sha256 = "069z1m3664xaciw9hhpqzsa5x5k802fpk9wxbkjxz4chmjnazzfj";
+    regreet = {
+      enable = true;
+      iconTheme = {
+        package = pkgs.vimix-icon-theme;
+        name = "Vimix-doder-dark";
+      };
+      theme = {
+        package = pkgs.vimix-gtk-themes;
+        name = "Vimix-dark-doder";
+      };
+      font = {
+        package = pkgs.plemoljp;
+        name = "PlemolJP Regular";
+      };
+      cursorTheme = {
+        name = "macOS";
+        package = pkgs.apple-cursor;
+      };
+      settings = {
+        GTK = {
+          application_prefer_dark_theme = true;
         };
-      in
-      {
-        enable = true;
-        iconTheme = {
-          package = pkgs.vimix-icon-theme;
-          name = "Vimix-doder-dark";
+        background = {
+          path = pkgs.nixos-artwork.wallpapers.nineish-catppuccin-macchiato-alt.src;
+          fit = "Cover";
         };
-        theme = {
-          package = pkgs.vimix-gtk-themes;
-          name = "Vimix-dark-doder";
-        };
-        font = {
-          package = pkgs.plemoljp;
-          name = "PlemolJP Regular";
-        };
-        cursorTheme = {
-          name = "macOS";
-          package = pkgs.apple-cursor;
-        };
-        settings = {
-          GTK = {
-            application_prefer_dark_theme = true;
-          };
-          background = {
-            path = atri_wp;
-            fit = "Cover";
-          };
-          commands = {
-            reboot = [
-              "systemctl"
-              "reboot"
-            ];
-            poweroff = [
-              "systemctl"
-              "poweroff"
-            ];
-          };
+        commands = {
+          reboot = [
+            "systemctl"
+            "reboot"
+          ];
+          poweroff = [
+            "systemctl"
+            "poweroff"
+          ];
         };
       };
+    };
     # keep-sorted end
   };
   security = {
