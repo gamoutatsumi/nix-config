@@ -65,12 +65,12 @@
     regreet = {
       enable = true;
       iconTheme = {
-        package = pkgs.vimix-icon-theme;
-        name = "Vimix-doder-dark";
+        package = pkgs.tela-icon-theme;
+        name = "Tela-blue-dark";
       };
       theme = {
-        package = pkgs.vimix-gtk-themes;
-        name = "Vimix-dark-doder";
+        package = pkgs.orchis-theme;
+        name = "Orchis-Dark";
       };
       font = {
         package = pkgs.plemoljp;
