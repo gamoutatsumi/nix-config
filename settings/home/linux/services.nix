@@ -116,6 +116,25 @@
         enable = false;
       };
     };
+    swayidle = {
+      enable = true;
+      timeouts = [
+        {
+          timeout = 601;
+          command = "niri msg action power-off-monitors";
+        }
+        {
+          timeout = 600;
+          command = "${lib.getExe pkgs.swaylock} -fF";
+        }
+      ];
+      events = [
+        {
+          event = "before-sleep";
+          command = "${lib.getExe pkgs.swaylock} -fF";
+        }
+      ];
+    };
     # keep-sorted end
   };
 }

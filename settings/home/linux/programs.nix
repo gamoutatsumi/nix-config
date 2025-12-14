@@ -97,28 +97,35 @@
         pinentry = pkgs.pinentry-gtk2;
       };
     };
-    rofi = {
-      enable = true;
-      package = upkgs.rofi;
-      font = "IBM Plex Sans JP 14";
-      location = "center";
-      theme = "Arc-Dark";
-      extraConfig = {
-        modi = "drun,power-menu:${lib.getExe pkgs.rofi-power-menu}";
-        kb-cancel = "Escape";
-        kb-mode-previous = "Shift+Tab";
-        kb-mode-next = "Tab";
-        kb-element-next = "";
-        show-icons = true;
-        sidebar-mode = true;
-        icon-theme = config.gtk.iconTheme.name;
+    rofi =
+      let
+        powermenu = pkgs.writeShellScript "rofi-power-menu" (builtins.readFile ./config/rofi/powermenu.sh);
+      in
+      {
+        enable = true;
+        package = upkgs.rofi;
+        font = "IBM Plex Sans JP 14";
+        location = "center";
+        theme = "Arc-Dark";
+        extraConfig = {
+          modi = "drun,power-menu:${powermenu}";
+          kb-cancel = "Escape";
+          kb-mode-previous = "Shift+Tab";
+          kb-mode-next = "Tab";
+          kb-element-next = "";
+          show-icons = true;
+          sidebar-mode = true;
+          icon-theme = config.gtk.iconTheme.name;
+        };
       };
-    };
     zsh = {
       shellAliases = {
         pbcopy = "xsel --clipboard --input";
         open = "xdg-open";
       };
+    };
+    swaylock = {
+      enable = true;
     };
     # keep-sorted end
   };
