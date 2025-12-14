@@ -41,9 +41,10 @@
               position = "0,0";
             }
           ];
-          exec = ''
-            niri msg action move-workspace-to-monitor --reference chat "I-O Data Device Inc LCD-MF225X G6PF030312R7"
-          '';
+          exec = [
+            ''niri msg action move-workspace-to-monitor --reference chat "I-O Data Device Inc LCD-MF225X G6PF030312R7"''
+            ''niri msg action focus-monitor "Eizo Nanao Corporation EV2795 44888121"''
+          ];
         };
         docked = {
           outputs = [
@@ -59,9 +60,10 @@
               status = "disable";
             }
           ];
-          exec = ''
-            niri msg action move-workspace-to-monitor --reference chat "I-O Data Device Inc LCD-MF225X G6PF030312R7"
-          '';
+          exec = [
+            ''niri msg action move-workspace-to-monitor --reference chat "I-O Data Device Inc LCD-MF225X G6PF030312R7"''
+            ''niri msg action focus-monitor "Eizo Nanao Corporation EV2795 44888121"''
+          ];
         };
       };
     };
