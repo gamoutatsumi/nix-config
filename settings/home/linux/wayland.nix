@@ -29,8 +29,9 @@ in
           position = "top";
           height = 30;
           output = [
-            "DP-1"
             "eDP-1"
+            "DP-1"
+            "DP-2"
           ];
           modules-left = [
             "niri/workspaces"

@@ -35,12 +35,28 @@
           outputs = [
             {
               criteria = "Eizo Nanao Corporation EV2795 44888121";
-              mode = "2560x1440@59.951";
             }
             {
               criteria = "I-O Data Device Inc LCD-MF225X G6PF030312R7";
               position = "0,0";
-              mode = "1920x1080@60.000";
+            }
+          ];
+          exec = ''
+            niri msg action move-workspace-to-monitor --reference chat "I-O Data Device Inc LCD-MF225X G6PF030312R7"
+          '';
+        };
+        docked = {
+          outputs = [
+            {
+              criteria = "Eizo Nanao Corporation EV2795 44888121";
+            }
+            {
+              criteria = "I-O Data Device Inc LCD-MF225X G6PF030312R7";
+              position = "0,0";
+            }
+            {
+              criteria = "eDP-1";
+              status = "disable";
             }
           ];
           exec = ''
