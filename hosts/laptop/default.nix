@@ -279,7 +279,6 @@
     };
     xremap = {
       enable = true;
-      withX11 = true;
       withNiri = true;
       config = {
         modmap = [
