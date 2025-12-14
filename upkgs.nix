@@ -9,8 +9,6 @@
   };
   overlays = [
     # keep-sorted start
-    (_final: prev: { inherit (inputs.mpd-mcp-server.packages.${prev.system}) mpd-mcp-server; })
-    (_final: prev: { inherit (inputs.yasunori.packages.${prev.system}) yasunori-mcp; })
     inputs.agenix-rekey.overlays.default
     inputs.agenix.overlays.default
     inputs.brew-nix.overlays.default

@@ -152,26 +152,6 @@
         };
       };
     };
-    mpd-mcp-server = {
-      url = "github:gamoutatsumi/mpd-mcp-server";
-      inputs = {
-        systems = {
-          follows = "systems";
-        };
-        flake-parts = {
-          follows = "flake-parts";
-        };
-        pre-commit-hooks = {
-          follows = "pre-commit-hooks";
-        };
-        treefmt-nix = {
-          follows = "treefmt-nix";
-        };
-        flake-checker = {
-          follows = "flake-checker";
-        };
-      };
-    };
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
       inputs = {
@@ -336,23 +316,6 @@
         };
         nixpkgs = {
           follows = "nixpkgs";
-        };
-      };
-    };
-    yasunori = {
-      url = "github:times-yasunori/awesome-yasunori";
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs-unstable";
-        };
-        treefmt-nix = {
-          follows = "treefmt-nix";
-        };
-        flake-parts = {
-          follows = "flake-parts";
-        };
-        systems = {
-          follows = "systems";
         };
       };
     };

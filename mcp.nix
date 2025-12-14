@@ -3,7 +3,6 @@
   flavor ? "claude",
   pkgs,
   config,
-  lib,
   inputs,
 }:
 inputs.mcp-servers-nix.lib.mkConfig pkgs {
@@ -47,16 +46,8 @@ inputs.mcp-servers-nix.lib.mkConfig pkgs {
   };
   settings = {
     servers = {
-      # yasunori = {
-      #   command = lib.getExe pkgs.yasunori-mcp;
-      # };
       astro = {
         url = "http://localhost:4321/__mcp/sse";
-      };
-    }
-    // lib.optionalAttrs config.services.mpd.enable {
-      mpd = {
-        command = lib.getExe pkgs.mpd-mcp-server;
       };
     };
   };

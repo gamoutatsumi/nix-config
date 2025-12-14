@@ -146,7 +146,7 @@ name=p11-kit-proxy\n";
         source = import ../../../mcp.nix {
           format = "json";
           flavor = "claude";
-          inherit config lib inputs;
+          inherit config inputs;
           pkgs = upkgs;
         };
       };

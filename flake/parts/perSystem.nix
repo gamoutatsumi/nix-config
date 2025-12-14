@@ -215,6 +215,9 @@
           # keep-sorted end
         };
       };
+      checks = {
+        inherit (upkgs) neovim;
+      };
       # keep-sorted end
     };
 }
