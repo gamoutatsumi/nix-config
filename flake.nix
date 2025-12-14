@@ -167,7 +167,7 @@
       };
     };
     neovim-src = {
-      url = "github:neovim/neovim?ref=master&shallow=1";
+      url = "github:neovim/neovim?ref=05de0377951c4f2e21bb8f5fef39cbb78035959f&shallow=1";
       flake = false;
     };
     nix-cue = {
