@@ -129,7 +129,7 @@
       };
     };
     lanzaboote = {
-      url = "github:nix-community/lanzaboote?ref=v1.0.0";
+      url = "github:nix-community/lanzaboote?ref=v1.0.0&shallow=1";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs";
@@ -170,16 +170,8 @@
       url = "github:neovim/neovim?ref=05de0377951c4f2e21bb8f5fef39cbb78035959f&shallow=1";
       flake = false;
     };
-    nix-cue = {
-      url = "github:jmgilman/nix-cue";
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs";
-        };
-      };
-    };
     nix-darwin = {
-      url = "github:nix-darwin/nix-darwin?ref=nix-darwin-25.11";
+      url = "github:nix-darwin/nix-darwin?ref=nix-darwin-25.11&shallow=1";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs";
@@ -195,13 +187,13 @@
       };
     };
     nixpkgs = {
-      url = "github:NixOS/nixpkgs?ref=nixos-25.11";
+      url = "github:NixOS/nixpkgs?ref=nixos-25.11&shallow=1";
     };
     nixpkgs-unstable = {
-      url = "github:NixOS/nixpkgs?ref=nixos-unstable";
+      url = "github:NixOS/nixpkgs?ref=nixos-unstable&shallow=1";
     };
     nvim-treesitter = {
-      url = "github:nvim-treesitter/nvim-treesitter/main";
+      url = "github:nvim-treesitter/nvim-treesitter?ref=main&shallow=1";
       flake = false;
     };
     nvim-treesitter-main = {
@@ -219,7 +211,7 @@
       };
     };
     nvim-treesitter-textobjects = {
-      url = "github:nvim-treesitter/nvim-treesitter-textobjects/main";
+      url = "github:nvim-treesitter/nvim-treesitter-textobjects?ref=main&shallow=1";
       flake = false;
     };
     oreore = {
@@ -293,7 +285,7 @@
       flake = false;
     };
     xremap = {
-      url = "github:xremap/xremap?ref=v0.16.6&shallow=1";
+      url = "github:xremap/xremap?ref=v0.14.6&shallow=1";
       flake = false;
     };
     xremap-nix = {

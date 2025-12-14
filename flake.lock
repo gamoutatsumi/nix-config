@@ -446,21 +446,6 @@
         "type": "github"
       }
     },
-    "flake-utils_2": {
-      "locked": {
-        "lastModified": 1652776076,
-        "narHash": "sha256-gzTw/v1vj4dOVbpBSJX4J0DwUR6LIyXo7/SuuTJp1kM=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "04c1b180862888302ddfb2e3ad9eaa63afc60cf8",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
     "gitignore": {
       "inputs": {
         "nixpkgs": [
@@ -649,27 +634,6 @@
         "owner": "neovim",
         "ref": "05de0377951c4f2e21bb8f5fef39cbb78035959f",
         "repo": "neovim",
-        "type": "github"
-      }
-    },
-    "nix-cue": {
-      "inputs": {
-        "flake-utils": "flake-utils_2",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1653602243,
-        "narHash": "sha256-eb8vR6XpF1/TEW4GNSvAYKvz4+hFM/FM4+euFP+1AFk=",
-        "owner": "jmgilman",
-        "repo": "nix-cue",
-        "rev": "3a1bd771b7bfab05ed6856a1b79485aaa8f47079",
-        "type": "github"
-      },
-      "original": {
-        "owner": "jmgilman",
-        "repo": "nix-cue",
         "type": "github"
       }
     },
@@ -920,7 +884,6 @@
         "monitored": "monitored",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "neovim-src": "neovim-src",
-        "nix-cue": "nix-cue",
         "nix-darwin": "nix-darwin",
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixpkgs": "nixpkgs",
@@ -1126,16 +1089,16 @@
     "xremap": {
       "flake": false,
       "locked": {
-        "lastModified": 1740379855,
-        "narHash": "sha256-wbz39OkrxtXQ7uthYywC3HBMkYcNuf6wF5lvRN+SZP0=",
+        "lastModified": 1765400488,
+        "narHash": "sha256-QkrZltxJf5GhWczhBj3K8G6LRqlYEbZjhMtEbY8bdsk=",
         "owner": "xremap",
         "repo": "xremap",
-        "rev": "5708f8fa9a1da9aa27be8559923502925c7f6639",
+        "rev": "95289472fc25b0ca0b0bf655f1ffb88fed7b014f",
         "type": "github"
       },
       "original": {
         "owner": "xremap",
-        "ref": "v0.16.6",
+        "ref": "v0.14.6",
         "repo": "xremap",
         "type": "github"
       }

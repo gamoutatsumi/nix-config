@@ -240,13 +240,6 @@
     blueman = {
       enable = true;
     };
-    displayManager = {
-      autoLogin = {
-        enable = false;
-        user = username;
-      };
-      defaultSession = "xsession";
-    };
     openssh = {
       settings = {
         PasswordAuthentication = false;
@@ -287,6 +280,7 @@
     xremap = {
       enable = true;
       withX11 = true;
+      withNiri = true;
       config = {
         modmap = [
           {
