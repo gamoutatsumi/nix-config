@@ -18,29 +18,6 @@
         inherit system inputs;
       };
       treefmtBuild = config.treefmt.build;
-      mcpJson = inputs.mcp-servers-nix.lib.mkConfig upkgs {
-        format = "json";
-        flavor = "claude";
-        programs = {
-          git = {
-            enable = true;
-          };
-          sequential-thinking = {
-            enable = true;
-          };
-          context7 = {
-            enable = true;
-          };
-        };
-        settings = {
-          servers = {
-            github-server = {
-              type = "http";
-              url = "https://api.githubcopilot.com/mcp";
-            };
-          };
-        };
-      };
     in
     {
       # keep-sorted start block=yes
@@ -50,10 +27,6 @@
       };
       devShells = {
         default = pkgs.mkShellNoCC {
-          shellHook = ''
-            GIT_WC=`${lib.getExe pkgs.git} rev-parse --show-toplevel`
-            ln -sf ${mcpJson} ''${GIT_WC}/.mcp.json
-          '';
           PFPATH = "${
             pkgs.buildEnv {
               name = "zsh-comp";
