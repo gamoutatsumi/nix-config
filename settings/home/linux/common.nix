@@ -57,14 +57,15 @@
   home = {
     homeDirectory = "/home/${username}";
     file = {
-      ".pki/nssdb/pkcs11.txt".text =
-        "library=
+      ".pki/nssdb/pkcs11.txt" = {
+        text = "library=
 name=NSS Internal PKCS #11 Module
 parameters=configdir='sql:${config.home.homeDirectory}/.pki/nssdb' certPrefix='' keyPrefix='' secmod='secmod.db' flags=optimizeSpace updatedir='' updateCertPrefix='' updateKeyPrefix='' updateid='' updateTokenDescription=''
 NSS=Flags=internal,critical trustOrder=75 cipherOrder=100 slotParams=(1={slotFlags=[ECC,RSA,DSA,DH,RC2,RC4,DES,RANDOM,SHA1,MD5,MD2,SSL,TLS,AES,Camellia,SEED,SHA256,SHA512] askpw=any timeout=30})
 
 library=${pkgs.p11-kit}/lib/p11-kit-proxy.so
 name=p11-kit-proxy\n";
+      };
     };
     pointerCursor = {
       name = "macOS";
@@ -155,6 +156,9 @@ name=p11-kit-proxy\n";
       };
       "libskk" = {
         source = ./config/libskk;
+      };
+      "niri/config.kdl" = {
+        source = ./config/niri/config.kdl;
       };
     };
   };
