@@ -1,10 +1,8 @@
 {
   pkgs,
-  inputs,
   config,
   username,
   lib,
-  upkgs,
   ...
 }:
 {
@@ -143,14 +141,6 @@ name=p11-kit-proxy\n";
       enable = true;
     };
     configFile = {
-      "Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json" = {
-        source = import ../../../mcp.nix {
-          format = "json";
-          flavor = "claude";
-          inherit config inputs;
-          pkgs = upkgs;
-        };
-      };
       "easyeffects/output/Happy_your_Life_+_Downmix_to_mono.json" = {
         source = ./config/easyeffects/Happy_your_Life_+_Downmix_to_mono.json;
       };

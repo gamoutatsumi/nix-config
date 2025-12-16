@@ -18,6 +18,7 @@ in
     # keep-sorted start
     ./alacritty.nix
     ./claude.nix
+    ./codex.nix
     ./emacs.nix
     ./vscode.nix
     ./zsh.nix

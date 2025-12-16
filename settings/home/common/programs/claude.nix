@@ -1,10 +1,40 @@
-{ upkgs, ... }:
+{
+  upkgs,
+  inputs,
+  config,
+  ...
+}:
 {
   programs = {
     claude-code = {
       enable = true;
       package = upkgs.edge.claude-code;
       commandsDir = ../config/claude/commands;
+      mcpServers =
+        (inputs.mcp-servers-nix.lib.evalModule upkgs {
+          programs = {
+            git = {
+              enable = true;
+            };
+            context7 = {
+              enable = true;
+            };
+            codex = {
+              enable = true;
+              inherit (config.programs.codex) package;
+            };
+            github = {
+              enable = true;
+              passwordCommand = {
+                GITHUB_PERSONAL_ACCESS_TOKEN = [
+                  (upkgs.lib.getExe config.programs.gh.package)
+                  "auth"
+                  "token"
+                ];
+              };
+            };
+          };
+        }).config.settings.servers;
       settings = {
         permissions = {
           allow = [
