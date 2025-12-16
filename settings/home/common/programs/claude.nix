@@ -16,6 +16,19 @@
       mcpServers =
         (inputs.mcp-servers-nix.lib.evalModule upkgs {
           programs = {
+            context7 = {
+              enable = true;
+            };
+            serena = {
+              enable = true;
+              enableWebDashboard = false;
+            };
+            filesystem = {
+              enable = true;
+            };
+            sequential-thinking = {
+              enable = true;
+            };
             git = {
               enable = true;
             };

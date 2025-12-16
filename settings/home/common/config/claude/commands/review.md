@@ -17,7 +17,19 @@ allowed-tools:
   - mcp__git__git_diff
   - mcp__git__git_branch
   - mcp__git__git_show
-  # Codex MCP Server - コード分析
+  # Serena MCP Server - コード分析
+  - mcp__serena__read_file
+  - mcp__serena__get_symbols_overview
+  - mcp__serena__find_symbol
+  - mcp__serena__find_referencing_symbols
+  - mcp__serena__search_for_pattern
+  - mcp__serena__list_dir
+  # Context7 MCP Server - ライブラリドキュメント参照
+  - mcp__context7__resolve-library-id
+  - mcp__context7__get-library-docs
+  # Sequential-Thinking MCP Server - 深い検討
+  - mcp__sequential-thinking__sequentialthinking
+  # Codex MCP Server - 複雑な分析タスクの委任
   - mcp__codex__codex
   - mcp__codex__codex-reply
 ---
@@ -26,41 +38,46 @@ allowed-tools:
 
 以下の手順でPull request(PR)を確認し、レビューに役立つ情報を提示してください。
 
-1. 対象PRの内容確認
-2. プロンプトファイルの内容確認（存在する場合）
-3. Codexによるコード分析とレビュー
+# 1. 情報収集フェーズ（直接MCPサーバーを使用）
 
-# 対象PRの内容確認
+## PRの内容確認
 
 GitHub MCP Server
-のツールを使用して、対象PRの内容を確認します。`$ARGUMENTS`にはPRの番号が渡されます。
+を使用して、対象PRの内容を確認します。`$ARGUMENTS`にはPRの番号が渡されます。
 
-PRの詳細情報を取得するには `mcp__github__pull_request_read` ツールを使用します:
-
-- `method: "get"` - PRの基本情報（タイトル、説明、作成者など）
-- `method: "get_diff"` - PRに含まれる差分
-- `method: "get_files"` - 変更されたファイル一覧
+- `mcp__github__pull_request_read` with `method: "get"` - PRの基本情報
+- `mcp__github__pull_request_read` with `method: "get_diff"` - PRの差分
+- `mcp__github__pull_request_read` with `method: "get_files"` - 変更ファイル一覧
 
 リポジトリのオーナーとリポジトリ名は、現在のリポジトリのリモート設定から取得してください。
 
-# プロンプトファイルの内容確認（存在する場合）
+## プロンプトファイルの確認
 
-プロンプトファイル`CLAUDE.md`の内容を確認します。
+`CLAUDE.md` が存在する場合は内容を確認します。
 
-# Codexによるコード分析とレビュー
+## コード構造の分析（Serena）
 
-Codex MCP Server を使用して、PRの詳細なコード分析を行います。
+変更されたコードの構造を Serena MCP Server で分析します:
 
-`mcp__codex__codex` ツールに以下の情報を含むプロンプトを渡してください:
+- `mcp__serena__get_symbols_overview` - 変更ファイル内のシンボル構造
+- `mcp__serena__find_symbol` - 特定のクラス・関数・メソッドの詳細
+- `mcp__serena__find_referencing_symbols` -
+  変更されたシンボルの参照元（影響範囲）
 
-- PRの差分内容
-- 変更されたファイル一覧
-- PRの目的・説明
-- CLAUDE.mdの内容（レビュー観点として）
+## ライブラリドキュメント参照（Context7）
 
-Codexへのプロンプト例:
+変更に使用されているライブラリのベストプラクティスを確認する場合:
+
+1. `mcp__context7__resolve-library-id` でライブラリIDを解決
+2. `mcp__context7__get-library-docs` でドキュメントを取得
+
+# 2. 分析フェーズ（Codexに委任）
+
+収集した情報をCodexに渡し、詳細なコードレビューを委任します:
 
 ```
+mcp__codex__codex({
+  prompt: `
 以下のPull Requestをレビューしてください。
 
 ## PRの概要
@@ -73,17 +90,35 @@ Codexへのプロンプト例:
 ## 差分
 {diff内容}
 
-## レビュー観点
+## シンボル構造と参照関係
+{Serenaで取得した情報}
+
+## ライブラリドキュメント（該当する場合）
+{Context7で取得した情報}
+
+## レビュー観点（CLAUDE.mdより）
 {CLAUDE.mdの内容}
 
-以下の観点でレビューを行ってください:
+以上の情報をもとにしてコードベースを詳細に分析し、以下の観点でレビューしてください:
 1. コードの品質と可読性
-2. バグや潜在的な問題
+2. バグや潜在的な問題（エッジケース、エラーハンドリング）
 3. セキュリティ上の懸念
 4. パフォーマンスへの影響
 5. プロジェクトの規約への準拠
+6. 影響範囲（参照元への破壊的変更がないか）
+`,
+  sandbox: "workspace-write",
+  approval-policy: "never"
+})
 ```
 
-Codexの分析結果を受け取り、私が判断する際に役立つ情報として整理して提示してください。
-追加の分析が必要な場合は `mcp__codex__codex-reply`
-を使用して対話を継続できます。
+# 3. レビュー結果の整理
+
+Codexの分析結果を受け取り、以下の形式で整理して提示してください:
+
+- **概要**: PRの目的と変更内容のサマリー
+- **良い点**: コードの良い部分
+- **懸念点**: 修正が必要な箇所、潜在的な問題
+- **提案**: 改善提案
+
+追加の分析が必要な場合は `mcp__codex__codex-reply` で対話を継続できます。
