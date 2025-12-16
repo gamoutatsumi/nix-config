@@ -23,6 +23,9 @@
               enable = true;
               inherit (config.programs.codex) package;
             };
+            serena = {
+              enable = true;
+            };
             github = {
               enable = true;
               passwordCommand = {
