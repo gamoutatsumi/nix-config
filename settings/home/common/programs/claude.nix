@@ -10,24 +10,18 @@
       enable = true;
       package = upkgs.edge.claude-code;
       commandsDir = ../config/claude/commands;
+      memory = {
+        source = ../config/claude/CLAUDE.md;
+      };
       mcpServers =
         (inputs.mcp-servers-nix.lib.evalModule upkgs {
           programs = {
             git = {
               enable = true;
             };
-            context7 = {
-              enable = true;
-            };
             codex = {
               enable = true;
               inherit (config.programs.codex) package;
-            };
-            serena = {
-              enable = true;
-            };
-            sequential-thinking = {
-              enable = true;
             };
             github = {
               enable = true;

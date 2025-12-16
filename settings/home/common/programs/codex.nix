@@ -29,6 +29,11 @@ let
       context7 = {
         enable = true;
       };
+      serena = {
+        enable = true;
+        context = "codex";
+        enableWebDashboard = false;
+      };
     };
   };
 in
