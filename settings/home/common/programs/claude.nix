@@ -26,8 +26,14 @@
             serena = {
               enable = true;
             };
+            sequential-thinking = {
+              enable = true;
+            };
             github = {
               enable = true;
+              env = {
+                GITHUB_TOOLSETS = "context,issues,pull_requests";
+              };
               passwordCommand = {
                 GITHUB_PERSONAL_ACCESS_TOKEN = [
                   (upkgs.lib.getExe config.programs.gh.package)

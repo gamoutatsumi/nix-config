@@ -1,38 +1,47 @@
 ---
 allowed-tools:
-  - Read
-  - Glob
-  - Grep
-  - Edit
-  - MultiEdit
-  - Write
-  - Bash
+  # 基本
   - TodoWrite
-  - mcp__serena__check_onboarding_performed
-  - mcp__serena__delete_memory
+  - mcp__sequential-thinking__sequentialthinking
+  # Git MCP Server - バージョン管理
+  - mcp__git__git_status
+  - mcp__git__git_diff
+  - mcp__git__git_diff_unstaged
+  - mcp__git__git_diff_staged
+  - mcp__git__git_log
+  - mcp__git__git_branch
+  # Serena MCP Server - ファイル操作
+  - mcp__serena__read_file
+  - mcp__serena__create_text_file
+  - mcp__serena__list_dir
   - mcp__serena__find_file
-  - mcp__serena__find_referencing_symbols
-  - mcp__serena__find_symbol
+  - mcp__serena__replace_content
+  - mcp__serena__search_for_pattern
+  # Serena MCP Server - シンボル操作
   - mcp__serena__get_symbols_overview
+  - mcp__serena__find_symbol
+  - mcp__serena__find_referencing_symbols
+  - mcp__serena__replace_symbol_body
   - mcp__serena__insert_after_symbol
   - mcp__serena__insert_before_symbol
-  - mcp__serena__list_dir
-  - mcp__serena__list_memories
+  - mcp__serena__rename_symbol
+  # Serena MCP Server - メモリ・設定
+  - mcp__serena__check_onboarding_performed
   - mcp__serena__onboarding
+  - mcp__serena__list_memories
   - mcp__serena__read_memory
-  - mcp__serena__remove_project
-  - mcp__serena__replace_regex
-  - mcp__serena__replace_symbol_body
-  - mcp__serena__restart_language_server
-  - mcp__serena__search_for_pattern
+  - mcp__serena__write_memory
+  - mcp__serena__edit_memory
+  - mcp__serena__delete_memory
   - mcp__serena__switch_modes
+  # Serena MCP Server - 実行・思考
+  - mcp__serena__execute_shell_command
   - mcp__serena__think_about_collected_information
   - mcp__serena__think_about_task_adherence
   - mcp__serena__think_about_whether_you_are_done
-  - mcp__serena__write_memory
+  # Context7 MCP Server - ドキュメント参照
   - mcp__context7__resolve-library-id
   - mcp__context7__get-library-docs
-  - mcp__sequential-thinking__sequentialthinking
 description: Token-efficient Serena MCP command for structured app development and problem-solving
 ---
 
