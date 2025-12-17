@@ -8,7 +8,7 @@
   services = {
     # keep-sorted start block=yes
     blueman-applet = {
-      inherit (nixosConfig.blueman) enable;
+      inherit (nixosConfig.services.blueman) enable;
     };
     emacs = {
       enable = true;
@@ -106,7 +106,7 @@
       enable = true;
     };
     network-manager-applet = {
-      inherit (nixosConfig.networkManager) enable;
+      inherit (nixosConfig.services.networkManager) enable;
     };
     playerctld = {
       enable = true;
