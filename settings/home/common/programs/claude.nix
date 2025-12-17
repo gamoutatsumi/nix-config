@@ -23,9 +23,6 @@
               enable = true;
               enableWebDashboard = false;
             };
-            filesystem = {
-              enable = true;
-            };
             sequential-thinking = {
               enable = true;
             };
