@@ -11,7 +11,7 @@
         let
           darwinUser = builtins.getEnv "DARWIN_USER";
           darwinHost = builtins.getEnv "DARWIN_HOST";
-          upkgs = import ../../upkgs.nix {
+          upkgs = import ./upkgs.nix {
             inherit system inputs;
           };
         in
@@ -29,7 +29,7 @@
             inputs.home-manager.darwinModules.home-manager
             (
               _:
-              import ../../homemanager.nix {
+              import ./homemanager.nix {
                 inherit upkgs inputs inputs';
                 imports = [ ../../settings/home/darwin.nix ];
                 username = darwinUser;

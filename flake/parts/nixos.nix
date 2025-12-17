@@ -10,7 +10,7 @@
         }:
         let
           username = "gamoutatsumi";
-          upkgs = import ../../upkgs.nix {
+          upkgs = import ./upkgs.nix {
             inherit system inputs;
           };
         in
@@ -33,7 +33,7 @@
             inputs.home-manager.nixosModules.home-manager
             (
               _:
-              import ../../homemanager.nix {
+              import ./homemanager.nix {
                 inherit
                   username
                   upkgs
@@ -54,7 +54,7 @@
         }:
         let
           username = "gamoutatsumi";
-          upkgs = import ../../upkgs.nix {
+          upkgs = import ./upkgs.nix {
             inherit system inputs;
           };
         in
@@ -78,7 +78,7 @@
             inputs.home-manager.nixosModules.home-manager
             (
               _:
-              import ../../homemanager.nix {
+              import ./homemanager.nix {
                 inherit
                   username
                   upkgs
