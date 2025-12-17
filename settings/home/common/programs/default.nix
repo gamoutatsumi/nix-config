@@ -17,11 +17,11 @@ in
   imports = [
     # keep-sorted start
     ./alacritty.nix
-    ./claude.nix
+    ./claude
     ./codex.nix
-    ./emacs.nix
+    ./emacs
     ./vscode.nix
-    ./zsh.nix
+    ./zsh
     # keep-sorted end
   ];
   # keep-sorted start block=yes

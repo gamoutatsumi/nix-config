@@ -10,9 +10,9 @@
     claude-code = {
       enable = true;
       package = upkgs.edge.claude-code;
-      commandsDir = ../config/claude/commands;
+      commandsDir = ./commands;
       memory = {
-        source = ../config/claude/CLAUDE.md;
+        source = ./CLAUDE.md;
       };
       mcpServers =
         (inputs.mcp-servers-nix.lib.evalModule upkgs {

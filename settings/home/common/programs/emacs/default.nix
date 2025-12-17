@@ -12,7 +12,7 @@
             upkgs.emacs-unstable
           else
             upkgs.emacs-unstable.override { withNativeCompilation = false; };
-        config = ../config/emacs/init.el;
+        config = ./init.el;
         defaultInitFile = true;
         extraEmacsPackages =
           epkgs: with epkgs; [

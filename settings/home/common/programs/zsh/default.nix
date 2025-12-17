@@ -51,7 +51,7 @@ in
         ];
       };
       initContent = ''
-        ${builtins.readFile ../config/.zshrc}
+        ${builtins.readFile ./.zshrc}
         ${lib.getExe pkgs.any-nix-shell} zsh --info-right | source /dev/stdin
         export FPATH
       '';
