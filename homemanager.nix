@@ -2,7 +2,6 @@
   imports,
   username,
   upkgs,
-  networkManager ? false,
   inputs,
   inputs',
 }:
@@ -23,7 +22,6 @@
       inherit
         username
         upkgs
-        networkManager
         inputs
         inputs'
         ;

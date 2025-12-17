@@ -2,6 +2,7 @@
   upkgs,
   inputs,
   config,
+  lib,
   ...
 }:
 {
@@ -16,22 +17,16 @@
       mcpServers =
         (inputs.mcp-servers-nix.lib.evalModule upkgs {
           programs = {
+            # keep-sorted start block=yes
+            codex = {
+              enable = true;
+              inherit (config.programs.codex) package;
+            };
             context7 = {
-              enable = true;
-            };
-            serena = {
-              enable = true;
-              enableWebDashboard = false;
-            };
-            sequential-thinking = {
               enable = true;
             };
             git = {
               enable = true;
-            };
-            codex = {
-              enable = true;
-              inherit (config.programs.codex) package;
             };
             github = {
               enable = true;
@@ -40,12 +35,20 @@
               };
               passwordCommand = {
                 GITHUB_PERSONAL_ACCESS_TOKEN = [
-                  (upkgs.lib.getExe config.programs.gh.package)
+                  (lib.getExe config.programs.gh.package)
                   "auth"
                   "token"
                 ];
               };
             };
+            sequential-thinking = {
+              enable = true;
+            };
+            serena = {
+              enable = true;
+              enableWebDashboard = false;
+            };
+            # keep-sorted end
           };
         }).config.settings.servers;
       settings = {

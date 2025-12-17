@@ -1,6 +1,6 @@
 {
   pkgs,
-  networkManager,
+  nixosConfig,
   lib,
   ...
 }:
@@ -8,7 +8,7 @@
   services = {
     # keep-sorted start block=yes
     blueman-applet = {
-      enable = true;
+      inherit (nixosConfig.blueman) enable;
     };
     emacs = {
       enable = true;
@@ -106,7 +106,7 @@
       enable = true;
     };
     network-manager-applet = {
-      enable = networkManager;
+      inherit (nixosConfig.networkManager) enable;
     };
     playerctld = {
       enable = true;

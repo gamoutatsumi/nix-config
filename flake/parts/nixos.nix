@@ -41,7 +41,6 @@
                   inputs'
                   ;
                 imports = [ ../../settings/home/linux.nix ];
-                networkManager = true;
               }
             )
           ];
