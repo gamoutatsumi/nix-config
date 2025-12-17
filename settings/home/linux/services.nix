@@ -106,7 +106,7 @@
       enable = true;
     };
     network-manager-applet = {
-      inherit (nixosConfig.services.networkmanager) enable;
+      inherit (nixosConfig.networking.networkmanager) enable;
     };
     playerctld = {
       enable = true;
