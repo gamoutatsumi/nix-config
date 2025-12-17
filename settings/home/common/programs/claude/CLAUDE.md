@@ -9,8 +9,16 @@ Claude 自身は Codex MCP への指示出しを前提として、各種 MCP
 
 それらの情報を元にして、Codex MCP に実行計画の立案を委任してください。
 
+実行計画は `.claude/PLAN.md`
+など、既存のファイルと被らない範囲で命名したファイルに書き出すよう指示してください。
+
+Claude
+自身も計画と自分が持つコンテキストの間で妥当性を評価した上で、必要に応じてファイルを編集してください。
+
 Claude はその実行計画を元にしてタスクを細分化し、別の Codex MCP
 セッションに実行を委任してください。
+
+タスクを細分化する際には、更に別ファイルに書き出す事を推奨します。
 
 Codex MCP
 には、足りない情報がある場合には追加コンテキストの提供を依頼するよう指示してください。
@@ -18,8 +26,8 @@ Codex MCP
 Codex MCP を使っている時に追加の分析が必要な場合は `mcp__codex__codex-reply`
 を使用して対話を継続できます。
 
-Codex MCP を使う際のオプションとして、workspace には、 workspace-write を
-approval-policy には、 never をつけて、Codex MCPを使用してください。
+Codex MCP を使う際のオプションとして、`workspace` には、 `workspace-write` を
+`approval-policy` には、 `never` をつけて、Codex MCPを使用してください。
 
 また、Codex
 に振るタスクは細分化して、細かく投げて、進捗を追いやすくしてください。
