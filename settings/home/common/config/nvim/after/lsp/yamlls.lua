@@ -10,6 +10,7 @@ return {
                 ["https://www.schemastore.org/github-action.json"] = "action.{yml,yaml}",
                 ["https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/tasks"] = "/roles/*/tasks/*.{yml,yaml}",
                 ["https://taskfile.dev/schema.json"] = "Taskfile.{yml,yaml}",
+                ["https://golangci-lint.run/jsonschema/golangci.jsonschema.json"] = ".golangci.{yml,yaml}",
             },
         },
     },
