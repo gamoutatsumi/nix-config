@@ -1,6 +1,6 @@
 { pkgs }:
 let
-  neotest = pkgs.callPackage ../../../../vimPlugins/neotest.nix { };
+  neotest = pkgs.callPackage ./vimPlugins/neotest.nix { };
 in
 {
   plugins = [

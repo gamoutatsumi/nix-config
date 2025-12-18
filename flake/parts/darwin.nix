@@ -23,15 +23,19 @@
             hostname = darwinHost;
           };
           modules = [
-            ../../hosts/work_darwin
-            ../../settings/darwin.nix
+            ./common
+            ./darwin/config.nix
+            ./darwin/hosts/work
             inputs.monitored.darwinModules.default
             inputs.home-manager.darwinModules.home-manager
             (
               _:
               import ./homemanager.nix {
                 inherit upkgs inputs inputs';
-                imports = [ ../../settings/home/darwin.nix ];
+                imports = [
+                  ./home/common
+                  ./home/darwin
+                ];
                 username = darwinUser;
               }
             )

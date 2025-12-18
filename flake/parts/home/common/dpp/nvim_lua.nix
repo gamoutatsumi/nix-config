@@ -1,6 +1,6 @@
 { pkgs }:
 let
-  nvim_lua = pkgs.callPackage ../../../../vimPlugins/nvim_lua.nix { };
+  nvim_lua = pkgs.callPackage ./vimPlugins/nvim_lua.nix { };
 in
 {
   plugins = [

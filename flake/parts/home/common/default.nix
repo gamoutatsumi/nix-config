@@ -4,12 +4,17 @@
   pkgs,
   upkgs,
   config,
+  username,
   ...
 }:
 let
   toKeyValue = lib.generators.toKeyValue { listsAsDuplicateKeys = true; };
 in
 {
+  home = {
+    username = "${username}";
+    stateVersion = "25.11"; # Please read the comment before changing.
+  };
   nix = {
     settings = {
       nix-path = [

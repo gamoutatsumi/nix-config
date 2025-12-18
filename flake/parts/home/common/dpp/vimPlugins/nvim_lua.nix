@@ -1,6 +1,6 @@
 { pkgs }:
 let
-  fetchers = pkgs.callPackage ../_sources/generated.nix { };
+  fetchers = pkgs.callPackage ../../../../../../_sources/generated.nix { };
 in
 {
   plenary = fetchers.plenary-nvim.src;

@@ -28,8 +28,9 @@
             inputs.xremap-nix.nixosModules.default
             inputs.agenix.nixosModules.default
             inputs.agenix-rekey.nixosModules.default
-            ../../hosts/laptop
-            ../../settings/nixos.nix
+            ./nixos/hosts/laptop
+            ./common
+            ./nixos/config.nix
             inputs.home-manager.nixosModules.home-manager
             (
               _:
@@ -40,7 +41,10 @@
                   inputs
                   inputs'
                   ;
-                imports = [ ../../settings/home/linux.nix ];
+                imports = [
+                  ./home/common
+                  ./home/linux
+                ];
               }
             )
           ];
@@ -73,8 +77,9 @@
             inputs.disko.nixosModules.disko
             inputs.agenix.nixosModules.default
             inputs.agenix-rekey.nixosModules.default
-            ../../hosts/desktop
-            ../../settings/nixos.nix
+            ./nixos/hosts/desktop
+            ./common
+            ./nixos/config.nix
             inputs.home-manager.nixosModules.home-manager
             (
               _:
@@ -85,7 +90,10 @@
                   inputs
                   inputs'
                   ;
-                imports = [ ../../settings/home/linux.nix ];
+                imports = [
+                  ./home/common
+                  ./home/linux
+                ];
               }
             )
           ];

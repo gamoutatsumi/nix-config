@@ -280,7 +280,7 @@ in
       vimdiffAlias = true;
       enable = true;
       plugins = [
-        (pkgs.callPackage ../../../../vimPlugins/denops.nix { })
+        (pkgs.callPackage ./denops.nix { })
         upkgs.vimPlugins.nvim-treesitter.withAllGrammars
       ];
       extraPackages =

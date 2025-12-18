@@ -1,6 +1,6 @@
 { pkgs }:
 let
-  fetchers = pkgs.callPackage ../_sources/generated.nix { };
+  fetchers = pkgs.callPackage ../../../../../../_sources/generated.nix { };
 in
 {
   dap = fetchers.nvim-dap.src;

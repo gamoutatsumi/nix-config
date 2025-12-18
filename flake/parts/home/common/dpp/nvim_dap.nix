@@ -1,6 +1,6 @@
 { pkgs }:
 let
-  nvim_dap = pkgs.callPackage ../../../../vimPlugins/nvim_dap.nix { };
+  nvim_dap = pkgs.callPackage ./vimPlugins/nvim_dap.nix { };
 in
 {
   plugins = [
