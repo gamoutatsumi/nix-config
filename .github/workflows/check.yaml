@@ -54,5 +54,3 @@ jobs:
               attribute: nixosConfigurations.tat-nixos-desktop.config.system.build.toplevel
             - displayName: nixos-laptop
               attribute: nixosConfigurations.tat-nixos-laptop.config.system.build.toplevel
-            - displayName: darwin-work
-              attribute: darwinConfigurations.work.system
