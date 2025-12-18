@@ -57,19 +57,17 @@
           allow = [
           ];
           deny = [
+            "Edit"
+            "Glob"
+            "Grep"
+            "Read"
+            "Write"
             "Bash(sudo:*)"
             "Bash(rm:*)"
             "Bash(rm -rf:*)"
             "Bash(git push:*)"
             "Bash(git reset:*)"
             "Bash(git rebase:*)"
-            "Read(.env.*)"
-            "Read(id_rsa)"
-            "Read(id_ed25519)"
-            "Read(**/*token*)"
-            "Read(**/*key*)"
-            "Write(.env*)"
-            "Write(**/secrets/**)"
             "Bash(curl:*)"
             "Bash(wget:*)"
             "Bash(nc:*)"
@@ -78,7 +76,6 @@
             "Bash(psql:*)"
             "Bash(mysql:*)"
             "Bash(mongod:*)"
-            "mcp__supabase__execute_sql"
           ];
         };
       };
