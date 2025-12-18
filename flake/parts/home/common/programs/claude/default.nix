@@ -32,8 +32,8 @@
               enable = true;
               env = {
                 GITHUB_TOOLSETS = "context,issues,pull_requests";
-                GITHUB_DYNAMIC_TOOLSETS = 1;
-                GITHUB_READ_ONLY = 1;
+                GITHUB_DYNAMIC_TOOLSETS = "1";
+                GITHUB_READ_ONLY = "1";
               };
               passwordCommand = {
                 GITHUB_PERSONAL_ACCESS_TOKEN = [
