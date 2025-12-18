@@ -1,31 +1,31 @@
 ---
 description: Commit changes with appropriate granularity
 allowed-tools:
-  # 基本ツール
-  - Read
-  - Glob
-  - Grep
-  # Git MCP Server - コミット操作
-  - mcp__git__git_status
-  - mcp__git__git_add
-  - mcp__git__git_reset
-  - mcp__git__git_diff
-  - mcp__git__git_diff_unstaged
-  - mcp__git__git_diff_staged
-  - mcp__git__git_commit
-  - mcp__git__git_log
-  - mcp__git__git_branch
-  - mcp__git__git_show
-  # Serena MCP Server - コード分析
-  - mcp__serena__read_file
-  - mcp__serena__get_symbols_overview
-  - mcp__serena__find_symbol
-  - mcp__serena__find_referencing_symbols
-  - mcp__serena__search_for_pattern
-  - mcp__serena__list_dir
-  # Codex MCP Server - 複雑な分析タスクの委任
-  - mcp__codex__codex
-  - mcp__codex__codex-reply
+# 基本ツール
+- Read
+- Glob
+- Grep
+# Git MCP Server - コミット操作
+- mcp__git__git_status
+- mcp__git__git_add
+- mcp__git__git_reset
+- mcp__git__git_diff
+- mcp__git__git_diff_unstaged
+- mcp__git__git_diff_staged
+- mcp__git__git_commit
+- mcp__git__git_log
+- mcp__git__git_branch
+- mcp__git__git_show
+# Serena MCP Server - コード分析
+- mcp__serena__read_file
+- mcp__serena__get_symbols_overview
+- mcp__serena__find_symbol
+- mcp__serena__find_referencing_symbols
+- mcp__serena__search_for_pattern
+- mcp__serena__list_dir
+# Codex MCP Server - 複雑な分析タスクの委任
+- mcp__codex__codex
+- mcp__codex__codex-reply
 ---
 
 ## 適切なコミット粒度
@@ -54,17 +54,17 @@ allowed-tools:
 ### コミット分割の判断基準
 
 1. **機能的な独立性**: 他の変更なしに動作するか
-2. **レビューの容易さ**: 差分が理解しやすいサイズか
-3. **履歴の追跡性**: 後から特定の変更を見つけやすいか
+1. **レビューの容易さ**: 差分が理解しやすいサイズか
+1. **履歴の追跡性**: 後から特定の変更を見つけやすいか
 
 ### 実行手順
 
 1. **変更内容を確認**: `mcp__git__git_status` と `mcp__git__git_diff_unstaged`
    を使用
-2. **関連する変更のみをステージング**: `mcp__git__git_add` で関連ファイルを追加
-3. **ステージング内容を確認**: `mcp__git__git_diff_staged` で確認
-4. **コミット**: `mcp__git__git_commit` でコミット
-5. **必要に応じて繰り返す**: 別の論理的変更は別コミットとして作成
+1. **関連する変更のみをステージング**: `mcp__git__git_add` で関連ファイルを追加
+1. **ステージング内容を確認**: `mcp__git__git_diff_staged` で確認
+1. **コミット**: `mcp__git__git_commit` でコミット
+1. **必要に応じて繰り返す**: 別の論理的変更は別コミットとして作成
 
 ### コード分析の手順
 

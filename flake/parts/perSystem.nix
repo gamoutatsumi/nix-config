@@ -111,16 +111,16 @@
               excludes = [ "_sources/*" ];
             };
             deno = {
-              excludes = [ "_sources/*" ];
+              excludes = [
+                "_sources/*"
+                "*.md"
+              ];
             };
             jsonfmt = {
               excludes = [ "_sources/*" ];
             };
             nixfmt = {
               excludes = [ "_sources/*" ];
-            };
-            prettier = {
-              includes = lib.mkForce [ "*.md" ];
             };
             statix = {
               excludes = [
@@ -161,9 +161,6 @@
             enable = true;
           };
           nixfmt = {
-            enable = true;
-          };
-          prettier = {
             enable = true;
           };
           shfmt = {

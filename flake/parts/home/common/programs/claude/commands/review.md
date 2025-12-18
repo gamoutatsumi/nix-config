@@ -1,37 +1,37 @@
 ---
 description: "Review a Pull Request (PR Number Required)"
 allowed-tools:
-  # 基本ツール
-  - Read
-  - Glob
-  - Grep
-  # GitHub MCP Server - PR情報取得・レビュー操作
-  - mcp__github__pull_request_read
-  - mcp__github__pull_request_review_write
-  - mcp__github__add_comment_to_pending_review
-  - mcp__github__add_issue_comment
-  - mcp__github__get_me
-  # Git MCP Server - ローカルリポジトリ操作
-  - mcp__git__git_status
-  - mcp__git__git_log
-  - mcp__git__git_diff
-  - mcp__git__git_branch
-  - mcp__git__git_show
-  # Serena MCP Server - コード分析
-  - mcp__serena__read_file
-  - mcp__serena__get_symbols_overview
-  - mcp__serena__find_symbol
-  - mcp__serena__find_referencing_symbols
-  - mcp__serena__search_for_pattern
-  - mcp__serena__list_dir
-  # Context7 MCP Server - ライブラリドキュメント参照
-  - mcp__context7__resolve-library-id
-  - mcp__context7__get-library-docs
-  # Sequential-Thinking MCP Server - 深い検討
-  - mcp__sequential-thinking__sequentialthinking
-  # Codex MCP Server - 複雑な分析タスクの委任
-  - mcp__codex__codex
-  - mcp__codex__codex-reply
+# 基本ツール
+- Read
+- Glob
+- Grep
+# GitHub MCP Server - PR情報取得・レビュー操作
+- mcp__github__pull_request_read
+- mcp__github__pull_request_review_write
+- mcp__github__add_comment_to_pending_review
+- mcp__github__add_issue_comment
+- mcp__github__get_me
+# Git MCP Server - ローカルリポジトリ操作
+- mcp__git__git_status
+- mcp__git__git_log
+- mcp__git__git_diff
+- mcp__git__git_branch
+- mcp__git__git_show
+# Serena MCP Server - コード分析
+- mcp__serena__read_file
+- mcp__serena__get_symbols_overview
+- mcp__serena__find_symbol
+- mcp__serena__find_referencing_symbols
+- mcp__serena__search_for_pattern
+- mcp__serena__list_dir
+# Context7 MCP Server - ライブラリドキュメント参照
+- mcp__context7__resolve-library-id
+- mcp__context7__get-library-docs
+# Sequential-Thinking MCP Server - 深い検討
+- mcp__sequential-thinking__sequentialthinking
+# Codex MCP Server - 複雑な分析タスクの委任
+- mcp__codex__codex
+- mcp__codex__codex-reply
 ---
 
 私はこのリポジトリにおいてコードレビューを任されています。あなたは優秀なアシスタントです。
@@ -69,7 +69,7 @@ GitHub MCP Server
 変更に使用されているライブラリのベストプラクティスを確認する場合:
 
 1. `mcp__context7__resolve-library-id` でライブラリIDを解決
-2. `mcp__context7__get-library-docs` でドキュメントを取得
+1. `mcp__context7__get-library-docs` でドキュメントを取得
 
 # 2. 分析フェーズ（Codexに委任）
 
