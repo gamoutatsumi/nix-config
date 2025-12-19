@@ -3,15 +3,15 @@
 {
   avante-nvim = {
     pname = "avante-nvim";
-    version = "bbf6d8f0d9aa072a2ccffc7701936eaa71985f92";
+    version = "80f7079556c6acf3d3effa13c22f0e4fd00bcffd";
     src = fetchFromGitHub {
       owner = "yetone";
       repo = "avante.nvim";
-      rev = "bbf6d8f0d9aa072a2ccffc7701936eaa71985f92";
+      rev = "80f7079556c6acf3d3effa13c22f0e4fd00bcffd";
       fetchSubmodules = false;
-      sha256 = "sha256-Ig4yMpoNEWMIHqh3Cq6taAkyBFesLk+C+nb/Kld18ag=";
+      sha256 = "sha256-P8liuX2z0LNvtaIYeG5vOd5fEZyCfTwKd6UwFiBKPsM=";
     };
-    date = "2025-12-10";
+    date = "2025-12-16";
   };
   denops-vim = {
     pname = "denops-vim";
@@ -37,13 +37,13 @@
   };
   neotest-golang = {
     pname = "neotest-golang";
-    version = "v2.5.1";
+    version = "v2.6.0";
     src = fetchFromGitHub {
       owner = "fredrikaverpil";
       repo = "neotest-golang";
-      rev = "v2.5.1";
+      rev = "v2.6.0";
       fetchSubmodules = false;
-      sha256 = "sha256-rUuhpV/sOeIXEzuIl1nKlMQ98qrY+gE7Ng2mKu82mBA=";
+      sha256 = "sha256-aIiyJbJaB8YLfgt0S/MvP2AM32qE34WRfTa7249K5BQ=";
     };
   };
   neotest-plenary = {

@@ -1,7 +1,7 @@
 {
     "avante-nvim": {
         "cargoLocks": null,
-        "date": "2025-12-10",
+        "date": "2025-12-16",
         "extract": null,
         "name": "avante-nvim",
         "passthru": null,
@@ -13,12 +13,12 @@
             "name": null,
             "owner": "yetone",
             "repo": "avante.nvim",
-            "rev": "bbf6d8f0d9aa072a2ccffc7701936eaa71985f92",
-            "sha256": "sha256-Ig4yMpoNEWMIHqh3Cq6taAkyBFesLk+C+nb/Kld18ag=",
+            "rev": "80f7079556c6acf3d3effa13c22f0e4fd00bcffd",
+            "sha256": "sha256-P8liuX2z0LNvtaIYeG5vOd5fEZyCfTwKd6UwFiBKPsM=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "bbf6d8f0d9aa072a2ccffc7701936eaa71985f92"
+        "version": "80f7079556c6acf3d3effa13c22f0e4fd00bcffd"
     },
     "denops-vim": {
         "cargoLocks": null,
@@ -76,12 +76,12 @@
             "name": null,
             "owner": "fredrikaverpil",
             "repo": "neotest-golang",
-            "rev": "v2.5.1",
-            "sha256": "sha256-rUuhpV/sOeIXEzuIl1nKlMQ98qrY+gE7Ng2mKu82mBA=",
+            "rev": "v2.6.0",
+            "sha256": "sha256-aIiyJbJaB8YLfgt0S/MvP2AM32qE34WRfTa7249K5BQ=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2.5.1"
+        "version": "v2.6.0"
     },
     "neotest-plenary": {
         "cargoLocks": null,
