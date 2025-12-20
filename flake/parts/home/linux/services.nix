@@ -30,42 +30,63 @@
     };
     kanshi = {
       enable = true;
-      profiles = {
-        dual-monitor = {
-          outputs = [
-            {
-              criteria = "Eizo Nanao Corporation EV2795 44888121";
-            }
-            {
-              criteria = "I-O Data Device Inc LCD-MF225X G6PF030312R7";
-              position = "0,0";
-            }
-          ];
-          exec = [
-            ''niri msg action move-workspace-to-monitor --reference chat "I-O Data Device Inc LCD-MF225X G6PF030312R7"''
-            ''niri msg action focus-monitor "Eizo Nanao Corporation EV2795 44888121"''
-          ];
-        };
-        docked = {
-          outputs = [
-            {
-              criteria = "Eizo Nanao Corporation EV2795 44888121";
-            }
-            {
-              criteria = "I-O Data Device Inc LCD-MF225X G6PF030312R7";
-              position = "0,0";
-            }
-            {
-              criteria = "eDP-1";
-              status = "disable";
-            }
-          ];
-          exec = [
-            ''niri msg action move-workspace-to-monitor --reference chat "I-O Data Device Inc LCD-MF225X G6PF030312R7"''
-            ''niri msg action focus-monitor "Eizo Nanao Corporation EV2795 44888121"''
-          ];
-        };
-      };
+      settings = [
+        {
+          output = {
+            criteria = "Eizo Nanao Corporation EV2795 44888121";
+            alias = "MAIN";
+          };
+        }
+        {
+          output = {
+            criteria = "I-O Data Device Inc LCD-MF225X G6PF030312R7";
+            alias = "SIDE";
+            position = "0,0";
+          };
+        }
+        {
+          profile = {
+            name = "dual-monitor";
+            outputs = [
+              {
+                criteria = "$MAIN";
+                status = "enable";
+              }
+              {
+                criteria = "$SIDE";
+                status = "enable";
+              }
+            ];
+            exec = [
+              ''niri msg action move-workspace-to-monitor --reference chat "I-O Data Device Inc LCD-MF225X G6PF030312R7"''
+              ''niri msg action focus-monitor "Eizo Nanao Corporation EV2795 44888121"''
+            ];
+          };
+        }
+        {
+          profile = {
+            name = "docked";
+            outputs = [
+              {
+                criteria = "$MAIN";
+                status = "enable";
+              }
+              {
+                criteria = "$SIDE";
+                status = "enable";
+              }
+              {
+                criteria = "eDP-1";
+                status = "disable";
+              }
+            ];
+            exec = [
+              ''niri msg action move-workspace-to-monitor --reference chat "I-O Data Device Inc LCD-MF225X G6PF030312R7"''
+              ''niri msg action focus-monitor "Eizo Nanao Corporation EV2795 44888121"''
+            ];
+          };
+        }
+      ];
     };
     mako = {
       enable = true;
