@@ -90,6 +90,9 @@
     };
     mako = {
       enable = true;
+      settings = {
+        default-timeout = 3 * 1000 * 60; # 3 minutes
+      };
     };
     mpd = {
       enable = true;
