@@ -2,6 +2,7 @@
   pkgs,
   nixosConfig,
   lib,
+  osConfig,
   ...
 }:
 {
@@ -58,8 +59,8 @@
               }
             ];
             exec = [
-              ''niri msg action move-workspace-to-monitor --reference chat "I-O Data Device Inc LCD-MF225X G6PF030312R7"''
-              ''niri msg action focus-monitor "Eizo Nanao Corporation EV2795 44888121"''
+              ''${lib.getExe osConfig.programs.niri.package} msg action move-workspace-to-monitor --reference chat "I-O Data Device Inc LCD-MF225X G6PF030312R7"''
+              ''${lib.getExe osConfig.programs.niri.package} msg action focus-monitor "Eizo Nanao Corporation EV2795 44888121"''
             ];
           };
         }
@@ -81,8 +82,8 @@
               }
             ];
             exec = [
-              ''niri msg action move-workspace-to-monitor --reference chat "I-O Data Device Inc LCD-MF225X G6PF030312R7"''
-              ''niri msg action focus-monitor "Eizo Nanao Corporation EV2795 44888121"''
+              ''${lib.getExe osConfig.programs.niri.package} msg action move-workspace-to-monitor --reference chat "I-O Data Device Inc LCD-MF225X G6PF030312R7"''
+              ''${lib.getExe osConfig.programs.niri.package} msg action focus-monitor "Eizo Nanao Corporation EV2795 44888121"''
             ];
           };
         }
@@ -147,7 +148,7 @@
       timeouts = [
         {
           timeout = 601;
-          command = "niri msg action power-off-monitors";
+          command = "${lib.getExe osConfig.programs.niri.package} msg action power-off-monitors";
         }
         {
           timeout = 600;
