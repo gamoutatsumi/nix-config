@@ -3,15 +3,15 @@
 {
   avante-nvim = {
     pname = "avante-nvim";
-    version = "80f7079556c6acf3d3effa13c22f0e4fd00bcffd";
+    version = "15548d50fcfb2ebda173bff0d751a1b0bc53e4c5";
     src = fetchFromGitHub {
       owner = "yetone";
       repo = "avante.nvim";
-      rev = "80f7079556c6acf3d3effa13c22f0e4fd00bcffd";
+      rev = "15548d50fcfb2ebda173bff0d751a1b0bc53e4c5";
       fetchSubmodules = false;
-      sha256 = "sha256-P8liuX2z0LNvtaIYeG5vOd5fEZyCfTwKd6UwFiBKPsM=";
+      sha256 = "sha256-jTXV/IV/vIu+pWL/C1OkWvrVRg39yGalfC28VIfDvqI=";
     };
-    date = "2025-12-16";
+    date = "2025-12-19";
   };
   denops-vim = {
     pname = "denops-vim";
@@ -22,6 +22,17 @@
       rev = "v8.0.1";
       fetchSubmodules = false;
       sha256 = "sha256-4AACZ3h6uAqiXW24gUF1+uq7dnWA0w/PcxAeO4yxitc=";
+    };
+  };
+  jdim = {
+    pname = "jdim";
+    version = "JDim-v0.14.0";
+    src = fetchFromGitHub {
+      owner = "JDimproved";
+      repo = "JDim";
+      rev = "JDim-v0.14.0";
+      fetchSubmodules = false;
+      sha256 = "sha256-Nyr5OVPU0xJMun8qKRc3yB39g4vkhoThUGPxcN5FUVg=";
     };
   };
   neotest = {

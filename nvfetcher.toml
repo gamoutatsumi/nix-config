@@ -53,3 +53,7 @@ fetch.github = "rcarriga/nvim-dap-ui"
 [nvim-dap-virtual-text]
 src.git = "https://github.com/theHamsta/nvim-dap-virtual-text"
 fetch.github = "theHamsta/nvim-dap-virtual-text"
+
+[jdim]
+src.github = "JDimproved/JDim"
+fetch.github = "JDimproved/JDim"

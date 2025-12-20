@@ -5,6 +5,9 @@
   config,
   ...
 }:
+let
+  inherit ((pkgs.callPackage ../../../../_sources/generated.nix { })) jdim;
+in
 {
   home = {
     packages =
@@ -24,6 +27,24 @@
         wl-clipboard
         zoom-us
         # keep-sorted end
+        (stdenv.mkDerivation {
+          inherit (jdim) src version pname;
+          mesonFlags = [
+            "-Dmigemo=enabled"
+            "-Dmigemodict=${pkgs.cmigemo}/share/migemo/utf-8/migemo-dict"
+          ];
+          nativeBuildInputs = with pkgs; [
+            gtest
+            cmigemo
+            gtkmm3
+            gnutls
+            meson
+            ninja
+            libxcrypt
+            cmake
+            pkg-config
+          ];
+        })
       ]
       ++ (with upkgs; [
         agenix-rekey
