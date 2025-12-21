@@ -3,15 +3,15 @@
 {
   avante-nvim = {
     pname = "avante-nvim";
-    version = "15548d50fcfb2ebda173bff0d751a1b0bc53e4c5";
+    version = "cf352f6f4653dddbac0980c06ca3f97554f80d80";
     src = fetchFromGitHub {
       owner = "yetone";
       repo = "avante.nvim";
-      rev = "15548d50fcfb2ebda173bff0d751a1b0bc53e4c5";
+      rev = "cf352f6f4653dddbac0980c06ca3f97554f80d80";
       fetchSubmodules = false;
-      sha256 = "sha256-jTXV/IV/vIu+pWL/C1OkWvrVRg39yGalfC28VIfDvqI=";
+      sha256 = "sha256-fYw1w8amy8qhvG+Esoszh091NPgvZStp4fXm0n9z8xI=";
     };
-    date = "2025-12-19";
+    date = "2025-12-21";
   };
   denops-vim = {
     pname = "denops-vim";

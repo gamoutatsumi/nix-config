@@ -1,7 +1,7 @@
 {
     "avante-nvim": {
         "cargoLocks": null,
-        "date": "2025-12-19",
+        "date": "2025-12-21",
         "extract": null,
         "name": "avante-nvim",
         "passthru": null,
@@ -13,12 +13,12 @@
             "name": null,
             "owner": "yetone",
             "repo": "avante.nvim",
-            "rev": "15548d50fcfb2ebda173bff0d751a1b0bc53e4c5",
-            "sha256": "sha256-jTXV/IV/vIu+pWL/C1OkWvrVRg39yGalfC28VIfDvqI=",
+            "rev": "cf352f6f4653dddbac0980c06ca3f97554f80d80",
+            "sha256": "sha256-fYw1w8amy8qhvG+Esoszh091NPgvZStp4fXm0n9z8xI=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "15548d50fcfb2ebda173bff0d751a1b0bc53e4c5"
+        "version": "cf352f6f4653dddbac0980c06ca3f97554f80d80"
     },
     "denops-vim": {
         "cargoLocks": null,
