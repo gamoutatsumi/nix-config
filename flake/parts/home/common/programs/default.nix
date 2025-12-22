@@ -41,9 +41,7 @@ in
         bc
         binutils
         cacert
-        coreutils-full
         file
-        findutils
         gawk
         ghq
         git-crypt
@@ -70,6 +68,8 @@ in
         q-text-as-data
         ssm-session-manager-plugin
         unzip
+        uutils-coreutils-noprefix
+        uutils-findutils
         yubico-piv-tool
         yubikey-manager
         zbar
