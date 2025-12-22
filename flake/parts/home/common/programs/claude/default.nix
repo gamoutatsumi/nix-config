@@ -24,7 +24,6 @@
             };
             context7 = {
               enable = true;
-              context = "claude-code";
             };
             git = {
               enable = true;
@@ -50,6 +49,7 @@
             serena = {
               enable = true;
               enableWebDashboard = false;
+              context = "claude-code";
             };
             # keep-sorted end
           };
