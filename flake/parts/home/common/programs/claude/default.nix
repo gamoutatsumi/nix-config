@@ -24,6 +24,7 @@
             };
             context7 = {
               enable = true;
+              context = "claude-code";
             };
             git = {
               enable = true;
