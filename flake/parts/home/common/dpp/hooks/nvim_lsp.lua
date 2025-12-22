@@ -107,7 +107,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
             "n",
             "K",
             vim.lsp.buf.hover,
-            { noremap = true, silent = true, bufnr = bufnr, desc = "vim.lsp.buf.hover" }
+            { noremap = true, silent = true, buffer = bufnr, desc = "vim.lsp.buf.hover" }
         )
         vim.keymap.set("n", "[d", function()
             vim.diagnostic.jump({ count = -1, float = false })
