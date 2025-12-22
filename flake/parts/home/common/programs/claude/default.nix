@@ -30,6 +30,7 @@
             };
             github = {
               enable = true;
+              package = upkgs.github-mcp-server;
               env = {
                 GITHUB_DYNAMIC_TOOLSETS = "1";
                 GITHUB_READ_ONLY = "1";
