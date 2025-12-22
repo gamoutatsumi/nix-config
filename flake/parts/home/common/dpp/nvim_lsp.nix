@@ -15,6 +15,7 @@
     }
     {
       repo = "ray-x/lsp_signature.nvim";
+      hooks_file = [ ./hooks/lsp_signature.lua ];
     }
     {
       repo = "creativenull/efmls-configs-nvim";
