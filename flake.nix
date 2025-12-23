@@ -59,6 +59,14 @@
         };
       };
     };
+    arto = {
+      url = "github:lambdalisue/rs-arto?ref=v0.6.3";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs-unstable";
+        };
+      };
+    };
     brew-api = {
       url = "github:BatteredBunny/brew-api";
       flake = false;

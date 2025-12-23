@@ -3,6 +3,7 @@
   home = {
     packages = with upkgs; [
       # keep-sorted start block=yes
+      arto
       colima
       container
       docker-client

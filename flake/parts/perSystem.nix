@@ -15,7 +15,7 @@
     }:
     let
       upkgs = import ./upkgs.nix {
-        inherit system inputs;
+        inherit system inputs inputs';
       };
       treefmtBuild = config.treefmt.build;
     in

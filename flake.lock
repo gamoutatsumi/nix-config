@@ -85,6 +85,28 @@
         "type": "github"
       }
     },
+    "arto": {
+      "inputs": {
+        "crane": "crane_2",
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1766456568,
+        "narHash": "sha256-PEF00aIU67sbEjiPMGzecrudTBXTwWifeft0AkycdQM=",
+        "owner": "lambdalisue",
+        "repo": "rs-arto",
+        "rev": "bca4a9628d75dda709b8111159a9a738b5c888f2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lambdalisue",
+        "ref": "v0.6.3",
+        "repo": "rs-arto",
+        "type": "github"
+      }
+    },
     "brew-api": {
       "flake": false,
       "locked": {
@@ -144,6 +166,21 @@
     },
     "crane_2": {
       "locked": {
+        "lastModified": 1763938834,
+        "narHash": "sha256-j8iB0Yr4zAvQLueCZ5abxfk6fnG/SJ5JnGUziETjwfg=",
+        "owner": "ipetkov",
+        "repo": "crane",
+        "rev": "d9e753122e51cee64eb8d2dddfe11148f339f5a2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ipetkov",
+        "repo": "crane",
+        "type": "github"
+      }
+    },
+    "crane_3": {
+      "locked": {
         "lastModified": 1745454774,
         "narHash": "sha256-oLvmxOnsEKGtwczxp/CwhrfmQUG2ym24OMWowcoRhH8=",
         "rev": "efd36682371678e2b6da3f108fdb5c613b3ec598",
@@ -156,7 +193,7 @@
         "url": "https://flakehub.com/f/ipetkov/crane/0"
       }
     },
-    "crane_3": {
+    "crane_4": {
       "locked": {
         "lastModified": 1765145449,
         "narHash": "sha256-aBVHGWWRzSpfL++LubA0CwOOQ64WNLegrYHwsVuVN7A=",
@@ -171,7 +208,7 @@
         "type": "github"
       }
     },
-    "crane_4": {
+    "crane_5": {
       "locked": {
         "lastModified": 1751562746,
         "narHash": "sha256-smpugNIkmDeicNz301Ll1bD7nFOty97T79m4GUMUczA=",
@@ -247,7 +284,7 @@
     },
     "easy-template": {
       "inputs": {
-        "crane": "crane_2",
+        "crane": "crane_3",
         "fenix": "fenix",
         "nixpkgs": [
           "flake-checker",
@@ -512,7 +549,7 @@
     },
     "lanzaboote": {
       "inputs": {
-        "crane": "crane_3",
+        "crane": "crane_4",
         "nixpkgs": [
           "nixpkgs"
         ],
@@ -871,6 +908,7 @@
         "agenix": "agenix",
         "agenix-rekey": "agenix-rekey",
         "agenix_orig": "agenix_orig",
+        "arto": "arto",
         "brew-api": "brew-api",
         "brew-nix": "brew-nix",
         "disko": "disko",
@@ -1105,7 +1143,7 @@
     },
     "xremap-nix": {
       "inputs": {
-        "crane": "crane_4",
+        "crane": "crane_5",
         "devshell": "devshell_2",
         "flake-parts": [
           "flake-parts"
