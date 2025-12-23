@@ -6,14 +6,11 @@
       autoUpdate = true;
       upgrade = true;
     };
-    taps = [ "lambdalisue/arto" ];
-
     casks = [
       # keep-sorted start
       "chatgpt"
       "discord"
       "karabiner-elements"
-      "lambdalisue/arto/arto"
       "macskk"
       "obsidian"
       "raycast"
