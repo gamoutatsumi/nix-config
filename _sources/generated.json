@@ -148,7 +148,7 @@
     },
     "nvim-dap": {
         "cargoLocks": null,
-        "date": "2025-11-17",
+        "date": "2025-12-23",
         "extract": null,
         "name": "nvim-dap",
         "passthru": null,
@@ -160,12 +160,12 @@
             "name": null,
             "owner": "mfussenegger",
             "repo": "nvim-dap",
-            "rev": "5860c7c501eb428d3137ee22c522828d20cca0b3",
-            "sha256": "sha256-WXuetpSU6wIZu6UFBM4rJTpJcnJ8pn7dxCVnBjsk0N4=",
+            "rev": "818cd8787a77a97703eb1d9090543a374f79a9ac",
+            "sha256": "sha256-D4YqVHXPC5UzXGNGIFHAFlwkyaxlWQekR6nXqMSJCYw=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "5860c7c501eb428d3137ee22c522828d20cca0b3"
+        "version": "818cd8787a77a97703eb1d9090543a374f79a9ac"
     },
     "nvim-dap-go": {
         "cargoLocks": null,
