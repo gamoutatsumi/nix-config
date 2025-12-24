@@ -1,6 +1,6 @@
 // deno-lint-ignore-file no-import-prefix
 import { defineConfig, fileExists } from "jsr:@yuki-yano/zeno@0.2.0";
-import { dirname, join, resolve } from "jsr:@std/path@1.1.3";
+import { dirname, join, resolve } from "jsr:@std/path@1.1.4";
 
 type PackageManager = "npm" | "yarn" | "pnpm" | "bun";
 
