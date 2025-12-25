@@ -1,42 +1,42 @@
 ---
-description: "Review a Pull Request (PR Number Required)"
+description: Review a Pull Request (PR Number Required)
 allowed-tools:
 # 基本ツール
-- Read
-- Glob
-- Grep
+  - Read
+  - Glob
+  - Grep
 # GitHub MCP Server - ツールセット管理
-- mcp__github__list_available_toolsets
-- mcp__github__get_toolset_tools
-- mcp__github__enable_toolset
+  - mcp__github__list_available_toolsets
+  - mcp__github__get_toolset_tools
+  - mcp__github__enable_toolset
 # GitHub MCP Server - PR情報取得（pull_requestsツールセット有効化後に使用可能）
-- mcp__github__pull_request_read
-- mcp__github__list_pull_requests
-- mcp__github__search_pull_requests
+  - mcp__github__pull_request_read
+  - mcp__github__list_pull_requests
+  - mcp__github__search_pull_requests
 # GitHub MCP Server - ユーザー情報（contextツールセット有効化後に使用可能）
-- mcp__github__get_me
+  - mcp__github__get_me
 # Git MCP Server - ローカルリポジトリ操作
-- mcp__git__git_status
-- mcp__git__git_log
-- mcp__git__git_diff
-- mcp__git__git_branch
-- mcp__git__git_show
+  - mcp__git__git_status
+  - mcp__git__git_log
+  - mcp__git__git_diff
+  - mcp__git__git_branch
+  - mcp__git__git_show
 # Serena MCP Server - コード分析
-- mcp__serena__activate_project
-- mcp__serena__get_symbols_overview
-- mcp__serena__find_symbol
-- mcp__serena__find_referencing_symbols
-- mcp__serena__search_for_pattern
-- mcp__serena__list_dir
-- mcp__serena__find_file
+  - mcp__serena__activate_project
+  - mcp__serena__get_symbols_overview
+  - mcp__serena__find_symbol
+  - mcp__serena__find_referencing_symbols
+  - mcp__serena__search_for_pattern
+  - mcp__serena__list_dir
+  - mcp__serena__find_file
 # Context7 MCP Server - ライブラリドキュメント参照
-- mcp__context7__resolve-library-id
-- mcp__context7__get-library-docs
+  - mcp__context7__resolve-library-id
+  - mcp__context7__get-library-docs
 # Sequential-Thinking MCP Server - 深い検討
-- mcp__sequential-thinking__sequentialthinking
+  - mcp__sequential-thinking__sequentialthinking
 # Codex MCP Server - 複雑な分析タスクの委任
-- mcp__codex__codex
-- mcp__codex__codex-reply
+  - mcp__codex__codex
+  - mcp__codex__codex-reply
 ---
 
 私はこのリポジトリにおいてコードレビューを任されています。あなたは優秀なアシスタントです。
