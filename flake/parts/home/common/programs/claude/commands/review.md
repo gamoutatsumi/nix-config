@@ -5,11 +5,15 @@ allowed-tools:
 - Read
 - Glob
 - Grep
-# GitHub MCP Server - PR情報取得・レビュー操作
+# GitHub MCP Server - ツールセット管理
+- mcp__github__list_available_toolsets
+- mcp__github__get_toolset_tools
+- mcp__github__enable_toolset
+# GitHub MCP Server - PR情報取得（pull_requestsツールセット有効化後に使用可能）
 - mcp__github__pull_request_read
-- mcp__github__pull_request_review_write
-- mcp__github__add_comment_to_pending_review
-- mcp__github__add_issue_comment
+- mcp__github__list_pull_requests
+- mcp__github__search_pull_requests
+# GitHub MCP Server - ユーザー情報（contextツールセット有効化後に使用可能）
 - mcp__github__get_me
 # Git MCP Server - ローカルリポジトリ操作
 - mcp__git__git_status
@@ -18,12 +22,13 @@ allowed-tools:
 - mcp__git__git_branch
 - mcp__git__git_show
 # Serena MCP Server - コード分析
-- mcp__serena__read_file
+- mcp__serena__activate_project
 - mcp__serena__get_symbols_overview
 - mcp__serena__find_symbol
 - mcp__serena__find_referencing_symbols
 - mcp__serena__search_for_pattern
 - mcp__serena__list_dir
+- mcp__serena__find_file
 # Context7 MCP Server - ライブラリドキュメント参照
 - mcp__context7__resolve-library-id
 - mcp__context7__get-library-docs
@@ -38,6 +43,17 @@ allowed-tools:
 
 以下の手順でPull request(PR)を確認し、レビューに役立つ情報を提示してください。
 
+# 0. 準備フェーズ
+
+## GitHub MCP ツールセットの有効化
+
+まず必要なツールセットを有効化します:
+
+```
+mcp__github__enable_toolset({ toolset: "pull_requests" })
+mcp__github__enable_toolset({ toolset: "context" })
+```
+
 # 1. 情報収集フェーズ（直接MCPサーバーを使用）
 
 ## PRの内容確認
@@ -45,9 +61,7 @@ allowed-tools:
 GitHub MCP Server
 を使用して、対象PRの内容を確認します。`$ARGUMENTS`にはPRの番号が渡されます。
 
-- `mcp__github__pull_request_read` with `method: "get"` - PRの基本情報
-- `mcp__github__pull_request_read` with `method: "get_diff"` - PRの差分
-- `mcp__github__pull_request_read` with `method: "get_files"` - 変更ファイル一覧
+- `mcp__github__pull_request_read` - PRの基本情報・差分・変更ファイル一覧を取得
 
 リポジトリのオーナーとリポジトリ名は、現在のリポジトリのリモート設定から取得してください。
 
