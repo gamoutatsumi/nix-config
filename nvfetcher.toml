@@ -61,3 +61,7 @@ fetch.github = "JDimproved/JDim"
 [anthropics-skills]
 src.git = "https://github.com/anthropics/skills"
 fetch.github = "anthropics/skills"
+
+[atusy-dotfiles]
+src.git = "https://github.com/atusy/dotfiles"
+fetch.github = "atusy/dotfiles"

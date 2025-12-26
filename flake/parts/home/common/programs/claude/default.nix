@@ -17,7 +17,7 @@ in
       commandsDir = ./commands;
       skillsDir = upkgs.symlinkJoin {
         name = "claude-code-skills";
-        paths = [ anthropicsSkills ];
+        paths = [ "${anthropicsSkills}/skills" ];
       };
       memory = {
         source = ./CLAUDE.md;
