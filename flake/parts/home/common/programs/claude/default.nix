@@ -5,12 +5,20 @@
   lib,
   ...
 }:
+let
+  anthropicsSkills =
+    (upkgs.callPackage ../../../../../../_sources/generated.nix { }).anthropics-skills.src;
+in
 {
   programs = {
     claude-code = {
       enable = true;
       package = upkgs.edge.claude-code;
       commandsDir = ./commands;
+      skillsDir = upkgs.symlinkJoin {
+        name = "claude-code-skills";
+        paths = [ anthropicsSkills ];
+      };
       memory = {
         source = ./CLAUDE.md;
       };
