@@ -158,6 +158,15 @@
   };
   services = {
     # keep-sorted start block=yes
+    avahi = {
+      allowInterfaces = [ "enp7s0" ];
+      denyInterfaces = [
+        "enp0s20f0u8u4"
+        "enp5s0"
+        "vlan10@enp7s0"
+        "tailscale0"
+      ];
+    };
     blueman = {
       enable = true;
     };

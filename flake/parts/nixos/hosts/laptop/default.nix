@@ -232,11 +232,6 @@
         # keep-sorted end
       };
     };
-    avahi = {
-      enable = true;
-      nssmdns4 = true;
-      openFirewall = true;
-    };
     blueman = {
       enable = true;
     };
