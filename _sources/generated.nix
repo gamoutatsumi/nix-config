@@ -13,6 +13,18 @@
     };
     date = "2025-12-20";
   };
+  atusy-dotfiles = {
+    pname = "atusy-dotfiles";
+    version = "103e1c42218331bc70b48e5a9f44c721cfa79f48";
+    src = fetchFromGitHub {
+      owner = "atusy";
+      repo = "dotfiles";
+      rev = "103e1c42218331bc70b48e5a9f44c721cfa79f48";
+      fetchSubmodules = false;
+      sha256 = "sha256-LJMVGPRFQ/OcwRUe7hq+ylc50BkecxvFjMOjHb8ljVU=";
+    };
+    date = "2025-12-24";
+  };
   avante-nvim = {
     pname = "avante-nvim";
     version = "476f342fe6bc1e120ba3e334b5d9cf3ef66de56a";
