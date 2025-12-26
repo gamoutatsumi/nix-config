@@ -335,27 +335,6 @@
         },
         "version": "b7404d35d5d3548a82149238289fa71f7f6de4ac"
     },
-    "spec-workflow-mcp": {
-        "cargoLocks": null,
-        "date": "2025-12-20",
-        "extract": null,
-        "name": "spec-workflow-mcp",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "Pimzino",
-            "repo": "spec-workflow-mcp",
-            "rev": "f63205ac7833647641d7fe6ba218294b56aca5f2",
-            "sha256": "sha256-ihWGtCSsR6NcHBN6owes8rID9m/iv1XKGchPS1WIdTE=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "f63205ac7833647641d7fe6ba218294b56aca5f2"
-    },
     "statuscol-nvim": {
         "cargoLocks": null,
         "date": "2025-06-02",
