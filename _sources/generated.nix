@@ -188,6 +188,18 @@
     };
     date = "2021-11-18";
   };
+  spec-workflow-mcp = {
+    pname = "spec-workflow-mcp";
+    version = "f63205ac7833647641d7fe6ba218294b56aca5f2";
+    src = fetchFromGitHub {
+      owner = "Pimzino";
+      repo = "spec-workflow-mcp";
+      rev = "f63205ac7833647641d7fe6ba218294b56aca5f2";
+      fetchSubmodules = false;
+      sha256 = "sha256-ihWGtCSsR6NcHBN6owes8rID9m/iv1XKGchPS1WIdTE=";
+    };
+    date = "2025-12-20";
+  };
   statuscol-nvim = {
     pname = "statuscol-nvim";
     version = "c46172d0911aa5d49ba5f39f4351d1bb7aa289cc";
