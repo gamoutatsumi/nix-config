@@ -22,7 +22,7 @@
     },
     "atusy-dotfiles": {
         "cargoLocks": null,
-        "date": "2025-12-24",
+        "date": "2025-12-26",
         "extract": null,
         "name": "atusy-dotfiles",
         "passthru": null,
@@ -34,16 +34,16 @@
             "name": null,
             "owner": "atusy",
             "repo": "dotfiles",
-            "rev": "103e1c42218331bc70b48e5a9f44c721cfa79f48",
-            "sha256": "sha256-LJMVGPRFQ/OcwRUe7hq+ylc50BkecxvFjMOjHb8ljVU=",
+            "rev": "46deb4142b8392747398b78d7dd7ac54f5ea8e9d",
+            "sha256": "sha256-6T6cn4OPD3DhzjbSM/ii2Asf6LsMq3nz9VqglwLQZ0I=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "103e1c42218331bc70b48e5a9f44c721cfa79f48"
+        "version": "46deb4142b8392747398b78d7dd7ac54f5ea8e9d"
     },
     "avante-nvim": {
         "cargoLocks": null,
-        "date": "2025-12-22",
+        "date": "2025-12-27",
         "extract": null,
         "name": "avante-nvim",
         "passthru": null,
@@ -55,12 +55,12 @@
             "name": null,
             "owner": "yetone",
             "repo": "avante.nvim",
-            "rev": "476f342fe6bc1e120ba3e334b5d9cf3ef66de56a",
-            "sha256": "sha256-jnDANbe2PfCl375rK+goEu2LkwBpqvTaPBk6zq5ada0=",
+            "rev": "a9e9890fc620c46e39bc22c0ccea5d57beefc0e7",
+            "sha256": "sha256-KliaUk7C4DyX3W8h4WKUz+tTBSMtoU8ByzOha3zGBRU=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "476f342fe6bc1e120ba3e334b5d9cf3ef66de56a"
+        "version": "a9e9890fc620c46e39bc22c0ccea5d57beefc0e7"
     },
     "denops-vim": {
         "cargoLocks": null,

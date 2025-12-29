@@ -15,27 +15,27 @@
   };
   atusy-dotfiles = {
     pname = "atusy-dotfiles";
-    version = "103e1c42218331bc70b48e5a9f44c721cfa79f48";
+    version = "46deb4142b8392747398b78d7dd7ac54f5ea8e9d";
     src = fetchFromGitHub {
       owner = "atusy";
       repo = "dotfiles";
-      rev = "103e1c42218331bc70b48e5a9f44c721cfa79f48";
+      rev = "46deb4142b8392747398b78d7dd7ac54f5ea8e9d";
       fetchSubmodules = false;
-      sha256 = "sha256-LJMVGPRFQ/OcwRUe7hq+ylc50BkecxvFjMOjHb8ljVU=";
+      sha256 = "sha256-6T6cn4OPD3DhzjbSM/ii2Asf6LsMq3nz9VqglwLQZ0I=";
     };
-    date = "2025-12-24";
+    date = "2025-12-26";
   };
   avante-nvim = {
     pname = "avante-nvim";
-    version = "476f342fe6bc1e120ba3e334b5d9cf3ef66de56a";
+    version = "a9e9890fc620c46e39bc22c0ccea5d57beefc0e7";
     src = fetchFromGitHub {
       owner = "yetone";
       repo = "avante.nvim";
-      rev = "476f342fe6bc1e120ba3e334b5d9cf3ef66de56a";
+      rev = "a9e9890fc620c46e39bc22c0ccea5d57beefc0e7";
       fetchSubmodules = false;
-      sha256 = "sha256-jnDANbe2PfCl375rK+goEu2LkwBpqvTaPBk6zq5ada0=";
+      sha256 = "sha256-KliaUk7C4DyX3W8h4WKUz+tTBSMtoU8ByzOha3zGBRU=";
     };
-    date = "2025-12-22";
+    date = "2025-12-27";
   };
   denops-vim = {
     pname = "denops-vim";
