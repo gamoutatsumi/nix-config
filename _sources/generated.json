@@ -22,7 +22,7 @@
     },
     "atusy-dotfiles": {
         "cargoLocks": null,
-        "date": "2025-12-26",
+        "date": "2025-12-29",
         "extract": null,
         "name": "atusy-dotfiles",
         "passthru": null,
@@ -34,16 +34,16 @@
             "name": null,
             "owner": "atusy",
             "repo": "dotfiles",
-            "rev": "46deb4142b8392747398b78d7dd7ac54f5ea8e9d",
-            "sha256": "sha256-6T6cn4OPD3DhzjbSM/ii2Asf6LsMq3nz9VqglwLQZ0I=",
+            "rev": "be653602e8a0273811153e00298d836b05a17ba1",
+            "sha256": "sha256-eVnTzVcOibjpwCOZQGOANav1Re2SUzEOXI0KtEtRUNE=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "46deb4142b8392747398b78d7dd7ac54f5ea8e9d"
+        "version": "be653602e8a0273811153e00298d836b05a17ba1"
     },
     "avante-nvim": {
         "cargoLocks": null,
-        "date": "2025-12-27",
+        "date": "2025-12-29",
         "extract": null,
         "name": "avante-nvim",
         "passthru": null,
@@ -55,12 +55,33 @@
             "name": null,
             "owner": "yetone",
             "repo": "avante.nvim",
-            "rev": "a9e9890fc620c46e39bc22c0ccea5d57beefc0e7",
-            "sha256": "sha256-KliaUk7C4DyX3W8h4WKUz+tTBSMtoU8ByzOha3zGBRU=",
+            "rev": "7608dce00ed9ddfdfaaee9eb4cca1e3cebf7b0c4",
+            "sha256": "sha256-wA/jSrf9LkwK/mEV3EHFNes7+AWLmbEP4x1LsjPPRUE=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "a9e9890fc620c46e39bc22c0ccea5d57beefc0e7"
+        "version": "7608dce00ed9ddfdfaaee9eb4cca1e3cebf7b0c4"
+    },
+    "claudecodeui": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "claudecodeui",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "siteboon",
+            "repo": "claudecodeui",
+            "rev": "v1.13.0",
+            "sha256": "sha256-59Nm5MAdoWjWyfg2Ns7KLsNn3o0Xg+wrHqagCbJP4GI=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v1.13.0"
     },
     "denops-vim": {
         "cargoLocks": null,
@@ -139,12 +160,12 @@
             "name": null,
             "owner": "fredrikaverpil",
             "repo": "neotest-golang",
-            "rev": "v2.6.0",
-            "sha256": "sha256-aIiyJbJaB8YLfgt0S/MvP2AM32qE34WRfTa7249K5BQ=",
+            "rev": "v2.7.0",
+            "sha256": "sha256-MXeUVHjjLVjbd+a9riPctwONkXHsKYTeG+tWxzXScpM=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2.6.0"
+        "version": "v2.7.0"
     },
     "neotest-plenary": {
         "cargoLocks": null,

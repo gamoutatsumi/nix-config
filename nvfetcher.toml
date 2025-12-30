@@ -65,3 +65,7 @@ fetch.github = "anthropics/skills"
 [atusy-dotfiles]
 src.git = "https://github.com/atusy/dotfiles"
 fetch.github = "atusy/dotfiles"
+
+[claudecodeui]
+src.github = "siteboon/claudecodeui"
+fetch.github = "siteboon/claudecodeui"

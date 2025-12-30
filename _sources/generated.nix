@@ -15,27 +15,38 @@
   };
   atusy-dotfiles = {
     pname = "atusy-dotfiles";
-    version = "46deb4142b8392747398b78d7dd7ac54f5ea8e9d";
+    version = "be653602e8a0273811153e00298d836b05a17ba1";
     src = fetchFromGitHub {
       owner = "atusy";
       repo = "dotfiles";
-      rev = "46deb4142b8392747398b78d7dd7ac54f5ea8e9d";
+      rev = "be653602e8a0273811153e00298d836b05a17ba1";
       fetchSubmodules = false;
-      sha256 = "sha256-6T6cn4OPD3DhzjbSM/ii2Asf6LsMq3nz9VqglwLQZ0I=";
+      sha256 = "sha256-eVnTzVcOibjpwCOZQGOANav1Re2SUzEOXI0KtEtRUNE=";
     };
-    date = "2025-12-26";
+    date = "2025-12-29";
   };
   avante-nvim = {
     pname = "avante-nvim";
-    version = "a9e9890fc620c46e39bc22c0ccea5d57beefc0e7";
+    version = "7608dce00ed9ddfdfaaee9eb4cca1e3cebf7b0c4";
     src = fetchFromGitHub {
       owner = "yetone";
       repo = "avante.nvim";
-      rev = "a9e9890fc620c46e39bc22c0ccea5d57beefc0e7";
+      rev = "7608dce00ed9ddfdfaaee9eb4cca1e3cebf7b0c4";
       fetchSubmodules = false;
-      sha256 = "sha256-KliaUk7C4DyX3W8h4WKUz+tTBSMtoU8ByzOha3zGBRU=";
+      sha256 = "sha256-wA/jSrf9LkwK/mEV3EHFNes7+AWLmbEP4x1LsjPPRUE=";
     };
-    date = "2025-12-27";
+    date = "2025-12-29";
+  };
+  claudecodeui = {
+    pname = "claudecodeui";
+    version = "v1.13.0";
+    src = fetchFromGitHub {
+      owner = "siteboon";
+      repo = "claudecodeui";
+      rev = "v1.13.0";
+      fetchSubmodules = false;
+      sha256 = "sha256-59Nm5MAdoWjWyfg2Ns7KLsNn3o0Xg+wrHqagCbJP4GI=";
+    };
   };
   denops-vim = {
     pname = "denops-vim";
@@ -72,13 +83,13 @@
   };
   neotest-golang = {
     pname = "neotest-golang";
-    version = "v2.6.0";
+    version = "v2.7.0";
     src = fetchFromGitHub {
       owner = "fredrikaverpil";
       repo = "neotest-golang";
-      rev = "v2.6.0";
+      rev = "v2.7.0";
       fetchSubmodules = false;
-      sha256 = "sha256-aIiyJbJaB8YLfgt0S/MvP2AM32qE34WRfTa7249K5BQ=";
+      sha256 = "sha256-MXeUVHjjLVjbd+a9riPctwONkXHsKYTeG+tWxzXScpM=";
     };
   };
   neotest-plenary = {
