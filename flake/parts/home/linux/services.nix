@@ -5,22 +5,7 @@
   osConfig,
   ...
 }:
-let
-  claudecodeui = pkgs.callPackage ./claudecodeui.nix { };
-in
 {
-  systemd = {
-    user = {
-      services = {
-        claude-code-ui = {
-          Service = {
-            ExecStart = "${claudecodeui}/bin/claude-code-ui";
-            Environment = "DATABASE_PATH=%h/.local/share/claude-code-ui/database/auth.db";
-          };
-        };
-      };
-    };
-  };
   services = {
     # keep-sorted start block=yes
     blueman-applet = {
