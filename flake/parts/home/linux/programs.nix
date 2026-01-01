@@ -148,6 +148,13 @@ in
     swaylock = {
       enable = true;
     };
+    dankMaterialShell = {
+      enable = true;
+      systemd = {
+        enable = true;
+        restartIfChanged = true;
+      };
+    };
     # keep-sorted end
   };
 }

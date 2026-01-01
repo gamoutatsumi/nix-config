@@ -19,7 +19,7 @@ in
   };
   programs = {
     waybar = {
-      enable = true;
+      enable = false;
       systemd = {
         enable = true;
       };
