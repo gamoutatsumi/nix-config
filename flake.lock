@@ -93,16 +93,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1766575750,
-        "narHash": "sha256-I17rxEspJeEip1kYTXnpjlEoZuaJY7V9Nm6s4av68Jo=",
+        "lastModified": 1766869735,
+        "narHash": "sha256-dvGIFVERFQlXXZXnKTYN4xynDYPW/gTOgiJDAHVocNo=",
         "owner": "lambdalisue",
         "repo": "rs-arto",
-        "rev": "323f823991691f4f61cb968b7c9a3a401a4442f7",
+        "rev": "f429bdb6c5c5fafbeb4b1a7a218aa40512010320",
         "type": "github"
       },
       "original": {
         "owner": "lambdalisue",
-        "ref": "v0.7.0",
+        "ref": "v0.8.0",
         "repo": "rs-arto",
         "type": "github"
       }
