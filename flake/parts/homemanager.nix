@@ -13,7 +13,6 @@
       "${username}" = {
         imports = [
           inputs.oreore.homeManagerModules.theme
-          inputs.dms.homeModules.dankMaterialShell.default
         ]
         ++ imports;
       };
