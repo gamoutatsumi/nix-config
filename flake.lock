@@ -571,6 +571,28 @@
         "type": "github"
       }
     },
+    "matugen": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ],
+        "systems": "systems_2"
+      },
+      "locked": {
+        "lastModified": 1763905325,
+        "narHash": "sha256-TD9XyqFdLIOLRZM7ozQ8gz4PyEQbLGLxB4MbzjLccg4=",
+        "owner": "InioX",
+        "repo": "Matugen",
+        "rev": "5f0ecbecafd0e1097bcd314367c53496814745b9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "InioX",
+        "ref": "v3.1.0",
+        "repo": "Matugen",
+        "type": "github"
+      }
+    },
     "mcp-servers-nix": {
       "inputs": {
         "nixpkgs": [
@@ -918,6 +940,7 @@
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
         "lanzaboote": "lanzaboote",
+        "matugen": "matugen",
         "mcp-servers-nix": "mcp-servers-nix",
         "monitored": "monitored",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
@@ -931,7 +954,7 @@
         "nvim-treesitter-textobjects": "nvim-treesitter-textobjects",
         "oreore": "oreore",
         "pre-commit-hooks": "pre-commit-hooks",
-        "systems": "systems_2",
+        "systems": "systems_3",
         "tinty-schemes": "tinty-schemes",
         "treefmt-nix": "treefmt-nix",
         "vim-overlay": "vim-overlay",
@@ -1032,6 +1055,21 @@
       }
     },
     "systems_2": {
+      "locked": {
+        "lastModified": 1689347949,
+        "narHash": "sha256-12tWmuL2zgBgZkdoB6qXZsgJEH9LR3oUgpaQq2RbI80=",
+        "owner": "nix-systems",
+        "repo": "default-linux",
+        "rev": "31732fcf5e8fea42e59c2488ad31a0e651500f68",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default-linux",
+        "type": "github"
+      }
+    },
+    "systems_3": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",

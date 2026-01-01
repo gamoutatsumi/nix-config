@@ -15,37 +15,37 @@
   };
   atusy-dotfiles = {
     pname = "atusy-dotfiles";
-    version = "be653602e8a0273811153e00298d836b05a17ba1";
+    version = "20a89edcf96576a37ab07c6fb9fa23df5b395b37";
     src = fetchFromGitHub {
       owner = "atusy";
       repo = "dotfiles";
-      rev = "be653602e8a0273811153e00298d836b05a17ba1";
+      rev = "20a89edcf96576a37ab07c6fb9fa23df5b395b37";
       fetchSubmodules = false;
-      sha256 = "sha256-eVnTzVcOibjpwCOZQGOANav1Re2SUzEOXI0KtEtRUNE=";
+      sha256 = "sha256-rA2tJcv1uRm3J77h5rHSpzLdguD0Q7H2F2mMSTwdOH4=";
     };
-    date = "2025-12-29";
+    date = "2025-12-31";
   };
   avante-nvim = {
     pname = "avante-nvim";
-    version = "7608dce00ed9ddfdfaaee9eb4cca1e3cebf7b0c4";
+    version = "7a9fbbd4ddc9affc6a33bff644b1af7c0f908e74";
     src = fetchFromGitHub {
       owner = "yetone";
       repo = "avante.nvim";
-      rev = "7608dce00ed9ddfdfaaee9eb4cca1e3cebf7b0c4";
+      rev = "7a9fbbd4ddc9affc6a33bff644b1af7c0f908e74";
       fetchSubmodules = false;
-      sha256 = "sha256-wA/jSrf9LkwK/mEV3EHFNes7+AWLmbEP4x1LsjPPRUE=";
+      sha256 = "sha256-YpNNd9x6GFeWLxaShL6+g1Z29wUM/aJKZQ24/twXvAU=";
     };
-    date = "2025-12-29";
+    date = "2025-12-31";
   };
   claudecodeui = {
     pname = "claudecodeui";
-    version = "v1.13.0";
+    version = "v1.13.6";
     src = fetchFromGitHub {
       owner = "siteboon";
       repo = "claudecodeui";
-      rev = "v1.13.0";
+      rev = "v1.13.6";
       fetchSubmodules = false;
-      sha256 = "sha256-59Nm5MAdoWjWyfg2Ns7KLsNn3o0Xg+wrHqagCbJP4GI=";
+      sha256 = "sha256-lx53gvZli8t3qK3RITooOI/6Q1OGBSCIRQWMTVvsxEs=";
     };
   };
   denops-vim = {
@@ -69,6 +69,18 @@
       fetchSubmodules = false;
       sha256 = "sha256-Nyr5OVPU0xJMun8qKRc3yB39g4vkhoThUGPxcN5FUVg=";
     };
+  };
+  matugen-themes = {
+    pname = "matugen-themes";
+    version = "ed9ce14dea1adba96a0eb4d4cc3d751a0b304863";
+    src = fetchFromGitHub {
+      owner = "InioX";
+      repo = "matugen-themes";
+      rev = "ed9ce14dea1adba96a0eb4d4cc3d751a0b304863";
+      fetchSubmodules = false;
+      sha256 = "sha256-loFuvBqNT1As9I2gSZ2FxaqaDYbMh9xPVUsKBPlxI7M=";
+    };
+    date = "2025-11-01";
   };
   neotest = {
     pname = "neotest";

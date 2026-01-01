@@ -13,6 +13,7 @@
       "${username}" = {
         imports = [
           inputs.oreore.homeManagerModules.theme
+          inputs.matugen.nixosModules.default
         ]
         ++ imports;
       };
