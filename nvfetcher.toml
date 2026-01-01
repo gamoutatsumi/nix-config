@@ -69,7 +69,3 @@ fetch.github = "atusy/dotfiles"
 [claudecodeui]
 src.github = "siteboon/claudecodeui"
 fetch.github = "siteboon/claudecodeui"
-
-[matugen-themes]
-src.git = "https://github.com/InioX/matugen-themes"
-fetch.github = "InioX/matugen-themes"

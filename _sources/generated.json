@@ -125,27 +125,6 @@
         },
         "version": "JDim-v0.14.0"
     },
-    "matugen-themes": {
-        "cargoLocks": null,
-        "date": "2025-11-01",
-        "extract": null,
-        "name": "matugen-themes",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "InioX",
-            "repo": "matugen-themes",
-            "rev": "ed9ce14dea1adba96a0eb4d4cc3d751a0b304863",
-            "sha256": "sha256-loFuvBqNT1As9I2gSZ2FxaqaDYbMh9xPVUsKBPlxI7M=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "ed9ce14dea1adba96a0eb4d4cc3d751a0b304863"
-    },
     "neotest": {
         "cargoLocks": null,
         "date": null,

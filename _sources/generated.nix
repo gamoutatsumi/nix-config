@@ -70,18 +70,6 @@
       sha256 = "sha256-Nyr5OVPU0xJMun8qKRc3yB39g4vkhoThUGPxcN5FUVg=";
     };
   };
-  matugen-themes = {
-    pname = "matugen-themes";
-    version = "ed9ce14dea1adba96a0eb4d4cc3d751a0b304863";
-    src = fetchFromGitHub {
-      owner = "InioX";
-      repo = "matugen-themes";
-      rev = "ed9ce14dea1adba96a0eb4d4cc3d751a0b304863";
-      fetchSubmodules = false;
-      sha256 = "sha256-loFuvBqNT1As9I2gSZ2FxaqaDYbMh9xPVUsKBPlxI7M=";
-    };
-    date = "2025-11-01";
-  };
   neotest = {
     pname = "neotest";
     version = "v5.13.4";
