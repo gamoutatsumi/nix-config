@@ -60,7 +60,7 @@
       };
     };
     arto = {
-      url = "github:lambdalisue/rs-arto?ref=v0.7.0";
+      url = "github:lambdalisue/rs-arto?ref=v0.8.0";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs-unstable";
