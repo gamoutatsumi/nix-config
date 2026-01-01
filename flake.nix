@@ -122,11 +122,6 @@
     };
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
-      inputs = {
-        nixpkgs-lib = {
-          follows = "nixpkgs-unstable";
-        };
-      };
     };
     home-manager = {
       url = "github:nix-community/home-manager?ref=release-25.11";
