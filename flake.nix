@@ -144,14 +144,6 @@
         };
       };
     };
-    matugen = {
-      url = "github:/InioX/Matugen?ref=v3.1.0";
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs-unstable";
-        };
-      };
-    };
     mcp-servers-nix = {
       url = "github:natsukium/mcp-servers-nix";
       inputs = {
