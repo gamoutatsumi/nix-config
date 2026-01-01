@@ -57,3 +57,15 @@ fetch.github = "theHamsta/nvim-dap-virtual-text"
 [jdim]
 src.github = "JDimproved/JDim"
 fetch.github = "JDimproved/JDim"
+
+[anthropics-skills]
+src.git = "https://github.com/anthropics/skills"
+fetch.github = "anthropics/skills"
+
+[atusy-dotfiles]
+src.git = "https://github.com/atusy/dotfiles"
+fetch.github = "atusy/dotfiles"
+
+[claudecodeui]
+src.github = "siteboon/claudecodeui"
+fetch.github = "siteboon/claudecodeui"

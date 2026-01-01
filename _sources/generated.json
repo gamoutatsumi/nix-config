@@ -1,7 +1,49 @@
 {
+    "anthropics-skills": {
+        "cargoLocks": null,
+        "date": "2025-12-20",
+        "extract": null,
+        "name": "anthropics-skills",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "anthropics",
+            "repo": "skills",
+            "rev": "69c0b1a0674149f27b61b2635f935524b6add202",
+            "sha256": "sha256-pllFZoWRdtLliz/5pLWks0V9nKFMzeWoRcmFgu2UWi8=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "69c0b1a0674149f27b61b2635f935524b6add202"
+    },
+    "atusy-dotfiles": {
+        "cargoLocks": null,
+        "date": "2025-12-29",
+        "extract": null,
+        "name": "atusy-dotfiles",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "atusy",
+            "repo": "dotfiles",
+            "rev": "be653602e8a0273811153e00298d836b05a17ba1",
+            "sha256": "sha256-eVnTzVcOibjpwCOZQGOANav1Re2SUzEOXI0KtEtRUNE=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "be653602e8a0273811153e00298d836b05a17ba1"
+    },
     "avante-nvim": {
         "cargoLocks": null,
-        "date": "2025-12-22",
+        "date": "2025-12-29",
         "extract": null,
         "name": "avante-nvim",
         "passthru": null,
@@ -13,12 +55,33 @@
             "name": null,
             "owner": "yetone",
             "repo": "avante.nvim",
-            "rev": "476f342fe6bc1e120ba3e334b5d9cf3ef66de56a",
-            "sha256": "sha256-jnDANbe2PfCl375rK+goEu2LkwBpqvTaPBk6zq5ada0=",
+            "rev": "7608dce00ed9ddfdfaaee9eb4cca1e3cebf7b0c4",
+            "sha256": "sha256-wA/jSrf9LkwK/mEV3EHFNes7+AWLmbEP4x1LsjPPRUE=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "476f342fe6bc1e120ba3e334b5d9cf3ef66de56a"
+        "version": "7608dce00ed9ddfdfaaee9eb4cca1e3cebf7b0c4"
+    },
+    "claudecodeui": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "claudecodeui",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "siteboon",
+            "repo": "claudecodeui",
+            "rev": "v1.13.0",
+            "sha256": "sha256-59Nm5MAdoWjWyfg2Ns7KLsNn3o0Xg+wrHqagCbJP4GI=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v1.13.0"
     },
     "denops-vim": {
         "cargoLocks": null,
@@ -97,12 +160,12 @@
             "name": null,
             "owner": "fredrikaverpil",
             "repo": "neotest-golang",
-            "rev": "v2.6.0",
-            "sha256": "sha256-aIiyJbJaB8YLfgt0S/MvP2AM32qE34WRfTa7249K5BQ=",
+            "rev": "v2.7.0",
+            "sha256": "sha256-MXeUVHjjLVjbd+a9riPctwONkXHsKYTeG+tWxzXScpM=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2.6.0"
+        "version": "v2.7.0"
     },
     "neotest-plenary": {
         "cargoLocks": null,

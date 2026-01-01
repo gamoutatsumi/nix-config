@@ -2,30 +2,31 @@
 description: Commit changes with appropriate granularity
 allowed-tools:
 # 基本ツール
-- Read
-- Glob
-- Grep
+  - Read
+  - Glob
+  - Grep
 # Git MCP Server - コミット操作
-- mcp__git__git_status
-- mcp__git__git_add
-- mcp__git__git_reset
-- mcp__git__git_diff
-- mcp__git__git_diff_unstaged
-- mcp__git__git_diff_staged
-- mcp__git__git_commit
-- mcp__git__git_log
-- mcp__git__git_branch
-- mcp__git__git_show
+  - mcp__git__git_status
+  - mcp__git__git_add
+  - mcp__git__git_reset
+  - mcp__git__git_diff
+  - mcp__git__git_diff_unstaged
+  - mcp__git__git_diff_staged
+  - mcp__git__git_commit
+  - mcp__git__git_log
+  - mcp__git__git_branch
+  - mcp__git__git_show
 # Serena MCP Server - コード分析
-- mcp__serena__read_file
-- mcp__serena__get_symbols_overview
-- mcp__serena__find_symbol
-- mcp__serena__find_referencing_symbols
-- mcp__serena__search_for_pattern
-- mcp__serena__list_dir
+  - mcp__serena__activate_project
+  - mcp__serena__get_symbols_overview
+  - mcp__serena__find_symbol
+  - mcp__serena__find_referencing_symbols
+  - mcp__serena__search_for_pattern
+  - mcp__serena__list_dir
+  - mcp__serena__find_file
 # Codex MCP Server - 複雑な分析タスクの委任
-- mcp__codex__codex
-- mcp__codex__codex-reply
+  - mcp__codex__codex
+  - mcp__codex__codex-reply
 ---
 
 ## 適切なコミット粒度

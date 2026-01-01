@@ -160,6 +160,15 @@
           keep-sorted = {
             enable = true;
           };
+          mdformat = {
+            enable = true;
+            plugins =
+              ps: with ps; [
+                mdformat-footnote
+                mdformat-gfm
+                mdformat-frontmatter
+              ];
+          };
           nixfmt = {
             enable = true;
           };

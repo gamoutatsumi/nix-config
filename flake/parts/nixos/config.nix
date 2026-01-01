@@ -124,6 +124,8 @@
     # keep-sorted start block=yes
     avahi = {
       enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
     };
     greetd =
       let

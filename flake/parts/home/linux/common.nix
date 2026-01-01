@@ -98,7 +98,7 @@ name=p11-kit-proxy\n";
   };
   services = {
     picom = {
-      enable = true;
+      enable = false;
       backend = "glx";
       vSync = true;
       settings = {
