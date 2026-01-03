@@ -110,11 +110,11 @@
     "brew-api": {
       "flake": false,
       "locked": {
-        "lastModified": 1767395035,
-        "narHash": "sha256-2+pnABtNwlMkpNJ1L58o6cndN9IfpYGRRWd3lp4x+fE=",
+        "lastModified": 1767407724,
+        "narHash": "sha256-6sr2hbxA4FWgaHZGDmG2RZFlIGRWu3eyNnO75wYk284=",
         "owner": "BatteredBunny",
         "repo": "brew-api",
-        "rev": "696b19e5e9567064d48111ed612404fa3ffebbe5",
+        "rev": "51f3ef07bb63023b41610ebb4746c333df784e7a",
         "type": "github"
       },
       "original": {
@@ -316,11 +316,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1767406523,
-        "narHash": "sha256-OwDIxXp8SCF3mFQr21JlOTo4VtKoKm5cKceV6XUIIiI=",
+        "lastModified": 1767407196,
+        "narHash": "sha256-IsRmp2vKZIq60Gc044/KcqV32ikc6CCRvrkboF/0sYo=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "d4edfb056dda11202ae10b43ff5ec8003fef1ac8",
+        "rev": "10d6d819894ab08fa2c2d3d3d472a1fe92a7d113",
         "type": "github"
       },
       "original": {
@@ -772,15 +772,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1766957367,
-        "narHash": "sha256-Robm9U2blKNPCqQAMzrNyr2VL/PGSOsyvg+NbQL2N0E=",
+        "lastModified": 1767224809,
+        "narHash": "sha256-fcrdUdvNjLL3AoxOgmJdoakq/geCajSQr34NA98v9ZU=",
         "owner": "iofq",
         "repo": "nvim-treesitter-main",
-        "rev": "85ae6d99e035e1d1e025bbba8df467e9db709a0b",
+        "rev": "656da7443669edcfb801119d28ca1b6605b64d6c",
         "type": "github"
       },
       "original": {
         "owner": "iofq",
+        "ref": "ci/update",
         "repo": "nvim-treesitter-main",
         "type": "github"
       }
