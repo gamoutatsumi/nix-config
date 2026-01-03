@@ -205,9 +205,9 @@
         nixpkgs = {
           follows = "nixpkgs-unstable";
         };
-        nvim-treesitter = {
-          follows = "nvim-treesitter";
-        };
+        # nvim-treesitter = {
+        #   follows = "nvim-treesitter";
+        # };
         nvim-treesitter-textobjects = {
           follows = "nvim-treesitter-textobjects";
         };
