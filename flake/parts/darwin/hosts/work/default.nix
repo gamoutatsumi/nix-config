@@ -8,11 +8,16 @@
   #   vim
   #   git
   # ];
-
   system = {
     stateVersion = 5;
     primaryUser = username;
     defaults = {
+      WindowManager = {
+        GloballyEnabled = false;
+      };
+      NSGlobalDomain = {
+        _HIHideMenuBar = false;
+      };
       finder = {
         AppleShowAllExtensions = true;
         AppleShowAllFiles = true;

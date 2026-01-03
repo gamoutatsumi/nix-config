@@ -55,6 +55,7 @@ in
         killall
         magika
         moreutils
+        mycli
         nix-diff
         nix-index
         nix-output-monitor
@@ -90,7 +91,6 @@ in
         kn
         kubectl
         kubie
-        mycli
         s3cmd
         sheldon
         stern
@@ -284,7 +284,7 @@ in
         upkgs.vimPlugins.nvim-treesitter.withAllGrammars
       ];
       extraPackages =
-        (with pkgs; [ nil ])
+        (with pkgs; [ nixd ])
         ++ (with upkgs; [
           tree-sitter
           jinja-lsp

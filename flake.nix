@@ -294,17 +294,8 @@
     xremap-nix = {
       url = "github:xremap/nix-flake";
       inputs = {
-        hyprland = {
-          follows = "";
-        };
         flake-parts = {
           follows = "flake-parts";
-        };
-        home-manager = {
-          follows = "home-manager";
-        };
-        treefmt-nix = {
-          follows = "treefmt-nix";
         };
         xremap = {
           follows = "xremap";
