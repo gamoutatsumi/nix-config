@@ -83,7 +83,7 @@ in
         deno
         docker-credential-helpers
         docker-slim
-        dogdns
+        doggo
         dust
         fd
         google-cloud-sdk
