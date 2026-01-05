@@ -72,18 +72,10 @@
           mode = {
             main = {
               binding = {
-                alt-left = "focus left";
-                alt-down = "focus down";
-                alt-up = "focus up";
-                alt-right = "focus right";
-                alt-shift-left = "focus-monitor left";
-                alt-shift-right = "focus-monitor right";
-                alt-ctrl-left = "move left";
-                alt-ctrl-down = "move down";
-                alt-ctrl-up = "move up";
-                alt-ctrl-right = "move right";
-                alt-shift-ctrl-left = "move-workspace-to-monitor left";
-                alt-shift-ctrl-right = "move-workspace-to-monitor right";
+                alt-shift-h = "focus-monitor left";
+                alt-shift-l = "focus-monitor right";
+                alt-shift-ctrl-h = "move-workspace-to-monitor left";
+                alt-shift-ctrl-l = "move-workspace-to-monitor right";
                 alt-slash = "layout tiles horizontal vertical";
                 alt-comma = "layout accordion horizontal vertical";
                 alt-1 = "workspace 1";
@@ -96,6 +88,16 @@
                 alt-8 = "workspace 8";
                 alt-9 = "workspace 9";
                 alt-0 = "workspace 10";
+                alt-shift-1 = "move-node-to-workspace 1";
+                alt-shift-2 = "move-node-to-workspace 2";
+                alt-shift-3 = "move-node-to-workspace 3";
+                alt-shift-4 = "move-node-to-workspace 4";
+                alt-shift-5 = "move-node-to-workspace 5";
+                alt-shift-6 = "move-node-to-workspace 6";
+                alt-shift-7 = "move-node-to-workspace 7";
+                alt-shift-8 = "move-node-to-workspace 8";
+                alt-shift-9 = "move-node-to-workspace 9";
+                alt-shift-0 = "move-node-to-workspace 10";
               };
             };
           };
@@ -116,139 +118,6 @@
         pinentry = pkgs.pinentry_mac;
       };
     };
-    sketchybar =
-      let
-        date = pkgs.writeShellScript "sketchybar-date" ''
-          DATE=$(date '+%m/%d %a')
-          sketchybar --set "$NAME" label="$DATE"
-        '';
-        time = pkgs.writeShellScript "sketchybar-time" ''
-          TIME=$(date '+%I:%M %p')
-          sketchybar --set "$NAME" label="$TIME"
-        '';
-        aerospace = lib.getExe config.programs.aerospace.package;
-        aerospacePlugin = pkgs.writeShellScript "aerospace" ''
-          SID=$(echo "$NAME" | sed 's/space\.//')
-          if [ -n "$FOCUSED_WORKSPACE" ]; then
-            FOCUSED="$FOCUSED_WORKSPACE"
-          else
-            FOCUSED=$(${aerospace} list-workspaces --focused 2>/dev/null || echo "1")
-          fi
-
-          if [ "$SID" = "$FOCUSED" ]; then
-            sketchybar --set "$NAME" \
-               background.color="${colors.cyan}" \
-               icon.color="${colors.foreground}"
-          else
-            WINDOWS=$(${aerospace} list-windows --workspace "$SID" 2>/dev/null | wc -l | tr -d ' ')
-            if [ "$WINDOWS" -gt 0 ]; then
-              sketchybar --set "$NAME" \
-                 background.color="${colors.transparent}" \
-                 icon.color=${colors.foreground}
-            else
-              sketchybar --set "$NAME" \
-              background.color=${colors.transparent} \
-              icon.color=${colors.comment}
-            fi
-          fi
-        '';
-        colors = {
-          background = "0xff011627";
-          backgroundTransparent = "0xcc011627";
-          currentLine = "0xff0e293f";
-          foreground = "0xfffbdc1c6";
-          comment = "0xff7c8f8f";
-          cyan = "0xff316394";
-          green = "0xffa1cd5e";
-          orange = "0xfff78c6c";
-          pink = "0xffffcb8b";
-          purple = "0xffae881ff";
-          red = "0xfffc514e";
-          yellow = "0xffe3d18a";
-          transparent = "0x00000000";
-          black = "0xff011627";
-        };
-      in
-      {
-        enable = false;
-        service = {
-          enable = false;
-        };
-        config = ''
-          bar=(
-            height=40
-            color="${colors.backgroundTransparent}"
-            shadow=on
-            position=top
-            sticky=on
-            padding_left=8
-            padding_right=8
-            margin=8
-            corner_radius=12
-            blur_radius=30
-            notch_width=200
-            y_offset=4
-          )
-          sketchybar --bar "''${bar[@]}"
-          default=(
-            icon.font="PlemolJP Console NF:Bold:14.0"
-            label.font="PlemolJP Console NF:Bold:12.0"
-            background.color="${colors.transparent}"
-            background.corner_radius=8
-            background.height=28
-          )
-          sketchybar --default "''${default[@]}"
-          sketchybar --add item apple_logo left \
-                     --set apple_logo \
-                           icon=" " \
-                           icon.font="SF Pro:Bold:16.0" \
-                           background.corner_radius=10 \
-                           background.height=28 \
-                           background.color="${colors.cyan}" \
-                           icon.padding_left=8 \
-                           icon.padding_right=4 \
-                           click_script="sketchybar --update"
-          sketchybar --add item date right \
-                     --set date \
-                           icon="" \
-                           script="${date}" \
-                           update_freq=60 \
-                           icon.color="${colors.orange}"
-          sketchybar --add item time right \
-                     --set time \
-                           icon="" \
-                           script="${time}" \
-                           update_freq=30 \
-                           icon.color="${colors.yellow}"
-          #sketchybar --add event aerospace_workspace_change
-          #SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
-          #for i in "''${!SPACE_ICONS[@]}"; do
-          #  sid="''${SPACE_ICONS[$i]}"
-          #  if [ "$sid" -eq "10" ]; then
-          #    display_icon="0"
-          #  else
-          #    display_icon="$sid"
-          #  fi
-          #  
-          #  sketchybar --add item space.$sid left \
-          #              --set space.$sid \
-          #                    script="${aerospacePlugin}" \
-          #                    icon="$display_icon" \
-          #                    icon.font="PlemolJP Console NF:Bold:14.0" \
-          #                    icon.padding_left=8 \
-          #                    icon.padding_right=8 \
-          #                    background.corner_radius=8 \
-          #                    background.height=28 \
-          #                    update_freq=1 \
-          #              --subscribe space.$sid aerospace_workspace_change
-          #done
-          #sketchybar --add bracket spaces_bracket '/space\..*/' \
-          #            --set spaces_bracket \
-          #                  background.color="${colors.cyan}" \
-          #                  background.corner_radius=10 \
-          #                  background.height=28
-        '';
-      };
     ssh = {
       package = pkgs.openssh;
     };
