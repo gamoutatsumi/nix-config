@@ -71,6 +71,7 @@ in
         MANPAGER = "${lib.getExe config.programs.neovim.finalPackage} -c ASMANPAGER -";
         MYCLI_HISTFILE = "${config.xdg.dataHome}/mycli/history";
         NIX_CONFIG = "access-tokens = github.com=$(gh auth token)";
+        OPENCODE_DISABLE_LSP_DOWNLOAD = "true";
         PAGER = "${lib.getExe' pkgs.ov "ov"}";
         PURE_GIT_PULL = 0;
         TERM = "alacritty";
