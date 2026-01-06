@@ -415,7 +415,7 @@ in
     opencode = {
       enable = true;
       settings = {
-        model = "claude-opus-4-5-20251101";
+        model = "anthropic/claude-opus-4-5-20251101";
         mcp = {
           codex = {
             type = "local";
