@@ -12,6 +12,15 @@ let
     url = "https://github.com/gamoutatsumi.gpg";
     sha256 = "0p1xp2rq7r0hbdi7dkhw3fzrf2ij7b3p6a5nnk0fflda4cs6a814";
   };
+  lspServers =
+    (with pkgs; [ nixd ])
+    ++ (with upkgs; [
+      jinja-lsp
+      efm-langserver
+      yaml-language-server
+      vscode-langservers-extracted
+      typos-lsp
+    ]);
 in
 {
   imports = [
@@ -97,7 +106,8 @@ in
         unar
         vim
         # keep-sorted end
-      ]);
+      ])
+      ++ lspServers;
   };
   programs = {
     # keep-sorted start block=yes
@@ -287,12 +297,7 @@ in
         (with pkgs; [ nixd ])
         ++ (with upkgs; [
           tree-sitter
-          jinja-lsp
-          efm-langserver
           nodejs
-          yaml-language-server
-          vscode-langservers-extracted
-          typos-lsp
           gotestsum
           luajitPackages.busted
           delve
@@ -416,6 +421,7 @@ in
       enable = true;
       settings = {
         model = "anthropic/claude-opus-4-5-20251101";
+        theme = "system";
         mcp = {
           codex = {
             type = "local";
