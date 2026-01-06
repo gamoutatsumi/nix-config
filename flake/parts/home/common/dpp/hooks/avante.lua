@@ -2,7 +2,7 @@
 require("avante").setup({
     provider = "opencode",
     acp_providers = {
-        opencode = { command = "opencode", args = "acp" },
+        opencode = { command = "opencode", args = { "acp" } },
     },
     mode = "agentic",
     behaviour = {
@@ -17,6 +17,149 @@ require("avante").setup({
         auto_approve_tool_permissions = true,
         confirmation_ui_style = "inline_buttons",
         acp_follow_agent_locations = true,
+        dual_boost = {
+            enabled = false,
+        },
+        prompt_logger = {
+            enabled = true,
+            log_dir = vim.fn.stdpath("cache") .. "/avante_prompts",
+            fortune_cookie_on_success = false,
+            next_prompt = {
+                normal = "<C-n>",
+                insert = "<C-n>",
+            },
+            prev_prompt = {
+                normal = "<C-p>",
+                insert = "<C-p>",
+            },
+        },
+        mappings = {
+            diff = {
+                ours = "co",
+                theirs = "ct",
+                all_theirs = "ca",
+                both = "cb",
+                cursor = "cc",
+                next = "]x",
+                prev = "[x",
+            },
+            suggestion = {
+                accept = "<M-l>",
+                next = "<M-]>",
+                prev = "<M-[>",
+                dismiss = "<C-]>",
+            },
+            jump = {
+                next = "]]",
+                prev = "[[",
+            },
+            submit = {
+                normal = "<CR>",
+                insert = "<C-s>",
+            },
+            cancel = {
+                normal = { "<C-c>", "<Esc>", "q" },
+                insert = { "<C-c>" },
+            },
+            sidebar = {
+                apply_all = "A",
+                apply_cursor = "a",
+                retry_user_request = "r",
+                edit_user_request = "e",
+                switch_windows = "<Tab>",
+                reverse_switch_windows = "<S-Tab>",
+                remove_file = "d",
+                add_file = "@",
+                close = { "<Esc>", "q" },
+                close_from_input = nil,
+            },
+        },
+        selection = {
+            enabled = true,
+            hint_display = "delayed",
+        },
+        windows = {
+            ---@type "right" | "left" | "top" | "bottom"
+            position = "right",
+            wrap = true,
+            width = 30,
+            sidebar_header = {
+                enabled = true,
+                align = "center",
+                rounded = true,
+            },
+            spinner = {
+                editing = {
+                    "⡀",
+                    "⠄",
+                    "⠂",
+                    "⠁",
+                    "⠈",
+                    "⠐",
+                    "⠠",
+                    "⢀",
+                    "⣀",
+                    "⢄",
+                    "⢂",
+                    "⢁",
+                    "⢈",
+                    "⢐",
+                    "⢠",
+                    "⣠",
+                    "⢤",
+                    "⢢",
+                    "⢡",
+                    "⢨",
+                    "⢰",
+                    "⣰",
+                    "⢴",
+                    "⢲",
+                    "⢱",
+                    "⢸",
+                    "⣸",
+                    "⢼",
+                    "⢺",
+                    "⢹",
+                    "⣹",
+                    "⢽",
+                    "⢻",
+                    "⣻",
+                    "⢿",
+                    "⣿",
+                },
+                generating = { "·", "✢", "✳", "∗", "✻", "✽" },
+                thinking = { "🤯", "🙄" },
+            },
+            input = {
+                prefix = "> ",
+                height = 8,
+            },
+            edit = {
+                border = "rounded",
+                start_insert = true,
+            },
+            ask = {
+                floating = false,
+                start_insert = true,
+                border = "rounded",
+                focus_on_apply = "ours",
+            },
+        },
+        highlights = {
+            diff = {
+                current = "DiffText",
+                incoming = "DiffAdd",
+            },
+        },
+        diff = {
+            autojump = true,
+            list_opener = "copen",
+            override_timeoutlen = 500,
+        },
+        suggestion = {
+            debounce = 600,
+            throttle = 600,
+        },
     },
 })
 --}}}
