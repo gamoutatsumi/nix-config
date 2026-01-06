@@ -63,7 +63,7 @@ in
               enable = false;
             };
             serena = {
-              enable = false;
+              enable = true;
               enableWebDashboard = false;
               context = "claude-code";
             };
