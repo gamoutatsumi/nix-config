@@ -24,6 +24,7 @@ in
       repo = "yetone/avante.nvim";
       name = "avante.nvim";
       path = nvim_lua.avante;
+      hooks_file = [ ./hooks/avante.lua ];
     }
   ];
 }
