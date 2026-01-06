@@ -412,6 +412,20 @@ in
         # keep-sorted end
       };
     };
+    opencode = {
+      enable = true;
+      settings = {
+        mcp = {
+          codex = {
+            type = "local";
+            command = [
+              (lib.getExe upkgs.codex)
+              "mcp-server"
+            ];
+          };
+        };
+      };
+    };
     # keep-sorted end
   };
   # keep-sorted end
