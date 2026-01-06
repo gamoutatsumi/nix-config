@@ -25,18 +25,6 @@
     };
     date = "2025-12-31";
   };
-  avante-nvim = {
-    pname = "avante-nvim";
-    version = "a27b821cc1f9fec70d7b7dc4a42c6dbd76266997";
-    src = fetchFromGitHub {
-      owner = "yetone";
-      repo = "avante.nvim";
-      rev = "a27b821cc1f9fec70d7b7dc4a42c6dbd76266997";
-      fetchSubmodules = false;
-      sha256 = "sha256-Hm1Zr10xH9B4GzRyCKI/qsbhkJCD69qo8gC+Njna/5w=";
-    };
-    date = "2026-01-04";
-  };
   claudecodeui = {
     pname = "claudecodeui";
     version = "v1.13.6";
@@ -46,6 +34,17 @@
       rev = "v1.13.6";
       fetchSubmodules = false;
       sha256 = "sha256-lx53gvZli8t3qK3RITooOI/6Q1OGBSCIRQWMTVvsxEs=";
+    };
+  };
+  codecompanion-nvim = {
+    pname = "codecompanion-nvim";
+    version = "v18.3.1";
+    src = fetchFromGitHub {
+      owner = "olimorris";
+      repo = "codecompanion.nvim";
+      rev = "v18.3.1";
+      fetchSubmodules = false;
+      sha256 = "sha256-E4OiWObVq6SAFgaXYyBN7Kq2fpGEQWCe/gZwsI/6al0=";
     };
   };
   denops-vim = {
