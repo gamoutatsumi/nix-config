@@ -1,5 +1,10 @@
 -- lua_add {{{
 require("codecompanion").setup({
+    interactions = {
+        chat = {
+            adapter = "opencode",
+        },
+    },
     adapters = {
         acp = {
             opencode = function()

@@ -217,6 +217,14 @@
       url = "github:nvim-treesitter/nvim-treesitter-textobjects?ref=main&shallow=1";
       flake = false;
     };
+    opencode = {
+      url = "github:anomalyco/opencode?ref=v1.1.4&shallow=1";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs-unstable";
+        };
+      };
+    };
     oreore = {
       url = "github:gamoutatsumi/oreore-flake";
       inputs = {

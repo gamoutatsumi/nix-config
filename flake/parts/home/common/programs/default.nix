@@ -1,6 +1,7 @@
 {
   # keep-sorted start
   config,
+  inputs',
   lib,
   pkgs,
   upkgs,
@@ -419,9 +420,11 @@ in
     };
     opencode = {
       enable = true;
+      package = inputs'.opencode.packages.default;
       settings = {
         model = "anthropic/claude-opus-4-5-20251101";
         theme = "system";
+        lsp = false;
         mcp = {
           codex = {
             type = "local";
