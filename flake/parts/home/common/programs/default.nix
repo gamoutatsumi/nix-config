@@ -424,16 +424,15 @@ in
       settings = {
         model = "anthropic/claude-opus-4-5-20251101";
         theme = "system";
-        lsp = false;
-        mcp = {
-          codex = {
-            type = "local";
-            command = [
-              (lib.getExe upkgs.codex)
-              "mcp-server"
-            ];
-          };
-        };
+        # mcp = {
+        #   codex = {
+        #     type = "local";
+        #     command = [
+        #       (lib.getExe upkgs.codex)
+        #       "mcp-server"
+        #     ];
+        #   };
+        # };
       };
     };
     # keep-sorted end
