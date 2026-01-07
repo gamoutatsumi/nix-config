@@ -114,22 +114,30 @@
     };
     useDHCP = lib.mkDefault true;
     interfaces = {
-      "enp7s0" = {
-        useDHCP = true;
-        mtu = 9500;
+      enp7s0 = {
+        useDHCP = false;
+        mtu = 9000;
       };
-      "enp0s20f0u8u4" = {
+      enp0s20f0u8u4 = {
         useDHCP = false;
       };
-      "enp5s0" = {
+      enp5s0 = {
         useDHCP = false;
       };
-      "vlan10" = {
+      vlan1 = {
         useDHCP = true;
-        mtu = 9500;
+        mtu = 1500;
+      };
+      vlan10 = {
+        useDHCP = true;
+        mtu = 9000;
       };
     };
     vlans = {
+      vlan1 = {
+        id = 1;
+        interface = "enp7s0";
+      };
       vlan10 = {
         id = 10;
         interface = "enp7s0";
