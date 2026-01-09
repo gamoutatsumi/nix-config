@@ -218,7 +218,7 @@
       flake = false;
     };
     opencode = {
-      url = "github:anomalyco/opencode?ref=v1.1.4&shallow=1";
+      url = "github:anomalyco/opencode?ref=v1.1.6&shallow=1";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs-unstable";
