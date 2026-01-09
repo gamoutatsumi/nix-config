@@ -22,7 +22,7 @@
     },
     "atusy-dotfiles": {
         "cargoLocks": null,
-        "date": "2025-12-31",
+        "date": "2026-01-08",
         "extract": null,
         "name": "atusy-dotfiles",
         "passthru": null,
@@ -34,12 +34,12 @@
             "name": null,
             "owner": "atusy",
             "repo": "dotfiles",
-            "rev": "20a89edcf96576a37ab07c6fb9fa23df5b395b37",
-            "sha256": "sha256-rA2tJcv1uRm3J77h5rHSpzLdguD0Q7H2F2mMSTwdOH4=",
+            "rev": "230a7a95ae6de094290b66bfe1134de0365f2667",
+            "sha256": "sha256-5aBbZWe86rjuje1ova8umCcsPBgeH1J6qaP+FhYadKs=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "20a89edcf96576a37ab07c6fb9fa23df5b395b37"
+        "version": "230a7a95ae6de094290b66bfe1134de0365f2667"
     },
     "claudecodeui": {
         "cargoLocks": null,
@@ -76,12 +76,12 @@
             "name": null,
             "owner": "olimorris",
             "repo": "codecompanion.nvim",
-            "rev": "v18.3.1",
-            "sha256": "sha256-E4OiWObVq6SAFgaXYyBN7Kq2fpGEQWCe/gZwsI/6al0=",
+            "rev": "v18.3.2",
+            "sha256": "sha256-31ekLPaaXKsaVoLNBdi2CnDFe8K0gi6JDpqkpwgIWSs=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v18.3.1"
+        "version": "v18.3.2"
     },
     "denops-vim": {
         "cargoLocks": null,
