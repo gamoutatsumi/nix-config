@@ -1,6 +1,7 @@
 {
   # keep-sorted start
   config,
+  inputs',
   lib,
   pkgs,
   upkgs,
@@ -12,6 +13,15 @@ let
     url = "https://github.com/gamoutatsumi.gpg";
     sha256 = "0p1xp2rq7r0hbdi7dkhw3fzrf2ij7b3p6a5nnk0fflda4cs6a814";
   };
+  lspServers =
+    (with pkgs; [ nixd ])
+    ++ (with upkgs; [
+      jinja-lsp
+      efm-langserver
+      yaml-language-server
+      vscode-langservers-extracted
+      typos-lsp
+    ]);
 in
 {
   imports = [
@@ -55,6 +65,7 @@ in
         killall
         magika
         moreutils
+        mycli
         nix-diff
         nix-index
         nix-output-monitor
@@ -82,7 +93,7 @@ in
         deno
         docker-credential-helpers
         docker-slim
-        dogdns
+        doggo
         dust
         fd
         google-cloud-sdk
@@ -90,14 +101,14 @@ in
         kn
         kubectl
         kubie
-        mycli
         s3cmd
         sheldon
         stern
         unar
         vim
         # keep-sorted end
-      ]);
+      ])
+      ++ lspServers;
   };
   programs = {
     # keep-sorted start block=yes
@@ -284,15 +295,10 @@ in
         upkgs.vimPlugins.nvim-treesitter.withAllGrammars
       ];
       extraPackages =
-        (with pkgs; [ nil ])
+        (with pkgs; [ nixd ])
         ++ (with upkgs; [
           tree-sitter
-          jinja-lsp
-          efm-langserver
           nodejs
-          yaml-language-server
-          vscode-langservers-extracted
-          typos-lsp
           gotestsum
           luajitPackages.busted
           delve
@@ -410,6 +416,23 @@ in
         background-opacity = 0.8;
         theme = "nightfly";
         # keep-sorted end
+      };
+    };
+    opencode = {
+      enable = true;
+      package = inputs'.opencode.packages.default;
+      settings = {
+        model = "anthropic/claude-opus-4-5-20251101";
+        theme = "system";
+        # mcp = {
+        #   codex = {
+        #     type = "local";
+        #     command = [
+        #       (lib.getExe upkgs.codex)
+        #       "mcp-server"
+        #     ];
+        #   };
+        # };
       };
     };
     # keep-sorted end

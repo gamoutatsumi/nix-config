@@ -34,10 +34,6 @@ fetch.github = "luukvbaal/statuscol.nvim"
 src.git = "https://github.com/nvim-neotest/neotest-plenary"
 fetch.github = "nvim-neotest/neotest-plenary"
 
-[avante-nvim]
-src.git = "https://github.com/yetone/avante.nvim"
-fetch.github = "yetone/avante.nvim"
-
 [nvim-dap-go]
 src.git = "https://github.com/leoluz/nvim-dap-go"
 fetch.github = "leoluz/nvim-dap-go"
@@ -69,3 +65,7 @@ fetch.github = "atusy/dotfiles"
 [claudecodeui]
 src.github = "siteboon/claudecodeui"
 fetch.github = "siteboon/claudecodeui"
+
+[codecompanion-nvim]
+src.github = "olimorris/codecompanion.nvim"
+fetch.github = "olimorris/codecompanion.nvim"

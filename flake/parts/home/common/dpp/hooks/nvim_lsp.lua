@@ -38,7 +38,7 @@ local ensure_enabled = {
     "jinja_lsp",
     "jsonls",
     "lua_ls",
-    "nil_ls",
+    "nixd",
     "pyright",
     "rust_analyzer",
     "sourcekit",

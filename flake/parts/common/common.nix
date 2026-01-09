@@ -15,8 +15,7 @@
       enable = false;
     };
     nixPath = [
-      "nixpkgs=flake"
-      "nixpkgs"
+      "nixpkgs=${inputs.nixpkgs}"
     ];
     optimise = {
       automatic = true;

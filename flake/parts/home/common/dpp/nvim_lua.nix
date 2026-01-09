@@ -21,9 +21,10 @@ in
       hooks_file = [ ./hooks/statuscol.lua ];
     }
     {
-      repo = "yetone/avante.nvim";
-      name = "avante.nvim";
-      path = nvim_lua.avante;
+      repo = "olimorris/codecompanion.nvim";
+      name = "codecompanion.nvim";
+      path = nvim_lua.codecompanion;
+      hooks_file = [ ./hooks/codecompanion.lua ];
     }
   ];
 }

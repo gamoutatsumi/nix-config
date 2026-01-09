@@ -122,11 +122,6 @@
     };
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
-      inputs = {
-        nixpkgs-lib = {
-          follows = "nixpkgs-unstable";
-        };
-      };
     };
     home-manager = {
       url = "github:nix-community/home-manager?ref=release-25.11";
@@ -210,9 +205,9 @@
         nixpkgs = {
           follows = "nixpkgs-unstable";
         };
-        nvim-treesitter = {
-          follows = "nvim-treesitter";
-        };
+        # nvim-treesitter = {
+        #   follows = "nvim-treesitter";
+        # };
         nvim-treesitter-textobjects = {
           follows = "nvim-treesitter-textobjects";
         };
@@ -221,6 +216,14 @@
     nvim-treesitter-textobjects = {
       url = "github:nvim-treesitter/nvim-treesitter-textobjects?ref=main&shallow=1";
       flake = false;
+    };
+    opencode = {
+      url = "github:anomalyco/opencode?ref=v1.1.6&shallow=1";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs-unstable";
+        };
+      };
     };
     oreore = {
       url = "github:gamoutatsumi/oreore-flake";
@@ -299,17 +302,8 @@
     xremap-nix = {
       url = "github:xremap/nix-flake";
       inputs = {
-        hyprland = {
-          follows = "";
-        };
         flake-parts = {
           follows = "flake-parts";
-        };
-        home-manager = {
-          follows = "home-manager";
-        };
-        treefmt-nix = {
-          follows = "treefmt-nix";
         };
         xremap = {
           follows = "xremap";

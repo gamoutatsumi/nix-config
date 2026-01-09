@@ -1,8 +1,8 @@
 {
   upkgs,
+  lib,
   inputs,
   config,
-  lib,
   ...
 }:
 let
@@ -42,10 +42,10 @@ in
               enable = true;
             };
             git = {
-              enable = true;
+              enable = false;
             };
             github = {
-              enable = true;
+              enable = false;
               package = upkgs.github-mcp-server;
               env = {
                 GITHUB_DYNAMIC_TOOLSETS = "1";
@@ -60,7 +60,7 @@ in
               };
             };
             sequential-thinking = {
-              enable = true;
+              enable = false;
             };
             serena = {
               enable = true;
