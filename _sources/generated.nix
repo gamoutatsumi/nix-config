@@ -15,15 +15,15 @@
   };
   atusy-dotfiles = {
     pname = "atusy-dotfiles";
-    version = "20a89edcf96576a37ab07c6fb9fa23df5b395b37";
+    version = "230a7a95ae6de094290b66bfe1134de0365f2667";
     src = fetchFromGitHub {
       owner = "atusy";
       repo = "dotfiles";
-      rev = "20a89edcf96576a37ab07c6fb9fa23df5b395b37";
+      rev = "230a7a95ae6de094290b66bfe1134de0365f2667";
       fetchSubmodules = false;
-      sha256 = "sha256-rA2tJcv1uRm3J77h5rHSpzLdguD0Q7H2F2mMSTwdOH4=";
+      sha256 = "sha256-5aBbZWe86rjuje1ova8umCcsPBgeH1J6qaP+FhYadKs=";
     };
-    date = "2025-12-31";
+    date = "2026-01-08";
   };
   claudecodeui = {
     pname = "claudecodeui";
@@ -38,13 +38,13 @@
   };
   codecompanion-nvim = {
     pname = "codecompanion-nvim";
-    version = "v18.3.1";
+    version = "v18.3.2";
     src = fetchFromGitHub {
       owner = "olimorris";
       repo = "codecompanion.nvim";
-      rev = "v18.3.1";
+      rev = "v18.3.2";
       fetchSubmodules = false;
-      sha256 = "sha256-E4OiWObVq6SAFgaXYyBN7Kq2fpGEQWCe/gZwsI/6al0=";
+      sha256 = "sha256-31ekLPaaXKsaVoLNBdi2CnDFe8K0gi6JDpqkpwgIWSs=";
     };
   };
   denops-vim = {
