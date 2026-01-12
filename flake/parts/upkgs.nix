@@ -1,7 +1,6 @@
 {
   system,
   inputs,
-  inputs',
 }:
 (import inputs.nixpkgs-unstable {
   inherit system;
@@ -21,6 +20,5 @@
     inputs.oreore.overlays.default
     inputs.vim-overlay.overlays.default
     # keep-sorted end
-    (_self: _super: { arto = inputs'.arto.packages.default; })
   ];
 })
