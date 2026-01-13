@@ -17,7 +17,7 @@
         podman
         # keep-sorted end
       ])
-      ++ [ inputs'.rs-arto.packages.default ];
+      ++ [ inputs'.arto.packages.default ];
   };
   services = {
     jankyborders = {

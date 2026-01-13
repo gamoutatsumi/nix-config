@@ -57,8 +57,8 @@
           height = "3%";
           fixed-center = true;
           line-size = 2;
-          background = ''''${colors.bg}'';
-          foreground = ''''${colors.fg}'';
+          background = "\${colors.bg}";
+          foreground = "\${colors.fg}";
           font-0 = "Plemol JP Console NF:pixelsize=10;2";
           font-1 = "Plemol JP Console NF:pixelsize=22;4";
           font-2 = "Plemol JP Console NF:pixelsize=13;2";
@@ -66,7 +66,7 @@
           font-4 = "Symbols Nerd Font:pixelsize=10;2";
           font-5 = "IBM Plex Sans JP:pixelsize=10;2";
           cursor-click = "pointer";
-          monitor = ''''${env:MONITOR:}'';
+          monitor = "\${env:MONITOR:}";
           modules-left = [
             "xmonad"
             "mpd"
@@ -87,8 +87,8 @@
           height = "3%";
           fixed-center = true;
           line-size = 2;
-          background = ''''${colors.bg}'';
-          foreground = ''''${colors.fg}'';
+          background = "\${colors.bg}";
+          foreground = "\${colors.fg}";
           font-0 = "Plemol JP Console NF:pixelsize=10;2";
           font-1 = "Plemol JP Console NF:pixelsize=22;4";
           font-2 = "Plemol JP Console NF:pixelsize=13;2";
@@ -96,7 +96,7 @@
           font-4 = "Symbols Nerd Font:pixelsize=10;2";
           font-5 = "IBM Plex Sans JP:pixelsize=10;2";
           cursor-click = "pointer";
-          monitor = ''''${env:MONITOR:}'';
+          monitor = "\${env:MONITOR:}";
           modules-left = "xmonad";
         };
 
@@ -116,8 +116,8 @@
           ramp-volume-1 = "";
           ramp-volume-2 = "";
           click-right = lib.getExe upkgs.pavucontrol;
-          format-volume-underline = ''''${colors.adapta-cyan}'';
-          format-muted-underline = ''''${colors.adapta-grey}'';
+          format-volume-underline = "\${colors.adapta-cyan}";
+          format-muted-underline = "\${colors.adapta-grey}";
           format-volume-margin = 1;
           format-muted-margin = 1;
           interval = 5;
@@ -135,7 +135,7 @@
           label-occupied = "◉ ";
           label-urgent = "● ";
           label-empty = "○ ";
-          label-empty-foreground = ''''${colors.fg}'';
+          label-empty-foreground = "\${colors.fg}";
         };
 
         "module/i3" = {
@@ -150,7 +150,7 @@
           label-unfocused = "◉ ";
           label-urgent = "● ";
           label-visible = "○ ";
-          label-visible-foreground = ''''${colors.fg}'';
+          label-visible-foreground = "\${colors.fg}";
           index-sort = true;
         };
 
@@ -159,16 +159,16 @@
           interval = 1;
           label = "%time%";
           label-padding = 1;
-          label-underline = ''''${colors.adapta-cyan}'';
-          time = ''%Y/%m/%d %a %H:%M'';
-          label-margin = ''''${margin.for-modules}'';
+          label-underline = "\${colors.adapta-cyan}";
+          time = "%Y/%m/%d %a %H:%M";
+          label-margin = "\${margin.for-modules}";
         };
 
         "module/xbacklight" = {
           type = "internal/xbacklight";
           enable_scroll = true;
           format = " <label>";
-          format-underline = ''''${colors.adapta-cyan}'';
+          format-underline = "\${colors.adapta-cyan}";
           format-padding = 1;
           label = "%percentage%%";
         };
@@ -176,22 +176,22 @@
         "module/pulseaudio-control" = {
           type = "custom/script";
           tail = true;
-          format-underline = ''''${colors.adapta-cyan}'';
+          format-underline = "\${colors.adapta-cyan}";
           label-padding = 2;
-          label-foreground = ''''${colors.fg}'';
+          label-foreground = "\${colors.fg}";
           exec = ''LC_ALL=C pulseaudio-control --icons-volume " , " --icon-muted " " --sink-nicknames-from "device.description" listen'';
           click-right = lib.getExe upkgs.pavucontrol;
-          click-left = ''${lib.getExe upkgs.changeVolume} mute'';
-          scroll-up = ''${lib.getExe upkgs.changeVolume} +1%'';
-          scroll-down = ''${lib.getExe upkgs.changeVolume} -1%'';
+          click-left = "${lib.getExe upkgs.changeVolume} mute";
+          scroll-up = "${lib.getExe upkgs.changeVolume} +1%";
+          scroll-down = "${lib.getExe upkgs.changeVolume} -1%";
         };
 
         "module/cpu" = {
           type = "internal/cpu";
           interval = 3;
           format-prefix = " ";
-          format-underline = ''''${colors.adapta-cyan}'';
-          format-margin = ''''${margin.for-modules}'';
+          format-underline = "\${colors.adapta-cyan}";
+          format-margin = "\${margin.for-modules}";
           format-padding = 1;
           label = "%percentage:2%%";
         };
@@ -200,7 +200,7 @@
           type = "internal/memory";
           interval = 3;
           format-prefix = " ";
-          format-underline = ''''${colors.adapta-cyan}'';
+          format-underline = "\${colors.adapta-cyan}";
           format-padding = 1;
           label = "%percentage_used:2%%";
         };
@@ -211,19 +211,19 @@
           battery = "BAT0";
           adapter = "ADP1";
           format-charging = "<animation-charging> <label-charging>";
-          format-charging-underline = ''''${colors.adapta-cyan}'';
+          format-charging-underline = "\${colors.adapta-cyan}";
           format-charging-padding = 1;
           label-charging = "%percentage%%";
           format-discharging = "<ramp-capacity> <label-discharging>";
-          format-discharging-underline = ''''${colors.adapta-cyan}'';
+          format-discharging-underline = "\${colors.adapta-cyan}";
           format-discharging-padding = 1;
           label-discharging = "%percentage:2%%";
           format-full = "<label-full>";
-          format-full-underline = ''''${colors.adapta-cyan}'';
+          format-full-underline = "\${colors.adapta-cyan}";
           format-full-padding = 1;
-          format-charging-margin = ''''${margin.for-modules}'';
-          format-discharging-margin = ''''${margin.for-modules}'';
-          format-full-margin = ''''${margin.for-modules}'';
+          format-charging-margin = "\${margin.for-modules}";
+          format-discharging-margin = "\${margin.for-modules}";
+          format-full-margin = "\${margin.for-modules}";
           format-full-prefix = "󰁹 ";
           ramp-capacity-0 = "󰁺";
           ramp-capacity-1 = "󰁻";
@@ -235,13 +235,13 @@
           ramp-capacity-7 = "󰂀";
           ramp-capacity-8 = "󰂁";
           ramp-capacity-9 = "󰂂";
-          ramp-capacity-0-foreground = ''''${colors.adapta-red}'';
-          ramp-capacity-1-foreground = ''''${colors.adapta-red}'';
-          ramp-capacity-2-foreground = ''''${colors.adapta-red}'';
-          ramp-capacity-3-foreground = ''''${colors.adapta-red}'';
-          ramp-capacity-4-foreground = ''''${colors.adapta-yellow}'';
-          ramp-capacity-5-foreground = ''''${colors.adapta-yellow}'';
-          ramp-capacity-foreground = ''''${colors.fg}'';
+          ramp-capacity-0-foreground = "\${colors.adapta-red}";
+          ramp-capacity-1-foreground = "\${colors.adapta-red}";
+          ramp-capacity-2-foreground = "\${colors.adapta-red}";
+          ramp-capacity-3-foreground = "\${colors.adapta-red}";
+          ramp-capacity-4-foreground = "\${colors.adapta-yellow}";
+          ramp-capacity-5-foreground = "\${colors.adapta-yellow}";
+          ramp-capacity-foreground = "\${colors.fg}";
           animation-charging-0 = "󰢜";
           animation-charging-1 = "󰂆";
           animation-charging-2 = "󰂇";
@@ -252,16 +252,16 @@
           animation-charging-7 = "󰂊";
           animation-charging-8 = "󰂋";
           animation-charging-9 = "󰂅";
-          animation-charging-foreground = ''''${colors.fg}'';
+          animation-charging-foreground = "\${colors.fg}";
           animation-charging-framerate = 750;
         };
 
         "module/network" = {
           type = "internal/network";
-          interface = ''''${env:DEFAULT_INTERFACE:}'';
+          interface = "\${env:DEFAULT_INTERFACE:}";
           interval = 3;
           format-connected = "<label-connected>";
-          format-connected-underline = ''''${colors.adapta-cyan}'';
+          format-connected-underline = "\${colors.adapta-cyan}";
           format-connected-padding = 1;
           format-connected-margin = 1;
           label-connected = "%upspeed:9% %downspeed:9%";

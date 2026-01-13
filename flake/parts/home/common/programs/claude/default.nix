@@ -3,6 +3,7 @@
   lib,
   inputs,
   config,
+  inputs',
   ...
 }:
 let
@@ -18,7 +19,7 @@ in
   programs = {
     claude-code = {
       enable = true;
-      package = upkgs.edge.claude-code;
+      package = inputs'.llm-agents.packages.claude-code;
       commandsDir = ./commands;
       skillsDir = upkgs.symlinkJoin {
         name = "claude-code-skills";
