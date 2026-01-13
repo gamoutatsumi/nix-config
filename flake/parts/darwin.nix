@@ -12,7 +12,7 @@
           darwinUser = builtins.getEnv "DARWIN_USER";
           darwinHost = builtins.getEnv "DARWIN_HOST";
           upkgs = import ./upkgs.nix {
-            inherit system inputs inputs';
+            inherit system inputs;
           };
         in
         inputs.nix-darwin.lib.darwinSystem {

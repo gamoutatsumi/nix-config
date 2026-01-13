@@ -15,7 +15,7 @@
     }:
     let
       upkgs = import ./upkgs.nix {
-        inherit system inputs inputs';
+        inherit system inputs;
       };
       treefmtBuild = config.treefmt.build;
     in
@@ -41,21 +41,6 @@
               bash-language-server
               nvfetcher
               nodePackages_latest.vscode-json-languageserver
-              # (pkgs.haskell.packages.ghc98.ghcWithPackages (
-              #   haskellPackages:
-              #   with haskellPackages;
-              #   [
-              #     containers
-              #     unix
-              #     directory
-              #     haskell-language-server
-              #   ]
-              #   ++ lib.optionals pkgs.stdenv.isLinux [
-              #     xmonad
-              #     xmonad-extras
-              #     xmonad-contrib
-              #   ]
-              # ))
             ])
             ++ (with upkgs; [ tombi ]);
           inputsFrom = [
@@ -70,6 +55,7 @@
           enable = true;
         };
         settings = {
+          package = pkgs.prek;
           src = ./.;
           hooks = {
             # keep-sorted start block=yes
@@ -141,18 +127,12 @@
         };
         programs = {
           # keep-sorted start block=yes
-          cue = {
-            enable = true;
-          };
           deadnix = {
             enable = true;
           };
           deno = {
             enable = true;
             package = upkgs.deno;
-          };
-          hlint = {
-            enable = true;
           };
           jsonfmt = {
             enable = true;

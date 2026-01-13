@@ -65,7 +65,7 @@ in
         killall
         magika
         moreutils
-        mycli
+        # mycli
         nix-diff
         nix-index
         nix-output-monitor
@@ -173,8 +173,8 @@ in
           myissue = ''!gh issue list -s all -A gamoutatsumi | fzf --prompt "issue preview>" --preview "echo {} | cut -f1 | xargs gh issue view " | cut -f1 | xargs --no-run-if-empty gh issue ''${@:-view -w}'';
           assigned = ''!gh issue list -s all -a gamoutatsumi | fzf --prompt "issue preview>" --preview "echo {} | cut -f1 | xargs gh issue view " | cut -f1 | xargs --no-run-if-empty gh issue ''${@:-view -w}'';
           prs = ''!gh pr list -s all | fzf --prompt "PR preview>" --preview "echo {} | cut -f1 | xargs gh pr view " | cut -f1 | xargs --no-run-if-empty gh pr ''${@:-view -w}'';
-          prv = ''pr view -w'';
-          iv = ''issue view -w'';
+          prv = "pr view -w";
+          iv = "issue view -w";
         };
       };
     };

@@ -18,7 +18,7 @@
         let
           username = "gamoutatsumi";
           upkgs = import ./upkgs.nix {
-            inherit system inputs inputs';
+            inherit system inputs;
           };
         in
         inputs.nixpkgs.lib.nixosSystem {
@@ -66,7 +66,7 @@
         let
           username = "gamoutatsumi";
           upkgs = import ./upkgs.nix {
-            inherit system inputs inputs';
+            inherit system inputs;
           };
         in
         inputs.nixpkgs.lib.nixosSystem {

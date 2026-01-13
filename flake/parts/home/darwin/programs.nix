@@ -3,19 +3,21 @@
   upkgs,
   lib,
   config,
+  inputs',
   ...
 }:
 {
   home = {
-    packages = with upkgs; [
-      # keep-sorted start block=yes
-      arto
-      colima
-      container
-      docker-client
-      podman
-      # keep-sorted end
-    ];
+    packages =
+      (with upkgs; [
+        # keep-sorted start block=yes
+        colima
+        container
+        docker-client
+        podman
+        # keep-sorted end
+      ])
+      ++ [ inputs'.arto.packages.default ];
   };
   services = {
     jankyborders = {
