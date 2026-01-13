@@ -1,6 +1,7 @@
 {
   # keep-sorted start
   config,
+  inputs',
   lib,
   pkgs,
   upkgs,
@@ -106,6 +107,11 @@ in
         unar
         vim
         # keep-sorted end
+      ])
+      ++ (with inputs'.llm-agents.packages; [
+        cc-sdd
+        openskills
+        openspec
       ])
       ++ lspServers;
   };

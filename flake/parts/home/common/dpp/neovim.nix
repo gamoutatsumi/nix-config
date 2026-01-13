@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, inputs' }:
 {
   plugins = [
     {
@@ -159,7 +159,7 @@
         (pkgs.replaceVarsWith {
           src = ./hooks/copilot.lua;
           replacements = {
-            copilot_ls = pkgs.lib.getExe pkgs.copilot-language-server;
+            copilot_ls = pkgs.lib.getExe inputs'.llm-agents.packages.copilot-language-server;
           };
         })
       ];
