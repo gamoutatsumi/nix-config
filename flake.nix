@@ -60,7 +60,7 @@
       };
     };
     arto = {
-      url = "github:arto-app/Arto?ref=v0.13.0";
+      url = "github:arto-app/Arto?ref=v0.13.2";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs-unstable";
