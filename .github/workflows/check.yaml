@@ -34,7 +34,7 @@ jobs:
         run: |
           git diff --name-only --exit-code
         continue-on-error: true
-      - uses: suzuki-shunsuke/commit-action@87b297f0ce551411b43d1880f4fb3cbc60381055 # v0.0.14
+      - uses: suzuki-shunsuke/commit-action@f28421acc277a6d6a9c1f94ea449076ad77dba67 # v0.1.0
         if: steps.diff.outcome == 'failure' && github.event_name == 'pull_request'
         with:
           app_id: ${{ secrets.APP_ID }}
