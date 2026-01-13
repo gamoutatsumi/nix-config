@@ -65,7 +65,6 @@ in
         killall
         magika
         moreutils
-        # mycli
         nix-diff
         nix-index
         nix-output-monitor
@@ -101,6 +100,7 @@ in
         kn
         kubectl
         kubie
+        mycli
         s3cmd
         sheldon
         stern
