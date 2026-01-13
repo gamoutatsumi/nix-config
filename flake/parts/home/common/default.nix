@@ -5,6 +5,7 @@
   upkgs,
   config,
   username,
+  inputs',
   ...
 }:
 let
@@ -99,7 +100,12 @@ in
                   pkgs.linkFarm "dpp" [
                     {
                       name = "dpp.ts";
-                      path = pkgs.replaceVars ./dpp/hooks/dpp.ts (import ./dpp/default.nix { pkgs = upkgs; });
+                      path = pkgs.replaceVars ./dpp/hooks/dpp.ts (
+                        import ./dpp/default.nix {
+                          pkgs = upkgs;
+                          inherit inputs';
+                        }
+                      );
                     }
                     {
                       name = "deno.json";

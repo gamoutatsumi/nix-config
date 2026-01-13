@@ -1,10 +1,15 @@
-{ pkgs }:
+{ pkgs, inputs' }:
 let
   tomlFormat = pkgs.formats.toml { };
 in
 {
   vim_toml = tomlFormat.generate "vim.toml" (import ./vim.nix);
-  neovim_toml = tomlFormat.generate "neovim.toml" (import ./neovim.nix { inherit pkgs; });
+  neovim_toml = tomlFormat.generate "neovim.toml" (
+    import ./neovim.nix {
+      inherit pkgs;
+      inherit inputs';
+    }
+  );
   ddc_toml = tomlFormat.generate "ddc.toml" (import ./ddc.nix { inherit pkgs; });
   ddt_toml = tomlFormat.generate "ddt.toml" (import ./ddt.nix);
   ddu_toml = tomlFormat.generate "ddu.toml" (import ./ddu.nix { inherit pkgs; });
