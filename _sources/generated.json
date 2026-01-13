@@ -76,12 +76,12 @@
             "name": null,
             "owner": "olimorris",
             "repo": "codecompanion.nvim",
-            "rev": "v18.3.2",
-            "sha256": "sha256-31ekLPaaXKsaVoLNBdi2CnDFe8K0gi6JDpqkpwgIWSs=",
+            "rev": "v18.4.0",
+            "sha256": "sha256-DHU/eaZmNQ+rr05+OiZR6s5aEHXjyEd6SJzUYybnVr4=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v18.3.2"
+        "version": "v18.4.0"
     },
     "denops-vim": {
         "cargoLocks": null,
@@ -118,12 +118,12 @@
             "name": null,
             "owner": "JDimproved",
             "repo": "JDim",
-            "rev": "JDim-v0.14.0",
-            "sha256": "sha256-Nyr5OVPU0xJMun8qKRc3yB39g4vkhoThUGPxcN5FUVg=",
+            "rev": "JDim-v0.15.0",
+            "sha256": "sha256-ztbSsKPN+UasuYa033pJRGhQCZTEsUSkpa27tdjG7tM=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "JDim-v0.14.0"
+        "version": "JDim-v0.15.0"
     },
     "neotest": {
         "cargoLocks": null,

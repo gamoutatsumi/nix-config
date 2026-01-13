@@ -38,13 +38,13 @@
   };
   codecompanion-nvim = {
     pname = "codecompanion-nvim";
-    version = "v18.3.2";
+    version = "v18.4.0";
     src = fetchFromGitHub {
       owner = "olimorris";
       repo = "codecompanion.nvim";
-      rev = "v18.3.2";
+      rev = "v18.4.0";
       fetchSubmodules = false;
-      sha256 = "sha256-31ekLPaaXKsaVoLNBdi2CnDFe8K0gi6JDpqkpwgIWSs=";
+      sha256 = "sha256-DHU/eaZmNQ+rr05+OiZR6s5aEHXjyEd6SJzUYybnVr4=";
     };
   };
   denops-vim = {
@@ -60,13 +60,13 @@
   };
   jdim = {
     pname = "jdim";
-    version = "JDim-v0.14.0";
+    version = "JDim-v0.15.0";
     src = fetchFromGitHub {
       owner = "JDimproved";
       repo = "JDim";
-      rev = "JDim-v0.14.0";
+      rev = "JDim-v0.15.0";
       fetchSubmodules = false;
-      sha256 = "sha256-Nyr5OVPU0xJMun8qKRc3yB39g4vkhoThUGPxcN5FUVg=";
+      sha256 = "sha256-ztbSsKPN+UasuYa033pJRGhQCZTEsUSkpa27tdjG7tM=";
     };
   };
   neotest = {
