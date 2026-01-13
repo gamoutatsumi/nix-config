@@ -95,15 +95,15 @@
       "locked": {
         "lastModified": 1768055454,
         "narHash": "sha256-fHBK8AA6OXDmaIOMVAZWEhW5n+CkpIR55FN+orY5sFA=",
-        "owner": "lambdalisue",
-        "repo": "rs-arto",
+        "owner": "arto-app",
+        "repo": "Arto",
         "rev": "d8ed6cd6287ff10e7ab77d563fb9cbe0ad3d5507",
         "type": "github"
       },
       "original": {
-        "owner": "lambdalisue",
+        "owner": "arto-app",
         "ref": "v0.13.0",
-        "repo": "rs-arto",
+        "repo": "Arto",
         "type": "github"
       }
     },
@@ -867,27 +867,6 @@
         "type": "github"
       }
     },
-    "opencode": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs-unstable"
-        ]
-      },
-      "locked": {
-        "lastModified": 1767916737,
-        "narHash": "sha256-i0PYcI3qM52jcl72dqHxiBUQH5n4oBXTlxJqvWNS8CQ=",
-        "owner": "anomalyco",
-        "repo": "opencode",
-        "rev": "bd9c13bb27e6a375f0232ed383213bc86c77387d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "anomalyco",
-        "ref": "v1.1.8",
-        "repo": "opencode",
-        "type": "github"
-      }
-    },
     "oreore": {
       "inputs": {
         "flake-checker": [],
@@ -994,7 +973,6 @@
         "nvim-treesitter": "nvim-treesitter",
         "nvim-treesitter-main": "nvim-treesitter-main",
         "nvim-treesitter-textobjects": "nvim-treesitter-textobjects",
-        "opencode": "opencode",
         "oreore": "oreore",
         "pre-commit-hooks": "pre-commit-hooks",
         "systems": "systems_3",

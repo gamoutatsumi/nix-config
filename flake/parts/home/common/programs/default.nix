@@ -1,7 +1,6 @@
 {
   # keep-sorted start
   config,
-  inputs',
   lib,
   pkgs,
   upkgs,
@@ -416,23 +415,6 @@ in
         background-opacity = 0.8;
         theme = "nightfly";
         # keep-sorted end
-      };
-    };
-    opencode = {
-      enable = true;
-      package = inputs'.opencode.packages.default;
-      settings = {
-        model = "anthropic/claude-opus-4-5-20251101";
-        theme = "system";
-        mcp = {
-          codex = {
-            type = "local";
-            command = [
-              (lib.getExe upkgs.codex)
-              "mcp-server"
-            ];
-          };
-        };
       };
     };
     # keep-sorted end

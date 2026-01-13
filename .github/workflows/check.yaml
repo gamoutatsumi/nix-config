@@ -51,3 +51,5 @@ jobs:
               attribute: nixosConfigurations.tat-nixos-desktop.config.system.build.toplevel
             - displayName: nixos-laptop
               attribute: nixosConfigurations.tat-nixos-laptop.config.system.build.toplevel
+            - displayName: installation-iso
+              attribute: nixosConfigurations.headlessIso.config.system.build.toplevel

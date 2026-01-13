@@ -60,7 +60,7 @@
       };
     };
     arto = {
-      url = "github:lambdalisue/rs-arto?ref=v0.13.0";
+      url = "github:arto-app/Arto?ref=v0.13.0";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs-unstable";
@@ -219,14 +219,6 @@
     nvim-treesitter-textobjects = {
       url = "github:nvim-treesitter/nvim-treesitter-textobjects?ref=main&shallow=1";
       flake = false;
-    };
-    opencode = {
-      url = "github:anomalyco/opencode?ref=v1.1.8&shallow=1";
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs-unstable";
-        };
-      };
     };
     oreore = {
       url = "github:gamoutatsumi/oreore-flake";
