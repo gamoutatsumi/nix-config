@@ -46,7 +46,7 @@ in
               enable = false;
             };
             github = {
-              enable = false;
+              enable = true;
               package = upkgs.github-mcp-server;
               env = {
                 GITHUB_DYNAMIC_TOOLSETS = "1";
@@ -74,13 +74,15 @@ in
       settings = {
         permissions = {
           allow = [
+            "Bash(rg:*)"
+            "Bash(ls:*)"
+            "Bash(cat:*)"
+            "Bash(echo:*)"
+            "Bash(tail:*)"
+            "Bash(head:*)"
+            "Bash(fd:*)"
           ];
           deny = [
-            "Edit"
-            "Glob"
-            "Grep"
-            "Read"
-            "Write"
             "Bash(sudo:*)"
             "Bash(rm:*)"
             "Bash(rm -rf:*)"
