@@ -178,6 +178,10 @@ in
             export OS_PROJECT_ID="$project_id"
             export OS_USER_DOMAIN_NAME="$user_domain_name"
           '';
+          gcp = ''
+            local profile=$(${lib.getExe upkgs.google-cloud-sdk} config configurations list | ${lib.getExe pkgs.gawk} '{ print $1,$3,$4 }' | ${lib.getExe pkgs.unixtools.column} -t | ${fzf-tmux_exe} --header-lines=1 | ${lib.getExe pkgs.gawk} '{ print $1 }')
+             ${lib.getExe upkgs.google-cloud-sdk} config configurations activate "$profile"
+          '';
         };
     };
   };
