@@ -42,6 +42,12 @@
   nixpkgs = {
     hostPlatform = "aarch64-darwin";
   };
+  nix = {
+    linux-builder = {
+      enable = true;
+      ephemeral = true;
+    };
+  };
 
   users = {
     users = {
