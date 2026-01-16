@@ -46,7 +46,6 @@ jobs:
       - uses: natsukium/nix-diff-action@374bf5037dc84fc520da2002beef2f2bd96f4e9b # v1.0.2
         if: github.event_name == 'pull_request'
         with:
-          build: true
           attributes: |-
             - displayName: nixos-desktop
               attribute: nixosConfigurations.tat-nixos-desktop.config.system.build.toplevel
