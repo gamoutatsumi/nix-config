@@ -180,7 +180,7 @@
     };
     ollama = {
       package = pkgs.ollama;
-      enable = true;
+      enable = false;
       acceleration = "cuda";
       loadModels = [ "hf.co/mmnga/webbigdata-ALMA-7B-Ja-V2-gguf:Q5_K_M" ];
       environmentVariables = {
