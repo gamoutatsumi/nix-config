@@ -57,7 +57,7 @@
   };
   nix = {
     settings = {
-      sandbox = true;
+      sandbox = false;
       max-jobs = "auto";
     };
     extraOptions = ''
