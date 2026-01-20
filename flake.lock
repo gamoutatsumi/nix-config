@@ -903,7 +903,9 @@
         "nixpkgs": [
           "nixpkgs-unstable"
         ],
-        "nvim-treesitter": "nvim-treesitter_2",
+        "nvim-treesitter": [
+          "nvim-treesitter"
+        ],
         "nvim-treesitter-textobjects": [
           "nvim-treesitter-textobjects"
         ]
@@ -936,23 +938,6 @@
         "owner": "nvim-treesitter",
         "ref": "main",
         "repo": "nvim-treesitter-textobjects",
-        "type": "github"
-      }
-    },
-    "nvim-treesitter_2": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1768662939,
-        "narHash": "sha256-u2f1nhred9AK5s0DoF6x1cg/TxvR5rc5/G00fG1s+b4=",
-        "owner": "nvim-treesitter",
-        "repo": "nvim-treesitter",
-        "rev": "d19def46c112c26c17adeef88dd1253cc6d623a1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nvim-treesitter",
-        "ref": "main",
-        "repo": "nvim-treesitter",
         "type": "github"
       }
     },
