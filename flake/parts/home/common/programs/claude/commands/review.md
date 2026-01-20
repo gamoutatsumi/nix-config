@@ -83,7 +83,7 @@ GitHub MCP Server
 変更に使用されているライブラリのベストプラクティスを確認する場合:
 
 1. `mcp__context7__resolve-library-id` でライブラリIDを解決
-1. `mcp__context7__get-library-docs` でドキュメントを取得
+2. `mcp__context7__get-library-docs` でドキュメントを取得
 
 # 2. 分析フェーズ（Codexに委任）
 

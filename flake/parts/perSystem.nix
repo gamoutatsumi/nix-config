@@ -142,6 +142,9 @@
           };
           mdformat = {
             enable = true;
+            settings = {
+              number = true;
+            };
             plugins =
               ps: with ps; [
                 mdformat-footnote

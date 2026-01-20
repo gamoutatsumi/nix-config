@@ -26,6 +26,7 @@ in
         paths = [
           "${anthropicsSkills}/skills"
           scrumSkills
+          ./skills
         ];
       };
       memory = {
