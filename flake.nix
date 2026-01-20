@@ -272,6 +272,14 @@
         };
       };
     };
+    version-lsp = {
+      url = "github:skanehira/version-lsp";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs-unstable";
+        };
+      };
+    };
     vim-overlay = {
       url = "github:kawarimidoll/vim-overlay";
       inputs = {

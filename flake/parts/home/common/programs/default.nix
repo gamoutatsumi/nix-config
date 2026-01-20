@@ -21,7 +21,8 @@ let
       yaml-language-server
       vscode-langservers-extracted
       typos-lsp
-    ]);
+    ])
+    ++ [ inputs'.version-lsp.packages.default ];
 in
 {
   imports = [
