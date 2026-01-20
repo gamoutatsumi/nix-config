@@ -1,4 +1,5 @@
 -- lua_add {{{
+require("lspconfig")
 local function setInlayHintHL()
     local has_hl, hl = pcall(vim.api.nvim_get_hl, 0, { name = "LspInlayHint" })
     if has_hl and (hl["fg"] or hl["bg"]) then
@@ -27,6 +28,7 @@ local ensure_enabled = {
     "bashls",
     "biome",
     "buf_ls",
+    "copilot",
     "cue",
     "docker_language_server",
     "efm",
@@ -60,6 +62,22 @@ vim.api.nvim_create_autocmd("LspAttach", {
         local client = vim.lsp.get_client_by_id(args.data.client_id)
         if client == nil then
             return
+        end
+        if client.name == "copilot" then
+            vim.lsp.inline_completion.enable(true, { client_id = client.id })
+            vim.keymap.set("i", "<C-e>", function()
+                vim.lsp.inline_completion.get()
+                if vim.fn.pumvisible() == 1 then
+                    return "<C-e>"
+                end
+            end, { silent = true, expr = true, buffer = bufnr })
+
+            vim.keymap.set("i", "<C-f>", function()
+                vim.lsp.inline_completion.select()
+            end, { silent = true, buffer = bufnr })
+            vim.keymap.set("i", "<C-b>", function()
+                vim.lsp.inline_completion.select({ count = -1 * vim.v.count1 })
+            end, { silent = true, buffer = bufnr })
         end
         local function format()
             local formatOpts = {

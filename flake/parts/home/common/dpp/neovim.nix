@@ -1,5 +1,4 @@
-{ pkgs, inputs' }:
-{
+_: {
   plugins = [
     {
       repo = "tversteeg/registers.nvim";
@@ -151,18 +150,6 @@
           require('floating-input').input(opts, on_confirm, { border = 'double' })
         end
       '';
-    }
-    {
-      repo = "zbirenbaum/copilot.lua";
-      on_event = [ "InsertEnter" ];
-      hooks_file = [
-        (pkgs.replaceVarsWith {
-          src = ./hooks/copilot.lua;
-          replacements = {
-            copilot_ls = pkgs.lib.getExe inputs'.llm-agents.packages.copilot-language-server;
-          };
-        })
-      ];
     }
     {
       repo = "h3pei/trace-pr.nvim";

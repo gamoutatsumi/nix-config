@@ -24,18 +24,7 @@ require("copilot").setup({
     root_dir = function()
         return vim.fs.dirname(vim.fs.find(".git", { upward = true })[1])
     end,
-    server_opts_overrides = {
-        trace = "verbose",
-        cmd = {
-            "@copilot_ls@",
-            "--stdio",
-        },
-        settings = {
-            advanced = {
-                listCount = 10,
-                inlineSuggestCount = 3,
-            },
-        },
-    },
+    server = { type = "binary", custom_server_filepath = "@copilot_ls@" },
+    server_opts_overrides = {},
 })
 -- }}}

@@ -22,7 +22,10 @@ let
       vscode-langservers-extracted
       typos-lsp
     ])
-    ++ [ inputs'.version-lsp.packages.default ];
+    ++ [
+      inputs'.llm-agents.packages.copilot-language-server
+      inputs'.version-lsp.packages.default
+    ];
 in
 {
   imports = [

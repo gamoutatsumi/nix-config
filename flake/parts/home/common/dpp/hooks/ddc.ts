@@ -10,7 +10,7 @@ export class Config extends BaseConfig {
   override config({ contextBuilder, denops }: ConfigArguments): Promise<void> {
     contextBuilder.patchGlobal({
       ui: "pum",
-      sources: ["denippet", "copilot", "file", "lsp", "around"],
+      sources: ["denippet", "file", "lsp", "around"],
       filterParams: {
         converter_kind_labels: {
           kindLabels: {
@@ -66,9 +66,6 @@ export class Config extends BaseConfig {
           displayFile: "",
           displayDir: "",
         },
-        copilot: {
-          copilot: "lua",
-        },
         lsp: {
           lspEngine: "nvim-lsp",
           enableAdditionalTextEdit: true,
@@ -84,12 +81,6 @@ export class Config extends BaseConfig {
           sorters: ["sorter_ascii", "sorter_fuzzy"],
           keywordPattern: "(\\k|-|_)*",
           converters: CONVERTERS,
-        },
-        copilot: {
-          mark: "[Copilot]",
-          matchers: [],
-          minAutoCompleteLength: 0,
-          isVolatile: true,
         },
         "cmdline_history": {
           mark: "[History]",

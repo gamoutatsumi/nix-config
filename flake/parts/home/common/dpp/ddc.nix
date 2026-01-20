@@ -66,9 +66,6 @@
       repo = "Shougo/ddc-filter-converter_remove_overlap";
     }
     {
-      repo = "Shougo/ddc-source-copilot";
-    }
-    {
       repo = "uga-rosa/denippet.vim";
       hooks_file = ./hooks/denippet.lua;
     }
