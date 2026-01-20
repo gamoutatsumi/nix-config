@@ -113,7 +113,7 @@
           "llm-agents",
           "nixpkgs"
         ],
-        "systems": "systems_2"
+        "systems": "systems_3"
       },
       "locked": {
         "lastModified": 1767386128,
@@ -521,6 +521,24 @@
         "type": "github"
       }
     },
+    "flake-utils_2": {
+      "inputs": {
+        "systems": "systems_2"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "gitignore": {
       "inputs": {
         "nixpkgs": [
@@ -585,6 +603,29 @@
         "type": "github"
       }
     },
+    "kakehashi": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ],
+        "rust-overlay": "rust-overlay_2"
+      },
+      "locked": {
+        "lastModified": 1768585327,
+        "narHash": "sha256-+B1KJVsBCXwXycQPDJMKzozZQrpuwpy37jZIuo188lo=",
+        "owner": "atusy",
+        "repo": "kakehashi",
+        "rev": "f65d6125d7713d293f4eee5f6e827d23f61b277a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "atusy",
+        "ref": "v0.0.10",
+        "repo": "kakehashi",
+        "type": "github"
+      }
+    },
     "lanzaboote": {
       "inputs": {
         "crane": "crane_4",
@@ -592,7 +633,7 @@
           "nixpkgs"
         ],
         "pre-commit": "pre-commit",
-        "rust-overlay": "rust-overlay_2"
+        "rust-overlay": "rust-overlay_3"
       },
       "locked": {
         "lastModified": 1765382359,
@@ -1008,6 +1049,7 @@
         "flake-checker": "flake-checker",
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
+        "kakehashi": "kakehashi",
         "lanzaboote": "lanzaboote",
         "llm-agents": "llm-agents",
         "mcp-servers-nix": "mcp-servers-nix",
@@ -1023,7 +1065,7 @@
         "nvim-treesitter-textobjects": "nvim-treesitter-textobjects",
         "oreore": "oreore",
         "pre-commit-hooks": "pre-commit-hooks",
-        "systems": "systems_3",
+        "systems": "systems_4",
         "tinty-schemes": "tinty-schemes",
         "treefmt-nix": "treefmt-nix",
         "version-lsp": "version-lsp",
@@ -1108,6 +1150,27 @@
     "rust-overlay_2": {
       "inputs": {
         "nixpkgs": [
+          "kakehashi",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1767408057,
+        "narHash": "sha256-0TD2PNTt6olOonFgcvZJcNGiU3x5cX+RMzrfWfHB9Jw=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "294198315a13d6d130565ad08e97685df7b0d458",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "rust-overlay_3": {
+      "inputs": {
+        "nixpkgs": [
           "lanzaboote",
           "nixpkgs"
         ]
@@ -1126,7 +1189,7 @@
         "type": "github"
       }
     },
-    "rust-overlay_3": {
+    "rust-overlay_4": {
       "inputs": {
         "nixpkgs": [
           "version-lsp",
@@ -1192,6 +1255,21 @@
         "type": "github"
       }
     },
+    "systems_4": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
     "tinty-schemes": {
       "flake": false,
       "locked": {
@@ -1235,18 +1313,19 @@
         "nixpkgs": [
           "nixpkgs-unstable"
         ],
-        "rust-overlay": "rust-overlay_3"
+        "rust-overlay": "rust-overlay_4"
       },
       "locked": {
-        "lastModified": 1768774126,
-        "narHash": "sha256-+PRzBMpQgpybHyrRQ4/9iVpL7bI/fN/B3FeJkmGQHms=",
+        "lastModified": 1768663675,
+        "narHash": "sha256-L/j0CtowcyhohCp8ia1Jd6apq+0KSfE18+exH/ghLP4=",
         "owner": "skanehira",
         "repo": "version-lsp",
-        "rev": "65c146c17b41263724082de9ce8f6a67a3413c55",
+        "rev": "e31c1d157d5c2a8874cef3cade8a13eb7704cf5e",
         "type": "github"
       },
       "original": {
         "owner": "skanehira",
+        "ref": "v0.4.0",
         "repo": "version-lsp",
         "type": "github"
       }

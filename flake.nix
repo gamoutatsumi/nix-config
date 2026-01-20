@@ -123,6 +123,14 @@
         };
       };
     };
+    kakehashi = {
+      url = "github:atusy/kakehashi?shallow=1&ref=v0.0.10";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs-unstable";
+        };
+      };
+    };
     lanzaboote = {
       url = "github:nix-community/lanzaboote?ref=v1.0.0&shallow=1";
       inputs = {
@@ -273,7 +281,7 @@
       };
     };
     version-lsp = {
-      url = "github:skanehira/version-lsp";
+      url = "github:skanehira/version-lsp?shallow=1&ref=v0.4.0";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs-unstable";
