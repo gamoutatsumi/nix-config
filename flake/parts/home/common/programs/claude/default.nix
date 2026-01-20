@@ -19,7 +19,7 @@ in
   programs = {
     claude-code = {
       enable = true;
-      package = inputs'.llm-agents.packages.claude-code-npm;
+      package = inputs'.llm-agents.packages.claude-code;
       commandsDir = ./commands;
       skillsDir = upkgs.symlinkJoin {
         name = "claude-code-skills";
