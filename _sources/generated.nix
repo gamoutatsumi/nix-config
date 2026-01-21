@@ -117,15 +117,15 @@
   };
   nvim-dap = {
     pname = "nvim-dap";
-    version = "cdfd55a133f63228c55f91378f12908cb2a78ded";
+    version = "085386b9359ddf8d76ad89b98973b8e332dc5ba3";
     src = fetchFromGitHub {
       owner = "mfussenegger";
       repo = "nvim-dap";
-      rev = "cdfd55a133f63228c55f91378f12908cb2a78ded";
+      rev = "085386b9359ddf8d76ad89b98973b8e332dc5ba3";
       fetchSubmodules = false;
-      sha256 = "sha256-An9I8t2z/2PL75K4BIJ25P7pgnLiDgFpnTHimUopPTY=";
+      sha256 = "sha256-GI7BCwZxzEJzwQzoM7AownvxhWyTvcHXrRE7bwZnNwg=";
     };
-    date = "2026-01-05";
+    date = "2026-01-20";
   };
   nvim-dap-go = {
     pname = "nvim-dap-go";
