@@ -34,6 +34,14 @@ in
       };
       mcpServers =
         (inputs.mcp-servers-nix.lib.evalModule upkgs {
+          settings = {
+            servers = {
+              notion = {
+                type = "http";
+                url = "https://mcp.notion.com/mcp";
+              };
+            };
+          };
           programs = {
             # keep-sorted start block=yes
             codex = {
