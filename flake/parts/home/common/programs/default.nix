@@ -24,7 +24,7 @@ let
     ])
     ++ [
       inputs'.llm-agents.packages.copilot-language-server
-      inputs'.version-lsp.packages.default
+      # inputs'.version-lsp.packages.default
       # inputs'.kakehashi.packages.default
     ];
 in
