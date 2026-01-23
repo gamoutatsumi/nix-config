@@ -38,7 +38,7 @@
         extraConfig = ''
           [[on-window-detected]]
           if.app-id = "com.tinyspeck.slackmacgap"
-          run = "move-node-to-workspace 10"
+          run = "move-node-to-workspace S"
           [[on-window-detected]]
           if.app-id = "org.alacritty"
           run = "move-node-to-workspace 3"
@@ -50,7 +50,7 @@
           run = "move-node-to-workspace 2"
           [[on-window-detected]]
           if.app-id = "com.hnc.Discord"
-          run = "move-node-to-workspace 9"
+          run = "move-node-to-workspace D"
         '';
         userSettings = {
           exec-on-workspace-change = [
@@ -90,6 +90,8 @@
                 alt-8 = "workspace 8";
                 alt-9 = "workspace 9";
                 alt-0 = "workspace 10";
+                alt-shift-s = "workspace S";
+                alt-shift-d = "workspace D";
                 alt-ctrl-1 = "move-node-to-workspace 1";
                 alt-ctrl-2 = "move-node-to-workspace 2";
                 alt-ctrl-3 = "move-node-to-workspace 3";
