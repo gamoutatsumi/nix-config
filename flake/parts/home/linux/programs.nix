@@ -148,6 +148,9 @@ in
     swaylock = {
       enable = true;
     };
+    obs-studio = {
+      enable = true;
+    };
     # keep-sorted end
   };
 }
