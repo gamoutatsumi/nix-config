@@ -36,7 +36,7 @@ input {
         // off
         // natural-scroll
         // accel-speed 0.1
-        // accel-profile "flat"
+        accel-profile "flat"
         // scroll-method "on-button-down"
         // scroll-button 273
         // scroll-button-lock
