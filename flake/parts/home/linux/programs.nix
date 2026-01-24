@@ -53,6 +53,7 @@ in
         (vivaldi.override {
           enableWidevine = true;
           proprietaryCodecs = false;
+          inherit (pkgs) widevine-cdm;
           commandLineArgs = "--force-dark-mode --password-store=gnome-libsecret";
         })
       ]);
@@ -149,6 +150,9 @@ in
       enable = true;
     };
     obs-studio = {
+      enable = true;
+    };
+    firefox = {
       enable = true;
     };
     # keep-sorted end
