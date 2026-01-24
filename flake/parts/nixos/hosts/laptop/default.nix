@@ -145,14 +145,6 @@
   nixpkgs = {
     hostPlatform = lib.mkDefault "x86_64-linux";
   };
-  programs = {
-    light = {
-      enable = true;
-      brightnessKeys = {
-        enable = true;
-      };
-    };
-  };
   services = {
     # keep-sorted start block=yes
     autorandr = {
