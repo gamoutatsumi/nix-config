@@ -57,6 +57,7 @@
         gcc
         sbctl
         efitools
+        brightnessctl
       ])
       ++ (with upkgs; [ vim ]);
   };
