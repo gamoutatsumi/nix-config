@@ -53,7 +53,7 @@ in
         (vivaldi.override {
           enableWidevine = true;
           proprietaryCodecs = false;
-          inherit (pkgs) widevine-cdm;
+          inherit (upkgs) widevine-cdm;
           commandLineArgs = "--force-dark-mode --password-store=gnome-libsecret";
         })
       ]);
