@@ -428,6 +428,12 @@ in
         # keep-sorted end
       };
     };
+    nix-index = {
+      enable = true;
+      comma = {
+        enable = true;
+      };
+    };
     # keep-sorted end
   };
   # keep-sorted end

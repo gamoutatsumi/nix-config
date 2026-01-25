@@ -13,6 +13,7 @@
       "${username}" = {
         imports = [
           inputs.oreore.homeManagerModules.theme
+          inputs.nix-index-database.homeModules.default
         ]
         ++ imports;
       };

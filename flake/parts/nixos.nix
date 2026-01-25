@@ -35,6 +35,7 @@
             inputs.xremap-nix.nixosModules.default
             inputs.agenix.nixosModules.default
             inputs.agenix-rekey.nixosModules.default
+            inputs.nix-index-database.nixosModules.default
             ./nixos/hosts/laptop
             ./common
             ./nixos/config.nix
@@ -84,6 +85,7 @@
             inputs.disko.nixosModules.disko
             inputs.agenix.nixosModules.default
             inputs.agenix-rekey.nixosModules.default
+            inputs.nix-index-database.nixosModules.default
             ./nixos/hosts/desktop
             ./common
             ./nixos/config.nix
