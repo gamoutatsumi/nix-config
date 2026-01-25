@@ -71,7 +71,6 @@ in
         magika
         moreutils
         nix-diff
-        nix-index
         nix-output-monitor
         nix-search-cli
         nix-tree
@@ -432,6 +431,9 @@ in
       comma = {
         enable = true;
       };
+    };
+    nix-index = {
+      enable = true;
     };
     # keep-sorted end
   };
