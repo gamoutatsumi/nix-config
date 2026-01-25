@@ -436,6 +436,9 @@ in
         enable = true;
       };
     };
+    command-not-found = {
+      enable = true;
+    };
     # keep-sorted end
   };
   # keep-sorted end
