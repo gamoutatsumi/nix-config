@@ -428,9 +428,6 @@ in
         # keep-sorted end
       };
     };
-    nix-index = {
-      enable = true;
-    };
     nix-index-database = {
       comma = {
         enable = true;
