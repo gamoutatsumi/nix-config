@@ -55,12 +55,12 @@
             "name": null,
             "owner": "siteboon",
             "repo": "claudecodeui",
-            "rev": "v1.13.6",
-            "sha256": "sha256-lx53gvZli8t3qK3RITooOI/6Q1OGBSCIRQWMTVvsxEs=",
+            "rev": "v1.14.0",
+            "sha256": "sha256-M0ZjVOFHwcazbpHeYaSPeX6jXz3yrPQO3+NuSaD/ItE=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v1.13.6"
+        "version": "v1.14.0"
     },
     "codecompanion-nvim": {
         "cargoLocks": null,
@@ -76,12 +76,12 @@
             "name": null,
             "owner": "olimorris",
             "repo": "codecompanion.nvim",
-            "rev": "v18.5.0",
-            "sha256": "sha256-UAvvj+iAWluJ2SD/KmyPovRjd/32351et/0Mftwehvw=",
+            "rev": "v18.5.1",
+            "sha256": "sha256-NEgSYj+ja0EQTwPGur8D7PcECSdZ85z+w61vf1ES14s=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v18.5.0"
+        "version": "v18.5.1"
     },
     "denops-vim": {
         "cargoLocks": null,
@@ -160,12 +160,12 @@
             "name": null,
             "owner": "fredrikaverpil",
             "repo": "neotest-golang",
-            "rev": "v2.7.1",
-            "sha256": "sha256-W4eCputr9eXW+h9m9NQl4tBH+1Bs+JCTjOMkirgqhTs=",
+            "rev": "v2.7.2",
+            "sha256": "sha256-oZWb6GsZTgclKFyDgZWWANmfPRjg0LZgFymQs2SC8Rc=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2.7.1"
+        "version": "v2.7.2"
     },
     "neotest-plenary": {
         "cargoLocks": null,
