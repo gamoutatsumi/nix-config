@@ -57,12 +57,6 @@ _: {
       '';
     }
     {
-      repo = "uga-rosa/ccc.nvim";
-      lua_add = ''
-        require('ccc').setup {}
-      '';
-    }
-    {
       repo = "rcarriga/nvim-notify";
       lua_add = ''
         require('notify').setup {
