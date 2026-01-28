@@ -25,7 +25,7 @@ jobs:
       actions: read # Required for Claude to read CI results on PRs
     steps:
       - name: Checkout repository
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch-depth: 1
       - uses: nixbuild/nix-quick-install-action@2c9db80fb984ceb1bcaa77cdda3fdf8cfba92035 # v34
@@ -34,7 +34,7 @@ jobs:
           nix_conf: |
             keep-env-derivations = true
             keep-outputs = true
-      - uses: cachix/cachix-action@0fc020193b5a1fa3ac4575aa3a7d3aa6a35435ad # v16
+      - uses: cachix/cachix-action@3ba601ff5bbb07c7220846facfa2cd81eeee15a1 # v16
         with:
           name: gamoutatsumi-nix-config
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
@@ -43,7 +43,7 @@ jobs:
           arguments: --accept-flake-config
       - name: Run Claude Code
         id: claude
-        uses: anthropics/claude-code-action@a017b830c03e23789b11fb69ed571ea61c12e45c # v1.0.30
+        uses: anthropics/claude-code-action@f64219702d7454cf29fe32a74104be6ed43dc637 # v1.0.34
         with:
           model: "claude-opus-4-0"
           fallback_model: "claude-sonnet-4-0"
