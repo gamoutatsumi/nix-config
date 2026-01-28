@@ -15,15 +15,15 @@
   };
   atusy-dotfiles = {
     pname = "atusy-dotfiles";
-    version = "c877fb17fd51d935e914a86051f33aa7ee458463";
+    version = "116cd53100cdd95e4e7c68b0b0102cac03f17c94";
     src = fetchFromGitHub {
       owner = "atusy";
       repo = "dotfiles";
-      rev = "c877fb17fd51d935e914a86051f33aa7ee458463";
+      rev = "116cd53100cdd95e4e7c68b0b0102cac03f17c94";
       fetchSubmodules = false;
-      sha256 = "sha256-mYKYv+ZvGjNFcg1SdSQrZKZnvVt6DQEJIXJK4WIPzXo=";
+      sha256 = "sha256-tMMrVgYD9a0xrLSTBp5JjqLx06qfHvniMF15yEySbbc=";
     };
-    date = "2026-01-16";
+    date = "2026-01-28";
   };
   claudecodeui = {
     pname = "claudecodeui";
