@@ -1,6 +1,7 @@
 {
   username,
   hostname,
+  lib,
   ...
 }:
 {
@@ -47,6 +48,11 @@
       enable = true;
       ephemeral = true;
       config = {
+        virtualisation = {
+          cores = 6;
+          memorySize = lib.mkForce (16 * 1024);
+          diskSize = lib.mkForce (50 * 1024);
+        };
         nix = {
           settings = {
             experimental-features = [
