@@ -46,9 +46,6 @@
     linux-builder = {
       enable = true;
       ephemeral = true;
-      systems = [
-        "x86_64-linux"
-      ];
       config = {
         nix = {
           settings = {
@@ -61,7 +58,6 @@
       };
     };
   };
-
   users = {
     users = {
       ${username} = {
