@@ -16,6 +16,9 @@
         docker-client
         podman
         # keep-sorted end
+        (lima.override {
+          withAdditionalGuestAgents = true;
+        })
       ])
       ++ [ inputs'.arto.packages.default ];
   };
