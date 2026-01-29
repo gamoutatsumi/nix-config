@@ -15,25 +15,25 @@
   };
   atusy-dotfiles = {
     pname = "atusy-dotfiles";
-    version = "116cd53100cdd95e4e7c68b0b0102cac03f17c94";
+    version = "e06c579c7abde6d426402454fbe8ee1041fd5a27";
     src = fetchFromGitHub {
       owner = "atusy";
       repo = "dotfiles";
-      rev = "116cd53100cdd95e4e7c68b0b0102cac03f17c94";
+      rev = "e06c579c7abde6d426402454fbe8ee1041fd5a27";
       fetchSubmodules = false;
-      sha256 = "sha256-tMMrVgYD9a0xrLSTBp5JjqLx06qfHvniMF15yEySbbc=";
+      sha256 = "sha256-Qwd5A+TEmXCjbFaThd2OR6jC6aG7XO2ciia8bljm5so=";
     };
     date = "2026-01-28";
   };
   claudecodeui = {
     pname = "claudecodeui";
-    version = "v1.14.0";
+    version = "v1.15.0";
     src = fetchFromGitHub {
       owner = "siteboon";
       repo = "claudecodeui";
-      rev = "v1.14.0";
+      rev = "v1.15.0";
       fetchSubmodules = false;
-      sha256 = "sha256-M0ZjVOFHwcazbpHeYaSPeX6jXz3yrPQO3+NuSaD/ItE=";
+      sha256 = "sha256-iTJK5jnHAEzcYAOXHqvMU+vReyWmqt2lgzZjV2Zjnb8=";
     };
   };
   codecompanion-nvim = {
@@ -117,15 +117,15 @@
   };
   nvim-dap = {
     pname = "nvim-dap";
-    version = "085386b9359ddf8d76ad89b98973b8e332dc5ba3";
+    version = "e47878dcf1ccc30136b30d19ab19fe76946d61cd";
     src = fetchFromGitHub {
       owner = "mfussenegger";
       repo = "nvim-dap";
-      rev = "085386b9359ddf8d76ad89b98973b8e332dc5ba3";
+      rev = "e47878dcf1ccc30136b30d19ab19fe76946d61cd";
       fetchSubmodules = false;
-      sha256 = "sha256-GI7BCwZxzEJzwQzoM7AownvxhWyTvcHXrRE7bwZnNwg=";
+      sha256 = "sha256-JA5dUhm3sQYlAmQpBLCtXj2r0RM3G/JWdcZWTrLJ4DY=";
     };
-    date = "2026-01-20";
+    date = "2026-01-28";
   };
   nvim-dap-go = {
     pname = "nvim-dap-go";

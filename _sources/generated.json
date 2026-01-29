@@ -34,12 +34,12 @@
             "name": null,
             "owner": "atusy",
             "repo": "dotfiles",
-            "rev": "116cd53100cdd95e4e7c68b0b0102cac03f17c94",
-            "sha256": "sha256-tMMrVgYD9a0xrLSTBp5JjqLx06qfHvniMF15yEySbbc=",
+            "rev": "e06c579c7abde6d426402454fbe8ee1041fd5a27",
+            "sha256": "sha256-Qwd5A+TEmXCjbFaThd2OR6jC6aG7XO2ciia8bljm5so=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "116cd53100cdd95e4e7c68b0b0102cac03f17c94"
+        "version": "e06c579c7abde6d426402454fbe8ee1041fd5a27"
     },
     "claudecodeui": {
         "cargoLocks": null,
@@ -55,12 +55,12 @@
             "name": null,
             "owner": "siteboon",
             "repo": "claudecodeui",
-            "rev": "v1.14.0",
-            "sha256": "sha256-M0ZjVOFHwcazbpHeYaSPeX6jXz3yrPQO3+NuSaD/ItE=",
+            "rev": "v1.15.0",
+            "sha256": "sha256-iTJK5jnHAEzcYAOXHqvMU+vReyWmqt2lgzZjV2Zjnb8=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v1.14.0"
+        "version": "v1.15.0"
     },
     "codecompanion-nvim": {
         "cargoLocks": null,
@@ -211,7 +211,7 @@
     },
     "nvim-dap": {
         "cargoLocks": null,
-        "date": "2026-01-20",
+        "date": "2026-01-28",
         "extract": null,
         "name": "nvim-dap",
         "passthru": null,
@@ -223,12 +223,12 @@
             "name": null,
             "owner": "mfussenegger",
             "repo": "nvim-dap",
-            "rev": "085386b9359ddf8d76ad89b98973b8e332dc5ba3",
-            "sha256": "sha256-GI7BCwZxzEJzwQzoM7AownvxhWyTvcHXrRE7bwZnNwg=",
+            "rev": "e47878dcf1ccc30136b30d19ab19fe76946d61cd",
+            "sha256": "sha256-JA5dUhm3sQYlAmQpBLCtXj2r0RM3G/JWdcZWTrLJ4DY=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "085386b9359ddf8d76ad89b98973b8e332dc5ba3"
+        "version": "e47878dcf1ccc30136b30d19ab19fe76946d61cd"
     },
     "nvim-dap-go": {
         "cargoLocks": null,
