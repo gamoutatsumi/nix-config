@@ -43,6 +43,7 @@ in
       sysctl = {
         "net.ipv6.conf.enp0s20f0u8u4.disable_ipv6" = true;
         "net.ipv6.conf.enp5s0.disable_ipv6" = true;
+        "vm.swappiness" = 10;
       };
     };
     kernelModules = [ "kvm-intel" ];

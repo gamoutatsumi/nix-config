@@ -36,6 +36,11 @@ in
       ];
       kernelModules = [ ];
     };
+    kernel = {
+      sysctl = {
+        "vm.swappiness" = 10;
+      };
+    };
     kernelModules = [ "kvm-amd" ];
     kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [ "video.use_native_backlight=1" ];
