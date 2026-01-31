@@ -68,7 +68,6 @@ in
         gojq
         ibm-plex
         killall
-        magika
         moreutils
         nix-diff
         nix-output-monitor
@@ -104,6 +103,7 @@ in
         kn
         kubectl
         kubie
+        magika
         mycli
         s3cmd
         sheldon

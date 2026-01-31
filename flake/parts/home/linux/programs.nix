@@ -154,6 +154,7 @@ in
     };
     firefox = {
       enable = true;
+      package = upkgs.firefox;
     };
     # keep-sorted end
   };
