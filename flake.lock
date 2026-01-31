@@ -961,41 +961,6 @@
         "type": "github"
       }
     },
-    "oreore": {
-      "inputs": {
-        "flake-checker": [],
-        "flake-parts": [
-          "flake-parts"
-        ],
-        "nixpkgs": [
-          "nixpkgs-unstable"
-        ],
-        "nixpkgs-stable": [
-          "nixpkgs"
-        ],
-        "pre-commit-hooks": [],
-        "systems": [
-          "systems"
-        ],
-        "tinty-schemes": [
-          "tinty-schemes"
-        ],
-        "treefmt-nix": []
-      },
-      "locked": {
-        "lastModified": 1756257772,
-        "narHash": "sha256-qhbteFzdrX2NBvE9TwoTr2Z1gfh47ivy2kla7uMHb/4=",
-        "owner": "gamoutatsumi",
-        "repo": "oreore-flake",
-        "rev": "bef9961dbfb7a82b85b923478825fb4ec7854c91",
-        "type": "github"
-      },
-      "original": {
-        "owner": "gamoutatsumi",
-        "repo": "oreore-flake",
-        "type": "github"
-      }
-    },
     "pre-commit": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -1069,7 +1034,6 @@
         "nvim-treesitter": "nvim-treesitter",
         "nvim-treesitter-main": "nvim-treesitter-main",
         "nvim-treesitter-textobjects": "nvim-treesitter-textobjects",
-        "oreore": "oreore",
         "pre-commit-hooks": "pre-commit-hooks",
         "systems": "systems_4",
         "tinty-schemes": "tinty-schemes",

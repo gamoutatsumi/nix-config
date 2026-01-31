@@ -236,35 +236,6 @@
       url = "github:nvim-treesitter/nvim-treesitter-textobjects?ref=main&shallow=1";
       flake = false;
     };
-    oreore = {
-      url = "github:gamoutatsumi/oreore-flake";
-      inputs = {
-        flake-checker = {
-          follows = "";
-        };
-        tinty-schemes = {
-          follows = "tinty-schemes";
-        };
-        nixpkgs = {
-          follows = "nixpkgs-unstable";
-        };
-        systems = {
-          follows = "systems";
-        };
-        flake-parts = {
-          follows = "flake-parts";
-        };
-        pre-commit-hooks = {
-          follows = "";
-        };
-        treefmt-nix = {
-          follows = "";
-        };
-        nixpkgs-stable = {
-          follows = "nixpkgs";
-        };
-      };
-    };
     pre-commit-hooks = {
       url = "github:cachix/git-hooks.nix";
       inputs = {
