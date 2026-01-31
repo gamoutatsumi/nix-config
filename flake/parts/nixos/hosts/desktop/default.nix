@@ -13,7 +13,9 @@
   # keep-sorted end
   ...
 }:
-
+let
+  mfcj7100cdw-cups = pkgs.callPackage ../../packages/mfcj7100cdw-cups.nix { };
+in
 {
   imports = [
     ./disko-config.nix
@@ -217,7 +219,7 @@
     };
     printing = {
       enable = true;
-      drivers = with upkgs; [ mfcj7100cdw-cups ];
+      drivers = [ mfcj7100cdw-cups ];
     };
     xserver = {
       videoDrivers = [ "nvidia" ];
