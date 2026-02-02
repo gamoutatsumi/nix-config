@@ -626,6 +626,26 @@
         "type": "github"
       }
     },
+    "kanata-darwin-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1769971671,
+        "narHash": "sha256-Iz3tlF2QhbVgdYYK8oG5OcGvlnOmHA0ti4BUu2MLjp4=",
+        "owner": "ryoppippi",
+        "repo": "kanata-darwin-nix",
+        "rev": "f6c1f98344af587674f95fd816c4591e13ab0afe",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ryoppippi",
+        "repo": "kanata-darwin-nix",
+        "type": "github"
+      }
+    },
     "lanzaboote": {
       "inputs": {
         "crane": "crane_4",
@@ -1020,6 +1040,7 @@
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
         "kakehashi": "kakehashi",
+        "kanata-darwin-nix": "kanata-darwin-nix",
         "lanzaboote": "lanzaboote",
         "llm-agents": "llm-agents",
         "mcp-servers-nix": "mcp-servers-nix",

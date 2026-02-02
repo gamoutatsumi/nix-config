@@ -5,11 +5,13 @@
       "https://nix-community.cachix.org"
       "https://cache.garnix.io"
       "https://gamoutatsumi-nix-config.cachix.org"
+      "https://ryoppippi.cachix.org"
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
       "gamoutatsumi-nix-config.cachix.org-1:5quoMby5QSByFx7JxJy75/JOkMmvbD314bwph5BToSw="
+      "ryoppippi.cachix.org-1:b2LbtWNvJeL/qb1B6TYOMK+apaCps4SCbzlPRfSQIms="
     ];
   };
   inputs = {
@@ -125,6 +127,14 @@
     };
     kakehashi = {
       url = "github:atusy/kakehashi?shallow=1&ref=v0.0.10";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs-unstable";
+        };
+      };
+    };
+    kanata-darwin-nix = {
+      url = "github:ryoppippi/kanata-darwin-nix";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs-unstable";

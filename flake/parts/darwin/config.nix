@@ -10,7 +10,6 @@
       # keep-sorted start
       "chatgpt"
       "discord"
-      "karabiner-elements"
       "macskk"
       "obsidian"
       "raycast"
