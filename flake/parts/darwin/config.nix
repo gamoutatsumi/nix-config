@@ -9,6 +9,7 @@
     casks = [
       # keep-sorted start
       "chatgpt"
+      "claude"
       "discord"
       "macskk"
       "obsidian"
