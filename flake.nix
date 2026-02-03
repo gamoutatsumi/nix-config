@@ -177,7 +177,7 @@
       };
     };
     neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
+      url = "github:nix-community/neovim-nightly-overlay?ref=4b61b663d49d85f977c913cde50eaaa3459a2d89";
       inputs = {
         flake-parts = {
           follows = "flake-parts";
@@ -191,7 +191,7 @@
       };
     };
     neovim-src = {
-      url = "github:neovim/neovim?ref=master&shallow=1";
+      url = "github:neovim/neovim?ref=1906da52dbc9876046ec9866a5aae25309d7587e&shallow=1";
       flake = false;
     };
     nix-darwin = {
