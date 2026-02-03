@@ -16,16 +16,28 @@ let
   lspServers =
     (with pkgs; [ nixd ])
     ++ (with upkgs; [
-      jinja-lsp
+      # keep-sorted start
+      bash-language-server
+      docker-language-server
       efm-langserver
-      yaml-language-server
-      vscode-langservers-extracted
+      gopls
+      jinja-lsp
+      lua-language-server
+      prettierd
+      pyright
+      terraform-ls
       typos-lsp
+      vscode-eslint-languageserver
+      vscode-json-languageserver
+      yaml-language-server
+      #keep-sorted end
     ])
     ++ [
+      # keep-sorted start
+      inputs'.kakehashi.packages.default
       inputs'.llm-agents.packages.copilot-language-server
-      # inputs'.version-lsp.packages.default
-      # inputs'.kakehashi.packages.default
+      inputs'.version-lsp.packages.default
+      #keep-sorted end
     ];
 in
 {

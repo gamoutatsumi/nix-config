@@ -36,11 +36,7 @@
           }/share/zsh/site-functions";
           packages =
             (with pkgs; [
-              lua-language-server
-              docker-language-server
-              bash-language-server
               nvfetcher
-              nodePackages_latest.vscode-json-languageserver
             ])
             ++ (with upkgs; [ tombi ]);
           inputsFrom = [
