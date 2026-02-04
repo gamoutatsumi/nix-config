@@ -99,35 +99,38 @@ in
         zbar
         # keep-sorted end
       ])
-      ++ (with upkgs; [
-        # keep-sorted start
-        argocd
-        curlFull
-        deno
-        docker-credential-helpers
-        docker-slim
-        doggo
-        dust
-        fd
-        google-cloud-sdk
-        istioctl
-        kn
-        kubectl
-        kubie
-        magika
-        mycli
-        s3cmd
-        sheldon
-        stern
-        unar
-        vim
-        # keep-sorted end
-        (with llm-agents; [
+      ++ (
+        with upkgs;
+        [
+          # keep-sorted start
+          argocd
+          curlFull
+          deno
+          docker-credential-helpers
+          docker-slim
+          doggo
+          dust
+          fd
+          google-cloud-sdk
+          istioctl
+          kn
+          kubectl
+          kubie
+          magika
+          mycli
+          s3cmd
+          sheldon
+          stern
+          unar
+          vim
+          # keep-sorted end
+        ]
+        ++ (with llm-agents; [
           cc-sdd
           openskills
           openspec
         ])
-      ])
+      )
       ++ lspServers;
   };
   programs = {
