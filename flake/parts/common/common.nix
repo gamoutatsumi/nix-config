@@ -11,9 +11,6 @@
     channel = {
       enable = false;
     };
-    monitored = {
-      enable = false;
-    };
     nixPath = [
       "nixpkgs=${inputs.nixpkgs}"
     ];

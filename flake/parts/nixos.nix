@@ -81,7 +81,6 @@
               ;
           };
           modules = [
-            inputs.monitored.nixosModules.default
             inputs.lanzaboote.nixosModules.lanzaboote
             inputs.xremap-nix.nixosModules.default
             inputs.agenix.nixosModules.default
@@ -131,7 +130,6 @@
             device = "/dev/disk/by-id/nvme-WD_BLACK_SN770_1TB_24116U400484";
           };
           modules = [
-            inputs.monitored.nixosModules.default
             inputs.lanzaboote.nixosModules.lanzaboote
             inputs.disko.nixosModules.disko
             inputs.agenix.nixosModules.default

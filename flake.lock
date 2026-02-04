@@ -714,26 +714,6 @@
         "type": "github"
       }
     },
-    "monitored": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs-unstable"
-        ]
-      },
-      "locked": {
-        "lastModified": 1745680380,
-        "narHash": "sha256-Z8PknjkmIr/8ZCH+dmc2Pc+UltiOr7/oKg37PXuVvuU=",
-        "owner": "ners",
-        "repo": "nix-monitored",
-        "rev": "60f3baa4701d58eab86c2d1d9c3d7e820074d461",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ners",
-        "repo": "nix-monitored",
-        "type": "github"
-      }
-    },
     "naersk": {
       "inputs": {
         "fenix": "fenix_3",
@@ -1044,7 +1024,6 @@
         "lanzaboote": "lanzaboote",
         "llm-agents": "llm-agents",
         "mcp-servers-nix": "mcp-servers-nix",
-        "monitored": "monitored",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "neovim-src": "neovim-src",
         "nix-darwin": "nix-darwin",
@@ -1057,7 +1036,6 @@
         "nvim-treesitter-textobjects": "nvim-treesitter-textobjects",
         "pre-commit-hooks": "pre-commit-hooks",
         "systems": "systems_4",
-        "tinty-schemes": "tinty-schemes",
         "treefmt-nix": "treefmt-nix",
         "version-lsp": "version-lsp",
         "vim-overlay": "vim-overlay",
@@ -1258,22 +1236,6 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
-        "type": "github"
-      }
-    },
-    "tinty-schemes": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1768516483,
-        "narHash": "sha256-AWTIYZ1tZab0YwAQwgt5yO4ucqZoc4iXX002Byy7pRY=",
-        "owner": "tinted-theming",
-        "repo": "schemes",
-        "rev": "43dd14f6466a782bd57419fdfb5f398c74d6ac53",
-        "type": "github"
-      },
-      "original": {
-        "owner": "tinted-theming",
-        "repo": "schemes",
         "type": "github"
       }
     },

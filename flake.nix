@@ -168,14 +168,6 @@
         };
       };
     };
-    monitored = {
-      url = "github:ners/nix-monitored";
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs-unstable";
-        };
-      };
-    };
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
       inputs = {
@@ -211,7 +203,7 @@
       };
     };
     nix-vscode-extensions = {
-      url = "github:nix-community/nix-vscode-extensions";
+      url = "github:nix-community/nix-vscode-extensions?shallow=1";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs";
@@ -256,10 +248,6 @@
     };
     systems = {
       url = "github:nix-systems/default";
-    };
-    tinty-schemes = {
-      url = "github:tinted-theming/schemes";
-      flake = false;
     };
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
