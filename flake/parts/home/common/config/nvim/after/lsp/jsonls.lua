@@ -1,6 +1,6 @@
 local schemas = require("schemastore")
 return {
-    cmd = { "vscode-json-languageserver", "--stdio" },
+    cmd = { "vscode-json-language-server", "--stdio" },
     settings = {
         json = {
             schemas = schemas.json.schemas(),
