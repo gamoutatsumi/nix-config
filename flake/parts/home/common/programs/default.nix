@@ -1,7 +1,6 @@
 {
   # keep-sorted start
   config,
-  inputs',
   lib,
   pkgs,
   upkgs,
@@ -31,13 +30,7 @@ let
       vscode-langservers-extracted
       yaml-language-server
       #keep-sorted end
-    ])
-    ++ [
-      # keep-sorted start
-      # inputs'.kakehashi.packages.default
-      inputs'.version-lsp.packages.default
-      #keep-sorted end
-    ];
+    ]);
 in
 {
   imports = [
