@@ -126,7 +126,7 @@
       };
     };
     kakehashi = {
-      url = "github:atusy/kakehashi?shallow=1&ref=v0.0.12";
+      url = "github:atusy/kakehashi?shallow=1&ref=v0.0.13";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs-unstable";
