@@ -9,8 +9,8 @@
     casks = [
       # keep-sorted start
       "chatgpt"
+      "claude"
       "discord"
-      "karabiner-elements"
       "macskk"
       "obsidian"
       "raycast"

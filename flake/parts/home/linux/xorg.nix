@@ -6,30 +6,6 @@
   ...
 }:
 {
-  theme = {
-    wallpaper = {
-      file = pkgs.fetchurl {
-        url = "https://atri-mdm.com/assets/img/special/present/wp_ATRI.jpg";
-        sha256 = "069z1m3664xaciw9hhpqzsa5x5k802fpk9wxbkjxz4chmjnazzfj";
-      };
-    };
-    tinty = {
-      enable = false;
-      generate = {
-        variant = "dark";
-        system = "base24";
-      };
-      shell = "zsh";
-      themes = {
-        alacritty = {
-          enable = true;
-        };
-        shell = {
-          enable = true;
-        };
-      };
-    };
-  };
   services = {
     polybar = {
       enable = true;

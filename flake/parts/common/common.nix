@@ -11,9 +11,6 @@
     channel = {
       enable = false;
     };
-    monitored = {
-      enable = false;
-    };
     nixPath = [
       "nixpkgs=${inputs.nixpkgs}"
     ];
@@ -46,7 +43,7 @@
         "nixbld"
         username
       ];
-      download-buffer-size = 512 * 1024 * 1024;
+      download-buffer-size = 1024 * 1024 * 1024; # 1 MiB
       keep-outputs = true;
       keep-derivations = true;
       nix-path = [

@@ -26,9 +26,9 @@
             ./common
             ./darwin/config.nix
             ./darwin/hosts/work
-            inputs.monitored.darwinModules.default
             inputs.home-manager.darwinModules.home-manager
             inputs.nix-index-database.darwinModules.nix-index
+            inputs.kanata-darwin-nix.darwinModules.default
             (
               _:
               import ./homemanager.nix {
