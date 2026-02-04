@@ -27,8 +27,7 @@ let
       pyright
       terraform-ls
       typos-lsp
-      vscode-eslint-languageserver
-      vscode-json-languageserver
+      vscode-langservers-extracted
       yaml-language-server
       #keep-sorted end
     ])
