@@ -34,7 +34,7 @@ let
     ])
     ++ [
       # keep-sorted start
-      inputs'.kakehashi.packages.default
+      # inputs'.kakehashi.packages.default
       inputs'.version-lsp.packages.default
       #keep-sorted end
     ];
