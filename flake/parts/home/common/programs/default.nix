@@ -22,6 +22,7 @@ let
       efm-langserver
       gopls
       jinja-lsp
+      llm-agents.copilot-language-server
       lua-language-server
       prettierd
       pyright
@@ -34,7 +35,6 @@ let
     ++ [
       # keep-sorted start
       inputs'.kakehashi.packages.default
-      inputs'.llm-agents.packages.copilot-language-server
       inputs'.version-lsp.packages.default
       #keep-sorted end
     ];
@@ -122,11 +122,11 @@ in
         unar
         vim
         # keep-sorted end
-      ])
-      ++ (with inputs'.llm-agents.packages; [
-        cc-sdd
-        openskills
-        openspec
+        (with llm-agents; [
+          cc-sdd
+          openskills
+          openspec
+        ])
       ])
       ++ lspServers;
   };

@@ -1,12 +1,12 @@
 {
-  inputs',
+  upkgs,
   ...
 }:
 {
   programs = {
     codex = {
       enable = true;
-      package = inputs'.llm-agents.packages.codex;
+      package = upkgs.llm-agents.codex;
     };
   };
 }
