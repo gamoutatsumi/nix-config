@@ -24,7 +24,7 @@
     "@std/path": "jsr:@std/path@1.1.4",
     "@core/unknownutil": "jsr:@core/unknownutil@4.3.0",
     "@kuuote/ddu-kind-git-status": "jsr:@kuuote/ddu-kind-git-status@1.1.0",
-    "@shougo/ddc-vim": "jsr:@shougo/ddc-vim@10.1.0",
+    "@shougo/ddc-vim": "jsr:@shougo/ddc-vim@10.2.0",
     "@shougo/dpp-vim": "jsr:@shougo/dpp-vim@6.0.0",
     "@std/fs": "jsr:@std/fs@1.0.22"
   }
