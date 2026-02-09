@@ -76,7 +76,7 @@ export default defineConfig(() => {
         "--header-lines": 1,
       },
       callback: "awk '{print $3}'",
-      sourceCommand: "docker images",
+      sourceCommand: "docker images --format table",
     }, {
       name: "docker containers (all)",
       patterns: ["^docker rm $"],
