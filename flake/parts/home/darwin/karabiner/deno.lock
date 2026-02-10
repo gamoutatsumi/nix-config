@@ -50,8 +50,8 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@core/unknownutil@^3.18.1",
-      "jsr:@david/dax@0.41"
+      "jsr:@core/unknownutil@4",
+      "jsr:@david/dax@0.45"
     ]
   }
 }
