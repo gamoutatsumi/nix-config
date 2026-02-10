@@ -276,7 +276,7 @@
       flake = false;
     };
     xremap = {
-      url = "github:xremap/xremap?ref=v0.14.9&shallow=1";
+      url = "github:xremap/xremap?ref=v0.14.12&shallow=1";
       flake = false;
     };
     xremap-nix = {

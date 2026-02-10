@@ -1307,16 +1307,16 @@
     "xremap": {
       "flake": false,
       "locked": {
-        "lastModified": 1768313312,
-        "narHash": "sha256-ftGg6xai4WbaoXmgNXW4RbpOWvIZMPhUlqWkg1xVin0=",
+        "lastModified": 1770350794,
+        "narHash": "sha256-2pNCdrmpqLTDH2CQBbjSh8OPa8mddp+Zsyq2Sc69Fuk=",
         "owner": "xremap",
         "repo": "xremap",
-        "rev": "570e616adc62034ba11c3efe45acf9869e4b265e",
+        "rev": "2b80c75a90778052daf3154bfe0ed920baf53fbf",
         "type": "github"
       },
       "original": {
         "owner": "xremap",
-        "ref": "v0.14.9",
+        "ref": "v0.14.12",
         "repo": "xremap",
         "type": "github"
       }
