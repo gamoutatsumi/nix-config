@@ -11,6 +11,7 @@
       "chatgpt"
       "claude"
       "discord"
+      "karabiner-elements"
       "macskk"
       "obsidian"
       "raycast"

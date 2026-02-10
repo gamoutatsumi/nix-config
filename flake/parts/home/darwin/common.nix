@@ -5,6 +5,13 @@
   ...
 }:
 {
+  xdg = {
+    configFile = {
+      "karabiner/karabiner.json" = {
+        source = ./karabiner/karabiner.json;
+      };
+    };
+  };
   home = {
     homeDirectory = lib.mkForce "/Users/${username}";
     sessionVariables = {
