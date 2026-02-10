@@ -4,7 +4,7 @@
     "watch": "deno run --watch --allow-env --allow-read --allow-write --allow-run karabiner.ts"
   },
   "imports": {
-    "@core/unknownutil": "jsr:@core/unknownutil@^3.18.1",
+    "@core/unknownutil": "jsr:@core/unknownutil@^4.0.0",
     "@david/dax": "jsr:@david/dax@^0.41.0",
     "karabiner_ts": "https://deno.land/x/karabinerts@1.36.0/deno.ts"
   }
