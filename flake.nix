@@ -133,14 +133,6 @@
         };
       };
     };
-    kanata-darwin-nix = {
-      url = "github:ryoppippi/kanata-darwin-nix";
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs-unstable";
-        };
-      };
-    };
     lanzaboote = {
       url = "github:nix-community/lanzaboote?ref=v1.0.0&shallow=1";
       inputs = {
