@@ -21,6 +21,10 @@
                     }
                   ];
                   vmType = "vz";
+                  rosetta = {
+                    enabled = true;
+                    binfmt = true;
+                  };
                   networks = [
                     { vzNAT = true; }
                   ];
