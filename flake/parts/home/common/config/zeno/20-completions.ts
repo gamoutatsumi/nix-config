@@ -1,5 +1,5 @@
 // deno-lint-ignore-file no-import-prefix
-import { defineConfig } from "jsr:@yuki-yano/zeno@0.3.0";
+import { defineConfig } from "jsr:@yuki-yano/zeno@0.4.0";
 
 export default defineConfig(() => {
   return {
