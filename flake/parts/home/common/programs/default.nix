@@ -96,7 +96,6 @@ in
         with upkgs;
         [
           # keep-sorted start
-          argocd
           curlFull
           deno
           docker-credential-helpers
