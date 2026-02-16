@@ -1,7 +1,7 @@
 {
     "anthropics-skills": {
         "cargoLocks": null,
-        "date": "2025-12-20",
+        "date": "2026-02-06",
         "extract": null,
         "name": "anthropics-skills",
         "passthru": null,
@@ -13,16 +13,16 @@
             "name": null,
             "owner": "anthropics",
             "repo": "skills",
-            "rev": "69c0b1a0674149f27b61b2635f935524b6add202",
-            "sha256": "sha256-pllFZoWRdtLliz/5pLWks0V9nKFMzeWoRcmFgu2UWi8=",
+            "rev": "1ed29a03dc852d30fa6ef2ca53a67dc2c2c2c563",
+            "sha256": "sha256-9FGubcwHcGBJcKl02aJ+YsTMiwDOdgU/FHALjARG51c=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "69c0b1a0674149f27b61b2635f935524b6add202"
+        "version": "1ed29a03dc852d30fa6ef2ca53a67dc2c2c2c563"
     },
     "atusy-dotfiles": {
         "cargoLocks": null,
-        "date": "2026-02-03",
+        "date": "2026-02-10",
         "extract": null,
         "name": "atusy-dotfiles",
         "passthru": null,
@@ -34,12 +34,12 @@
             "name": null,
             "owner": "atusy",
             "repo": "dotfiles",
-            "rev": "308251a6e5c0771858a1d49b09451027dfd1beba",
-            "sha256": "sha256-70oM10Duf7GIrENS7Y5Q/vsOkYULn52/QUNGha05hYA=",
+            "rev": "edc3747b42e7765943356846555c66d69f028a5f",
+            "sha256": "sha256-DPem9nOvjbrrQ6KYUiio+CwiHBrk95T5GXZhr8v/iMU=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "308251a6e5c0771858a1d49b09451027dfd1beba"
+        "version": "edc3747b42e7765943356846555c66d69f028a5f"
     },
     "claudecodeui": {
         "cargoLocks": null,
@@ -55,12 +55,12 @@
             "name": null,
             "owner": "siteboon",
             "repo": "claudecodeui",
-            "rev": "v1.16.3",
-            "sha256": "sha256-PvtgdBLOq24Bh4DK2JOOBWJjdqatNuI3rtnNjeVnuuM=",
+            "rev": "v1.17.1",
+            "sha256": "sha256-29pBPfPZzCRDl87oMAMR0skSfle5hDeHSqx+k1V3uy8=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v1.16.3"
+        "version": "v1.17.1"
     },
     "codecompanion-nvim": {
         "cargoLocks": null,
@@ -76,12 +76,12 @@
             "name": null,
             "owner": "olimorris",
             "repo": "codecompanion.nvim",
-            "rev": "v18.5.1",
-            "sha256": "sha256-NEgSYj+ja0EQTwPGur8D7PcECSdZ85z+w61vf1ES14s=",
+            "rev": "v18.6.0",
+            "sha256": "sha256-bSYOJ8+B9DH1sWfZX5nNpYqSa8K4Mw8T8qCMzN8igC4=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v18.5.1"
+        "version": "v18.6.0"
     },
     "denops-vim": {
         "cargoLocks": null,
@@ -211,7 +211,7 @@
     },
     "nvim-dap": {
         "cargoLocks": null,
-        "date": "2026-01-28",
+        "date": "2026-02-11",
         "extract": null,
         "name": "nvim-dap",
         "passthru": null,
@@ -223,12 +223,12 @@
             "name": null,
             "owner": "mfussenegger",
             "repo": "nvim-dap",
-            "rev": "e47878dcf1ccc30136b30d19ab19fe76946d61cd",
-            "sha256": "sha256-JA5dUhm3sQYlAmQpBLCtXj2r0RM3G/JWdcZWTrLJ4DY=",
+            "rev": "db321947bb289a2d4d76a32e76e4d2bd6103d7df",
+            "sha256": "sha256-fKY/DlEesooRRp1lLsoUleIyKBFj3H/9gelXYMaKwpc=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "e47878dcf1ccc30136b30d19ab19fe76946d61cd"
+        "version": "db321947bb289a2d4d76a32e76e4d2bd6103d7df"
     },
     "nvim-dap-go": {
         "cargoLocks": null,
