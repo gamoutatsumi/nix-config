@@ -208,28 +208,6 @@
     nixpkgs-unstable = {
       url = "github:NixOS/nixpkgs?ref=nixos-unstable&shallow=1";
     };
-    nvim-treesitter = {
-      url = "github:nvim-treesitter/nvim-treesitter?ref=main&shallow=1";
-      flake = false;
-    };
-    nvim-treesitter-main = {
-      url = "github:iofq/nvim-treesitter-main";
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs-unstable";
-        };
-        nvim-treesitter = {
-          follows = "nvim-treesitter";
-        };
-        nvim-treesitter-textobjects = {
-          follows = "nvim-treesitter-textobjects";
-        };
-      };
-    };
-    nvim-treesitter-textobjects = {
-      url = "github:nvim-treesitter/nvim-treesitter-textobjects?ref=main&shallow=1";
-      flake = false;
-    };
     pre-commit-hooks = {
       url = "github:cachix/git-hooks.nix";
       inputs = {
