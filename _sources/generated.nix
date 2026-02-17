@@ -3,48 +3,48 @@
 {
   anthropics-skills = {
     pname = "anthropics-skills";
-    version = "69c0b1a0674149f27b61b2635f935524b6add202";
+    version = "1ed29a03dc852d30fa6ef2ca53a67dc2c2c2c563";
     src = fetchFromGitHub {
       owner = "anthropics";
       repo = "skills";
-      rev = "69c0b1a0674149f27b61b2635f935524b6add202";
+      rev = "1ed29a03dc852d30fa6ef2ca53a67dc2c2c2c563";
       fetchSubmodules = false;
-      sha256 = "sha256-pllFZoWRdtLliz/5pLWks0V9nKFMzeWoRcmFgu2UWi8=";
+      sha256 = "sha256-9FGubcwHcGBJcKl02aJ+YsTMiwDOdgU/FHALjARG51c=";
     };
-    date = "2025-12-20";
+    date = "2026-02-06";
   };
   atusy-dotfiles = {
     pname = "atusy-dotfiles";
-    version = "308251a6e5c0771858a1d49b09451027dfd1beba";
+    version = "edc3747b42e7765943356846555c66d69f028a5f";
     src = fetchFromGitHub {
       owner = "atusy";
       repo = "dotfiles";
-      rev = "308251a6e5c0771858a1d49b09451027dfd1beba";
+      rev = "edc3747b42e7765943356846555c66d69f028a5f";
       fetchSubmodules = false;
-      sha256 = "sha256-70oM10Duf7GIrENS7Y5Q/vsOkYULn52/QUNGha05hYA=";
+      sha256 = "sha256-DPem9nOvjbrrQ6KYUiio+CwiHBrk95T5GXZhr8v/iMU=";
     };
-    date = "2026-02-03";
+    date = "2026-02-10";
   };
   claudecodeui = {
     pname = "claudecodeui";
-    version = "v1.16.3";
+    version = "v1.17.1";
     src = fetchFromGitHub {
       owner = "siteboon";
       repo = "claudecodeui";
-      rev = "v1.16.3";
+      rev = "v1.17.1";
       fetchSubmodules = false;
-      sha256 = "sha256-PvtgdBLOq24Bh4DK2JOOBWJjdqatNuI3rtnNjeVnuuM=";
+      sha256 = "sha256-29pBPfPZzCRDl87oMAMR0skSfle5hDeHSqx+k1V3uy8=";
     };
   };
   codecompanion-nvim = {
     pname = "codecompanion-nvim";
-    version = "v18.5.1";
+    version = "v18.6.0";
     src = fetchFromGitHub {
       owner = "olimorris";
       repo = "codecompanion.nvim";
-      rev = "v18.5.1";
+      rev = "v18.6.0";
       fetchSubmodules = false;
-      sha256 = "sha256-NEgSYj+ja0EQTwPGur8D7PcECSdZ85z+w61vf1ES14s=";
+      sha256 = "sha256-bSYOJ8+B9DH1sWfZX5nNpYqSa8K4Mw8T8qCMzN8igC4=";
     };
   };
   denops-vim = {
@@ -117,15 +117,15 @@
   };
   nvim-dap = {
     pname = "nvim-dap";
-    version = "e47878dcf1ccc30136b30d19ab19fe76946d61cd";
+    version = "db321947bb289a2d4d76a32e76e4d2bd6103d7df";
     src = fetchFromGitHub {
       owner = "mfussenegger";
       repo = "nvim-dap";
-      rev = "e47878dcf1ccc30136b30d19ab19fe76946d61cd";
+      rev = "db321947bb289a2d4d76a32e76e4d2bd6103d7df";
       fetchSubmodules = false;
-      sha256 = "sha256-JA5dUhm3sQYlAmQpBLCtXj2r0RM3G/JWdcZWTrLJ4DY=";
+      sha256 = "sha256-fKY/DlEesooRRp1lLsoUleIyKBFj3H/9gelXYMaKwpc=";
     };
-    date = "2026-01-28";
+    date = "2026-02-11";
   };
   nvim-dap-go = {
     pname = "nvim-dap-go";

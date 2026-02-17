@@ -1,5 +1,5 @@
 // deno-lint-ignore-file no-import-prefix
-import { defineConfig } from "jsr:@yuki-yano/zeno@0.4.0";
+import { defineConfig } from "jsr:@yuki-yano/zeno@0.4.1";
 
 type RequireOne<T, K extends keyof T = keyof T> = K extends keyof T
   ? PartialRequire<T, K>
