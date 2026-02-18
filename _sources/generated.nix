@@ -15,25 +15,25 @@
   };
   atusy-dotfiles = {
     pname = "atusy-dotfiles";
-    version = "edc3747b42e7765943356846555c66d69f028a5f";
+    version = "3f69d5d4933902fafe65ef1a5d5ce260995c575d";
     src = fetchFromGitHub {
       owner = "atusy";
       repo = "dotfiles";
-      rev = "edc3747b42e7765943356846555c66d69f028a5f";
+      rev = "3f69d5d4933902fafe65ef1a5d5ce260995c575d";
       fetchSubmodules = false;
-      sha256 = "sha256-DPem9nOvjbrrQ6KYUiio+CwiHBrk95T5GXZhr8v/iMU=";
+      sha256 = "sha256-I9sitsblZpH4cvIbeFDllEdNNBYYJbKijEkoS1pSVzg=";
     };
-    date = "2026-02-10";
+    date = "2026-02-18";
   };
   claudecodeui = {
     pname = "claudecodeui";
-    version = "v1.17.1";
+    version = "v1.18.1";
     src = fetchFromGitHub {
       owner = "siteboon";
       repo = "claudecodeui";
-      rev = "v1.17.1";
+      rev = "v1.18.1";
       fetchSubmodules = false;
-      sha256 = "sha256-29pBPfPZzCRDl87oMAMR0skSfle5hDeHSqx+k1V3uy8=";
+      sha256 = "sha256-R2zGNf7qZaryPhxDbYh2Nv3gkjqH4am/AY05udzggeU=";
     };
   };
   codecompanion-nvim = {
