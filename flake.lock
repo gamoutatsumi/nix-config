@@ -612,16 +612,16 @@
         "rust-overlay": "rust-overlay_2"
       },
       "locked": {
-        "lastModified": 1770135285,
-        "narHash": "sha256-+X3eXcMVMQGYdKlUyqnPnwtDYOtleYzJwGDM2jhAnkg=",
+        "lastModified": 1771374643,
+        "narHash": "sha256-DIXI3hjBx/Xdu5oA06Mf+Zg3/H/htP3lzacj6DI4WuI=",
         "owner": "atusy",
         "repo": "kakehashi",
-        "rev": "cc32c6487f77477a5c383ba30fd6af0354fee68a",
+        "rev": "435db8577feb5d69472bb56b13cdd249e667dd0a",
         "type": "github"
       },
       "original": {
         "owner": "atusy",
-        "ref": "v0.0.13",
+        "ref": "v0.1.0",
         "repo": "kakehashi",
         "type": "github"
       }
@@ -1244,16 +1244,16 @@
     "xremap": {
       "flake": false,
       "locked": {
-        "lastModified": 1770350794,
-        "narHash": "sha256-2pNCdrmpqLTDH2CQBbjSh8OPa8mddp+Zsyq2Sc69Fuk=",
+        "lastModified": 1771004903,
+        "narHash": "sha256-9umUL90VpQUzOvCKh4bqsF0WgvYOa3WqIDRCeZV7Vyw=",
         "owner": "xremap",
         "repo": "xremap",
-        "rev": "2b80c75a90778052daf3154bfe0ed920baf53fbf",
+        "rev": "7dcea528a63d6fcd73b84ae0fa090520f2168ba9",
         "type": "github"
       },
       "original": {
         "owner": "xremap",
-        "ref": "v0.14.12",
+        "ref": "v0.14.14",
         "repo": "xremap",
         "type": "github"
       }
