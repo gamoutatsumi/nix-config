@@ -132,11 +132,11 @@
     "brew-api": {
       "flake": false,
       "locked": {
-        "lastModified": 1771525092,
-        "narHash": "sha256-zqAVLCXBytFjgK6HKPlNfx8qkm4bjS+52bidU/43Qh8=",
+        "lastModified": 1771551261,
+        "narHash": "sha256-fdeMRcozOx9Llimrm5OGq0FFdkxCTJZ34J+DHhn0pSo=",
         "owner": "BatteredBunny",
         "repo": "brew-api",
-        "rev": "9aff3b4037a3a3a3e12855eb028bf370d38f8694",
+        "rev": "7f237cc4a85bafa31f0e3f08474cd49a31104b70",
         "type": "github"
       },
       "original": {
@@ -661,11 +661,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1771512095,
-        "narHash": "sha256-OzcIFLbaY6BXZKKUq+NOSR43ixR5Ul9NP+xDYsxVAqw=",
+        "lastModified": 1771538257,
+        "narHash": "sha256-fPK4EZRvMVc71Th1oSkeXacO4EzuWMH2qI0fUpjgq08=",
         "owner": "numtide",
         "repo": "llm-agents.nix",
-        "rev": "b0450365f22aad65d3ab7dce0b43cb301bad855a",
+        "rev": "26e83f68c832c6a38eef27253bf4ec2b5961cb4d",
         "type": "github"
       },
       "original": {
@@ -681,11 +681,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1771505127,
-        "narHash": "sha256-ZylVo5AQ4I9O69gi+PdfetczL9AAdqSSmmn0p1d3NXY=",
+        "lastModified": 1771526755,
+        "narHash": "sha256-ACzEsci5LAP/hiJaYFbLzCtgmiCxsICY4FsgpRPZPK8=",
         "owner": "natsukium",
         "repo": "mcp-servers-nix",
-        "rev": "48fa03cd6740f5168b47422c0fb2c6caa2babcb1",
+        "rev": "e99cc081b99b857046c303af3fc186416f1a3015",
         "type": "github"
       },
       "original": {
@@ -728,11 +728,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1771459510,
-        "narHash": "sha256-ZlLdKt0MpgzPIjBraJvKDdy62wj2ffLllMgZNLUjxsM=",
+        "lastModified": 1771545891,
+        "narHash": "sha256-aaVUfc/9q2pCsELZmYhf+uvYRMCUlBvccgL1VS27R+o=",
         "owner": "nix-community",
         "repo": "neovim-nightly-overlay",
-        "rev": "93414035e92a7ebc016b2931af9b7ffb01d398ba",
+        "rev": "917b72d5e27bc217440655b81f701d7062bdd198",
         "type": "github"
       },
       "original": {
@@ -744,11 +744,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1771520748,
-        "narHash": "sha256-RusA6fal1yKTbplpCmB19Eg26zup3kvkUrstkMJDPZ8=",
+        "lastModified": 1771551997,
+        "narHash": "sha256-wGGqffg1w+cIfStoWZAEVaKRCyU6Bb028jaP2lTjrb0=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "08f4811061c9fde22b730e5d73f7fb49f61f7184",
+        "rev": "94c21c22dcf6b1afdb25a250c08bd858d481429b",
         "type": "github"
       },
       "original": {
