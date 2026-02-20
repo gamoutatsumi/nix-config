@@ -26,6 +26,6 @@
     "@kuuote/ddu-kind-git-status": "jsr:@kuuote/ddu-kind-git-status@1.1.0",
     "@shougo/ddc-vim": "jsr:@shougo/ddc-vim@10.2.0",
     "@shougo/dpp-vim": "jsr:@shougo/dpp-vim@6.0.0",
-    "@std/fs": "jsr:@std/fs@1.0.22"
+    "@std/fs": "jsr:@std/fs@1.0.23"
   }
 }
