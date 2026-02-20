@@ -1,5 +1,0 @@
-_: {
-  imports = [
-    ./lima.nix
-  ];
-}
