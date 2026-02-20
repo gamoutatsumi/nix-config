@@ -53,7 +53,5 @@ jobs:
               attribute: nixosConfigurations.tat-nixos-laptop.config.system.build.toplevel
             - displayName: installation-iso
               attribute: nixosConfigurations.headlessIso.config.system.build.toplevel
-            - displayName: lima-k8s
-              attribute: nixosConfigurations.limaK8s.config.system.build.toplevel
             - displayName: devShell
               attribute: devShells.x86_64-linux.default
