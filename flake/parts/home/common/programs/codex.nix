@@ -5,7 +5,7 @@
 {
   programs = {
     codex = {
-      enable = false;
+      enable = true;
       package = upkgs.llm-agents.codex;
     };
   };
