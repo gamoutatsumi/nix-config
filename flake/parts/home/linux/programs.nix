@@ -74,9 +74,6 @@ in
     discord = {
       enable = true;
     };
-    ghostty = {
-      package = upkgs.ghostty;
-    };
     mpv = {
       enable = true;
       package = upkgs.mpv;

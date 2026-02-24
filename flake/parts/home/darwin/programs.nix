@@ -119,9 +119,6 @@
         };
       };
     };
-    ghostty = {
-      package = upkgs.ghostty-bin;
-    };
     rbw = {
       settings = {
         pinentry = pkgs.pinentry_mac;

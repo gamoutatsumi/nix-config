@@ -422,7 +422,7 @@ in
       flake = "${config.xdg.configHome}/home-manager";
     };
     ghostty = {
-      enable = true;
+      enable = false;
       enableZshIntegration = true;
       installBatSyntax = true;
       settings = {
