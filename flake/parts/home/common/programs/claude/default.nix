@@ -1,7 +1,5 @@
 {
   upkgs,
-  inputs,
-  config,
   ...
 }:
 let
@@ -30,39 +28,6 @@ in
       memory = {
         source = ./CLAUDE.md;
       };
-      mcpServers =
-        (inputs.mcp-servers-nix.lib.evalModule upkgs {
-          settings = {
-            servers = {
-              notion = {
-                type = "http";
-                url = "https://mcp.notion.com/mcp";
-              };
-            };
-          };
-          programs = {
-            # keep-sorted start block=yes
-            codex = {
-              enable = false;
-              inherit (config.programs.codex) package;
-            };
-            context7 = {
-              enable = false;
-            };
-            git = {
-              enable = false;
-            };
-            sequential-thinking = {
-              enable = false;
-            };
-            serena = {
-              enable = false;
-              enableWebDashboard = false;
-              context = "claude-code";
-            };
-            # keep-sorted end
-          };
-        }).config.settings.servers;
       settings = {
         permissions = {
           allow = [
