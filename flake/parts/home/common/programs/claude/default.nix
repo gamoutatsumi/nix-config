@@ -43,11 +43,11 @@ in
           programs = {
             # keep-sorted start block=yes
             codex = {
-              enable = true;
+              enable = false;
               inherit (config.programs.codex) package;
             };
             context7 = {
-              enable = true;
+              enable = false;
             };
             git = {
               enable = false;
@@ -56,7 +56,7 @@ in
               enable = false;
             };
             serena = {
-              enable = true;
+              enable = false;
               enableWebDashboard = false;
               context = "claude-code";
             };
