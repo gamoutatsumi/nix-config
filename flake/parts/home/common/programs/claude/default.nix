@@ -1,6 +1,5 @@
 {
   upkgs,
-  lib,
   inputs,
   config,
   ...
@@ -52,21 +51,6 @@ in
             };
             git = {
               enable = false;
-            };
-            github = {
-              enable = true;
-              package = upkgs.github-mcp-server;
-              env = {
-                GITHUB_DYNAMIC_TOOLSETS = "1";
-                GITHUB_READ_ONLY = "1";
-              };
-              passwordCommand = {
-                GITHUB_PERSONAL_ACCESS_TOKEN = [
-                  (lib.getExe config.programs.gh.package)
-                  "auth"
-                  "token"
-                ];
-              };
             };
             sequential-thinking = {
               enable = false;
