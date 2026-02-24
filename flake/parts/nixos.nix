@@ -27,12 +27,13 @@
       tat-nixos-laptop = withSystem "x86_64-linux" (
         {
           inputs',
+          system,
           ...
         }:
         let
           username = "gamoutatsumi";
           upkgs = import ./upkgs.nix {
-            inherit inputs;
+            inherit inputs system;
           };
         in
         inputs.nixpkgs.lib.nixosSystem {
