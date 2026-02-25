@@ -109,7 +109,7 @@ in
           kubectl
           kubie
           magika
-          mycli
+          # mycli
           s3cmd
           sheldon
           stern
