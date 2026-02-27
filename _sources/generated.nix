@@ -3,37 +3,37 @@
 {
   anthropics-skills = {
     pname = "anthropics-skills";
-    version = "1ed29a03dc852d30fa6ef2ca53a67dc2c2c2c563";
+    version = "3d59511518591fa82e6cfcf0438d68dd5dad3e76";
     src = fetchFromGitHub {
       owner = "anthropics";
       repo = "skills";
-      rev = "1ed29a03dc852d30fa6ef2ca53a67dc2c2c2c563";
+      rev = "3d59511518591fa82e6cfcf0438d68dd5dad3e76";
       fetchSubmodules = false;
-      sha256 = "sha256-9FGubcwHcGBJcKl02aJ+YsTMiwDOdgU/FHALjARG51c=";
+      sha256 = "sha256-mZZ0rlj/kju7we1h+MvUjgFAVjcZ/qKkMbNZfhfCSvk=";
     };
-    date = "2026-02-06";
+    date = "2026-02-24";
   };
   atusy-dotfiles = {
     pname = "atusy-dotfiles";
-    version = "3f69d5d4933902fafe65ef1a5d5ce260995c575d";
+    version = "874ed9465bbcddb802acbd32012706272a3b887d";
     src = fetchFromGitHub {
       owner = "atusy";
       repo = "dotfiles";
-      rev = "3f69d5d4933902fafe65ef1a5d5ce260995c575d";
+      rev = "874ed9465bbcddb802acbd32012706272a3b887d";
       fetchSubmodules = false;
-      sha256 = "sha256-I9sitsblZpH4cvIbeFDllEdNNBYYJbKijEkoS1pSVzg=";
+      sha256 = "sha256-+8nZb5rYl3xx2cPdpifBJEdINlaZr8zPSDAbOXImatc=";
     };
-    date = "2026-02-18";
+    date = "2026-02-26";
   };
   claudecodeui = {
     pname = "claudecodeui";
-    version = "v1.18.2";
+    version = "v1.20.1";
     src = fetchFromGitHub {
       owner = "siteboon";
       repo = "claudecodeui";
-      rev = "v1.18.2";
+      rev = "v1.20.1";
       fetchSubmodules = false;
-      sha256 = "sha256-Fwd8+sd9giD8rkxCialTW5yildFfmolj1ox5VuXb5vg=";
+      sha256 = "sha256-08pNgl3Appj9VgThxuAAnWTXpoH3bOQAMp3K+H01RqU=";
     };
   };
   codecompanion-nvim = {
@@ -117,15 +117,15 @@
   };
   nvim-dap = {
     pname = "nvim-dap";
-    version = "db321947bb289a2d4d76a32e76e4d2bd6103d7df";
+    version = "b516f20b487b0ac6a281e376dfac1d16b5040041";
     src = fetchFromGitHub {
       owner = "mfussenegger";
       repo = "nvim-dap";
-      rev = "db321947bb289a2d4d76a32e76e4d2bd6103d7df";
+      rev = "b516f20b487b0ac6a281e376dfac1d16b5040041";
       fetchSubmodules = false;
-      sha256 = "sha256-fKY/DlEesooRRp1lLsoUleIyKBFj3H/9gelXYMaKwpc=";
+      sha256 = "sha256-/YwT7ToPQS6Pa+00YwuPqF1qMJ/T8TMioaamylB92/o=";
     };
-    date = "2026-02-11";
+    date = "2026-02-26";
   };
   nvim-dap-go = {
     pname = "nvim-dap-go";
