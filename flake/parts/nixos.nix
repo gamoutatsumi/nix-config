@@ -6,17 +6,6 @@
 {
   flake = {
     nixosConfigurations = {
-      vfkitK8s = withSystem "aarch64-darwin" (
-        { system, ... }:
-        inputs.nixpkgs.lib.nixosSystem {
-          system = inputs.nixpkgs.lib.replaceString "-darwin" "-linux" system;
-          specialArgs = { inherit inputs system; };
-          modules = [
-            inputs.microvm.nixosModules.microvm
-            ./nixos/hosts/vfkit-k8s
-          ];
-        }
-      );
       headlessIso = withSystem "x86_64-linux" (
         { system, ... }:
         inputs.nixpkgs.lib.nixosSystem {

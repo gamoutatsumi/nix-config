@@ -28,6 +28,7 @@
             ./darwin/hosts/work
             inputs.home-manager.darwinModules.home-manager
             inputs.nix-index-database.darwinModules.nix-index
+            inputs.darwin-vz-nix.darwinModules.default
             (
               _:
               import ./homemanager.nix {
