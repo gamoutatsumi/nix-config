@@ -203,6 +203,21 @@
     },
     "crane_3": {
       "locked": {
+        "lastModified": 1771438068,
+        "narHash": "sha256-nGBbXvEZVe/egCPVPFcu89RFtd8Rf6J+4RFoVCFec0A=",
+        "owner": "ipetkov",
+        "repo": "crane",
+        "rev": "b5090e53e9d68c523a4bb9ad42b4737ee6747597",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ipetkov",
+        "repo": "crane",
+        "type": "github"
+      }
+    },
+    "crane_4": {
+      "locked": {
         "lastModified": 1745454774,
         "narHash": "sha256-oLvmxOnsEKGtwczxp/CwhrfmQUG2ym24OMWowcoRhH8=",
         "rev": "efd36682371678e2b6da3f108fdb5c613b3ec598",
@@ -215,7 +230,7 @@
         "url": "https://flakehub.com/f/ipetkov/crane/0"
       }
     },
-    "crane_4": {
+    "crane_5": {
       "locked": {
         "lastModified": 1765145449,
         "narHash": "sha256-aBVHGWWRzSpfL++LubA0CwOOQ64WNLegrYHwsVuVN7A=",
@@ -230,7 +245,7 @@
         "type": "github"
       }
     },
-    "crane_5": {
+    "crane_6": {
       "locked": {
         "lastModified": 1767319442,
         "narHash": "sha256-TXsJUc+nZflFGWLopUxHwdlxYY+ucxbF5IAPLEX5tc4=",
@@ -245,7 +260,7 @@
         "type": "github"
       }
     },
-    "crane_6": {
+    "crane_7": {
       "locked": {
         "lastModified": 1766774972,
         "narHash": "sha256-8qxEFpj4dVmIuPn9j9z6NTbU+hrcGjBOvaxTzre5HmM=",
@@ -257,6 +272,31 @@
       "original": {
         "owner": "ipetkov",
         "repo": "crane",
+        "type": "github"
+      }
+    },
+    "darwin-vz-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "nixpkgs-linux": [
+          "nixpkgs"
+        ],
+        "nur-packages": "nur-packages"
+      },
+      "locked": {
+        "lastModified": 1771704628,
+        "narHash": "sha256-KW0dfcgoGbC0xg238WNlvsMeic2E/mD2J+c4i/iBFLM=",
+        "owner": "takeokunn",
+        "repo": "darwin-vz-nix",
+        "rev": "8833ab667e6c6aab24a22283961fcfae383c2bb1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "takeokunn",
+        "ref": "v0.1.0",
+        "repo": "darwin-vz-nix",
         "type": "github"
       }
     },
@@ -303,7 +343,7 @@
     },
     "easy-template": {
       "inputs": {
-        "crane": "crane_3",
+        "crane": "crane_4",
         "fenix": "fenix",
         "nixpkgs": [
           "flake-checker",
@@ -628,7 +668,7 @@
     },
     "lanzaboote": {
       "inputs": {
-        "crane": "crane_4",
+        "crane": "crane_5",
         "nixpkgs": [
           "nixpkgs"
         ],
@@ -902,6 +942,28 @@
         "type": "github"
       }
     },
+    "nur-packages": {
+      "inputs": {
+        "crane": "crane_3",
+        "nixpkgs": [
+          "darwin-vz-nix",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1771688416,
+        "narHash": "sha256-Jn+RRoRJ07S25l6ByBDY0uTOyvaHDSib4VR9+9lFYhQ=",
+        "owner": "takeokunn",
+        "repo": "nur-packages",
+        "rev": "943bf8187e1bf1fe2da689d3bb630d984344fecb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "takeokunn",
+        "repo": "nur-packages",
+        "type": "github"
+      }
+    },
     "pre-commit": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -955,6 +1017,7 @@
         "arto": "arto",
         "brew-api": "brew-api",
         "brew-nix": "brew-nix",
+        "darwin-vz-nix": "darwin-vz-nix",
         "disko": "disko",
         "emacs-overlay": "emacs-overlay",
         "flake-checker": "flake-checker",
@@ -1215,7 +1278,7 @@
     },
     "version-lsp": {
       "inputs": {
-        "crane": "crane_5",
+        "crane": "crane_6",
         "flake-parts": "flake-parts_2",
         "nixpkgs": [
           "nixpkgs-unstable"
@@ -1298,7 +1361,7 @@
     },
     "xremap-nix": {
       "inputs": {
-        "crane": "crane_6",
+        "crane": "crane_7",
         "flake-parts": [
           "flake-parts"
         ],

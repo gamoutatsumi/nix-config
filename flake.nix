@@ -87,6 +87,17 @@
         };
       };
     };
+    darwin-vz-nix = {
+      url = "github:takeokunn/darwin-vz-nix?ref=v0.1.0";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+        nixpkgs-linux = {
+          follows = "nixpkgs";
+        };
+      };
+    };
     disko = {
       url = "github:nix-community/disko";
       inputs = {
