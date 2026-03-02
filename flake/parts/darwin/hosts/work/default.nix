@@ -1,7 +1,6 @@
 {
   username,
   hostname,
-  lib,
   inputs,
   ...
 }:
@@ -56,30 +55,6 @@
 
   nixpkgs = {
     hostPlatform = "aarch64-darwin";
-  };
-  nix = {
-    linux-builder = {
-      enable = true;
-      ephemeral = true;
-      systems = [
-        "aarch64-linux"
-      ];
-      config = {
-        virtualisation = {
-          cores = 6;
-          memorySize = lib.mkForce (16 * 1024);
-          diskSize = lib.mkForce (50 * 1024);
-        };
-        nix = {
-          settings = {
-            experimental-features = [
-              "nix-command"
-              "flakes"
-            ];
-          };
-        };
-      };
-    };
   };
   users = {
     users = {
