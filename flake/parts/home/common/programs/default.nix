@@ -37,7 +37,7 @@ in
     # keep-sorted start
     ./alacritty.nix
     ./claude
-    ./codex.nix
+    ./codex
     ./emacs
     ./vscode.nix
     ./zsh
