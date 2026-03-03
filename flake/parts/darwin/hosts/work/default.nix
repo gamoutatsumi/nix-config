@@ -11,7 +11,7 @@
   # ];
   services = {
     darwin-vz = {
-      enable = true;
+      enable = false;
       cores = 6;
       memory = 8192;
       diskSize = "50G";
