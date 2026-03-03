@@ -132,11 +132,11 @@
     "brew-api": {
       "flake": false,
       "locked": {
-        "lastModified": 1772515377,
-        "narHash": "sha256-8WKfkqYjFOuITn87AZLUyE0kGBsIHxl15Nfkn125Fmc=",
+        "lastModified": 1772518595,
+        "narHash": "sha256-wJi3754PHQVZD1LzsWqKb24kQ+UFw9vBvRXsvnqvXmE=",
         "owner": "BatteredBunny",
         "repo": "brew-api",
-        "rev": "2bfabebb78dee8b1ac96bec8a41e68bca83ce141",
+        "rev": "621db005042626a46139ce4a636acf71089b1b74",
         "type": "github"
       },
       "original": {
