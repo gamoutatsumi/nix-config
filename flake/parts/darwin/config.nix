@@ -60,6 +60,8 @@
     settings = {
       sandbox = false;
       max-jobs = "auto";
+      extra-platforms = [ "aarch64-linux" ];
+      always-allow-substitutes = true;
     };
     extraOptions = ''
       build-users-group = nixbld
