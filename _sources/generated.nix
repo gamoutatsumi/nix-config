@@ -27,24 +27,24 @@
   };
   claudecodeui = {
     pname = "claudecodeui";
-    version = "v1.20.1";
+    version = "v1.22.0";
     src = fetchFromGitHub {
       owner = "siteboon";
       repo = "claudecodeui";
-      rev = "v1.20.1";
+      rev = "v1.22.0";
       fetchSubmodules = false;
-      sha256 = "sha256-08pNgl3Appj9VgThxuAAnWTXpoH3bOQAMp3K+H01RqU=";
+      sha256 = "sha256-2A9Vp/Xl7rt2H8AbpdTgvCFSStjJkPdcPC4hok29TKI=";
     };
   };
   codecompanion-nvim = {
     pname = "codecompanion-nvim";
-    version = "v18.7.0";
+    version = "v19.1.0";
     src = fetchFromGitHub {
       owner = "olimorris";
       repo = "codecompanion.nvim";
-      rev = "v18.7.0";
+      rev = "v19.1.0";
       fetchSubmodules = false;
-      sha256 = "sha256-QZddLQ+0BR0/T+UjJcdzL+y6gTyBslnvf8yFmLzLL3M=";
+      sha256 = "sha256-/g80pgvY2jGEn8RfrJp5HSTKCjBuOLwMMl/yg0A3zM4=";
     };
   };
   denops-vim = {

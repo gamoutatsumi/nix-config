@@ -55,12 +55,12 @@
             "name": null,
             "owner": "siteboon",
             "repo": "claudecodeui",
-            "rev": "v1.20.1",
-            "sha256": "sha256-08pNgl3Appj9VgThxuAAnWTXpoH3bOQAMp3K+H01RqU=",
+            "rev": "v1.22.0",
+            "sha256": "sha256-2A9Vp/Xl7rt2H8AbpdTgvCFSStjJkPdcPC4hok29TKI=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v1.20.1"
+        "version": "v1.22.0"
     },
     "codecompanion-nvim": {
         "cargoLocks": null,
@@ -76,12 +76,12 @@
             "name": null,
             "owner": "olimorris",
             "repo": "codecompanion.nvim",
-            "rev": "v18.7.0",
-            "sha256": "sha256-QZddLQ+0BR0/T+UjJcdzL+y6gTyBslnvf8yFmLzLL3M=",
+            "rev": "v19.1.0",
+            "sha256": "sha256-/g80pgvY2jGEn8RfrJp5HSTKCjBuOLwMMl/yg0A3zM4=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v18.7.0"
+        "version": "v19.1.0"
     },
     "denops-vim": {
         "cargoLocks": null,
