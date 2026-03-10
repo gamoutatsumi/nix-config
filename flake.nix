@@ -137,7 +137,7 @@
       };
     };
     kakehashi = {
-      url = "github:atusy/kakehashi?shallow=1&ref=v0.1.0";
+      url = "github:atusy/kakehashi?ref=v0.4.0";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs-unstable";
@@ -262,7 +262,7 @@
       flake = false;
     };
     xremap = {
-      url = "github:xremap/xremap?ref=v0.14.14&shallow=1";
+      url = "github:xremap/xremap?ref=v0.14.18&shallow=1";
       flake = false;
     };
     xremap-nix = {
