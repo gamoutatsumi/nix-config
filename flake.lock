@@ -89,6 +89,7 @@
       "inputs": {
         "agent-skills": "agent-skills_2",
         "anthropic-skills": "anthropic-skills",
+        "hashicorp-skills": "hashicorp-skills",
         "home-manager": [
           "home-manager"
         ],
@@ -800,6 +801,22 @@
       "original": {
         "owner": "hercules-ci",
         "repo": "gitignore.nix",
+        "type": "github"
+      }
+    },
+    "hashicorp-skills": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1772625576,
+        "narHash": "sha256-gtXcigFYy5xMEBMgTa0pQjmwXfO0uHCLb0ybT22r5xM=",
+        "owner": "hashicorp",
+        "repo": "agent-skills",
+        "rev": "876a095c71079e4c112fb1de2f1a66dca0ffea23",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hashicorp",
+        "repo": "agent-skills",
         "type": "github"
       }
     },
