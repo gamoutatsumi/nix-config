@@ -1,25 +1,5 @@
 -- lua_add {{{
 require("lspconfig")
-local function setInlayHintHL()
-    local has_hl, hl = pcall(vim.api.nvim_get_hl, 0, { name = "LspInlayHint" })
-    if has_hl and (hl["fg"] or hl["bg"]) then
-        return
-    end
-
-    hl = vim.api.nvim_get_hl(0, { name = "Comment" })
-    local foreground = string.format("#%06x", hl["fg"] or 0)
-    if #foreground < 3 then
-        foreground = ""
-    end
-
-    hl = vim.api.nvim_get_hl(0, { name = "CursorLine" })
-    local background = string.format("#%06x", hl["bg"] or 0)
-    if #background < 3 then
-        background = ""
-    end
-
-    vim.api.nvim_set_hl(0, "LspInlayHint", { fg = foreground, bg = background })
-end
 
 local ensure_enabled = {
     -- keep-sorted start
@@ -62,22 +42,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
         local client = vim.lsp.get_client_by_id(args.data.client_id)
         if client == nil then
             return
-        end
-        if client.name == "copilot" then
-            vim.lsp.inline_completion.enable(true, { client_id = client.id })
-            vim.keymap.set("i", "<C-e>", function()
-                vim.lsp.inline_completion.get()
-                if vim.fn.pumvisible() == 1 then
-                    return "<C-e>"
-                end
-            end, { silent = true, expr = true, buffer = bufnr })
-
-            vim.keymap.set("i", "<C-f>", function()
-                vim.lsp.inline_completion.select()
-            end, { silent = true, buffer = bufnr })
-            vim.keymap.set("i", "<C-b>", function()
-                vim.lsp.inline_completion.select({ count = -1 * vim.v.count1 })
-            end, { silent = true, buffer = bufnr })
         end
         local function format()
             local formatOpts = {
@@ -142,40 +106,53 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "<Leader>ld", function()
             vim.diagnostic.enable(not vim.diagnostic.is_enabled())
         end, { noremap = true, silent = true, buffer = bufnr, desc = "vim.diagnostic.toggle" })
-        if client:supports_method("textDocument/inlayHint") or client.name == "sourcekit" then
-            setInlayHintHL()
-            vim.api.nvim_create_autocmd("InsertEnter", {
-                buffer = bufnr,
-                callback = function()
-                    vim.lsp.inlay_hint.enable(false, { bufnr = bufnr })
-                end,
-            })
-            vim.api.nvim_create_autocmd("InsertLeave", {
-                buffer = bufnr,
-                callback = function()
-                    vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-                end,
-            })
-            local timer = vim.uv.new_timer()
-            if not timer then
-                return
-            end
-            timer:start(
-                100,
-                0,
-                vim.schedule_wrap(function()
-                    vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-                end)
-            )
+        local has_hl, hl = pcall(vim.api.nvim_get_hl, 0, { name = "LspInlayHint" })
+        if has_hl and (hl["fg"] or hl["bg"]) then
+            return
         end
-        if client:supports_method("textDocument/codeLens") then
-            vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
-                buffer = bufnr,
-                callback = function()
-                    vim.lsp.codelens.refresh()
-                end,
-            })
+
+        hl = vim.api.nvim_get_hl(0, { name = "Comment" })
+        local foreground = string.format("#%06x", hl["fg"] or 0)
+        if #foreground < 3 then
+            foreground = ""
         end
+
+        hl = vim.api.nvim_get_hl(0, { name = "CursorLine" })
+        local background = string.format("#%06x", hl["bg"] or 0)
+        if #background < 3 then
+            background = ""
+        end
+
+        vim.api.nvim_set_hl(0, "LspInlayHint", { fg = foreground, bg = background })
+        vim.api.nvim_create_autocmd("InsertEnter", {
+            buffer = bufnr,
+            callback = function()
+                vim.lsp.inlay_hint.enable(false, { bufnr = bufnr })
+            end,
+        })
+        vim.api.nvim_create_autocmd("InsertLeave", {
+            buffer = bufnr,
+            callback = function()
+                vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+            end,
+        })
+        local timer = vim.uv.new_timer()
+        if not timer then
+            return
+        end
+        timer:start(
+            100,
+            0,
+            vim.schedule_wrap(function()
+                vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+            end)
+        )
+        vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
+            buffer = bufnr,
+            callback = function()
+                vim.lsp.codelens.enable(true)
+            end,
+        })
     end,
 })
 
