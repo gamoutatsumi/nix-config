@@ -85,6 +85,68 @@
         "type": "github"
       }
     },
+    "agent-skills": {
+      "inputs": {
+        "agent-skills": "agent-skills_2",
+        "anthropic-skills": "anthropic-skills",
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "path": "./flake/agent-skills",
+        "type": "path"
+      },
+      "original": {
+        "path": "./flake/agent-skills",
+        "type": "path"
+      },
+      "parent": []
+    },
+    "agent-skills_2": {
+      "inputs": {
+        "home-manager": [
+          "agent-skills",
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "agent-skills",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1772640663,
+        "narHash": "sha256-apWnei/2LGgJ247h4WpPQsGooWot4I3CX2PzPsXGx3A=",
+        "owner": "Kyure-A",
+        "repo": "agent-skills-nix",
+        "rev": "0e74b9e4b998807c21ab7ac49d00074aee5df96c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Kyure-A",
+        "repo": "agent-skills-nix",
+        "type": "github"
+      }
+    },
+    "anthropic-skills": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1772827583,
+        "narHash": "sha256-GzNpraXV85qUwyGs5XDe0zHYr2AazqFppWtH9JvO3QE=",
+        "owner": "anthropics",
+        "repo": "skills",
+        "rev": "b0cbd3df1533b396d281a6886d5132f623393a9c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "anthropics",
+        "repo": "skills",
+        "type": "github"
+      }
+    },
     "arto": {
       "inputs": {
         "crane": "crane_2",
@@ -1130,6 +1192,7 @@
         "agenix": "agenix",
         "agenix-rekey": "agenix-rekey",
         "agenix_orig": "agenix_orig",
+        "agent-skills": "agent-skills",
         "arto": "arto",
         "brew-api": "brew-api",
         "brew-nix": "brew-nix",

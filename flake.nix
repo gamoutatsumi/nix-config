@@ -61,6 +61,17 @@
         };
       };
     };
+    agent-skills = {
+      url = "path:./flake/agent-skills";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+        home-manager = {
+          follows = "home-manager";
+        };
+      };
+    };
     arto = {
       url = "github:arto-app/Arto?ref=v0.24.2";
       inputs = {

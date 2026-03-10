@@ -119,7 +119,6 @@ in
         ]
         ++ (with llm-agents; [
           cc-sdd
-          openskills
           openspec
         ])
       )
