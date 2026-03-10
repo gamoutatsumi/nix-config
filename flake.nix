@@ -252,9 +252,6 @@
         nixpkgs = {
           follows = "nixpkgs-unstable";
         };
-        pre-commit-hooks = {
-          follows = "pre-commit-hooks";
-        };
         vim-src = {
           follows = "vim-src";
         };
