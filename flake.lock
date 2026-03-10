@@ -89,6 +89,7 @@
       "inputs": {
         "agent-skills": "agent-skills_2",
         "anthropic-skills": "anthropic-skills",
+        "ast-grep-source": "ast-grep-source",
         "hashicorp-skills": "hashicorp-skills",
         "home-manager": [
           "home-manager"
@@ -170,6 +171,22 @@
         "type": "github"
       }
     },
+    "ast-grep-source": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1769044697,
+        "narHash": "sha256-LgGFtPieyKtoru22AhHW8hvkJ8kCHO2Cr8rBOWGuxvY=",
+        "owner": "ast-grep",
+        "repo": "agent-skill",
+        "rev": "577f4d4507678f2c8cee150fae25e6ce309f70b1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ast-grep",
+        "repo": "agent-skill",
+        "type": "github"
+      }
+    },
     "blueprint": {
       "inputs": {
         "nixpkgs": [
@@ -198,11 +215,11 @@
     "brew-api": {
       "flake": false,
       "locked": {
-        "lastModified": 1773106436,
-        "narHash": "sha256-XCBY6KHObRYnl5EvnZ0cxPHifu9bqlAVFBavUp3QKeg=",
+        "lastModified": 1773111346,
+        "narHash": "sha256-WzkY44L1ldvIy22uGltrFmO+pIcy174qtptBzCUw2wk=",
         "owner": "BatteredBunny",
         "repo": "brew-api",
-        "rev": "2aebdeeb8a9670b3598badeb4ec7caadafcf0c12",
+        "rev": "a84ae4347f7dd1d6b622b533ab9450a71c01fdf0",
         "type": "github"
       },
       "original": {
