@@ -29,11 +29,11 @@
     targets = {
       codex = {
         dest = ".codex/skills";
-        structure = "copy-tree";
+        structure = "symlink-tree";
       };
       claude = {
         dest = ".claude/skills";
-        structure = "copy-tree";
+        structure = "symlink-tree";
       };
     };
   };
