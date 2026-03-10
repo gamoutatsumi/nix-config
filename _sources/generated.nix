@@ -3,15 +3,15 @@
 {
   anthropics-skills = {
     pname = "anthropics-skills";
-    version = "3d59511518591fa82e6cfcf0438d68dd5dad3e76";
+    version = "b0cbd3df1533b396d281a6886d5132f623393a9c";
     src = fetchFromGitHub {
       owner = "anthropics";
       repo = "skills";
-      rev = "3d59511518591fa82e6cfcf0438d68dd5dad3e76";
+      rev = "b0cbd3df1533b396d281a6886d5132f623393a9c";
       fetchSubmodules = false;
-      sha256 = "sha256-mZZ0rlj/kju7we1h+MvUjgFAVjcZ/qKkMbNZfhfCSvk=";
+      sha256 = "sha256-GzNpraXV85qUwyGs5XDe0zHYr2AazqFppWtH9JvO3QE=";
     };
-    date = "2026-02-24";
+    date = "2026-03-06";
   };
   atusy-dotfiles = {
     pname = "atusy-dotfiles";
@@ -27,24 +27,24 @@
   };
   claudecodeui = {
     pname = "claudecodeui";
-    version = "v1.22.0";
+    version = "v1.24.0";
     src = fetchFromGitHub {
       owner = "siteboon";
       repo = "claudecodeui";
-      rev = "v1.22.0";
+      rev = "v1.24.0";
       fetchSubmodules = false;
-      sha256 = "sha256-2A9Vp/Xl7rt2H8AbpdTgvCFSStjJkPdcPC4hok29TKI=";
+      sha256 = "sha256-JyMYIUJwhe1aohUaLheTNDs5YWSAycz5haZ8nEuAlds=";
     };
   };
   codecompanion-nvim = {
     pname = "codecompanion-nvim";
-    version = "v19.1.0";
+    version = "v19.3.0";
     src = fetchFromGitHub {
       owner = "olimorris";
       repo = "codecompanion.nvim";
-      rev = "v19.1.0";
+      rev = "v19.3.0";
       fetchSubmodules = false;
-      sha256 = "sha256-/g80pgvY2jGEn8RfrJp5HSTKCjBuOLwMMl/yg0A3zM4=";
+      sha256 = "sha256-+5PA3b1Qr1gPPQKoCDrMgtaF5F4cSpwJDeZVLOvVgJQ=";
     };
   };
   denops-vim = {
@@ -117,15 +117,15 @@
   };
   nvim-dap = {
     pname = "nvim-dap";
-    version = "b516f20b487b0ac6a281e376dfac1d16b5040041";
+    version = "a9d8cb68ee7184111dc66156c4a2ebabfbe01bc5";
     src = fetchFromGitHub {
       owner = "mfussenegger";
       repo = "nvim-dap";
-      rev = "b516f20b487b0ac6a281e376dfac1d16b5040041";
+      rev = "a9d8cb68ee7184111dc66156c4a2ebabfbe01bc5";
       fetchSubmodules = false;
-      sha256 = "sha256-/YwT7ToPQS6Pa+00YwuPqF1qMJ/T8TMioaamylB92/o=";
+      sha256 = "sha256-U9RMvCDeNQjZ/8TFn848YQXhccIvZsBf7Axa/IipX/Q=";
     };
-    date = "2026-02-26";
+    date = "2026-03-06";
   };
   nvim-dap-go = {
     pname = "nvim-dap-go";
