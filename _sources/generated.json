@@ -1,46 +1,4 @@
 {
-    "anthropics-skills": {
-        "cargoLocks": null,
-        "date": "2026-03-06",
-        "extract": null,
-        "name": "anthropics-skills",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "anthropics",
-            "repo": "skills",
-            "rev": "b0cbd3df1533b396d281a6886d5132f623393a9c",
-            "sha256": "sha256-GzNpraXV85qUwyGs5XDe0zHYr2AazqFppWtH9JvO3QE=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "b0cbd3df1533b396d281a6886d5132f623393a9c"
-    },
-    "atusy-dotfiles": {
-        "cargoLocks": null,
-        "date": "2026-02-26",
-        "extract": null,
-        "name": "atusy-dotfiles",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "atusy",
-            "repo": "dotfiles",
-            "rev": "874ed9465bbcddb802acbd32012706272a3b887d",
-            "sha256": "sha256-+8nZb5rYl3xx2cPdpifBJEdINlaZr8zPSDAbOXImatc=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "874ed9465bbcddb802acbd32012706272a3b887d"
-    },
     "claudecodeui": {
         "cargoLocks": null,
         "date": null,
@@ -55,12 +13,12 @@
             "name": null,
             "owner": "siteboon",
             "repo": "claudecodeui",
-            "rev": "v1.24.0",
-            "sha256": "sha256-JyMYIUJwhe1aohUaLheTNDs5YWSAycz5haZ8nEuAlds=",
+            "rev": "v1.25.2",
+            "sha256": "sha256-1158LFm3RAjVZ4kHTHs/Mh5KHW1uKDJasVHaWfthKPY=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v1.24.0"
+        "version": "v1.25.2"
     },
     "codecompanion-nvim": {
         "cargoLocks": null,
