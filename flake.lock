@@ -988,7 +988,7 @@
         "url": "https://flakehub.com/f/nix-community/naersk/0"
       }
     },
-    "neovim": {
+    "neovim-nightly-overlay": {
       "inputs": {
         "flake-parts": [
           "flake-parts"
@@ -998,20 +998,21 @@
         ],
         "nixpkgs": [
           "nixpkgs-unstable"
-        ],
-        "systems": [
-          "systems"
         ]
       },
       "locked": {
-        "path": "./flake/neovim",
-        "type": "path"
+        "lastModified": 1773446705,
+        "narHash": "sha256-IBAHAaYfiR9fhR+y6ZUdM697dht26tvrWeIrTLwBs3E=",
+        "owner": "nix-community",
+        "repo": "neovim-nightly-overlay",
+        "rev": "49ff0692b00466bee56c3c72e91e4d0b8342a93b",
+        "type": "github"
       },
       "original": {
-        "path": "./flake/neovim",
-        "type": "path"
-      },
-      "parent": []
+        "owner": "nix-community",
+        "repo": "neovim-nightly-overlay",
+        "type": "github"
+      }
     },
     "neovim-src": {
       "flake": false,
@@ -1239,7 +1240,7 @@
         "lanzaboote": "lanzaboote",
         "llm-agents": "llm-agents",
         "mcp-servers-nix": "mcp-servers-nix",
-        "neovim": "neovim",
+        "neovim-nightly-overlay": "neovim-nightly-overlay",
         "neovim-src": "neovim-src",
         "nix-darwin": "nix-darwin",
         "nix-index-database": "nix-index-database",
