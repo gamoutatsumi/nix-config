@@ -1506,11 +1506,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1773464869,
-        "narHash": "sha256-iLlLis9Ps4HB2Os+1R7LyfZ6xsCQLNzzM6RRohJWZT8=",
+        "lastModified": 1773553032,
+        "narHash": "sha256-IBpgYqCHtcyl4+7cN5IS4mfRPYj+3BWnKAbYhFterXI=",
         "owner": "kawarimidoll",
         "repo": "vim-overlay",
-        "rev": "4120ca7f59c9e62b846744194829eb321f761f17",
+        "rev": "697bebbb1253011a97f7bdf562130c670757385c",
         "type": "github"
       },
       "original": {
