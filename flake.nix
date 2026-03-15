@@ -188,17 +188,10 @@
         flake-parts = {
           follows = "flake-parts";
         };
-        neovim-src = {
-          follows = "neovim-src";
-        };
         nixpkgs = {
           follows = "nixpkgs-unstable";
         };
       };
-    };
-    neovim-src = {
-      url = "github:neovim/neovim?ref=master&shallow=1";
-      flake = false;
     };
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin?ref=nix-darwin-25.11&shallow=1";
