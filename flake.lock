@@ -988,7 +988,7 @@
         "url": "https://flakehub.com/f/nix-community/naersk/0"
       }
     },
-    "neovim-nightly-overlay": {
+    "neovim": {
       "inputs": {
         "flake-parts": [
           "flake-parts"
@@ -998,21 +998,20 @@
         ],
         "nixpkgs": [
           "nixpkgs-unstable"
+        ],
+        "systems": [
+          "systems"
         ]
       },
       "locked": {
-        "lastModified": 1773446705,
-        "narHash": "sha256-IBAHAaYfiR9fhR+y6ZUdM697dht26tvrWeIrTLwBs3E=",
-        "owner": "nix-community",
-        "repo": "neovim-nightly-overlay",
-        "rev": "49ff0692b00466bee56c3c72e91e4d0b8342a93b",
-        "type": "github"
+        "path": "./flake/neovim",
+        "type": "path"
       },
       "original": {
-        "owner": "nix-community",
-        "repo": "neovim-nightly-overlay",
-        "type": "github"
-      }
+        "path": "./flake/neovim",
+        "type": "path"
+      },
+      "parent": []
     },
     "neovim-src": {
       "flake": false,
@@ -1059,11 +1058,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1773550613,
-        "narHash": "sha256-G0xzE48epaG6qOiByH+gV4rFcpbnnTbOHgUFITK0oX8=",
+        "lastModified": 1773552174,
+        "narHash": "sha256-mHSRNrT1rjeYBgkAlj07dW3+1nFEgAd8Gu6lgyfT9DU=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "7cd5322ed4a2bf68f9111b27b89249501a62854c",
+        "rev": "8faeb68130df077450451b6734a221ba0d6cde42",
         "type": "github"
       },
       "original": {
@@ -1240,7 +1239,7 @@
         "lanzaboote": "lanzaboote",
         "llm-agents": "llm-agents",
         "mcp-servers-nix": "mcp-servers-nix",
-        "neovim-nightly-overlay": "neovim-nightly-overlay",
+        "neovim": "neovim",
         "neovim-src": "neovim-src",
         "nix-darwin": "nix-darwin",
         "nix-index-database": "nix-index-database",
