@@ -1,8 +1,8 @@
 -- lua_add {{{
 require("rainbow-delimiters.setup").setup({
     strategy = {
-        [""] = "rainbow_delimiters.strategy.global",
-        vim = "rainbow_delimiters.strategy.local",
+        [""] = "rainbow-delimiters.strategy.global",
+        vim = "rainbow-delimiters.strategy.local",
     },
     query = {
         [""] = "rainbow-delimiters",
