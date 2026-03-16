@@ -12,6 +12,7 @@ require("rainbow-delimiters.setup").setup({
         [""] = 110,
         lua = 210,
     },
+    blacklist = { "fern", "help", "ddu-ui-ff" },
     highlight = {
         "RainbowDelimiterRed",
         "RainbowDelimiterYellow",
