@@ -9,9 +9,8 @@
       hooks_file = [ ./hooks/treesitter_textobjects.lua ];
     }
     {
-      repo = "https://gitlab.com/HiPhish/rainbow-delimiters.nvim";
+      repo = "HiPhish/rainbow-delimiters.nvim";
       hooks_file = ./hooks/rainbow.lua;
-      build = "git update-index --skip-worktree test && /bin/rm -rf test";
     }
     {
       repo = "JoosepAlviste/nvim-ts-context-commentstring";
