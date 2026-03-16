@@ -12,7 +12,7 @@ require("rainbow-delimiters.setup").setup({
         [""] = 110,
         lua = 210,
     },
-    blacklist = { "fern", "help", "ddu-ff", "aibo-prompt.aibo-tool-claude", "aibo-console.aibo-tool-claude" },
+    whitelist = { "nix", "lua", "vim", "go", "rust", "typescript", "javascript", "tsx", "tsxreact" },
     highlight = {
         "RainbowDelimiterRed",
         "RainbowDelimiterYellow",
