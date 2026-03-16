@@ -13,15 +13,6 @@
       hooks_file = ./hooks/rainbow.lua;
     }
     {
-      repo = "JoosepAlviste/nvim-ts-context-commentstring";
-      on_ft = [
-        "typescript"
-        "javascript"
-        "javascriptreact"
-        "typescriptreact"
-      ];
-    }
-    {
       repo = "nvim-treesitter/nvim-treesitter-context";
       hooks_file = ./hooks/context.lua;
     }
