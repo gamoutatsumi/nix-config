@@ -85,8 +85,26 @@
         "type": "github"
       }
     },
+    "agent-browser": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1773706679,
+        "narHash": "sha256-G6tLoTAtIW1x5Wrflf1E4kdhhZw1PaIZiw+gVvbj79A=",
+        "owner": "vercel-labs",
+        "repo": "agent-browser",
+        "rev": "9a8d9f439b5e1b11d694c465d5981bff2b29ab94",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vercel-labs",
+        "ref": "v0.20.14",
+        "repo": "agent-browser",
+        "type": "github"
+      }
+    },
     "agent-skills": {
       "inputs": {
+        "agent-browser": "agent-browser",
         "agent-skills": "agent-skills_2",
         "anthropic-skills": "anthropic-skills",
         "ast-grep-source": "ast-grep-source",
@@ -490,11 +508,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1773683334,
-        "narHash": "sha256-7WnovunGdyavSBYaF2u5PtLEOXZz9GKitYfm/+72eMM=",
+        "lastModified": 1773713125,
+        "narHash": "sha256-a4H4+7uQla9t2x1blJBFa/aw+kNZCItmqc6GshKUTDo=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "67f790b2a92a9a6b3c31238ed52a3c256e72101c",
+        "rev": "222f784f9943ef4a307a99a8d69e963d79c40c11",
         "type": "github"
       },
       "original": {
@@ -1076,11 +1094,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1773630033,
-        "narHash": "sha256-AL+7e6SXmXsKQfuBawbv6rsOO1tIbD415JHcAK4DCwk=",
+        "lastModified": 1773715492,
+        "narHash": "sha256-hFmQxA4JDWDGdr3GwcwYcIZgNw+yPVhn2ucutTfaEGQ=",
         "owner": "nix-community",
         "repo": "nix-vscode-extensions",
-        "rev": "03d7cf5a70217d449b8b6a9fbf40c28b03111695",
+        "rev": "6be632a6181baaec1c5ed52a6d00eee18f076d6c",
         "type": "github"
       },
       "original": {
