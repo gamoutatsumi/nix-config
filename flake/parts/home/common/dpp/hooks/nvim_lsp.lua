@@ -1,6 +1,4 @@
 -- lua_add {{{
-require("lspconfig")
-
 local ensure_enabled = {
     -- keep-sorted start
     "alloy_ls",
