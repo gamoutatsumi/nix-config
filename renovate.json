@@ -28,7 +28,8 @@
     {
       "customType": "regex",
       "managerFilePatterns": [
-        "/^flake\\.nix$/"
+        "/^flake\\.nix$/",
+        "/^flake\/agent-skills\/flake\\.nix$/"
       ],
       "matchStrings": [
         "url = \"github:(?<depName>[^/]+/[^?\\n]+)\\?ref=(?<currentValue>[^&\"]+)"

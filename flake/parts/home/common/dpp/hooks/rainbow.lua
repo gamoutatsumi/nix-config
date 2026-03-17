@@ -1,15 +1,18 @@
 -- lua_add {{{
-local rainbow_delimiters = require("rainbow-delimiters")
-
-vim.g.rainbow_delimiters = {
+require("rainbow-delimiters.setup").setup({
     strategy = {
-        [""] = rainbow_delimiters.strategy["global"],
-        vim = rainbow_delimiters.strategy["local"],
+        [""] = "rainbow-delimiters.strategy.global",
+        vim = "rainbow-delimiters.strategy.local",
     },
     query = {
         [""] = "rainbow-delimiters",
         lua = "rainbow-blocks",
     },
+    priority = {
+        [""] = 110,
+        lua = 210,
+    },
+    whitelist = { "nix", "lua", "vim", "go", "rust", "typescript", "javascript", "tsx", "tsxreact" },
     highlight = {
         "RainbowDelimiterRed",
         "RainbowDelimiterYellow",
@@ -19,5 +22,5 @@ vim.g.rainbow_delimiters = {
         "RainbowDelimiterViolet",
         "RainbowDelimiterCyan",
     },
-}
+})
 -- }}}
