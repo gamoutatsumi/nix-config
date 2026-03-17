@@ -1,19 +1,9 @@
 {
   inputs = {
-    nixpkgs = {
-      url = "github:NixOS/nixpkgs?ref=nixos-25.11&shallow=1";
-    };
-    ast-grep-source = {
-      url = "github:ast-grep/agent-skill";
+    # keep-sorted start block=yes
+    agent-browser = {
+      url = "github:vercel-labs/agent-browser?ref=v0.20.14";
       flake = false;
-    };
-    home-manager = {
-      url = "github:nix-community/home-manager?ref=release-25.11";
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs";
-        };
-      };
     };
     agent-skills = {
       url = "github:Kyure-A/agent-skills-nix";
@@ -30,15 +20,32 @@
       url = "github:anthropics/skills";
       flake = false;
     };
+    ast-grep-source = {
+      url = "github:ast-grep/agent-skill";
+      flake = false;
+    };
     hashicorp-skills = {
       url = "github:hashicorp/agent-skills";
       flake = false;
     };
+    home-manager = {
+      url = "github:nix-community/home-manager?ref=release-25.11";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+      };
+    };
+    nixpkgs = {
+      url = "github:NixOS/nixpkgs?ref=nixos-25.11&shallow=1";
+    };
+    # keep-sorted end
   };
 
   outputs =
     {
       agent-skills,
+      agent-browser,
       anthropic-skills,
       ast-grep-source,
       hashicorp-skills,
@@ -47,7 +54,7 @@
     {
       homeManagerModules = {
         default =
-          { pkgs, ... }:
+          { upkgs, ... }:
           {
             imports = [
               agent-skills.homeManagerModules.default
@@ -57,6 +64,10 @@
               agent-skills = {
                 enable = true;
                 sources = {
+                  agent-browser-source = {
+                    path = agent-browser;
+                    subdir = "skills";
+                  };
                   anthropic = {
                     path = anthropic-skills;
                     subdir = "skills";
@@ -75,10 +86,24 @@
                 };
                 skills = {
                   explicit = {
+                    agent-browser = {
+                      from = "agent-browser-source";
+                      path = "agent-browser";
+                      packages = with upkgs; [ llm-agents.agent-browser ];
+                      transform =
+                        { original, dependencies }:
+                        ''
+                          ${original}
+
+                          ${dependencies}
+
+                          - You should use ./agent-browser for execution.
+                        '';
+                    };
                     ast-grep = {
                       from = "ast-grep-source";
                       path = "ast-grep";
-                      packages = with pkgs; [ ast-grep ];
+                      packages = with upkgs; [ ast-grep ];
                       transform =
                         { original, dependencies }:
                         ''
