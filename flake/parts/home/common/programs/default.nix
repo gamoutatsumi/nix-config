@@ -120,6 +120,7 @@ in
         ++ (with llm-agents; [
           cc-sdd
           openspec
+          copilot-cli
         ])
       )
       ++ lspServers;
