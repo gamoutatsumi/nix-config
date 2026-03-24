@@ -195,6 +195,12 @@ in
     };
     git = {
       enable = true;
+      ignores = [
+        ".direnv"
+        ".envrc"
+        ".DS_Store"
+        ".vscode"
+      ];
       settings = {
         # keep-sorted start block=yes
         alias = {

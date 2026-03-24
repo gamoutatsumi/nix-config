@@ -133,9 +133,6 @@ in
           sha256 = "0lynwihky1b6r8ssjzzw99p38vya39x204gknpi2fdg720jj87yj";
         };
       };
-      "git/ignore" = {
-        source = ./config/git/ignore;
-      };
     };
     enable = true;
   };
