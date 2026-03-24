@@ -3,46 +3,46 @@
 {
   claudecodeui = {
     pname = "claudecodeui";
-    version = "v1.25.2";
+    version = "v1.26.3";
     src = fetchFromGitHub {
       owner = "siteboon";
       repo = "claudecodeui";
-      rev = "v1.25.2";
+      rev = "v1.26.3";
       fetchSubmodules = false;
-      sha256 = "sha256-1158LFm3RAjVZ4kHTHs/Mh5KHW1uKDJasVHaWfthKPY=";
+      sha256 = "sha256-5+Ux+qIx6XNuFG1pl/Sq9K3MLMXMaDJwSzYT/EpD8HI=";
     };
   };
   codecompanion-nvim = {
     pname = "codecompanion-nvim";
-    version = "v19.3.0";
+    version = "v19.6.0";
     src = fetchFromGitHub {
       owner = "olimorris";
       repo = "codecompanion.nvim";
-      rev = "v19.3.0";
+      rev = "v19.6.0";
       fetchSubmodules = false;
-      sha256 = "sha256-+5PA3b1Qr1gPPQKoCDrMgtaF5F4cSpwJDeZVLOvVgJQ=";
+      sha256 = "sha256-QEBlzkkgNTLWAey8/HImga8gYiFXOU+ITjPwODUlnfo=";
     };
   };
   denops-vim = {
     pname = "denops-vim";
-    version = "v8.0.1";
+    version = "v8.0.2";
     src = fetchFromGitHub {
       owner = "vim-denops";
       repo = "denops.vim";
-      rev = "v8.0.1";
+      rev = "v8.0.2";
       fetchSubmodules = false;
-      sha256 = "sha256-4AACZ3h6uAqiXW24gUF1+uq7dnWA0w/PcxAeO4yxitc=";
+      sha256 = "sha256-lj8yjZrwE9GfNPDIpH4tCI4TTJHkYRlFFCTdqMqWtZg=";
     };
   };
   jdim = {
     pname = "jdim";
-    version = "JDim-v0.15.0";
+    version = "JDim-v0.16.0";
     src = fetchFromGitHub {
       owner = "JDimproved";
       repo = "JDim";
-      rev = "JDim-v0.15.0";
+      rev = "JDim-v0.16.0";
       fetchSubmodules = false;
-      sha256 = "sha256-ztbSsKPN+UasuYa033pJRGhQCZTEsUSkpa27tdjG7tM=";
+      sha256 = "sha256-XflYZyukPANNSLsmP9ZWVpVdYiMzTyHvvdso9ay2VBQ=";
     };
   };
   neotest = {
@@ -117,15 +117,15 @@
   };
   nvim-dap-ui = {
     pname = "nvim-dap-ui";
-    version = "cf91d5e2d07c72903d052f5207511bf7ecdb7122";
+    version = "f5b6673f374626515401c5bc51b005f784a4f252";
     src = fetchFromGitHub {
       owner = "rcarriga";
       repo = "nvim-dap-ui";
-      rev = "cf91d5e2d07c72903d052f5207511bf7ecdb7122";
+      rev = "f5b6673f374626515401c5bc51b005f784a4f252";
       fetchSubmodules = false;
-      sha256 = "sha256-391zChjd6uAJycfXy1RG2Qt0OdCY3/WF9u0MWLtFZxA=";
+      sha256 = "sha256-vK311E7N3woU6yE+2KR0425EPFaMzx78YubsmMGBws0=";
     };
-    date = "2025-07-09";
+    date = "2026-03-23";
   };
   nvim-dap-virtual-text = {
     pname = "nvim-dap-virtual-text";
