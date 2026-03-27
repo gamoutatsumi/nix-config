@@ -5,7 +5,7 @@
 {
   programs = {
     emacs = {
-      enable = true;
+      enable = false;
       package = upkgs.emacsWithPackagesFromUsePackage {
         package =
           if upkgs.stdenv.isLinux then

@@ -12,7 +12,7 @@
       inherit (nixosConfig.services.blueman) enable;
     };
     emacs = {
-      enable = true;
+      enable = false;
       client = {
         enable = true;
       };
