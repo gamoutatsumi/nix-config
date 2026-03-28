@@ -19,6 +19,7 @@ in
         gcr
         gimp
         kdePackages.kcachegrind
+        ledger-live-desktop
         lssecret
         pavucontrol
         playerctl
