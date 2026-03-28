@@ -233,11 +233,11 @@
     "brew-api": {
       "flake": false,
       "locked": {
-        "lastModified": 1774642190,
-        "narHash": "sha256-xiANcVg94LjMgtiLkQSaAY6yxrZH65ep4DffNFEiARg=",
+        "lastModified": 1774657307,
+        "narHash": "sha256-T1neN9DQAtb6nr/Qa23Jd3nrmDBqF3t/lRMVfEbDnmI=",
         "owner": "BatteredBunny",
         "repo": "brew-api",
-        "rev": "048c9b177c1d9bc1d995dac057ca7702718ec7e9",
+        "rev": "305a684f248c2326890eae2e72306be33d5f2fab",
         "type": "github"
       },
       "original": {
@@ -987,11 +987,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1774570021,
-        "narHash": "sha256-wsYvPHx2/PcZqSWh1yZL3p7YA5lzaZQwDxpbWAYu/70=",
+        "lastModified": 1774656308,
+        "narHash": "sha256-k+L2Q5DtNGkPy+JgfhpTxpngdxy+FVz269iNfCYVy5E=",
         "owner": "nix-community",
         "repo": "neovim-nightly-overlay",
-        "rev": "2e94080a884c108044aa349cb0f4b77033cda940",
+        "rev": "114911d841b928b2b147511bec7121af310d7a23",
         "type": "github"
       },
       "original": {
@@ -1003,11 +1003,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1774546966,
-        "narHash": "sha256-uIFX2x4sg2Cmkp5IsamABr/8+PsNsYUqqH16F00Pt/A=",
+        "lastModified": 1774652330,
+        "narHash": "sha256-dqlsjRaLgD87D8YaC8842bhYziuRQ2qvTDgQDKL1ttQ=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "ae2829ee35c1fb8649f9d4046c5af48987193d03",
+        "rev": "f027f41e2cfba7be8c4841cb1a036827375bbd73",
         "type": "github"
       },
       "original": {
