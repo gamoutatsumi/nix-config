@@ -25,6 +25,9 @@
             "Bash(tail:*)"
             "Bash(head:*)"
             "Bash(fd:*)"
+            "Bash(cmux:*)"
+            "Bash(osascript:*)"
+            "Bash(sleep:*)"
           ];
           deny = [
             "Bash(sudo:*)"
