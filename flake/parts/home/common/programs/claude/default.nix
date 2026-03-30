@@ -12,6 +12,10 @@
         source = ./CLAUDE.md;
       };
       settings = {
+        env = {
+          USE_BUILTIN_RIPGREP = "0";
+          USE_BUILTIN_FD = "0";
+        };
         permissions = {
           allow = [
             "Bash(rg:*)"

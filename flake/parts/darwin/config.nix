@@ -6,10 +6,14 @@
       autoUpdate = true;
       upgrade = true;
     };
+    tap = [
+      "manaflow-ai/cmux"
+    ];
     casks = [
       # keep-sorted start
       "chatgpt"
       "claude"
+      "cmux"
       "discord"
       "karabiner-elements"
       "macskk"
