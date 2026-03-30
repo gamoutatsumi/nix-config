@@ -6,7 +6,7 @@
       autoUpdate = true;
       upgrade = true;
     };
-    tap = [
+    taps = [
       "manaflow-ai/cmux"
     ];
     casks = [
