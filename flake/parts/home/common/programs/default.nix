@@ -435,6 +435,8 @@ in
         # keep-sorted start
         auto-update = "off";
         background-opacity = 0.8;
+        font-family = "PlemolJP Console NF";
+        font-size = 14;
         theme = "nightfly";
         # keep-sorted end
       };
