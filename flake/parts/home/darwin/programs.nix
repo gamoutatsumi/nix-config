@@ -54,6 +54,9 @@
           [[on-window-detected]]
           if.app-id = "com.hnc.Discord"
           run = "move-node-to-workspace D"
+          [[on-window-detected]]
+          if.app-id = "com.cmuxterm.app"
+          run = "move-node-to-workspace 4"
         '';
         userSettings = {
           exec-on-workspace-change = [
