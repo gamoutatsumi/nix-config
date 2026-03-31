@@ -432,8 +432,11 @@ in
       enableZshIntegration = true;
       installBatSyntax = true;
       settings = {
-        # keep-sorted start
+        # keep-sorted start block=yes
         auto-update = "off";
+        env = {
+          TERM = "xterm-ghostty";
+        };
         font-family = "PlemolJP Console NF";
         font-size = 14;
         theme = "nightfly";

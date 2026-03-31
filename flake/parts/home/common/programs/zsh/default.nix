@@ -75,7 +75,6 @@ in
         NIX_CONFIG = "access-tokens = github.com=$(gh auth token)";
         PAGER = "${lib.getExe' pkgs.ov "ov"}";
         PURE_GIT_PULL = 0;
-        TERM = "alacritty";
         TMUX_PLUGIN_MANAGER_PATH = "${config.xdg.dataHome}/tmux/plugins";
         WORDCHARS = "*?_.[]~-=&;!#$%^(){}<>";
         ZENO_ENABLE_FZF_TMUX = 1;
