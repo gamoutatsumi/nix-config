@@ -13,12 +13,12 @@
             "name": null,
             "owner": "siteboon",
             "repo": "claudecodeui",
-            "rev": "v1.26.3",
-            "sha256": "sha256-5+Ux+qIx6XNuFG1pl/Sq9K3MLMXMaDJwSzYT/EpD8HI=",
+            "rev": "v1.27.1",
+            "sha256": "sha256-z4DkNViJENU3ZiVuACwr/OU5dH7hE0QSXafX7BgD178=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v1.26.3"
+        "version": "v1.27.1"
     },
     "codecompanion-nvim": {
         "cargoLocks": null,
@@ -34,12 +34,12 @@
             "name": null,
             "owner": "olimorris",
             "repo": "codecompanion.nvim",
-            "rev": "v19.6.0",
-            "sha256": "sha256-QEBlzkkgNTLWAey8/HImga8gYiFXOU+ITjPwODUlnfo=",
+            "rev": "v19.8.0",
+            "sha256": "sha256-eR7LnGdU93OQjpElDjHQArKNqL58y+PRSvVFqrJZPY8=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v19.6.0"
+        "version": "v19.8.0"
     },
     "denops-vim": {
         "cargoLocks": null,
@@ -97,12 +97,12 @@
             "name": null,
             "owner": "nvim-neotest",
             "repo": "neotest",
-            "rev": "v5.13.4",
-            "sha256": "sha256-0C4CWTHXXsC/dbZvW5KT+oNXX07rweh2Nem385hwLmI=",
+            "rev": "v5.14.3",
+            "sha256": "sha256-SULXASbuXPuqYRFRYEJe6uE6X19uTPLnVjZ8P8+lnMI=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v5.13.4"
+        "version": "v5.14.3"
     },
     "neotest-golang": {
         "cargoLocks": null,
@@ -169,7 +169,7 @@
     },
     "nvim-dap": {
         "cargoLocks": null,
-        "date": "2026-03-06",
+        "date": "2026-03-26",
         "extract": null,
         "name": "nvim-dap",
         "passthru": null,
@@ -181,12 +181,12 @@
             "name": null,
             "owner": "mfussenegger",
             "repo": "nvim-dap",
-            "rev": "a9d8cb68ee7184111dc66156c4a2ebabfbe01bc5",
-            "sha256": "sha256-U9RMvCDeNQjZ/8TFn848YQXhccIvZsBf7Axa/IipX/Q=",
+            "rev": "4f5deb110d9ff8994d96c21df95e2271d11214f9",
+            "sha256": "sha256-H3LML3FgqvD4xI4IljAp2E3dxAdFx/As+nzjC+jPzyc=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "a9d8cb68ee7184111dc66156c4a2ebabfbe01bc5"
+        "version": "4f5deb110d9ff8994d96c21df95e2271d11214f9"
     },
     "nvim-dap-go": {
         "cargoLocks": null,

@@ -3,24 +3,24 @@
 {
   claudecodeui = {
     pname = "claudecodeui";
-    version = "v1.26.3";
+    version = "v1.27.1";
     src = fetchFromGitHub {
       owner = "siteboon";
       repo = "claudecodeui";
-      rev = "v1.26.3";
+      rev = "v1.27.1";
       fetchSubmodules = false;
-      sha256 = "sha256-5+Ux+qIx6XNuFG1pl/Sq9K3MLMXMaDJwSzYT/EpD8HI=";
+      sha256 = "sha256-z4DkNViJENU3ZiVuACwr/OU5dH7hE0QSXafX7BgD178=";
     };
   };
   codecompanion-nvim = {
     pname = "codecompanion-nvim";
-    version = "v19.6.0";
+    version = "v19.8.0";
     src = fetchFromGitHub {
       owner = "olimorris";
       repo = "codecompanion.nvim";
-      rev = "v19.6.0";
+      rev = "v19.8.0";
       fetchSubmodules = false;
-      sha256 = "sha256-QEBlzkkgNTLWAey8/HImga8gYiFXOU+ITjPwODUlnfo=";
+      sha256 = "sha256-eR7LnGdU93OQjpElDjHQArKNqL58y+PRSvVFqrJZPY8=";
     };
   };
   denops-vim = {
@@ -47,13 +47,13 @@
   };
   neotest = {
     pname = "neotest";
-    version = "v5.13.4";
+    version = "v5.14.3";
     src = fetchFromGitHub {
       owner = "nvim-neotest";
       repo = "neotest";
-      rev = "v5.13.4";
+      rev = "v5.14.3";
       fetchSubmodules = false;
-      sha256 = "sha256-0C4CWTHXXsC/dbZvW5KT+oNXX07rweh2Nem385hwLmI=";
+      sha256 = "sha256-SULXASbuXPuqYRFRYEJe6uE6X19uTPLnVjZ8P8+lnMI=";
     };
   };
   neotest-golang = {
@@ -93,15 +93,15 @@
   };
   nvim-dap = {
     pname = "nvim-dap";
-    version = "a9d8cb68ee7184111dc66156c4a2ebabfbe01bc5";
+    version = "4f5deb110d9ff8994d96c21df95e2271d11214f9";
     src = fetchFromGitHub {
       owner = "mfussenegger";
       repo = "nvim-dap";
-      rev = "a9d8cb68ee7184111dc66156c4a2ebabfbe01bc5";
+      rev = "4f5deb110d9ff8994d96c21df95e2271d11214f9";
       fetchSubmodules = false;
-      sha256 = "sha256-U9RMvCDeNQjZ/8TFn848YQXhccIvZsBf7Axa/IipX/Q=";
+      sha256 = "sha256-H3LML3FgqvD4xI4IljAp2E3dxAdFx/As+nzjC+jPzyc=";
     };
-    date = "2026-03-06";
+    date = "2026-03-26";
   };
   nvim-dap-go = {
     pname = "nvim-dap-go";
