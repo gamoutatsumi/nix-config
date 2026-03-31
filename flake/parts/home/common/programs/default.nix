@@ -434,9 +434,9 @@ in
       settings = {
         # keep-sorted start block=yes
         auto-update = "off";
-        env = {
-          TERM = "xterm-ghostty";
-        };
+        env = [
+          "TERM=xterm-ghostty"
+        ];
         font-family = "PlemolJP Console NF";
         font-size = 14;
         theme = "nightfly";
