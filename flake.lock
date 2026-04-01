@@ -114,8 +114,7 @@
         ],
         "nixpkgs": [
           "nixpkgs"
-        ],
-        "using-cmux": "using-cmux"
+        ]
       },
       "locked": {
         "path": "./flake/agent-skills",
@@ -1437,22 +1436,6 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "type": "github"
-      }
-    },
-    "using-cmux": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1774287091,
-        "narHash": "sha256-IzQM2JTiqpXgqbGlX0co15s7XiZGd4UNa0WsmxBdT3w=",
-        "owner": "hummer98",
-        "repo": "using-cmux",
-        "rev": "e7af2623a6f5aaa0038e5cd4d1ee73fa20a63c28",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hummer98",
-        "repo": "using-cmux",
         "type": "github"
       }
     },
