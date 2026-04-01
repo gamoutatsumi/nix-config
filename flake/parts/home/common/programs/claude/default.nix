@@ -12,6 +12,9 @@
         source = ./CLAUDE.md;
       };
       settings = {
+        enabledPlugins = {
+          "codex@openai-codex" = true;
+        };
         env = {
           USE_BUILTIN_RIPGREP = "0";
           USE_BUILTIN_FD = "0";
