@@ -39,10 +39,6 @@
     nixpkgs = {
       url = "github:NixOS/nixpkgs?ref=nixos-25.11&shallow=1";
     };
-    using-cmux = {
-      url = "github:hummer98/using-cmux";
-      flake = false;
-    };
     # keep-sorted end
   };
 
@@ -53,7 +49,6 @@
       anthropic-skills,
       ast-grep-source,
       hashicorp-skills,
-      using-cmux,
       ...
     }:
     {
@@ -69,10 +64,6 @@
               agent-skills = {
                 enable = true;
                 sources = {
-                  using-cmux = {
-                    path = using-cmux;
-                    subdir = "skills";
-                  };
                   agent-browser-source = {
                     path = agent-browser;
                     subdir = "skills";
@@ -127,7 +118,6 @@
                   enable = [
                     "frontend-design"
                     "skill-creator"
-                    "using-cmux"
                   ];
                   enableAll = [
                     "personal"
