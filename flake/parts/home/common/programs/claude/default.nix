@@ -14,6 +14,7 @@
       settings = {
         enabledPlugins = {
           "codex@openai-codex" = true;
+          "using-cmux@hummer98-using-cmux" = true;
         };
         env = {
           USE_BUILTIN_RIPGREP = "0";
