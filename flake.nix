@@ -74,11 +74,6 @@
     };
     arto = {
       url = "github:arto-app/Arto?ref=v0.25.1";
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs-unstable";
-        };
-      };
     };
     brew-api = {
       url = "github:BatteredBunny/brew-api";
