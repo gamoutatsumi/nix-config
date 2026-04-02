@@ -97,12 +97,12 @@
             "name": null,
             "owner": "nvim-neotest",
             "repo": "neotest",
-            "rev": "v5.14.3",
-            "sha256": "sha256-SULXASbuXPuqYRFRYEJe6uE6X19uTPLnVjZ8P8+lnMI=",
+            "rev": "v5.15.0",
+            "sha256": "sha256-tcbO1138SICtWg2ER973KcZvY18QvAW72MW0si6abFI=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v5.14.3"
+        "version": "v5.15.0"
     },
     "neotest-golang": {
         "cargoLocks": null,
