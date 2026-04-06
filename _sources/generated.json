@@ -13,12 +13,12 @@
             "name": null,
             "owner": "siteboon",
             "repo": "claudecodeui",
-            "rev": "v1.27.1",
-            "sha256": "sha256-z4DkNViJENU3ZiVuACwr/OU5dH7hE0QSXafX7BgD178=",
+            "rev": "v1.28.0",
+            "sha256": "sha256-X5x8c76iIEm50PGWXi6bm3q+RuIl5adBdVuDLTT48XU=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v1.27.1"
+        "version": "v1.28.0"
     },
     "codecompanion-nvim": {
         "cargoLocks": null,
@@ -34,12 +34,12 @@
             "name": null,
             "owner": "olimorris",
             "repo": "codecompanion.nvim",
-            "rev": "v19.8.0",
-            "sha256": "sha256-eR7LnGdU93OQjpElDjHQArKNqL58y+PRSvVFqrJZPY8=",
+            "rev": "v19.9.0",
+            "sha256": "sha256-czV3xRahscMDRLpRRKiqKkbL2wsKkaTUA59U3erZUWU=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v19.8.0"
+        "version": "v19.9.0"
     },
     "denops-vim": {
         "cargoLocks": null,
@@ -211,7 +211,7 @@
     },
     "nvim-dap-ui": {
         "cargoLocks": null,
-        "date": "2026-03-23",
+        "date": "2026-04-05",
         "extract": null,
         "name": "nvim-dap-ui",
         "passthru": null,
@@ -223,12 +223,12 @@
             "name": null,
             "owner": "rcarriga",
             "repo": "nvim-dap-ui",
-            "rev": "f5b6673f374626515401c5bc51b005f784a4f252",
-            "sha256": "sha256-vK311E7N3woU6yE+2KR0425EPFaMzx78YubsmMGBws0=",
+            "rev": "1a66cabaa4a4da0be107d5eda6d57242f0fe7e49",
+            "sha256": "sha256-J/gUD4X//JtC2HB3HBeONivCQdMnXDnZJWd6jFF9+nk=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "f5b6673f374626515401c5bc51b005f784a4f252"
+        "version": "1a66cabaa4a4da0be107d5eda6d57242f0fe7e49"
     },
     "nvim-dap-virtual-text": {
         "cargoLocks": null,

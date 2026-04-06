@@ -3,24 +3,24 @@
 {
   claudecodeui = {
     pname = "claudecodeui";
-    version = "v1.27.1";
+    version = "v1.28.0";
     src = fetchFromGitHub {
       owner = "siteboon";
       repo = "claudecodeui";
-      rev = "v1.27.1";
+      rev = "v1.28.0";
       fetchSubmodules = false;
-      sha256 = "sha256-z4DkNViJENU3ZiVuACwr/OU5dH7hE0QSXafX7BgD178=";
+      sha256 = "sha256-X5x8c76iIEm50PGWXi6bm3q+RuIl5adBdVuDLTT48XU=";
     };
   };
   codecompanion-nvim = {
     pname = "codecompanion-nvim";
-    version = "v19.8.0";
+    version = "v19.9.0";
     src = fetchFromGitHub {
       owner = "olimorris";
       repo = "codecompanion.nvim";
-      rev = "v19.8.0";
+      rev = "v19.9.0";
       fetchSubmodules = false;
-      sha256 = "sha256-eR7LnGdU93OQjpElDjHQArKNqL58y+PRSvVFqrJZPY8=";
+      sha256 = "sha256-czV3xRahscMDRLpRRKiqKkbL2wsKkaTUA59U3erZUWU=";
     };
   };
   denops-vim = {
@@ -117,15 +117,15 @@
   };
   nvim-dap-ui = {
     pname = "nvim-dap-ui";
-    version = "f5b6673f374626515401c5bc51b005f784a4f252";
+    version = "1a66cabaa4a4da0be107d5eda6d57242f0fe7e49";
     src = fetchFromGitHub {
       owner = "rcarriga";
       repo = "nvim-dap-ui";
-      rev = "f5b6673f374626515401c5bc51b005f784a4f252";
+      rev = "1a66cabaa4a4da0be107d5eda6d57242f0fe7e49";
       fetchSubmodules = false;
-      sha256 = "sha256-vK311E7N3woU6yE+2KR0425EPFaMzx78YubsmMGBws0=";
+      sha256 = "sha256-J/gUD4X//JtC2HB3HBeONivCQdMnXDnZJWd6jFF9+nk=";
     };
-    date = "2026-03-23";
+    date = "2026-04-05";
   };
   nvim-dap-virtual-text = {
     pname = "nvim-dap-virtual-text";
