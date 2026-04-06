@@ -11,6 +11,7 @@ require("core.keys")
 require("core.dpp").setup()
 require("core.commands")
 require("core.treesitter")
+require("vim._core.ui2").enable({})
 
 -- NVUI specific settings (if used)
 -- pcall(require, 'core.nvui')

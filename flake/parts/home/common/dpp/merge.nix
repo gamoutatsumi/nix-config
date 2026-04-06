@@ -71,9 +71,6 @@
       "if" = false;
     }
     {
-      repo = "Shougo/cmdline.vim";
-    }
-    {
       repo = "hrsh7th/vim-searchx";
       hooks_file = ./hooks/searchx.vim;
     }

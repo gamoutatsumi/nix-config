@@ -39,13 +39,6 @@
       on_func = [ "glyph_palette#apply" ];
     }
     {
-      repo = "mbbill/undotree";
-      on_cmd = [ "UndotreeToggle" ];
-      hook_add = ''
-        nnoremap <Leader>u <cmd>UndotreeToggle<CR>
-      '';
-    }
-    {
       repo = "lambdalisue/vim-suda";
       on_event = "BufRead";
       hook_add = ''
