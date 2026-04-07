@@ -2,7 +2,7 @@
   inputs = {
     # keep-sorted start block=yes
     agent-browser = {
-      url = "github:vercel-labs/agent-browser?ref=v0.25.1";
+      url = "github:vercel-labs/agent-browser?ref=v0.25.3";
       flake = false;
     };
     agent-skills = {
