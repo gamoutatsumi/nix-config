@@ -14,13 +14,13 @@
   };
   codecompanion-nvim = {
     pname = "codecompanion-nvim";
-    version = "v19.9.0";
+    version = "v19.10.0";
     src = fetchFromGitHub {
       owner = "olimorris";
       repo = "codecompanion.nvim";
-      rev = "v19.9.0";
+      rev = "v19.10.0";
       fetchSubmodules = false;
-      sha256 = "sha256-czV3xRahscMDRLpRRKiqKkbL2wsKkaTUA59U3erZUWU=";
+      sha256 = "sha256-bCH6UwNunia/OCbgSAOO/1Ijh/NmHNSVCvbb6Oyhm4Q=";
     };
   };
   denops-vim = {

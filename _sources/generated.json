@@ -34,12 +34,12 @@
             "name": null,
             "owner": "olimorris",
             "repo": "codecompanion.nvim",
-            "rev": "v19.9.0",
-            "sha256": "sha256-czV3xRahscMDRLpRRKiqKkbL2wsKkaTUA59U3erZUWU=",
+            "rev": "v19.10.0",
+            "sha256": "sha256-bCH6UwNunia/OCbgSAOO/1Ijh/NmHNSVCvbb6Oyhm4Q=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v19.9.0"
+        "version": "v19.10.0"
     },
     "denops-vim": {
         "cargoLocks": null,
