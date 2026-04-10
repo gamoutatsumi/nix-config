@@ -152,15 +152,15 @@
   };
   plenary-nvim = {
     pname = "plenary-nvim";
-    version = "b9fd5226c2f76c951fc8ed5923d85e4de065e509";
+    version = "fcb3e9ac127d178b4c189088396165b3facc219e";
     src = fetchFromGitHub {
       owner = "nvim-lua";
       repo = "plenary.nvim";
-      rev = "b9fd5226c2f76c951fc8ed5923d85e4de065e509";
+      rev = "fcb3e9ac127d178b4c189088396165b3facc219e";
       fetchSubmodules = false;
-      sha256 = "sha256-9Un7ekhBxcnmFE1xjCCFTZ7eqIbmXvQexpnhduAg4M0=";
+      sha256 = "sha256-MrXyHMjzqhRWMgyszaftZDLlItCT8pnt+GOpL/OsbVE=";
     };
-    date = "2025-07-26";
+    date = "2026-04-09";
   };
   popup-nvim = {
     pname = "popup-nvim";
