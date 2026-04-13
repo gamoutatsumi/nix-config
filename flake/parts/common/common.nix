@@ -14,6 +14,9 @@
     nixPath = [
       "nixpkgs=${inputs.nixpkgs}"
     ];
+    optimise = {
+      automatic = true;
+    };
     package = pkgs.nixVersions.latest;
     registry = {
       nixpkgs = {
@@ -24,7 +27,6 @@
       };
     };
     settings = {
-      auto-optimise-store = true;
       substituters = [
         "https://nix-community.cachix.org/"
       ];
