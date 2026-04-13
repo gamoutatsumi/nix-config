@@ -3,24 +3,24 @@
 {
   claudecodeui = {
     pname = "claudecodeui";
-    version = "v1.28.0";
+    version = "v1.28.1";
     src = fetchFromGitHub {
       owner = "siteboon";
       repo = "claudecodeui";
-      rev = "v1.28.0";
+      rev = "v1.28.1";
       fetchSubmodules = false;
-      sha256 = "sha256-X5x8c76iIEm50PGWXi6bm3q+RuIl5adBdVuDLTT48XU=";
+      sha256 = "sha256-EG7rz6ECyqC7AL85gy5hqS/Yf8hvIX9pDTVXn1WMQIQ=";
     };
   };
   codecompanion-nvim = {
     pname = "codecompanion-nvim";
-    version = "v19.10.0";
+    version = "v19.11.0";
     src = fetchFromGitHub {
       owner = "olimorris";
       repo = "codecompanion.nvim";
-      rev = "v19.10.0";
+      rev = "v19.11.0";
       fetchSubmodules = false;
-      sha256 = "sha256-bCH6UwNunia/OCbgSAOO/1Ijh/NmHNSVCvbb6Oyhm4Q=";
+      sha256 = "sha256-z8zcGgq5CBq5OlUZ+GfcvCgVrrFdGUMpJYR0duMigXA=";
     };
   };
   denops-vim = {
@@ -152,15 +152,15 @@
   };
   plenary-nvim = {
     pname = "plenary-nvim";
-    version = "fcb3e9ac127d178b4c189088396165b3facc219e";
+    version = "74b06c6c75e4eeb3108ec01852001636d85a932b";
     src = fetchFromGitHub {
       owner = "nvim-lua";
       repo = "plenary.nvim";
-      rev = "fcb3e9ac127d178b4c189088396165b3facc219e";
+      rev = "74b06c6c75e4eeb3108ec01852001636d85a932b";
       fetchSubmodules = false;
-      sha256 = "sha256-MrXyHMjzqhRWMgyszaftZDLlItCT8pnt+GOpL/OsbVE=";
+      sha256 = "sha256-nkfETDkPiE+Kd2BWYZijgUp9bP8RgFwRmvqJz2BMuq4=";
     };
-    date = "2026-04-09";
+    date = "2026-04-10";
   };
   popup-nvim = {
     pname = "popup-nvim";
