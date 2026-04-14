@@ -20,18 +20,6 @@
 - 大きな変更を行う場合は、必ずユーザーの承認を得ること
 - エラーが発生した場合は、根本的な原因を特定した上で修正すること
 
-## 環境制約
-
-このマシンにはnode/npm/npxがグローバルに入っていない。
-これらのコマンドを実行する場合は必ず以下のように nix shell 経由で実行すること:
-
-- `nix shell nixpkgs#nodejs_22 --command node ...`
-- `nix shell nixpkgs#nodejs_22 --command npx ...`
-- `nix shell nixpkgs#nodejs_22 --command npm ...`
-
-`nix shell` のキャッシュは既にあるため起動は高速。
-決して `npm install -g` や `apt install` でグローバルインストールしないこと。
-
 ## サブエージェントの積極的な使用
 
 コンテキストの肥大化を防ぐため、基本的に全てのタスクでサブエージェントを活用すること：

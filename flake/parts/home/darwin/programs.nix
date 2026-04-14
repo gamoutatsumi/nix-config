@@ -14,6 +14,7 @@
         colima
         container
         docker-client
+        nodejs_22
         podman
         # keep-sorted end
         (lima.override {
