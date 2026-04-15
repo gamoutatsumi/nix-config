@@ -3,13 +3,13 @@
 {
   claudecodeui = {
     pname = "claudecodeui";
-    version = "v1.28.1";
+    version = "v1.29.2";
     src = fetchFromGitHub {
       owner = "siteboon";
       repo = "claudecodeui";
-      rev = "v1.28.1";
+      rev = "v1.29.2";
       fetchSubmodules = false;
-      sha256 = "sha256-EG7rz6ECyqC7AL85gy5hqS/Yf8hvIX9pDTVXn1WMQIQ=";
+      sha256 = "sha256-iid8v5Dxp99kE/O/iWXKHLFB2NtiOG8s8IZY2nmknCo=";
     };
   };
   codecompanion-nvim = {
