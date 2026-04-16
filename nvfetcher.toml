@@ -54,10 +54,6 @@ fetch.github = "theHamsta/nvim-dap-virtual-text"
 src.github = "JDimproved/JDim"
 fetch.github = "JDimproved/JDim"
 
-[claudecodeui]
-src.github = "siteboon/claudecodeui"
-fetch.github = "siteboon/claudecodeui"
-
 [codecompanion-nvim]
 src.github = "olimorris/codecompanion.nvim"
 fetch.github = "olimorris/codecompanion.nvim"
