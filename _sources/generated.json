@@ -13,12 +13,12 @@
             "name": null,
             "owner": "siteboon",
             "repo": "claudecodeui",
-            "rev": "v1.29.2",
-            "sha256": "sha256-iid8v5Dxp99kE/O/iWXKHLFB2NtiOG8s8IZY2nmknCo=",
+            "rev": "v1.29.3",
+            "sha256": "sha256-jRuQiAUvWlom150ZgnIydRCTtYAAYKk1ZhilN6A7Tj8=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v1.29.2"
+        "version": "v1.29.3"
     },
     "codecompanion-nvim": {
         "cargoLocks": null,
