@@ -1,25 +1,4 @@
 {
-    "claudecodeui": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "claudecodeui",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "siteboon",
-            "repo": "claudecodeui",
-            "rev": "v1.29.3",
-            "sha256": "sha256-jRuQiAUvWlom150ZgnIydRCTtYAAYKk1ZhilN6A7Tj8=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "v1.29.3"
-    },
     "codecompanion-nvim": {
         "cargoLocks": null,
         "date": null,
