@@ -48,6 +48,9 @@ in
     };
     kernelModules = [ "kvm-intel" ];
     loader = {
+      efi = {
+        canTouchEfiVariables = true;
+      };
       limine = {
         enable = true;
         secureBoot = {
