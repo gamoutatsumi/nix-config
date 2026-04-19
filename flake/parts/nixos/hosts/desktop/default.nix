@@ -50,7 +50,7 @@ in
     loader = {
       limine = {
         enable = true;
-        secureboot = {
+        secureBoot = {
           enable = true;
         };
       };
