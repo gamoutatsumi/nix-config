@@ -48,8 +48,8 @@ in
     };
     kernelModules = [ "kvm-intel" ];
     loader = {
-      systemd-boot = {
-        enable = lib.mkForce false;
+      limine = {
+        enable = true;
       };
     };
     supportedFilesystems = [ "ntfs" ];
