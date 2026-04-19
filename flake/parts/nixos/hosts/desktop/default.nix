@@ -50,6 +50,9 @@ in
     loader = {
       limine = {
         enable = true;
+        secureboot = {
+          enable = true;
+        };
       };
     };
     supportedFilesystems = [ "ntfs" ];
