@@ -150,14 +150,6 @@
         };
       };
     };
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote?ref=v1.0.0&shallow=1";
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs";
-        };
-      };
-    };
     llm-agents = {
       url = "github:numtide/llm-agents.nix";
       inputs = {
