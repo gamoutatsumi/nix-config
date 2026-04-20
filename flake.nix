@@ -73,7 +73,7 @@
       };
     };
     arto = {
-      url = "github:arto-app/Arto?ref=v0.25.1";
+      url = "github:arto-app/Arto?ref=v0.25.4";
     };
     brew-api = {
       url = "github:BatteredBunny/brew-api";
@@ -147,14 +147,6 @@
       inputs = {
         nixpkgs = {
           follows = "nixpkgs-unstable";
-        };
-      };
-    };
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote?ref=v1.0.0&shallow=1";
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs";
         };
       };
     };

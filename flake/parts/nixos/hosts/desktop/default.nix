@@ -47,13 +47,21 @@ in
       };
     };
     kernelModules = [ "kvm-intel" ];
-    lanzaboote = {
-      enable = true;
-      pkiBundle = "/etc/secureboot";
-    };
     loader = {
-      systemd-boot = {
-        enable = lib.mkForce false;
+      efi = {
+        canTouchEfiVariables = true;
+      };
+      limine = {
+        enable = true;
+        secureBoot = {
+          enable = true;
+        };
+        maxGenerations = 5;
+        extraEntries = ''
+          /Windows 11
+            protocol: efi_chainload
+            image_path: uuid(dd07d755-a79e-44c1-a8fc-3e2e575bd165):/EFI/Microsoft/Boot/bootmgfw.efi
+        '';
       };
     };
     supportedFilesystems = [ "ntfs" ];
