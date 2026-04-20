@@ -73,7 +73,7 @@
       };
     };
     arto = {
-      url = "github:arto-app/Arto?ref=v0.25.2";
+      url = "github:arto-app/Arto?ref=v0.25.4";
     };
     brew-api = {
       url = "github:BatteredBunny/brew-api";
