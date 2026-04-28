@@ -161,6 +161,12 @@ in
     opencode = {
       enable = true;
       package = upkgs.llm-agents.opencode;
+      settings = {
+        theme = "opencode";
+        model = "zai/glm-5.1";
+        autoshare = false;
+        autoupdate = false;
+      };
     };
     # keep-sorted end
   };
