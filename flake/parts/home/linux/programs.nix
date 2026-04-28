@@ -25,6 +25,7 @@ in
         playerctl
         seahorse
         slack
+        tor-browser
         wl-clipboard
         zoom-us
         # keep-sorted end
@@ -156,6 +157,10 @@ in
     firefox = {
       enable = true;
       package = upkgs.firefox;
+    };
+    opencode = {
+      enable = true;
+      package = upkgs.llm-agents.opencode;
     };
     # keep-sorted end
   };
