@@ -36,13 +36,13 @@
   };
   neotest = {
     pname = "neotest";
-    version = "v5.15.0";
+    version = "v5.18.0";
     src = fetchFromGitHub {
       owner = "nvim-neotest";
       repo = "neotest";
-      rev = "v5.15.0";
+      rev = "v5.18.0";
       fetchSubmodules = false;
-      sha256 = "sha256-tcbO1138SICtWg2ER973KcZvY18QvAW72MW0si6abFI=";
+      sha256 = "sha256-5f8HTX32NCBwSosQWhecHfDrbfGOFGc6WbrPVm4wmNU=";
     };
   };
   neotest-golang = {
