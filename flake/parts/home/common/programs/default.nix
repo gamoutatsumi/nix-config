@@ -1,6 +1,7 @@
 {
   # keep-sorted start
   config,
+  inputs',
   lib,
   pkgs,
   upkgs,
@@ -327,6 +328,7 @@ in
           luajitPackages.busted
           delve
         ])
+        ++ [ inputs'.kakehashi.packages.default ]
         ++ lib.optionals pkgs.stdenv.isLinux [
           upkgs.gcc
         ];
