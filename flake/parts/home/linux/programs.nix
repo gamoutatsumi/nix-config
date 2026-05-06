@@ -25,6 +25,7 @@ in
         playerctl
         seahorse
         slack
+        tor-browser
         wl-clipboard
         zoom-us
         # keep-sorted end
@@ -53,7 +54,7 @@ in
         xwayland-satellite
         (vivaldi.override {
           enableWidevine = true;
-          proprietaryCodecs = false;
+          proprietaryCodecs = true;
           inherit (upkgs) widevine-cdm;
           commandLineArgs = "--force-dark-mode --password-store=gnome-libsecret";
         })
@@ -156,6 +157,16 @@ in
     firefox = {
       enable = true;
       package = upkgs.firefox;
+    };
+    opencode = {
+      enable = true;
+      package = upkgs.llm-agents.opencode;
+      settings = {
+        theme = "opencode";
+        model = "zai/glm-5.1";
+        autoshare = false;
+        autoupdate = false;
+      };
     };
     # keep-sorted end
   };
