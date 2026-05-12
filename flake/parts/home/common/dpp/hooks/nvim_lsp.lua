@@ -125,22 +125,22 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.api.nvim_create_autocmd("InsertEnter", {
             buffer = bufnr,
             callback = function()
-                vim.lsp.inlay_hint.enable(false, { bufnr = bufnr })
-                vim.lsp.codelens.enable(false, { bufnr = bufnr })
+                vim.lsp.inlay_hint.enable(false)
+                vim.lsp.codelens.enable(false)
             end,
         })
         vim.api.nvim_create_autocmd("InsertLeave", {
             buffer = bufnr,
             callback = function()
-                vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-                vim.lsp.codelens.enable(true, { bufnr = bufnr })
+                vim.lsp.inlay_hint.enable(true)
+                vim.lsp.codelens.enable(true)
             end,
         })
         vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
             buffer = bufnr,
             callback = function()
-                vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-                vim.lsp.codelens.enable(true, { bufnr = bufnr })
+                vim.lsp.inlay_hint.enable(true)
+                vim.lsp.codelens.enable(true)
             end,
         })
     end,

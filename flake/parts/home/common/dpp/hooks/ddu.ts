@@ -37,10 +37,7 @@ export class Config extends BaseConfig {
           converters: [],
         },
         git_status: {
-          converters: [
-            "converter_hl_dir",
-            "converter_git_status",
-          ],
+          converters: ["converter_hl_dir", "converter_git_status"],
         },
         lsp_references: {
           converters: ["converter_lsp_symbol"],
@@ -159,15 +156,8 @@ export class Config extends BaseConfig {
         },
       },
       filterParams: {
-        matcher_kensaku: {
-          highlightMatched: "Search",
-        },
         matcher_fzf: {
           highlightMatched: "Search",
-        },
-        merge: {
-          filters: [{ name: "matcher_kensaku", weight: 2.0 }, "matcher_fzf"],
-          unique: true,
         },
       },
       actionOptions: {

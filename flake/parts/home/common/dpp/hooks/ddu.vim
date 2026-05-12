@@ -13,24 +13,12 @@ function s:lsp_attach() abort
         \   params: #{
         \     includeDeclaration: v:false
         \   }
-        \ }], 
-        \ uiParams: #{
-        \   ff: #{
-        \     autoAction: #{ 
-        \       name: 'preview' 
-        \     } 
-        \   } 
-        \ } 
+        \ }]
         \ })<CR>
   nnoremap <silent><buffer> ;d <Cmd>call <SID>ddu_start(#{
         \ sources: [#{ 
         \   name: 'lsp_diagnostic' 
-        \ }], 
-        \ uiParams: #{
-        \   ff: #{
-        \    autoAction: #{ name: 'preview' },
-        \   },
-        \ }
+        \ }]
         \ })<CR>
   nnoremap <silent><buffer> gd <Cmd>call ddu#start(#{
         \ sync: v:true,
@@ -42,9 +30,6 @@ function s:lsp_attach() abort
         \ }],
         \ uiParams: #{
         \   ff: #{
-        \    autoAction: #{
-        \     name: 'preview' 
-        \    },
         \    immediateAction: 'open',
         \   },
         \ }
@@ -59,9 +44,6 @@ function s:lsp_attach() abort
         \ }],
         \ uiParams: #{
         \   ff: #{
-        \    autoAction: #{ 
-        \     name: 'preview'
-        \    },
         \    immediateAction: 'open',
         \   },
         \ }
@@ -76,9 +58,6 @@ function s:lsp_attach() abort
         \ }],
         \ uiParams: #{
         \  ff: #{
-        \   autoAction: #{
-        \     name: 'preview' 
-        \   },
         \   immediateAction: 'open',
         \   },
         \ }
@@ -93,9 +72,6 @@ function s:lsp_attach() abort
         \ }],
         \ uiParams: #{
         \  ff: #{
-        \   autoAction: #{
-        \     name: 'preview' 
-        \   },
         \   immediateAction: 'open',
         \   },
         \ }
@@ -106,9 +82,6 @@ function s:lsp_attach() abort
         \ }],
         \ uiParams: #{
         \   ff: #{
-        \     autoAction: #{
-        \       name: 'preview'
-        \     },
         \     displayTree: v:true,
         \   }
         \ }
@@ -119,9 +92,6 @@ function s:lsp_attach() abort
         \ }],
         \ uiParams: #{
         \   ff: #{
-        \     autoAction: #{
-        \       name: 'preview'
-        \     },
         \     displayTree: v:true,
         \   }
         \ }
@@ -133,14 +103,7 @@ function s:lsp_attach() abort
         \     method: 'typeHierarchy/supertypes',
         \     autoExpandSingle: v:false,
         \   }
-        \ }],
-        \ uiParams: #{
-        \   ff: #{
-        \     autoAction: #{
-        \       name: 'preview'
-        \     }
-        \   }
-        \ }
+        \ }]
         \ })<CR>
   nnoremap <silent><buffer> ;c <Cmd>call <SID>ddu_start(#{
         \ sources: [#{
@@ -149,26 +112,12 @@ function s:lsp_attach() abort
         \     method: 'callHierarchy/incomingCalls',
         \     autoExpandSingle: v:false,
         \   }
-        \ }],
-        \ uiParams: #{
-        \   ff: #{
-        \     autoAction: #{
-        \       name: 'preview'
-        \     }
-        \   }
-        \ }
+        \ }]
         \ })<CR>
   nnoremap <silent><buffer> ;a <Cmd>call ddu#start(#{
         \ sources: [#{
         \   name: 'lsp_codeAction',
-        \ }],
-        \ uiParams: #{
-        \   ff: #{
-        \     autoAction: #{
-        \       name: 'preview'
-        \     }
-        \   }
-        \ }
+        \ }]
         \ })<CR>
 
 endfunction
@@ -190,12 +139,7 @@ function! s:ddu_find() abort
         \     inputType: 'migemo',
         \     args: ['--smart-case', '--json']
         \   }
-        \ }],
-        \ uiParams: #{
-        \   ff: #{
-        \     autoAction: #{ name: 'preview' },
-        \   },
-        \ }
+        \ }]
         \ })
 endfunction
 nnoremap <silent> ;rg <Cmd>call <SID>ddu_find()<CR>
@@ -206,14 +150,7 @@ nnoremap <silent> mu <Cmd>call ddu#start(#{
       \     kind: 'mru', 
       \     current: v:true 
       \   } 
-      \ }], 
-      \ uiParams: #{
-      \   ff: #{
-      \    autoAction: #{
-      \     name: 'preview' 
-      \    },
-      \   },
-      \ }
+      \ }]
       \ })<CR>
 nnoremap <silent> mw <Cmd>call ddu#start(#{
       \ sources: [#{
@@ -222,14 +159,7 @@ nnoremap <silent> mw <Cmd>call ddu#start(#{
       \     kind: 'mrw', 
       \     current: v:true 
       \   }
-      \ }], 
-      \ uiParams: #{
-      \   ff: #{
-      \    autoAction: #{ 
-      \     name: 'preview' 
-      \    },
-      \   },
-      \ }
+      \ }]
       \ })<CR>
 " ddu-source-file_external
 nnoremap <silent> ;f <Cmd>call <SID>ddu_start(#{
@@ -238,38 +168,19 @@ nnoremap <silent> ;f <Cmd>call <SID>ddu_start(#{
       \   params: #{
       \     cmd: ["git", "ls-files", "--exclude-standard", "-c", "-o"],
       \   },
-      \ }],
-      \ uiParams: #{
-      \   ff: #{
-      \    autoAction: #{
-      \      name: 'preview'
-      \    },
-      \   },
-      \ }
+      \ }]
       \ })<CR>
 " ddu-source-help
 nnoremap <silent> ;h <Cmd>call <SID>ddu_start(#{
       \ sources: [#{
       \   name: 'help'
-      \ }],
-      \ uiParams: #{
-      \   ff: #{
-      \     autoAction: #{
-      \       name: 'preview' 
-      \     },
-      \   },
-      \ }
+      \ }]
       \ })<CR>
 " ddu-source-git_diff
 nnoremap <silent> ;gd <Cmd>call <SID>ddu_start(#{
       \ sources: [#{
       \   name: 'git_diff'
-      \ }],
-      \ uiParams: #{
-      \   ff: #{
-      \     autoAction: #{ name: 'preview' }
-      \   }
-      \ }
+      \ }]
       \ })<CR>
 " ddu-source-git
 nnoremap <silent> ;gs <Cmd>call <SID>ddu_start(#{
@@ -278,12 +189,7 @@ nnoremap <silent> ;gs <Cmd>call <SID>ddu_start(#{
     	\   options: #{
     	\     path: expand('%:p'),
     	\   },
-      \ }],
-      \ uiParams: #{
-      \   ff: #{
-      \     autoAction: #{ name: 'preview' }
-      \   }
-      \ }
+      \ }]
       \ })<CR>    \ })
 command -nargs=1 Capture call <SID>ddu_start(#{
       \ sources: [#{
@@ -303,7 +209,6 @@ command Dpp call <SID>ddu_start(#{
 cnoremap <C-c> <Home>Capture <CR>
 " }}}
 " hook_source {{{
-call ddu#custom#alias('default', 'action', 'preview_ripgrep', 'preview')
 call ddu#custom#load_config("@ddu_ts@")
 " }}}
 " ddu-ff {{{
@@ -311,7 +216,6 @@ nnoremap <buffer> <CR> <Cmd>call ddu#ui#do_action("itemAction")<CR>
 nnoremap <buffer> <Space> <Cmd>call ddu#ui#do_action("toggleSelectItem")<CR>
 nnoremap <buffer> i <Cmd>call ddu#ui#do_action("openFilterWindow")<CR>
 nnoremap <buffer> q <Cmd>call ddu#ui#do_action("quit")<CR>
-nnoremap <buffer> p <Cmd>call ddu#ui#do_action("previewPath")<CR>
 nnoremap <buffer> P <Cmd>call ddu#ui#do_action("toggleAutoAction")<CR>
 nnoremap <buffer> a <Cmd>call ddu#ui#do_action("chooseAction")<CR>
 nnoremap <buffer> l <Cmd>call ddu#ui#do_action('expandItem')<CR>

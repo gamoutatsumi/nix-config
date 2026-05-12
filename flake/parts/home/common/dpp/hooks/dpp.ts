@@ -87,11 +87,7 @@ export class Config extends BaseConfig {
       );
     }
 
-    for (
-      const toml of [
-        "@lazy_toml@",
-      ].filter(is.String)
-    ) {
+    for (const toml of ["@lazy_toml@"].filter(is.String)) {
       tomls.push(
         (await args.dpp.extAction(
           args.denops,
@@ -118,7 +114,7 @@ export class Config extends BaseConfig {
       ].filter(is.String)
     ) {
       tomls.push(
-        await args.dpp.extAction(
+        (await args.dpp.extAction(
           args.denops,
           context,
           options,
@@ -134,7 +130,7 @@ export class Config extends BaseConfig {
               extParams: { installer: { installerFrozen: true } },
             },
           },
-        ) as Toml,
+        )) as Toml,
       );
     }
 
