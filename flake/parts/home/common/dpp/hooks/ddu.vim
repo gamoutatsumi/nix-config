@@ -306,9 +306,6 @@ cnoremap <C-c> <Home>Capture <CR>
 call ddu#custom#alias('default', 'action', 'preview_ripgrep', 'preview')
 call ddu#custom#load_config("@ddu_ts@")
 " }}}
-" hook_post_update {{{
-call ddu#set_static_import_path()
-" }}}
 " ddu-ff {{{
 nnoremap <buffer> <CR> <Cmd>call ddu#ui#do_action("itemAction")<CR>
 nnoremap <buffer> <Space> <Cmd>call ddu#ui#do_action("toggleSelectItem")<CR>

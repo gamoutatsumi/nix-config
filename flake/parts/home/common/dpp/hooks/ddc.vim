@@ -48,6 +48,3 @@ smap <silent><expr> <S-TAB> denippet#jumpable(-1) ? '<Plug>(denippet-jump-prev)'
 
 lua require("ddc_source_lsp_setup").setup({ override_capabilities = true, respect_trigger = true })
 " }}}
-" hook_post_update {{{
-call ddc#set_static_import_path()
-" }}}
