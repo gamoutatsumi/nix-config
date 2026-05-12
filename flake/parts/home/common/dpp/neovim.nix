@@ -1,12 +1,6 @@
 _: {
   plugins = [
     {
-      repo = "tversteeg/registers.nvim";
-      lua_add = ''
-        require('registers').setup {}
-      '';
-    }
-    {
       repo = "lewis6991/gitsigns.nvim";
       hooks_file = ./hooks/gitsigns.lua;
     }
