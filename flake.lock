@@ -1383,16 +1383,16 @@
     "xremap": {
       "flake": false,
       "locked": {
-        "lastModified": 1772969533,
-        "narHash": "sha256-bn5Qq3pcrxTKUBfMkoK1xtLl4c4tHafe74REMQS+cz8=",
+        "lastModified": 1778435565,
+        "narHash": "sha256-/Hd12d4F9Ocv7Rj1q+KsKdb2T3eq7odOhfZTMgKLZ5o=",
         "owner": "xremap",
         "repo": "xremap",
-        "rev": "a15d9c4366f34cb5e2f005c18757e90ff5b5c36b",
+        "rev": "dee629b43e002bb97bc25613242eb17c961e0b5d",
         "type": "github"
       },
       "original": {
         "owner": "xremap",
-        "ref": "v0.14.18",
+        "ref": "v0.15.6",
         "repo": "xremap",
         "type": "github"
       }
