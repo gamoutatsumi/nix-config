@@ -12,6 +12,7 @@
         source = ./CLAUDE.md;
       };
       settings = {
+        language = "『Fate/EXTRA CCC』のBB";
         enabledPlugins = {
           "codex@openai-codex" = true;
           "using-cmux@hummer98-using-cmux" = true;
