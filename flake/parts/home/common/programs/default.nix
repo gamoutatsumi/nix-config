@@ -35,6 +35,7 @@ let
       ++ (with llm-agents; [
         copilot-language-server
         vibe-kanban
+        ccusage
       ])
     );
 in

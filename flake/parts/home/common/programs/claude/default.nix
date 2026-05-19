@@ -12,45 +12,61 @@
         source = ./CLAUDE.md;
       };
       settings = {
-        language = "日本語";
+        # keep-sorted start block=yes
+        autoCompactEnabled = false;
+        enableAllProjectMcpServers = true;
         enabledPlugins = {
+          # keep-sorted start
           "codex@openai-codex" = true;
+          "gopls-lsp@claude-plugins-official" = true;
           "using-cmux@hummer98-using-cmux" = true;
+          # keep-sorted end
         };
         env = {
           USE_BUILTIN_RIPGREP = "0";
           USE_BUILTIN_FD = "0";
         };
+        language = "日本語";
+        outputStyle = "Explanatory";
         permissions = {
           allow = [
-            "Bash(rg:*)"
-            "Bash(ls:*)"
+            # keep-sorted start
             "Bash(cat:*)"
-            "Bash(echo:*)"
-            "Bash(tail:*)"
-            "Bash(head:*)"
-            "Bash(fd:*)"
             "Bash(cmux:*)"
+            "Bash(echo:*)"
+            "Bash(fd:*)"
+            "Bash(head:*)"
+            "Bash(ls:*)"
             "Bash(osascript:*)"
+            "Bash(rg:*)"
             "Bash(sleep:*)"
+            "Bash(tail:*)"
+            # keep-sorted end
           ];
           deny = [
-            "Bash(sudo:*)"
-            "Bash(rm:*)"
-            "Bash(rm -rf:*)"
-            "Bash(git push:*)"
-            "Bash(git reset:*)"
-            "Bash(git rebase:*)"
+            # keep-sorted start
             "Bash(curl:*)"
-            "Bash(wget:*)"
-            "Bash(nc:*)"
-            "Bash(npm uninstall:*)"
-            "Bash(npm remove:*)"
-            "Bash(psql:*)"
-            "Bash(mysql:*)"
+            "Bash(git push:*)"
+            "Bash(git rebase:*)"
+            "Bash(git reset:*)"
             "Bash(mongod:*)"
+            "Bash(mysql:*)"
+            "Bash(nc:*)"
+            "Bash(npm remove:*)"
+            "Bash(npm uninstall:*)"
+            "Bash(psql:*)"
+            "Bash(rm -rf:*)"
+            "Bash(rm:*)"
+            "Bash(sudo:*)"
+            "Bash(wget:*)"
+            # keep-sorted end
           ];
         };
+        statusLine = {
+          type = "command";
+          command = "echo $(cat) | ccusage statusline";
+        };
+        # keep-sorted end
       };
     };
   };
