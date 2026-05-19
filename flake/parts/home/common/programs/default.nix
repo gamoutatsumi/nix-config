@@ -14,23 +14,29 @@ let
   };
   lspServers =
     (with pkgs; [ nixd ])
-    ++ (with upkgs; [
-      # keep-sorted start
-      bash-language-server
-      docker-language-server
-      efm-langserver
-      gopls
-      jinja-lsp
-      llm-agents.copilot-language-server
-      lua-language-server
-      prettierd
-      pyright
-      terraform-ls
-      typos-lsp
-      vscode-langservers-extracted
-      yaml-language-server
-      #keep-sorted end
-    ]);
+    ++ (
+      with upkgs;
+      [
+        # keep-sorted start
+        bash-language-server
+        docker-language-server
+        efm-langserver
+        gopls
+        jinja-lsp
+        lua-language-server
+        prettierd
+        pyright
+        terraform-ls
+        typos-lsp
+        vscode-langservers-extracted
+        yaml-language-server
+        #keep-sorted end
+      ]
+      ++ (with llm-agents; [
+        copilot-language-server
+        vibe-kanban
+      ])
+    );
 in
 {
   imports = [
