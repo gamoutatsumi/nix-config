@@ -31,6 +31,7 @@
         permissions = {
           allow = [
             # keep-sorted start
+            "Bash(ast-grep:*)"
             "Bash(cat:*)"
             "Bash(cmux:*)"
             "Bash(echo:*)"
@@ -45,20 +46,36 @@
           ];
           deny = [
             # keep-sorted start
+            "Bash(awk *.env*)"
+            "Bash(bat *.env*)"
+            "Bash(cat *.env*)"
             "Bash(curl:*)"
+            "Bash(find:*)"
             "Bash(git push:*)"
             "Bash(git rebase:*)"
             "Bash(git reset:*)"
+            "Bash(grep *.env*)"
+            "Bash(grep:*)"
+            "Bash(head *.env*)"
+            "Bash(less *.env*)"
             "Bash(mongod:*)"
+            "Bash(more *.env*)"
             "Bash(mysql:*)"
+            "Bash(nano *.env*)"
             "Bash(nc:*)"
             "Bash(npm remove:*)"
             "Bash(npm uninstall:*)"
             "Bash(psql:*)"
             "Bash(rm -rf:*)"
             "Bash(rm:*)"
+            "Bash(sed *.env*)"
             "Bash(sudo:*)"
+            "Bash(tail *.env*)"
+            "Bash(vim *.env*)"
             "Bash(wget:*)"
+            "Read(*.env)"
+            "Read(.env)"
+            "Read(.env.*)"
             # keep-sorted end
           ];
         };
