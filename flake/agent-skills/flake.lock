@@ -1,22 +1,5 @@
 {
   "nodes": {
-    "agent-browser": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1778166930,
-        "narHash": "sha256-c+AJAXMX88t+zzFsEAtFJDjDY5EbhmEyMRGFL4t63nE=",
-        "owner": "vercel-labs",
-        "repo": "agent-browser",
-        "rev": "c830d1b67dc18b754e305859f0ae587f858a1447",
-        "type": "github"
-      },
-      "original": {
-        "owner": "vercel-labs",
-        "ref": "v0.27.0",
-        "repo": "agent-browser",
-        "type": "github"
-      }
-    },
     "agent-skills": {
       "inputs": {
         "home-manager": [
@@ -53,22 +36,6 @@
       "original": {
         "owner": "anthropics",
         "repo": "skills",
-        "type": "github"
-      }
-    },
-    "ast-grep-source": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1769044697,
-        "narHash": "sha256-LgGFtPieyKtoru22AhHW8hvkJ8kCHO2Cr8rBOWGuxvY=",
-        "owner": "ast-grep",
-        "repo": "agent-skill",
-        "rev": "577f4d4507678f2c8cee150fae25e6ce309f70b1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ast-grep",
-        "repo": "agent-skill",
         "type": "github"
       }
     },
@@ -127,10 +94,8 @@
     },
     "root": {
       "inputs": {
-        "agent-browser": "agent-browser",
         "agent-skills": "agent-skills",
         "anthropic-skills": "anthropic-skills",
-        "ast-grep-source": "ast-grep-source",
         "hashicorp-skills": "hashicorp-skills",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
