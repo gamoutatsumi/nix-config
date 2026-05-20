@@ -34,10 +34,7 @@ let
       ]
       ++ (with llm-agents; [
         # keep-sorted start
-        antigravity
-        ccusage
         copilot-language-server
-        vibe-kanban
         # keep-sorted end
       ])
     );
@@ -128,9 +125,15 @@ in
           # keep-sorted end
         ]
         ++ (with llm-agents; [
+          #keep-sorted start
+          agent-browser
+          antigravity
           cc-sdd
-          openspec
+          ccusage
           copilot-cli
+          openspec
+          vibe-kanban
+          # keep-sorted end
         ])
       )
       ++ lspServers;

@@ -1,10 +1,6 @@
 {
   inputs = {
     # keep-sorted start block=yes
-    agent-browser = {
-      url = "github:vercel-labs/agent-browser?ref=v0.27.0";
-      flake = false;
-    };
     agent-skills = {
       url = "github:Kyure-A/agent-skills-nix";
       inputs = {
@@ -18,10 +14,6 @@
     };
     anthropic-skills = {
       url = "github:anthropics/skills";
-      flake = false;
-    };
-    ast-grep-source = {
-      url = "github:ast-grep/agent-skill";
       flake = false;
     };
     hashicorp-skills = {
@@ -45,16 +37,14 @@
   outputs =
     {
       agent-skills,
-      agent-browser,
       anthropic-skills,
-      ast-grep-source,
       hashicorp-skills,
       ...
     }:
     {
       homeManagerModules = {
         default =
-          { upkgs, ... }:
+          { ... }:
           {
             imports = [
               agent-skills.homeManagerModules.default
@@ -64,10 +54,6 @@
               agent-skills = {
                 enable = true;
                 sources = {
-                  agent-browser-source = {
-                    path = agent-browser;
-                    subdir = "skills";
-                  };
                   anthropic = {
                     path = anthropic-skills;
                     subdir = "skills";
@@ -76,45 +62,11 @@
                     path = hashicorp-skills;
                     subdir = "terraform/provider-development/skills";
                   };
-                  ast-grep-source = {
-                    path = ast-grep-source;
-                    subdir = "ast-grep/skills";
-                  };
                   personal = {
                     path = ./skills;
                   };
                 };
                 skills = {
-                  explicit = {
-                    agent-browser = {
-                      from = "agent-browser-source";
-                      path = "agent-browser";
-                      packages = with upkgs; [ llm-agents.agent-browser ];
-                      transform =
-                        { original, dependencies }:
-                        ''
-                          ${original}
-
-                          ${dependencies}
-
-                          - You should use ./agent-browser for execution.
-                        '';
-                    };
-                    ast-grep = {
-                      from = "ast-grep-source";
-                      path = "ast-grep";
-                      packages = with upkgs; [ ast-grep ];
-                      transform =
-                        { original, dependencies }:
-                        ''
-                          ${original}
-
-                          ${dependencies}
-
-                          - You should use ./ast-grep for execution.
-                        '';
-                    };
-                  };
                   enable = [
                     "frontend-design"
                     "skill-creator"
