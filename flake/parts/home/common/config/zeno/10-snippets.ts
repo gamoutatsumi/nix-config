@@ -10,9 +10,11 @@ type PartialRequire<O, K extends keyof O> =
   }
   & O;
 
-type Context = RequireOne<
-  { lbuffer?: string; rbuffer?: string; buffer?: string }
->;
+type Context = RequireOne<{
+  lbuffer?: string;
+  rbuffer?: string;
+  buffer?: string;
+}>;
 
 const CONTEXTS: Record<string, Context> = {
   commit: { lbuffer: "git\\scommit\\s+" },
@@ -259,6 +261,16 @@ export default defineConfig(() => {
         name: "git switch create",
         keyword: "gswc",
         snippet: "git switch -c {{branch}}",
+      },
+      {
+        name: "git worktree",
+        keyword: "gw",
+        snippet: "git worktree",
+      },
+      {
+        name: "git worktree add",
+        keyword: "gwa",
+        snippet: "git-worktree-add-interactive",
       },
     ],
     completions: [],

@@ -184,6 +184,26 @@ in
             local profile=$(${lib.getExe upkgs.google-cloud-sdk} config configurations list | ${lib.getExe pkgs.gawk} '{ print $1,$3,$4 }' | ${lib.getExe pkgs.unixtools.column} -t | ${fzf-tmux_exe} --header-lines=1 | ${lib.getExe pkgs.gawk} '{ print $1 }')
              ${lib.getExe upkgs.google-cloud-sdk} config configurations activate "$profile"
           '';
+          git-worktree-add-interactive = ''
+            git-worktree-add-interactive() {
+              local branch=$(git branch --format='%(refname:short)' | fzf --preview 'git log --oneline -20 --color=always {}')
+              if [[ -z "$branch" ]]; then
+                return 1
+              fi
+
+              local repo_base_path="$(git rev-parse --show-toplevel)"
+              repo_base_path=''${repo_base_path%+*}
+              local repo_path="''${repo_base_path}+''${branch//\//_}"
+              if [[ -d "$repo_path" ]]; then
+                echo "warning: ''${repo_path} already exists" >&2
+                echo "''${repo_path}"
+                return 0
+              fi
+
+              git worktree add -q "''${repo_path}" "''${branch}" || return 1
+              echo "''${repo_path}"
+            }
+          '';
         };
     };
   };
