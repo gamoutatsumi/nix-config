@@ -85,29 +85,10 @@
         "type": "github"
       }
     },
-    "agent-browser": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1778166930,
-        "narHash": "sha256-c+AJAXMX88t+zzFsEAtFJDjDY5EbhmEyMRGFL4t63nE=",
-        "owner": "vercel-labs",
-        "repo": "agent-browser",
-        "rev": "c830d1b67dc18b754e305859f0ae587f858a1447",
-        "type": "github"
-      },
-      "original": {
-        "owner": "vercel-labs",
-        "ref": "v0.27.0",
-        "repo": "agent-browser",
-        "type": "github"
-      }
-    },
     "agent-skills": {
       "inputs": {
-        "agent-browser": "agent-browser",
         "agent-skills": "agent-skills_2",
         "anthropic-skills": "anthropic-skills",
-        "ast-grep-source": "ast-grep-source",
         "hashicorp-skills": "hashicorp-skills",
         "home-manager": [
           "home-manager"
@@ -187,22 +168,6 @@
         "type": "github"
       }
     },
-    "ast-grep-source": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1769044697,
-        "narHash": "sha256-LgGFtPieyKtoru22AhHW8hvkJ8kCHO2Cr8rBOWGuxvY=",
-        "owner": "ast-grep",
-        "repo": "agent-skill",
-        "rev": "577f4d4507678f2c8cee150fae25e6ce309f70b1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ast-grep",
-        "repo": "agent-skill",
-        "type": "github"
-      }
-    },
     "blueprint": {
       "inputs": {
         "nixpkgs": [
@@ -231,11 +196,11 @@
     "brew-api": {
       "flake": false,
       "locked": {
-        "lastModified": 1779254502,
-        "narHash": "sha256-8WwbTHxfangm6Gt610nVgSMvRoaz742X47GiBMWfDyU=",
+        "lastModified": 1779261185,
+        "narHash": "sha256-hcP1UA6S0Sc4zCr8nO/smjLIItka3L6kLCbFplLW89I=",
         "owner": "BatteredBunny",
         "repo": "brew-api",
-        "rev": "fd3d366c861eb5c935bd8cfca3c0f56407271544",
+        "rev": "c07379eefdfe89a80f0050e323d10384076b1d06",
         "type": "github"
       },
       "original": {
@@ -1380,11 +1345,11 @@
     "vim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1779216674,
-        "narHash": "sha256-pfvHzIefiZPstvLlhVAJ61lUsj28QRB9sqKwxSyluhM=",
+        "lastModified": 1779261232,
+        "narHash": "sha256-grpq30lp+zNsQRm2GxYOpQKQeY4rMWgkhE3W2SRRNwE=",
         "owner": "vim",
         "repo": "vim",
-        "rev": "35b767a090cc7b918dcafc9feb1a78cf0938d6bc",
+        "rev": "0fa3603d6d9cec774f3060a33c59778c9baf0e41",
         "type": "github"
       },
       "original": {
