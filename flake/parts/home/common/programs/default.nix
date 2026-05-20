@@ -30,12 +30,15 @@ let
         typos-lsp
         vscode-langservers-extracted
         yaml-language-server
-        #keep-sorted end
+        # keep-sorted end
       ]
       ++ (with llm-agents; [
+        # keep-sorted start
+        antigravity
+        ccusage
         copilot-language-server
         vibe-kanban
-        ccusage
+        # keep-sorted end
       ])
     );
 in

@@ -9,7 +9,7 @@
       package = upkgs.llm-agents.claude-code;
       commandsDir = ./commands;
       memory = {
-        source = ./CLAUDE.md;
+        source = ../AGENTS.md;
       };
       settings = {
         # keep-sorted start block=yes
