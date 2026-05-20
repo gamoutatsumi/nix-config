@@ -97,12 +97,12 @@
             "name": null,
             "owner": "fredrikaverpil",
             "repo": "neotest-golang",
-            "rev": "v2.8.0",
-            "sha256": "sha256-dsiBQi1zKMEwxAX+rcmNszHdKOVVvCeoSW/uMKQVhjE=",
+            "rev": "v2.9.0",
+            "sha256": "sha256-3nIXy/Lrwph1skT5wn2jKrN10PArBOsOa6V4Nir/f4Y=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2.8.0"
+        "version": "v2.9.0"
     },
     "neotest-plenary": {
         "cargoLocks": null,
