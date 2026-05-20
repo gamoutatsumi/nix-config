@@ -58,8 +58,8 @@ in
       sessionVariables = {
         # keep-sorted start block = yes
         ANSIBLE_HOME = "${config.xdg.dataHome}/ansible";
-        ANTHROPIC_DEFAULT_OPUS_MODEL = "claude-opus-4-5";
-        ANTHROPIC_DEFAULT_SONNET_MODEL = "claude-sonnet-4-5";
+        ANTHROPIC_DEFAULT_OPUS_MODEL = "claude-opus-4-7";
+        ANTHROPIC_DEFAULT_SONNET_MODEL = "claude-sonnet-4-6";
         ANTHROPIC_MODEL = "opusplan";
         DIRENV_LOG_FORMAT = "";
         DOCKER_BUILDKIT = 1;
@@ -72,6 +72,7 @@ in
         MAKEFLAGS = "-j";
         MANPAGER = "${lib.getExe config.programs.neovim.finalPackage} -c ASMANPAGER -";
         MYCLI_HISTFILE = "${config.xdg.dataHome}/mycli/history";
+        NH_SHOW_ACTIVATION_LOGS = "1";
         NIX_CONFIG = "access-tokens = github.com=$(gh auth token)";
         PAGER = "${lib.getExe' pkgs.ov "ov"}";
         PURE_GIT_PULL = 0;
