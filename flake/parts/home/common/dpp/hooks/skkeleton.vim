@@ -29,8 +29,6 @@ function s:skkeleton_init() abort
 endfunction
 augroup skkeleton-user
   autocmd!
-  autocmd User skkeleton-enable-pre call ddc#disable()
-  autocmd User skkeleton-disable-post call ddc#enable()
   autocmd User skkeleton-initialize-pre call s:skkeleton_init()
   autocmd User skkeleton-initialize-post call s:skkeleton_init_kanatable()
   autocmd User skkeleton-mode-changed redrawstatus
