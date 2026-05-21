@@ -24,12 +24,27 @@
           "feature-dev@claude-plugins-official" = true;
           "gopls-lsp@claude-plugins-official" = true;
           "security-guidance@claude-plugins-official" = true;
-          "using-cmux@hummer98-using-cmux" = true;
           # keep-sorted end
         };
         env = {
           USE_BUILTIN_RIPGREP = "0";
           USE_BUILTIN_FD = "0";
+        };
+        extraKnownMarketplaces = {
+          # keep-sorted start block=yes
+          ast-grep-marketplace = {
+            source = {
+              source = "github";
+              repo = "ast-grep/agent-skill";
+            };
+          };
+          openai-codex = {
+            source = {
+              source = "github";
+              repo = "openai/codex-plugin-cc";
+            };
+          };
+          # keep-sorted end
         };
         language = "日本語";
         outputStyle = "Explanatory";
