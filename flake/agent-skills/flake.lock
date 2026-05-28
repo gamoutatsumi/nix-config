@@ -10,11 +10,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779692292,
-        "narHash": "sha256-1ttGc9LQxmlLz0GlSC629j7Avpp6FF6NqNXoxDZeYoA=",
+        "lastModified": 1779957311,
+        "narHash": "sha256-ay1wGiKQIGIcFpSxlutpoAlsPVerbVhDUXtmaDVLz+o=",
         "owner": "Kyure-A",
         "repo": "agent-skills-nix",
-        "rev": "db664effdb55aecfec2e761b66f459e8270c3520",
+        "rev": "df7a6e0fa87655cf28369781232d153c1c7b55ca",
         "type": "github"
       },
       "original": {
@@ -42,11 +42,11 @@
     "hashicorp-skills": {
       "flake": false,
       "locked": {
-        "lastModified": 1778520922,
-        "narHash": "sha256-6lf02w/okO6Y7qJGanhRLZsggWi2EIR14fmZZxJGJ2I=",
+        "lastModified": 1779983208,
+        "narHash": "sha256-NMelhZRwYpVq39QeK9cAOkhzVgWbPLVOv5Plf5iQ+Lw=",
         "owner": "hashicorp",
         "repo": "agent-skills",
-        "rev": "43ca9b0cde131e20a129c106bc9f6b6f9f1e5c9a",
+        "rev": "339a113935812ad75c6ff90d418b739a021826d1",
         "type": "github"
       },
       "original": {
@@ -78,11 +78,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1779467186,
-        "narHash": "sha256-nOesoDCiXcUftqbRBMz9tt4blI5PvljMWbm3kuCA+0s=",
+        "lastModified": 1779796641,
+        "narHash": "sha256-ZsIrKmhp4vbBXoXXmR/tBXA/UCsAQiJL9vsgZEduhVY=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "b77b3de8775677f84492abe84635f87b0e153f0f",
+        "rev": "25f538306313eae3927264466c70d7001dcea1df",
         "type": "github"
       },
       "original": {
