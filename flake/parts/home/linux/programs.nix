@@ -14,7 +14,6 @@ in
       with pkgs;
       [
         # keep-sorted start
-        bitwarden-desktop
         chntpw
         gcr
         gimp

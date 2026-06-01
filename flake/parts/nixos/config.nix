@@ -19,7 +19,6 @@
     systemPackages = with pkgs; [
       gparted
       gptfdisk
-      bitwarden-desktop
     ];
     etc = {
       "pkcs11/modules/opensc-pkcs11".text = ''
