@@ -84,7 +84,6 @@ in
         ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=8";
         ZSH_AUTOSUGGEST_STRATEGY = "(${
           lib.concatStringsSep " " [
-            "match_prev_cmd"
             "history"
           ]
         })";
