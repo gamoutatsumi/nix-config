@@ -13,7 +13,13 @@ in
         ipc = "on";
         splash = false;
         preload = [ "${atri_wp}" ];
-        wallpaper = [ ", ${atri_wp}" ];
+        wallpaper = [
+          {
+            monitor = "";
+            fit_mode = "cover";
+            path = "${atri_wp}";
+          }
+        ];
       };
     };
   };
