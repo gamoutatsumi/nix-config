@@ -14,7 +14,7 @@
           web_search = true;
         };
       };
-      custom-instructions = builtins.readFile ../AGENTS.md;
+      context = builtins.readFile ../AGENTS.md;
     };
   };
 }

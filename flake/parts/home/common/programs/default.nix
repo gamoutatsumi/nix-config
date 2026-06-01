@@ -127,7 +127,7 @@ in
         ++ (with llm-agents; [
           #keep-sorted start
           agent-browser
-          antigravity
+          antigravity-cli
           cc-sdd
           ccusage
           copilot-cli
@@ -363,18 +363,18 @@ in
       enable = true;
       includes = [ "${config.home.homeDirectory}/.ssh/config_work" ];
       enableDefaultConfig = false;
-      matchBlocks = {
-        "*" = {
-          forwardAgent = false;
-          addKeysToAgent = "no";
-          compression = false;
-          serverAliveInterval = 0;
-          serverAliveCountMax = 3;
-          hashKnownHosts = false;
-          userKnownHostsFile = "~/.ssh/known_hosts";
-          controlMaster = "no";
-          controlPath = "~/.ssh/master-%r@%n:%p";
-          controlPersist = "no";
+      settings = {
+        "Host *" = {
+          ForwardAgent = false;
+          AddKeysToAgent = "no";
+          Compression = false;
+          ServerAliveInterval = 0;
+          ServerAliveCountMax = 3;
+          HashKnownHosts = false;
+          UserKnownHostsFile = "~/.ssh/known_hosts";
+          ControlMaster = "no";
+          ControlPath = "~/.ssh/master-%r@%n:%p";
+          ControlPersist = "no";
         };
       };
     };

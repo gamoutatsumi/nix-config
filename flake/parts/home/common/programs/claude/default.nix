@@ -8,9 +8,7 @@
       enable = true;
       package = upkgs.llm-agents.claude-code;
       commandsDir = ./commands;
-      memory = {
-        source = ../AGENTS.md;
-      };
+      context = builtins.readFile ../AGENTS.md;
       settings = {
         # keep-sorted start block=yes
         autoCompactEnabled = false;

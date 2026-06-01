@@ -78,8 +78,6 @@
               run = "move-node-to-workspace 4";
             }
           ];
-        };
-        userSettings = {
           exec-on-workspace-change = [
             "/bin/bash"
             "-c"
