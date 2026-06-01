@@ -82,10 +82,12 @@ in
         ZENO_ENABLE_SOCK = 1;
         ZENO_GIT_CAT = "bat";
         ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=8";
-        ZSH_AUTOSUGGEST_STRATEGY = [
-          "match_prev_cmd"
-          "history"
-        ];
+        ZSH_AUTOSUGGEST_STRATEGY = "(${
+          lib.concatStringsSep " " [
+            "match_prev_cmd"
+            "history"
+          ]
+        })";
         # keep-sorted end
       };
       shellAliases = {
