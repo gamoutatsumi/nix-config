@@ -39,26 +39,46 @@
         launchd = {
           enable = true;
         };
-        extraConfig = ''
-          [[on-window-detected]]
-          if.app-id = "com.tinyspeck.slackmacgap"
-          run = "move-node-to-workspace S"
-          [[on-window-detected]]
-          if.app-id = "org.alacritty"
-          run = "move-node-to-workspace 3"
-          [[on-window-detected]]
-          if.app-id = "com.vivaldi.Vivaldi"
-          run = "move-node-to-workspace 1"
-          [[on-window-detected]]
-          if.app-id = "com.google.Chrome"
-          run = "move-node-to-workspace 2"
-          [[on-window-detected]]
-          if.app-id = "com.hnc.Discord"
-          run = "move-node-to-workspace D"
-          [[on-window-detected]]
-          if.app-id = "com.cmuxterm.app"
-          run = "move-node-to-workspace 4"
-        '';
+        settings = {
+          on-window-detected = [
+            {
+              "if" = {
+                app-id = "com.tinyspeck.slackmacgap";
+              };
+              run = "move-node-to-workspace S";
+            }
+            {
+              "if" = {
+                app-id = "org.alacritty";
+              };
+              run = "move-node-to-workspace 3";
+            }
+            {
+              "if" = {
+                app-id = "com.vivaldi.Vivaldi";
+              };
+              run = "move-node-to-workspace 1";
+            }
+            {
+              "if" = {
+                app-id = "com.google.Chrome";
+              };
+              run = "move-node-to-workspace 2";
+            }
+            {
+              "if" = {
+                app-id = "com.hnc.Discord";
+              };
+              run = "move-node-to-workspace D";
+            }
+            {
+              "if" = {
+                app-id = "com.cmuxterm.app";
+              };
+              run = "move-node-to-workspace 4";
+            }
+          ];
+        };
         userSettings = {
           exec-on-workspace-change = [
             "/bin/bash"
