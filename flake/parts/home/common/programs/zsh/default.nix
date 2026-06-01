@@ -82,11 +82,6 @@ in
         ZENO_ENABLE_SOCK = 1;
         ZENO_GIT_CAT = "bat";
         ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=8";
-        ZSH_AUTOSUGGEST_STRATEGY = "(${
-          lib.concatStringsSep " " [
-            "history"
-          ]
-        })";
         # keep-sorted end
       };
       shellAliases = {
