@@ -58,7 +58,7 @@ in
       sessionVariables = {
         # keep-sorted start block = yes
         ANSIBLE_HOME = "${config.xdg.dataHome}/ansible";
-        ANTHROPIC_DEFAULT_OPUS_MODEL = "claude-opus-4-7";
+        ANTHROPIC_DEFAULT_OPUS_MODEL = "claude-opus-4-8";
         ANTHROPIC_DEFAULT_SONNET_MODEL = "claude-sonnet-4-6";
         ANTHROPIC_MODEL = "opusplan";
         DIRENV_LOG_FORMAT = "";
