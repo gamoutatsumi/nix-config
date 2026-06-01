@@ -243,7 +243,7 @@ in
     # keep-sorted end
   };
   system = {
-    stateVersion = "25.11";
+    stateVersion = "26.05";
   };
   systemd = {
     timers = {

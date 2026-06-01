@@ -14,7 +14,7 @@ in
 {
   home = {
     username = "${username}";
-    stateVersion = "25.11"; # Please read the comment before changing.
+    stateVersion = "26.05"; # Please read the comment before changing.
   };
   nix = {
     settings = {

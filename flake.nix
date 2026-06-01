@@ -137,7 +137,7 @@
       url = "github:hercules-ci/flake-parts";
     };
     home-manager = {
-      url = "github:nix-community/home-manager?ref=release-25.11";
+      url = "github:nix-community/home-manager?ref=release-26.05";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs";
@@ -180,7 +180,7 @@
       };
     };
     nix-darwin = {
-      url = "github:nix-darwin/nix-darwin?ref=nix-darwin-25.11&shallow=1";
+      url = "github:nix-darwin/nix-darwin?ref=nix-darwin-26.05&shallow=1";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs";
@@ -204,7 +204,7 @@
       };
     };
     nixpkgs = {
-      url = "github:NixOS/nixpkgs?ref=nixos-25.11&shallow=1";
+      url = "github:NixOS/nixpkgs?ref=nixos-26.05&shallow=1";
     };
     nixpkgs-unstable = {
       url = "github:NixOS/nixpkgs?ref=nixos-unstable&shallow=1";

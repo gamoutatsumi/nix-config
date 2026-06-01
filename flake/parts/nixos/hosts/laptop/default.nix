@@ -241,7 +241,7 @@ in
   };
   swapDevices = [ { device = "/.swapvol/swapfile"; } ];
   system = {
-    stateVersion = "25.11";
+    stateVersion = "26.05";
   };
   users = {
     mutableUsers = false;
