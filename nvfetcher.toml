@@ -65,3 +65,7 @@ fetch.github = "ast-grep/agent-skill"
 [openai-codex-marketplace]
 src.git = "https://github.com/openai/codex-plugin-cc"
 fetch.github = "openai/codex-plugin-cc"
+
+[anthropic-official-marketplace]
+src.git = "https://github.com/anthropics/claude-plugins-official"
+fetch.github = "anthropics/claude-plugins-official"
