@@ -2,6 +2,9 @@
   upkgs,
   ...
 }:
+let
+  fetchers = upkgs.callPackage ../../../../../../_sources/generated.nix { };
+in
 {
   programs = {
     claude-code = {
@@ -9,6 +12,10 @@
       package = upkgs.llm-agents.claude-code;
       commandsDir = ./commands;
       context = builtins.readFile ../AGENTS.md;
+      marketPlaces = {
+        "ast-grep-marketplace" = fetchers.ast-grep-marketplace.src;
+        "openai-codex" = fetchers.openai-codex-marketplace.src;
+      };
       settings = {
         # keep-sorted start block=yes
         autoCompactEnabled = false;
@@ -27,22 +34,6 @@
         env = {
           USE_BUILTIN_RIPGREP = "0";
           USE_BUILTIN_FD = "0";
-        };
-        extraKnownMarketplaces = {
-          # keep-sorted start block=yes
-          ast-grep-marketplace = {
-            source = {
-              source = "github";
-              repo = "ast-grep/agent-skill";
-            };
-          };
-          openai-codex = {
-            source = {
-              source = "github";
-              repo = "openai/codex-plugin-cc";
-            };
-          };
-          # keep-sorted end
         };
         language = "日本語";
         outputStyle = "Explanatory";
