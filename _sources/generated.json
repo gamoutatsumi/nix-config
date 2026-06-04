@@ -1,6 +1,27 @@
 {
+    "ast-grep-marketplace": {
+        "cargoLock": null,
+        "date": "2026-01-21",
+        "extract": null,
+        "name": "ast-grep-marketplace",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "ast-grep",
+            "repo": "agent-skill",
+            "rev": "577f4d4507678f2c8cee150fae25e6ce309f70b1",
+            "sha256": "sha256-LgGFtPieyKtoru22AhHW8hvkJ8kCHO2Cr8rBOWGuxvY=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "577f4d4507678f2c8cee150fae25e6ce309f70b1"
+    },
     "codecompanion-nvim": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "codecompanion-nvim",
@@ -21,7 +42,7 @@
         "version": "v19.13.0"
     },
     "denops-vim": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "denops-vim",
@@ -42,7 +63,7 @@
         "version": "v8.0.2"
     },
     "jdim": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "jdim",
@@ -63,7 +84,7 @@
         "version": "JDim-v0.16.0"
     },
     "neotest": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "neotest",
@@ -84,7 +105,7 @@
         "version": "v5.18.0"
     },
     "neotest-golang": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "neotest-golang",
@@ -105,7 +126,7 @@
         "version": "v2.9.0"
     },
     "neotest-plenary": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2024-09-15",
         "extract": null,
         "name": "neotest-plenary",
@@ -126,7 +147,7 @@
         "version": "3523adcf9ffaad1911960c5813b0136c1b63a2ec"
     },
     "nvim-coverage": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2024-12-18",
         "extract": null,
         "name": "nvim-coverage",
@@ -147,7 +168,7 @@
         "version": "a939e425e363319d952a6c35fb3f38b34041ded2"
     },
     "nvim-dap": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2026-05-20",
         "extract": null,
         "name": "nvim-dap",
@@ -168,7 +189,7 @@
         "version": "531771530d4f82ad2d21e436e3cc052d68d7aebb"
     },
     "nvim-dap-go": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-07-11",
         "extract": null,
         "name": "nvim-dap-go",
@@ -189,7 +210,7 @@
         "version": "b4421153ead5d726603b02743ea40cf26a51ed5f"
     },
     "nvim-dap-ui": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2026-04-05",
         "extract": null,
         "name": "nvim-dap-ui",
@@ -210,7 +231,7 @@
         "version": "1a66cabaa4a4da0be107d5eda6d57242f0fe7e49"
     },
     "nvim-dap-virtual-text": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-05-25",
         "extract": null,
         "name": "nvim-dap-virtual-text",
@@ -231,7 +252,7 @@
         "version": "fbdb48c2ed45f4a8293d0d483f7730d24467ccb6"
     },
     "nvim-nio": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "nvim-nio",
@@ -251,8 +272,29 @@
         },
         "version": "v1.10.1"
     },
+    "openai-codex-marketplace": {
+        "cargoLock": null,
+        "date": "2026-04-18",
+        "extract": null,
+        "name": "openai-codex-marketplace",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "openai",
+            "repo": "codex-plugin-cc",
+            "rev": "807e03ac9d5aa23bc395fdec8c3767500a86b3cf",
+            "sha256": "sha256-zWddz18c3E15TPuEvjMkBkrwiFlK3ZqIG5YP5xX6ZII=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "807e03ac9d5aa23bc395fdec8c3767500a86b3cf"
+    },
     "plenary-nvim": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2026-04-10",
         "extract": null,
         "name": "plenary-nvim",
@@ -273,7 +315,7 @@
         "version": "74b06c6c75e4eeb3108ec01852001636d85a932b"
     },
     "popup-nvim": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2021-11-18",
         "extract": null,
         "name": "popup-nvim",
@@ -294,7 +336,7 @@
         "version": "b7404d35d5d3548a82149238289fa71f7f6de4ac"
     },
     "statuscol-nvim": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-06-02",
         "extract": null,
         "name": "statuscol-nvim",
