@@ -14,7 +14,7 @@
           web_search = true;
         };
       };
-      context = builtins.readFile ../AGENTS.md;
+      context = builtins.readFile ../../agents/AGENTS.md;
     };
   };
 }

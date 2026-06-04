@@ -12,7 +12,8 @@ in
       enable = true;
       package = upkgs.llm-agents.claude-code;
       commandsDir = ./commands;
-      context = builtins.readFile ../AGENTS.md;
+      context = builtins.readFile ../../agents/AGENTS.md;
+      rulesDir = ../../agents/rules;
       marketplaces = {
         "ast-grep-marketplace" = fetchers.ast-grep-marketplace.src;
         "openai-codex" = fetchers.openai-codex-marketplace.src;
