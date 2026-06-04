@@ -57,3 +57,11 @@ fetch.github = "JDimproved/JDim"
 [codecompanion-nvim]
 src.github = "olimorris/codecompanion.nvim"
 fetch.github = "olimorris/codecompanion.nvim"
+
+[ast-grep-marketplace]
+src.git = "https://github.com/ast-grep/agent-skill"
+fetch.github = "ast-grep/agent-skill"
+
+[openai-codex-marketplace]
+src.git = "https://github.com/openai/codex-plugin-cc"
+fetch.github = "openai/codex-plugin-cc"
