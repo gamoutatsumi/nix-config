@@ -6,6 +6,18 @@
   dockerTools,
 }:
 {
+  anthropic-official-marketplace = {
+    pname = "anthropic-official-marketplace";
+    version = "1c23816966668311effd450998da177893c7990d";
+    src = fetchFromGitHub {
+      owner = "anthropics";
+      repo = "claude-plugins-official";
+      rev = "1c23816966668311effd450998da177893c7990d";
+      fetchSubmodules = false;
+      sha256 = "sha256-x0ZX0A0S5KmFHSWuY9uETj9Cv4/TCrmuOBYSVrcCcws=";
+    };
+    date = "2026-06-03";
+  };
   ast-grep-marketplace = {
     pname = "ast-grep-marketplace";
     version = "577f4d4507678f2c8cee150fae25e6ce309f70b1";
