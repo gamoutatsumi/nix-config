@@ -17,6 +17,7 @@ in
       marketplaces = {
         "ast-grep-marketplace" = fetchers.ast-grep-marketplace.src;
         "openai-codex" = fetchers.openai-codex-marketplace.src;
+        "claude-plugins-official" = fetchers.anthropic-official-marketplace.src;
       };
       settings = {
         # keep-sorted start block=yes
