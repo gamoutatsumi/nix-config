@@ -78,7 +78,7 @@ in
     ghostty = {
       package = upkgs.ghostty;
     };
-    luris = {
+    lutris = {
       enable = true;
       defaultWinePackage = pkgs.proton-ge-bin;
       protonPackages = with pkgs; [
