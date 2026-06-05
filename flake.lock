@@ -196,11 +196,11 @@
     "brew-api": {
       "flake": false,
       "locked": {
-        "lastModified": 1780668094,
-        "narHash": "sha256-HIPXgrk1TKI1F7PjBbQfNnOhdOunhYDfD8Er10TsNC4=",
+        "lastModified": 1780681219,
+        "narHash": "sha256-7t8+9VSFP3rKLgpnLmhOdRZXBeUKwADDT5SJrLIWJFU=",
         "owner": "BatteredBunny",
         "repo": "brew-api",
-        "rev": "919a7afdc9751d447258d118f7c8c2a93094f190",
+        "rev": "0926cca335a79a3ca6852f2da132d61ac7cba987",
         "type": "github"
       },
       "original": {
@@ -1345,11 +1345,11 @@
     "vim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1780607169,
-        "narHash": "sha256-Ogt0BnupcfMWFc1MDYImLei25q8iAQbBSSX24aV6OZ8=",
+        "lastModified": 1780681591,
+        "narHash": "sha256-LRzs/zOg+0yXQQoJEIRhP1CkAtgNV9206lSQFu1z6AE=",
         "owner": "vim",
         "repo": "vim",
-        "rev": "c8c63673bc4253212820626aeeb75999d9a539d2",
+        "rev": "c2dd5e1ea746b556844544aa340937f0cf0f33a0",
         "type": "github"
       },
       "original": {
