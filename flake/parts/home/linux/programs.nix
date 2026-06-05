@@ -78,6 +78,16 @@ in
     ghostty = {
       package = upkgs.ghostty;
     };
+    luris = {
+      enable = true;
+      defaultWinePackage = pkgs.proton-ge-bin;
+      protonPackages = with pkgs; [
+        proton-ge-bin
+      ];
+      winePackages = with pkgs; [
+        wineWow64Packages.full
+      ];
+    };
     mpv = {
       enable = true;
       package = upkgs.mpv;
