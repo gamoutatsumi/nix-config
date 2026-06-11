@@ -7,8 +7,7 @@
   "extends": [
     "config:recommended",
     ":gitSignOff",
-    ":separateMajorReleases",
-    "github>Omochice/renovate-config:deno"
+    ":separateMajorReleases"
   ],
   "lockFileMaintenance": {
     "enabled": true,
@@ -24,19 +23,6 @@
   "regex": {
     "pinDigests": false
   },
-  "customManagers": [
-    {
-      "customType": "regex",
-      "managerFilePatterns": [
-        "/^flake\\.nix$/",
-        "/^flake\/agent-skills\/flake\\.nix$/"
-      ],
-      "matchStrings": [
-        "url = \"github:(?<depName>[^/]+/[^?\\n]+)\\?ref=(?<currentValue>[^&\"]+)"
-      ],
-      "datasourceTemplate": "github-tags"
-    }
-  ],
   "prConcurrentLimit": 10,
   "prHourlyLimit": 5,
   "timezone": "Asia/Tokyo",
@@ -46,7 +32,7 @@
   "packageRules": [
     {
       "matchDatasources": [
-        "github-tags"
+        "git-refs"
       ],
       "groupName": "nix-community",
       "matchPackageNames": [
