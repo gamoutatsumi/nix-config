@@ -75,7 +75,7 @@
       };
     };
     arto = {
-      url = "github:arto-app/Arto?ref=v0.25.7";
+      url = "github:arto-app/Arto/v0.25.7";
     };
     brew-api = {
       url = "github:BatteredBunny/brew-api";
@@ -96,7 +96,7 @@
       };
     };
     darwin-vz-nix = {
-      url = "github:takeokunn/darwin-vz-nix?ref=v0.1.0";
+      url = "github:takeokunn/darwin-vz-nix/v0.1.0";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs";
@@ -137,7 +137,7 @@
       url = "github:hercules-ci/flake-parts";
     };
     home-manager = {
-      url = "github:nix-community/home-manager?ref=release-26.05";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs";
@@ -145,7 +145,7 @@
       };
     };
     kakehashi = {
-      url = "github:atusy/kakehashi?ref=v0.6.0";
+      url = "github:atusy/kakehashi/v0.6.0";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs-unstable";
@@ -180,7 +180,7 @@
       };
     };
     nix-darwin = {
-      url = "github:nix-darwin/nix-darwin?ref=nix-darwin-26.05&shallow=1";
+      url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs";
@@ -196,7 +196,7 @@
       };
     };
     nix-vscode-extensions = {
-      url = "github:nix-community/nix-vscode-extensions?shallow=1";
+      url = "github:nix-community/nix-vscode-extensions";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs";
@@ -204,10 +204,10 @@
       };
     };
     nixpkgs = {
-      url = "github:NixOS/nixpkgs?ref=nixos-26.05&shallow=1";
+      url = "github:NixOS/nixpkgs/nixos-26.05";
     };
     nixpkgs-unstable = {
-      url = "github:NixOS/nixpkgs?ref=nixos-unstable&shallow=1";
+      url = "github:NixOS/nixpkgs/nixos-unstable";
     };
     pre-commit-hooks = {
       url = "github:cachix/git-hooks.nix";
@@ -229,7 +229,7 @@
       };
     };
     version-lsp = {
-      url = "github:skanehira/version-lsp?shallow=1&ref=v0.4.0";
+      url = "github:skanehira/version-lsp/v0.4.0";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs-unstable";
@@ -248,11 +248,11 @@
       };
     };
     vim-src = {
-      url = "github:vim/vim?shallow=1";
+      url = "github:vim/vim";
       flake = false;
     };
     xremap = {
-      url = "github:xremap/xremap?ref=v0.15.7&shallow=1";
+      url = "github:xremap/xremap/v0.15.7";
       flake = false;
     };
     xremap-nix = {
