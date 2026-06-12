@@ -169,7 +169,7 @@
       };
     };
     neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
+      url = "github:nix-community/neovim-nightly-overlay/5ca0e5088019f583ffdcc7d381774a7056a2f2f1";
       inputs = {
         flake-parts = {
           follows = "flake-parts";
