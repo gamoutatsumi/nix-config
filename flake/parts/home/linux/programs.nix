@@ -50,6 +50,7 @@ in
       ++ (with upkgs; [
         agenix-rekey
         obsidian
+        sidequest
         xwayland-satellite
         (vivaldi.override {
           enableWidevine = true;
