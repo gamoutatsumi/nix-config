@@ -5,6 +5,7 @@ for _, lang in ipairs(require("nvim-treesitter").get_available(2)) do
     end
     table.insert(filetypes, "typescriptreact")
     table.insert(filetypes, "javascriptreact")
+    table.insert(filetypes, "buf-config")
 end
 
 vim.treesitter.language.register("tsx", { "typescriptreact", "javascriptreact" })
