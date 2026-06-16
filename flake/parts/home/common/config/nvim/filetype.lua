@@ -21,10 +21,13 @@ vim.filetype.add({
         [".swcrc"] = "json",
         [".textlintrc"] = "json",
         ["Tiltfile"] = "starlark",
+        ["buf.gen.yaml"] = "buf-config",
+        ["buf.lock"] = "buf-config",
+        ["buf.policy.yaml"] = "buf-config",
+        ["buf.yaml"] = "buf-config",
         ["dot_zshrc"] = "zsh",
         ["justfile"] = "make",
         ["tsconfig.json"] = "jsonc",
-        ["xmobarrc"] = "haskell",
         -- keep-sorted end
     },
     pattern = {

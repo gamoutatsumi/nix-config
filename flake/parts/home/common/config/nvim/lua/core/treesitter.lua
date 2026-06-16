@@ -8,6 +8,7 @@ for _, lang in ipairs(require("nvim-treesitter").get_available(2)) do
 end
 
 vim.treesitter.language.register("tsx", { "typescriptreact", "javascriptreact" })
+vim.treesitter.language.register("yaml", "buf-config")
 
 vim.api.nvim_create_autocmd("FileType", {
     pattern = filetypes,
