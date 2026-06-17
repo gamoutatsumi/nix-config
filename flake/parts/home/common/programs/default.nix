@@ -28,6 +28,7 @@ let
         pyright
         terraform-ls
         typos-lsp
+        viddy
         vscode-langservers-extracted
         yaml-language-server
         # keep-sorted end
