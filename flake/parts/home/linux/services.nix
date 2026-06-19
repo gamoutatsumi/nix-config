@@ -155,12 +155,9 @@
           command = "${lib.getExe pkgs.swaylock} -fF";
         }
       ];
-      events = [
-        {
-          event = "before-sleep";
-          command = "${lib.getExe pkgs.swaylock} -fF";
-        }
-      ];
+      events = {
+        "before-sleep" = "${lib.getExe pkgs.swaylock} -fF";
+      };
     };
     # keep-sorted end
   };

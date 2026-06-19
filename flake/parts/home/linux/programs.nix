@@ -171,9 +171,11 @@ in
     opencode = {
       enable = true;
       package = upkgs.llm-agents.opencode;
-      settings = {
+      tui = {
         theme = "opencode";
-        model = "zai/glm-5.1";
+      };
+      settings = {
+        model = "zai/glm-5.2";
         autoshare = false;
         autoupdate = false;
       };
