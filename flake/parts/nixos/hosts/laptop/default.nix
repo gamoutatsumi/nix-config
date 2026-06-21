@@ -155,6 +155,9 @@ in
   };
   services = {
     # keep-sorted start block=yes
+    avahi = {
+      enable = true;
+    };
     blueman = {
       enable = true;
     };

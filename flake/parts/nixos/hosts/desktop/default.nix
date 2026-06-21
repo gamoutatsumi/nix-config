@@ -178,6 +178,7 @@ in
   services = {
     # keep-sorted start block=yes
     avahi = {
+      enable = true;
       allowInterfaces = [ "enp7s0" ];
       denyInterfaces = [
         "enp0s20f0u8u4"
