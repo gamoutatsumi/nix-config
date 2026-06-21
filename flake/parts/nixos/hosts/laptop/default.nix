@@ -157,6 +157,7 @@ in
     # keep-sorted start block=yes
     avahi = {
       enable = true;
+      nssmdns4 = true;
     };
     blueman = {
       enable = true;
