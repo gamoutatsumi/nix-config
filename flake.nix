@@ -177,7 +177,14 @@
         nixpkgs = {
           follows = "nixpkgs-unstable";
         };
+        neovim-src = {
+          follows = "neovim-src";
+        };
       };
+    };
+    neovim-src = {
+      url = "github:neovim/neovim";
+      flake = false;
     };
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
