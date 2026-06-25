@@ -873,17 +873,17 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1782208920,
-        "narHash": "sha256-6xW1MdNBy2APL2XVzHRCMMQ1CiYQpgE/LG2anvPuZSY=",
+        "lastModified": 1782346658,
+        "narHash": "sha256-j14Eiw/ZoX38hOlB1sj6sOYYors0Io/mlKi0cyBZ79E=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "487176dcfcb9119e01cba4db5c89abaee45296a2",
+        "rev": "e715122e4e2e25bc3530f164668ec392cfb195a7",
         "type": "github"
       },
       "original": {
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "487176dcfcb9119e01cba4db5c89abaee45296a2",
+        "rev": "e715122e4e2e25bc3530f164668ec392cfb195a7",
         "type": "github"
       }
     },
