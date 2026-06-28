@@ -1,7 +1,7 @@
-{ upkgs, ... }:
+{ pkgs, ... }:
 {
   fonts = {
-    packages = with upkgs; [
+    packages = with pkgs; [
       # keep-sorted start
       ibm-plex
       noto-fonts-cjk-sans
