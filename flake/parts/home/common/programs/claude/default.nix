@@ -39,6 +39,7 @@ in
           USE_BUILTIN_FD = "0";
         };
         language = "日本語";
+        model = "opusplan";
         outputStyle = "Explanatory";
         permissions = {
           allow = [
@@ -95,6 +96,7 @@ in
           type = "command";
           command = "echo $(cat) | ccusage statusline";
         };
+        tui = "fullscreen";
         # keep-sorted end
       };
     };
