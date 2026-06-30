@@ -8,15 +8,15 @@
 {
   anthropic-official-marketplace = {
     pname = "anthropic-official-marketplace";
-    version = "bd7cf41fc8a468b136a9266633303ff4a011c7b4";
+    version = "cd3ca5bd4a4b62bf006b59b68848b59e95f95439";
     src = fetchFromGitHub {
       owner = "anthropics";
       repo = "claude-plugins-official";
-      rev = "bd7cf41fc8a468b136a9266633303ff4a011c7b4";
+      rev = "cd3ca5bd4a4b62bf006b59b68848b59e95f95439";
       fetchSubmodules = false;
-      sha256 = "sha256-miC00qNR67rFSfRPulYkfUzfwXv0CeUkjhTGD6UXr+A=";
+      sha256 = "sha256-goJj0/7DtdVp/iwcmD1Bj4jZsQLdc7GLTYk4bhqgoN8=";
     };
-    date = "2026-06-04";
+    date = "2026-06-29";
   };
   ast-grep-marketplace = {
     pname = "ast-grep-marketplace";
@@ -32,13 +32,13 @@
   };
   codecompanion-nvim = {
     pname = "codecompanion-nvim";
-    version = "v19.14.0";
+    version = "v19.17.0";
     src = fetchFromGitHub {
       owner = "olimorris";
       repo = "codecompanion.nvim";
-      rev = "v19.14.0";
+      rev = "v19.17.0";
       fetchSubmodules = false;
-      sha256 = "sha256-/cx7LV866OPfTaK781dPbouPRjb2HXJZ3SwGVU/rnsA=";
+      sha256 = "sha256-/1XlRYSEucUMJAllX27OJNbydgLyzbWS+SXhyNXj4QU=";
     };
   };
   denops-vim = {
@@ -111,15 +111,15 @@
   };
   nvim-dap = {
     pname = "nvim-dap";
-    version = "531771530d4f82ad2d21e436e3cc052d68d7aebb";
+    version = "9e848e09a697ee95302a3ef2dd43fd6eb709e570";
     src = fetchFromGitHub {
       owner = "mfussenegger";
       repo = "nvim-dap";
-      rev = "531771530d4f82ad2d21e436e3cc052d68d7aebb";
+      rev = "9e848e09a697ee95302a3ef2dd43fd6eb709e570";
       fetchSubmodules = false;
-      sha256 = "sha256-pgD51NWFyjK1FrXZ8MFFIM9DX2OBxL7cd7JlST2Twvc=";
+      sha256 = "sha256-IHm3CwO7qUTtOZqhljDjSzz4WbaAJ4kPY384MyZZ9ac=";
     };
-    date = "2026-05-20";
+    date = "2026-06-19";
   };
   nvim-dap-go = {
     pname = "nvim-dap-go";
@@ -170,15 +170,15 @@
   };
   openai-codex-marketplace = {
     pname = "openai-codex-marketplace";
-    version = "807e03ac9d5aa23bc395fdec8c3767500a86b3cf";
+    version = "80c31f99570876c3ef40327838b0a2ca1ae2cd9c";
     src = fetchFromGitHub {
       owner = "openai";
       repo = "codex-plugin-cc";
-      rev = "807e03ac9d5aa23bc395fdec8c3767500a86b3cf";
+      rev = "80c31f99570876c3ef40327838b0a2ca1ae2cd9c";
       fetchSubmodules = false;
-      sha256 = "sha256-zWddz18c3E15TPuEvjMkBkrwiFlK3ZqIG5YP5xX6ZII=";
+      sha256 = "sha256-KJNJyAYVBsA6On/mrx9GSSQmjrwCHfQZAr+c3BZYUc0=";
     };
-    date = "2026-04-18";
+    date = "2026-06-23";
   };
   plenary-nvim = {
     pname = "plenary-nvim";

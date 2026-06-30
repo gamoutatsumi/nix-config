@@ -1,7 +1,7 @@
 {
     "anthropic-official-marketplace": {
         "cargoLock": null,
-        "date": "2026-06-04",
+        "date": "2026-06-29",
         "extract": null,
         "name": "anthropic-official-marketplace",
         "passthru": null,
@@ -13,12 +13,12 @@
             "name": null,
             "owner": "anthropics",
             "repo": "claude-plugins-official",
-            "rev": "bd7cf41fc8a468b136a9266633303ff4a011c7b4",
-            "sha256": "sha256-miC00qNR67rFSfRPulYkfUzfwXv0CeUkjhTGD6UXr+A=",
+            "rev": "cd3ca5bd4a4b62bf006b59b68848b59e95f95439",
+            "sha256": "sha256-goJj0/7DtdVp/iwcmD1Bj4jZsQLdc7GLTYk4bhqgoN8=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "bd7cf41fc8a468b136a9266633303ff4a011c7b4"
+        "version": "cd3ca5bd4a4b62bf006b59b68848b59e95f95439"
     },
     "ast-grep-marketplace": {
         "cargoLock": null,
@@ -55,12 +55,12 @@
             "name": null,
             "owner": "olimorris",
             "repo": "codecompanion.nvim",
-            "rev": "v19.14.0",
-            "sha256": "sha256-/cx7LV866OPfTaK781dPbouPRjb2HXJZ3SwGVU/rnsA=",
+            "rev": "v19.17.0",
+            "sha256": "sha256-/1XlRYSEucUMJAllX27OJNbydgLyzbWS+SXhyNXj4QU=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v19.14.0"
+        "version": "v19.17.0"
     },
     "denops-vim": {
         "cargoLock": null,
@@ -190,7 +190,7 @@
     },
     "nvim-dap": {
         "cargoLock": null,
-        "date": "2026-05-20",
+        "date": "2026-06-19",
         "extract": null,
         "name": "nvim-dap",
         "passthru": null,
@@ -202,12 +202,12 @@
             "name": null,
             "owner": "mfussenegger",
             "repo": "nvim-dap",
-            "rev": "531771530d4f82ad2d21e436e3cc052d68d7aebb",
-            "sha256": "sha256-pgD51NWFyjK1FrXZ8MFFIM9DX2OBxL7cd7JlST2Twvc=",
+            "rev": "9e848e09a697ee95302a3ef2dd43fd6eb709e570",
+            "sha256": "sha256-IHm3CwO7qUTtOZqhljDjSzz4WbaAJ4kPY384MyZZ9ac=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "531771530d4f82ad2d21e436e3cc052d68d7aebb"
+        "version": "9e848e09a697ee95302a3ef2dd43fd6eb709e570"
     },
     "nvim-dap-go": {
         "cargoLock": null,
@@ -295,7 +295,7 @@
     },
     "openai-codex-marketplace": {
         "cargoLock": null,
-        "date": "2026-04-18",
+        "date": "2026-06-23",
         "extract": null,
         "name": "openai-codex-marketplace",
         "passthru": null,
@@ -307,12 +307,12 @@
             "name": null,
             "owner": "openai",
             "repo": "codex-plugin-cc",
-            "rev": "807e03ac9d5aa23bc395fdec8c3767500a86b3cf",
-            "sha256": "sha256-zWddz18c3E15TPuEvjMkBkrwiFlK3ZqIG5YP5xX6ZII=",
+            "rev": "80c31f99570876c3ef40327838b0a2ca1ae2cd9c",
+            "sha256": "sha256-KJNJyAYVBsA6On/mrx9GSSQmjrwCHfQZAr+c3BZYUc0=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "807e03ac9d5aa23bc395fdec8c3767500a86b3cf"
+        "version": "80c31f99570876c3ef40327838b0a2ca1ae2cd9c"
     },
     "plenary-nvim": {
         "cargoLock": null,
