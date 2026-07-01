@@ -6,7 +6,6 @@ local ensure_enabled = {
     "bashls",
     "biome",
     "buf_ls",
-    "copilot",
     "cue",
     "docker_language_server",
     "efm",
