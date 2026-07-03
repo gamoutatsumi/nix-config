@@ -3,10 +3,10 @@
   "specifiers": {
     "jsr:@core/unknownutil@4": "4.3.0",
     "jsr:@david/console-static-text@~0.3.4": "0.3.4",
-    "jsr:@david/dax@0.48": "0.48.4",
+    "jsr:@david/dax@0.48": "0.48.5",
     "jsr:@david/path@0.3": "0.3.2",
     "jsr:@david/path@~0.3.2": "0.3.2",
-    "jsr:@david/shell@~0.5.3": "0.5.3",
+    "jsr:@david/shell@~0.5.4": "0.5.4",
     "jsr:@david/which@0.7": "0.7.0",
     "jsr:@std/bytes@^1.0.6": "1.0.6",
     "jsr:@std/fmt@1": "1.0.10",
@@ -21,8 +21,8 @@
     "@david/console-static-text@0.3.4": {
       "integrity": "1c596f500b075ff3c8bab1d328ca7148a88067fd9a506b16a73eeaf230c229fd"
     },
-    "@david/dax@0.48.4": {
-      "integrity": "6e49e23994c4b56c1a78b219f37297daaf57ec24e3beb888beb9c6ac36b907a3",
+    "@david/dax@0.48.5": {
+      "integrity": "5190696a2d6f87aee8c15cbb44fb1b80bc3eb6572c5dc796afd96014f36d86ce",
       "dependencies": [
         "jsr:@david/console-static-text",
         "jsr:@david/path@~0.3.2",
@@ -34,8 +34,8 @@
     "@david/path@0.3.2": {
       "integrity": "f25aaa3de4d3b9edfe25ca5edf15e3014fee7df4f77d64327e5300c27c1a0497"
     },
-    "@david/shell@0.5.3": {
-      "integrity": "2349201b78b75cb1fc574bde0a90f49aec08c0b12205f487067aa818f1eafad5",
+    "@david/shell@0.5.4": {
+      "integrity": "0074cef12702824072996beed09d0abb3476f0c27cd38aff0af1172a3a66a0ca",
       "dependencies": [
         "jsr:@david/console-static-text",
         "jsr:@david/path@0.3",
