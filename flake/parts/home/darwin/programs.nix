@@ -70,12 +70,6 @@
               };
               run = "move-node-to-workspace D";
             }
-            {
-              "if" = {
-                app-id = "com.cmuxterm.app";
-              };
-              run = "move-node-to-workspace 4";
-            }
           ];
           exec-on-workspace-change = [
             "/bin/bash"
