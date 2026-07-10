@@ -75,7 +75,7 @@
       };
     };
     arto = {
-      url = "github:arto-app/Arto/v0.25.7";
+      url = "github:arto-app/Arto/v0.28.0";
     };
     brew-api = {
       url = "github:BatteredBunny/brew-api";
@@ -145,7 +145,7 @@
       };
     };
     kakehashi = {
-      url = "github:atusy/kakehashi/v0.6.0";
+      url = "github:atusy/kakehashi/v0.8.0";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs-unstable";
@@ -236,7 +236,7 @@
       };
     };
     version-lsp = {
-      url = "github:skanehira/version-lsp/v0.4.0";
+      url = "github:skanehira/version-lsp/v0.6.0";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs-unstable";
