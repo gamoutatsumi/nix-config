@@ -177,7 +177,14 @@
         nixpkgs = {
           follows = "nixpkgs-unstable";
         };
+        neovim-src = {
+          follows = "neovim-src";
+        };
       };
+    };
+    neovim-src = {
+      url = "github:/neovim/neovim";
+      flake = false;
     };
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
@@ -252,7 +259,7 @@
       flake = false;
     };
     xremap = {
-      url = "github:xremap/xremap/v0.15.7";
+      url = "github:xremap/xremap/v0.15.9";
       flake = false;
     };
     xremap-nix = {
