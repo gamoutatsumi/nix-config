@@ -467,37 +467,37 @@ in
     nix-index = {
       enable = true;
     };
-    herdr = {
-      enable = true;
-      settings = {
-        keys = {
-          command = [ ];
-          prefix = "ctrl+s";
-        };
-        onboarding = false;
-        terminal = {
-          default_shell = "zsh";
-          new_cwd = "follow";
-          shell_mode = "auto";
-        };
-        ui = {
-          agent_panel_sort = "priority";
-          sidebar_width = 32;
-          sound = {
-            enabled = true;
-          };
-          toast = {
-            delivery = "herdr";
-          };
-        };
-        theme = {
-          auto_switch = true;
-          dark_name = "terminal";
-          light_name = "terminal";
-          name = "terminal";
-        };
-      };
-    };
+    # herdr = {
+    #   enable = true;
+    #   settings = {
+    #     keys = {
+    #       command = [ ];
+    #       prefix = "ctrl+s";
+    #     };
+    #     onboarding = false;
+    #     terminal = {
+    #       default_shell = "zsh";
+    #       new_cwd = "follow";
+    #       shell_mode = "auto";
+    #     };
+    #     ui = {
+    #       agent_panel_sort = "priority";
+    #       sidebar_width = 32;
+    #       sound = {
+    #         enabled = true;
+    #       };
+    #       toast = {
+    #         delivery = "herdr";
+    #       };
+    #     };
+    #     theme = {
+    #       auto_switch = true;
+    #       dark_name = "terminal";
+    #       light_name = "terminal";
+    #       name = "terminal";
+    #     };
+    #   };
+    # };
     # keep-sorted end
   };
   # keep-sorted end
