@@ -24,6 +24,7 @@ let
         gopls
         jinja-lsp
         lua-language-server
+        openstackclient-full
         prettierd
         pyright
         terraform-ls
