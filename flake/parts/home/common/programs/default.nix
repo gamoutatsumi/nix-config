@@ -337,7 +337,7 @@ in
         ++ lib.optionals pkgs.stdenv.isLinux [
           upkgs.gcc
         ];
-      package = upkgs.neovim;
+      package = inputs'.neovim-nightly-overlay.packages.default;
       defaultEditor = true;
       vimAlias = false;
       viAlias = false;

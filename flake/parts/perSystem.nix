@@ -174,7 +174,7 @@
         };
       };
       checks = {
-        inherit (upkgs) neovim;
+        neovim = inputs'.neovim-nightly-overlay.packages.default;
       };
       # keep-sorted end
     };
