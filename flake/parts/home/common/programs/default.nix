@@ -91,6 +91,7 @@ in
         plemoljp-nf
         q-text-as-data
         ssm-session-manager-plugin
+        unar
         unzip
         yubico-piv-tool
         yubikey-manager
@@ -112,11 +113,9 @@ in
         kubectl
         kubie
         magika
-        # mycli
         s3cmd
         sheldon
         stern
-        unar
         vim
         # keep-sorted end
       ])
