@@ -1,6 +1,7 @@
 {
   # keep-sorted start
   config,
+  inputs',
   lib,
   pkgs,
   upkgs,
@@ -14,32 +15,25 @@ let
   };
   lspServers =
     (with pkgs; [ nixd ])
-    ++ (
-      with upkgs;
-      [
-        # keep-sorted start
-        bash-language-server
-        docker-language-server
-        efm-langserver
-        gopls
-        jinja-lsp
-        lua-language-server
-        openstackclient-full
-        prettierd
-        pyright
-        terraform-ls
-        typos-lsp
-        viddy
-        vscode-langservers-extracted
-        yaml-language-server
-        # keep-sorted end
-      ]
-      ++ (with llm-agents; [
-        # keep-sorted start
-        copilot-language-server
-        # keep-sorted end
-      ])
-    );
+    ++ (with upkgs; [
+      # keep-sorted start
+      bash-language-server
+      docker-language-server
+      efm-langserver
+      gopls
+      jinja-lsp
+      lua-language-server
+      openstackclient-full
+      prettierd
+      pyright
+      terraform-ls
+      typos-lsp
+      viddy
+      vscode-langservers-extracted
+      yaml-language-server
+      # keep-sorted end
+    ])
+    ++ (with inputs'.llm-agents.packages; [ copilot-language-server ]);
 in
 {
   imports = [
@@ -101,43 +95,40 @@ in
         zbar
         # keep-sorted end
       ])
-      ++ (
-        with upkgs;
-        [
-          # keep-sorted start
-          curlFull
-          deno
-          docker-credential-helpers
-          docker-slim
-          doggo
-          dust
-          fd
-          google-cloud-sdk
-          istioctl
-          kn
-          kubectl
-          kubie
-          magika
-          # mycli
-          s3cmd
-          sheldon
-          stern
-          unar
-          vim
-          # keep-sorted end
-        ]
-        ++ (with llm-agents; [
-          #keep-sorted start
-          agent-browser
-          antigravity-cli
-          cc-sdd
-          ccusage
-          copilot-cli
-          openspec
-          vibe-kanban
-          # keep-sorted end
-        ])
-      )
+      ++ (with upkgs; [
+        # keep-sorted start
+        curlFull
+        deno
+        docker-credential-helpers
+        docker-slim
+        doggo
+        dust
+        fd
+        google-cloud-sdk
+        istioctl
+        kn
+        kubectl
+        kubie
+        magika
+        # mycli
+        s3cmd
+        sheldon
+        stern
+        unar
+        vim
+        # keep-sorted end
+      ])
+      ++ (with inputs'.llm-agents.packages; [
+        #keep-sorted start
+        agent-browser
+        antigravity-cli
+        cc-sdd
+        ccusage
+        copilot-cli
+        openspec
+        vibe-kanban
+        # keep-sorted end
+      ])
       ++ lspServers;
   };
   programs = {

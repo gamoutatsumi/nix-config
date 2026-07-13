@@ -13,7 +13,6 @@
     inputs.agenix.overlays.default
     inputs.brew-nix.overlays.default
     inputs.emacs-overlay.overlays.default
-    inputs.llm-agents.overlays.default
     inputs.neovim-nightly-overlay.overlays.default
     inputs.nix-vscode-extensions.overlays.default
     inputs.vim-overlay.overlays.default

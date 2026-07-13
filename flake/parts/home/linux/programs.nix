@@ -3,6 +3,7 @@
   pkgs,
   lib,
   config,
+  inputs',
   ...
 }:
 let
@@ -170,7 +171,7 @@ in
     };
     opencode = {
       enable = true;
-      package = upkgs.llm-agents.opencode;
+      package = inputs'.llm-agents.packages.opencode;
       tui = {
         theme = "opencode";
       };

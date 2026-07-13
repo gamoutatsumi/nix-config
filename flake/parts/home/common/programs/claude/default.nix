@@ -1,6 +1,6 @@
 {
-  upkgs,
   pkgs,
+  inputs',
   ...
 }:
 let
@@ -10,7 +10,7 @@ in
   programs = {
     claude-code = {
       enable = true;
-      package = upkgs.llm-agents.claude-code;
+      package = inputs'.llm-agents.packages.claude-code;
       commandsDir = ./commands;
       context = builtins.readFile ../../agents/AGENTS.md;
       rulesDir = ../../agents/rules;
