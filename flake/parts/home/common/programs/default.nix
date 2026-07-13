@@ -14,7 +14,10 @@ let
     sha256 = "0p1xp2rq7r0hbdi7dkhw3fzrf2ij7b3p6a5nnk0fflda4cs6a814";
   };
   lspServers =
-    (with pkgs; [ nixd ])
+    (with pkgs; [
+      nixd
+      openstackclient-full
+    ])
     ++ (with upkgs; [
       # keep-sorted start
       bash-language-server
@@ -23,7 +26,6 @@ let
       gopls
       jinja-lsp
       lua-language-server
-      openstackclient-full
       prettierd
       pyright
       terraform-ls
