@@ -11,14 +11,10 @@
     packages =
       (with upkgs; [
         # keep-sorted start block=yes
-        colima
         container
         docker-client
         nodejs_22
         # keep-sorted end
-        (lima.override {
-          withAdditionalGuestAgents = true;
-        })
       ])
       ++ [ inputs'.arto.packages.default ];
   };
