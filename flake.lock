@@ -801,11 +801,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1783877024,
-        "narHash": "sha256-LDsFvx4gJBC3GsiKCtdcj6ycg8RDjI15eG20A3XBoQM=",
+        "lastModified": 1783808427,
+        "narHash": "sha256-apvyZdfVD8K271Fe8qb8P2dJB1sGw1lts2js6adUgL8=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "4a0859631407bc9279a935f3219faabc0991a826",
+        "rev": "41294e42533daf937410b6285e20a7c0a898f9a8",
         "type": "github"
       },
       "original": {
