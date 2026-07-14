@@ -88,8 +88,8 @@
     "agent-skills": {
       "inputs": {
         "agent-skills": "agent-skills_2",
-        "anthropic-skills": "anthropic-skills",
-        "hashicorp-skills": "hashicorp-skills",
+        "anthropic": "anthropic",
+        "hashicorp": "hashicorp",
         "home-manager": [
           "home-manager"
         ],
@@ -132,7 +132,7 @@
         "type": "github"
       }
     },
-    "anthropic-skills": {
+    "anthropic": {
       "flake": false,
       "locked": {
         "lastModified": 1782929483,
@@ -670,7 +670,7 @@
         "type": "github"
       }
     },
-    "hashicorp-skills": {
+    "hashicorp": {
       "flake": false,
       "locked": {
         "lastModified": 1783965105,
