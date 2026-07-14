@@ -37,6 +37,8 @@
   outputs =
     {
       agent-skills,
+      anthropic-skills,
+      hashicorp-skills,
       ...
     }:
     {
@@ -53,12 +55,12 @@
                 enable = true;
                 sources = {
                   anthropic = {
-                    input = "anthropic-skills";
+                    path = anthropic-skills;
                     subdir = "skills";
                     idPrefix = "anthropic";
                   };
                   terraform-provider = {
-                    input = "hashicorp-skills";
+                    path = hashicorp-skills;
                     subdir = "terraform/provider-development/skills";
                     idPrefix = "terraform-provider";
                   };
