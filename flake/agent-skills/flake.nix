@@ -12,11 +12,11 @@
         };
       };
     };
-    anthropic = {
+    anthropic-skills = {
       url = "github:anthropics/skills";
       flake = false;
     };
-    hashicorp = {
+    hashicorp-skills = {
       url = "github:hashicorp/agent-skills";
       flake = false;
     };
@@ -53,12 +53,12 @@
                 enable = true;
                 sources = {
                   anthropic = {
-                    input = "anthropic";
+                    input = "anthropic-skills";
                     subdir = "skills";
                     idPrefix = "anthropic";
                   };
                   terraform-provider = {
-                    input = "hashicorp";
+                    input = "hashicorp-skills";
                     subdir = "terraform/provider-development/skills";
                     idPrefix = "terraform-provider";
                   };
