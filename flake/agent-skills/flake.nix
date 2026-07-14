@@ -63,7 +63,7 @@
                     idPrefix = "terraform-provider";
                   };
                   personal = {
-                    input = ./skills;
+                    path = ./skills;
                     idPrefix = "personal";
                   };
                 };
