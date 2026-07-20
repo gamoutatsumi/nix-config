@@ -483,3 +483,6 @@ window-rule {
 }
 spawn-at-startup "slack"
 spawn-at-startup "discord"
+output "eDP-1" {
+  scale 1
+}
