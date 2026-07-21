@@ -18,7 +18,6 @@ in
       dirHashes = {
         dot = "${config.xdg.configHome}/home-manager";
       };
-      dotDir = "${config.xdg.configHome}/zsh";
       enable = true;
       envExtra = lib.strings.concatLines [
         (builtins.readFile (
