@@ -15,7 +15,6 @@ in
       context = builtins.readFile ../../agents/AGENTS.md;
       rulesDir = ../../agents/rules;
       marketplaces = {
-        "ast-grep-marketplace" = fetchers.ast-grep-marketplace.src;
         "openai-codex" = fetchers.openai-codex-marketplace.src;
         "claude-plugins-official" = fetchers.anthropic-official-marketplace.src;
       };
@@ -25,7 +24,6 @@ in
         enableAllProjectMcpServers = true;
         enabledPlugins = {
           # keep-sorted start
-          "ast-grep@ast-grep-marketplace" = true;
           "codex@openai-codex" = true;
           "commit-commands@claude-plugins-official" = true;
           "explanatory-output-style@claude-plugins-official" = true;
@@ -44,7 +42,6 @@ in
         permissions = {
           allow = [
             # keep-sorted start
-            "Bash(ast-grep:*)"
             "Bash(cat:*)"
             "Bash(cmux:*)"
             "Bash(echo:*)"
@@ -68,7 +65,6 @@ in
             "Bash(git rebase:*)"
             "Bash(git reset:*)"
             "Bash(grep *.env*)"
-            "Bash(grep:*)"
             "Bash(head *.env*)"
             "Bash(less *.env*)"
             "Bash(mongod:*)"
