@@ -29,7 +29,7 @@
       };
     };
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-26.05?shallow=1";
+      url = "github:NixOS/nixpkgs/nixos-26.05";
     };
     # keep-sorted end
   };
