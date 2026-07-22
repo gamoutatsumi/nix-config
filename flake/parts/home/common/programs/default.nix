@@ -113,6 +113,7 @@ in
         kubectl
         kubie
         magika
+        ov
         s3cmd
         sheldon
         stern
