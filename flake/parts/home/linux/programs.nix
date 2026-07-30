@@ -56,6 +56,7 @@ in
       ]
       ++ (with upkgs; [
         agenix-rekey
+        esphome
         obsidian
         sidequest
         xwayland-satellite
