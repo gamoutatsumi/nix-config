@@ -29,6 +29,12 @@ in
         wl-clipboard
         zoom-us
         # keep-sorted end
+        (vivaldi.override {
+          enableWidevine = true;
+          proprietaryCodecs = true;
+          inherit (upkgs) widevine-cdm;
+          commandLineArgs = "--force-dark-mode --password-store=gnome-libsecret";
+        })
         (stdenv.mkDerivation {
           inherit (jdim) src version pname;
           mesonFlags = [
@@ -53,12 +59,6 @@ in
         obsidian
         sidequest
         xwayland-satellite
-        (vivaldi.override {
-          enableWidevine = true;
-          proprietaryCodecs = true;
-          inherit (upkgs) widevine-cdm;
-          commandLineArgs = "--force-dark-mode --password-store=gnome-libsecret";
-        })
       ]);
   };
   programs = {
