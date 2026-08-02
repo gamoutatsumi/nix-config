@@ -117,6 +117,9 @@ in
   };
   networking = {
     hostName = "tat-nixos-desktop";
+    nftables = {
+      enable = true;
+    };
     networkmanager = {
       enable = true;
     };
