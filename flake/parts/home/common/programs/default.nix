@@ -66,6 +66,7 @@ in
         binutils
         cacert
         coreutils-full
+        deno
         file
         findutils
         gawk
@@ -101,7 +102,6 @@ in
       ++ (with upkgs; [
         # keep-sorted start
         curlFull
-        deno
         docker-credential-helpers
         docker-slim
         doggo
