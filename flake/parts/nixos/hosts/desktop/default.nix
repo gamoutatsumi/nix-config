@@ -125,7 +125,6 @@ in
     };
     firewall = {
       enable = true;
-      allowedUDPPorts = [ 1900 ];
     };
   };
   nixpkgs = {
