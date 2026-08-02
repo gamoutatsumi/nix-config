@@ -17,7 +17,6 @@ in
         # keep-sorted start
         chntpw
         gcr
-        gimp
         kdePackages.kcachegrind
         ledger-live-desktop
         lssecret
