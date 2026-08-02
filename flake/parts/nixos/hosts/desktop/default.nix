@@ -279,18 +279,11 @@ in
           "wheel"
           "video"
           "audio"
-          "docker"
           "dialout"
         ];
         shell = pkgs.zsh;
         hashedPasswordFile = config.age.secrets.${username}.path;
       };
-    };
-  };
-  virtualisation = {
-    docker = {
-      enable = true;
-      storageDriver = "btrfs";
     };
   };
   # keep-sorted end
