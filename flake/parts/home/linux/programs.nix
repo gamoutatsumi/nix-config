@@ -82,6 +82,7 @@ in
     };
     kodi = {
       enable = true;
+      package = pkgs.kodi.withPackages (kp: with kp; [ robotocjksc ]);
       datadir = "${config.xdg.dataHome}/kodi";
     };
     lutris = {
