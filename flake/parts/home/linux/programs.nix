@@ -80,6 +80,10 @@ in
     ghostty = {
       package = upkgs.ghostty;
     };
+    kodi = {
+      enable = true;
+      datadir = "${config.xdg.dataHome}/kodi";
+    };
     lutris = {
       enable = true;
       defaultWinePackage = pkgs.proton-ge-bin;
