@@ -25,6 +25,7 @@ in
         seahorse
         slack
         tor-browser
+        vlc
         wl-clipboard
         zoom-us
         # keep-sorted end
@@ -79,11 +80,6 @@ in
     };
     ghostty = {
       package = upkgs.ghostty;
-    };
-    kodi = {
-      enable = true;
-      package = pkgs.kodi.withPackages (kp: with kp; [ robotocjksc ]);
-      datadir = "${config.xdg.dataHome}/kodi";
     };
     lutris = {
       enable = true;
