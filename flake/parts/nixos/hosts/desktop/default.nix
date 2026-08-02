@@ -121,7 +121,10 @@ in
       enable = false;
     };
     wireless = {
-      enable = false;
+      enable = true;
+      userControlled = {
+        enable = true;
+      };
     };
     useDHCP = lib.mkDefault true;
     interfaces = {
@@ -134,24 +137,6 @@ in
       };
       enp5s0 = {
         useDHCP = false;
-      };
-      vlan1 = {
-        useDHCP = true;
-        mtu = 1500;
-      };
-      vlan10 = {
-        useDHCP = true;
-        mtu = 9000;
-      };
-    };
-    vlans = {
-      vlan1 = {
-        id = 1;
-        interface = "enp7s0";
-      };
-      vlan10 = {
-        id = 10;
-        interface = "enp7s0";
       };
     };
   };
