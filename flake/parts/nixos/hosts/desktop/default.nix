@@ -120,6 +120,10 @@ in
     networkmanager = {
       enable = true;
     };
+    firewall = {
+      enable = true;
+      allowedUDPPorts = [ 1900 ];
+    };
   };
   nixpkgs = {
     hostPlatform = lib.mkDefault "x86_64-linux";
