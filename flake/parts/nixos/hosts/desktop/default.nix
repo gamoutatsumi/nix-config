@@ -118,26 +118,7 @@ in
   networking = {
     hostName = "tat-nixos-desktop";
     networkmanager = {
-      enable = false;
-    };
-    wireless = {
       enable = true;
-      userControlled = {
-        enable = true;
-      };
-    };
-    useDHCP = lib.mkDefault true;
-    interfaces = {
-      enp7s0 = {
-        useDHCP = false;
-        mtu = 9000;
-      };
-      enp0s20f0u8u4 = {
-        useDHCP = false;
-      };
-      enp5s0 = {
-        useDHCP = false;
-      };
     };
   };
   nixpkgs = {
