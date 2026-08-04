@@ -1,7 +1,7 @@
 {
     "anthropic-official-marketplace": {
         "cargoLock": null,
-        "date": "2026-07-20",
+        "date": "2026-08-03",
         "extract": null,
         "name": "anthropic-official-marketplace",
         "passthru": null,
@@ -13,12 +13,12 @@
             "name": null,
             "owner": "anthropics",
             "repo": "claude-plugins-official",
-            "rev": "9ddfad2e999789e0220cacaf359b64dd873e7d72",
-            "sha256": "sha256-jlo28awHcmoNN42tmit0Mif9WyrkC2OmjJgRDlLpVCo=",
+            "rev": "b7e93a4e7c950ba5b22a2bdb9a61e2631f75a51e",
+            "sha256": "sha256-u6suHaAGCr3BufCUYhcgmwx/UWovCY7RPUCfKCg/0SU=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "9ddfad2e999789e0220cacaf359b64dd873e7d72"
+        "version": "b7e93a4e7c950ba5b22a2bdb9a61e2631f75a51e"
     },
     "ast-grep-marketplace": {
         "cargoLock": null,
@@ -55,12 +55,12 @@
             "name": null,
             "owner": "olimorris",
             "repo": "codecompanion.nvim",
-            "rev": "v19.20.0",
-            "sha256": "sha256-vDKbjW9izNruCLiPRQEs+yoOrA+YkuyvmdovFTY4nfw=",
+            "rev": "v19.22.0",
+            "sha256": "sha256-JYxW59FelB2vvC0Yr7eV2vqKeIIUzPs79ohmgVRc91Q=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v19.20.0"
+        "version": "v19.22.0"
     },
     "denops-vim": {
         "cargoLock": null,
@@ -118,12 +118,12 @@
             "name": null,
             "owner": "nvim-neotest",
             "repo": "neotest",
-            "rev": "v5.19.2",
-            "sha256": "sha256-8qkype0csYvLdcCBpsIiJsulTgvo2QdkHxK7MkV2wAY=",
+            "rev": "v5.20.0",
+            "sha256": "sha256-Mw7G/MOtUrWtr7V5srKojVeeGzK/KV57rBUwaOtVAhw=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v5.19.2"
+        "version": "v5.20.0"
     },
     "neotest-golang": {
         "cargoLock": null,
