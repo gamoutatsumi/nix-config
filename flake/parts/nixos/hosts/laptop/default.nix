@@ -254,6 +254,7 @@ in
         isNormalUser = true;
         extraGroups = [
           "users"
+          "dialout"
           "wheel"
           "video"
           "audio"
