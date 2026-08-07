@@ -95,7 +95,7 @@ in
             (pkgs.replaceVarsWith {
               src = ./config/nvim/lua/core/dpp.lua;
               replacements = {
-                deno = lib.getExe upkgs.deno;
+                deno = lib.getExe pkgs.deno;
                 dpp_ts = "${
                   pkgs.linkFarm "dpp" [
                     {

@@ -63,7 +63,7 @@
             };
             denolint = {
               enable = true;
-              package = upkgs.deno;
+              package = pkgs.deno;
             };
             flake-checker = {
               enable = false;
@@ -128,7 +128,7 @@
           };
           deno = {
             enable = true;
-            package = upkgs.deno;
+            package = pkgs.deno;
           };
           jsonfmt = {
             enable = true;
