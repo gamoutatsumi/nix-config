@@ -295,6 +295,7 @@ in
           "video"
           "audio"
           "dialout"
+          "networkmanager"
         ];
         shell = pkgs.zsh;
         hashedPasswordFile = config.age.secrets.${username}.path;
