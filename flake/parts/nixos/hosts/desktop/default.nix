@@ -124,16 +124,33 @@ in
       enable = true;
     };
     networkmanager = {
-      enable = true;
-      wifi = {
-        backend = "wpa_supplicant";
-      };
+      enable = false;
     };
-    firewall = {
-      enable = true;
-      allowedUDPPorts = [ 1900 ];
+    wireless = {
+      enable = false;
     };
     useDHCP = lib.mkDefault true;
+    interfaces = {
+      enp7s0 = {
+        useDHCP = true;
+      };
+      enp0s20f0u8u4 = {
+        useDHCP = false;
+      };
+      enp5s0 = {
+        useDHCP = false;
+      };
+      vlan20 = {
+        useDHCP = true;
+        mtu = 1500;
+      };
+    };
+    vlans = {
+      vlan20 = {
+        id = 20;
+        interface = "enp7s0";
+      };
+    };
   };
   nixpkgs = {
     hostPlatform = lib.mkDefault "x86_64-linux";
@@ -290,12 +307,10 @@ in
         isNormalUser = true;
         extraGroups = [
           "users"
-          "network"
           "wheel"
           "video"
           "audio"
           "dialout"
-          "networkmanager"
         ];
         shell = pkgs.zsh;
         hashedPasswordFile = config.age.secrets.${username}.path;
