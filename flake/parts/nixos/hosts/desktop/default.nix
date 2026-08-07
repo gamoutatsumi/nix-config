@@ -117,11 +117,17 @@ in
   };
   networking = {
     hostName = "tat-nixos-desktop";
+    resolvconf = {
+      enable = true;
+    };
     nftables = {
       enable = true;
     };
     networkmanager = {
       enable = true;
+      wifi = {
+        backend = "wpa_supplicant";
+      };
     };
     firewall = {
       enable = true;
