@@ -142,7 +142,6 @@ in
       };
       vlan20 = {
         useDHCP = true;
-        mtu = 1500;
       };
     };
     vlans = {
