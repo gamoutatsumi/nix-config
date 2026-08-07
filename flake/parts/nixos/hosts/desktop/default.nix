@@ -289,6 +289,7 @@ in
         isNormalUser = true;
         extraGroups = [
           "users"
+          "network"
           "wheel"
           "video"
           "audio"
