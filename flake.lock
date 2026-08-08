@@ -195,11 +195,11 @@
     "brew-api": {
       "flake": false,
       "locked": {
-        "lastModified": 1786192510,
-        "narHash": "sha256-SkkctAq0J0X/+vfhFBMcVr1Pr8V4WBWD24SfZR5xdt0=",
+        "lastModified": 1786206337,
+        "narHash": "sha256-Ak29GHeDin3/FvTLF1FscTY+Te/xmZ4SD08fywTbqSU=",
         "owner": "BatteredBunny",
         "repo": "brew-api",
-        "rev": "dbacb08f02901c382ac9980f1b86f1de4e573fc5",
+        "rev": "4a89966915001237864bdac81abd4b612c4b1c47",
         "type": "github"
       },
       "original": {
@@ -314,12 +314,12 @@
     },
     "crane_4": {
       "locked": {
-        "lastModified": 1776394852,
-        "narHash": "sha256-K0i9GoNk2To1RQkW348EY4c7RYf3mD74hWlGSc/9sk0=",
-        "rev": "db220b8709cea4bd43c9adcd4192f212fb6768d1",
-        "revCount": 839,
+        "lastModified": 1779041105,
+        "narHash": "sha256-nnGD2f8OlAZT2i5OfwikJsw+ifWfiA4d6A8BWlgOXV0=",
+        "rev": "10e6e3cb966f7cfcc789fe5eee7a85f3188ce08b",
+        "revCount": 858,
         "type": "tarball",
-        "url": "https://api.flakehub.com/f/pinned/ipetkov/crane/0.23.3/019d9966-e100-7831-aae4-a70427980cdf/source.tar.gz"
+        "url": "https://api.flakehub.com/f/pinned/ipetkov/crane/0.23.4/019e3726-d9ea-7820-aece-59009301cab1/source.tar.gz"
       },
       "original": {
         "type": "tarball",
@@ -468,11 +468,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786181470,
-        "narHash": "sha256-p5bA2Gv5e/gaPuOhWDi1jSdE4GWw7hoPPadHkicRbGQ=",
+        "lastModified": 1786208848,
+        "narHash": "sha256-V9M6enDTMPVrW4+wi3jvLVNV32wDhgpx2Vb91aUp/Zc=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "77dea4962acf3d4b365a87deacf1c05ed328805a",
+        "rev": "6c66dd7f97b5afdbd20a95988ff3c7bd4fb4bfb0",
         "type": "github"
       },
       "original": {
@@ -512,12 +512,12 @@
         "rust-analyzer-src": "rust-analyzer-src_2"
       },
       "locked": {
-        "lastModified": 1777624102,
-        "narHash": "sha256-thSyElkje577x/kAbP72nHlfiFc1a+tCudskLPHXe9s=",
-        "rev": "4d81601e0b73f20d81d066754ad0e7d1e7f75a06",
-        "revCount": 2646,
+        "lastModified": 1782900513,
+        "narHash": "sha256-GHrsl1+ysDFgmDQtQSqWS7TiYD2Q58VlwLvnf1+crJM=",
+        "rev": "16810aa8f4ad89ca480b1513774e8b6f485fe368",
+        "revCount": 2708,
         "type": "tarball",
-        "url": "https://api.flakehub.com/f/pinned/nix-community/fenix/0.1.2646%2Brev-4d81601e0b73f20d81d066754ad0e7d1e7f75a06/019de2eb-4157-78e2-99a4-47e0ab7416f5/source.tar.gz"
+        "url": "https://api.flakehub.com/f/pinned/nix-community/fenix/0.1.2708%2Brev-16810aa8f4ad89ca480b1513774e8b6f485fe368/019f1d68-8b55-7783-bed1-d5926f21ae52/source.tar.gz"
       },
       "original": {
         "type": "tarball",
@@ -534,11 +534,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780192580,
-        "narHash": "sha256-QE/Druzo/EDiuh7Vb+kipPgUxkIRPLsHFMSpSRMFIVw=",
+        "lastModified": 1786204854,
+        "narHash": "sha256-MUbF2mOrcoODe26j0OaXHLk73yFhB+0/d2yPaeBEi6M=",
         "owner": "DeterminateSystems",
         "repo": "flake-checker",
-        "rev": "ec67ebf5b7a666b3509006c3e2ce5e7dfbcaaf38",
+        "rev": "3117400b17a2f9f49e11902eb6ddbcd14537a2f4",
         "type": "github"
       },
       "original": {
@@ -1090,11 +1090,11 @@
     "rust-analyzer-src_2": {
       "flake": false,
       "locked": {
-        "lastModified": 1777583169,
-        "narHash": "sha256-dVJ4+wrRKc8oIgp3rLOFSq1obt/sCKlXy3h47qof/w0=",
+        "lastModified": 1782864348,
+        "narHash": "sha256-NVYhLbaefeIUftPlo3kS6qr0xd8eFJRodEiaHrvFKR4=",
         "owner": "rust-lang",
         "repo": "rust-analyzer",
-        "rev": "aa64e4828a2bbba44463c1229a81c748d3cce583",
+        "rev": "0d381ca097a8e0375a19387874d952c0a230ac4f",
         "type": "github"
       },
       "original": {
@@ -1313,11 +1313,11 @@
     "vim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1786134140,
-        "narHash": "sha256-thuqfcSDQ2KWaPZbIIZNruWcaTQTEHlJFZnoZO6r8/U=",
+        "lastModified": 1786209102,
+        "narHash": "sha256-dV4AJIl3Sc9Qe8fZolEZUASzTdtH03e6xtgemy8UVbs=",
         "owner": "vim",
         "repo": "vim",
-        "rev": "e2dcefa0d8c03a7d2ebda67207e3d1392ae0c402",
+        "rev": "e0b81136c76a5ab2203eb6f6ece0225f2565e42e",
         "type": "github"
       },
       "original": {
