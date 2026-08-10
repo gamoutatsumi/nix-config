@@ -8,15 +8,15 @@
 {
   anthropic-official-marketplace = {
     pname = "anthropic-official-marketplace";
-    version = "36b00173da517876f9e574ef98f3564b0e86c25d";
+    version = "3da105324a27aa7b1f435a3925f8626092891d4e";
     src = fetchFromGitHub {
       owner = "anthropics";
       repo = "claude-plugins-official";
-      rev = "36b00173da517876f9e574ef98f3564b0e86c25d";
+      rev = "3da105324a27aa7b1f435a3925f8626092891d4e";
       fetchSubmodules = false;
-      sha256 = "sha256-cA0mdKMxq8Eg/3YCuGjJMEySIq1uSzCESZ4ESrJhtQs=";
+      sha256 = "sha256-OMA5XkdwpIL28OqoXMr/hB80E22gxRIf4lWwUHDI5ts=";
     };
-    date = "2026-08-05";
+    date = "2026-08-09";
   };
   ast-grep-marketplace = {
     pname = "ast-grep-marketplace";
@@ -76,13 +76,13 @@
   };
   neotest-golang = {
     pname = "neotest-golang";
-    version = "v2.9.0";
+    version = "v2.10.0";
     src = fetchFromGitHub {
       owner = "fredrikaverpil";
       repo = "neotest-golang";
-      rev = "v2.9.0";
+      rev = "v2.10.0";
       fetchSubmodules = false;
-      sha256 = "sha256-3nIXy/Lrwph1skT5wn2jKrN10PArBOsOa6V4Nir/f4Y=";
+      sha256 = "sha256-PBwLP8QMkx8TmA4ZiBBi3ZUiF3qAXEa//cfzoOY59Yg=";
     };
   };
   neotest-plenary = {

@@ -1,7 +1,7 @@
 {
     "anthropic-official-marketplace": {
         "cargoLock": null,
-        "date": "2026-08-05",
+        "date": "2026-08-09",
         "extract": null,
         "name": "anthropic-official-marketplace",
         "passthru": null,
@@ -13,12 +13,12 @@
             "name": null,
             "owner": "anthropics",
             "repo": "claude-plugins-official",
-            "rev": "36b00173da517876f9e574ef98f3564b0e86c25d",
-            "sha256": "sha256-cA0mdKMxq8Eg/3YCuGjJMEySIq1uSzCESZ4ESrJhtQs=",
+            "rev": "3da105324a27aa7b1f435a3925f8626092891d4e",
+            "sha256": "sha256-OMA5XkdwpIL28OqoXMr/hB80E22gxRIf4lWwUHDI5ts=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "36b00173da517876f9e574ef98f3564b0e86c25d"
+        "version": "3da105324a27aa7b1f435a3925f8626092891d4e"
     },
     "ast-grep-marketplace": {
         "cargoLock": null,
@@ -139,12 +139,12 @@
             "name": null,
             "owner": "fredrikaverpil",
             "repo": "neotest-golang",
-            "rev": "v2.9.0",
-            "sha256": "sha256-3nIXy/Lrwph1skT5wn2jKrN10PArBOsOa6V4Nir/f4Y=",
+            "rev": "v2.10.0",
+            "sha256": "sha256-PBwLP8QMkx8TmA4ZiBBi3ZUiF3qAXEa//cfzoOY59Yg=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2.9.0"
+        "version": "v2.10.0"
     },
     "neotest-plenary": {
         "cargoLock": null,
