@@ -38,7 +38,6 @@
     {
       agent-skills,
       anthropic-skills,
-      hashicorp-skills,
       ...
     }:
     {
@@ -59,11 +58,6 @@
                     subdir = "skills";
                     idPrefix = "anthropic";
                   };
-                  terraform-provider = {
-                    path = hashicorp-skills;
-                    subdir = "terraform/provider-development/skills";
-                    idPrefix = "terraform-provider";
-                  };
                   personal = {
                     path = ./skills;
                     idPrefix = "personal";
@@ -76,7 +70,6 @@
                   ];
                   enableAll = [
                     "personal"
-                    "terraform-provider"
                   ];
                 };
                 targets = {
