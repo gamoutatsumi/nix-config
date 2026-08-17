@@ -8,15 +8,15 @@
 {
   anthropic-official-marketplace = {
     pname = "anthropic-official-marketplace";
-    version = "4a3e6565eae08b14c5efcb842d87dee8ae99527f";
+    version = "8864c9d619547417e9bd9305df0b4fc078f89b08";
     src = fetchFromGitHub {
       owner = "anthropics";
       repo = "claude-plugins-official";
-      rev = "4a3e6565eae08b14c5efcb842d87dee8ae99527f";
+      rev = "8864c9d619547417e9bd9305df0b4fc078f89b08";
       fetchSubmodules = false;
-      sha256 = "sha256-Knwqwhx5TnSxC4gH2BQSSZtvY19YEgKM2m7FcdD/5Xw=";
+      sha256 = "sha256-c5vpzHdEDNQ47nhOfGp5gy7jE3gB/BoRYBe06lYjsVU=";
     };
-    date = "2026-08-12";
+    date = "2026-08-16";
   };
   ast-grep-marketplace = {
     pname = "ast-grep-marketplace";
