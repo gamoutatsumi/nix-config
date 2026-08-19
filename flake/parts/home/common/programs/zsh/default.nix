@@ -70,6 +70,7 @@ in
         MYCLI_HISTFILE = "${config.xdg.dataHome}/mycli/history";
         NH_SHOW_ACTIVATION_LOGS = "1";
         NIX_CONFIG = "access-tokens = github.com=$(gh auth token)";
+        NIX_USER_CONF_FILES = "${config.xdg.configHome}/nix/nix.conf:${config.xdg.configHome}/nix/local.conf";
         PAGER = "${lib.getExe' pkgs.ov "ov"}";
         PURE_GIT_PULL = 0;
         TMUX_PLUGIN_MANAGER_PATH = "${config.xdg.dataHome}/tmux/plugins";
