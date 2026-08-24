@@ -8,27 +8,27 @@
 {
   anthropic-official-marketplace = {
     pname = "anthropic-official-marketplace";
-    version = "67a666efc8524ff7abaa266f84e514aa77aee48f";
+    version = "340e33aef211d95769d252324854497af871dafe";
     src = fetchFromGitHub {
       owner = "anthropics";
       repo = "claude-plugins-official";
-      rev = "67a666efc8524ff7abaa266f84e514aa77aee48f";
+      rev = "340e33aef211d95769d252324854497af871dafe";
       fetchSubmodules = false;
-      sha256 = "sha256-PZNjydvhQh2fSbIxRk6+5plJMdD5cYLwZsHNzh3Eowg=";
+      sha256 = "sha256-ZsVsr20c6dWNmBJdBZBNjF4DOvDrMqyrUyJjBOH5DJk=";
     };
-    date = "2026-08-20";
+    date = "2026-08-21";
   };
   ast-grep-marketplace = {
     pname = "ast-grep-marketplace";
-    version = "c2a9bc154f4ffe08b25d28d5e852dfac8c0d0d8a";
+    version = "6b668aa526afdc623c1a9ed1d6ae920e04a717ad";
     src = fetchFromGitHub {
       owner = "ast-grep";
       repo = "agent-skill";
-      rev = "c2a9bc154f4ffe08b25d28d5e852dfac8c0d0d8a";
+      rev = "6b668aa526afdc623c1a9ed1d6ae920e04a717ad";
       fetchSubmodules = false;
-      sha256 = "sha256-awochSE2OupbsmaGx0xc7wHf0ovVMSdtHv4gZAGWOus=";
+      sha256 = "sha256-esxl6g4U2+0KPkcDAq0HsIYkZaHM3iYy0rqylM83/bk=";
     };
-    date = "2026-07-03";
+    date = "2026-08-21";
   };
   codecompanion-nvim = {
     pname = "codecompanion-nvim";
