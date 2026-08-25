@@ -8,15 +8,15 @@
 {
   anthropic-official-marketplace = {
     pname = "anthropic-official-marketplace";
-    version = "340e33aef211d95769d252324854497af871dafe";
+    version = "e572d204d75338d76cbf9c06a53cf7b6e0c705d4";
     src = fetchFromGitHub {
       owner = "anthropics";
       repo = "claude-plugins-official";
-      rev = "340e33aef211d95769d252324854497af871dafe";
+      rev = "e572d204d75338d76cbf9c06a53cf7b6e0c705d4";
       fetchSubmodules = false;
-      sha256 = "sha256-ZsVsr20c6dWNmBJdBZBNjF4DOvDrMqyrUyJjBOH5DJk=";
+      sha256 = "sha256-rPYAciCFf2D8jOCuangcoCgW1DlcfgZuoYXEGA8sTl4=";
     };
-    date = "2026-08-21";
+    date = "2026-08-24";
   };
   ast-grep-marketplace = {
     pname = "ast-grep-marketplace";
@@ -32,13 +32,13 @@
   };
   codecompanion-nvim = {
     pname = "codecompanion-nvim";
-    version = "v19.22.0";
+    version = "v19.23.0";
     src = fetchFromGitHub {
       owner = "olimorris";
       repo = "codecompanion.nvim";
-      rev = "v19.22.0";
+      rev = "v19.23.0";
       fetchSubmodules = false;
-      sha256 = "sha256-JYxW59FelB2vvC0Yr7eV2vqKeIIUzPs79ohmgVRc91Q=";
+      sha256 = "sha256-Qwp5GMiThljD7l9ygl8T333OlBQ2Me1k6/KWAkFq4QU=";
     };
   };
   denops-vim = {
