@@ -79,6 +79,9 @@ in
           sha256 = "/cR4H3FN7lHVD5dMXq7khjn+a5nMdXuEPpM5hC94meE=";
         };
       };
+      "f-sy-h" = {
+        source = ./config/f-sy-h;
+      };
       "zeno" = {
         source = ./config/zeno;
       };
