@@ -47,7 +47,7 @@ zstyle ':fsh:config' path-blocklist '/private/*' '/mnt/slow/**'
 zstyle ':fsh:config' chroma-opt-in vim
 zstyle ':fsh:config' chroma-cache-seconds 5
 zstyle ':fsh:config' chroma-timeout-seconds 2
-fsh_theme nightfly
+fsh_theme "${XDG_CONFIG_HOME:-$HOME/.config}/f-sy-h/nightfly.ini"
 '''
 
 [plugins.tmk]
