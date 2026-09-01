@@ -2,7 +2,6 @@
 local ensure_enabled = {
     -- keep-sorted start
     "alloy_ls",
-    "astro",
     "bashls",
     "biome",
     "buf_ls",
@@ -152,6 +151,10 @@ vim.api.nvim_create_autocmd("FileType", {
             )
         then
             return
+        end
+
+        if vim.fn.findfile("astro.config.ts", ".;") ~= "" then
+            vim.lsp.enable("astro")
         end
 
         -- node
