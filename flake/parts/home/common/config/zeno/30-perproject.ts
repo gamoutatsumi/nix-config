@@ -1,5 +1,5 @@
 import { defineConfig, fileExists } from "@yuki-yano/zeno";
-import { dirname, join, resolve } from "@std/path";
+import { dirname, join, resolve } from "path";
 
 type PackageManager = "npm" | "yarn" | "pnpm" | "bun";
 

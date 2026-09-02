@@ -16,6 +16,6 @@
   "scopes": {},
   "imports": {
     "@yuki-yano/zeno": "jsr:@yuki-yano/zeno@0.4.1",
-    "@std/path": "jsr:@std/path@1.1.4"
+    "path": "jsr:@std/path@1.1.4"
   }
 }
