@@ -52,13 +52,6 @@ in
   home = {
     packages =
       (with pkgs; [
-        (wrapHelm kubernetes-helm {
-          plugins = with kubernetes-helmPlugins; [
-            helm-diff
-            helm-secrets
-            helm-git
-          ];
-        })
         # keep-sorted start
         age-plugin-yubikey
         ast-grep
@@ -100,6 +93,13 @@ in
         # keep-sorted end
       ])
       ++ (with upkgs; [
+        (wrapHelm kubernetes-helm {
+          plugins = with kubernetes-helmPlugins; [
+            helm-diff
+            helm-secrets
+            helm-git
+          ];
+        })
         # keep-sorted start
         curlFull
         docker-credential-helpers
