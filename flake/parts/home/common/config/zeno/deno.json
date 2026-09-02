@@ -1,0 +1,21 @@
+{
+  "$schema": "https://raw.githubusercontent.com/denoland/deno/refs/heads/main/cli/schemas/config-file.v1.json",
+  "lock": false,
+  "fmt": {
+    "exclude": [
+      ".deno",
+      ".git"
+    ]
+  },
+  "lint": {
+    "exclude": [
+      ".deno",
+      ".git"
+    ]
+  },
+  "scopes": {},
+  "imports": {
+    "@yuki-yano/zeno": "jsr:@yuki-yano/zeno@0.4.1",
+    "@std/path": "jsr:@std/path@1.1.4"
+  }
+}

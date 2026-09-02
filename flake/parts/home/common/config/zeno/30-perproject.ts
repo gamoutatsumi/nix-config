@@ -1,6 +1,5 @@
-// deno-lint-ignore-file no-import-prefix
-import { defineConfig, fileExists } from "jsr:@yuki-yano/zeno@0.4.1";
-import { dirname, join, resolve } from "jsr:@std/path@1.1.4";
+import { defineConfig, fileExists } from "@yuki-yano/zeno";
+import { dirname, join, resolve } from "@std/path";
 
 type PackageManager = "npm" | "yarn" | "pnpm" | "bun";
 
@@ -51,7 +50,7 @@ const parsePackageManagerField = (value: unknown): PackageManager | null => {
 const readPackageJson = async (
   packageJsonPath: string,
 ): Promise<PackageJsonInfo | null> => {
-  if (!await fileExists(packageJsonPath)) {
+  if (!(await fileExists(packageJsonPath))) {
     return null;
   }
 
@@ -124,7 +123,10 @@ const findProjectInfo = async (
   currentDirectory: string,
 ): Promise<ProjectInfo | null> => {
   for (
-    const directory of collectSearchDirectories(currentDirectory, projectRoot)
+    const directory of collectSearchDirectories(
+      currentDirectory,
+      projectRoot,
+    )
   ) {
     const packageJsonPath = join(directory, "package.json");
     const packageJson = await readPackageJson(packageJsonPath);
@@ -167,24 +169,23 @@ export default defineConfig(async ({ projectRoot, currentDirectory }) => {
   const packageCommand = PACKAGE_MANAGER_COMMAND[packageManager];
   const runCommand = RUN_COMMAND[packageManager];
 
-  const completionPatterns = [
-    `^${escapeRegExp(runCommand)} `,
-    "^ni run ",
-  ];
+  const completionPatterns = [`^${escapeRegExp(runCommand)} `, "^ni run "];
 
-  const completions = [{
-    name: `${runCommand} scripts`,
-    patterns: Array.from(new Set(completionPatterns)),
-    sourceCommand: createScriptSourceCommand(packageJsonPath),
-    options: {
-      "--prompt": `'${runCommand}> '`,
-      "--delimiter": "'\\t'",
-      "--with-nth": "1",
-      "--preview": "printf '%s\\n' {2}",
-      "--preview-window": "'down'",
+  const completions = [
+    {
+      name: `${runCommand} scripts`,
+      patterns: Array.from(new Set(completionPatterns)),
+      sourceCommand: createScriptSourceCommand(packageJsonPath),
+      options: {
+        "--prompt": `'${runCommand}> '`,
+        "--delimiter": "'\\t'",
+        "--with-nth": "1",
+        "--preview": "printf '%s\\n' {2}",
+        "--preview-window": "'down'",
+      },
+      callback: "awk -F '\\t' '{print $1}'",
     },
-    callback: "awk -F '\\t' '{print $1}'",
-  }];
+  ];
 
   return {
     snippets: [

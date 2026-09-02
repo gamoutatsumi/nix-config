@@ -1,5 +1,4 @@
-// deno-lint-ignore-file no-import-prefix
-import { defineConfig } from "jsr:@yuki-yano/zeno@0.4.1";
+import { defineConfig } from "@yuki-yano/zeno";
 
 export default defineConfig(() => {
   const command = new Deno.Command("kubectl", {

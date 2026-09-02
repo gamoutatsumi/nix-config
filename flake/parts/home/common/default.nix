@@ -82,8 +82,17 @@ in
       "f-sy-h" = {
         source = ./config/f-sy-h;
       };
-      "zeno" = {
-        source = ./config/zeno;
+      "zeno/10-snippets.ts" = {
+        source = ./config/zeno/10-snippets.ts;
+      };
+      "zeno/20-completions.ts" = {
+        source = ./config/zeno/20-completions.ts;
+      };
+      "zeno/30-perproject.ts" = {
+        source = ./config/zeno/30-perproject.ts;
+      };
+      "zeno/40-kubectl.ts" = {
+        source = ./config/zeno/40-kubectl.ts;
       };
       "ov/config.yaml" = {
         source = ./config/ov/config.yaml;
