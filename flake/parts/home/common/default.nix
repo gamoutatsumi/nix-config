@@ -94,6 +94,9 @@ in
       "zeno/40-kubectl.ts" = {
         source = ./config/zeno/40-kubectl.ts;
       };
+      "zeno/deno.json" = {
+        source = ./config/zeno/deno.json;
+      };
       "ov/config.yaml" = {
         source = ./config/ov/config.yaml;
       };
