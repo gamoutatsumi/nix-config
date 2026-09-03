@@ -8,15 +8,15 @@
 {
   anthropic-official-marketplace = {
     pname = "anthropic-official-marketplace";
-    version = "e18ff5086423bd9c21902ce3100dc4ecc84a668a";
+    version = "0120fb83da5d7cdaa52dd11979690f2dc5f76052";
     src = fetchFromGitHub {
       owner = "anthropics";
       repo = "claude-plugins-official";
-      rev = "e18ff5086423bd9c21902ce3100dc4ecc84a668a";
+      rev = "0120fb83da5d7cdaa52dd11979690f2dc5f76052";
       fetchSubmodules = false;
-      sha256 = "sha256-oM6IYPomj4PxtIQAxeA5iHmI0s3dekm6tgNw8UZzbYU=";
+      sha256 = "sha256-gTTNQyYCyVQYW4/+v1q6otKOO1k5qAQSf7oExJuiOjw=";
     };
-    date = "2026-09-01";
+    date = "2026-09-02";
   };
   ast-grep-marketplace = {
     pname = "ast-grep-marketplace";
@@ -111,15 +111,15 @@
   };
   nvim-dap = {
     pname = "nvim-dap";
-    version = "9e848e09a697ee95302a3ef2dd43fd6eb709e570";
+    version = "c9a0738e45f1bd41d792a126941348dce661cf9b";
     src = fetchFromGitHub {
       owner = "mfussenegger";
       repo = "nvim-dap";
-      rev = "9e848e09a697ee95302a3ef2dd43fd6eb709e570";
+      rev = "c9a0738e45f1bd41d792a126941348dce661cf9b";
       fetchSubmodules = false;
-      sha256 = "sha256-IHm3CwO7qUTtOZqhljDjSzz4WbaAJ4kPY384MyZZ9ac=";
+      sha256 = "sha256-VVHXHBKGmDnltHBMcVoBElaKMElXwJwB/7IZROQGCpg=";
     };
-    date = "2026-06-19";
+    date = "2026-09-01";
   };
   nvim-dap-go = {
     pname = "nvim-dap-go";
