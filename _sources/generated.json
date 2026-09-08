@@ -1,7 +1,7 @@
 {
     "anthropic-official-marketplace": {
         "cargoLock": null,
-        "date": "2026-09-02",
+        "date": "2026-09-04",
         "extract": null,
         "name": "anthropic-official-marketplace",
         "passthru": null,
@@ -13,12 +13,12 @@
             "name": null,
             "owner": "anthropics",
             "repo": "claude-plugins-official",
-            "rev": "0120fb83da5d7cdaa52dd11979690f2dc5f76052",
-            "sha256": "sha256-gTTNQyYCyVQYW4/+v1q6otKOO1k5qAQSf7oExJuiOjw=",
+            "rev": "85cce0381e7860082641b59d961a2b8c368b8b79",
+            "sha256": "sha256-gZxIOTXzNFxW+67iO5bveT4ZBKjP8HZfUlg1fAq4jE0=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "0120fb83da5d7cdaa52dd11979690f2dc5f76052"
+        "version": "85cce0381e7860082641b59d961a2b8c368b8b79"
     },
     "ast-grep-marketplace": {
         "cargoLock": null,
