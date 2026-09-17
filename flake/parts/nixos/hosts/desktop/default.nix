@@ -186,6 +186,13 @@ in
     blueman = {
       enable = true;
     };
+    howdy = {
+      enable = false;
+      control = "sufficient";
+    };
+    linux-enable-ir-emitter = {
+      enable = true;
+    };
     ollama = {
       package = pkgs.ollama-cuda;
       enable = false;
