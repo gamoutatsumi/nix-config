@@ -20,7 +20,6 @@
       "karabiner-elements"
       "macskk"
       "obsidian"
-      "raycast"
       "tinycast"
       "vivaldi"
       # keep-sorted end
