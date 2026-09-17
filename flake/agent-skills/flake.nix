@@ -4,9 +4,6 @@
     agent-skills = {
       url = "github:Kyure-A/agent-skills-nix";
       inputs = {
-        home-manager = {
-          follows = "home-manager";
-        };
         nixpkgs = {
           follows = "nixpkgs";
         };
@@ -19,14 +16,6 @@
     hashicorp-skills = {
       url = "github:hashicorp/agent-skills";
       flake = false;
-    };
-    home-manager = {
-      url = "github:nix-community/home-manager/release-26.05";
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs";
-        };
-      };
     };
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-26.05";
