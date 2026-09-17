@@ -6,6 +6,9 @@
       autoUpdate = true;
       upgrade = true;
     };
+    taps = [
+      "abue-ammar/tinycast"
+    ];
     casks = [
       # keep-sorted start
       "chatgpt"
@@ -15,6 +18,7 @@
       "macskk"
       "obsidian"
       "raycast"
+      "tinycast"
       "vivaldi"
       # keep-sorted end
     ];
