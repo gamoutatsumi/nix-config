@@ -70,7 +70,7 @@
       };
     };
     arto = {
-      url = "github:arto-app/Arto/v0.32.1";
+      url = "github:arto-app/Arto/v0.36.2";
     };
     brew-api = {
       url = "github:BatteredBunny/brew-api";
@@ -247,7 +247,7 @@
       flake = false;
     };
     xremap = {
-      url = "github:xremap/xremap/v0.15.9";
+      url = "github:xremap/xremap/v0.15.13";
       flake = false;
     };
     xremap-nix = {
