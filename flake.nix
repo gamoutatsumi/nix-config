@@ -67,9 +67,6 @@
         nixpkgs = {
           follows = "nixpkgs";
         };
-        home-manager = {
-          follows = "home-manager";
-        };
       };
     };
     arto = {

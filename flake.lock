@@ -90,9 +90,6 @@
         "agent-skills": "agent-skills_2",
         "anthropic-skills": "anthropic-skills",
         "hashicorp-skills": "hashicorp-skills",
-        "home-manager": [
-          "home-manager"
-        ],
         "nixpkgs": [
           "nixpkgs"
         ]
