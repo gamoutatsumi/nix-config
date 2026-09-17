@@ -23,7 +23,7 @@
     };
   };
   system = {
-    stateVersion = 5;
+    stateVersion = 7;
     primaryUser = username;
     defaults = {
       WindowManager = {
