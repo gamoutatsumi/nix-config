@@ -7,7 +7,10 @@
       upgrade = true;
     };
     taps = [
-      "abue-ammar/tinycast"
+      {
+        name = "abue-ammar/tinycast";
+        trusted = true;
+      }
     ];
     casks = [
       # keep-sorted start
