@@ -188,6 +188,7 @@ in
     };
     howdy = {
       enable = true;
+      package = upkgs.howdy;
       control = "sufficient";
       settings = {
         core = {
