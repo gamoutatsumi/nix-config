@@ -50,15 +50,6 @@
         nixpkgs = {
           follows = "nixpkgs-unstable";
         };
-        systems = {
-          follows = "systems";
-        };
-        home-manager = {
-          follows = "home-manager";
-        };
-        darwin = {
-          follows = "nix-darwin";
-        };
       };
     };
     agent-skills = {
