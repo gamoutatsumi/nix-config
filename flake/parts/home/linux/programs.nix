@@ -26,6 +26,7 @@ in
         slack
         tor-browser
         vlc
+        winetricks
         wl-clipboard
         zoom-us
         # keep-sorted end
