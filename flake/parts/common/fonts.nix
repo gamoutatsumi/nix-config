@@ -3,6 +3,7 @@
   fonts = {
     packages = with pkgs; [
       # keep-sorted start
+      corefonts
       ibm-plex
       ipafont
       noto-fonts-cjk-sans
