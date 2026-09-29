@@ -234,7 +234,7 @@ in
       };
     };
     linux-enable-ir-emitter = {
-      enable = true;
+      enable = false;
     };
     ollama = {
       package = pkgs.ollama-cuda;
