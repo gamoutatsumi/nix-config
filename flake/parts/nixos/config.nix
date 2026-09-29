@@ -32,6 +32,7 @@
     };
     fontconfig = {
       enable = true;
+      cache32Bit = true;
       defaultFonts = {
         emoji = [ "Noto Color Emoji" ];
         monospace = [ "PlemolJP Console" ];

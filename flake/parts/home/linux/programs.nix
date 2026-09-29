@@ -47,6 +47,14 @@ in
             pkg-config
           ];
         })
+        (wineWow64Packages.stable.overrideAttrs (old: {
+          patches = (old.patches or [ ]) ++ [
+            (pkgs.fetchurl {
+              url = "https://raw.githubusercontent.com/fitudao3788/wine-patches/refs/heads/wine-11.0/patch/softdenchi-fixes.patch";
+              sha256 = "0c8ih7p80ci69s68phzgq6bq80i475rwvd7rr0qq3l9svci5l453";
+            })
+          ];
+        }))
       ]
       ++ (with upkgs; [
         agenix-rekey
