@@ -187,7 +187,7 @@ in
       enable = true;
     };
     howdy = {
-      enable = true;
+      enable = false;
       package = upkgs.howdy;
       control = "sufficient";
       settings = {
