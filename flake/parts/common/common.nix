@@ -2,6 +2,7 @@
   inputs,
   pkgs,
   username,
+  self,
   ...
 }:
 {
@@ -57,6 +58,9 @@
     config = {
       allowUnfree = true;
     };
+  };
+  system = {
+    configurationRevision = self.rev or self.dirtyRev or null;
   };
   # keep-sorted end
 }
