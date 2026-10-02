@@ -26,11 +26,16 @@
     stateVersion = 7;
     primaryUser = username;
     defaults = {
+      menuExtraClock = {
+        Show24Hour = true;
+      };
       WindowManager = {
         GloballyEnabled = false;
       };
       NSGlobalDomain = {
         _HIHideMenuBar = false;
+        AppleICUForce24HourTime = true;
+        AppleInterfaceStyle = "Dark";
       };
       finder = {
         AppleShowAllExtensions = true;
