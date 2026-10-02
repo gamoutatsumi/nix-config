@@ -36,6 +36,7 @@
         _HIHideMenuBar = false;
         AppleICUForce24HourTime = true;
         AppleInterfaceStyle = "Dark";
+        AppleIconAppearanceTheme = "RegularAutomatic";
       };
       finder = {
         AppleShowAllExtensions = true;
