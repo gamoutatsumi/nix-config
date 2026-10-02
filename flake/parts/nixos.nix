@@ -1,6 +1,7 @@
 {
   withSystem,
   inputs,
+  self,
   ...
 }:
 {
@@ -31,6 +32,7 @@
               inputs
               upkgs
               username
+              self
               ;
           };
           modules = [
@@ -78,6 +80,7 @@
               inputs
               upkgs
               username
+              self
               ;
             device = "/dev/disk/by-id/nvme-WD_BLACK_SN770_1TB_24116U400484";
           };

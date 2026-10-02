@@ -1,4 +1,9 @@
-{ withSystem, inputs, ... }:
+{
+  self,
+  withSystem,
+  inputs,
+  ...
+}:
 {
   flake = {
     darwinConfigurations = {
@@ -18,7 +23,7 @@
         inputs.nix-darwin.lib.darwinSystem {
           inherit system;
           specialArgs = {
-            inherit inputs upkgs;
+            inherit inputs upkgs self;
             username = darwinUser;
             hostname = darwinHost;
           };
