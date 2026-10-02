@@ -24,6 +24,7 @@ let
       docker-language-server
       efm-langserver
       gopls
+      herdr
       jinja-lsp
       lua-language-server
       prettierd
@@ -172,9 +173,6 @@ in
     };
     fzf = {
       enable = true;
-      tmux = {
-        enableShellIntegration = false;
-      };
       defaultOptions = [
         "--sync"
       ];
@@ -374,7 +372,7 @@ in
       };
     };
     tmux = {
-      enable = true;
+      enable = false;
       sensibleOnTop = false;
       prefix = "C-s";
       shell = lib.getExe pkgs.zsh;
