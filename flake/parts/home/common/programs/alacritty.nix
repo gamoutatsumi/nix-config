@@ -15,7 +15,7 @@
           import = [
             "${pkgs.fetchurl {
               url = "https://raw.githubusercontent.com/bluz71/vim-nightfly-colors/master/extras/nightfly-alacritty.toml";
-              sha256 = "0ssgf9i5nrc2m57zvgfzlgfvyhcrwd73pkiny266ba201niv6qi1";
+              sha256 = "0sc2j2vshpdclz97g8pk9699qzjpafi5zf1mb7k8jzs3n692sdrk";
             }}"
           ];
         };
