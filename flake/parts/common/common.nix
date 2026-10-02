@@ -12,6 +12,7 @@
     channel = {
       enable = false;
     };
+    extraOptions = "!include access-tokens.conf";
     nixPath = [
       "nixpkgs=${inputs.nixpkgs}"
     ];
