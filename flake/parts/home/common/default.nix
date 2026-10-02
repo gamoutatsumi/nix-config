@@ -17,6 +17,7 @@ in
     stateVersion = "26.05"; # Please read the comment before changing.
   };
   nix = {
+    extraOptions = "!include access-tokens.conf";
     settings = {
       nix-path = [
         "nixpkgs=${inputs.nixpkgs.outPath}"
