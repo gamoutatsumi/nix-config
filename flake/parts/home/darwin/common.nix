@@ -22,10 +22,15 @@
       PATH = "/opt/homebrew/bin:/opt/homebrew/sbin:\${PATH}";
     };
     file = {
-      ".gnupg/gpg-agent.conf".text = ''
-        pinentry-program ${lib.getExe pkgs.pinentry_mac}
-        enable-ssh-support
-      '';
+      ".gnupg/gpg-agent.conf" = {
+        text = ''
+          pinentry-program ${lib.getExe pkgs.pinentry_mac}
+          enable-ssh-support
+        '';
+      };
+      "Library/Containers/net.mtgto.inputmethod.macSKK/Data/Documents/Dictionaries/SKK-JISYO.L" = {
+        source = "${pkgs.skkDictionaries.l}/share/skk/SKK-JISYO.L";
+      };
     };
   };
   targets = {
