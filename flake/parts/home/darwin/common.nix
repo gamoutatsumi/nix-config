@@ -14,6 +14,11 @@
   };
   home = {
     homeDirectory = lib.mkForce "/Users/${username}";
+    activation = {
+      macskk = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+        $DRY_RUN_CMD cp ${pkgs.skkDictionaries.l}/share/skk/SKK-JISYO.L "$HOME/Library/Containers/net.mtgto.inputmethod.macSKK/Data/Documents/Dictionaries/SKK-JISYO.L"
+      '';
+    };
     sessionVariables = {
       HOMEBREW_PREFIX = "/opt/homebrew";
       HOMEBREW_CELLAR = "/opt/homebrew/Cellar";
