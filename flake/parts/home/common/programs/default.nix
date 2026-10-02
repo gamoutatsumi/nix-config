@@ -11,7 +11,7 @@
 let
   gpgKey = pkgs.fetchurl {
     url = "https://github.com/gamoutatsumi.gpg";
-    sha256 = "0p1xp2rq7r0hbdi7dkhw3fzrf2ij7b3p6a5nnk0fflda4cs6a814";
+    sha256 = "0k6yrzb39ffrlql2akdq3lqxdsrh71l9hcl7da8m7d7mnnhrlnnv";
   };
   lspServers =
     (with pkgs; [
