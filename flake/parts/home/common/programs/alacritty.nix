@@ -27,7 +27,6 @@
         };
         env = {
           TERM = "alacritty";
-          USE_TMUX = "true";
           WINIT_X11_SCALE_FACTOR = "1.1";
         };
         font = {
