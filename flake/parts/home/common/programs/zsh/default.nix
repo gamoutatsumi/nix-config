@@ -75,6 +75,7 @@ in
         PURE_GIT_PULL = 0;
         TMUX_PLUGIN_MANAGER_PATH = "${config.xdg.dataHome}/tmux/plugins";
         WORDCHARS = "*?_.[]~-=&;!#$%^(){}<>";
+        ZENO_ENABLE_FZF_TMUX = 1;
         ZENO_ENABLE_SOCK = 1;
         ZENO_GIT_CAT = "bat";
         ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=8";
@@ -95,7 +96,7 @@ in
         let
           tmux_exe = lib.getExe config.programs.tmux.package;
           yq_exe = lib.getExe upkgs.yq;
-          fzf_exe = lib.getExe config.programs.fzf.package;
+          fzf-tmux_exe = lib.getExe' config.programs.fzf.package "fzf-tmux";
           openstackConfig = "${config.xdg.configHome}/openstack/clouds.yaml";
         in
         {
@@ -103,7 +104,7 @@ in
             local project dir repository session current_session out
             local ghq_command="${lib.getExe pkgs.ghq} list -p | ${lib.getExe pkgs.gnused} -e \"s|$HOME|~|\""
             local fzf_options_="--expect=ctrl-space --preview='eval bat --paging=never --style=plain --color=always {}/README.md'"
-            local fzf_command="${fzf_exe} ''${fzf_options_}"
+            local fzf_command="${fzf-tmux_exe} ''${fzf_options_}"
             fzf_command+=" ''${FZF_PREVIEW_DEFAULT_SETTING}"
             fzf_command+=" --bind='${fzf_preview_default_bind}'"
             local command="''${ghq_command} | ''${fzf_command}"
@@ -150,11 +151,11 @@ in
             ${lib.getExe upkgs.sheldon} lock --update && ${lib.getExe upkgs.sheldon} source | grep -v "^$" > "${config.xdg.stateHome}/sheldon/sheldon.lock.zsh"
           '';
           awsp = ''
-            local profile=$(${lib.getExe config.programs.awscli.package} configure list-profiles | sort | ${fzf_exe})
+            local profile=$(${lib.getExe config.programs.awscli.package} configure list-profiles | sort | ${fzf-tmux_exe})
             export AWS_PROFILE="$profile"
           '';
           osp = ''
-            local profile=$(cat ${openstackConfig} | ${yq_exe} -r ".clouds | keys | .[]" | ${fzf_exe})
+            local profile=$(cat ${openstackConfig} | ${yq_exe} -r ".clouds | keys | .[]" | ${fzf-tmux_exe})
             if [ -z "$profile" ]; then
               return 1
             fi
@@ -173,7 +174,7 @@ in
             export OS_USER_DOMAIN_NAME="$user_domain_name"
           '';
           gcp = ''
-            local profile=$(${lib.getExe upkgs.google-cloud-sdk} config configurations list | ${lib.getExe pkgs.gawk} '{ print $1,$3,$4 }' | ${lib.getExe pkgs.unixtools.column} -t | ${fzf_exe} --header-lines=1 | ${lib.getExe pkgs.gawk} '{ print $1 }')
+            local profile=$(${lib.getExe upkgs.google-cloud-sdk} config configurations list | ${lib.getExe pkgs.gawk} '{ print $1,$3,$4 }' | ${lib.getExe pkgs.unixtools.column} -t | ${fzf-tmux_exe} --header-lines=1 | ${lib.getExe pkgs.gawk} '{ print $1 }')
              ${lib.getExe upkgs.google-cloud-sdk} config configurations activate "$profile"
           '';
           git-worktree-add-interactive = ''

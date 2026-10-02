@@ -176,6 +176,9 @@ in
       defaultOptions = [
         "--sync"
       ];
+      tmux = {
+        enableShellIntegration = false;
+      };
       enableZshIntegration = true;
       package = pkgs.fzf;
     };
@@ -372,7 +375,7 @@ in
       };
     };
     tmux = {
-      enable = false;
+      enable = true;
       sensibleOnTop = false;
       prefix = "C-s";
       shell = lib.getExe pkgs.zsh;
