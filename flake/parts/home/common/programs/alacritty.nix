@@ -26,7 +26,6 @@
           };
         };
         env = {
-          TERM = "alacritty-direct";
           WINIT_X11_SCALE_FACTOR = "1.1";
         };
         font = {
