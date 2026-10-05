@@ -37,6 +37,7 @@
         AppleICUForce24HourTime = true;
         AppleInterfaceStyle = "Dark";
         AppleIconAppearanceTheme = "RegularAutomatic";
+        "com.apple.keyboard.fnState" = true;
       };
       finder = {
         AppleShowAllExtensions = true;
