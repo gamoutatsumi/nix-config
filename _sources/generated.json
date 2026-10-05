@@ -1,7 +1,7 @@
 {
     "anthropic-official-marketplace": {
         "cargoLock": null,
-        "date": "2026-09-28",
+        "date": "2026-10-02",
         "extract": null,
         "name": "anthropic-official-marketplace",
         "passthru": null,
@@ -13,12 +13,12 @@
             "name": null,
             "owner": "anthropics",
             "repo": "claude-plugins-official",
-            "rev": "fbe07fb6ce7d51d8e86ca6efdf050059894cdb80",
-            "sha256": "sha256-i2EhIqcQeI14woehjudzQQF3ue3ViZd6MwggRA4C5j0=",
+            "rev": "d182ca456ca09d31d139f7d3818d1d333b103cce",
+            "sha256": "sha256-LQ78jO8fzutmPJSsc3XeA+KqEP8wOrhH8AQaDCr/Pd8=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "fbe07fb6ce7d51d8e86ca6efdf050059894cdb80"
+        "version": "d182ca456ca09d31d139f7d3818d1d333b103cce"
     },
     "ast-grep-marketplace": {
         "cargoLock": null,
@@ -55,12 +55,12 @@
             "name": null,
             "owner": "olimorris",
             "repo": "codecompanion.nvim",
-            "rev": "v19.26.0",
-            "sha256": "sha256-KS3F/h1UCYSsztWKy2RouS89I46+y7uB/qykHJ4lIf0=",
+            "rev": "v19.27.0",
+            "sha256": "sha256-8iJyUnsgdJsLqrMKasoaDjSiAwgWAEujF6GMEF9Jq2k=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v19.26.0"
+        "version": "v19.27.0"
     },
     "denops-vim": {
         "cargoLock": null,
