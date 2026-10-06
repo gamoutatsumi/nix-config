@@ -18,7 +18,7 @@
       flake = false;
     };
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-26.05";
+      url = "https://channels.nixos.org/nixos-26.05/nixexprs.tar.zst";
     };
     # keep-sorted end
   };
