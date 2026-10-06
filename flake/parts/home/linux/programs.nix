@@ -61,7 +61,6 @@ in
         agenix-rekey
         esphome
         obsidian
-        sidequest
         xwayland-satellite
         (vivaldi.override {
           enableWidevine = true;
