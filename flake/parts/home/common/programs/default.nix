@@ -185,6 +185,7 @@ in
     gh = {
       enable = true;
       package = upkgs.gh;
+      extensions = with upkgs; [ gh-stack ];
       gitCredentialHelper = {
         enable = true;
       };
