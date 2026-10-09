@@ -141,6 +141,11 @@
     ssh = {
       package = pkgs.openssh;
     };
+    zsh = {
+      sessionVariables = {
+        CONTAINER_DEFAULT_PLATFORM = "linux/arm64";
+      };
+    };
     # keep-sorted end
   };
 }
