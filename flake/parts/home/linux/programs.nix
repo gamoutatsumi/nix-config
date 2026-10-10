@@ -172,7 +172,7 @@ in
       enable = true;
     };
     obs-studio = {
-      enable = true;
+      enable = false;
     };
     firefox = {
       enable = true;
