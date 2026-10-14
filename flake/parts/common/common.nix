@@ -7,6 +7,9 @@
 }:
 {
   # keep-sorted start block=yes
+  environment = {
+    enableAllTerminfo = true;
+  };
   nix = {
     # keep-sorted start block=yes
     channel = {
