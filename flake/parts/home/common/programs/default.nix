@@ -129,7 +129,6 @@ in
         ccusage
         copilot-cli
         openspec
-        vibe-kanban
         # keep-sorted end
       ])
       ++ lspServers;
