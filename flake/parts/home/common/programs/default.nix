@@ -442,7 +442,7 @@ in
       enableZshIntegration = true;
       installBatSyntax = true;
       installVimSyntax = true;
-      clearDefaultKeyBinds = true;
+      clearDefaultKeybinds = true;
       settings = {
         # keep-sorted start block=yes
         auto-update = "off";
