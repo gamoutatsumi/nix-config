@@ -441,9 +441,12 @@ in
       enable = true;
       enableZshIntegration = true;
       installBatSyntax = true;
+      installVimSyntax = true;
+      clearDefaultKeyBinds = true;
       settings = {
         # keep-sorted start block=yes
         auto-update = "off";
+        command = "zsh --login";
         env = [
           "TERM=xterm-ghostty"
         ];

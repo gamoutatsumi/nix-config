@@ -88,6 +88,9 @@ in
     };
     ghostty = {
       package = upkgs.ghostty;
+      systemd = {
+        enable = true;
+      };
     };
     lutris = {
       enable = true;
