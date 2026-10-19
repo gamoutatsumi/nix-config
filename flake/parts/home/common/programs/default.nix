@@ -110,7 +110,6 @@ in
         fd
         google-cloud-sdk
         istioctl
-        kn
         kubectl
         kubie
         magika
