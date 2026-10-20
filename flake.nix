@@ -61,7 +61,7 @@
       };
     };
     arto = {
-      url = "github:arto-app/Arto/v0.36.2";
+      url = "github:arto-app/Arto/v0.42.0";
     };
     brew-api = {
       url = "github:BatteredBunny/brew-api";
@@ -131,7 +131,7 @@
       };
     };
     kakehashi = {
-      url = "github:atusy/kakehashi/v0.11.0";
+      url = "github:atusy/kakehashi/v1.0.0";
       inputs = {
         nixpkgs = {
           follows = "nixpkgs-unstable";
@@ -238,7 +238,7 @@
       flake = false;
     };
     xremap = {
-      url = "github:xremap/xremap/v0.15.13";
+      url = "github:xremap/xremap/v0.15.15";
       flake = false;
     };
     xremap-nix = {
