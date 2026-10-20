@@ -128,6 +128,7 @@ in
         ccusage
         copilot-cli
         openspec
+        pi
         # keep-sorted end
       ])
       ++ lspServers;
