@@ -448,11 +448,7 @@ in
         # keep-sorted start block=yes
         auto-update = "off";
         command = "zsh --login";
-        cursor-style = "block";
         cursor-style-blink = false;
-        env = [
-          "TERM=xterm-ghostty"
-        ];
         font-family = "PlemolJP Console NF";
         font-size = 14;
         theme = "nightfly";
