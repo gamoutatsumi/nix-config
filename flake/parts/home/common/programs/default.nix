@@ -447,6 +447,8 @@ in
         # keep-sorted start block=yes
         auto-update = "off";
         command = "zsh --login";
+        cursor-style = "block_hollow";
+        cursor-style-blink = false;
         env = [
           "TERM=xterm-ghostty"
         ];
