@@ -60,6 +60,11 @@
   nixpkgs = {
     hostPlatform = "aarch64-darwin";
   };
+  programs = {
+    zsh = {
+      enable = true;
+    };
+  };
   users = {
     users = {
       ${username} = {
