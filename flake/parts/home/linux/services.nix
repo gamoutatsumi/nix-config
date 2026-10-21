@@ -11,6 +11,9 @@
     blueman-applet = {
       inherit (nixosConfig.services.blueman) enable;
     };
+    cliphist = {
+      enable = true;
+    };
     emacs = {
       enable = false;
       client = {
