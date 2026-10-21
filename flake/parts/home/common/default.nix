@@ -79,7 +79,7 @@ in
           tomlFormat = pkgs.formats.toml { };
         in
         {
-          source = tomlFormat "config.toml" {
+          source = tomlFormat.generate "config.toml" {
             # keep-sorted start block=yes
             experimental = {
               pane_history = false;
