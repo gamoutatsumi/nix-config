@@ -378,7 +378,6 @@ in
       enable = true;
       sensibleOnTop = false;
       prefix = "C-s";
-      shell = lib.getExe pkgs.zsh;
       terminal = "alacritty";
       extraConfig = lib.strings.concatLines [
         (builtins.readFile ../config/tmux/tmux.conf)

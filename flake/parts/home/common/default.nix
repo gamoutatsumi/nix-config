@@ -74,6 +74,36 @@ in
   };
   xdg = {
     configFile = {
+      "herdr/config.toml" =
+        let
+          tomlFormat = pkgs.formats.toml { };
+        in
+        {
+          source = tomlFormat "config.toml" {
+            # keep-sorted start block=yes
+            experimental = {
+              pane_history = false;
+            };
+            keys = {
+              prefix = "ctrl+s";
+            };
+            server = {
+              headless_cols = 120;
+              headless_rows = 40;
+              allow_unelevated_clients = false;
+            };
+            theme = {
+              name = "terminal";
+            };
+            ui = { };
+            update = {
+              version_check = false;
+              manifest_check = false;
+              channel = "stable";
+            };
+            # keep-sorted end
+          };
+        };
       "ghostty/themes/nightfly" = {
         source = pkgs.fetchurl {
           url = "https://raw.githubusercontent.com/bluz71/vim-nightfly-colors/refs/heads/master/extras/nightfly-ghostty.conf";

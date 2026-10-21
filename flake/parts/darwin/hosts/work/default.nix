@@ -2,13 +2,10 @@
   username,
   hostname,
   inputs,
+  pkgs,
   ...
 }:
 {
-  # environment.systemPackages = with pkgs; [
-  #   vim
-  #   git
-  # ];
   services = {
     darwin-vz = {
       enable = false;
@@ -67,6 +64,7 @@
     users = {
       ${username} = {
         home = "/Users/${username}";
+        shell = pkgs.zsh;
       };
     };
   };
