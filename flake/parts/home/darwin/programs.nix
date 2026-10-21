@@ -13,7 +13,6 @@
         # keep-sorted start block=yes
         container
         docker-client
-        nodejs_22
         # keep-sorted end
       ])
       ++ [ inputs'.arto.packages.default ];
