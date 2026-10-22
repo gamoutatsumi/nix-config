@@ -62,6 +62,12 @@
       allowUnfree = true;
     };
   };
+  security = {
+    pki = {
+      installCACerts = true;
+      caCertificateBlacklist = pkgs.lib.mkForce [ ];
+    };
+  };
   system = {
     configurationRevision = self.rev or self.dirtyRev or null;
   };

@@ -84,9 +84,6 @@
     };
   };
   security = {
-    pki = {
-      installCACerts = true;
-    };
     pam = {
       services = {
         sudo_local = {
