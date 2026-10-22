@@ -65,7 +65,6 @@
   security = {
     pki = {
       installCACerts = true;
-      caCertificateBlacklist = pkgs.lib.mkForce [ ];
     };
   };
   system = {
