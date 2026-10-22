@@ -157,11 +157,11 @@
     "brew-api": {
       "flake": false,
       "locked": {
-        "lastModified": 1792628752,
-        "narHash": "sha256-qO1iBHZScDZofKIz3bgj1LZsBus4vTt0whoJyc9wPeE=",
+        "lastModified": 1792648071,
+        "narHash": "sha256-/hr4H7j9OdikUoUEZCWhVlA+HexszJXF9DTpi1ArPJ4=",
         "owner": "BatteredBunny",
         "repo": "brew-api",
-        "rev": "429d41d3744d5e7cbb151e76caf4a62aa7e3a979",
+        "rev": "48781254ba165432656d2c06a048c689e87a5fe0",
         "type": "github"
       },
       "original": {
@@ -431,11 +431,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792639479,
-        "narHash": "sha256-WFZIGDkTIkcYciFR6gSk2/prNlQWu8OtA6gt4QnPm3U=",
+        "lastModified": 1792642831,
+        "narHash": "sha256-71kw4IMHHyvQ2r7U7Lylhi9EvoeaCQ0J7TzPAEsFI0E=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "ea1584fdd24301e6c064edb1156395f511239b62",
+        "rev": "84b3694134b3322b87215106148d1d987be6f831",
         "type": "github"
       },
       "original": {
@@ -744,11 +744,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792640592,
-        "narHash": "sha256-lXDO0P+pps1HiuVBu34jynLbzTy/0uzxwQpqC7p9bQ0=",
+        "lastModified": 1792644304,
+        "narHash": "sha256-myLVvhZHmdb6CpgSzlfdRM2FRNWADQ0macbWpykODts=",
         "owner": "numtide",
         "repo": "llm-agents.nix",
-        "rev": "894aa8a7a61b0b1144d6cbf4b12e0c3648bbc893",
+        "rev": "8be60c6b0c19a2893841dce14b0c23a8f690c294",
         "type": "github"
       },
       "original": {
@@ -955,11 +955,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1792503283,
-        "narHash": "sha256-OtQ9jaQ9aXZDm61TqykPLZdXJa2NMykYG3d0tbT683U=",
-        "rev": "cd4ea8d57de16f4810bc5f14207bac45fbf19f67",
+        "lastModified": 1792615934,
+        "narHash": "sha256-q1ku4ygV7tdmv5Q9QYwhVDsNMZRJcRYjVczoX5+XWBo=",
+        "rev": "da6dc0e7b26060f2f71ce3ef7088fb56ee44fa36",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.12297.cd4ea8d57de1/nixexprs.tar.zst"
+        "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.12400.da6dc0e7b260/nixexprs.tar.zst"
       },
       "original": {
         "type": "tarball",
@@ -1277,11 +1277,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792557706,
-        "narHash": "sha256-35/2pQxFlEduwG+/cWKWIrYncYgqXhx/2z/BG6mZHWU=",
+        "lastModified": 1792644357,
+        "narHash": "sha256-j1+YCU/+M7DlaqIrdKBo9lXM4fymG6jatUu1Mkfnrto=",
         "owner": "kawarimidoll",
         "repo": "vim-overlay",
-        "rev": "ec4f6f4128ae285b9c95f782eac6cc07fdb60f7b",
+        "rev": "722d5fc28343744ab1b05f6445bf3df00e99dcbd",
         "type": "github"
       },
       "original": {
