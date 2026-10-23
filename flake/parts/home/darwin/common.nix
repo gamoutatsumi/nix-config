@@ -76,7 +76,6 @@ in
             enabled = true;
             showInLauncher = true;
             opensNewWindow = false;
-            selectionFallback = "ask";
             confirmsBeforeDelete = true;
             commands = { };
           };
