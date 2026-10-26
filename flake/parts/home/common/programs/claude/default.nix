@@ -24,6 +24,7 @@ in
         enableAllProjectMcpServers = true;
         enabledPlugins = {
           # keep-sorted start
+          "claude-plugins-official" = fetchers.anthropic-official-marketplace.src;
           "codex@openai-codex" = true;
           "commit-commands@claude-plugins-official" = true;
           "explanatory-output-style@claude-plugins-official" = true;
