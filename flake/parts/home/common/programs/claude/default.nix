@@ -16,7 +16,6 @@ in
       rulesDir = ../../agents/rules;
       marketplaces = {
         "openai-codex" = fetchers.openai-codex-marketplace.src;
-        "claude-plugins-official" = fetchers.anthropic-official-marketplace.src;
       };
       settings = {
         # keep-sorted start block=yes
