@@ -16,6 +16,7 @@ in
       rulesDir = ../../agents/rules;
       marketplaces = {
         "openai-codex" = fetchers.openai-codex-marketplace.src;
+        "yomiyasu" = fetchers.yomiyasu.src;
       };
       settings = {
         # keep-sorted start block=yes
@@ -29,6 +30,7 @@ in
           "feature-dev@claude-plugins-official" = true;
           "gopls-lsp@claude-plugins-official" = true;
           "security-guidance@claude-plugins-official" = true;
+          "yomiyasu@yomiyasu" = true;
           # keep-sorted end
         };
         env = {
