@@ -1,25 +1,4 @@
 {
-    "ast-grep-marketplace": {
-        "cargoLock": null,
-        "date": "2026-09-12",
-        "extract": null,
-        "name": "ast-grep-marketplace",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "ast-grep",
-            "repo": "agent-skill",
-            "rev": "f2175aff21f20cfb8e2db30c28febeb3a2d42b61",
-            "sha256": "sha256-dORqiMdFOUQVEF6wn1IZiTIcslzO+441A0GZP4KNcOQ=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "f2175aff21f20cfb8e2db30c28febeb3a2d42b61"
-    },
     "codecompanion-nvim": {
         "cargoLock": null,
         "date": null,
@@ -355,5 +334,26 @@
             "type": "github"
         },
         "version": "887b8a03ea3804628505c9002fd07bd06a3db2e0"
+    },
+    "yomiyasu": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "yomiyasu",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "nanaism",
+            "repo": "yomiyasu",
+            "rev": "v2.4.0",
+            "sha256": "sha256-jAUB8zN+2JkPGBTRQ+nVhC1RWg+N+DG+901EpxT04Ec=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v2.4.0"
     }
 }

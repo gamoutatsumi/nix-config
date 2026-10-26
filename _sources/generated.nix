@@ -6,18 +6,6 @@
   dockerTools,
 }:
 {
-  ast-grep-marketplace = {
-    pname = "ast-grep-marketplace";
-    version = "f2175aff21f20cfb8e2db30c28febeb3a2d42b61";
-    src = fetchFromGitHub {
-      owner = "ast-grep";
-      repo = "agent-skill";
-      rev = "f2175aff21f20cfb8e2db30c28febeb3a2d42b61";
-      fetchSubmodules = false;
-      sha256 = "sha256-dORqiMdFOUQVEF6wn1IZiTIcslzO+441A0GZP4KNcOQ=";
-    };
-    date = "2026-09-12";
-  };
   codecompanion-nvim = {
     pname = "codecompanion-nvim";
     version = "v20.0.1";
@@ -203,5 +191,16 @@
       sha256 = "sha256-YZ+vXxTREp2OIxBQGt4pYP8hWcswM9XN5BlOSzd6g0Y=";
     };
     date = "2026-07-09";
+  };
+  yomiyasu = {
+    pname = "yomiyasu";
+    version = "v2.4.0";
+    src = fetchFromGitHub {
+      owner = "nanaism";
+      repo = "yomiyasu";
+      rev = "v2.4.0";
+      fetchSubmodules = false;
+      sha256 = "sha256-jAUB8zN+2JkPGBTRQ+nVhC1RWg+N+DG+901EpxT04Ec=";
+    };
   };
 }
