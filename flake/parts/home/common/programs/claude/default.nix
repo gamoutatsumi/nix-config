@@ -17,6 +17,7 @@ in
       marketplaces = {
         "openai-codex" = fetchers.openai-codex-marketplace.src;
         "yomiyasu" = fetchers.yomiyasu.src;
+        "claude-plugins-official" = fetchers.anthropic-official-marketplace.src;
       };
       settings = {
         # keep-sorted start block=yes
@@ -24,7 +25,6 @@ in
         enableAllProjectMcpServers = true;
         enabledPlugins = {
           # keep-sorted start
-          "claude-plugins-official" = fetchers.anthropic-official-marketplace.src;
           "codex@openai-codex" = true;
           "commit-commands@claude-plugins-official" = true;
           "explanatory-output-style@claude-plugins-official" = true;
