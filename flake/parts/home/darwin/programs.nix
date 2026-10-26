@@ -13,6 +13,7 @@
         # keep-sorted start block=yes
         container
         docker-client
+        omniwm
         # keep-sorted end
       ])
       ++ [ inputs'.arto.packages.default ];
