@@ -123,12 +123,8 @@ in
       ])
       ++ (with inputs'.llm-agents.packages; [
         #keep-sorted start
-        agent-browser
-        antigravity-cli
-        cc-sdd
         ccusage
         copilot-cli
-        openspec
         pi
         # keep-sorted end
       ])
