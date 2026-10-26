@@ -27,6 +27,7 @@ let
       herdr
       jinja-lsp
       lua-language-server
+      nodejs_26
       prettierd
       pyright
       terraform-ls
