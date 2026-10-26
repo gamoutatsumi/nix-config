@@ -38,6 +38,7 @@ in
     ./services.nix
   ];
   home = {
+    preferXdgDirectories = true;
     activation = {
       zcompileZshrc = lib.hm.dag.entryAfter [ "linkGeneration" ] ''
         run ${lib.getExe config.programs.zsh.package} -c 'zcompile ${config.programs.zsh.dotDir}/.zshrc'
