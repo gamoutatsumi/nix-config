@@ -65,3 +65,7 @@ fetch.github = "openai/codex-plugin-cc"
 [yomiyasu]
 src.github = "nanaism/yomiyasu"
 fetch.github = "nanaism/yomiyasu"
+
+[anthropic-official-marketplace]
+src.git = "https://github.com/anthropics/claude-plugins-official"
+fetch.github = "anthropics/claude-plugins-official"
