@@ -296,7 +296,6 @@ in
     };
     gpg = {
       enable = true;
-      enableExtraSocket = true;
       scdaemonSettings = {
         disable-ccid = true;
       };

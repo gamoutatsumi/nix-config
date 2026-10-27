@@ -24,10 +24,6 @@
       enable = true;
     };
     gpg-agent = {
-      enable = true;
-      enableScDaemon = true;
-      enableSshSupport = true;
-      enableZshIntegration = true;
       pinentry = {
         package = pkgs.pinentry-gtk2;
       };
