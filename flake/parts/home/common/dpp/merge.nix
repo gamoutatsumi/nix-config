@@ -48,12 +48,6 @@
       repo = "lambdalisue/vim-mr";
     }
     {
-      repo = "vimpostor/vim-tpipeline";
-      hook_add = ''
-        let g:tpipeline_autoembed = 0
-      '';
-    }
-    {
       repo = "embear/vim-localvimrc";
       hook_add = ''
         let g:localvimrc_persistent = 1
