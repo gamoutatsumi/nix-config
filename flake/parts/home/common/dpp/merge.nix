@@ -51,7 +51,6 @@
       repo = "vimpostor/vim-tpipeline";
       hook_add = ''
         let g:tpipeline_autoembed = 0
-        au FocusGained * ++once call tpipeline#initialize()
       '';
     }
     {
