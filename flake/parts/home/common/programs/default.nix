@@ -65,7 +65,6 @@ in
         file
         findutils
         gawk
-        ghq
         git-crypt
         gnugrep
         gnumake
@@ -109,6 +108,7 @@ in
         doggo
         dust
         fd
+        ghq
         google-cloud-sdk
         istioctl
         kubectl
