@@ -83,7 +83,6 @@ in
         # keep-sorted start
         q = "exit";
         rm = "${lib.getExe upkgs.gomi}";
-        ssh = "TERM=xterm ssh";
         tree = "${config.programs.lsd.package} --tree";
         v = "${lib.getExe config.programs.neovim.finalPackage}";
         vi = "${lib.getExe config.programs.neovim.finalPackage}";
