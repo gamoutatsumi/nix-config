@@ -17,6 +17,7 @@
       "chatgpt"
       "claude"
       "discord"
+      "herdr-app"
       "karabiner-elements"
       "macskk"
       "obsidian"
