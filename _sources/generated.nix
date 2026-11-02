@@ -8,15 +8,15 @@
 {
   anthropic-official-marketplace = {
     pname = "anthropic-official-marketplace";
-    version = "f8c5e7a1dcb71b10cb74586224b5401f3de5db28";
+    version = "a7ba5b93db0c7c8d17f3f1d25853adca79598a1a";
     src = fetchFromGitHub {
       owner = "anthropics";
       repo = "claude-plugins-official";
-      rev = "f8c5e7a1dcb71b10cb74586224b5401f3de5db28";
+      rev = "a7ba5b93db0c7c8d17f3f1d25853adca79598a1a";
       fetchSubmodules = false;
-      sha256 = "sha256-lmJbRtHsAN/rxqzm5hzxxu8lx+iiqRCtocJ7YET03Lg=";
+      sha256 = "sha256-C8uTRCtKEvL7dz+dDbfs/DwU/uxH5YzYFDn0oo3BKnA=";
     };
-    date = "2026-10-27";
+    date = "2026-10-30";
   };
   codecompanion-nvim = {
     pname = "codecompanion-nvim";
@@ -206,13 +206,13 @@
   };
   yomiyasu = {
     pname = "yomiyasu";
-    version = "v2.4.0";
+    version = "v2.5.0";
     src = fetchFromGitHub {
       owner = "nanaism";
       repo = "yomiyasu";
-      rev = "v2.4.0";
+      rev = "v2.5.0";
       fetchSubmodules = false;
-      sha256 = "sha256-jAUB8zN+2JkPGBTRQ+nVhC1RWg+N+DG+901EpxT04Ec=";
+      sha256 = "sha256-9cGUSvLgc1+996i3lWQuQm1aTWOxSY6fbS9+vn5aElw=";
     };
   };
 }
