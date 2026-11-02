@@ -24,7 +24,6 @@ let
       docker-language-server
       efm-langserver
       gopls
-      herdr
       jinja-lsp
       lua-language-server
       nodejs_26
@@ -37,7 +36,10 @@ let
       yaml-language-server
       # keep-sorted end
     ])
-    ++ (with inputs'.llm-agents.packages; [ copilot-language-server ]);
+    ++ (with inputs'.llm-agents.packages; [
+      copilot-language-server
+      herdr-core
+    ]);
 in
 {
   imports = [
