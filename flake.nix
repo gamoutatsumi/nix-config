@@ -112,7 +112,7 @@
       };
     };
     felis = {
-      url = "github:felis-terminal/felis";
+      url = "github:felis-terminal/felis/v0.4.1";
     };
     flake-checker = {
       url = "github:DeterminateSystems/flake-checker";

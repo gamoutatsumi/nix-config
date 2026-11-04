@@ -475,6 +475,7 @@
       },
       "original": {
         "owner": "felis-terminal",
+        "ref": "v0.4.1",
         "repo": "felis",
         "type": "github"
       }
