@@ -473,6 +473,10 @@ in
         font = {
           size_px = 14.0;
         };
+        theme = {
+          background = "#011627";
+          foreground = "#ffffff";
+        };
       };
     };
     # herdr = {
