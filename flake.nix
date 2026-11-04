@@ -111,6 +111,9 @@
         };
       };
     };
+    felis = {
+      url = "github:felis-terminal/felis";
+    };
     flake-checker = {
       url = "github:DeterminateSystems/flake-checker";
       inputs = {
