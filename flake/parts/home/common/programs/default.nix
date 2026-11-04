@@ -39,7 +39,8 @@ let
     ++ (with inputs'.llm-agents.packages; [
       copilot-language-server
       herdr-core
-    ]);
+    ])
+    ++ [ inputs'.adroit.packages.adroit ];
 in
 {
   imports = [
