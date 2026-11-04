@@ -467,6 +467,7 @@ in
     felis = {
       enable = true;
       enableZshIntegration = true;
+      enableSshIntegration = true;
       settings = {
         font-family = "PlemolJP Console NF";
         font = {
