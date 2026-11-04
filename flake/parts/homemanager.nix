@@ -14,6 +14,7 @@
         imports = [
           inputs.nix-index-database.homeModules.default
           inputs.agent-skills.homeManagerModules.default
+          inputs.felis.homeManagerModules.default
         ]
         ++ imports;
       };
