@@ -8,15 +8,15 @@
 {
   anthropic-official-marketplace = {
     pname = "anthropic-official-marketplace";
-    version = "a7ba5b93db0c7c8d17f3f1d25853adca79598a1a";
+    version = "a2e251d9b97b909bf728b3e84fc8d17e6aba0063";
     src = fetchFromGitHub {
       owner = "anthropics";
       repo = "claude-plugins-official";
-      rev = "a7ba5b93db0c7c8d17f3f1d25853adca79598a1a";
+      rev = "a2e251d9b97b909bf728b3e84fc8d17e6aba0063";
       fetchSubmodules = false;
-      sha256 = "sha256-C8uTRCtKEvL7dz+dDbfs/DwU/uxH5YzYFDn0oo3BKnA=";
+      sha256 = "sha256-4Oyaixf/ZqHRhWoBE5BIaZUBqR9nUM4E4gsNXwdmdJ8=";
     };
-    date = "2026-10-30";
+    date = "2026-11-03";
   };
   codecompanion-nvim = {
     pname = "codecompanion-nvim";
