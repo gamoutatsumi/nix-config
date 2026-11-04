@@ -466,6 +466,7 @@ in
     };
     felis = {
       enable = true;
+      enableZshIntegration = true;
       settings = {
         font-family = "PlemolJP Console NF";
         font = {
