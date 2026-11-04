@@ -464,6 +464,15 @@ in
     nix-index = {
       enable = true;
     };
+    felis = {
+      enable = true;
+      settings = {
+        font-family = "PlemolJP Console NF";
+        font = {
+          size_px = 14.0;
+        };
+      };
+    };
     # herdr = {
     #   enable = true;
     #   settings = {
