@@ -75,6 +75,23 @@ in
   };
   xdg = {
     configFile = {
+      "herdr-app/settings.json" =
+        let
+          jsonFormat = pkgs.formats.json { };
+        in
+        {
+          source = jsonFormat.generate "settings.json" {
+            zoom = 1.0;
+            sounds = {
+              enabled = true;
+            };
+            minimum_contrast = 1.0;
+            telemetry = false;
+            font = "PlemolJP Console NF";
+            font_ligatures = false;
+            option_as_alt = true;
+          };
+        };
       "herdr/config.toml" =
         let
           tomlFormat = pkgs.formats.toml { };
