@@ -16,6 +16,14 @@
   };
   inputs = {
     # keep-sorted start block=yes
+    adroit = {
+      url = "github:adroit-app/Adroit";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs-unstable";
+        };
+      };
+    };
     agenix = {
       url = "github:yaxitech/ragenix";
       inputs = {
@@ -113,6 +121,11 @@
     };
     felis = {
       url = "github:felis-terminal/felis/v0.4.1";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs-unstable";
+        };
+      };
     };
     flake-checker = {
       url = "github:DeterminateSystems/flake-checker";
