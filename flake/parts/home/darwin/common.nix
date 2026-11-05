@@ -28,7 +28,6 @@ in
             theme = "system";
             interfaceSize = "standard";
             compactMode = false;
-            showFavoritesInCompactMode = true;
             followCursorAcrossDisplays = true;
             dragToReposition = false;
           };
