@@ -1,4 +1,5 @@
-// Workspace spaces: stable colored avatars, worktrees under their checkout,
+// Workspace spaces: stable colored avatars, a foldable header per repository
+// with its checkouts (worktrees) under it,
 // grouped by machine when more than one is known. After a space's name, the repo
 // its first terminal is in now, only where unusual: branch, ahead/behind. Agent state lives in the agents list, not here. Click to
 // switch, right-click for its menu, drag to reorder.
@@ -89,6 +90,10 @@ export default class Spaces extends View {
     for (const state of Object.values(this.reconnecting)) state.busy = false;
     this.folded = new Set(
       JSON.parse(localStorage.getItem("machines.folded") ?? "[]"),
+    );
+    // Keyed by git().repo, so a repo stays folded however its spaces come and go.
+    this.repoFolded = new Set(
+      JSON.parse(localStorage.getItem("repos.folded") ?? "[]"),
     );
     this.refreshMachines(cx);
     cx.timer.every(15000, (cx) => this.refreshMachines(cx));
@@ -295,6 +300,31 @@ export default class Spaces extends View {
         { cwd, on },
       );
       if (r.code !== 0) {
+        // `status` refuses a bare repo (the `<repo>/.git` clone layout, run from
+        // `<repo>`): that is still a repo, and its spaces belong under it.
+        const bare = await exec("git", ["rev-parse", "--is-bare-repository"], {
+          cwd,
+          on,
+        });
+        if (bare.code === 0 && bare.stdout.trim() === "true") {
+          const common = await exec(
+            "git",
+            ["rev-parse", "--path-format=absolute", "--git-common-dir"],
+            { cwd, on },
+          );
+          const repo = common.stdout.trim();
+          this.git[key] = {
+            name: this.repoName(repo),
+            branch: null,
+            ahead: 0,
+            behind: 0,
+            repo: JSON.stringify([on, repo]),
+            linked: false,
+            bare: true,
+          };
+          if (!on) this.watch(repo, cx);
+          return;
+        }
         // Only git's own "no" is remembered as no repo; anything else is asked again.
         if (!/not a git repository/i.test(r.stderr)) this.unsure.add(key);
         this.git[key] = null;
@@ -311,11 +341,8 @@ export default class Spaces extends View {
         { cwd, on },
       );
       const repo = common.stdout.trim();
-      const name = repo.endsWith("/.git")
-        ? base(repo.slice(0, -5))
-        : base(repo).replace(/\.git$/, "");
       const info = {
-        name,
+        name: this.repoName(repo),
         branch: null,
         ahead: 0,
         behind: 0,
@@ -337,6 +364,12 @@ export default class Spaces extends View {
       this.git[key] ??= null;
       this.unsure.add(key);
     }
+  }
+
+  repoName(repo) {
+    return repo.endsWith("/.git")
+      ? base(repo.slice(0, -5))
+      : base(repo).replace(/\.git$/, "");
   }
 
   watch(repo, cx) {
@@ -381,7 +414,7 @@ export default class Spaces extends View {
     );
   }
 
-  // Spaces in order, each worktree space moved under its main checkout's.
+  // Spaces in order, each repo's spaces moved together.
   ordered() {
     const sp = spaces(),
       ps = panes();
@@ -397,21 +430,19 @@ export default class Spaces extends View {
       i,
       g: this.git[where(w, ps)] ?? null,
     }));
-    const mains = new Set(
-      list.filter((r) => r.g && !r.g.linked).map((r) => r.g.repo),
-    );
-    const nested = (r) => r.g?.linked && mains.has(r.g.repo);
+    // Each repo's spaces together, at the place of its first one.
     const out = [];
-    const placed = new Set(); // repos whose worktrees are listed (under the first of its spaces)
+    const placed = new Set();
     for (const r of list) {
-      if (nested(r)) continue;
-      out.push({ ...r, tree: null });
-      if (!r.g || r.g.linked || placed.has(r.g.repo)) continue;
+      if (!r.g) {
+        out.push({ ...r, tree: null });
+        continue;
+      }
+      if (placed.has(r.g.repo)) continue;
       placed.add(r.g.repo);
-      const kids = list.filter((k) => nested(k) && k.g.repo === r.g.repo);
-      kids.forEach((k, n) =>
-        out.push({ ...k, tree: n === kids.length - 1 ? "└─" : "├─" })
-      );
+      for (const k of list) {
+        if (k.g?.repo === r.g.repo) out.push({ ...k, tree: "\u251c\u2500" });
+      }
     }
     // Simulate the batch so later indexes include earlier moves. An attempted
     // write can lose a sync conflict: allow the echo to settle before retrying.
@@ -435,10 +466,87 @@ export default class Spaces extends View {
     return out.filter((r) => this.shown.has(r.w.id));
   }
 
+  // A header before each repo's spaces; the folded ones hide theirs. The narrow
+  // rail has no room for headers and lists every space.
+  withHeaders(rows, collapsed) {
+    if (collapsed) return rows;
+    const out = [];
+    let prev = null;
+    for (const r of rows) {
+      const key = r.g?.repo ?? null;
+      if (key && key !== prev) {
+        out.push({
+          head: true,
+          key,
+          name: r.g.name,
+          members: rows.filter((k) => k.g?.repo === key),
+          w: r.w,
+        });
+      }
+      prev = key;
+      if (key && this.repoFolded.has(key)) continue;
+      out.push(r);
+    }
+    return out;
+  }
+
+  repoHead({ key, name, members }, t) {
+    const folded = this.repoFolded.has(key);
+    // A folded repo still speaks up when something in it needs you.
+    const status = ["blocked", "done"].find((st) =>
+      members.some((m) => m.w.status === st)
+    );
+    return h_flex()
+      .id(`repo-${key}`)
+      .h(26)
+      .flex_none()
+      .px(8)
+      .gap(7)
+      .items_center()
+      .rounded(7)
+      .text_size(12)
+      .text_color(t.muted)
+      .cursor_pointer()
+      .hover((s) => s.bg(t.hover))
+      .on_click((_e, cx) => {
+        folded ? this.repoFolded.delete(key) : this.repoFolded.add(key);
+        localStorage.setItem(
+          "repos.folded",
+          JSON.stringify([...this.repoFolded]),
+        );
+        cx.notify();
+      })
+      .child(
+        svg(`mods/workspace-chrome/chevron-${folded ? "right" : "down"}.svg`)
+          .size(11)
+          .flex_none(),
+      )
+      .child(div().flex_1().min_w(0).truncate().child(name))
+      .when(
+        Boolean(status),
+        (el) =>
+          el.child(
+            div().flex_none().text_color(tone(t, status)).child(
+              glyph(status),
+            ),
+          ),
+      )
+      .child(
+        div().flex_none().text_size(11).text_color(t.dim).child(
+          String(members.length),
+        ),
+      );
+  }
+
   // The rows, under a header per machine once one isn't this computer.
   grouped(t, collapsed) {
-    const rows = this.ordered();
-    const draw = (r) => (collapsed ? this.compact(r, t) : this.row(r, t));
+    const rows = this.withHeaders(this.ordered(), collapsed);
+    const draw = (r) =>
+      r.head
+        ? this.repoHead(r, t)
+        : collapsed
+        ? this.compact(r, t)
+        : this.row(r, t);
     const remote = [
       ...new Set([
         ...rows.map((r) => r.w.machine).filter(Boolean),
@@ -606,7 +714,9 @@ export default class Spaces extends View {
   gitTail(g, tree, name, t) {
     const raw = g.branch ?? "detached";
     const same = (a) => a.toLowerCase() === name.toLowerCase();
-    const branch = same(raw) || raw === "master" || raw === "main" ? "" : raw;
+    const branch = g.bare || same(raw) || raw === "master" || raw === "main"
+      ? ""
+      : raw;
     const repo = tree || same(g.name) ? "" : g.name;
     const where = [repo, branch].filter(Boolean).join(" \u00b7 ");
     return h_flex()
