@@ -87,7 +87,7 @@ in
             };
             minimum_contrast = 1.0;
             telemetry = false;
-            font_family = "PlemolJP Console NF";
+            font = "PlemolJP Console NF";
             font_ligatures = false;
             option_as_alt = true;
           };
