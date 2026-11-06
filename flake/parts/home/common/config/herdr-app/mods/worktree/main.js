@@ -57,19 +57,23 @@ async function checkouts(repo, on) {
     ) => [b, Number(at) || 0]),
   );
   const out = [];
+  let bare = false;
   for (const block of list.out.split(/\n\n+/)) {
     const lines = block.split("\n");
     const path = lines.find((l) => l.startsWith("worktree "))?.slice(9);
-    if (!path || lines.some((l) => l === "bare" || l.startsWith("prunable"))) {
+    if (lines.includes("bare")) {
+      bare = true;
       continue;
     }
+    if (!path || lines.some((l) => l.startsWith("prunable"))) continue;
     const branch = lines.find((l) =>
       l.startsWith("branch ")
     )?.slice(7).replace(/^refs\/heads\//, "") ?? null;
     out.push({
       path,
       branch,
-      main: out.length === 0,
+      // A bare repo has no main checkout; its first worktree is an ordinary one.
+      main: !bare && out.length === 0,
       at: branch ? (when.get(branch) ?? 0) : 0,
     });
   }
@@ -186,15 +190,26 @@ async function repoOf(folder, on) {
     "--path-format=absolute",
     "--git-common-dir",
   ], on);
-  if (!top.ok || !common.ok) return null;
+  if (!common.ok) return null;
+  // --show-toplevel fails in a bare repo, including the `<repo>/.git` bare
+  // clone layout when run from `<repo>`, so a failure is not "outside git" by itself.
+  if (!top.ok) {
+    const bare = await git(folder, ["rev-parse", "--is-bare-repository"], on);
+    if (bare.out !== "true") return null;
+  }
+  // `<repo>/.git` (bare or not) names its repo after the parent; a plain
+  // `foo.git` bare repo after itself, without the suffix.
   const main = common.out.endsWith("/.git")
     ? common.out.slice(0, -5)
     : common.out;
+  const bareTop = !top.ok;
   return {
-    top: top.out,
+    // No work tree in a bare repo; the folder doubles as a cwd for git.
+    top: bareTop ? main : top.out,
     main,
-    name: main.split("/").pop(),
-    linked: main !== top.out,
+    bare: bareTop,
+    name: main.split("/").pop().replace(/\.git$/, ""),
+    linked: !bareTop && main !== top.out,
   };
 }
 
