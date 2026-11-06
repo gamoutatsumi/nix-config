@@ -69,6 +69,9 @@
               enable = false;
               package = inputs'.flake-checker.packages.flake-checker;
             };
+            ripsecrets = {
+              enable = true;
+            };
             treefmt = {
               enable = true;
               packageOverrides.treefmt = treefmtBuild.wrapper;
