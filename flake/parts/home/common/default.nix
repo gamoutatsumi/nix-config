@@ -92,6 +92,9 @@ in
             option_as_alt = "on";
           };
         };
+      "herdr-app/mods" = {
+        source = ./config/herdr-app/mods;
+      };
       "herdr/config.toml" =
         let
           tomlFormat = pkgs.formats.toml { };
