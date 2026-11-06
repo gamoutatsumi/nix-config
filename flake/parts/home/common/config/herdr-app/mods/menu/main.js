@@ -1,7 +1,7 @@
 // Context menus (Herdr's items). Opened as a popup with
 // props { tab: "pane" | "tab" | "space" | "global", target }.
 // ↑/↓ move, Enter runs, Esc closes. An item is [label, command, args];
-// a command "worktree" opens the worktree dialog instead.
+// a command "worktree" or "repo" opens that mod's dialog instead.
 
 import { div, svg, View } from "gpui-kit";
 import { h_flex, v_flex } from "gpui-base";
@@ -106,6 +106,8 @@ function items(p, git) {
     default:
       return [
         ["New space", "space.new", {}],
+        ["Clone repository", "repo", { action: "new" }],
+        ["Open repository", "repo", { action: "open" }],
         ["Keybinds", "app.help", {}],
         ["Theme: graphite", "app.theme", { name: "graphite" }],
         ["Theme: ink", "app.theme", { name: "ink" }],
@@ -122,7 +124,7 @@ function menuIcon(command) {
     ? "square-pen"
     : command.endsWith(".new")
     ? "plus"
-    : command === "worktree"
+    : command === "worktree" || command === "repo"
     ? "git-branch"
     : command === "app.help"
     ? "terminal"
@@ -176,6 +178,15 @@ export default class Menu extends View {
         ...(it[2].action === "open"
           ? { width: 560, height: 480 }
           : { width: 440, height: 260 }),
+        props: it[2],
+      });
+    } else if (it[1] === "repo") {
+      openOverlay({
+        mod: "repo",
+        kind: "dialog",
+        ...(it[2].action === "open"
+          ? { width: 560, height: 480 }
+          : { width: 440, height: 220 }),
         props: it[2],
       });
     } else run(it[1], it[2]);

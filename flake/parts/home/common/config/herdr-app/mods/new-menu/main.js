@@ -194,6 +194,36 @@ export default class NewMenu extends View {
           "",
           Boolean(space),
         ),
+      )
+      .child(
+        this.row(
+          "repo-new",
+          svg("mods/workspace-chrome/branch.svg").size(14),
+          "Clone repository\u2026",
+          () =>
+            openOverlay({
+              mod: "repo",
+              kind: "dialog",
+              width: 460,
+              height: 220,
+              props: { space: space?.id, action: "new" },
+            }),
+        ),
+      )
+      .child(
+        this.row(
+          "repo-open",
+          svg("mods/workspace-chrome/branch.svg").size(14),
+          "Open repository\u2026",
+          () =>
+            openOverlay({
+              mod: "repo",
+              kind: "dialog",
+              width: 560,
+              height: 480,
+              props: { space: space?.id, action: "open" },
+            }),
+        ),
       );
   }
 }
