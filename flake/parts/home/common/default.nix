@@ -89,7 +89,7 @@ in
             telemetry = false;
             font = "PlemolJP Console NF";
             font_ligatures = false;
-            option_as_alt = true;
+            option_as_alt = "on";
           };
         };
       "herdr/config.toml" =
