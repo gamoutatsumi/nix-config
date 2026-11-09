@@ -145,7 +145,7 @@ in
             fi
           '';
           sheldonupdate = ''
-            ${lib.getExe upkgs.sheldon} lock --update && ${lib.getExe upkgs.sheldon} source | grep -v "^$" > "${config.xdg.stateHome}/sheldon/sheldon.lock.zsh"
+            ${lib.getExe pkgs.sheldon} lock --update && ${lib.getExe pkgs.sheldon} source | grep -v "^$" > "${config.xdg.stateHome}/sheldon/sheldon.lock.zsh"
           '';
           awsp = ''
             local profile=$(${lib.getExe config.programs.awscli.package} configure list-profiles | sort | ${fzf-tmux_exe})
