@@ -31,7 +31,6 @@ let
       pyright
       terraform-ls
       typos-lsp
-      viddy
       vscode-langservers-extracted
       yaml-language-server
       # keep-sorted end
@@ -91,6 +90,7 @@ in
         ssm-session-manager-plugin
         unar
         unzip
+        viddy
         yubico-piv-tool
         yubikey-manager
         zbar
