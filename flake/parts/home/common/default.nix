@@ -46,6 +46,15 @@ in
       zcompileZshenv = lib.hm.dag.entryAfter [ "linkGeneration" ] ''
         run ${lib.getExe config.programs.zsh.package} -c 'zcompile ${config.programs.zsh.dotDir}/.zshenv'
       '';
+      # herdr-app 0.1.14 stopped drawing svg() assets reached through a symlink
+      # into the Nix store, so mods are copied as real files instead of linked
+      # with xdg.configFile.
+      herdrAppMods = lib.hm.dag.entryAfter [ "linkGeneration" ] ''
+        mods=${config.xdg.configHome}/herdr-app/mods
+        run rm -rf "$mods"
+        run cp -RL ${./config/herdr-app/mods} "$mods"
+        run chmod -R u+w "$mods"
+      '';
     };
     file = {
       ".vscode/argv.json".text = lib.strings.toJSON {
@@ -92,9 +101,6 @@ in
             option_as_alt = "on";
           };
         };
-      "herdr-app/mods" = {
-        source = ./config/herdr-app/mods;
-      };
       "herdr/config.toml" =
         let
           tomlFormat = pkgs.formats.toml { };
