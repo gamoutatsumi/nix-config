@@ -43,7 +43,7 @@ jobs:
             flake.lock
           commit_message: |-
             Update flake.lock
-      - uses: natsukium/nix-diff-action@v1.1.1
+      - uses: natsukium/nix-diff-action@v1.2.1
         if: github.event_name == 'pull_request'
         with:
           attributes: |-
