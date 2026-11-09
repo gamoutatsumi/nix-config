@@ -75,7 +75,8 @@ export default class Repo extends View {
       (spaces().find((s) => s.id === p.space) ??
         spaces().find((s) => s.active))?.machine ??
       null;
-    this.opening = p.action === "open";
+    // mod.open (keys, palette) passes no props; opening is the useful default.
+    this.opening = (p.action ?? "open") === "open";
     this.text = "";
     this.at = 0;
     this.list = undefined; // open: the repos, once read

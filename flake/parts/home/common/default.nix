@@ -10,6 +10,7 @@
 }:
 let
   toKeyValue = lib.generators.toKeyValue { listsAsDuplicateKeys = true; };
+  isDarwin = pkgs.stdenv.hostPlatform.isDarwin;
 in
 {
   home = {
@@ -84,6 +85,9 @@ in
   };
   xdg = {
     configFile = {
+      "herdr-app/keys.json".source = (pkgs.formats.json { }).generate "keys.json" (
+        import ./herdr-keys.nix { inherit lib isDarwin; }
+      );
       "herdr-app/settings.json" =
         let
           jsonFormat = pkgs.formats.json { };
