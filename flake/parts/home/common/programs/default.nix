@@ -87,6 +87,7 @@ in
         plemoljp
         plemoljp-nf
         q-text-as-data
+        sheldon
         ssm-session-manager-plugin
         unar
         unzip
@@ -118,7 +119,6 @@ in
         magika
         ov
         s3cmd
-        sheldon
         stern
         vim
         # keep-sorted end
