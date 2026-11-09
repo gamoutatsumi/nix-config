@@ -7,6 +7,7 @@ import { h_flex, Input, InputState, Scrollbar, v_flex } from "gpui-base";
 import {
   closeOverlay,
   exec,
+  machines,
   openOverlay,
   panes,
   props,
@@ -69,8 +70,11 @@ async function hasWorktrees(path, on) {
 export default class Repo extends View {
   init(_props, cx) {
     const p = props() ?? {};
+    // Default to the machine being looked at, as new spaces do.
     this.on = p.machine ??
-      spaces().find((s) => s.id === p.space)?.machine ?? null;
+      (spaces().find((s) => s.id === p.space) ??
+        spaces().find((s) => s.active))?.machine ??
+      null;
     this.opening = p.action === "open";
     this.text = "";
     this.at = 0;
@@ -101,34 +105,56 @@ export default class Repo extends View {
     this.input.focus();
     cx.timer.after(600, () => this.input.focus());
     this.handle = cx.focus_handle();
+    this.load(cx);
+  }
+
+  // Re-read ghq's root and repos on the chosen machine. A slow answer from a
+  // machine the user has since left must not overwrite the current one.
+  load(cx) {
+    const token = (this.token = (this.token ?? 0) + 1);
+    this.ready = false;
+    this.list = undefined;
+    this.root = "";
+    this.error = "";
+    this.at = 0;
+    cx.notify();
     cx.spawn(async (cx) => {
+      let list;
+      let root = "";
+      let error = "";
       try {
-        const root = await ghq(["root"], this.on);
-        if (!root.ok || !root.out) {
-          throw new Error(root.err || "ghq root failed.");
-        }
-        this.root = norm(root.out.split("\n")[0]);
+        const r = await ghq(["root"], this.on);
+        if (!r.ok || !r.out) throw new Error(r.err || "ghq root failed.");
+        root = norm(r.out.split("\n")[0]);
         if (this.opening) {
           const all = await ghq(["list", "-p"], this.on);
           if (!all.ok) throw new Error(all.err || "ghq list failed.");
-          this.list = all.out.split("\n").filter(Boolean).map(norm).map((
-            path,
-          ) => ({
+          list = all.out.split("\n").filter(Boolean).map(norm).map((path) => ({
             path,
             // Without the host: `org/repo`.
             name: path.split("/").slice(-2).join("/"),
-            rel: path.startsWith(this.root + "/")
-              ? path.slice(this.root.length + 1)
+            rel: path.startsWith(root + "/")
+              ? path.slice(root.length + 1)
               : path,
           }));
         }
-      } catch (error) {
-        this.list = this.opening ? [] : undefined;
-        this.error = String(error);
+      } catch (e) {
+        list = this.opening ? [] : undefined;
+        error = String(e);
       }
+      if (token !== this.token) return;
+      this.root = root;
+      this.list = list;
+      this.error = error;
       this.ready = true;
       cx.notify();
     });
+  }
+
+  pick(name, cx) {
+    if (this.busy || name === this.on) return;
+    this.on = name;
+    this.load(cx);
   }
 
   close() {
@@ -218,6 +244,28 @@ export default class Repo extends View {
     cx.notify();
   }
 
+  // Only worth showing once there is a second machine to choose.
+  machineNames() {
+    return machines().filter((m) => m.layout !== "unavailable").map((m) =>
+      m.name
+    );
+  }
+
+  machineBar(t) {
+    const names = this.machineNames();
+    return h_flex().gap(6).flex_wrap().children(names.map((name, i) => {
+      const on = name === this.on;
+      return div()
+        .id(`repo-machine-${i}`)
+        .px(8).py(3).rounded(6).text_size(12).cursor_pointer()
+        .text_color(on ? t.foreground : t.muted)
+        .when(on, (el) => el.bg(t.selected))
+        .when(!on, (el) => el.hover((s) => s.bg(t.hover)))
+        .on_click((_e, cx) => this.pick(name, cx))
+        .child(name ?? "This computer");
+    }));
+  }
+
   field(t) {
     return Input.new(this.input).h(32).px(10).items_center().rounded(6)
       .border(1).border_color(this.inputFocused ? t.accent : t.input)
@@ -293,6 +341,10 @@ export default class Repo extends View {
         Boolean(this.error),
         (el) => el.child(div().text_color(t.blocked).child(this.error)),
       )
+      .when(
+        this.machineNames().length > 1,
+        (el) => el.child(this.machineBar(t)),
+      )
       .when(Boolean(this.ready && this.list), (el) =>
         el
           .child(this.field(t))
@@ -343,6 +395,10 @@ export default class Repo extends View {
             ? `A bare clone under ${this.root}, opened as a new space.`
             : "…",
         ),
+      )
+      .when(
+        this.machineNames().length > 1,
+        (el) => el.child(this.machineBar(t)),
       )
       .child(this.field(t))
       .when(
