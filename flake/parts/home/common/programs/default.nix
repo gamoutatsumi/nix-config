@@ -87,7 +87,7 @@ in
         plemoljp
         plemoljp-nf
         q-text-as-data
-        sheldon
+        # sheldon
         ssm-session-manager-plugin
         unar
         unzip
