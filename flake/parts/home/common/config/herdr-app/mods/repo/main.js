@@ -4,7 +4,16 @@
 
 import { div, View } from "gpui-kit";
 import { h_flex, Input, InputState, Scrollbar, v_flex } from "gpui-base";
-import { closeOverlay, exec, panes, props, run, spaces, theme } from "herdr";
+import {
+  closeOverlay,
+  exec,
+  openOverlay,
+  panes,
+  props,
+  run,
+  spaces,
+  theme,
+} from "herdr";
 
 const norm = (path) => path.replace(/\\/g, "/");
 
@@ -40,6 +49,21 @@ function spaceOf(path, on, spaceList, paneList) {
     const p = norm(at);
     return p === path || p.startsWith(path + "/");
   });
+}
+
+// Whether a repo has checkouts beyond its own. A bare clone (what "new" makes)
+// has no main checkout, so any listed worktree counts; otherwise the first
+// entry is the main one and doesn't.
+async function hasWorktrees(path, on) {
+  const r = await exec("git", ["worktree", "list", "--porcelain"], {
+    cwd: path,
+    on,
+  });
+  if (r.code !== 0) return false;
+  const blocks = (r.stdout ?? "").trim().split(/\n\n+/).filter(Boolean);
+  const bare = blocks.some((b) => b.split("\n").includes("bare"));
+  const checkouts = blocks.filter((b) => !b.split("\n").includes("bare"));
+  return checkouts.length > (bare ? 0 : 1);
 }
 
 export default class Repo extends View {
@@ -160,11 +184,27 @@ export default class Repo extends View {
   }
 
   open(c) {
-    if (!c) return;
-    this.close();
-    const s = spaceOf(c.path, this.on, spaces(), panes());
-    if (s) run("space.select", { id: s.id });
-    else run("space.new", { folder: c.path, machine: this.on });
+    if (!c || this.busy) return;
+    this.busy = true;
+    // Decide before closing: the dialog must stay alive while git runs.
+    hasWorktrees(c.path, this.on).catch(() => false).then((many) => {
+      this.busy = false;
+      this.close();
+      if (many) {
+        // Which checkout to open is the user's call, so hand over to the picker.
+        openOverlay({
+          mod: "worktree",
+          kind: "dialog",
+          width: 560,
+          height: 480,
+          props: { folder: c.path, machine: this.on, action: "open" },
+        });
+        return;
+      }
+      const s = spaceOf(c.path, this.on, spaces(), panes());
+      if (s) run("space.select", { id: s.id });
+      else run("space.new", { folder: c.path, machine: this.on });
+    });
   }
 
   key(e, cx) {
