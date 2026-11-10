@@ -18,6 +18,7 @@ in
         "openai-codex" = fetchers.openai-codex-marketplace.src;
         "yomiyasu" = fetchers.yomiyasu.src;
         "claude-plugins-official" = fetchers.anthropic-official-marketplace.src;
+        "pstack-claude" = fetchers.pstack-claude.src;
       };
       settings = {
         # keep-sorted start block=yes
@@ -30,6 +31,7 @@ in
           "explanatory-output-style@claude-plugins-official" = true;
           "feature-dev@claude-plugins-official" = true;
           "gopls-lsp@claude-plugins-official" = true;
+          "pstack@pstack-claude" = true;
           "security-guidance@claude-plugins-official" = true;
           "yomiyasu@yomiyasu" = true;
           # keep-sorted end
