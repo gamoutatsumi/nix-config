@@ -1,7 +1,7 @@
 {
     "anthropic-official-marketplace": {
         "cargoLock": null,
-        "date": "2026-11-03",
+        "date": "2026-11-09",
         "extract": null,
         "name": "anthropic-official-marketplace",
         "passthru": null,
@@ -13,12 +13,12 @@
             "name": null,
             "owner": "anthropics",
             "repo": "claude-plugins-official",
-            "rev": "a2e251d9b97b909bf728b3e84fc8d17e6aba0063",
-            "sha256": "sha256-4Oyaixf/ZqHRhWoBE5BIaZUBqR9nUM4E4gsNXwdmdJ8=",
+            "rev": "dceb15d50832e6adf380bedc26dde03d251324b9",
+            "sha256": "sha256-hrUTcp9tRpomnvud6ywIp/0kNullipnAvgiguQAZLZs=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "a2e251d9b97b909bf728b3e84fc8d17e6aba0063"
+        "version": "dceb15d50832e6adf380bedc26dde03d251324b9"
     },
     "codecompanion-nvim": {
         "cargoLock": null,
@@ -34,12 +34,12 @@
             "name": null,
             "owner": "olimorris",
             "repo": "codecompanion.nvim",
-            "rev": "v20.0.1",
-            "sha256": "sha256-29Z/aTSK6xtLCNp+FJH1D89MpNztm6Hjgfz80XZVTlI=",
+            "rev": "v20.1.0",
+            "sha256": "sha256-v7nfqV22b+dDY7Efe7bj+TZe9VrA2c+H676cm7shFlI=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v20.0.1"
+        "version": "v20.1.0"
     },
     "denops-vim": {
         "cargoLock": null,
@@ -334,6 +334,27 @@
             "type": "github"
         },
         "version": "b7404d35d5d3548a82149238289fa71f7f6de4ac"
+    },
+    "pstack-claude": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "pstack-claude",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "michael-denyer",
+            "repo": "pstack-claude",
+            "rev": "v0.9.133",
+            "sha256": "sha256-Xe2XlplUiukFgPP+KFEf5GiMxXece40B8PWTUHAFf/A=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v0.9.133"
     },
     "statuscol-nvim": {
         "cargoLock": null,

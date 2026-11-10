@@ -8,25 +8,25 @@
 {
   anthropic-official-marketplace = {
     pname = "anthropic-official-marketplace";
-    version = "a2e251d9b97b909bf728b3e84fc8d17e6aba0063";
+    version = "dceb15d50832e6adf380bedc26dde03d251324b9";
     src = fetchFromGitHub {
       owner = "anthropics";
       repo = "claude-plugins-official";
-      rev = "a2e251d9b97b909bf728b3e84fc8d17e6aba0063";
+      rev = "dceb15d50832e6adf380bedc26dde03d251324b9";
       fetchSubmodules = false;
-      sha256 = "sha256-4Oyaixf/ZqHRhWoBE5BIaZUBqR9nUM4E4gsNXwdmdJ8=";
+      sha256 = "sha256-hrUTcp9tRpomnvud6ywIp/0kNullipnAvgiguQAZLZs=";
     };
-    date = "2026-11-03";
+    date = "2026-11-09";
   };
   codecompanion-nvim = {
     pname = "codecompanion-nvim";
-    version = "v20.0.1";
+    version = "v20.1.0";
     src = fetchFromGitHub {
       owner = "olimorris";
       repo = "codecompanion.nvim";
-      rev = "v20.0.1";
+      rev = "v20.1.0";
       fetchSubmodules = false;
-      sha256 = "sha256-29Z/aTSK6xtLCNp+FJH1D89MpNztm6Hjgfz80XZVTlI=";
+      sha256 = "sha256-v7nfqV22b+dDY7Efe7bj+TZe9VrA2c+H676cm7shFlI=";
     };
   };
   denops-vim = {
@@ -191,6 +191,17 @@
       sha256 = "sha256-dNWz/xovUg55fDZUpVs/2kLphk3lqQyvPtc9ATwbeSQ=";
     };
     date = "2021-11-18";
+  };
+  pstack-claude = {
+    pname = "pstack-claude";
+    version = "v0.9.133";
+    src = fetchFromGitHub {
+      owner = "michael-denyer";
+      repo = "pstack-claude";
+      rev = "v0.9.133";
+      fetchSubmodules = false;
+      sha256 = "sha256-Xe2XlplUiukFgPP+KFEf5GiMxXece40B8PWTUHAFf/A=";
+    };
   };
   statuscol-nvim = {
     pname = "statuscol-nvim";
