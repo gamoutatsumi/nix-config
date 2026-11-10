@@ -69,3 +69,7 @@ fetch.github = "nanaism/yomiyasu"
 [anthropic-official-marketplace]
 src.git = "https://github.com/anthropics/claude-plugins-official"
 fetch.github = "anthropics/claude-plugins-official"
+
+[pstack-claude]
+src.github = "michael-denyer/pstack-claude"
+fetch.github = "michael-denyer/pstack-claude"
