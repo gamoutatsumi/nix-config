@@ -429,7 +429,7 @@ in
       };
     };
     zathura = {
-      enable = false;
+      enable = true;
       options = {
         synctex = true;
         synctex-editor-command = "texlab inverse-search -i %{input} -l %{line}";
