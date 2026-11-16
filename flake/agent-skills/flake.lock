@@ -20,7 +20,7 @@
         "type": "github"
       }
     },
-    "anthropic-skills": {
+    "anthropics-skills": {
       "flake": false,
       "locked": {
         "lastModified": 1794669402,
@@ -52,6 +52,22 @@
         "type": "github"
       }
     },
+    "herdr-core": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1794765483,
+        "narHash": "sha256-aGDakL10gV19CyH93FA0++VBSC8cqFHYPOvUav2bQTg=",
+        "owner": "herdrdev",
+        "repo": "herdr-core",
+        "rev": "bb8a2f7740fd308e520e4e9361c292c993c7f08e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "herdrdev",
+        "repo": "herdr-core",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1794552581,
@@ -68,8 +84,9 @@
     "root": {
       "inputs": {
         "agent-skills": "agent-skills",
-        "anthropic-skills": "anthropic-skills",
+        "anthropics-skills": "anthropics-skills",
         "hashicorp-skills": "hashicorp-skills",
+        "herdr-core": "herdr-core",
         "nixpkgs": "nixpkgs"
       }
     }

@@ -9,12 +9,16 @@
         };
       };
     };
-    anthropic-skills = {
+    anthropics-skills = {
       url = "github:anthropics/skills";
       flake = false;
     };
     hashicorp-skills = {
       url = "github:hashicorp/agent-skills";
+      flake = false;
+    };
+    herdr-core = {
+      url = "github:herdrdev/herdr-core";
       flake = false;
     };
     nixpkgs = {
@@ -26,7 +30,8 @@
   outputs =
     {
       agent-skills,
-      anthropic-skills,
+      anthropics-skills,
+      herdr-core,
       ...
     }:
     {
@@ -42,10 +47,15 @@
               agent-skills = {
                 enable = true;
                 sources = {
-                  anthropic = {
-                    path = anthropic-skills;
+                  anthropics = {
+                    path = anthropics-skills;
                     subdir = "skills";
-                    idPrefix = "anthropic";
+                    idPrefix = "anthropics";
+                  };
+                  herdr-core = {
+                    path = herdr-core;
+                    subdir = "skills";
+                    idPrefix = "herdr";
                   };
                   personal = {
                     path = ./skills;
@@ -54,8 +64,9 @@
                 };
                 skills = {
                   enable = [
-                    "anthropic/frontend-design"
-                    "anthropic/skill-creator"
+                    "anthropics/frontend-design"
+                    "anthropics/skill-creator"
+                    "herdr/herdr-core"
                   ];
                   enableAll = [
                     "personal"
