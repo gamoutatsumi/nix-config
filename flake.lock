@@ -103,8 +103,9 @@
     "agent-skills": {
       "inputs": {
         "agent-skills": "agent-skills_2",
-        "anthropic-skills": "anthropic-skills",
+        "anthropics-skills": "anthropics-skills",
         "hashicorp-skills": "hashicorp-skills",
+        "herdr-core": "herdr-core",
         "nixpkgs": [
           "nixpkgs"
         ]
@@ -140,7 +141,7 @@
         "type": "github"
       }
     },
-    "anthropic-skills": {
+    "anthropics-skills": {
       "flake": false,
       "locked": {
         "lastModified": 1794669402,
@@ -484,11 +485,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794804718,
-        "narHash": "sha256-3UcfVwuUeTl6QVjGO9zwYKxR1+t3vcYFUPYx5Dmtr6w=",
+        "lastModified": 1794807867,
+        "narHash": "sha256-YyLN+mQMAUpwld2CiwK/f+VLLe7rq48dliFWCR/nDQ0=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "c74e1c3889479eb1adc7be5a286db1f2c128cbc7",
+        "rev": "2c6abb8ec7547ff4ed4db4e9d8f23d97f33624bd",
         "type": "github"
       },
       "original": {
@@ -783,6 +784,22 @@
         "type": "github"
       }
     },
+    "herdr-core": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1794765483,
+        "narHash": "sha256-aGDakL10gV19CyH93FA0++VBSC8cqFHYPOvUav2bQTg=",
+        "owner": "herdrdev",
+        "repo": "herdr-core",
+        "rev": "bb8a2f7740fd308e520e4e9361c292c993c7f08e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "herdrdev",
+        "repo": "herdr-core",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -838,11 +855,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794806060,
-        "narHash": "sha256-sVoOAtiJqmD5vGXINSj1aamX5DUAhwbaEuUrgbAYAY0=",
+        "lastModified": 1794808658,
+        "narHash": "sha256-RbvK/ghvMuWWx/riUqtCZCxjZFji2n3onTo2Kg60T3s=",
         "owner": "numtide",
         "repo": "llm-agents.nix",
-        "rev": "67bf4eb193684583d9fdf5b46e33aa8bfaf8618a",
+        "rev": "733d5b0fa81d5aad7c623dca8d8170ce411fba1d",
         "type": "github"
       },
       "original": {
@@ -981,11 +998,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794721569,
-        "narHash": "sha256-avd9gIHk+RHyBpy4b2DrtXx9oQaLht4L5Ux6g50ro4U=",
+        "lastModified": 1794807983,
+        "narHash": "sha256-4cKko7qx9ocmB4RJjBQY1dcYk7M1iCdEfkcWxZzW6as=",
         "owner": "nix-community",
         "repo": "nix-vscode-extensions",
-        "rev": "5a526e68f8c6f0fa89668ac26f2a7f6d708417df",
+        "rev": "776d79fe9c3637c4ae66b44fec0bdef61c7681bf",
         "type": "github"
       },
       "original": {
