@@ -337,7 +337,7 @@ in
           luajitPackages.busted
           delve
         ])
-        ++ lib.optionals pkgs.stdenv.isLinux [
+        ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
           upkgs.gcc
         ];
       package = inputs'.neovim-nightly-overlay.packages.default;

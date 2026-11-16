@@ -8,7 +8,7 @@
       enable = false;
       package = upkgs.emacsWithPackagesFromUsePackage {
         package =
-          if upkgs.stdenv.isLinux then
+          if upkgs.stdenv.hostPlatform.isLinux then
             upkgs.emacs-unstable
           else
             upkgs.emacs-unstable.override { withNativeCompilation = false; };
