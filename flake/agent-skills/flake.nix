@@ -85,7 +85,7 @@
                   };
                   pi = {
                     enable = true;
-                    dest = ".pi/skills";
+                    dest = ".pi/agent/skills";
                     structure = "link";
                   };
                 };
