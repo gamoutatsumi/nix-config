@@ -74,11 +74,18 @@
                 };
                 targets = {
                   codex = {
+                    enable = true;
                     dest = ".codex/skills";
                     structure = "link";
                   };
                   claude = {
+                    enable = true;
                     dest = ".claude/skills";
+                    structure = "link";
+                  };
+                  pi = {
+                    enable = true;
+                    dest = ".pi/skills";
                     structure = "link";
                   };
                 };
