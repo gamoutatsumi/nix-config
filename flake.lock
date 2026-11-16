@@ -10,11 +10,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1794790004,
-        "narHash": "sha256-xllnUF3ETQiybuPVdrJQkQ6pfpks+DAemz8ezKgWXgA=",
+        "lastModified": 1794803419,
+        "narHash": "sha256-qqTJfWMyHeFVBEonKnNrVSQE1y+FcqCuxwr28mjZDuo=",
         "owner": "adroit-app",
         "repo": "Adroit",
-        "rev": "deb4213159138d0c2356a75e55b78d1b2fda4181",
+        "rev": "591402d43b39f276f6c54ea9ae9cb88dde1ebe55",
         "type": "github"
       },
       "original": {
@@ -484,11 +484,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794779111,
-        "narHash": "sha256-w9Fm4+yEd6SKJ0+y9r6wZS1JEZfOOguZ1pvc1T7uZbM=",
+        "lastModified": 1794804718,
+        "narHash": "sha256-3UcfVwuUeTl6QVjGO9zwYKxR1+t3vcYFUPYx5Dmtr6w=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "f0fb9a6a2b3842a14389d0c14c9ef76b0dcd3f20",
+        "rev": "c74e1c3889479eb1adc7be5a286db1f2c128cbc7",
         "type": "github"
       },
       "original": {
@@ -838,11 +838,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794787251,
-        "narHash": "sha256-LHm/x1owamrkGb9am4LofA1jn8yJBQHPxfAUdEDDNfA=",
+        "lastModified": 1794806060,
+        "narHash": "sha256-sVoOAtiJqmD5vGXINSj1aamX5DUAhwbaEuUrgbAYAY0=",
         "owner": "numtide",
         "repo": "llm-agents.nix",
-        "rev": "8adf052a0006d9617a7d6c0fe5a628e1eb48a5dc",
+        "rev": "67bf4eb193684583d9fdf5b46e33aa8bfaf8618a",
         "type": "github"
       },
       "original": {
