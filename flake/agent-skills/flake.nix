@@ -17,10 +17,6 @@
       url = "github:hashicorp/agent-skills";
       flake = false;
     };
-    herdr-core = {
-      url = "github:herdrdev/herdr-core";
-      flake = false;
-    };
     nixpkgs = {
       url = "https://channels.nixos.org/nixos-26.05/nixexprs.tar.zst";
     };
@@ -31,7 +27,6 @@
     {
       agent-skills,
       anthropics-skills,
-      herdr-core,
       ...
     }:
     {
@@ -51,10 +46,6 @@
                     path = anthropics-skills;
                     subdir = "skills";
                   };
-                  herdr-core = {
-                    path = herdr-core;
-                    subdir = "skills";
-                  };
                   personal = {
                     path = ./skills;
                   };
@@ -63,7 +54,6 @@
                   enable = [
                     "frontend-design"
                     "skill-creator"
-                    "herdr-core"
                   ];
                   enableAll = [
                     "personal"
