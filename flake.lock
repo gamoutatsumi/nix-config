@@ -787,11 +787,11 @@
     "herdr-core": {
       "flake": false,
       "locked": {
-        "lastModified": 1794765483,
-        "narHash": "sha256-aGDakL10gV19CyH93FA0++VBSC8cqFHYPOvUav2bQTg=",
+        "lastModified": 1794865171,
+        "narHash": "sha256-i7AIqRpwq5k3mBW2MWXqfG2wLxa1A3Hl49AphvHavSs=",
         "owner": "herdrdev",
         "repo": "herdr-core",
-        "rev": "bb8a2f7740fd308e520e4e9361c292c993c7f08e",
+        "rev": "c7517808d64f06609e4ecf0db1757005373cc3a3",
         "type": "github"
       },
       "original": {
@@ -855,11 +855,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794808658,
-        "narHash": "sha256-RbvK/ghvMuWWx/riUqtCZCxjZFji2n3onTo2Kg60T3s=",
+        "lastModified": 1794883163,
+        "narHash": "sha256-V3WWylFEKFjCLQ/d8voBZZQGmapX5f99yxTyxzC9HTU=",
         "owner": "numtide",
         "repo": "llm-agents.nix",
-        "rev": "733d5b0fa81d5aad7c623dca8d8170ce411fba1d",
+        "rev": "97b2c73782356e4934a5d350fa4b6b7dbea1b646",
         "type": "github"
       },
       "original": {
