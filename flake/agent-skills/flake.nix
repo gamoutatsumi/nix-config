@@ -50,16 +50,13 @@
                   anthropics = {
                     path = anthropics-skills;
                     subdir = "skills";
-                    idPrefix = "anthropics";
                   };
                   herdr-core = {
                     path = herdr-core;
                     subdir = "skills";
-                    idPrefix = "herdr";
                   };
                   personal = {
                     path = ./skills;
-                    idPrefix = "personal";
                   };
                 };
                 skills = {
