@@ -61,9 +61,9 @@
                 };
                 skills = {
                   enable = [
-                    "anthropics/frontend-design"
-                    "anthropics/skill-creator"
-                    "herdr/herdr-core"
+                    "frontend-design"
+                    "skill-creator"
+                    "herdr-core"
                   ];
                   enableAll = [
                     "personal"
