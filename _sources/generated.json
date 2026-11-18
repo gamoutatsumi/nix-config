@@ -1,7 +1,7 @@
 {
     "anthropic-official-marketplace": {
         "cargoLock": null,
-        "date": "2026-11-09",
+        "date": "2026-11-17",
         "extract": null,
         "name": "anthropic-official-marketplace",
         "passthru": null,
@@ -13,12 +13,12 @@
             "name": null,
             "owner": "anthropics",
             "repo": "claude-plugins-official",
-            "rev": "dceb15d50832e6adf380bedc26dde03d251324b9",
-            "sha256": "sha256-hrUTcp9tRpomnvud6ywIp/0kNullipnAvgiguQAZLZs=",
+            "rev": "e6143c9807a001832badb63e89d58ffe25d542ec",
+            "sha256": "sha256-J6JgsD2V+fAhCLACVcAM/z+60QNuF5W99SzcHkG1g1w=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "dceb15d50832e6adf380bedc26dde03d251324b9"
+        "version": "e6143c9807a001832badb63e89d58ffe25d542ec"
     },
     "codecompanion-nvim": {
         "cargoLock": null,
@@ -34,12 +34,12 @@
             "name": null,
             "owner": "olimorris",
             "repo": "codecompanion.nvim",
-            "rev": "v20.1.0",
-            "sha256": "sha256-v7nfqV22b+dDY7Efe7bj+TZe9VrA2c+H676cm7shFlI=",
+            "rev": "v20.2.0",
+            "sha256": "sha256-EKZDomMxqMCI12my3c/2UCh/JVO9kymgyoqyc0/J2B4=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v20.1.0"
+        "version": "v20.2.0"
     },
     "denops-vim": {
         "cargoLock": null,
@@ -349,12 +349,12 @@
             "name": null,
             "owner": "michael-denyer",
             "repo": "pstack-claude",
-            "rev": "v0.9.133",
-            "sha256": "sha256-Xe2XlplUiukFgPP+KFEf5GiMxXece40B8PWTUHAFf/A=",
+            "rev": "v0.9.138",
+            "sha256": "sha256-GxIYFDp768FQGaY07f4G7NhBgpeUovWhjmeu63FwVTU=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.9.133"
+        "version": "v0.9.138"
     },
     "statuscol-nvim": {
         "cargoLock": null,
@@ -391,11 +391,11 @@
             "name": null,
             "owner": "nanaism",
             "repo": "yomiyasu",
-            "rev": "v2.5.0",
-            "sha256": "sha256-9cGUSvLgc1+996i3lWQuQm1aTWOxSY6fbS9+vn5aElw=",
+            "rev": "v3.2.0",
+            "sha256": "sha256-9S44h2456IYZK0hJhSx5h29UAXjoGCWW3MOkrHEBx3I=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2.5.0"
+        "version": "v3.2.0"
     }
 }
