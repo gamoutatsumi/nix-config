@@ -52,29 +52,13 @@
         "type": "github"
       }
     },
-    "herdr-core": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1794865171,
-        "narHash": "sha256-i7AIqRpwq5k3mBW2MWXqfG2wLxa1A3Hl49AphvHavSs=",
-        "owner": "herdrdev",
-        "repo": "herdr-core",
-        "rev": "c7517808d64f06609e4ecf0db1757005373cc3a3",
-        "type": "github"
-      },
-      "original": {
-        "owner": "herdrdev",
-        "repo": "herdr-core",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1794756927,
-        "narHash": "sha256-gMyd1bZoTbvrap9NEM2ZIy/7Qfhd54segpSkHPB2vfE=",
-        "rev": "b349185bb79c7cf7ad8ea8c097931730bf473c71",
+        "lastModified": 1795370043,
+        "narHash": "sha256-RThZ6/XvhVczW74iClJaGo9+fXjvfm5mvvzTy6hrcYU=",
+        "rev": "0dc498bfe49baeb18b0f9891e800b53bb2603193",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.14561.b349185bb79c/nixexprs.tar.zst"
+        "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.15079.0dc498bfe49b/nixexprs.tar.zst"
       },
       "original": {
         "type": "tarball",
@@ -86,7 +70,6 @@
         "agent-skills": "agent-skills",
         "anthropics-skills": "anthropics-skills",
         "hashicorp-skills": "hashicorp-skills",
-        "herdr-core": "herdr-core",
         "nixpkgs": "nixpkgs"
       }
     }
