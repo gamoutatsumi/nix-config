@@ -8,25 +8,25 @@
 {
   anthropic-official-marketplace = {
     pname = "anthropic-official-marketplace";
-    version = "e6143c9807a001832badb63e89d58ffe25d542ec";
+    version = "5cec6716767283f4675a05f5f8855b5b49c81783";
     src = fetchFromGitHub {
       owner = "anthropics";
       repo = "claude-plugins-official";
-      rev = "e6143c9807a001832badb63e89d58ffe25d542ec";
+      rev = "5cec6716767283f4675a05f5f8855b5b49c81783";
       fetchSubmodules = false;
-      sha256 = "sha256-J6JgsD2V+fAhCLACVcAM/z+60QNuF5W99SzcHkG1g1w=";
+      sha256 = "sha256-RgRJXQWhAUkCM0xNrJt2WVwkN47JV005CF8IK9wMZhg=";
     };
-    date = "2026-11-17";
+    date = "2026-11-23";
   };
   codecompanion-nvim = {
     pname = "codecompanion-nvim";
-    version = "v20.2.0";
+    version = "v20.3.0";
     src = fetchFromGitHub {
       owner = "olimorris";
       repo = "codecompanion.nvim";
-      rev = "v20.2.0";
+      rev = "v20.3.0";
       fetchSubmodules = false;
-      sha256 = "sha256-EKZDomMxqMCI12my3c/2UCh/JVO9kymgyoqyc0/J2B4=";
+      sha256 = "sha256-aCd6Ul8gDhJrx8ApkRVmFexSYeS+cRUiIUqpWg2hyTo=";
     };
   };
   denops-vim = {
@@ -194,13 +194,13 @@
   };
   pstack-claude = {
     pname = "pstack-claude";
-    version = "v0.9.138";
+    version = "v0.9.153";
     src = fetchFromGitHub {
       owner = "michael-denyer";
       repo = "pstack-claude";
-      rev = "v0.9.138";
+      rev = "v0.9.153";
       fetchSubmodules = false;
-      sha256 = "sha256-GxIYFDp768FQGaY07f4G7NhBgpeUovWhjmeu63FwVTU=";
+      sha256 = "sha256-fUsEjhxvURZbUHlyr+aS4/Lp5QQJIK2/no5kfl5FOno=";
     };
   };
   statuscol-nvim = {
@@ -217,13 +217,13 @@
   };
   yomiyasu = {
     pname = "yomiyasu";
-    version = "v3.2.0";
+    version = "v3.3.0";
     src = fetchFromGitHub {
       owner = "nanaism";
       repo = "yomiyasu";
-      rev = "v3.2.0";
+      rev = "v3.3.0";
       fetchSubmodules = false;
-      sha256 = "sha256-9S44h2456IYZK0hJhSx5h29UAXjoGCWW3MOkrHEBx3I=";
+      sha256 = "sha256-E/8dK7gOBJpS8MDd7eLQHHN+inhqLFuik5Gn/Ikuqgc=";
     };
   };
 }
