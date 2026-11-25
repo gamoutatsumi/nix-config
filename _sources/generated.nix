@@ -8,15 +8,15 @@
 {
   anthropic-official-marketplace = {
     pname = "anthropic-official-marketplace";
-    version = "5cec6716767283f4675a05f5f8855b5b49c81783";
+    version = "6985b2d88dc08b4a0d202f5f0301f02e360b9cb1";
     src = fetchFromGitHub {
       owner = "anthropics";
       repo = "claude-plugins-official";
-      rev = "5cec6716767283f4675a05f5f8855b5b49c81783";
+      rev = "6985b2d88dc08b4a0d202f5f0301f02e360b9cb1";
       fetchSubmodules = false;
-      sha256 = "sha256-RgRJXQWhAUkCM0xNrJt2WVwkN47JV005CF8IK9wMZhg=";
+      sha256 = "sha256-4o4BbW198W0HFRLfD22Cld6h2xP2jJj/8kwoql/XH+Y=";
     };
-    date = "2026-11-23";
+    date = "2026-11-24";
   };
   codecompanion-nvim = {
     pname = "codecompanion-nvim";
@@ -194,13 +194,13 @@
   };
   pstack-claude = {
     pname = "pstack-claude";
-    version = "v0.9.153";
+    version = "v0.9.155";
     src = fetchFromGitHub {
       owner = "michael-denyer";
       repo = "pstack-claude";
-      rev = "v0.9.153";
+      rev = "v0.9.155";
       fetchSubmodules = false;
-      sha256 = "sha256-fUsEjhxvURZbUHlyr+aS4/Lp5QQJIK2/no5kfl5FOno=";
+      sha256 = "sha256-mLtz4au3kks0fAmGUq6FTBqRmUk43y3pUFqcUYm9pkI=";
     };
   };
   statuscol-nvim = {
@@ -217,13 +217,13 @@
   };
   yomiyasu = {
     pname = "yomiyasu";
-    version = "v3.3.0";
+    version = "v3.4.0";
     src = fetchFromGitHub {
       owner = "nanaism";
       repo = "yomiyasu";
-      rev = "v3.3.0";
+      rev = "v3.4.0";
       fetchSubmodules = false;
-      sha256 = "sha256-E/8dK7gOBJpS8MDd7eLQHHN+inhqLFuik5Gn/Ikuqgc=";
+      sha256 = "sha256-df6sdmB1n+UkpMviEhN5Y4HAFtiJPdm3Mwdx1nNtnVw=";
     };
   };
 }
