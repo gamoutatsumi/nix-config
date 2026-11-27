@@ -8,7 +8,7 @@ workflows:
         - 'cachix/cachix-action@v17'
         - 'natsukium/nix-diff-action@v1.2.1'
         - 'nicknovitski/nix-develop@v1.2.1'
-        - 'nixbuild/nix-quick-install-action@v35'
+        - 'nixbuild/nix-quick-install-action@v36'
         - 'suzuki-shunsuke/commit-action@v1.1.0'
 dependencies:
     'actions/checkout@v7.0.1':
@@ -31,9 +31,9 @@ dependencies:
         commit: 'sha1-9be7cfb4b10451d3390a75dc18ad0465bed4932a'
         owner_id: 151337
         repo_id: 706956179
-    'nixbuild/nix-quick-install-action@v35':
-        ref: 'v35'
-        commit: 'sha1-9f63be77f412a248c9d9a65a4c82cf066cdf8f0c'
+    'nixbuild/nix-quick-install-action@v36':
+        ref: 'v36'
+        commit: 'sha1-e0ea8f6061c766e5c1d927cea8be769a1c5108a9'
         owner_id: 60610456
         repo_id: 296639338
     'suzuki-shunsuke/commit-action@v1.1.0':
